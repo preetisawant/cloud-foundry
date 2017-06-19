@@ -144,7 +144,8 @@ Execute as etapas a seguir para migrar seu aplicativo.
 <pre>cf login -a https://api.ng.bluemix.net</pre></li>
 <li>No diretório do aplicativo, insira o comando cf push com o nome do aplicativo. O nome do aplicativo deve ser exclusivo no ambiente do {{site.data.keyword.Bluemix_notm}}.
 <pre>cf push appname</pre></li>
-<li>Opcional: se você usar um buildpack externo, deverá usar a opção -b com o comando cf push. Por exemplo:
+<li>Opcional: se você usar um buildpack externo, deverá usar a opção -b com o comando cf push. Por
+exemplo:
 <pre>cf push appname -b buildpack_URL</pre>
 <p>Consulte Usando buildpacks de comunidade para obter detalhes.</p>
 </li></ol>

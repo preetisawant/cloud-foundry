@@ -15,23 +15,23 @@ lastupdated: "2016-12-21"
 {:new_window: target="_blank"}
 
 
-# Using the starter applications
+# Utilizzo delle applicazioni starter
 {: #using_starter_applications}
 
-{{site.data.keyword.Bluemix}} provides starter applications for the runtimes.
-Follow these steps to use the starter applications.
+{{site.data.keyword.Bluemix}} fornisce applicazioni starter per i runtime.
+Segui questa procedura per utilizzare le applicazioni starter.
 {:shortdesc}
 
-1. From the [{{site.data.keyword.Bluemix_notm}} Catalog](https://console.{DomainName}/catalog/),
-navigate to the Cloud Foundry Apps section.
-2. Click the runtime you want to use.
-3. Log in to {{site.data.keyword.Bluemix_notm}}, if you have not already.
-4. Provide the app name, modify the host name if required, and click **Create**.
-5. Your app begins staging, and the landing page for your app on the {{site.data.keyword.Bluemix_notm}} Dashboard displays as your app starts.
-6. You can follow the instructions on that page to do the following tasks:
-  * Download the Cloud Foundry command line interface.
-  * Download the starter application.
-  * Take steps to redeploy the starter application.
-7. Modify the app and deploy again.
+1. Dal [Catalogo {{site.data.keyword.Bluemix_notm}}](https://console.{DomainName}/catalog/),
+passa alla sezione Applicazioni Cloud Foundry.
+2. Fai clic sul runtime che desideri utilizzare.
+3. Se non l'hai già fatto, accedi a {{site.data.keyword.Bluemix_notm}}.
+4. Fornisci il nome dell'applicazione, se necessario modifica il nome dell'host e fai clic su **Crea**.
+5. Inizia così la preparazione della tua applicazione. All'avvio dell'applicazione ne viene visualizzata la pagina di destinazione sul dashboard {{site.data.keyword.Bluemix_notm}}.
+6. Puoi seguire le istruzioni sulla pagina per effettuare le seguenti attività:
+  * Scarica l'interfaccia riga di comando Cloud Foundry.
+  * Scarica l'applicazione starter.
+  * Segui la procedura per la ridistribuzione dell'applicazione starter.
+7. Modifica l'applicazione e distribuiscila nuovamente.
 
-The directory containing the starter application you downloaded contains a README file.  Refer to the README for a description of the files in the starter application package.  Make changes to the code, deploy the application again, then see the effect in your running app.
+La directory che contiene l'applicazione starter scaricata contiene un file README.  Consulta il file README per una descrizione dei file del package applicazione starter.  Apporta le modifiche al codice, distribuisci nuovamente l'applicazione e vedi l'effetto di queste operazioni sulla tua applicazione in esecuzione.

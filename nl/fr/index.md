@@ -55,7 +55,8 @@ Une fois que vous avez créé votre application, vous disposez de quelques optio
 <dt>Interface utilisateur {{site.data.keyword.Bluemix_notm}}</dt>
 <dd>L'interface utilisateur {{site.data.keyword.Bluemix_notm}} permet de construire une application, et de choisir les services et les contextes d'exécution à combiner afin de résoudre vos problèmes métier.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Utilisez {{site.data.keyword.contdelivery_short}} pour automatiser les générations, les tests unitaires, les déploiements, etc. Editez et insérez du code via l'interface IDE Web enrichie. Créez des chaînes d'outils pour activer les intégrations d'outils prenant en charge vos tâches de développement, de déploiement et d'opérations. Le service Continuous Delivery inclut Delivery Pipeline, Eclipse Orion Web IDE et Git Repos and Issue Tracking. Pour plus d'informations, voir <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Initiation à Continuous Delivery</a>.
+<dd>Utilisez {{site.data.keyword.contdelivery_short}} pour automatiser les générations, les tests unitaires, les déploiements, etc. Editez et insérez du code via l'interface IDE Web enrichie. Créez des chaînes d'outils pour activer les intégrations d'outils prenant en charge vos tâches de développement, de déploiement et d'opérations.
+Le service Continuous Delivery inclut Delivery Pipeline, Eclipse Orion Web IDE et Git Repos and Issue Tracking. Pour plus d'informations, voir <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Initiation à Continuous Delivery</a>.
 </dd>
 </dl>
 

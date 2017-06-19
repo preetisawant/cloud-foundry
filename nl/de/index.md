@@ -54,8 +54,7 @@ erstellen, zu aktualisieren und zu löschen.</dd>
 <dd>Mit der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle können Sie Ihre Anwendung erstellen und dabei
 auswählen, welche Services und Laufzeiten kombiniert werden sollen, um Ihre geschäftsbezogenen Probleme zu lösen.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Mit {{site.data.keyword.contdelivery_short}} können Sie Builds, Komponententests, Bereitstellungen und weitere Tasks automatisieren. In der umfangreichen webbasierten IDE können Sie Code bearbeiten und mit einer Push-Operation übertragen. Durch die Erstellung von Toolchains werden Toolintegrationen ermöglicht, die Entwicklungs-, Bereitstellungs- und Betriebstasks unterstützen. Der Continuous Delivery Service enthält, Web-IDE für Eclipse Orion, Delivery Pipeline und Git-Repositorys und Issue Tracking. Weitere Informationen finden Sie unter <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Einführung in Continuous Delivery</a>.
-</dd>
+<dd>Mit {{site.data.keyword.contdelivery_short}} können Sie Builds, Komponententests, Bereitstellungen und weitere Tasks automatisieren. In der umfangreichen webbasierten IDE können Sie Code bearbeiten und mit einer Push-Operation übertragen. Durch die Erstellung von Toolchains werden Toolintegrationen ermöglicht, die Entwicklungs-, Bereitstellungs- und Betriebstasks unterstützen. Der Continuous Delivery Service enthält, Web-IDE für Eclipse Orion, Delivery Pipeline und Git-Repositorys und Issue Tracking. Weitere Informationen finden Sie unter <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Einführung in Continuous Delivery</a>.</dd>
 </dl>
 
 ## Tipps

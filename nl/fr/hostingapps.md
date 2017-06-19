@@ -125,8 +125,9 @@ Vous pouvez utiliser les outils et les services suivants mis à disposition par 
 |:------|:--------|
 |Interface de ligne de commande Cloud Foundry (cf cli)	|Gérez votre code sur le client local et utilisez l'interface de ligne de commande Cloud Foundry pour envoyer votre application par commande push dans {{site.data.keyword.Bluemix_notm}} manuellement. Pour plus d'informations, voir [Téléchargement de votre application](/docs/starters/upload_app.html).|
 |Eclipse	|Gérez votre code dans Eclipse et utilisez IBM Eclipse Tools for {{site.data.keyword.Bluemix_notm}} pour envoyer votre application par commande push.|
-|{{site.data.keyword.contdelivery_full}} |    Utilisez {{site.data.keyword.contdelivery_short}} pour automatiser les générations, les tests unitaires, les déploiements, etc. Editez et insérez du code via l'interface IDE Web enrichie. Créez des chaînes d'outils pour activer les intégrations d'outils prenant en charge vos tâches de développement, de déploiement et d'opérations. Le service Continuous Delivery inclut Delivery Pipeline, Eclipse Orion Web IDE et Git Repos and Issue Tracking. Pour plus d'informations, voir <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Initiation à Continuous Delivery</a>.|
-{: caption="Tableau 1. Outils {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
+|{{site.data.keyword.contdelivery_full}} |    Utilisez {{site.data.keyword.contdelivery_short}} pour automatiser les générations, les tests unitaires, les déploiements, etc. Editez et insérez du code via l'interface IDE Web enrichie. Créez des chaînes d'outils pour activer les intégrations d'outils prenant en charge vos tâches de développement, de déploiement et d'opérations.
+Le service Continuous Delivery inclut Delivery Pipeline, Eclipse Orion Web IDE et Git Repos and Issue Tracking. Pour plus d'informations, voir <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Initiation à Continuous Delivery</a>. |
+{: caption="Tableau 1. Outils {{site.data.keyword.Bluemix_notm}} " caption-side="top"}
 
 
 Si la plateforme Cloud Foundry ne prend pas en charge les exigences relatives à votre application, vous pouvez utiliser un conteneur ou une machine virtuelle où le contexte d'exécution est défini, configuré et géré avec des options personnalisées supplémentaires.
@@ -134,7 +135,7 @@ Si la plateforme Cloud Foundry ne prend pas en charge les exigences relatives à
 ##Développement et déploiement d'applications à l'aide de chaînes d'outils dans Continuous Delivery
 {:ht_cd}
 
-Ajoutez une <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">chaîne d'outils à votre application</a>, puis utilisez l'<a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">interface utilisateur de la chaîne d'outils Continuous Delivery</a> pour développer et déployer votre application.
+Ajoutez une <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">chaîne d'outils à votre application</a>, puis utilisez l'<a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">interface utilisateur de la chaîne d'outils Continuous Delivery</a> pour développer et déployer votre application. 
 
 ##Téléchargement de votre applications avec cf cli
 {: #ht_cfcli}

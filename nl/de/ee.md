@@ -31,7 +31,7 @@ Bevor Sie beginnen können, müssen Sie sich unter [https://console.ng.bluemix.n
 ## Entwicklung und Bereitstellung der Apps mit Toolchains und dem {{site.data.keyword.contdelivery_short}}-Service
 {: #ee_cd}
 
-<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Fügen Sie eine Toolchain</a>, die den {{site.data.keyword.contdelivery_full}}-Service enthält, zu der App hinzu. <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">Verwenden Sie dann die Toolchain</a> zum Entwickeln und Implementieren der App.
+<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Fügen Sie eine Toolchain</a>, die den {{site.data.keyword.contdelivery_full}}-Service enthält, zu der App hinzu. <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">Verwenden Sie dann die Toolchain</a> zum Entwickeln und Implementieren der App. 
 
 
 ## Web-App mithilfe der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle erstellen
