@@ -15,194 +15,116 @@ lastupdated: "2017-05-10"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-#Host delle applicazioni in {{site.data.keyword.Bluemix_notm}}
+#Hosting apps in {{site.data.keyword.Bluemix_notm}}
 
 <!--The whole topic is staging only -->
 
-Con {{site.data.keyword.Bluemix}},
-puoi creare applicazioni e fornire un host per le applicazioni esistenti. Purché pronte per il cloud, le tue applicazioni possono essere migrate in
-{{site.data.keyword.Bluemix_notm}}. {{site.data.keyword.Bluemix_notm}} fornisce diversi modi per eseguire le tue applicazioni, ad esempio Cloud Foundry, IBM Containers e Virtual Machines.
+With {{site.data.keyword.Bluemix}}, you can create applications, as well as host your existing applications. You can migrate your apps to {{site.data.keyword.Bluemix_notm}} as long as it is cloud-ready. {{site.data.keyword.Bluemix_notm}} provides various ways for you to run your applications, for example, Cloud Foundry, IBM Containers, and Virtual Machines.
 
-##Come far sì che le tue applicazioni siano pronte per il cloud
+##Making your apps Cloud-ready
 {: #cloud-readyapps}
 
-Quando un'applicazione pronta per il cloud viene progettata e creata,
-segue i principi della piattaforma cloud. Un'applicazione pronta per il cloud
-può utilizzare le capacità fornite dalla piattaforma cloud.
+A cloud-ready application follows the cloud platform principles when the application is designed and built. A cloud-ready application can use the capabilities that are provided by the cloud platform.
 
-Se la tua applicazione osserva tutti i seguenti principi,
-essa è pronta per il cloud e può essere migrata in {{site.data.keyword.Bluemix_notm}}. Se l'applicazione viola uno dei principi, puoi generalmente modificarla
-per far sì che rispetti tutti i principi.
+If all of the following principles are observed in your application, the application is cloud-ready and can be migrated to {{site.data.keyword.Bluemix_notm}}. If a principle is violated in your application, you can usually modify your application to adhere to the principles.
 
-* Non codificare direttamente la tua applicazione in una topologia specifica.
+* Do not code your application directly to a specific topology.
 
-  In
-un ambiente non cloud, l'applicazione potrebbe utilizzare una particolare topologia
-di distribuzione. Tuttavia, la topologia dell'applicazione potrebbe cambiare nelle applicazioni cloud,
-poiché i servizi e le applicazioni pronti per il cloud consentono
-modifiche immediate per la scalabilità. Le modifiche per la scalabilità includono il ridimensionamento dinamico
-e il ridimensionamento manuale del numero di istanze di un'applicazione.
+  In a non-cloud environment, the application might use a particular deployment topology. However, the application topology might change in cloud applications, because the cloud-ready applications and services allow immediate scalability changes. The scalability changes include dynamic scaling and manually resizing the number of instances of an application.
 
-  Crea
-la tua applicazione in modo che sia il più possibile generica e senza stati, in modo da preservare
-la tua applicazione dagli effetti delle modifiche di scalabilità.
+  Build your application to be as generic and stateless as possible to keep your application from being affected by scalability changes.
 
-* Non presupporre che il file system locale sia permanente.
+* Do not assume that the local file system is permanent.
 
-  Poiché
-un'istanza di un'applicazione può essere spostata, eliminata o duplicata sul cloud in qualsiasi momento,
-non affidarti ai file scritti nel file
-system. Se un'applicazione utilizza il file system locale come cache delle
-informazioni più utilizzate, tra cui i registri delle applicazioni, le informazioni
-vengono perse nel momento in cui l'istanza viene arrestata e riavviata in un'ubicazione
-o VM differente.
+  Because an application instance can be moved, deleted, or duplicated at any time on cloud, do not rely on the files that are written to the file system. If an application uses the local file system as a cache of frequently used information including application logs, the information is lost when the instance is shut down and restarted at a different location or a different VM.
 
-  Invece che nel file system locale, puoi memorizzare
-le informazioni in un servizio, quale un database SQL o NoSQL. In un ambiente cloud dinamico, è fondamentale anche che
-i tuoi log siano disponibili in un servizio avente durata superiore alle istanze dell'applicazione in cui
-vengono generati i log.
+  You can store information in a service, such as an SQL or NoSQL database instead of the local file system. In a dynamic cloud environment, it's also critical to have your logs available on a service that outlives the application instances where the logs are generated.
 
-* Non memorizzare gli stati delle sessioni nella tua applicazione.
+* Do not store session state in your application.
 
-  Lo stato
-del tuo sistema viene definito dai database e dalla memoria condivisa e non
-da ciascuna istanza dell'applicazione in esecuzione. Qualsiasi tipo di mancanza
-di stato limita la scalabilità di un'applicazione. Cerca di ridurre al minimo
-l'impatto dello stato della sessione, memorizzandolo in un'ubicazione centralizzata
-sul server.
+  The state of your system is defined by your databases and shared storage, and not by each individual running application instance. Statefulness of any sort limits the scalability of an application. Try to minimize the impact of session state by storing it in a centralized location on the server.
 
-  Se non puoi eliminare del tutto lo stato della sessione, eseguine il push
-in una memoria altamente disponibile esterna al server della tua
-applicazione. Tra le memorie utilizzabili vi sono IBM WebSphere Extreme Scale, Redis,
-Memcached o un database esterno.
+  If you can't eliminate session state entirely, push it out to a highly available store that is external to your application server. The stores include IBM WebSphere Extreme Scale, Redis, or Memcached, or an external database.
 
-* Non utilizzare dipendenze da infrastrutture specifiche.
+* Do not use specific infrastructure dependency.
 
-  Questo principio generale
-si rivela sotto vari aspetti. Ad esempio, non partire dal presupposto che
-i servizi utilizzati dalla tua applicazione siano associati a indirizzi IP o nomi host
-specifici. Poiché i servizi potrebbero essere trasferiti o rigenerati
-nel tuo ambiente cloud, potrebbero cambiare anche i nomi host
-e gli indirizzi IP.
+  This is a general principle that has several manifestations. For example, do not assume that the services your application uses are allocated particular host names or IP addresses. Because the services might be relocated or regenerated in your cloud environment, the host names and IP addresses can also change.
 
-  L'estrazione di dipendenze specifiche dell'ambiente in una
-serie di file di proprietà rappresenta un miglioramento, ma resta inappropriato. La migliore prassi prevede la risoluzione degli endpoint dei servizi attraverso il registro
-di un servizio esterno o la delega dell'intera funzione di instradamento
-al bus di un servizio o a un programma di bilanciamento dei carichi con un nome virtuale.
+  Extracting environment-specific dependencies into a set of property files is an improvement, but it is still inadequate. The best practice is to use an external service registry to resolve service endpoints, or delegate the entire routing function to a service bus or a load balancer with a virtual name.
 
-* Non utilizzare API infrastruttura nella tua applicazione.
+* Do not use infrastructure APIs in your application.
 
-  Se la tua applicazione si affida
-a un'API infrastruttura specifica, la modifica dell'infrastruttura
-risulta più complessa, poiché un'API infrastruttura
-può fare riferimento a livelli differenti del tuo stack software.
+  If you rely on a specific infrastructure API in your application, changing the infrastructure is more challenging, because an infrastructure API can refer to many different layers in your software stack.
 
-  Puoi
-invece affidarti ai prodotti commerciali od open source esistenti e
-lasciare le soluzioni PaaS nel livello PaaS in modo da mantenerle al di fuori del codice della
-tua applicazione.
+  You can rely on existing open source or commercial products instead, and leave PaaS solutions in the PaaS layer to keep them out of your application code.
 
-* Non utilizzare protocolli oscuri.
+* Do not use obscure protocols.
 
-  Non utilizzare protocolli oscuri che
-richiedono una configurazione aggiuntiva per la resilienza.
+  Do not use obscure protocols that require extra configuration for resiliency.
 
-  Le applicazioni basate
-su protocolli standard hanno maggiore resilienza con gli elementi della configurazione
-delegati alla piattaforma. I protocolli standard includono HTTP, SSL,
-database standard, accodamento e connessioni ai servizi Web.
+  Applications based on standard protocols are more resilient with the configuration items delegated to the platform. The standard protocols include HTTP, SSL, standard database, queuing, and web service connections.
 
-* Non affidarti a funzioni specifiche del sistema operativo
+* Do not rely on OS-specific features
 
-  Se hai già utilizzato
-funzioni specifiche del sistema operativo, puoi risolvere il problema utilizzando librerie di compatibilità,
-quali Cygwin e Mono. Cygwin è una libreria di compatibilità che fornisce una serie di strumenti Linux in un ambiente Windows. Mono è una libreria di compatibilità che fornisce le funzionalità di Windows .NET in Linux.
+  If you have already used OS-specific features, you can fix this issue by using compatibility libraries, for example, Cygwin and Mono. Cygwin is a compatibility library that provides a set of Linux tools in a Windows environment. Mono is a compatibility library that provides Windows .NET capabilities in Linux.
 
-  Evita le dipendenze specifiche del sistema operativo;
-utilizza invece servizi forniti dall'infrastruttura middleware
-o da fornitori di servizi.
+  Avoid the OS-specific dependencies; instead, use services that are provided by the middleware infrastructure or service providers.
 
-* Non installare manualmente la tua applicazione.
+* Do not manually install your application.
 
-  Nell'ambiente cloud dinamico, la tua
-applicazione potrebbe essere installata spesso on-demand Il processo di installazione deve avere script ed essere affidabile e i dati della configurazione
-devono essere esternalizzati dagli script.
+  Your application might be installed frequently on-demand on the dynamic cloud environment. The installation process must be scripted and reliable, and the configuration data must be externalized from the scripts.
 
-  Acquisisci almeno l'installazione
-della tua applicazione come una serie uniforme di script
-indipendenti dal sistema operativo. Fa in modo che le dimensioni dell'installazione della tua applicazione
-restino contenute e preservane la portabilità, in modo che si adegui a differenti tecniche di automazione. Inoltre,
-riduci al minimo le dipendenze richieste dall'installazione dell'applicazione.
+  At a minimum, capture your application installation as a uniform set of scripts that are independent of the operating system. Keep your application installation small and portable to adapt to different automation techniques. Also, minimize the dependencies that are required by the application installation.
 
-Per ulteriori informazioni sulle applicazioni pronte per il cloud, vedi [The 12-factor application ![Icona link esterno](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}.
+For more information about cloud-ready applications, see [The 12-factor application ![External link icon](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}.
 
-##Migrazione delle tue applicazioni
+##Migrating your apps
 {: #ht_hostapp}
 
-Invece di spostare completamente le applicazioni nell'ambiente cloud,
-puoi migrarle in {{site.data.keyword.Bluemix_notm}}
-in modo incrementale. Puoi migrare prima una parte della tua applicazione
-e connetterla al system of record o ai dati esistenti, attraverso il
-servizio Cloud Integration.
+You can migrate your applications to {{site.data.keyword.Bluemix_notm}} in an incremental way, instead of shifting the application completely to the cloud environment. You can migrate a portion of your application first and connect to the existing data or system of records by using the Cloud Integration service.
 
-Nelle tue applicazioni cloud potresti dover accedere ai servizi
-o ai dati backend quali, ad esempio, un system of record. In {{site.data.keyword.Bluemix_notm}},
-puoi utilizzare il servizio Secure Gateway per stabilire un tunnel protetto
-tra un'organizzazione {{site.data.keyword.Bluemix_notm}}
-e la rete backend aziendale. Il servizio consente alle applicazioni
-su {{site.data.keyword.Bluemix_notm}} di
-accedere ai servizi e ai dati della rete backend. Per i dettagli, vedi [Reaching enterprise backend with Bluemix Secure Gateway via console ![Icona link esterno](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
+In your cloud applications, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.Bluemix_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.Bluemix_notm}} organization and the enterprise backend network. The service enables the applications on {{site.data.keyword.Bluemix_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with Bluemix Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
 
-Per distribuire la tua applicazione su {{site.data.keyword.Bluemix_notm}} come
-applicazione Cloud Foundry, seleziona un runtime dal Catalogo {{site.data.keyword.Bluemix_notm}}. Il runtime contiene un'applicazione starter Hello World che puoi sostituire con la tua propria applicazione. Se non riesci a trovare uno starter con il runtime desiderato, puoi portare un pacchetto di build personalizzato compatibile con Cloud Foundry in {{site.data.keyword.Bluemix_notm}} utilizzando l'opzione –b con il comando cf push. Per i dettagli, vedi [Utilizzo dei pacchetti di build della community](/docs/cfapps/byob.html).
+To deploy your application to {{site.data.keyword.Bluemix_notm}} as a Cloud Foundry application, select a runtime from the {{site.data.keyword.Bluemix_notm}} Catalog. The runtime contains a starter Hello World application that you can replace with your own application. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.Bluemix_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](/docs/cfapps/byob.html).
 
-Puoi usare i seguenti servizi e strumenti forniti da {{site.data.keyword.Bluemix_notm}}:
+You can use the following tools and services that {{site.data.keyword.Bluemix_notm}} provides:
 
-| Strumento	| Metodo |
+| Tool	| Method |
 |:------|:--------|
-|Interfaccia riga di comando Cloud Foundry (cf cli)	|Gestisci il tuo codice su un client locale e utilizza l'interfaccia riga di comando
-Cloud Foundry per eseguire manualmente il push della tua applicazione su {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Caricamento delle tue applicazioni](/docs/starters/upload_app.html).|
-|Eclipse	|Gestisci il tuo codice in Eclipse e utilizza gli strumenti di IBM Eclipse per {{site.data.keyword.Bluemix_notm}} per distribuire la tua applicazione.|
-|{{site.data.keyword.contdelivery_full}} |    Utilizza {{site.data.keyword.contdelivery_short}} per automatizzare le build, i test di unità, le distribuzioni e altro. Modifica e trasmetti il codice tramite la IDE basata sul web avanzato. Crea le toolchain per abilitare integrazioni dello strumento che supportano le attività di sviluppo, distribuzione e funzionamento. Il servizio Continuous Delivery include Delivery Pipeline, Eclipse Orion Web IDE e Git Repos and Issue Tracking. Per ulteriori informazioni, vedi <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introduzione a Continuous Delivery</a>.|
-{: caption="Tabella 1. Strumenti {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
+|Cloud Foundry command line interface (cf cli)	|Manage your code on local client and use Cloud Foundry command line interface to push your application to {{site.data.keyword.Bluemix_notm}} manually. For more information, see [Uploading your apps](/docs/starters/upload_app.html).|
+|Eclipse	|Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.Bluemix_notm}} to push your application.|
+|{{site.data.keyword.contdelivery_full}} |    Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, the Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.|
+{: caption="Table 1. {{site.data.keyword.Bluemix_notm}} tools" caption-side="top"}
 
 
-Se la piattaforma Cloud Foundry non risponde ai requisiti della tua applicazione,
-puoi utilizzare un contenitore o una VM in cui il runtime venga configurato
-e aggiornato con più opzioni personalizzate.
+If the Cloud Foundry platform does not support your application requirements, you can use a container or VM where the runtime is set up, configured, and maintained with more customized options.
 
-##Sviluppo e distribuzione delle tue applicazioni utilizzando le toolchain in Continuous Delivery
+##Developing and deploying your apps using toolchains in Continuous Delivery
 {:ht_cd}
 
-Aggiungi una <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">toolchain alla tua applicazione</a> e quindi utilizza l'<a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">IU della toolchain Continuous Delivery</a> per sviluppare e distribuire la tua applicazione.
+Add a <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">toolchain to your app</a> and then use the <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">Continuous Delivery toolchain UI</a> to develop and deploy your app.
 
-##Caricamento delle tue applicazioni attraverso la CLI cf
+##Uploading your apps by using cf cli
 {: #ht_cfcli}
 
-Puoi
-gestire il tuo codice su un client locale e utilizzare l'interfaccia riga di comando
-Cloud Foundry per caricare manualmente la tua applicazione su {{site.data.keyword.Bluemix_notm}}. Se modifichi il codice, per eseguire il codice aggiornato è necessario che riesegua il push dell'applicazione su
-{{site.data.keyword.Bluemix_notm}}.
+You can manage your code on local client and use Cloud Foundry command line interface to upload your application to {{site.data.keyword.Bluemix_notm}} manually. If you change the code, you must push your application to {{site.data.keyword.Bluemix_notm}} again to run the updated code.
 
-Per effettuare la migrazione della tua applicazione, attieniti alla seguente procedura:
+Take the following steps to migrate your application:
 
 <ol>
-<li>Installa l'interfaccia riga di comando Cloud Foundry. Assicurati
-di usare la versione più recente dell'interfaccia riga di comando cf.
+<li>Install the Cloud Foundry command line interface. Ensure that you use the latest version of the cf command line interface.
 <ol>
-<li>Scarica il programma di installazione per il tuo sistema
-operativo.</li>
-<li>Segui la procedura guidata di installazione della riga di comando.</li>
-<li>Utilizza il seguente comando per verificare la versione
-dell'interfaccia riga di comando cf:
+<li>Download the installation program for your operating system.</li>
+<li>Follow the tool wizard to install the command line.</li>
+<li>Use the following command to verify the version of the cf command line interface:
 <pre>cf -v</pre></li>
 </ol>
 </li>
 
-<li>Facoltativo: se desideri specificare e salvare i dettagli di distribuzione prima di distribuire un'applicazione a {{site.data.keyword.Bluemix_notm}}, puoi aggiungere il manifest dell'applicazione effettuando le seguenti operazioni:
+<li>Optional: If you want to specify and save the deployment details before you push an application to {{site.data.keyword.Bluemix_notm}}, you can add the application manifest by taking the following steps:
 <ol>
-<li>Passa alla directory di lavoro della tua applicazione e crea un file denominato manifest.yml, che è il nome predefinito.</li>
-<li>Specifica i dettagli di distribuzione nel file manifest. Il seguente esempio mostra un file manifest per un'applicazione Java™.
+<li>Go to the working directory of your application and create a file entitled manifest.yml, which is the default name.</li>
+<li>Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ application.
 <pre class="pre codeblock"><code>applications:
 - disk_quota: 1024M
   host: myjavatest
@@ -211,64 +133,40 @@ dell'interfaccia riga di comando cf:
   domain: mybluemix.net
   instances: 1
   memory: 512M</code></pre>
-<p>Per ulteriori informazioni sulle
-opzioni supportate utilizzabili in questo file, vedi il [Manifesto dell'applicazione](/docs/manageapps/depapps.html#appmanifest).
+<p>For more information about the supported options that you can use in this file, see [Application manifest](/docs/manageapps/depapps.html#appmanifest).
 
 </p></li></ol>
 </li>
 
-<li>Esegui il push della tua applicazione. Puoi caricare la tua applicazione
-attraverso il comando cf push.
+<li>Push your application. You can upload your application by using the cf push command.
 <ol>
-<li>Connettiti ed accedi a {{site.data.keyword.Bluemix_notm}} eseguendo
-il seguente comando. Quando richiesto, seleziona la tua organizzazione
-e il tuo spazio.
+<li>Connect and log in to {{site.data.keyword.Bluemix_notm}} by running the following command. Select your organization and space when prompted.
 <pre>cf login -a https://api.ng.bluemix.net</pre></li>
-<li>Dalla directory della tua applicazione, immetti il comando cf push
-seguito dal nome dell'applicazione. Tale nome deve essere univoco
-nell'ambiente {{site.data.keyword.Bluemix_notm}}.
-<pre>cf push nomeapplicazione</pre></li>
-<li>Facoltativo: se utilizzi un pacchetto di build esterno, devi utilizzare l'opzione -b con il comando cf push. Per esempio:
-<pre>cf push nomeapplicazione -b buildpack_URL</pre>
-<p>Per ulteriori informazioni, vedi
-Utilizzo di pacchetti di build della community.</p>
+<li>From your application directory, enter the cf push command with the application name. The application name must be unique in the {{site.data.keyword.Bluemix_notm}} environment.
+<pre>cf push appname</pre></li>
+<li>Optional: If you use an external buildpack, you must use the -b option with the cf push command. For example:
+<pre>cf push appname -b buildpack_URL</pre>
+<p>See Using community buildpacks for details.</p>
 </li></ol>
 </li>
 
-<li>Facoltativo: se modifichi la tua applicazione, devi caricare queste modifiche immettendo di nuovo il comando cf push. L'Interfaccia
-riga di comando cf utilizza le tue opzioni precedenti e le tue risposte
-ai prompt per aggiornare con i nuovi bit di codice le eventuali istanze dell'applicazione
-in esecuzione.</li>
+<li>Optional: If you change your application, you must upload those changes by entering the cf push command again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your application with the new bits of code.</li>
 </ol>
 
-**Note:**
+**Notes:**
 
-* Quando utilizzi il comando cf push, l'interfaccia riga di comando cf copia tutti i file e tutte le directory dalla tua directory corrente a {{site.data.keyword.Bluemix_notm}}. Assicurati di avere solo i file richiesti nella directory della tua applicazione.
-* Accertati che la memoria della tua organizzazione sia sufficiente per tutte le istanze
-della tua applicazione. Per visualizzare la quota di memoria per la tua organizzazione, utilizza cf org org_name.
-* Per ulteriori informazioni su cf push, vedi [comandi cf](/docs/cli/reference/cfcommands/index.html).
+* When you use the cf push command, the cf command line interface copies all of the files and directories from your current directory to {{site.data.keyword.Bluemix_notm}}. Ensure that you have only the required files in your application directory.
+* Ensure that your organization has enough memory for all instances of your application. To view the memory quota for your org, use cf org org_name.
+* For more information about cf push, see [cf commands](/docs/cli/reference/cfcommands/index.html).
 
-##Migrazione dei tuoi dati e utilizzo dei servizi
+##Migrating your data and using services
 {: #ht_service}
 
-Una volta
-caricata la tua applicazione su {{site.data.keyword.Bluemix_notm}},
-seleziona il servizio a cui è collegata l'applicazione dal Catalogo {{site.data.keyword.Bluemix_notm}},
-crea un'istanza di servizio, esegui il bind dell'istanza all'applicazione
-e riavvia l'applicazione.
+After you upload your application to {{site.data.keyword.Bluemix_notm}}, select the service that your application is connected to from the {{site.data.keyword.Bluemix_notm}} Catalog, create a service instance, bind the instance to your application, and then restart your application.
 
-La variabile di ambiente VCAP_SERVICES della tua applicazione è un
-oggetto JSON che contiene informazioni su come interagire con un'istanza di servizio
-in {{site.data.keyword.Bluemix_notm}}. Tali informazioni includono il nome dell'istanza di servizio, le credenziali e
-l'URL di connessione all'istanza di servizio.
+The VCAP_SERVICES environment variable of your application is a JSON object that contains information about how to interact with a service instance in {{site.data.keyword.Bluemix_notm}}. The information includes the service instance name, credentials, and the connection URL to the service instance.
 
-Per eseguire il codice su {{site.data.keyword.Bluemix_notm}},
-devi aggiungere la logica del codice per l'analisi della variabile VCAP_SERVICES,
-al fine di ottenere informazioni sulla connessione al servizio. Modifica la tua applicazione
-per acquisire la porta e l'host dell'istanza di servizio assegnati dinamicamente
-attraverso le variabili di ambiente. Il seguente esempio mostra come
-acquisire le credenziali di un'istanza di servizio Postgre SQL all'interno di un'applicazione
-Ruby:
+To run your code in {{site.data.keyword.Bluemix_notm}}, you must add the code logic for parsing the VCAP_SERVICES variable to obtain information about service connection. Modify your application to get the dynamically assigned host and port of the service instance through the environment variables. The following example shows how to get the credentials of a Postgre SQL service instance in a Ruby application:
 
 ```
 services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
@@ -284,22 +182,18 @@ services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
 ```
 {:codeblock}
 
-Per accertarti che la tua applicazione possa essere eseguita in un ambiente locale
-una volta modificata l'applicazione per {{site.data.keyword.Bluemix_notm}},
-verifica che sia presente la variabile d'ambiente VCAP_SERVICES,
-che viene impostata per tutte le applicazioni {{site.data.keyword.Bluemix_notm}} Cloud
-Foundry.
+To ensure that your application can run in a local environment after you modify the application for {{site.data.keyword.Bluemix_notm}}, check for the presence of the VCAP_SERVICES environment variable, which is set for all {{site.data.keyword.Bluemix_notm}} Cloud Foundry applications.
 
 
-# Link correlati
+# Related Links
 {: #rellinks}
 
-## Link correlati
+## Related Links
 {: #general}
 
 * [IBM Containers](/docs/containers/container_index.html)
-* [Virtual Machine](/docs/virtualmachines/vm_index.html)
-* [Introduzione a Delivery Pipeline](/docs/services/DeliveryPipeline/index.html)
-* [Distribuzione di applicazioni con IBM Eclipse Tools for Bluemix](/docs/manageapps/eclipsetools/eclipsetools.html)
-* [The twelve-factor app ![Icona link esterno](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}
-* [Reaching enterprise backend with Bluemix Secure Gateway via console ![Icona link esterno](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}
+* [Virtual Machines](/docs/virtualmachines/vm_index.html)
+* [Getting started with Delivery Pipeline](/docs/services/DeliveryPipeline/index.html)
+* [Deploying apps with IBM Eclipse Tools for Bluemix](/docs/manageapps/eclipsetools/eclipsetools.html)
+* [The twelve-factor app ![External link icon](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}
+* [Reaching enterprise backend with Bluemix Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}

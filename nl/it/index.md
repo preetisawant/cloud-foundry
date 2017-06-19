@@ -13,75 +13,53 @@ lastupdated: "2017-05-10"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Creazione di applicazioni Cloud Foundry
+# Creating Cloud Foundry apps
 
-Con {{site.data.keyword.Bluemix}}, puoi
-creare la tua applicazione nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}. Dopo averla creata, puoi decidere di continuare a usare l'interfaccia utente, l'interfaccia riga di comando cf o {{site.data.keyword.jazzhub_title}} per
-sviluppare, tracciare, pianificare e distribuire la tua applicazione.
+With {{site.data.keyword.Bluemix}}, you can create your app in the {{site.data.keyword.Bluemix_notm}} user interface. After it's created, you can decide to continue to use the UI, use the cf command line interface, or use {{site.data.keyword.jazzhub_title}} to develop, track, plan, and deploy your app.
 {:shortdesc}
 
-Quando crei un'applicazione in {{site.data.keyword.Bluemix_notm}},
-inizi con uno starter. Uno *starter* è un template che include
-dei servizi predefiniti e del codice applicativo configurato con uno
-specifico pacchetto di build. Ci sono due tipi di starter: contenitori tipo e runtime.
+When you create an app in {{site.data.keyword.Bluemix_notm}}, you begin with a starter. A *starter* is a template that includes predefined services and application code that is configured with a particular buildpack. There are two types of starters: boilerplates and runtimes.
 
-Un *contenitore tipo* è un contenitore per un'applicazione e il
-suo ambiente di runtime associato e i servizi predefiniti per uno specifico dominio. Ad esempio,
-il contenitore tipo Mobile Cloud include un runtime Node.js, oltre che i servizi
-Mobile Data, Mobile Application Security e Push. Include anche un SDK e delle applicazioni di esempio per iniziare a sviluppare applicazioni
-mobili che accedono a tali servizi.
+A *boilerplate* is a container for an application and its associated runtime environment and predefined services for a particular domain. For example, the Mobile Cloud boilerplate includes a Node.js runtime, as well as the Mobile Data, Mobile Application Security, and Push services. It also includes an SDK and sample applications to get started developing mobile apps that access these services.
 
-Un *runtime* è la serie di risorse utilizzata per eseguire un'applicazione. {{site.data.keyword.Bluemix_notm}} fornisce ambienti di runtime come contenitori per diversi tipi di applicazioni. Gli ambienti di runtime sono integrati come pacchetti di build in {{site.data.keyword.Bluemix_notm}},
-sono configurati automaticamente per l'utilizzo e richiedono una manutenzione minima, se non nulla.
+A *runtime* is the set of resources that is used to run an application. {{site.data.keyword.Bluemix_notm}} provides runtime environments as containers for different types of applications. The runtime environments are integrated as buildpacks into {{site.data.keyword.Bluemix_notm}}, are automatically configured for use, and require little to no maintenance.
 
-Per iniziare a creare la tua applicazione, attieniti alla seguente procedura:
-  1. Vai al Dashboard nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}.
-  2. Fai clic su **CREA UN'APPLICAZIONE**.
-  3. Fai clic su **WEB** e attieniti all'esperienza guidata
-per scegliere uno starter, specificare un nome e selezionare come desideri eseguire
-la codifica.
-  4. Dopo che hai terminato l'esperienza guidata, fai clic su **VISUALIZZA PANORAMICA DELL'APPLICAZIONE**. La Panoramica per la tua applicazione è visualizzata nel Dashboard.
-  5. Puoi aggiungere un servizio alla tua applicazione facendo clic su **AGGIUNGI UN SERVIZIO O UNA API** nella Panoramica dell'applicazione nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}. Cerca e seleziona i servizi dal catalogo o scorri alla fine del catalogo e fai clic su Servizi sperimentali **{{site.data.keyword.Bluemix_notm}}** per visualizzare i servizi sperimentali. In alternativa, puoi utilizzare l'interfaccia riga di comando cf. Vedi Opzioni per gestire le applicazioni.
-  6. Nella pagina Panoramica dell'applicazione, scorri alla scheda "Fornitura continua" e fai clic su **Abilita**. L'origine della tua applicazione verrà salvata in un repository in Repository Git e tracciamento del problema, che è ospitato su Bluemix. Viene creata inoltre una toolchain aperta che utilizza quel repository e una delivery pipeline per sviluppare e distribuire la tua applicazione. Per ulteriori informazioni sul servizio Continuous Delivery, vedi <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introduzione a Continuous Delivery</a>.
+To get started creating your application, take the following steps:
+  1. Go to the Dashboard in the {{site.data.keyword.Bluemix_notm}} user interface.
+  2. Click **CREATE AN APP**.
+  3. Click **WEB** and follow the guided experience to choose a starter, specify a name, and select how you want to code.
+  4. When you are finished with the guided experience, click **VIEW APP OVERVIEW**. The Overview for your app is displayed on the Dashboard.
+  5. You can add a service to your app by clicking **ADD A SERVICE OR API** on the app Overview in the {{site.data.keyword.Bluemix_notm}} user interface. Browse and select services from the catalog, or, scroll to the end of the catalog and click **{{site.data.keyword.Bluemix_notm}} Experimental Services** to browse experimental services. Or, you can use the cf command line interface. See Options for working with apps.
+  6. On the app's Overview page, scroll to the "Continuous delivery" card and click **Enable**. Your app's source will be saved in a repo in Git Repos and Issue Tracking, which is hosted on Bluemix. An open toolchain that uses that repo and a delivery pipeline to develop and deploy your app is also created. For more information about the Continuous Delivery service, see <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.
 
-**Nota:** se un servizio che associ mediante bind a un'applicazione si arresta in modo anomalo, l'applicazione potrebbe interrompere l'esecuzione o provocare errori. {{site.data.keyword.Bluemix_notm}} non
-riavvia automaticamente l'applicazione per eseguire un ripristino da tali problemi. Valuta una codifica della tua applicazione per identificare e ripristinare interruzioni, eccezioni ed errori
-di connessione. Per ulteriori informazioni, consulta l'argomento di risoluzione dei problemi Le applicazioni non si riavviano automaticamente.
+**Note:** If a service that you bind to an app crashes, the app might stop running or have errors. {{site.data.keyword.Bluemix_notm}} does not automatically restart the app to recover from these problems. Consider coding your app to identify and recover from outages, exceptions, and connection failures. See the Apps are not automatically restarted troubleshooting topic for more information.
 
-## Opzioni per gestire le applicazioni
+## Options for working with apps
 
-Una volta creata la tua applicazione, disponi di alcune opzioni per continuare ad aggiungere
-servizi ad essa, oltre che per crearla e distribuirla:
+After your app is created, you have a few options for continuing to add services to your app and to build and deploy your app:
 
-<dl><dt>Interfaccia riga di comando cf</dt>
-<dd>Usa l'interfaccia riga di comando cf per aggiornare la tua applicazione, creare un'istanza del servizio o eseguire il bind del servizio alla tua applicazione. Puoi anche usare l'interfaccia riga di comando cloud-cli per creare, aggiornare ed eliminare offerte di servizi.</dd>
-<dt>Interfaccia utente {{site.data.keyword.Bluemix_notm}}</dt>
-<dd>Usa l'interfaccia utente {{site.data.keyword.Bluemix_notm}} per
-creare la tua applicazione selezionando, tra l'altro, quali servizi e runtime combinare per risolvere i
-tuoi problemi di business.</dd>
+<dl><dt>cf command line interface</dt>
+<dd>Use the cf command line interface to update your application, create a service instance, or bind the service to your application. You can also use the cloud-cli command line interface to create, update, and delete service offerings.</dd>
+<dt>{{site.data.keyword.Bluemix_notm}} user interface</dt>
+<dd>Use the {{site.data.keyword.Bluemix_notm}} user interface to build your application, including picking which services and runtimes to combine to solve your business problem.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Utilizza {{site.data.keyword.contdelivery_short}} per automatizzare le build, i test di unità, le distribuzioni e altro. Modifica e trasmetti il codice tramite la IDE basata sul web avanzato. Crea le toolchain per abilitare integrazioni dello strumento che supportano le attività di sviluppo, distribuzione e funzionamento. Il servizio Continuous Delivery include Delivery Pipeline, Eclipse Orion Web IDE e Git Repos and Issue Tracking. Per ulteriori informazioni, vedi <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introduzione a Continuous Delivery</a>.</dd>
+<dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.
+</dd>
 </dl>
 
-## Suggerimenti
+## Tips
 
-Mentre sviluppi le tue applicazioni web, avvaliti dei seguenti suggerimenti:
+Use the following tips while developing your web apps:
 
-<dl><dt>Persistenza</dt>
-<dd>Non specificare archiviazioni locali per le tue applicazioni. Ogni istanza
-della tua applicazione, anche se è in esecuzione solo una singola istanza,
-può essere riavviata o spostata su una macchina virtuale differente in
-qualsiasi momento, di norma per il bilanciamento del carico. Tutto quanto è memorizzato
-in un'archiviazione locale viene cancellato quando l'applicazione viene spostata
-o eliminata. Per la persistenza, usa uno dei servizi di archivio dati {{site.data.keyword.Bluemix_notm}}.</dd>
-<dt>Limiti delle risorse</dt>
-<dd>Tieni presente i limiti sulle quantità di risorse che un account di prova
-può utilizzare. I limiti sono i seguenti:
+<dl><dt>Persistence</dt>
+<dd>Do not specify any local storage for your applications. Each instance of your application, even if only one instance is running, can be restarted or moved to a different virtual machine at any time, typically for load balancing. Anything stored in local storage is erased when the application is moved or deleted. Use one of the {{site.data.keyword.Bluemix_notm}} data store services for persistence.</dd>
+<dt>Resource limits</dt>
+<dd>Be aware of limits on the quantities of resources that a trial account can use. The limits are as follows:
 <table style="width:100%">
-<caption>Tabella 1. Limiti delle risorse {{site.data.keyword.Bluemix_notm}} per un account di prova</caption>
-  <th>Tipo di risorsa</th>	<th>Quantità limite</th>
-<tr><td>Numero di servizi utilizzati in tutte le applicazioni</td> <td>10</td>
-<tr><td>Memoria utilizzata in tutte le applicazioni</td> <td>	2 G</td>
-<tr><td>Numero di rotte</td> <td>500</td>
+<caption>Table 1. {{site.data.keyword.Bluemix_notm}} resource limits for a trial account</caption>
+  <th>Resource type</th>	<th>Quantity limit</th>
+<tr><td>Number of services that are used across all apps</td> <td>10</td>
+<tr><td>Memory used across all apps</td> <td>	2 G</td>
+<tr><td>Number of routes</td> <td>500</td>
 </table>
 </dd></dl>

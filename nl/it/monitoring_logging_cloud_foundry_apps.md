@@ -10,17 +10,17 @@ lastupdated: "2016-09-06"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Monitoraggio e registrazione di applicazioni Cloud Foundry
+# Monitoring and Logging Cloud Foundry apps
 {: #monitoring_logging_cloud_foundry_apps}
 
-{{site.data.keyword.Bluemix_notm}} è dotato di un meccanismo di registrazione integrato per produrre file di log per le applicazioni in esecuzione. Nei log, puoi visualizzare gli errori, le avvertenze e i messaggi informativi che vengono generati per la tua applicazione. Inoltre, puoi configurare la tua applicazione in modo da scrivere i messaggi di log nel file di log. Per ulteriori informazioni sui formati e sulla visualizzazione dei log, vedi [Registrazione per le applicazioni eseguite su Cloud Foundry](/docs/monitor_log/monitoringandlogging.html#logging_for_bluemix_apps).
+{{site.data.keyword.Bluemix_notm}} has a built-in logging mechanism to produce log files for your apps as they are running. In the logs, you can view the errors, warnings, and informational messages that are produced for your app. In addition, you can also configure your app to write log messages to the log file. For more information about log formats and how to view logs, see [Logging for apps running on Cloud Foundry](/docs/monitor_log/monitoringandlogging.html#logging_for_bluemix_apps).
 
-Il monitoraggio ti consente di visualizzare e controllare la distribuzione della tua applicazione. Con il monitoraggio, puoi realizzare le seguenti attività:
+Monitoring your app enables you to see and control your app deployment. With monitoring, you can accomplish the following tasks:
 
-* Raccogliere e monitorare informazioni sulle prestazioni relative a istanze di applicazione e verificare che siano funzionali.
-* Acquisire informazioni approfondite sulle operazioni dell'applicazione, ad esempio, individuare i potenziali colli di bottiglia o se sono necessari degli aggiornamenti.
-* Stimare i costi e l'utilizzo delle risorse.
+* Collect and monitor performance information for app instances, and check whether they are functional.
+* Gain insight on application operations, for example, detect the potential bottlenecks or when upgrades are required.
+* Estimate resource usage and charges.
 
-Per le operazioni stabili delle tue distribuzioni sulla piattaforma {{site.data.keyword.Bluemix_notm}}, desideri rilevare tempestivamente i problemi e determinarne le cause in modo efficiente. Per raggiungere questo obiettivo, tieni a mente la risoluzione dei problemi quando progetti le tue applicazioni e utilizza i servizi o gli strumenti per il monitoraggio e la registrazione quando la tua applicazione viene distribuita a {{site.data.keyword.Bluemix_notm}}.
+For stable operations of your deployments on {{site.data.keyword.Bluemix_notm}} platform, you want to detect problems promptly and determine causes efficiently. To accomplish this objective, keep troubleshooting in mind when you design your apps, and use services or tools for monitoring and logging when your app is deployed to {{site.data.keyword.Bluemix_notm}}.
 
-Per ulteriori informazioni sul monitoraggio e sulla registrazione delle applicazioni Cloud Foundry, vedi [Monitoraggio e registrazione](/docs/monitor_log/monitoringandlogging.html).
+For more information on Monitoring and Logging Cloud Foundry Applications, see [Monitoring and Logging](/docs/monitor_log/monitoringandlogging.html).

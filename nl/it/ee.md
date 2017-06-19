@@ -15,95 +15,58 @@ lastupdated: "2017-05-10"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Scenario: sviluppo end-to-end
+# Scenario: End-to-end development
 {: #ee}
 
 
-Puoi utilizzare l'interfaccia utente, la piattaforma e una selezione di strumenti {{site.data.keyword.Bluemix}}
-per la creazione, esecuzione e
-distribuzione delle tue applicazioni. Per iniziare, segui questo scenario di sviluppo
-end-to-end.
+You can use the {{site.data.keyword.Bluemix}} user interface, platform, and a selection of tools when you build, run, and deploy your apps. Follow this end-to-end development scenario to get started.
 {:shortdesc}
 
-## Registrazione
+## Signing up
 {: #ee_start}
 
-Prima di iniziare, esegui la registrazione per un ID IBM da [https://console.ng.bluemix.net/ ![Icona link esterno](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Successivamente, potrai accedere a {{site.data.keyword.Bluemix_notm}} e
-iniziare il periodo di prova di 30 giorni. {{site.data.keyword.Bluemix_notm}} fornisce
-una franchigia di 2 GB di memoria di runtime e 10 istanze del servizio per la tua prova
-gratuita.
+Before you can get started, you sign up for an IBMid from [https://console.ng.bluemix.net/ ![External link icon](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. After that, you log in to {{site.data.keyword.Bluemix_notm}} and start your 30-day free trial. {{site.data.keyword.Bluemix_notm}} provides an allowance of 2 GB runtime memory and 10 service instances for your free trial.
 
 
-## Sviluppo e distribuzione delle tue applicazioni attraverso le toolchain e il servizio {{site.data.keyword.contdelivery_short}}
+## Developing and deploying your apps by using toolchains and the {{site.data.keyword.contdelivery_short}} service
 {: #ee_cd}
 
-<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Aggiungi una toolchain</a> che include il servizio {{site.data.keyword.contdelivery_full}} nella tua applicazione. Quindi, <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">utilizza la toolchain</a> per sviluppare e distribuire la tua applicazione.
+<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Add a toolchain</a> that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">use the toolchain</a> to develop and deploy your app.
 
 
-## Creazione della tua applicazione web utilizzando l'interfaccia utente {{site.data.keyword.Bluemix_notm}}
+## Creating your web app by using {{site.data.keyword.Bluemix_notm}} user interface
 {: #ee_appui}
 
-Dopo la registrazione, inizia a creare la tua prima applicazione
-utilizzando l'interfaccia utente {{site.data.keyword.Bluemix_notm}}.
+After signing up, you start to build your first app by using {{site.data.keyword.Bluemix_notm}} user interface.
 
-In {{site.data.keyword.Bluemix_notm}},
-le applicazioni sono associate a organizzazioni e spazi. Un'organizzazione
-appartiene ed è utilizzata da più collaboratori. Inizialmente, ottieni
-un'organizzazione predefinita che prende il nome dal tuo nome utente e di cui
-sei l'unico collaboratore. All'interno di questa organizzazione ottieni anche uno spazio. Lo spazio è un ambiente per l'esecuzione delle tue applicazioni; ad esempio, puoi
-avere uno spazio di sviluppo come un ambiente di sviluppo, uno spazio di test come un ambiente di test
-e uno spazio di produzione come un ambiente di produzione. Inoltre, ciascun
-ambiente appartiene a una regione. Con {{site.data.keyword.Bluemix_notm}},
-puoi distribuire le applicazioni a una specifica regione geografica
-per una bassa latenza di rete, riservatezza dei dati e maggiore disponibilità. Per i dettagli, vedi Regioni.
+In {{site.data.keyword.Bluemix_notm}}, apps are associated with organizations and spaces. An organization is owned and used by multiple collaborators. Initially, you get a default organization that is named after your user name and you are the only collaborator. You also get a space within this organization. The space is an environment to run your apps; for example, you can have a dev space as a development environment, a test space as a test environment, and a production space as a production environment. Furthermore, each of the environment belongs to a region. With {{site.data.keyword.Bluemix_notm}}, you can deploy your applications to a specific geographical region for lower network latency, data privacy, and better availability. See Regions for details.
 
-Per questo scenario, vuoi distribuire un'applicazione Web che utilizza Node.js. Supponiamo che ti trovi negli Stati Uniti così come la maggior parte degli utenti della
-tua applicazione. Decidi di creare ed eseguire la tua applicazione vicino alla base
-dei tuoi utenti, in modo da poter usufruire di una più bassa latenza di rete. Dopo che ti sei collegato a {{site.data.keyword.Bluemix_notm}}, fai clic sul link delle preferenze dell'account utente e seleziona la regione **Stati Uniti Sud**. Puoi quindi attenerti alla seguente procedura per creare un'applicazione:
+For this scenario, you want to develop a web app using Node.js. Assume that you are in the US and most of your app users are also in the US. You decide to build and run your app close to your user base, so that you can benefit from lower network latency. After logging in to {{site.data.keyword.Bluemix_notm}}, click the user account preferences link, then select the **US South** region. Then, you can take the following steps to create an app:
 
-  1. Vai a **Catalogo**
-  2. Seleziona **Runtime Cloud Foundry**.
-  3. Seleziona **SDK for Node.js**.
-  4. Immetti un nome univoco per la tua applicazione, ad esempio TestNode, e fai clic su **Crea**. Il nome dell'applicazione deve essere univoco
-nell'intero ambiente {{site.data.keyword.Bluemix_notm}}.
-  5. Fai clic su **Crea**.
+  1. Go to **Catalog**
+  2. Select **Cloud Foundry Runtimes**.
+  3. Select **SDK for Node.js**.
+  4. Type a unique name for your app, for example, TestNode, and click **Create**. The app name must be unique in the whole {{site.data.keyword.Bluemix_notm}} environment.
+  5. Click **Create**.
 
-Puoi ora visualizzare le istruzioni **Inizia a scrivere codice**. Puoi seguire le istruzioni per scaricare, modificare e distribuire il codice starter di TestNode.
+Now you can see the **Start coding** instructions. You can follow the instructions to download the starter code of TestNode, modify, and deploy it.
 
-All'applicazione viene assegnata 1 istanza e 512 MB di quota di memoria
-per impostazione predefinita. Puoi aumentare la memoria o aggiungere più istanze per
-garantire la disponibilità elevata della tua applicazione; ad esempio 3 istanze con 1 GB
-di memoria per ciascuna istanza. Fai clic su **Visualizza panoramica dell'applicazione** per
-specificare le istanze della tua applicazione e la quota di memoria. Ad esempio, immetti 3 per
-istanze e 1 GB per quota di memoria e fai clic su **Salva**. Puoi inoltre visualizzare file, log e variabili di ambiente per la risoluzione
-dei problemi.
+The app is assigned with 1 instance and 512 MB memory quota by default. You can increase the memory, or add more instances to get high availability of your app, for example, 3 instances with 1 GB memory per instance. Click **View app overview** to specify your app instances and memory quota. For example, type 3 for instances and 1 GB for memory quota, and click **Save**. You can also see the files, logs, and environment variables to troubleshoot your problems.
 
-## Esecuzione del bind di un servizio utilizzando l'interfaccia utente {{site.data.keyword.Bluemix_notm}}
+## Binding a service by using {{site.data.keyword.Bluemix_notm}} user interface
 {: #ee_bindui}
 
-Dopo aver creato la tua applicazione, vuoi utilizzarla per connetterti a un
-database. In questo modo, puoi memorizzare ed esaminare i dati di applicazione
-utilizzando il linguaggio di query database. In questo scenario, decidi di
-utilizzare il servizio {{site.data.keyword.cloudant}}
-fornito da {{site.data.keyword.Bluemix_notm}}.
+After creating your app, you want to connect to a database with your app. In this way, you can store and observe the app data by using database query language. In this scenario, you decide to use the {{site.data.keyword.cloudant}} service that is provided by {{site.data.keyword.Bluemix_notm}}.
 
-Per utilizzare i servizi all'interno dell'applicazione, devi creare un'istanza
-del servizio ed eseguire il bind della tua applicazione all'istanza del servizio completando
-la seguente procedura:
-  1. Fai clic su **Aggiungi un servizio o una API** nella pagina Panoramica dell'applicazione.
-  2. Nel catalogo {{site.data.keyword.Bluemix_notm}}, seleziona il servizio {{site.data.keyword.cloudant}}.
-  3. Immetti un nome univoco per l'istanza del servizio o utilizza il
-nome predefinito generato da {{site.data.keyword.Bluemix_notm}},
-quindi fai clic su **Crea**.
-  4. Viene visualizzata la finestra Prepara di nuovo applicazione. Fai clic su **Riprepara** per ripreparare la tua applicazione.
+To use services within the application, you need to create a service instance and bind your application to the service instance by taking the following steps:
+  1. Click **Add a service or API** on the app Overview page.
+  2. In the {{site.data.keyword.Bluemix_notm}} catalog, select the {{site.data.keyword.cloudant}} service.
+  3. Type a unique name for the service instance, or use the default name that is generated by {{site.data.keyword.Bluemix_notm}}, and click **Create**.
+  4. The Restage Application window is displayed. Click **Restage** to restage your app.
 
-La tua applicazione è ora associata al servizio {{site.data.keyword.cloudant}}. Puoi trovare tutti i dati necessari perché l'applicazione comunichi con l'istanza del servizio nella variabile di ambiente VCAP_SERVICES. Ad esempio, poiché {{site.data.keyword.Bluemix_notm}}
-ospita diverse applicazioni sulla stessa macchina virtuale, le applicazioni
-non possono utilizzare lo stesso numero di porta HTTP per ricevere le richieste
-in entrata. Per evitare conflitti, a ciascuna applicazione viene dato un
-numero di porta univoco. Questo numero di porta è disponibile nella variabile di ambiente VCAP_APP_PORT.
+Now your app is bound to the {{site.data.keyword.cloudant}} service. You can find all the required data for the application to communicate with the service instance in the VCAP_SERVICES environment variable. For example, because {{site.data.keyword.Bluemix_notm}} hosts several applications on the same virtual machine, applications cannot use the same HTTP port number to receive incoming requests. To avoid conflicts, each application is given a unique port number. This port number is available under the VCAP_APP_PORT variable.
 
-Per ulteriori informazioni, clic su**Variabili di ambiente** nella pagina Panoramica dell'applicazione per visualizzare l'elenco completo di VCAP_SERVICES.
+Click **Environment Variables** on the app Overview page to see the whole list of VCAP_SERVICES for more information:
 ```
 {
    "cloudantNoSQLDB": [
@@ -123,127 +86,97 @@ Per ulteriori informazioni, clic su**Variabili di ambiente** nella pagina Panora
 }
 ```
 
-**Nota:** questa variabile di ambiente è la serializzazione di un oggetto JSON con una singola voce per ogni istanza del servizio a cui è associata l'applicazione. La quantità e il tipo di dati forniti da ciascuna istanza del servizio
-sono specifici per il servizio. Se l'applicazione non utilizza alcun servizio, VCAP_SERVICES è un oggetto JSON vuoto. Questa variabile di ambiente viene utilizzata solo
-quando aggiungi un servizio alla tua applicazione.
+**Note:** This environment variable is the serialization of a JSON object with one entry for each service instance that the app is bound to. The amount and type of data that each service instance provides are service-specific. When your app does not use any service, VCAP_SERVICES is an empty JSON object. This environment variable is used only when you add a service to your app.
 
-## Creazione della tua applicazione utilizzando la CLI cf
+## Building your app by using cf cli
 {: #ee_cf}
 
-{{site.data.keyword.Bluemix_notm}} fornisce
-diversi strumenti che ti consentono di iniziare a scrivere codice con la tua applicazione, ad esempio l'interfaccia riga di comando cf
-e gli strumenti Eclipse. Puoi scegliere l'interfaccia riga di comando cf per iniziare a scrivere codice con la tua applicazione TestNode.
+{{site.data.keyword.Bluemix_notm}} provides several tools for you to start coding with your app, for example cf command line interface and Eclipse tools. You can choose the cf command line interface to start coding with your app TestNode.
 
-  1. Innanzitutto, scarica e sviluppa il codice della tua applicazione.
+  1. First, download and develop the code of your app.
 
-    1. Vai alla pagina Inizia a scrivere codice della tua applicazione. Fai clic sul pulsante **Scarica codice di starter**
-per scaricare il codice della tua applicazione.
-    2. Estrai il file scaricato in una directory, ad esempio `C:\test`.
-    3. Sviluppa il codice con il tuo ambiente di sviluppo
-integrato locale.
+    1. Go to the Start Coding page of your app. Click the **Download Starter Code** button to download your app code.
+    2. Extract the downloaded file to a directory, for example `C:\test`.
+    3. Develop the code with your local integrated development environment.
 
-  2. Installa l'interfaccia riga di comando **cf**
-(CLI).
+  2. Install the **cf** command line interface (CLI).
 
-    1. Scarica il programma di installazione dello strumento riga di comando cf per il tuo sistema operativo.
-    2. Segui la procedura guidata dello strumento per completare l'installazione.
-    3. Utilizza il comando **cf -v** per verificare la versione dell'interfaccia riga di comando cf. Ad
-esempio:
+    1. Download the cf command line tool installation program for your operating system.
+    2. Follow the tool wizard to complete the installation.
+    3. Use the **cf -v** command to verify the version of the cf command line interface. For example:
 
 	```
 	cf -v
 	```
 
-    **Requisito:** assicurati di usare sempre la versione più recente dello strumento riga di comando cf.
-  3. Dopo che hai installato l'interfaccia riga di comando **cf**,
-devi specificare qual è la regione {{site.data.keyword.Bluemix_notm}} che
-desideri gestire utilizzando il comando **cf api**. L'interfaccia riga di comando **cf** utilizza *https://api.Bluemix_URL*, dove *Bluemix_URL* è l'URL della regione. L'URL della regione Stati Uniti sud è stage1.ng.bluemix.net. Immetti il seguente comando per
-stabilire una connessione a {{site.data.keyword.Bluemix_notm}}:
+    **Requirement:** Make sure that you always use the latest version of the cf command line tool.
+  3. After you install the **cf** command line interface, you must specify which {{site.data.keyword.Bluemix_notm}} region you want to work with by using the **cf api** command. The **cf** command line interface uses *https://api.Bluemix_URL*, where *Bluemix_URL* is the region's URL. The URL of the US South region is stage1.ng.bluemix.net. Enter the following command to connect to {{site.data.keyword.Bluemix_notm}}:
 
   ```
   cf api https://api.ng.bluemix.net
    ```
 
-  Per ulteriori informazioni sulla connessione ad altre regioni {{site.data.keyword.Bluemix_notm}}, vedi Regioni {{site.data.keyword.Bluemix_notm}}. Dopo che hai specificato la regione {{site.data.keyword.Bluemix_notm}},
-le informazioni sull'ubicazione da te specificate vengono salvate.
+  For more information about connecting to other {{site.data.keyword.Bluemix_notm}} regions, see {{site.data.keyword.Bluemix_notm}} regions. After you specify the {{site.data.keyword.Bluemix_notm}} region, the location information that you specified is saved.
 
-  4. Puoi quindi accedere a {{site.data.keyword.Bluemix_notm}} utilizzando il comando cf login.
+  4. Next, you can log in to {{site.data.keyword.Bluemix_notm}} by using the cf login command.
 
   ```
   cf login -u your_user_ID -p ***** -o your_org_name -s your_space_name
   ```
 
-  5. Dopo che hai eseguito l'accesso a {{site.data.keyword.Bluemix_notm}},
-sei pronto a ridistribuire l'applicazione a {{site.data.keyword.Bluemix_notm}}. Dalla directory dell'applicazione `C:\test`, immetti il seguente
-comando:
+  5. After you are logged in to {{site.data.keyword.Bluemix_notm}}, you are ready to deploy your app back to {{site.data.keyword.Bluemix_notm}}. From your app directory `C:\test`, enter the following command:
 
   ```
   cf push TestNode
   ```
 
-  Per ulteriori informazioni sul comando **cf push**, vedi Caricamento della tua applicazione.
+  For more information about the **cf push** command, see Uploading your app.
 
-  6. Puoi ora accedere all'applicazione immettendo il seguente URL
-in un browser:
+  6. Now, you can access the app by entering the following app URL in a browser:
   ```
   http://TestNode.mybluemix.net
   ```
 
-Per creare la tua applicazione puoi scegliere anche altri strumenti, ad esempio
-gli strumenti Eclipse. Per ulteriori informazioni, consulta la pagina Inizia a scrivere codice della tua applicazione nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}.
+You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Start Coding page of your app on {{site.data.keyword.Bluemix_notm}} user interface.
 
-## Esecuzione del bind di un servizio utilizzando la CLI cf
+## Binding a service by using cf cli
 {: #ee_cfbind}
 
-Con {{site.data.keyword.Bluemix_notm}},
-puoi aggiungere un servizio utilizzando l'interfaccia utente Bluemix, come descritto
-in precedenza in questo scenario. Tuttavia, puoi anche eseguire il bind di un servizio utilizzando l'interfaccia riga di comando **cf**. Supponiamo che tu voglia aggiungere il servizio {{site.data.keyword.cloudant}} alla tua applicazione TestNode utilizzando l'interfaccia riga di comando cf.
+With {{site.data.keyword.Bluemix_notm}}, you can add a service by using the Bluemix user interface, as described earlier in this scenario. But you can also bind a service by using the **cf** command line interface. Assume that you want to add the {{site.data.keyword.cloudant}} service to your app TestNode by using cf command line interface.
 
-Per utilizzare il servizio {{site.data.keyword.cloudant}}
-all'interno dell'applicazione, devi creare un'istanza del servizio Cloudant, eseguire il bind
-della tua applicazione all'istanza del servizio e farne quindi uso. La stessa procedura si applica a tutti gli altri servizi.
+To use the {{site.data.keyword.cloudant}} service within your app, you need to create a Cloudant service instance, bind your app to the service instance, and then use the service instance. The same procedure applies to all the other services.
 
-  1. Crea un'istanza del servizio Cloudant NoSQL DB.
+  1. Create a Cloudant NoSQL DB service instance.
 
-  Usa il comando cf create-service per creare una nuova istanza di un servizio. Ad
-esempio:
+  Use the cf create-service command to create a new instance of a service. For example:
 
   ```
   cf create-service cloudantNoSQLDB Shared cloudant100
   ```
 
-  Puoi anche usare il comando cf services per visualizzare l'elenco di istanze del servizio da te create.
+  You can also use the cf services command to see the list of service instances that you created.
 
   ```
   cf services
   ```
 
-  Dopo essere stata creata, un'istanza del servizio è a disposizione di tutte le
-tue applicazioni che possono eseguirne il bind e farne uso.
+  After a service instance is created, it is available for any of your applications to bind and use.
 
-  2. Esegui il bind dell'istanza del servizio alla tua applicazione.
+  2. Bind the service instance to your app.
 
-  Per utilizzare un'istanza del servizio, devi eseguirne il bind alla
-tua applicazione. Usa il comando cf bind-service per eseguire il bind di un'istanza del servizio a un'applicazione specificando il nome applicazione e l'istanza del servizio da te creata.
+  To use a service instance, you must bind it to your application. Use the cf bind-service command to bind a service instance to an application by specifying the application name and the service instance that you created.
 
   ```
   cf bind-service TestNode cloudant100
   ```
 
-  L'esecuzione del bind di un'istanza del servizio a un'applicazione abilita {{site.data.keyword.Bluemix_notm}} a
-comunicare con il servizio e a specificare che una nuova applicazione comunicherà con tale
-istanza del servizio. Per servizi differenti, {{site.data.keyword.Bluemix_notm}} può
-elaborare l'applicazione e l'istanza del servizio in modo differente, durante il bind. Ad esempio, alcuni servizi possono creare un nuovo
-tenant per ciascuna applicazione che comunica con l'istanza del servizio. Il servizio risponde a
-sua volta a {{site.data.keyword.Bluemix_notm}} con
-delle informazioni, come le credenziali, che devono essere passate all'applicazione
-per le comunicazioni tra l'applicazione e il servizio.
+  Binding a service instance to an application enables {{site.data.keyword.Bluemix_notm}} to communicate to the service, and to specify that a new application will communicate with that service instance. For different services, {{site.data.keyword.Bluemix_notm}} might process the application and the service instance differently during the binding. For example, some services might create a new tenant for each application that communicates to the service instance. The service responds back to {{site.data.keyword.Bluemix_notm}} with information, such as credentials, that must be passed to the application for communication between the application and the service.
 
-  **Nota:** se l'applicazione è in esecuzione quando è associata a un'istanza del servizio, la variabile di ambiente VCAP_SERVICES viene aggiornata solo dopo il riavvio dell'applicazione. Per riavviare la tua applicazione, usa il comando cf restart.
+  **Note:** If the application is running when it is bound to a service instance, the VCAP_SERVICES environment variable is not updated until the application is restarted. To restart your application, use the cf restart command.
 
-  3. Usa l'istanza del servizio.
+  3. Use the service instance.
 
-  In questo scenario, la variabile di ambiente VCAP_SERVICES include delle informazioni, come i seguenti elementi, che un'applicazione può utilizzare per stabilire una connessione a questa istanza di {{site.data.keyword.cloudant}}:
+  In this scenario, the VCAP_SERVICES environment variable includes information, such as the following items, that an application can use to connect to this instance of {{site.data.keyword.cloudant}}:
 
   <dl><dt>username</dt>
   <dd>d72837bb-b341-4038-9c8e-7f7232916197-bluemix</dd>
@@ -252,8 +185,7 @@ per le comunicazioni tra l'applicazione e il servizio.
   <dt>url</dt>
   <dd>https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com</dd></dl>
 
-  Ad esempio, la tua applicazione Node.js potrebbe accedere a queste
-informazioni nel seguente modo:
+  For example, your Node.js app might access this information as follows:
   ```
   if (process.env.VCAP_SERVICES) {
         var env = JSON.parse(process.env.VCAP_SERVICES);
@@ -267,13 +199,11 @@ informazioni nel seguente modo:
         };
   ```
 
-  **Nota:** come mostrato dal codice di esempio, per stabilire una connessione a un'istanza del servizio {{site.data.keyword.cloudant}}, puoi prima controllare se la variabile di ambiente VCAP_SERVICES esiste. Se esiste, l'applicazione può utilizzare le proprietà della variabile cloudant per accedere al database. Tuttavia, se la variabile di ambiente VCAP_SERVICES non è presente, l'istanza del servizio {{site.data.keyword.cloudant}} locale viene utilizza valori predefiniti forniti.
+  **Note:** As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the VCAP_SERVICES environment variable exists first. If it exists, the application can use the cloudant variable's properties to access the database. However, if the VCAP_SERVICES environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the default values that are provided.
 
-  4. Interagisci con l'istanza del servizio.
+  4. Interact with the service instance.
 
-  Puoi interagire con l'istanza del servizio utilizzando le informazioni delle credenziali. Le azioni che puoi eseguire includono la lettura, la scrittura e l'aggiornamento. Il
-seguente esempio illustra come inserire un oggetto JSON nell'istanza del servizio
-{{site.data.keyword.cloudant}}:
+  You can interact with the service instance by using the credential information. The actions that you can take include read, write, and update. The following example demonstrates how to insert a JSON object into the {{site.data.keyword.cloudant}} service instance:
   ```
   // create a new message
 var create_message = function(req, res) {
@@ -296,40 +226,30 @@ var create_message = function(req, res) {
 }
   ```
 
-  5. **Facoltativo:** annulla il bind di un'istanza del servizio oppure eliminala.
+  5. **Optional:** Unbind or delete a service instance.
 
-  È possibile che tu voglia annullare il bind di un'istanza del servizio oppure eliminarla qualora
-non sia più utilizzata o per liberare dello spazio. Per annullare il bind di un'istanza del servizio alla tua applicazione, usa il **comando cf unbind-service**; per eliminare un'istanza del servizio, usa il comando **cf delete-service**.
+  You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the **cf unbind-service command**; to delete a service instance, use the **cf delete-service** command.
 
-  Per ulteriori informazioni sui servizi, vedi Servizi. Per ulteriori informazioni sulle opzioni **cf** che puoi utilizzare per gestire le tue applicazioni nell'ambiente {{site.data.keyword.Bluemix_notm}}, immetti il comando **cf --help** nell'interfaccia riga di comando **cf**.
+  For more information about services, see Services. For more information about the **cf** options that you can use to manage your applications in the {{site.data.keyword.Bluemix_notm}} environment, issue **cf --help** in the **cf** command line interface.
 
-  **Nota:** assicurati di non avere più bisogno di un'istanza del servizio, prima di eliminarla. L'eliminazione di un'istanza del servizio elimina tutti i dati a essa associati. È possibile aggiornare la variabile di ambiente VCAP_SERVICES di un'applicazione associata a un servizio eliminato solo dopo il riavvio dell'applicazione.
+  **Note:** Ensure that you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any application that is bound to a deleted service cannot have its VCAP_SERVICES environment variable updated until the application is restarted.
 
-## Calcolo del costo della tua applicazione
+## Calculating your app cost
 {: #ee_billing}
 
-Il tuo periodo di prova gratuito di 30 giorni è scaduto ma vuoi continuare
-a utilizzare {{site.data.keyword.Bluemix_notm}}. Per continuare a utilizzare {{site.data.keyword.Bluemix_notm}}
-dovrai aggiungere le informazioni della tua carta di credito per un account Pagamento a consumo o per un account Sottoscrizione. Tuttavia, {{site.data.keyword.Bluemix_notm}} continua a offrire una franchigia per la
-maggior parte dei servizi e dei framework di runtime anche se passi a un account a pagamento. {{site.data.keyword.Bluemix_notm}}
-non ti addebita niente a meno che l'utilizzo non superi le franchigie concesse.
+Your 30-day free trial has expired, but you want to continue to use {{site.data.keyword.Bluemix_notm}}. You must add your credit card information for a Pay As You Go account or a Subscription account to continue using {{site.data.keyword.Bluemix_notm}}. However, {{site.data.keyword.Bluemix_notm}} still provides free allowances for most of the runtime frameworks and services even if you convert to a pay account. You are not charged by {{site.data.keyword.Bluemix_notm}} unless the usage is beyond the free allowances.
 
-{{site.data.keyword.Bluemix_notm}} fornisce
-una funzione di stima e un calcolatore per consentirti di visualizzare il costo della tua applicazione. Puoi visualizzare il costo di TestNode nei seguenti modi:
+{{site.data.keyword.Bluemix_notm}} provides an estimator and calculator for you to see your app cost. You can see the cost of TestNode in the following ways:
 
-  * Nel tuo dashboard, fai clic su TestNode. Quindi, nella pagina Panoramica, fai clic su **Stima il costo di questa applicazione** per vedere il prezzo del runtime e del supporto **SDK for Node.js** e il prezzo totale mensile della tua applicazione.
+  * In your dashboard, click TestNode. Then, in the Overview page, click **estimate the cost of this app** to see the price of **SDK for Node.js** runtime and Support, and the total monthly price of your app.
 
-  * In alternativa, nella pagina Listino prezzi, immetti l'utilizzo mensile del runtime e dei servizi della tua applicazione. Ad esempio 3 istanze di **SDK for Node.js** con 1 GB
-di memoria per ciascuna istanza. Il prezzo mensile viene calcolato e visualizzato.
+  * Or, in the Pricing Sheet page, type the monthly usage of the runtime and services of your app. For example, 3 instances of **SDK for Node.js** with 1 GB memory for each instance. The monthly price is calculated and displayed.
 
-Puoi anche calcolare il costo della tua applicazione manualmente sommando i prezzi dei tuoi runtime e servizi
-e sottraendo la franchigia. Per ulteriori informazioni, vedi Calcolo manuale dei tuoi costi.
+You can also calculate your app cost manually by adding up the prices of your runtimes and services and deducting the free allowance. For more information, see Calculating your costs manually.
 
-## Rimozione di applicazioni
+## Removing apps
 {: #ee_removing}
 
-Man mano che crei ulteriori applicazioni, la quota potrebbe avvicinarsi al limite. Tuttavia, delle applicazioni
-che tu potresti non utilizzare più continuano a consumare una parte della quota. È facile eliminare delle applicazioni per liberare dello
-spazio in {{site.data.keyword.Bluemix_notm}} in qualsiasi momento.
+As you build more apps, the quota might approach the limit. However, some apps that you might no longer use still occupy the quota. It’s easy to delete apps to free up some spaces in {{site.data.keyword.Bluemix_notm}} at any time.
 
-Nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}, vai alla pagina Panoramica dell'applicazione, fai clic sull'icona **Menu** ed elimina l'applicazione che non utilizzi più. Per eliminare le applicazioni puoi anche utilizzare il comando **cf delete**.
+In {{site.data.keyword.Bluemix_notm}} user interface, go to the app Overview page, click the **Menu** icon, and delete the app that you no longer use. You can also use the **cf delete** command to delete apps.

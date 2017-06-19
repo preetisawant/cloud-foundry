@@ -72,7 +72,8 @@ serviços nele e para construí-lo e implementá-lo:
 construir seu aplicativo, incluindo a escolha de quais serviços e tempos de execução
 combinar para resolver seu problema de negócios.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Use o {{site.data.keyword.contdelivery_short}} para automatizar construções, testes de unidade, implementações e mais. Edite e envie o código por push por meio do IDE avançado baseado na web. Crie cadeias de ferramentas para ativar as integrações de ferramentas que suportam as tarefas de desenvolvimento, implementação e operação. O serviço Continuous Delivery inclui o Delivery Pipeline, o Eclipse Orion Web IDE e o Git Repos and Issue Tracking. Para obter mais informações, veja <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introdução ao Continuous Delivery</a>.</dd>
+<dd>Use o {{site.data.keyword.contdelivery_short}} para automatizar construções, testes de unidade, implementações e mais. Edite e envie o código por push por meio do IDE avançado baseado na web. Crie cadeias de ferramentas para ativar as integrações de ferramentas que suportam as tarefas de desenvolvimento, implementação e operação. O serviço Continuous Delivery inclui o Delivery Pipeline, o Eclipse Orion Web IDE e o Git Repos and Issue Tracking. Para obter mais informações, veja <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introdução ao Continuous Delivery</a>.
+</dd>
 </dl>
 
 ## Dicas

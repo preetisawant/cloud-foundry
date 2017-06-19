@@ -33,10 +33,10 @@ Avant de commencer, vous vous inscrivez pour obtenir un IBMid sur
 service dans le cadre de votre essai gratuit.
 
 
-## Développement et déploiement d'applications à l'aide de chaînes d'outils et du service {{site.data.keyword.contdelivery_short}} 
+## Développement et déploiement d'applications à l'aide de chaînes d'outils et du service {{site.data.keyword.contdelivery_short}}
 {: #ee_cd}
 
-<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Ajoutez une chaîne d'outils</a> qui inclut le service {{site.data.keyword.contdelivery_full}} à votre application. Ensuite, <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">utilisez-la</a> pour développer et déployer votre application. 
+<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Ajoutez une chaîne d'outils</a> qui inclut le service {{site.data.keyword.contdelivery_full}} à votre application. Ensuite, <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">utilisez-la</a> pour développer et déployer votre application.
 
 
 ## Création de votre application Web via l'interface utilisateur {{site.data.keyword.Bluemix_notm}}
