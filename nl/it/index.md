@@ -46,7 +46,7 @@ la codifica.
 
 **Nota:** se un servizio che associ mediante bind a un'applicazione si arresta in modo anomalo, l'applicazione potrebbe interrompere l'esecuzione o provocare errori. {{site.data.keyword.Bluemix_notm}} non
 riavvia automaticamente l'applicazione per eseguire un ripristino da tali problemi. Valuta una codifica della tua applicazione per identificare e ripristinare interruzioni, eccezioni ed errori
-di connessione. Per ulteriori informazioni, consulta l'argomento di risoluzione dei problemi Le applicazioni non si riavviano automaticamente.
+di connessione. Per ulteriori informazioni, vedi l'argomento di risoluzione dei problemi Le applicazioni non si riavviano automaticamente.
 
 ## Opzioni per gestire le applicazioni
 
@@ -60,7 +60,8 @@ servizi ad essa, oltre che per crearla e distribuirla:
 creare la tua applicazione selezionando, tra l'altro, quali servizi e runtime combinare per risolvere i
 tuoi problemi di business.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Utilizza {{site.data.keyword.contdelivery_short}} per automatizzare le build, i test di unità, le distribuzioni e altro. Modifica e trasmetti il codice tramite la IDE basata sul web avanzato. Crea le toolchain per abilitare integrazioni dello strumento che supportano le attività di sviluppo, distribuzione e funzionamento. Il servizio Continuous Delivery include Delivery Pipeline, Eclipse Orion Web IDE e Git Repos and Issue Tracking. Per ulteriori informazioni, vedi <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introduzione a Continuous Delivery</a>.</dd>
+<dd>Utilizza {{site.data.keyword.contdelivery_short}} per automatizzare le build, i test di unità, le distribuzioni e altro. Modifica e trasmetti il codice tramite la IDE basata sul web avanzato. Crea le toolchain per abilitare integrazioni dello strumento che supportano le attività di sviluppo, distribuzione e funzionamento. Il servizio Continuous Delivery include Delivery Pipeline, Eclipse Orion Web IDE e Git Repos and Issue Tracking. Per ulteriori informazioni, vedi <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introduzione a Continuous Delivery</a>.
+</dd>
 </dl>
 
 ## Suggerimenti

@@ -134,10 +134,10 @@ quando aggiungi un servizio alla tua applicazione.
 diversi strumenti che ti consentono di iniziare a scrivere codice con la tua applicazione, ad esempio l'interfaccia riga di comando cf
 e gli strumenti Eclipse. Puoi scegliere l'interfaccia riga di comando cf per iniziare a scrivere codice con la tua applicazione TestNode.
 
-  1. Innanzitutto, scarica e sviluppa il codice della tua applicazione.
+  1. Innanzitutto, scarica e sviluppa il tuo codice applicativo.
 
     1. Vai alla pagina Inizia a scrivere codice della tua applicazione. Fai clic sul pulsante **Scarica codice di starter**
-per scaricare il codice della tua applicazione.
+per scaricare il tuo codice applicativo.
     2. Estrai il file scaricato in una directory, ad esempio `C:\test`.
     3. Sviluppa il codice con il tuo ambiente di sviluppo
 integrato locale.
@@ -190,7 +190,7 @@ in un browser:
   ```
 
 Per creare la tua applicazione puoi scegliere anche altri strumenti, ad esempio
-gli strumenti Eclipse. Per ulteriori informazioni, consulta la pagina Inizia a scrivere codice della tua applicazione nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}.
+gli strumenti Eclipse. Per ulteriori informazioni, vedi la pagina Inizia a scrivere codice della tua applicazione nell'interfaccia utente {{site.data.keyword.Bluemix_notm}}.
 
 ## Esecuzione del bind di un servizio utilizzando la CLI cf
 {: #ee_cfbind}
