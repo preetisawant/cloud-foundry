@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # Creating Cloud Foundry apps
 
-With {{site.data.keyword.Bluemix}}, you can create your app in the {{site.data.keyword.Bluemix_notm}} user interface. After it's created, you can decide to continue to use the UI, use the cf command line interface, or use {{site.data.keyword.jazzhub_title}} to develop, track, plan, and deploy your app.
+With {{site.data.keyword.Bluemix}}, you can create your app in the {{site.data.keyword.Bluemix_notm}} user interface. After it's created, you can decide to continue to use the UI, use the cf command line interface, or use open toolchains and the  {{site.data.keyword.Bluemix_notm}} Continuous Delivery service to develop, track, plan, and deploy your app.
 {:shortdesc}
 
 When you create an app in {{site.data.keyword.Bluemix_notm}}, you begin with a starter. A *starter* is a template that includes predefined services and application code that is configured with a particular buildpack. There are two types of starters: boilerplates and runtimes.
