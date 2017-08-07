@@ -32,7 +32,7 @@ lastupdated: "2017-05-10"
   5. 您可以在 {{site.data.keyword.Bluemix_notm}} 使用者介面中的應用程式「概觀」上，按一下**新增服務或 API**，以將服務新增至您的應用程式。從型錄中瀏覽並選取服務，或捲動至型錄結尾，然後按一下 **{{site.data.keyword.Bluemix_notm}} 實驗性服務**來瀏覽實驗性服務。或者，您可以使用 cf 指令行介面。請參閱「用於處理應用程式的選項」。
   6. 在應用程式的「概觀」頁面上，捲動至 "Continuous Delivery" 卡片，然後按一下**啟用**。您應用程式的原始檔將會儲存至在 Bluemix 上管理的 Git Repos and Issue Tracking 的儲存庫中。同時會建立使用該儲存庫的開放式工具以及開發與部署應用程式的 Delivery Pipeline。如需 Continuous Delivery 服務的相關資訊，請參閱<a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">開始使用 Continuous Delivery</a>。
 
-**附註：**如果您連結至應用程式的服務損毀，應用程式可能會停止執行或發生錯誤。{{site.data.keyword.Bluemix_notm}} 不會自動重新啟動應用程式，以從這些問題回復。請考慮撰寫應用程式碼，以識別運行中斷、異常狀況和連線失敗，並從其中回復。如需相關資訊，請參閱「應用程式未自動重新啟動」疑難排解主題。
+**附註：**如果您連結至應用程式的服務當機，應用程式可能會停止執行或發生錯誤。{{site.data.keyword.Bluemix_notm}} 不會自動重新啟動應用程式，以從這些問題回復。請考慮撰寫應用程式碼，以識別運行中斷、異常狀況和連線失敗，並從其中回復。如需相關資訊，請參閱「應用程式未自動重新啟動」疑難排解主題。
 
 ## 用於處理應用程式的選項
 

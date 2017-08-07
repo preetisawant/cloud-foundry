@@ -25,7 +25,7 @@ lastupdated: "2016-03-15"
 
 外部 buildpack 由 Cloud Foundry 社区提供，可用作您自己的 buildpack。将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 之前，请确保安装了 cf 命令行界面。
 
-**注：**IBM 不提供外部 buildpack；因此，您可能需要联系 Cloud Foundry 社区来获取支持。
+**注：**IBM 不提供外部 buildpack；因此，您可能需要联系 Cloud Foundry 社区来获得支持。
 
 ## 内置社区 buildpack
 

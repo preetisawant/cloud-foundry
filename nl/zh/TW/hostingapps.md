@@ -78,7 +78,7 @@ lastupdated: "2017-05-10"
 
   最起碼要將應用程式安裝擷取為一組統一且與作業系統無關的 Script。請將應用程式安裝保持到最小並為可攜式，以適合不同的自動化技術。此外，也請將應用程式安裝所需的相依關係降到最少。
 
-如需具有雲端功能的應用程式的相關資訊，請參閱 [The Twelve-Factor App ![外部鏈結圖示](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}。
+如需具有雲端功能的應用程式相關資訊，請參閱 [The Twelve-Factor App ![外部鏈結圖示](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}。
 
 ##移轉應用程式
 {: #ht_hostapp}
@@ -91,9 +91,9 @@ lastupdated: "2017-05-10"
 
 您可以使用 {{site.data.keyword.Bluemix_notm}} 所提供的下列工具及服務：
 
-| 工具	| 方法 |
+| 工具	| 方法|
 |:------|:--------|
-|Cloud Foundry 指令行介面 (cf cli)	|在本端用戶端上管理您的程式碼，以及使用 Cloud Foundry 指令行介面，手動將應用程式推送至 {{site.data.keyword.Bluemix_notm}}。如需相關資訊，請參閱[上傳應用程式](/docs/starters/upload_app.html)。|
+|Cloud Foundry 指令行介面 (cf cli)|在本端用戶端上管理您的程式碼，以及使用 Cloud Foundry 指令行介面，手動將應用程式推送至 {{site.data.keyword.Bluemix_notm}}。如需相關資訊，請參閱[上傳應用程式](/docs/starters/upload_app.html)。|
 |Eclipse	|在 Eclipse 中管理您的程式碼，並且使用 IBM Eclipse Tools for {{site.data.keyword.Bluemix_notm}} 來推送應用程式。|
 |{{site.data.keyword.contdelivery_full}} |    使用 {{site.data.keyword.contdelivery_short}} 來自動進行建置、單元測試、部署及其他作業。透過豐富的 Web 型 IDE 編輯及推送程式碼。建立工具鏈來啟用工具整合，以支援開發、部署及操作作業。Continuous Delivery 服務包括 Delivery Pipeline、Eclipse Orion Web IDE 及 Git Repos and Issue Tracking。如需相關資訊，請參閱<a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">開始使用 Continuous Delivery</a>。
 |

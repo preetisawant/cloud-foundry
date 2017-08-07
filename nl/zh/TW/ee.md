@@ -239,7 +239,7 @@ var create_message = function(req, res) {
 ## 計算應用程式成本
 {: #ee_billing}
 
-您的 30 天免費試用已過期，但還想要繼續使用 {{site.data.keyword.Bluemix_notm}}。您必須新增信用卡資訊，以成為「隨收隨付制」帳戶或「訂閱」帳戶，才能繼續使用 {{site.data.keyword.Bluemix_notm}}。不過，即使您轉換為付費帳戶，{{site.data.keyword.Bluemix_notm}} 還是會針對大部分的運行環境架構和服務提供免費額度。除非用量超過免費額度，否則 {{site.data.keyword.Bluemix_notm}} 不會向您收費。
+您的 30 天免費試用已到期，但還想要繼續使用 {{site.data.keyword.Bluemix_notm}}。您必須新增信用卡資訊，以成為「隨收隨付制」帳戶或「訂閱」帳戶，才能繼續使用 {{site.data.keyword.Bluemix_notm}}。不過，即使您轉換為付費帳戶，{{site.data.keyword.Bluemix_notm}} 還是會針對大部分的運行環境架構和服務提供免費額度。除非用量超過免費額度，否則 {{site.data.keyword.Bluemix_notm}} 不會向您收費。
 
 {{site.data.keyword.Bluemix_notm}} 提供預估器和計算機，可讓您查看應用程式成本。您可以使用下列方式查看 TestNode 的成本：
 
