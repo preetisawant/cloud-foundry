@@ -89,9 +89,9 @@ lastupdated: "2017-05-10"
 
 {{site.data.keyword.Bluemix_notm}} が提供する以下のツールおよびサービスを使用できます。
 
-| ツール	|  方法  |
+| ツール|  方法 |
 |:------|:--------|
-|Cloud Foundry コマンド・ライン・インターフェース (cf cli)	|ローカル・クライアントでコードを管理し、Cloud Foundry コマンド・ライン・インターフェースを使用してアプリケーションを手動で {{site.data.keyword.Bluemix_notm}} にプッシュします。詳しくは、『[アプリケーションのアップロード](/docs/starters/upload_app.html)』を参照してください。|
+|Cloud Foundry コマンド・ライン・インターフェース (cf cli)|ローカル・クライアントでコードを管理し、Cloud Foundry コマンド・ライン・インターフェースを使用してアプリケーションを手動で {{site.data.keyword.Bluemix_notm}} にプッシュします。詳しくは、『[アプリケーションのアップロード](/docs/starters/upload_app.html)』を参照してください。|
 |Eclipse	|Eclipse でコードを管理し、IBM Eclipse Tools for {{site.data.keyword.Bluemix_notm}} を使用してアプリケーションをプッシュします。|
 |{{site.data.keyword.contdelivery_full}} |    {{site.data.keyword.contdelivery_short}} を使用して、ビルド、単体テスト、デプロイメントなどを自動化します。機能豊富な Web ベース IDE により、コードの編集およびプッシュを行います。開発、デプロイメント、および運用の作業をサポートするツール統合を実現するツールチェーンを作成します。Continuous Delivery サービスには、Delivery Pipeline、Eclipse Orion Web IDE、および Git Repos and Issue Tracking が含まれています。詳しくは、『<a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>』を参照してください。
 |

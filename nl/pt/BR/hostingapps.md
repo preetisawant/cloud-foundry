@@ -83,13 +83,13 @@ Para obter mais informações sobre aplicativos prontos para a nuvem, veja [O ap
 
 É possível migrar seus aplicativos para o {{site.data.keyword.Bluemix_notm}} de uma maneira incremental, em vez de deslocar o aplicativo completamente para o ambiente de nuvem. É possível migrar uma parte de seu aplicativo primeiro e conectar aos dados existentes ou sistema de registros usando o serviço de Integração de nuvem.
 
-Em seus aplicativos em nuvem, poderá ser necessário acessar os dados ou serviços de backend, por exemplo, um sistema de registro. No {{site.data.keyword.Bluemix_notm}}, é possível usar o serviço Secure Gateway para estabelecer um túnel seguro entre uma organização do {{site.data.keyword.Bluemix_notm}} e a rede de backend corporativa. O serviço permite que os aplicativos no {{site.data.keyword.Bluemix_notm}} acessem os dados e serviços da rede de backend. Para obter detalhes, veja [Acessando o backend corporativo com o Bluemix Secure Gateway por meio do console ![Ícone de link externo](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
+Em seus aplicativos em nuvem, poderá ser necessário acessar os dados ou serviços de backend, por exemplo, um sistema de registro. No {{site.data.keyword.Bluemix_notm}}, é possível usar o serviço Secure Gateway para estabelecer um túnel seguro entre uma organização do {{site.data.keyword.Bluemix_notm}} e a rede de backend corporativa. O serviço permite que os aplicativos no {{site.data.keyword.Bluemix_notm}} acessem os dados e serviços da rede de backend. Para obter detalhes, veja [Atingindo o backend corporativo com o Bluemix Secure Gateway por meio do console ![Ícone de link externo](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
 
 Para implementar seu aplicativo no {{site.data.keyword.Bluemix_notm}} como um aplicativo Cloud Foundry, selecione um tempo de execução no catálogo {{site.data.keyword.Bluemix_notm}}. O tempo de execução contém um aplicativo iniciador Hello World que pode ser substituído por seu próprio aplicativo. Se não for possível localizar um iniciador que forneça o tempo de execução desejado, será possível trazer um buildpack customizado compatível com Cloud Foundry para o {{site.data.keyword.Bluemix_notm}} usando a opção –b com o comando cf push. Para obter detalhes, consulte [Usando buildpacks da comunidade](/docs/cfapps/byob.html).
 
 É possível usar as ferramentas e serviços a seguir que o {{site.data.keyword.Bluemix_notm}} fornece:
 
-| Ferramenta	| Método |
+| Ferramenta | Método |
 |:------|:--------|
 |Interface da linha de comandos do Cloud Foundry (cf cli)	|Gerencie seu código no cliente local e use a interface da linha de comandos do Cloud Foundry para enviar o seu aplicativo por push para o {{site.data.keyword.Bluemix_notm}} manualmente. Para obter mais informações, consulte [Fazendo upload de seus apps](/docs/starters/upload_app.html).|
 |Eclipse	|Gerencie seu código no Eclipse e use o IBM Eclipse tools for {{site.data.keyword.Bluemix_notm}} para enviar seu aplicativo por push.|
@@ -199,4 +199,4 @@ Para assegurar que seu aplicativo possa ser executado em um ambiente local depoi
 * [Introdução ao pipeline de entrega](/docs/services/DeliveryPipeline/index.html)
 * [Implementando apps com IBM Eclipse Tools for Bluemix](/docs/manageapps/eclipsetools/eclipsetools.html)
 * [O app de 12 fatores ![Ícone de link externo](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}
-* [Acessando o backend corporativo com o Bluemix Secure Gateway por meio do console ![Ícone de link externo](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}
+* [Atingindo o backend corporativo com o Bluemix Secure Gateway por meio do console ![Ícone de link externo](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}

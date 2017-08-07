@@ -136,9 +136,7 @@ en un tamaño reducido y portable, para adaptarse a las distintas técnicas de
 automatización. Además, minimice las dependencias necesarias para la instalación
 de apps.
 
-Para obtener más información sobre aplicaciones listas para la nube, consulte
-[The 12-factor
-application ![icono de enlace externo](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}.
+Para obtener más información sobre aplicaciones listas para la nube, consulte [The 12-factor application ![icono de enlace externo](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}.
 
 ##Migración de sus apps
 {: #ht_hostapp}

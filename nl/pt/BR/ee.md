@@ -28,7 +28,7 @@ para iniciar.
 ## Inscrevendo-se
 {: #ee_start}
 
-Antes de ser possível iniciar, inscreva-se para um IBMid em [https://console.ng.bluemix.net/ ![Ícone de link externo](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Depois disso, efetue login no {{site.data.keyword.Bluemix_notm}} e
+Antes de poder iniciar a utilização, inscreva-se para um IBMid em [https://console.ng.bluemix.net/ ![Ícone de link externo](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Depois disso, efetue login no {{site.data.keyword.Bluemix_notm}} e
 inicie sua avaliação grátis de 30 dias. O {{site.data.keyword.Bluemix_notm}} fornece
 um abono de 2 GB de memória de tempo de execução e 10 instâncias de serviço para sua
 avaliação grátis.

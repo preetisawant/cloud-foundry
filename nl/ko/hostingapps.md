@@ -89,9 +89,9 @@ lastupdated: "2017-05-10"
 
 {{site.data.keyword.Bluemix_notm}}에서 제공하는 다음의 도구 및 서비스를 사용할 수 있습니다. 
 
-| 도구	| 방법 |
+| 도구	| 방법|
 |:------|:--------|
-|Cloud Foundry 명령행 인터페이스(cf cli)	|로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령행 인터페이스를 사용하여 애플리케이션을 {{site.data.keyword.Bluemix_notm}}에 수동으로 푸시하십시오. 자세한 정보는 [앱 업로드](/docs/starters/upload_app.html)를 참조하십시오. |
+|Cloud Foundry 명령행 인터페이스(cf cli)|로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령행 인터페이스를 사용하여 애플리케이션을 {{site.data.keyword.Bluemix_notm}}에 수동으로 푸시하십시오. 자세한 정보는 [앱 업로드](/docs/starters/upload_app.html)를 참조하십시오. |
 |Eclipse	|Eclipse에서 코드를 관리하고 {{site.data.keyword.Bluemix_notm}}용 IBM Eclipse 도구를 사용하여 애플리케이션을 푸시하십시오.|
 |{{site.data.keyword.contdelivery_full}} |    {{site.data.keyword.contdelivery_short}}를 사용하여 빌드, 단위 테스트, 배치 등을 자동화합니다. 풍부한 웹 기반 IDE을 통해 코드를 편집하고 푸시하십시오. 개발, 배치 및 오퍼레이션 태스크를 지원하는 도구 통합을 사용할 수 있도록 도구 체인을 작성합니다. Continuous Delivery 서비스에는 Delivery Pipeline, Eclipse Orion Web IDE, Git 저장소 및 문제 추적이 포함됩니다. 자세한 정보는 <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Continuous Delivery 시작하기</a>를 참조하십시오.|
 {: caption="표 1. {{site.data.keyword.Bluemix_notm}} 도구" caption-side="top"}
@@ -112,12 +112,10 @@ Cloud Foundry 플랫폼이 애플리케이션 요구사항을 충족하지 않�
 다음 단계를 수행하여 애플리케이션을 마이그레이션하십시오. 
 
 <ol>
-<li>Cloud Foundry 명령행 인터페이스를 설치하십시오. 최신 버전의 cf 명령행 인터페이스를 사용 중인지 확인하십시오.
-<ol>
+<li>Cloud Foundry 명령행 인터페이스를 설치하십시오. 최신 버전의 cf 명령행 인터페이스를 사용 중인지 확인하십시오. <ol>
 <li>운영 체제의 설치 프로그램을 다운로드하십시오. </li>
 <li>도구 마법사에 따라 명령행을 설치하십시오. </li>
-<li>다음 명령을 사용하여 cf 명령행 인터페이스의 버전을 확인하십시오.
-<pre>cf -v</pre></li>
+<li>다음 명령을 사용하여 cf 명령행 인터페이스의 버전을 확인하십시오. <pre>cf -v</pre></li>
 </ol>
 </li>
 
@@ -133,9 +131,7 @@ Cloud Foundry 플랫폼이 애플리케이션 요구사항을 충족하지 않�
   domain: mybluemix.net
   instances: 1
   memory: 512M</code></pre>
-<p>이 파일에서 사용할 수 있는 지원 옵션에 대한 자세한 정보는 [애플리케이션 Manifest](/docs/manageapps/depapps.html#appmanifest)를 참조하십시오.
-
-</p></li></ol>
+<p>이 파일에서 사용할 수 있는 지원 옵션에 대한 자세한 정보는 [애플리케이션 Manifest](/docs/manageapps/depapps.html#appmanifest)를 참조하십시오. </p></li></ol>
 </li>
 
 <li>애플리케이션을 푸시하십시오. cf push 명령을 사용하여 애플리케이션을 업로드할 수 있습니다.
@@ -194,6 +190,6 @@ services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
 * [IBM Containers](/docs/containers/container_index.html)
 * [가상 머신](/docs/virtualmachines/vm_index.html)
 * [Delivery Pipeline 시작하기](/docs/services/DeliveryPipeline/index.html)
-* [IBM Eclipse Tools for Bluemix로 앱 배치](/docs/manageapps/eclipsetools/eclipsetools.html)
+* [IBM Eclipse Tools for Bluemix를 사용하여 앱 배치](/docs/manageapps/eclipsetools/eclipsetools.html)
 * [The twelve-factor app ![외부 링크 아이콘](../icons/launch-glyph.svg)](http://12factor.net/){: new_window}
 * [Reaching enterprise backend with Bluemix Secure Gateway via console ![외부 링크 아이콘](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}

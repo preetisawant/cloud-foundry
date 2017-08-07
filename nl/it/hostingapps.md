@@ -158,7 +158,7 @@ applicazione Cloud Foundry, seleziona un runtime dal Catalogo {{site.data.keywor
 
 Puoi usare i seguenti servizi e strumenti forniti da {{site.data.keyword.Bluemix_notm}}:
 
-| Strumento	| Metodo |
+| Strumento| Metodo |
 |:------|:--------|
 |Interfaccia riga di comando Cloud Foundry (cf cli)	|Gestisci il tuo codice su un client locale e utilizza l'interfaccia riga di comando
 Cloud Foundry per eseguire manualmente il push della tua applicazione su {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Caricamento delle tue applicazioni](/docs/starters/upload_app.html).|
@@ -228,7 +228,7 @@ e il tuo spazio.
 seguito dal nome dell'applicazione. Tale nome deve essere univoco
 nell'ambiente {{site.data.keyword.Bluemix_notm}}.
 <pre>cf push nomeapplicazione</pre></li>
-<li>Facoltativo: se utilizzi un pacchetto di build esterno, devi utilizzare l'opzione -b con il comando cf push. Per esempio:
+<li>Facoltativo: se utilizzi un pacchetto di build esterno, devi utilizzare l'opzione -b con il comando cf push. Ad esempio:
 <pre>cf push nomeapplicazione -b buildpack_URL</pre>
 <p>Per ulteriori informazioni, vedi
 Utilizzo di pacchetti di build della community.</p>
