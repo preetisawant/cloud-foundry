@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # Cloud Foundry アプリの作成
 
-{{site.data.keyword.Bluemix}} では、{{site.data.keyword.Bluemix_notm}} ユーザー・インターフェースでアプリを作成することができます。アプリが作成された後、アプリの開発、トラッキング、計画、およびデプロイのために、その UI を引き続き使用するか、cf コマンド・ライン・インターフェースを使用するか、もしくは {{site.data.keyword.jazzhub_title}} を使用するよう選択できます。
+{{site.data.keyword.Bluemix}} では、{{site.data.keyword.Bluemix_notm}} ユーザー・インターフェースでアプリを作成することができます。アプリの作成後、アプリの開発、追跡、計画、およびデプロイのために、UI を引き続き使用するか、cf コマンド・ライン・インターフェースを使用するか、またはオープン・ツールチェーンと {{site.data.keyword.Bluemix_notm}} Continuous Delivery サービスを使用するかを決定できます。
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} でアプリを作成する際は、スターターから始めます。*スターター* は、特定のビルドパックで構成された事前定義サービスおよびアプリケーション・コードを含むテンプレートです。スターターには、ボイラープレートとランタイムの 2 つのタイプがあります。

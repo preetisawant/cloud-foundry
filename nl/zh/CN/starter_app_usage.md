@@ -22,7 +22,7 @@ lastupdated: "2016-12-21"
 请执行以下步骤来使用入门模板应用程序。
 {:shortdesc}
 
-1. 在 [{{site.data.keyword.Bluemix_notm}}“目录”](https://console.{DomainName}/catalog/)中，浏览到“Cloud Foundry 应用程序”部分。
+1. 在 [{{site.data.keyword.Bluemix_notm}}“目录”](https://console.{DomainName}/catalog/)中，导航至“Cloud Foundry 应用程序”部分。
 2. 单击要使用的运行时。
 3. 登录到 {{site.data.keyword.Bluemix_notm}}（如果尚未登录）。
 4. 提供应用程序名称，修改主机名（如果需要），然后单击**创建**。

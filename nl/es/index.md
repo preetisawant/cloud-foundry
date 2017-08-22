@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # Creación de apps de Cloud Foundry
 
-Con {{site.data.keyword.Bluemix}}, puede crear su app en la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}. Una vez creada, puede seguir utilizando la interfaz de usuario o utilizar la interfaz de línea de mandatos cf o {{site.data.keyword.jazzhub_title}} para desarrollar, planificar, desplegar o realizar un seguimiento de la app.
+Con {{site.data.keyword.Bluemix}}, puede crear su app en la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}. Una vez creada, puede seguir utilizando la interfaz de usuario o utilizar la interfaz de línea de mandatos cf o utilizar cadenas de herramientas abiertas y el servicio de {{site.data.keyword.Bluemix_notm}} Continuous Delivery para desarrollar, seguir, planificar y desplegar la app.
 {:shortdesc}
 
 Para crear una app en {{site.data.keyword.Bluemix_notm}}, se comienza con un iniciador. Un *iniciador* es una plantilla que incluye servicios predefinidos y código de aplicación configurado con un determinado paquete de compilación. Hay dos tipos de iniciadores: contenedores modelo y tiempos de ejecución.

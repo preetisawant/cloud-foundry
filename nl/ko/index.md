@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # Cloud Foundry 앱 작성
 
-{{site.data.keyword.Bluemix}}를 사용하여 {{site.data.keyword.Bluemix_notm}} 사용자 인터페이스에서 앱을 작성할 수 있습니다. 앱이 작성된 후에 UI 또는 cf 명령행 인터페이스를 계속 사용하거나 {{site.data.keyword.jazzhub_title}}를 사용하여 앱을 개발, 추적, 계획 및 배치할 수 있습니다.
+{{site.data.keyword.Bluemix}}를 사용하여 {{site.data.keyword.Bluemix_notm}} 사용자 인터페이스에서 앱을 작성할 수 있습니다. 앱이 작성된 후에 UI 또는 cf 명령행 인터페이스를 계속 사용하거나 열린 도구 체인 및 {{site.data.keyword.Bluemix_notm}} Continuous Delivery 서비스를 사용하여 앱을 개발, 추적, 계획 및 배치할 수 있습니다.
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}}에서 앱을 작성할 때 스타터로 시작합니다. *스타터*는 특정 빌드팩으로 구성되는 미리 정의된 서비스와 애플리케이션 코드를 포함하는 템플리트입니다. 표준 유형 및 런타임이라는 두 가지 유형의 스타터가 있습니다.

@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # 创建 Cloud Foundry 应用程序
 
-通过 {{site.data.keyword.Bluemix}}，您可以在 {{site.data.keyword.Bluemix_notm}} 用户界面中创建应用程序。创建应用程序后，可以决定是否要继续使用 UI、cf 命令行界面或 {{site.data.keyword.jazzhub_title}} 来开发、跟踪、规划和部署应用程序。
+通过 {{site.data.keyword.Bluemix}}，您可以在 {{site.data.keyword.Bluemix_notm}} 用户界面中创建应用程序。创建应用程序后，可以决定是否要继续使用 UI、cf 命令行界面或开放工具链和 {{site.data.keyword.Bluemix_notm}} Continuous Delivery 服务来开发、跟踪、规划和部署应用程序。
 {:shortdesc}
 
 在 {{site.data.keyword.Bluemix_notm}} 中创建应用程序时，首先需要使用入门模板。*入门模板*是一种模板，其中包含预定义的服务以及使用特定 buildpack 配置的应用程序代码。入门模板有两种类型：样板和运行时。

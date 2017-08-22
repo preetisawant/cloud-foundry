@@ -15,9 +15,7 @@ lastupdated: "2017-05-10"
 
 # Création d'applications Cloud Foundry
 
-Avec {{site.data.keyword.Bluemix}}, vous pouvez créer votre application dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}. Vous pouvez ensuite choisir de continuer à employer l'interface utilisateur,
-l'interface de ligne de commande cf ou {{site.data.keyword.jazzhub_title}} pour développer, contrôler, planifier et déployer votre
-application.
+Avec {{site.data.keyword.Bluemix}}, vous pouvez créer votre application dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}. Une fois celle-ci créée, vous pouvez décider de continuer à utiliser l'interface utilisateur, d'utiliser l'interface de ligne de commande cf, ou encore des chaînes d'outils ouvertes et le service {{site.data.keyword.Bluemix_notm}} Continuous Delivery pour développer, suivre, planifier et déployer votre application.
 {:shortdesc}
 
 Lorsque vous créez une application dans {{site.data.keyword.Bluemix_notm}}, vous devez commencer par le module de démarrage. Un *module de démarrage* est un modèle qui inclut des services prédéfinis et du code d'application configuré avec un pack de construction particulier. Il existe deux types de module de démarrage : les conteneurs boilerplate et les contextes d'exécution.

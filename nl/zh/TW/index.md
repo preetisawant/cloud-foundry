@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # 建立 Cloud Foundry 應用程式
 
-使用 {{site.data.keyword.Bluemix}}，即可在 {{site.data.keyword.Bluemix_notm}} 使用者介面中建立您的應用程式。建立之後，您可以決定要繼續使用使用者介面、使用 cf 指令行介面，還是使用 {{site.data.keyword.jazzhub_title}} 來開發、追蹤、計劃及部署您的應用程式。
+使用 {{site.data.keyword.Bluemix}}，即可在 {{site.data.keyword.Bluemix_notm}} 使用者介面中建立您的應用程式。建立之後，您可以決定要繼續使用使用者介面、使用 cf 指令行介面，還是使用開放式工具鏈或 {{site.data.keyword.Bluemix_notm}} Continuous Delivery 服務來開發、追蹤、計劃及部署您的應用程式。
 {:shortdesc}
 
 在 {{site.data.keyword.Bluemix_notm}} 中建立應用程式時，請從入門範本開始。*入門範本* 是一種範本，它包含預先定義的服務，以及使用特定建置套件進行配置的應用程式碼。入門範本有兩種類型：樣板及運行環境。

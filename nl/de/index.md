@@ -15,7 +15,7 @@ lastupdated: "2017-05-10"
 
 # Cloud Foundry-Apps erstellen
 
-In {{site.data.keyword.Bluemix}} können Sie Ihre App in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle erstellen. Nachdem die App erstellt wurde, können Sie wählen, ob Sie weiterhin die Benutzerschnittstelle, die Befehlszeilenschnittstelle 'cf' oder {{site.data.keyword.jazzhub_title}} verwenden möchten, um Ihre App zu entwickeln, zu verfolgen, zu planen und bereitzustellen.
+In {{site.data.keyword.Bluemix}} können Sie Ihre App in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle erstellen. Nachdem die App erstellt wurde, können Sie wählen, ob Sie weiterhin die Benutzerschnittstelle, die Befehlszeilenschnittstelle 'cf' oder Open Toolchains und den {{site.data.keyword.Bluemix_notm}} Continuous Delivery-Service verwenden möchten, um Ihre App zu entwickeln, zu verfolgen, zu planen und bereitzustellen.
 {:shortdesc}
 
 Wenn Sie eine App in {{site.data.keyword.Bluemix_notm}} erstellen, beginnen Sie mit einem

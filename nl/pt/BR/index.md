@@ -18,9 +18,7 @@ lastupdated: "2017-05-10"
 Com
 o {{site.data.keyword.Bluemix}}, é possível
 criar seu app na interface com o usuário do
-{{site.data.keyword.Bluemix_notm}}. Após sua criação, é possível decidir continuar a usar o
-UI, usar a interface de linha de comandos cf ou usar o {{site.data.keyword.jazzhub_title}} para
-desenvolver, controlar, planejar e implementar seu app.
+{{site.data.keyword.Bluemix_notm}}. Após sua criação, é possível decidir continuar a usar a UI, usar a interface de linha de comandos cf ou usar cadeias de ferramentas abertas e o serviço {{site.data.keyword.Bluemix_notm}} Continuous Delivery para desenvolver, controlar, planejar e implementar seu app.
 {:shortdesc}
 
 Ao criar um app no
