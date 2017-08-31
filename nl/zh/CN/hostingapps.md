@@ -91,7 +91,7 @@ lastupdated: "2017-05-10"
 
 | 工具| 方法|
 |:------|:--------|
-|Cloud Foundry 命令行界面 (cf cli)|在本地客户机上管理代码，并使用 Cloud Foundry 命令行界面将应用程序手动推送到 {{site.data.keyword.Bluemix_notm}}。有关更多信息，请参阅[上传应用程序](/docs/starters/upload_app.html)。|
+|Cloud Foundry 命令行界面 (cf CLI)|在本地客户机上管理代码，并使用 Cloud Foundry 命令行界面将应用程序手动推送到 {{site.data.keyword.Bluemix_notm}}。有关更多信息，请参阅[上传应用程序](/docs/starters/upload_app.html)。|
 |Eclipse|在 Eclipse 中管理代码，并使用 IBM Eclipse Tools for {{site.data.keyword.Bluemix_notm}} 来推送应用程序。|
 |{{site.data.keyword.contdelivery_full}} |    使用 {{site.data.keyword.contdelivery_short}} 可自动执行构建、单元测试、部署等操作。通过丰富的基于 Web 的 IDE 来编辑和推送代码。创建工具链以允许支持开发、部署和操作任务的工具集成。Continuous Delivery 服务包含 Delivery Pipeline、Eclipse Orion Web IDE 和 Git Repos and Issue Tracking。有关更多信息，请参阅 <a href="/docs/services/ContinuousDelivery/index.html#cd_getting_started">Continuous Delivery 入门</a>。|
 {: caption="表 1. {{site.data.keyword.Bluemix_notm}} 工具" caption-side="top"}
@@ -104,7 +104,7 @@ lastupdated: "2017-05-10"
 
 <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">向应用程序添加工具链</a>，然后使用 <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">Continuous Delivery 工具链 UI</a> 来开发和部署应用程序。
 
-##使用 cf cli 上传应用程序
+##使用 cf CLI 上传应用程序
 {: #ht_cfcli}
 
 可以在本地客户机上管理代码，并使用 Cloud Foundry 命令行界面将应用程序手动上传到 {{site.data.keyword.Bluemix_notm}}。如果更改了代码，必须将应用程序重新推送到 {{site.data.keyword.Bluemix_notm}} 才能运行更新后的代码。

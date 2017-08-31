@@ -89,7 +89,7 @@ lastupdated: "2017-05-10"
 
 **注：**此环境变量是序列化 JSON 对象。其中，一个条目对应一个与应用程序绑定的服务实例。每个服务实例提供的数据量和数据类型都是特定于服务的。如果应用程序未使用任何服务，那么 VCAP_SERVICES 为空 JSON 对象。仅当将服务添加到应用程序后，才会使用此环境变量。
 
-## 使用 cf cli 构建应用程序
+## 使用 cf CLI 构建应用程序
 {: #ee_cf}
 
 {{site.data.keyword.Bluemix_notm}} 提供了多个工具，供您在开始对应用程序进行编码时使用，例如 cf 命令行界面和 Eclipse 工具。您可以选择从 cf 命令行界面开始对应用程序 TestNode 进行编码。
@@ -141,7 +141,7 @@ cf push TestNode
 
 您还可以选择使用其他工具来构建应用程序，例如 Eclipse 工具。有关更多信息，请参阅 {{site.data.keyword.Bluemix_notm}} 用户界面上应用程序的“开始编码”页面。
 
-## 使用 cf cli 绑定服务
+## 使用 cf CLI 绑定服务
 {: #ee_cfbind}
 
 通过 {{site.data.keyword.Bluemix_notm}}，您可以使用 Bluemix 用户界面添加服务，如本场景的较早部分中所述。此外，还可以使用 **cf** 命令行界面来绑定服务。假定要使用 cf 命令行界面将 {{site.data.keyword.cloudant}} 服务添加到应用程序 TestNode 中。
