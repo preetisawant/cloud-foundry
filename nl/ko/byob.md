@@ -94,7 +94,7 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 <ul>
 <li>
-<strong>cf set-env</strong> 명령을 사용하십시오. 예를 들어 다음 명령을 입력하여 Java 버전을 1.7.0으로 설정하십시오.
+<strong>cf set-env</strong> 명령을 사용하십시오. 예를 들어, 다음 명령을 입력하여 Java 버전을 1.7.0으로 설정하십시오.
 <pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
 <p>그런 다음 앱을 다시 스테이징하여 변경사항을 적용하십시오.</p>
 <pre class="pre"><code>cf restage app_name</code></pre>
