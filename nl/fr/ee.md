@@ -29,7 +29,7 @@ commencer.
 
 Avant de commencer, vous vous inscrivez pour obtenir un IBMid sur
 [https://console.ng.bluemix.net/
-![Icône de lien externe](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Ensuite, vous vous connectez à {{site.data.keyword.Bluemix_notm}} et commencez votre essai gratuit de 30 jours. {{site.data.keyword.Bluemix_notm}} fournit une franchise de 2 Go de mémoire d'exécution et 10 instances de
+![External link icon](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Ensuite, vous vous connectez à {{site.data.keyword.Bluemix_notm}} et commencez votre essai gratuit de 30 jours. {{site.data.keyword.Bluemix_notm}} fournit une franchise de 2 Go de mémoire d'exécution et 10 instances de
 service dans le cadre de votre essai gratuit.
 
 
