@@ -87,7 +87,7 @@ lastupdated: "2017-05-10"
 
 애플리케이션을 Cloud Foundry 애플리케이션으로서 {{site.data.keyword.Bluemix_notm}}에 배치하려면 {{site.data.keyword.Bluemix_notm}} 카탈로그에서 런타임을 선택하십시오. 런타임에는 자체 애플리케이션과 대체할 수 있는 스타터 Hello World 애플리케이션이 포함되어 있습니다. 원하는 런타임을 제공하는 스타터를 찾을 수 없는 경우에는 cf push 명령에서 –b 옵션을 사용하여 {{site.data.keyword.Bluemix_notm}}로 사용자 정의, Cloud Foundry 호환 가능 빌드팩을 가져올 수 있습니다. 세부사항은 [커뮤니티 빌드팩 사용](/docs/cfapps/byob.html)을 참조하십시오.
 
-{{site.data.keyword.Bluemix_notm}}에서 제공하는 다음의 도구 및 서비스를 사용할 수 있습니다. 
+{{site.data.keyword.Bluemix_notm}}에서 제공하는 다음 도구 및 서비스를 사용할 수 있습니다. 
 
 | 도구	| 방법|
 |:------|:--------|
