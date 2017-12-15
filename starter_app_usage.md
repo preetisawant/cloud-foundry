@@ -4,17 +4,18 @@ copyright:
 
   years: 2016, 2017
 
-lastupdated: "2017-12-14"
+lastupdated: "2017-12-15"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
+
 # Using the starter apps
 {: #using_starter_applications}
 
-{{site.data.keyword.Bluemix}} provides a starter apps called boilerplates, which are templates that include one application, its associated runtime environment, and predefined services for a particular domain. Follow these steps to select a boilerplate and begin working.
+{{site.data.keyword.Bluemix}} provides starter apps called boilerplates, which are templates that include one application, its associated runtime environment, and predefined services for a particular domain. Follow these steps to select a boilerplate and begin working.
 {:shortdesc}
 
 1. From the [{{site.data.keyword.Bluemix_notm}} Catalog](https://console.{DomainName}/catalog/),
