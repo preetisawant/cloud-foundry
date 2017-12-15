@@ -4,13 +4,12 @@ copyright:
 
   years: 2016, 2017
 
-lastupdated: "2017-12-12"
+lastupdated: "2017-12-14"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-
 
 # Using the starter apps
 {: #using_starter_applications}
