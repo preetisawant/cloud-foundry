@@ -8,24 +8,21 @@ lastupdated: "2017-12-12"
 
 ---
 
-
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 
-# Using the sample apps
+# Using the starter apps
 {: #using_starter_applications}
 
-{{site.data.keyword.Bluemix}} provides a sample app for the Cloud Foundry apps.
-Follow these steps to select a Cloud Foundry app and begin working with the sample app.
+{{site.data.keyword.Bluemix}} provides a starter apps called boilerplates, which are templates that include one application, its associated runtime environment, and predefined services for a particular domain. Follow these steps to select a boilerplate and begin working.
 {:shortdesc}
 
 1. From the [{{site.data.keyword.Bluemix_notm}} Catalog](https://console.{DomainName}/catalog/),
-navigate to the Cloud Foundry Apps section.
-2. Click the Cloud Foundry apps you want to use.
+navigate to the Boilerplates section.
+2. Click the boilerplate you want to use.
 3. Enter a name for your app, modify the host name if required, and click **Create**. Your app begins staging, and the Getting started tutorial for your app on the {{site.data.keyword.Bluemix_notm}} Dashboard displays.
 4. Follow the steps in the tutorial to:  
-  * Download the Cloud Foundry command line interface.
   * Download the software you need to build your app.
   * Download the sample app.
   * Deploy the sample app.
