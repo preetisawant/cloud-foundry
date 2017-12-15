@@ -25,8 +25,7 @@ Eine *Boilerplate* ist ein Container für eine Anwendung und die zugehörige Lau
 enthält eine Node.js-Laufzeit sowie die Services 'Mobile Data', 'Mobile Application Security' und 'Push'. Darüber hinaus sind auch ein SDK und Beispielanwendungen enthalten, um in die Entwicklung von mobilen Apps, die auf diese Services zugreifen, einsteigen
 zu können.
 
-Mit *Laufzeit* wird die Ressourcengruppe bezeichnet, die für die Ausführung einer Anwendung verwendet
-wird. {{site.data.keyword.Bluemix_notm}} stellt Laufzeitumgebungen als Container für verschiedene Anwendungstypen bereit. Die
+Als *Laufzeit* wird das Set mit Ressourcen bezeichnet, das zur Ausführung einer Anwendung benutzt wird. {{site.data.keyword.Bluemix_notm}} stellt Laufzeitumgebungen als Container für verschiedene Anwendungstypen bereit. Die
 Laufzeitumgebungen werden als Buildpacks in {{site.data.keyword.Bluemix_notm}} integriert,
 automatisch für die Verwendung konfiguriert und müssen nur sehr wenig oder auch gar nicht gewartet werden.
 
