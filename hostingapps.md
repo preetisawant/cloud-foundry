@@ -146,7 +146,7 @@ Push your app. You can upload your app by using the cf push command.
 
 Optional: If you change your app, you must upload those changes by entering the cf push command again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
-**Notes:**
+#### Notes:
 
 * When you use the cf push command, the cf command line interface copies all of the files and directories from your current directory to {{site.data.keyword.Bluemix_notm}}. Ensure that you have only the required files in your app directory.
 * Ensure that your organization has enough memory for all instances of your app. To view the memory quota for your org, use cf org org_name.
