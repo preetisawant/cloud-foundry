@@ -184,7 +184,7 @@ To ensure that your app can run in a local environment after you modify the app 
 ## Related Links
 {: #general}
 
-* [IBM Containers](/docs/containers/container_index.html)
+* [{{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html)
 * [Virtual Machines](/docs/virtualmachines/vm_index.html)
 * [Getting started with Delivery Pipeline](/docs/services/DeliveryPipeline/index.html)
 * [Deploying apps with IBM Eclipse Tools for Bluemix](/docs/manageapps/eclipsetools/eclipsetools.html)
