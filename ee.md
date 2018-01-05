@@ -23,13 +23,16 @@ You can use the {{site.data.keyword.Bluemix}} console, platform, and a selection
 ## Signing up
 {: #ee_start}
 
-Before you can get started, sign up for an IBMid at [bluemix.net/ ![External link icon](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}. Then, log in to {{site.data.keyword.Bluemix_notm}} and start your 30-day free trial. {{site.data.keyword.Bluemix_notm}} provides an allowance of 2 GB runtime memory and 10 service instances for your free trial.
+To get started, go to [the IBM Cloud console ![External link icon](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}. Sign up for an IBMid and log in to {{site.data.keyword.Bluemix_notm}} to start your 30-day free trial. {{site.data.keyword.Bluemix_notm}} provides an allowance of 2 GB runtime memory and 10 service instances for your free trial.
+
+## Developing your app
+{: #develop}
 
 There are three ways to develop your app:
 
-* [Continuous delivery service](#ee_cd)
-* [IBM Cloud user interface](#ee_appui)
-* [Cloud Foundry command line](#ee_cf)
+* With the [Continuous delivery service](#ee_cd)
+* In the dashboard of the [IBM Cloud user interface](#ee_appui)
+* At the [Cloud Foundry command line](#ee_cf)
 
 ## Developing and deploying your apps by using toolchains and the {{site.data.keyword.contdelivery_short}} service
 {: #ee_cd}
