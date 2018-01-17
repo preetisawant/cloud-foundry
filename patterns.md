@@ -5,7 +5,7 @@
 copyright:
 
   years: 2015, 2018
-lastupdated: "2018-01-11"
+lastupdated: "2018-01-18"
 
 
 ---
@@ -170,7 +170,7 @@ The following scenarios show different approaches that you can adopt when you de
    Figure 3. Example of a single-organization architecture aligned by delivery phase
 {: #bpfigure3}
 
-### Organization naming, restrictions, and management 
+### Organization naming, restrictions, and management
 {: #orgadmin}   
 
 Consider the following organization guidance:
