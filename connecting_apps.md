@@ -68,4 +68,4 @@ The easisest way to delete the alias is to delete the IAM-managed service instan
 ## Creating a connection between multiple Cloud Foundry services
 {: #cf}
 
-For more details about binding a Cloud Foundry service to another Cloud Foundry service, see [Using services in another service](/docs/services/reqnsi.html#add_service).
+For more details about binding a Cloud Foundry service to another Cloud Foundry service, see [Using services in another service](../apps/reqnsi.html#add_service).

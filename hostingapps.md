@@ -23,22 +23,22 @@ With {{site.data.keyword.Bluemix}}, you can create apps, and host your existing 
 ## Making your apps cloud-ready
 {: #cloud-readyapps}
 
-If all of the following principles are observed in your app, the app is cloud-ready and can be migrated to {{site.data.keyword.Bluemix_notm}}. If a principle is violated in your app, you can usually [modify your app](../apps/cloud-ready.md) to adhere to the principles.
+If all of the following principles are observed in your app, the app is cloud-ready and can be migrated to {{site.data.keyword.Bluemix_notm}}. If a principle is violated in your app, you can usually [modify your app](../apps/cloud-ready.html) to adhere to the principles.
 
 ## Migrating your apps
 {: #ht_hostapp}
 
 You can migrate your apps to {{site.data.keyword.Bluemix_notm}} incrementally, instead of shifting the app completely to the cloud environment. You can migrate a portion of your app first and connect to the existing data or system of records by using the Cloud Integration service.
 
-In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.Bluemix_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.Bluemix_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.Bluemix_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with Bluemix Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
+In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.Bluemix_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.Bluemix_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.Bluemix_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.Bluemix_notm}} Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
 
-To deploy your app to {{site.data.keyword.Bluemix_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.Bluemix_notm}} Catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.Bluemix_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](byob.html).
+To deploy your app to {{site.data.keyword.Bluemix_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.Bluemix_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.Bluemix_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](byob.html).
 
 You can use the following tools and services that {{site.data.keyword.Bluemix_notm}} provides:
 
 | Tool | Method |
 |:------|:--------|
-| Cloud Foundry command line interface (cf cli) | Manage your code on local client and use Cloud Foundry command line interface to push your app to {{site.data.keyword.Bluemix_notm}} manually. For more information, see [Uploading your apps](/docs/starters/upload_app.html). |
+| Cloud Foundry command line interface (cf cli) | Manage your code on local client and use Cloud Foundry command line interface to push your app to {{site.data.keyword.Bluemix_notm}} manually. For more information, see [Uploading your apps](../starters/upload_app.html). |
 | Eclipse | Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.Bluemix_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.Bluemix_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.Bluemix_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
 | {{site.data.keyword.Bluemix_notm}} DevOps Delivery Pipeline | Manage your code on DevOps GitHub repository and deploy your app to {{site.data.keyword.Bluemix_notm}} by using the DevOps Delivery Pipeline. |
@@ -64,9 +64,12 @@ Install the Cloud Foundry command line interface. Ensure that you use the latest
   3. Use the following command to verify the version of the cf command line interface: `cf -v`
 
 Optional: If you want to specify and save the deployment details before you push an app to {{site.data.keyword.Bluemix_notm}}, you can add the app manifest by taking the following steps:
+
   1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
   2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
-  ```applications:
+
+  ```
+  applications:
   - disk_quota: 1024M
   host: myjavatest
   name: MyJavaTest
@@ -75,9 +78,12 @@ Optional: If you want to specify and save the deployment details before you push
   instances: 1
   memory: 512M
   ```
-  For more information about the supported options that you can use in this file, see [App manifest](../manageapps/depapps.html#appmanifest).
 
-Push your app. You can upload your app by using the cf push command.
+For more information about the supported options that you can use in this file, see [App manifest](../manageapps/depapps.html#appmanifest).
+
+### Push your app
+
+You can upload your app by using the `cf push` command.
   1. Connect and log in to {{site.data.keyword.Bluemix_notm}} by running the following command. Select your organization and space when prompted.
   ```
   cf login -a https://api.ng.bluemix.net
@@ -85,16 +91,20 @@ Push your app. You can upload your app by using the cf push command.
   Add the `-sso` flag if your organization uses Single Sign On.
 
   2. From your app directory, enter the cf push command with the app name. The app name must be unique in the {{site.data.keyword.Bluemix_notm}} environment.
+
   ```
   cf push appname
   ```
+
   3. Optional: If you use an external buildpack, you must use the -b option with the cf push command. For example:
+
   ```
   cf push appname -b buildpack_URL
   ```
-  See [Using community buildpacks](../cfapps/byob.html) for details.
 
-Optional: If you change your app, you must upload those changes by entering the cf push command again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
+  See [Using community buildpacks](byob.html) for details.
+
+Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
 #### Notes:
 

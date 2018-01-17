@@ -29,21 +29,22 @@ During the staging phase, {{site.data.keyword.Bluemix_notm}} takes care of the a
 #### Staging a new app
 {: #stageapp}
 
-All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the **bx push** command:
+All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the `bx push` command:
 
   1. Deploy the application:
+
   ```
   $ bx app push APPLICATION_NAME
   ```
 
-For more details on the **bx app push** command, see [bx app push](/docs/cli/reference/bluemix_cli/bx_cli.html#cf_target).
+For more details on the `bx app push` command, see [bx app push](/docs/cli/reference/bluemix_cli/bx_cli.html#cf_target).
 
 ### Migrating an existing app to {{site.data.keyword.Bluemix_notm}}
 {: #migrateapp}
 
 Diego is the default Cloud Foundry architecture for {{site.data.keyword.Bluemix_notm}}, and support for DEAs will be removed, so you must migrate all of your existing applications by updating each app. Start migrating your apps to Diego by updating the application with the Diego flag. The application immediately attempts to start running on Diego and stops running on the DEAs.
 
-As your application is updated from DEA architecture to Diego, you might experience a short downtime, or a prolonged downtime, if the application is not compatible with Diego. To limit downtime, perform a [blue-green deploy](/docs/manageapps/updapps.html#blue_green) by deploying a copy of your application to Diego, and then swapping routes and scaling down the DEA application.
+As your application is updated from DEA architecture to Diego, you might experience a short downtime, or a prolonged downtime, if the application is not compatible with Diego. To limit downtime, perform a [blue-green deploy](../apps/updapps.html#blue_green) by deploying a copy of your application to Diego, and then swapping routes and scaling down the DEA application.
 
 Complete the following steps to migrate your app to Diego:
 

@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -58,7 +56,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the -b option with the cf push command.</p><p>For example, for Ruby apps, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command:
+For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the -b option with the cf push command. For example, for Ruby apps, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command:
 
 ```
 cf push app_name -p app_path
@@ -98,12 +96,17 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Specifying the Java buildpack version
 
-<ul>
-<li>
-Use the <strong>cf set-env</strong> command. For example, enter the following command to set the Java version to 1.7.0:
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>Then, restage your app to make the change effective:</p>
-<pre class="pre"><code>cf restage app_name</code></pre>
-</li>
-<li>
-Use the <code>manifest.yml</code> file. You can add the environment variable and the value that you want to specify directly to the file. For detailed information, see <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">Environment variables</a>.</li></ul>
+Use the `cf set-env` command. For example, enter the following command to set the Java version to 1.7.0:
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+Then, restage your app to make the change effective:
+
+```
+cf restage app_name
+```
+{:pre}
+
+Use the `manifest.yml` file. You can add the environment variable and the value that you want to specify directly to the file. For detailed information, see [Environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)
