@@ -1,12 +1,10 @@
 ---
 
-
-
 copyright:
 
-  years: 2015，2017
+  years: 2015, 2017
 
-lastupdated: "2017-05-10"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -19,55 +17,54 @@ lastupdated: "2017-05-10"
 {: #ee}
 
 
-É possível usar a interface com o usuário, a plataforma e uma
-seleção de ferramentas do {{site.data.keyword.Bluemix}} ao construir, executar
-e implementar seus apps. Siga este cenário de desenvolvimento de ponta a ponta
+É possível usar o console do {{site.data.keyword.Bluemix}}, a plataforma e uma seleção de ferramentas ao construir, executar e implementar seus apps. Siga este cenário de desenvolvimento de ponta a ponta
 para iniciar.
 {:shortdesc}
 
 ## Inscrevendo-se
 {: #ee_start}
 
-Antes de poder iniciar a utilização, inscreva-se para um IBMid em [https://console.ng.bluemix.net/ ![Ícone de link externo](../icons/launch-glyph.svg)](https://console.ng.bluemix.net/){: new_window}. Depois disso, efetue login no {{site.data.keyword.Bluemix_notm}} e
-inicie sua avaliação grátis de 30 dias. O {{site.data.keyword.Bluemix_notm}} fornece
+Antes de iniciar, inscreva-se para um IBMid em [bluemix.net/ ![External link icon](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}. Em seguida, efetue login no {{site.data.keyword.Bluemix_notm}} e inicie sua avaliação grátis de 30 dias. O {{site.data.keyword.Bluemix_notm}} fornece
 um abono de 2 GB de memória de tempo de execução e 10 instâncias de serviço para sua
 avaliação grátis.
 
+Há três formas de desenvolver seu app:
+
+* [Serviço de Entrega Contínua](#ee_cd)
+* [Interface com o usuário do IBM Cloud](#ee_appui)
+* [Linha de comandos do Cloud Foundry](#ee_cf)
 
 ## Desenvolvendo e implementando seus apps usando cadeias de ferramentas e o serviço {{site.data.keyword.contdelivery_short}}
 {: #ee_cd}
 
-<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Inclua uma cadeia de ferramentas</a> que inclua o serviço {{site.data.keyword.contdelivery_full}} em seu app. Em seguida, <a href="docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">use a cadeia de ferramentas</a> para desenvolver e implementar seu app.
+<a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Inclua uma cadeia de ferramentas</a> que inclua o serviço {{site.data.keyword.contdelivery_full}} em seu app. Em seguida, <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">use a cadeia de ferramentas</a> para desenvolver e implementar seu app.
 
-
-## Criando seu app da web usando a interface com o usuário do {{site.data.keyword.Bluemix_notm}}
+## Criando seu app da web com a interface com o usuário do {{site.data.keyword.Bluemix_notm}}
 {: #ee_appui}
 
-Depois de se inscrever, você começa a construir seu primeiro app, usando a interface com o usuário do {{site.data.keyword.Bluemix_notm}}.
+Depois de se inscrever, comece a construir seu primeiro app usando o catálogo e painel do {{site.data.keyword.Bluemix_notm}}.
 
 No {{site.data.keyword.Bluemix_notm}},
 os apps são associados a organizações e espaços. Uma organização
 pertence e é usada por vários colaboradores. Inicialmente, você obtém uma
 organização padrão que é nomeada depois de seu nome de usuário e você é
 o único colaborador. Você também obtém um espaço com essa organização. O espaço é um ambiente para executar seus apps; por exemplo, é possível ter um espaço dev como um ambiente de
-desenvolvimento, um espaço test como um ambiente de teste e um espaço production como um ambiente de produção. Além disso, cada
-um dos ambientes pertence a uma região. Com o {{site.data.keyword.Bluemix_notm}},
+desenvolvimento, um espaço test como um ambiente de teste e um espaço production como um ambiente de produção. Cada um dos ambientes pertence a uma região. Com o {{site.data.keyword.Bluemix_notm}},
 é possível implementar seus aplicativos em uma região geográfica específica
-para menor latência de rede, privacidade de dados e melhor disponibilidade. Consulte Regiões para obter detalhes.
+para menor latência de rede, privacidade de dados e melhor disponibilidade.
 
 Para este cenário, você deseja desenvolver um app da web usando Node.js. Suponha que você esteja nos EUA e a maioria dos usuários do app também esteja
 nos EUA. Você decide construir e executar o app próximo da base do
 usuário, para se beneficiar da latência de rede inferior. Após efetuar login no {{site.data.keyword.Bluemix_notm}}, clique no link Preferências da conta do usuário e, em seguida, selecione a região **Sul dos EUA**. É possível, então, executar as
 etapas a seguir para criar um app:
 
-  1. Acesse **Catálogo**
-  2. Selecione **Tempos de execução do Cloud Foundry**.
+  1. Clique em **Catálogo** na barra de ferramentas do {{site.data.keyword.Bluemix_notm}}.
+  2. Selecione **Apps Cloud Foundry**.
   3. Selecione **SDK for Node.js**.
-  4. Digite um nome exclusivo para o seu aplicativo, por exemplo, TestNode e clique em **Criar**. O nome do app deve ser exclusivo
+  4. Digite um nome exclusivo para o app e clique em **Criar**. O nome do app deve ser exclusivo
 em todo o ambiente do {{site.data.keyword.Bluemix_notm}}.
-  5. Clique **Criar**.
 
-Agora é possível ver as instruções de **Iniciar codificação**. É possível seguir as instruções para fazer download do código de início de TestNode, modificá-lo e implementá-lo.
+Agora, é possível ver o **Tutorial de Introdução**. Siga as instruções para fazer download do código de início de seu app, modificar e implementá-lo.
 
 O app é designado com uma instância e 512 MB de cota de memória, por
 padrão. É possível aumentar a memória ou incluir mais instâncias para obter
@@ -77,24 +74,20 @@ especificar as instâncias do app e a cota de memória. Por exemplo, digite 3 pa
 instâncias e 1 GB para cota de memória e clique em **Salvar**. Também é possível ver os arquivos, logs e variáveis de ambiente para solucionar
 seus problemas.
 
-## Ligando um serviço usando a interface com o usuário do {{site.data.keyword.Bluemix_notm}}
+### Ligando um serviço usando a interface com o usuário do {{site.data.keyword.Bluemix_notm}}
 {: #ee_bindui}
 
-Depois de criar seu app, você deseja utilizá-lo para se conectar
-a um banco de dados. Dessa maneira, é possível armazenar e observar os dados do app
-usando a linguagem de consulta de banco de dados. Neste cenário, você decide
+Depois de criar seu app, conecte-se a um banco de dados com seu app. É possível armazenar e observar os dados do app usando a linguagem de consulta de banco de dados. Neste cenário, você decide
 usar o serviço {{site.data.keyword.cloudant}}
 fornecido pelo {{site.data.keyword.Bluemix_notm}}.
 
-Para usar serviços do aplicativo, é necessário criar uma instância
-de serviço e ligar o aplicativo a ela, executando
-as etapas a seguir:
-  1. Clique em **Incluir um serviço ou uma API** na página Visão geral do app.
-  2. No catálogo do {{site.data.keyword.Bluemix_notm}}, selecione o serviço {{site.data.keyword.cloudant}}.
-  3. Digite um nome exclusivo para a instância de serviço ou use o nome
-padrão gerado pelo {{site.data.keyword.Bluemix_notm}}
-e clique em **Criar**.
-  4. A janela Remontar aplicativo é exibida. Clique em **Remontar** para remontar seu app.
+Para usar serviços no aplicativo, criar uma instância de serviço e ligue seu aplicativo à instância de serviço executando as etapas a seguir:
+
+  1. No catálogo do {{site.data.keyword.Bluemix_notm}}, selecione o serviço {{site.data.keyword.cloudant}}. Inclua um nome exclusivo para o serviço Cloudant e clique em **Criar**. No painel Gerenciar do Cloudant, ative o serviço clicando em **Ativar**.
+  2. Clique em
+**Conexões**. Em seguida, clique em **Criar conexão**.
+  3. Clique em **Conectar** próximo ao seu app.
+  4. A janela Remontar app é exibida. Clique em **Nova preparação**.
 
 Agora seu app está ligado ao serviço {{site.data.keyword.cloudant}}. É possível localizar todos os dados necessários para que o aplicativo se comunique com a instância de serviço na variável de ambiente VCAP_SERVICES. Por exemplo, como o
 {{site.data.keyword.Bluemix_notm}} hospeda
@@ -102,25 +95,7 @@ diversos aplicativos na mesma máquina virtual, os aplicativos não podem usar o
 número de porta HTTP para receber solicitações recebidas. Para evitar conflitos, cada
 aplicativo recebe um número de porta exclusivo. Esse número de porta está disponível na variável VCAP_APP_PORT.
 
-Clique em **Variáveis de ambiente** na página Visão geral do app para ver a lista completa de VCAP_SERVICES para obter mais informações:
-```
-{
-   "cloudantNoSQLDB": [
-      {
-         "name": "Cloudant NoSQL DB-tx",
-         "label": "cloudantNoSQLDB",
-         "plan": "Shared",
-         "credentials": {
-            "username": "d72837bb-b341-4038-9c8e-7f7232916197-bluemix",
-            "password": "b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424",
-            "host": "d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com",
-            "port": 443,
-            "url": "https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com"
-         }
-      }
-   ]
-}
-```
+É possível ver a lista inteira de VCAP_SERVICES associada ao seu app no painel. Para ver essa lista, clique no Menu na barra de ferramentas do IBM Cloud, em seguida, clique em **Painel**. Clique em seu app. Em seguida, clique em **Tempos de execução** e selecione a guia **Variáveis de ambiente**.
 
 **Nota:** essa variável de ambiente é a serialização de um objeto JSON com uma entrada para cada instância de serviço a que o app está ligado. A quantia e o tipo de
 dados que cada instância de serviço fornece são específicos do serviço. Quando seu app não usar nenhum serviço, VCAP_SERVICES será um objeto JSON vazio. Essa variável de ambiente será usada somente quando
@@ -131,12 +106,11 @@ você incluir um serviço no app.
 
 O {{site.data.keyword.Bluemix_notm}} fornece
 várias ferramentas para você iniciar a codificação com seu app, por exemplo, a interface de linha
-de comandos cf e as ferramentas Eclipse. É possível escolher a interface de linha de comandos cf para iniciar a codificação com seu app TestNode.
+de comandos cf e as ferramentas Eclipse. É possível escolher a interface da linha de comandos cf para iniciar a codificação com seu app.
 
   1. Primeiramente, faça o download e desenvolva o código do app.
 
-    1. Acesse a página Iniciar codificação do app. Clique no botão **Fazer o download do código de início**
-para fazer o download do código do app.
+    1. Clique em Introdução no painel do app. Clique no link **Fazer download do código de amostra** para fazer download do código do app.
     2. Extraia o arquivo transferido por download em um diretório, por exemplo, `C:\test`.
     3. Desenvolva o código com seu ambiente de desenvolvimento integrado
 local.
@@ -145,67 +119,61 @@ local.
 
     1. Faça download do programa de instalação da ferramenta de linha de comandos cf para seu sistema operacional.
     2. Siga o assistente de ferramenta para concluir a instalação.
-    3. Use o comando **cf -v** para verificar a versão da interface de linha de comandos cf. Por
-exemplo:
-
-	```
-	cf -v
-	```
+    3. Use o comando `cf -v` para verificar a versão da interface de linha de comandos cf.
 
     **Requisito:** certifique-se de sempre usar a versão mais recente da ferramenta de linha de comandos cf.
+
   3. Depois de instalar a interface de linha de comandos **cf**, deve-se especificar
-com qual região do {{site.data.keyword.Bluemix_notm}} você deseja trabalhar usando o comando **cf api**. A interface de linha de comandos **cf** usa *https://api.Bluemix_URL*, em que *Bluemix_URL* é a URL da região. A URL da região sul do EUA é stage1.ng.bluemix.net. Insira o comando a seguir para se conectar ao
+com qual região do {{site.data.keyword.Bluemix_notm}} você deseja trabalhar usando o comando **cf api**. A interface da linha de comandos **cf** usa *https://api.[Bluemix_URL]*, em que *Bluemix_URL* é a URL da região. O terminal de API para a região Sul dos EUA é `ng.bluemix.net`. Insira o comando a seguir para se conectar ao
 {{site.data.keyword.Bluemix_notm}}:
 
   ```
   cf api https://api.ng.bluemix.net
-   ```
+  ```
 
-  Para obter mais informações sobre a conexão com outras regiões do {{site.data.keyword.Bluemix_notm}}, consulte as regiões do {{site.data.keyword.Bluemix_notm}}. Após especificar a região do {{site.data.keyword.Bluemix_notm}},
+  Para localizar outros terminais da API, veja [Regiões](/docs/overview/cf.html#ov_intro_reg). Após especificar a região do {{site.data.keyword.Bluemix_notm}},
 as informações da localização especificadas são salvas.
 
-  4. Em seguida, é possível efetuar login no {{site.data.keyword.Bluemix_notm}} usando o comando cf login.
+  4. Em seguida, efetue login no {{site.data.keyword.Bluemix_notm}} usando o comando `cf login`.
 
   ```
   cf login -u your_user_ID -p ***** -o your_org_name -s your_space_name
   ```
 
+  Se a sua organização usa a conexão única, use `cf login -sso`.
+
   5. Depois de ter efetuado login no {{site.data.keyword.Bluemix_notm}},
 você estará pronto para implementar o app novamente no {{site.data.keyword.Bluemix_notm}}. No diretório `C:\test` de seu app, insira o comando a seguir:
 
   ```
-  cf push TestNode
+  cf push [your_appname]
   ```
 
-  Para obter mais informações sobre o comando **cf push**, consulte Fazendo upload de seu app.
+  Para obter mais informações sobre o comando **cf push**, veja [Fazendo upload do seu app](/docs/cfapps/hostingapps.html#ht_cfcli).
 
   6. Agora, é possível acessar o app inserindo a URL do app
 a seguir em um navegador:
   ```
-  http://TestNode.mybluemix.net
+  http://your_app.stage1.mybluemix.net
   ```
 
 Também é possível escolher outras ferramentas para construir o app, como
-as ferramentas Eclipse. Para obter mais informações, consulte a página Codificação inicial do app na interface com o usuário do {{site.data.keyword.Bluemix_notm}}.
+as ferramentas Eclipse. Para obter mais informações, veja a página Introdução de seu app no painel do {{site.data.keyword.Bluemix_notm}}.
 
-## Ligando um serviço usando a cli cf
+### Ligando um serviço usando a cli cf
 {: #ee_cfbind}
 
-Com o {{site.data.keyword.Bluemix_notm}},
-é possível incluir um serviço usando a interface com o usuário do Bluemix, conforme descrito
-anteriormente neste cenário. Mas também é possível ligar um serviço usando a interface de linha de comandos **cf**. Suponha que você queira incluir o serviço {{site.data.keyword.cloudant}} no app TestNode usando a interface de linha de comandos cf.
+Também é possível ligar um serviço usando a interface da linha de comandos do **cf**. Suponha que você deseja incluir o serviço {{site.data.keyword.cloudant}} em seu app com a interface da linha de comandos cf.
 
-Para usar o serviço {{site.data.keyword.cloudant}}
-no app, é necessário criar uma instância do serviço Cloudant, ligar
-o app à instância de serviço e, em seguida, usar a instância de serviço. O mesmo procedimento se aplica a todos os outros serviços.
+Para usar o serviço {{site.data.keyword.cloudant}} dentro de seu app, crie uma instância de serviço do Cloudant, ligue o app à instância de serviço e, em seguida, use a instância de serviço. O mesmo procedimento se aplica a todos os outros serviços.
 
   1. Crie uma instância de serviço Cloudant NoSQL DB.
 
-  Use o comando cf create-service para criar uma nova instância de um serviço. Por
+  Use o comando cf create-service para criar uma nova instância de um serviço. Neste exemplo, *Lite* é o nome do plano. Por
 exemplo:
 
   ```
-  cf create-service cloudantNoSQLDB Shared cloudant100
+  cf create-service cloudantNoSQLDB Lite [your_name_for_your_cloudant_service]
   ```
 
   Também é possível usar o comando cf services para ver a lista de instâncias de serviço criadas.
@@ -222,7 +190,7 @@ uso de qualquer um de seus aplicativos.
   Para usar uma instância de serviço, deve-se ligá-la ao seu aplicativo. Use o comando cf bind-service para ligar uma instância de serviço a um aplicativo especificando o nome do aplicativo e a instância de serviço criada.
 
   ```
-  cf bind-service TestNode cloudant100
+  cf bind-service [your_app_name] [your_name_for_your_cloudant_service]
   ```
 
   A ligação de uma instância de serviço a um aplicativo permite que o
@@ -245,7 +213,7 @@ entre o aplicativo e o serviço.
   <dl><dt>username</dt>
   <dd>d72837bb-b341-4038-9c8e-7f7232916197-bluemix</dd>
   <dt>password</dt>
-  <dd>b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424</dd>
+  <dd>secret</dd>
   <dt>url</dt>
   <dd>https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com</dd></dl>
 
@@ -271,6 +239,7 @@ informações, conforme a seguir:
   É possível interagir com a instância de serviço usando as informações de credenciais. As ações que podem ser tomadas incluem leitura, gravação e atualização. O
 exemplo a seguir demonstra como inserir um objeto JSON na instância de serviço
 {{site.data.keyword.cloudant}}:
+
   ```
   // create a new message
 var create_message = function(req, res) {
@@ -318,9 +287,9 @@ das estruturas e dos serviços de tempo de execução, mesmo se você converter 
 abonos grátis.
 
 O {{site.data.keyword.Bluemix_notm}} fornece
-um estimador e uma calculadora para você ver o custo de seu app. É possível ver o custo de TestNode das maneiras a seguir:
+um estimador e uma calculadora para você ver o custo de seu app. É possível ver o custo de seu app das maneiras a seguir:
 
-  * No painel, clique em TestNode. Em seguida, na página Visão geral, clique em **estimar o custo deste app** para ver o preço de tempo de execução e suporte do **SDK for Node.js** e o preço mensal total de seu app.
+  * No painel, clique em seu app. Em seguida, na página Visão geral, clique em **estimar o custo deste app** para ver o preço de tempo de execução e suporte do **SDK for Node.js** e o preço mensal total de seu app.
 
   * Ou, na página Folha de precificação, digite o uso mensal do tempo de execução e serviços de seu app. Por exemplo, 3 instâncias de **SDK for Node.js** com 1 GB
 de memória para cada instância. O preço mensal é calculado e exibido.
