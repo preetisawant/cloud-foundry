@@ -4,13 +4,22 @@
 {: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cfapps/index.html"}
 Cloud Foundry Apps
 
-    {: .navgroup id="howto"}
+    {: .navgroup id="learn"}
     index.md
+    ee.md
     production_considerations.md
+    
+    {: .topicgroup}
+    Best practices
+        patterns.md
+        [What makes a good app?](../apps/best-practice.html)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
     hostingapps.md
     starter_app_usage.md
     byob.md
+    depapps.md
+    connecting_apps.md
     monitoring_logging_cloud_foundry_apps.md
-    ee.md
-
     {: .navgroup-end}
