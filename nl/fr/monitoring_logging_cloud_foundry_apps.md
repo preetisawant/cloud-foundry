@@ -1,14 +1,12 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated: "2016-09-06"
-
+  years: 2016, 2017, 2018
+lastupdated: "2018-01-18"
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
 
 
 # Surveillance et journalisation d'applications Cloud Foundry
@@ -16,7 +14,7 @@ lastupdated: "2016-09-06"
 
 {{site.data.keyword.Bluemix_notm}} intègre un mécanisme de journalisation qui génère des fichiers journaux pour vos applications, au cours de
 leur exécution. Ces journaux comportent les erreurs, les avertissements et les messages d'information qui sont générés pour votre application. De plus, vous pouvez également configurer votre application pour qu'elle écrive
-des messages de journal dans le fichier journal. Pour plus d'informations sur les formats des journaux et sur leur affichage, voir [Journalisation des applications qui s'exécutent dans Cloud Foundry](/docs/monitor_log/monitoringandlogging.html#logging_for_bluemix_apps).
+des messages de journal dans le fichier journal. Pour plus d'informations sur les formats des journaux et sur leur affichage, voir [Journalisation des applications qui s'exécutent dans Cloud Foundry](../monitor_log/logging.html#logging_for_bluemix_apps).
 
 La surveillance de votre application vous permet d'afficher et de contrôler son déploiement. Elle permet d'effectuer les tâches suivantes :
 
@@ -29,4 +27,4 @@ rapidement et identifier les causes efficacement. Pour ce faire, gardez l'aspect
 et utilisez des services ou des outils de surveillance et de journalisation lorsque votre application est déployée dans {{site.data.keyword.Bluemix_notm}}.
 
 Pour plus d'informations sur la surveillance et la journalisation d'applications Cloud Foundry, voir
-[Surveillance et journalisation](/docs/monitor_log/monitoringandlogging.html).
+[Surveillance et journalisation](../monitor_log/logging.html).

@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -24,7 +22,7 @@ lastupdated: "2015-12-15"
 
 外部ビルドパックは、ユーザーが独自のビルドパックとして使用できるよう、Cloud Foundry コミュニティーによって提供されます。 アプリを {{site.data.keyword.Bluemix_notm}} にデプロイする前に、cf コマンド・ライン・インターフェースをインストールしてください。
 
-**注:** 外部ビルドパックは IBM によって提供されるものではありません。サポートについては、Cloud Foundry コミュニティーにお問い合わせください。
+**注:** 外部ビルドパックは IBM によって提供されるものではありません。 サポートについては、Cloud Foundry コミュニティーにお問い合わせください。
 
 ## 組み込みのコミュニティー・ビルドパック
 
@@ -58,7 +56,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-IBM 製ビルドパックではサポートされないが組み込みコミュニティー・ビルドパックではサポートされるランタイムまたはフレームワークの場合、cf push コマンドで -b オプションを使用する必要はありません。</p><p>例えば、Ruby アプリ用の IBM 製のビルドパックはありません。 以下のコマンドを入力することによって、組み込みのコミュニティー・ビルドパックを使用できます。
+IBM 製ビルドパックではサポートされないが組み込みコミュニティー・ビルドパックではサポートされるランタイムまたはフレームワークの場合、cf push コマンドで -b オプションを使用する必要はありません。例えば、Ruby アプリ用の IBM 製のビルドパックはありません。 以下のコマンドを入力することによって、組み込みのコミュニティー・ビルドパックを使用できます。
 
 ```
 cf push app_name -p app_path
@@ -98,12 +96,18 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Java ビルドパックのバージョンの指定
 
-<ul>
-<li>
-<strong>cf set-env</strong> コマンドを使用します。 例えば、Java バージョンを 1.7.0 に設定するには、次のコマンドを入力します。
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>その後、変更を有効にするためにアプリを再ステージします。</p>
-<pre class="pre"><code>cf restage app_name</code></pre>
-</li>
-<li>
-<code>manifest.yml</code> ファイルを使用します。 指定したい環境変数と値を直接このファイルに追加することができます。 詳細については、<a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">環境変数</a>を参照してください。</li></ul>
+`cf set-env` コマンドを使用します。 例えば、Java バージョンを 1.7.0 に設定するには、次のコマンドを入力します。
+
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+その後、変更を有効にするためにアプリを再ステージします。
+
+```
+cf restage app_name
+```
+{:pre}
+
+`manifest.yml` ファイルを使用します。指定したい環境変数と値を直接このファイルに追加することができます。 詳細情報については、『[環境変数](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)』を参照してください。

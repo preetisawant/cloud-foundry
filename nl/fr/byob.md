@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -27,7 +25,7 @@ l'interface de ligne de commande cf.
 
 **Remarque :** les packs de construction externes ne sont pas fournis par IBM. Contactez la communauté Cloud Foundry pour une prise en charge.
 
-## Packs de construction intégrés de la communauté
+## Packs de construction de communauté intégrés
 
 Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser des packs de construction intégrés fournis par la communauté Cloud Foundry. Pour afficher la liste des packs de construction intégrés de la communauté, exécutez la commande `cf buildpacks` :
 
@@ -53,7 +51,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Dans le cas d'un contexte d'exécution ou d'une infrastructure non pris en charge par les packs de construction créés par IBM, mais pris en charge par les packs de construction intégrés de la communauté, il n'est pas nécessaire d'utiliser l'option -b avec la commande cf push.</p><p>Par exemple, pour des applications Ruby, il n'existe aucun pack de construction créé par IBM. Pour utiliser le pack de construction intégré de la communauté, saisissez la commande suivante :
+Dans le cas d'un contexte d'exécution ou d'une infrastructure non pris en charge par les packs de construction créés par IBM, mais pris en charge par les packs de construction intégrés de la communauté, il n'est pas nécessaire d'utiliser l'option -b avec la commande cf push. Par exemple, pour des applications Ruby, il n'existe aucun pack de construction créé par IBM. Pour utiliser le pack de construction intégré de la communauté, saisissez la commande suivante :
 
 ```
 cf push app_name -p app_path
@@ -93,12 +91,17 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Spécification de la version de pack de construction Java
 
-<ul>
-<li>
-Utilisez la commande <strong>cf set-env</strong>. Par exemple, entrez la commande suivante pour définir la version Java 1.7.0 :
-<pre class="pre"><code>cf set-env nom_app JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>Ensuite, reconstituez votre application pour appliquer la modification :</p>
-<pre class="pre"><code>cf restage nom_app</code></pre>
-</li>
-<li>
-Utilisez le fichier <code>manifest.yml</code>. Vous pouvez ajouter la variable d'environnement et la valeur que vous voulez spécifier directement dans le fichier. Pour des informations détaillées, voir la rubrique relative aux <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">variables d'environnement</a>.</li></ul>
+Utilisez la commande `cf set-env`. Par exemple, entrez la commande suivante pour définir la version Java 1.7.0 :
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+Ensuite, reconstituez votre application pour appliquer la modification :
+
+```
+cf restage app_name
+```
+{:pre}
+
+Utilisez le fichier `manifest.yml`. Vous pouvez ajouter la variable d'environnement et la valeur que vous voulez spécifier directement dans le fichier. Pour des informations détaillées, voir la rubrique relative aux [variables d'environnement](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block). 

@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -64,7 +62,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Para um tempo de execução ou uma estrutura não suportados por buildpacks criados pela IBM, mas suportados pelos buildpacks integrados da comunidade, não é necessário usar a opção -b com o comando cf push.</p><p>Por exemplo, para apps Ruby, não há buildpacks criados pela IBM. É possível
+Para um tempo de execução ou uma estrutura não suportados por buildpacks criados pela IBM, mas suportados pelos buildpacks integrados da comunidade, não é necessário usar a opção -b com o comando cf push. Por exemplo, para apps Ruby, não há buildpacks criados pela IBM. É possível
 usar o buildpack integrado da comunidade inserindo o comando a seguir:
 
 ```
@@ -107,15 +105,20 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Especificando a versão do buildpack Java
 
-<ul>
-<li>
-Use o comando <strong>cf set-env</strong>. Por exemplo, insira o comando a seguir para configurar a versão Java para 1.7.0:
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>Em seguida,
-remonte seu aplicativo para efetivar a mudança:</p>
-<pre class="pre"><code>cf restage app_name</code></pre>
-</li>
-<li>
-Use o arquivo <code>manifest.yml</code>. É possível incluir a variável de ambiente
+Use o comando `cf set-env`. Por exemplo, insira o comando a seguir para configurar a versão Java para 1.7.0:
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+Em seguida,
+remonte seu aplicativo para efetivar a mudança:
+
+```
+cf restage app_name
+```
+{:pre}
+
+Use o arquivo `manifest.yml`. É possível incluir a variável de ambiente
 e o valor que deseja especificar diretamente
-no arquivo. Para obter informações detalhadas, consulte <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">Variáveis de ambiente</a>.</li></ul>
+no arquivo. Para obter informações detalhadas, consulte [Variáveis de ambiente](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)

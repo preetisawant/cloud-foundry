@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-14"
 
@@ -46,7 +46,7 @@ Une fois que vous avez créé votre application, vous disposez de quelques optio
 <dl><dt>Interface de ligne de commande cf</dt>
 <dd>Utilisez l'<a href="https://github.com/cloudfoundry/cli#getting-started">interface de ligne de commande cf</a> pour mettre à jour votre application, créer une instance de service ou lier le service à votre application. Vous pouvez également utiliser l'interface de ligne de commande cloud-cli pour créer, mettre à jour et supprimer des offres de services.</dd>
 <dt>Interface utilisateur {{site.data.keyword.Bluemix_notm}}</dt>
-<dd>Utilisez l'<a href="https://console.bluemix.net/dashboard/apps">interface utilisateur</a> {{site.data.keyword.Bluemix_notm}} pour générer votre application, et effectuer diverses activités comme choisir les services et les contextes d'exécution à combiner pour résoudre vos problèmes métier. </dd>
+<dd>Utilisez l'<a href="https://console.bluemix.net/dashboard/apps">interface utilisateur</a> {{site.data.keyword.Bluemix_notm}} pour générer votre application, et effectuer diverses activités comme choisir les services et les contextes d'exécution à combiner pour résoudre vos problèmes métier.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
 <dd>Utilisez {{site.data.keyword.contdelivery_short}} pour automatiser les générations, les tests unitaires, les déploiements, etc. Editez et insérez du code via l'interface IDE Web enrichie. Créez des chaînes d'outils pour activer les intégrations d'outils prenant en charge vos tâches de développement, de déploiement et d'opérations. Le service Continuous Delivery inclut Delivery Pipeline, Eclipse Orion Web IDE et Git Repos and Issue Tracking. Pour plus d'informations, voir <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Initiation à Continuous Delivery</a>.</dd>
 </dl>

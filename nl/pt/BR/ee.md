@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-15"
 
@@ -24,15 +24,18 @@ para iniciar.
 ## Inscrevendo-se
 {: #ee_start}
 
-Antes de iniciar, inscreva-se para um IBMid em [bluemix.net/ ![External link icon](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}. Em seguida, efetue login no {{site.data.keyword.Bluemix_notm}} e inicie sua avaliação grátis de 30 dias. O {{site.data.keyword.Bluemix_notm}} fornece
+Para começar, acesse [o console do IBM Cloud ![Ícone de link externo](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}. Inscreva-se para obter um IBMid e efetue login no {{site.data.keyword.Bluemix_notm}} para iniciar sua avaliação grátis de 30 dias. O {{site.data.keyword.Bluemix_notm}} fornece
 um abono de 2 GB de memória de tempo de execução e 10 instâncias de serviço para sua
 avaliação grátis.
 
+## Desenvolvendo seu aplicativo
+{: #develop}
+
 Há três formas de desenvolver seu app:
 
-* [Serviço de Entrega Contínua](#ee_cd)
-* [Interface com o usuário do IBM Cloud](#ee_appui)
-* [Linha de comandos do Cloud Foundry](#ee_cf)
+* Com o [serviço de Entrega Contínua](#ee_cd)
+* No painel da [interface com o usuário do IBM Cloud](#ee_appui)
+* Na [linha de comandos do Cloud Foundry](#ee_cf)
 
 ## Desenvolvendo e implementando seus apps usando cadeias de ferramentas e o serviço {{site.data.keyword.contdelivery_short}}
 {: #ee_cd}

@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-15"
 
@@ -23,12 +23,15 @@ Sie können die {{site.data.keyword.Bluemix}}-Konsole, -Plattform und eine Auswa
 ## Registrieren
 {: #ee_start}
 
-Bevor Sie beginnen können, müssen Sie sich zunächst unter [bluemix.net/ ![Symbol für externen Link](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window} für eine IBMid registrieren. Melden Sie sich anschließend bei {{site.data.keyword.Bluemix_notm}} an und starten Sie Ihre kostenlose 30-tägige Testversion. {{site.data.keyword.Bluemix_notm}} stellt im Rahmen Ihrer kostenlosen Testversion ein Volumen von 2 GB Laufzeitspeicher und 10 Serviceinstanzen bereit.
+Rufen Sie zum Einstieg die [IBM Cloud-Konsole ![Symbol für externen Link](../icons/launch-glyph.svg)](https://bluemix.net){: new_window} auf. Registrieren Sie sich für eine IBMid und melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, damit Ihr kostenloser dreißigtägiger Testzeitraum beginnt.{{site.data.keyword.Bluemix_notm}} stellt im Rahmen Ihrer kostenlosen Testversion ein Volumen von 2 GB Laufzeitspeicher und 10 Serviceinstanzen bereit.
 
-Bei der Entwicklung Ihrer App stehen Ihnen drei Wege zur Auswahl: 
+## App entwickeln
+{: #develop}
+
+Bei der Entwicklung Ihrer App stehen Ihnen drei Wege zur Auswahl:
 
 * [Continuous Delivery-Service](#ee_cd)
-* [IBM Cloud-Benutzerschnittstelle](#ee_appui)
+* Dashboard der [IBM Cloud-Benutzerschnittstelle](#ee_appui)
 * [Cloud Foundry-Befehlszeile](#ee_cf)
 
 ## Entwicklung und Bereitstellung der Apps mit Toolchains und dem {{site.data.keyword.contdelivery_short}}-Service
@@ -39,18 +42,18 @@ Bei der Entwicklung Ihrer App stehen Ihnen drei Wege zur Auswahl:
 ## Web-App mit {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle erstellen
 {: #ee_appui}
 
-Nach dem Registrieren beginnen Sie mit dem Erstellen Ihrer ersten App, indem Sie {{site.data.keyword.Bluemix_notm}}-Katalog und -Dashboard aufrufen. 
+Nach dem Registrieren beginnen Sie mit dem Erstellen Ihrer ersten App, indem Sie {{site.data.keyword.Bluemix_notm}}-Katalog und -Dashboard aufrufen.
 
 In {{site.data.keyword.Bluemix_notm}} werden Apps Organisationen und Bereichen zugeordnet. Eine Organisation wird von mehreren Mitarbeitern verwendet, die ihr Eigner sind. Zunächst erhalten Sie eine Standardorganisation, die nach Ihrem Benutzernamen benannt ist, und Sie sind der einzige Mitarbeiter. Sie erhalten auch einen Bereich innerhalb dieser Organisation. Der Bereich ist eine Umgebung, in der Ihre Apps ausgeführt werden. Beispiel: Sie können einen Entwicklungsbereich als Entwicklungsumgebung verwenden, einen Testbereich als Testumgebung und einen Produktionsbereich als Produktionsumgebung. Die einzelnen Umgebungen gehören zu einer Region. Mit {{site.data.keyword.Bluemix_notm}} können Sie Ihre Anwendungen in einer bestimmten geografischen Region bereitstellen, um die Netzlatenz zu verringern und den Datenschutz und die Verfügbarkeit zu verbessern.
 
 In diesem Szenario möchten Sie mithilfe von Node.js eine Web-App entwickeln. Sie befinden sich in den USA, ebenso wie die meisten Ihrer App-Benutzer. Sie entscheiden sich, Ihre App in der Nähe Ihrer Benutzerbasis zu erstellen und auszuführen, sodass Sie von der geringeren Netzlatenz profitieren können. Klicken Sie nach der Anmeldung bei {{site.data.keyword.Bluemix_notm}} auf den Link zu den Benutzerkontovorgaben und wählen Sie anschließend die Region **Vereinigte Staaten (Süden)** aus. Führen Sie anschließend die folgenden Schritte zum Erstellen einer App aus:
 
-  1. Klicken Sie in der {{site.data.keyword.Bluemix_notm}}-Symbolleiste auf **Katalog**. 
-  2. Wählen Sie **Cloud Foundry-Apps** aus. 
+  1. Klicken Sie in der {{site.data.keyword.Bluemix_notm}}-Symbolleiste auf **Katalog**.
+  2. Wählen Sie **Cloud Foundry-Apps** aus.
   3. Wählen Sie **SDK for Node.js** aus.
   4. Geben Sie einen eindeutigen Namen für Ihre App ein und klicken Sie auf **Erstellen**. Der Name der App muss in der gesamten {{site.data.keyword.Bluemix_notm}}-Umgebung eindeutig sein.
 
-Jetzt wird das **Lernprogramm 'Einführung'** angezeigt. Gehen Sie wie in den Anweisungen beschrieben vor: Laden Sie den Starter-Code Ihrer App herunter, ändern Sie ihn und stellen Sie ihn bereit. 
+Jetzt wird das **Lernprogramm 'Einführung'** angezeigt. Gehen Sie wie in den Anweisungen beschrieben vor: Laden Sie den Starter-Code Ihrer App herunter, ändern Sie ihn und stellen Sie ihn bereit.
 
 Der App ist standardmäßig ein Kontingent von 1 Instanz und 512 MB Speicher zugewiesen. Sie können den
 Speicher vergrößern oder weitere Instanzen hinzufügen, um für Ihre App eine hohe Verfügbarkeit zu erreichen, z. B. 3 Instanzen mit jeweils 1 GB Speicher. Klicken Sie auf **App-Übersicht anzeigen**, um Ihr
@@ -65,17 +68,17 @@ Stellen Sie nach dem Erstellen der App mit Ihrer App eine Verbindung zu einer Da
 entscheiden Sie sich dafür, den Service {{site.data.keyword.cloudant}}, der
 von {{site.data.keyword.Bluemix_notm}} bereitgestellt wird, zu verwenden.
 
-Verwenden Sie Services innerhalb der Anwendung, indem Sie eine entsprechende Serviceinstanz erstellen und Ihre Anwendung an die Serviceinstanz binden. Führen Sie dazu die folgenden Schritte aus: 
+Verwenden Sie Services innerhalb der Anwendung, indem Sie eine entsprechende Serviceinstanz erstellen und Ihre Anwendung an die Serviceinstanz binden. Führen Sie dazu die folgenden Schritte aus:
 
-  1. Wählen Sie im {{site.data.keyword.Bluemix_notm}}-Katalog den {{site.data.keyword.cloudant}}-Service aus. Fügen Sie einen eindeutigen Namen für Ihren Cloudant-Service hinzu und klicken Sie auf die Schaltfläche zum Erstellen****. Starten Sie den Service in der Anzeige zum Verwalten von Cloudant-Services, indem Sie auf die Schaltfläche zum Starten**** klicken. 
-  2. Klicken Sie auf **Verbindungen**. Klicken Sie anschließend auf **Verbindung erstellen**. 
-  3. Klicken Sie neben Ihrer App auf **Verbinden**. 
-  4. Das Fenster 'Erneutes Staging für App' wird angezeigt. Klicken Sie auf **Erneutes Staging**. 
+  1. Wählen Sie im {{site.data.keyword.Bluemix_notm}}-Katalog den {{site.data.keyword.cloudant}}-Service aus. Fügen Sie einen eindeutigen Namen für Ihren Cloudant-Service hinzu und klicken Sie auf die Schaltfläche zum Erstellen****. Starten Sie den Service in der Anzeige zum Verwalten von Cloudant-Services, indem Sie auf die Schaltfläche zum Starten**** klicken.
+  2. Klicken Sie auf **Verbindungen**. Klicken Sie anschließend auf **Verbindung erstellen**.
+  3. Klicken Sie neben Ihrer App auf **Verbinden**.
+  4. Das Fenster 'Erneutes Staging für App' wird angezeigt. Klicken Sie auf **Erneutes Staging**.
 
 Nun wird Ihre App an den Service {{site.data.keyword.cloudant}} gebunden. In der Umgebungsvariablen VCAP_SERVICES finden Sie alle erforderlichen Daten für die Kommunikation zwischen der Anwendung und der Serviceinstanz. Beispiel: Da {{site.data.keyword.Bluemix_notm}} mehrere Anwendungen auf derselben virtuellen Maschine hostet, können Anwendungen
 nicht dieselbe HTTP-Portnummer verwenden, um eingehende Anforderungen zu empfangen. Um Konflikte zu vermeiden, erhält jede Anwendung eine eindeutige Portnummer. Diese Portnummer wird über die Variable VCAP_APP_PORT zur Verfügung gestellt.
 
-Die gesamte Liste der Services, für die in Ihrer App über die Variable 'VCAP_Services' Verbindungsinformationen festgelegt sind, können Sie im Dashboard anzeigen. Zeigen Sie diese Liste an, indem Sie auf das Menü in der IBM Cloud-Symbolleiste und anschließend auf **Dashboard** klicken. Klicken Sie auf Ihre App. Klicken Sie anschließend auf **Laufzeiten** und wählen Sie die Registerkarte **Umgebungsvariablen** aus. 
+Die gesamte Liste der Services, für die in Ihrer App über die Variable 'VCAP_Services' Verbindungsinformationen festgelegt sind, können Sie im Dashboard anzeigen. Zeigen Sie diese Liste an, indem Sie auf das Menü in der IBM Cloud-Symbolleiste und anschließend auf **Dashboard** klicken. Klicken Sie auf Ihre App. Klicken Sie anschließend auf **Laufzeiten** und wählen Sie die Registerkarte **Umgebungsvariablen** aus.
 
 **Hinweis:** Bei dieser Umgebungsvariablen handelt es sich um die Serialisierung eines JSON-Objekts mit einem Eintrag pro Serviceinstanz, an die die App gebunden ist. Die Datenmenge und der Datentyp, die von den einzelnen Serviceinstanzen bereitgestellt werden, hängen
 vom jeweiligen Service ab. Wenn Ihre App keinen Service verwendet, ist VCAP_SERVICES ein leeres
@@ -88,7 +91,7 @@ In {{site.data.keyword.Bluemix_notm}} werden verschiedene Tools bereitgestellt, 
 
   1. Laden Sie als erstes den Code Ihrer App herunter und entwickeln Sie ihn.
 
-    1. Klicken Sie in Ihrem App-Dashboard auf die Einführungsoption. Laden Sie dann Ihren App-Code herunter, indem Sie auf den Link zum Herunterladen des Beispielcodes klicken****. 
+    1. Klicken Sie in Ihrem App-Dashboard auf die Einführungsoption. Laden Sie dann Ihren App-Code herunter, indem Sie auf den Link zum Herunterladen des Beispielcodes klicken****.
     2. Extrahieren Sie die heruntergeladene Datei in ein Verzeichnis, z. B. `C:\test`.
     3. Entwickeln Sie den Code mit Ihrer lokalen integrierten Entwicklungsumgebung.
 
@@ -110,13 +113,13 @@ In {{site.data.keyword.Bluemix_notm}} werden verschiedene Tools bereitgestellt, 
   Weitere API-Endpunkte können Sie unter [Regionen](/docs/overview/cf.html#ov_intro_reg) nachschlagen. Nach Angabe der {{site.data.keyword.Bluemix_notm}}-Region werden die von Ihnen angegebenen Positionsinformationen
 gespeichert.
 
-  4. Melden Sie sich als Nächstes mit dem Befehl `cf login` bei {{site.data.keyword.Bluemix_notm}} an. 
+  4. Melden Sie sich als Nächstes mit dem Befehl `cf login` bei {{site.data.keyword.Bluemix_notm}} an.
 
   ```
   cf login -u eigene_benutzer-id -p ***** -o name_der_eigenen_organisation -s name_des_eigenen_bereichs
   ```
 
-  Geben Sie `cf login -sso` ein, wenn Ihre Organisation Single Sign-On verwendet. 
+  Geben Sie `cf login -sso` ein, wenn Ihre Organisation Single Sign-On verwendet.
 
   5. Nachdem Sie sich bei {{site.data.keyword.Bluemix_notm}} angemeldet haben, können Sie Ihre App in {{site.data.keyword.Bluemix_notm}} bereitstellen. Geben Sie im Verzeichnis (`C:\test`) der App den folgenden Befehl ein:
 
@@ -124,14 +127,14 @@ gespeichert.
   cf push [Name_Ihrer_App]
   ```
 
-  Weitere Informationen zum Befehl **cf push** finden Sie unter [App hochladen](/docs/cfapps/hostingapps.html#ht_cfcli). 
+  Weitere Informationen zum Befehl **cf push** finden Sie unter [App hochladen](/docs/cfapps/hostingapps.html#ht_cfcli).
 
   6. Nun können Sie auf die App zugreifen, indem Sie die folgende App-URL in einen Browser eingeben:
   ```
   http://your_app.stage1.mybluemix.net
   ```
 
-Sie können auch andere Tools zum Erstellen der App verwenden, z. B. Eclipse-Tools. Weitere Informationen finden Sie auf der Einführungsseite Ihrer APP im {{site.data.keyword.Bluemix_notm}}-Dashboard. 
+Sie können auch andere Tools zum Erstellen der App verwenden, z. B. Eclipse-Tools. Weitere Informationen finden Sie auf der Einführungsseite Ihrer APP im {{site.data.keyword.Bluemix_notm}}-Dashboard.
 
 ### Service mithilfe der Befehlszeilenschnittstelle 'cf' binden
 {: #ee_cfbind}

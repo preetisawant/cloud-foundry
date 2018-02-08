@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -24,11 +22,11 @@ Wenn Sie im {{site.data.keyword.Bluemix}}-Katalog keinen Starter finden, der die
 
 Externe Buildpacks werden Ihnen von der Cloud Foundry-Community für die Verwendung als eigene Buildpacks zur Verfügung gestellt. Bevor Sie Ihre App für {{site.data.keyword.Bluemix_notm}} bereitstellen, müssen Sie die Befehlszeilenschnittstelle 'cf' installieren.
 
-**Hinweis:** Externe Buildpacks werden von IBM nicht bereitgestellt. Wenden Sie sich an die Cloud Foundry-Community, wenn Sie Unterstützung benötigen. 
+**Hinweis:** Externe Buildpacks werden von IBM nicht bereitgestellt. Wenden Sie sich an die Cloud Foundry-Community, wenn Sie Unterstützung benötigen.
 
 ## Integrierte Community-Buildpacks
 
-{{site.data.keyword.Bluemix_notm}} ermöglicht die Verwendung integrierter Buildpacks, die von der Cloud Foundry-Community bereitgestellt werden. Die integrierten Community-Buildpacks können Sie mit dem Befehl `cf buildpacks` anzeigen: 
+{{site.data.keyword.Bluemix_notm}} ermöglicht die Verwendung integrierter Buildpacks, die von der Cloud Foundry-Community bereitgestellt werden. Die integrierten Community-Buildpacks können Sie mit dem Befehl `cf buildpacks` anzeigen:
 
 ```
 cf buildpacks
@@ -58,7 +56,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Bei Laufzeitumgebungen bzw. Frameworks, die zwar nicht von den von IBM erstellten Buildpacks, jedoch von integrierten Community-Buildpacks unterstützt werden, ist eine Verwendung der Option '-b' mit dem Befehl 'cf push' nicht erforderlich.</p><p>Für Ruby-Apps beispielsweise gibt es keine von IBM erstellten Buildpacks. Sie können das integrierte Community-Buildpack verwenden, indem Sie den folgenden Befehl eingeben:
+Bei Laufzeitumgebungen bzw. Frameworks, die zwar nicht von den von IBM erstellten Buildpacks, jedoch von integrierten Community-Buildpacks unterstützt werden, ist eine Verwendung der Option '-b' mit dem Befehl 'cf push' nicht erforderlich. Für Ruby-Apps beispielsweise gibt es keine von IBM erstellten Buildpacks. Sie können das integrierte Community-Buildpack verwenden, indem Sie den folgenden Befehl eingeben:
 
 ```
 cf push app_name -p app_path
@@ -74,7 +72,7 @@ cf push app_name -p app_path -b https://github.com/cloudfoundry/staticfile-build
 ```
 {:pre}
 
-Wenn Sie nicht das integrierte Community-Buildpack für Ruby-Apps verwenden möchten, können Sie auch ein externes Buildpack verwenden. Geben Sie dazu den folgenden Befehl ein: 
+Wenn Sie nicht das integrierte Community-Buildpack für Ruby-Apps verwenden möchten, können Sie auch ein externes Buildpack verwenden. Geben Sie dazu den folgenden Befehl ein:
 
 ```
 cf push app_name -p app_path -b https://github.com/cloudfoundry/ruby-buildpack.git
@@ -98,12 +96,17 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Version des Java-Buildpacks angeben
 
-<ul>
-<li>
-Verwenden Sie den Befehl <strong>cf set-env</strong>. Geben Sie beispielsweise den folgenden Befehl ein, um die Java-Version auf 1.7.0 festzulegen:
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>Anschließend können Sie für Ihre App ein erneutes Staging durchführen, damit die Änderung wirksam wird:</p>
-<pre class="pre"><code>cf restage App-Name</code></pre>
-</li>
-<li>
-Verwenden Sie die Datei <code>manifest.yml</code>. Sie können die gewünschte Umgebungsvariable und den gewünschten Wert direkt zur Datei hinzufügen. Ausführliche Informationen finden Sie unter <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">Umgebungsvariablen</a>.</li></ul>
+Verwenden Sie den Befehl `cf set-env`. Geben Sie beispielsweise den folgenden Befehl ein, um die Java-Version auf 1.7.0 festzulegen:
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+Anschließend können Sie für Ihre App ein erneutes Staging durchführen, damit die Änderung wirksam wird:
+
+```
+cf restage app_name
+```
+{:pre}
+
+Mithilfe der Datei `manifest.yml`. Sie können die gewünschte Umgebungsvariable und den gewünschten Wert direkt zur Datei hinzufügen. Ausführliche Informationen finden Sie unter [Umgebungsvariablen](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block).

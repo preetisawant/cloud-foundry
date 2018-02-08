@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-15"
 
@@ -24,14 +24,17 @@ commencer.
 ## Inscription
 {: #ee_start}
 
-Avant de commencer, inscrivez-vous pour obtenir un IBMid sur [bluemix.net/ ![Icône de lien externe](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}. Ensuite, connectez-vous à {{site.data.keyword.Bluemix_notm}} et commencez votre essai gratuit de 30 jours. {{site.data.keyword.Bluemix_notm}} fournit une franchise de 2 Go de mémoire d'exécution et 10 instances de
+Pour commencer, accédez à [la console IBM Cloud ![Icône de lien externe](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}. Inscrivez-vous pour obtenir un IBMid et connectez-vous à {{site.data.keyword.Bluemix_notm}} pour démarrer votre essai gratuit de 30 jours. {{site.data.keyword.Bluemix_notm}} fournit une franchise de 2 Go de mémoire d'exécution et 10 instances de
 service dans le cadre de votre essai gratuit.
+
+## Développement de votre application
+{: #develop}
 
 Il existe trois façons de développer votre application :
 
-* [Service Continuous Delivery](#ee_cd)
-* [Interface utilisateur IBM Cloud](#ee_appui)
-* [Ligne de commande Cloud Foundry](#ee_cf)
+* Avec le [service de distribution continue (Continuous Delivery)](#ee_cd)
+* Dans le tableau de bord de l'[interface utilisateur IBM Cloud](#ee_appui)
+* Sur la [ligne de commande Cloud Foundry](#ee_cf)
 
 ## Développement et déploiement d'applications à l'aide de chaînes d'outils et du service {{site.data.keyword.contdelivery_short}}
 {: #ee_cd}

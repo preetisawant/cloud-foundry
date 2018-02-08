@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-14"
 
@@ -29,9 +29,9 @@ Laufzeitumgebungen werden als Buildpacks in {{site.data.keyword.Bluemix_notm}} i
 automatisch für die Verwendung konfiguriert und müssen nur sehr wenig oder auch gar nicht gewartet werden.
 
 Gehen Sie wie folgt vor, um mit der Erstellung Ihrer Anwendung zu beginnen:
-  1. Klicken Sie in der IBM Cloud-Symbolleiste auf **Katalog**. 
-  2. Klicken Sie auf **Cloud Foundry-Apps** und wählen Sie eine Laufzeitumgebung aus. Befolgen Sie die Anweisungen, um einen Namen anzugeben und zu entscheiden, welchen Code Sie verwenden möchten. Klicken Sie auf **Erstellen**. 
-  3. Nachdem Sie die Anweisungen abgeschlossen haben, klicken Sie auf **Übersicht**. 
+  1. Klicken Sie in der IBM Cloud-Symbolleiste auf **Katalog**.
+  2. Klicken Sie auf **Cloud Foundry-Apps** und wählen Sie eine Laufzeitumgebung aus. Befolgen Sie die Anweisungen, um einen Namen anzugeben und zu entscheiden, welchen Code Sie verwenden möchten. Klicken Sie auf **Erstellen**.
+  3. Nachdem Sie die Anweisungen abgeschlossen haben, klicken Sie auf **Übersicht**.
   5. Sie können Ihrer App einen Service hinzufügen, indem Sie in der App-Übersicht im Dashboard auf **Verbindung erstellen** klicken. Durchsuchen Sie den Katalog und wählen Sie Services aus oder blättern Sie zum Ende des Katalogs und klicken Sie auf **{{site.data.keyword.Bluemix_notm}} Experimental Services**, um die experimentellen Services zu durchsuchen. Sie haben auch die Möglichkeit, die Befehlszeilenschnittstelle 'cf' zu verwenden. Weitere Informationen finden Sie unter 'Optionen für das Arbeiten mit Apps'.
   6. Blättern Sie auf der Übersichtsseite zur Karte 'Continuous Delivery' und klicken Sie auf **Toolchain anzeigen**. Die Quelle der App wird in einem Repository gespeichert, das unter Bluemix gehostet wird. Außerdem wird eine offene Toolchain erstellt, mit der und unter Verwendung dieses Repositorys und einer Delivery Pipeline Ihre App entwickelt und bereitgestellt wird. Weitere Informationen zum Continuous Delivery-Service finden Sie in <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Einführung in Continuous Delivery</a>.
 
