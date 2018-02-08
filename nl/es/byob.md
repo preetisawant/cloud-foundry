@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -66,7 +64,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Para un tiempo de ejecución o infraestructura que no reciba soporte de los paquetes de compilación creados por IBM pero sí de los integrados de la comunidad, no tiene que utilizar la opción -b con el mandato cf push.</p><p>Por ejemplo, para apps Ruby, no hay paquetes de compilación creados por IBM. Puede utilizar el paquete de compilación integrado de la comunidad especificando
+Para un tiempo de ejecución o infraestructura que no reciba soporte de los paquetes de compilación creados por IBM pero sí de los integrados de la comunidad, no tiene que utilizar la opción -b con el mandato cf push.Por ejemplo, para apps Ruby, no hay paquetes de compilación creados por IBM. Puede utilizar el paquete de compilación integrado de la comunidad especificando
 el mandato siguiente:
 
 ```
@@ -111,15 +109,21 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## Especificación de la versión de paquete de compilación de Java
 
-<ul>
-<li>
-Utilice el mandato <strong>cf set-env</strong>. Por ejemplo, especifique el mandato siguiente para establecer la versión de Java a 1.7.0:
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>A continuación,
-vuelva a transferir la app para que el cambio sea efectivo:</p>
-<pre class="pre"><code>cf restage nombre_app</code></pre>
-</li>
-<li>
-Utilice el archivo <code>manifest.yml</code>. Puede añadir la variable
+Utilice el mandato `cf set-env`. Por ejemplo, especifique el mandato siguiente para establecer la versión de Java a 1.7.0:
+
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+A continuación,
+vuelva a transferir la app para que el cambio sea efectivo:
+
+```
+cf restage app_name
+```
+{:pre}
+
+Utilice el archivo `manifest.yml`. Puede añadir la variable
 de entorno y el valor que desee especificar directamente
-en el archivo. Para obtener más información, consulte <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">Variables de entorno</a>.</li></ul>
+en el archivo. Para obtener información detallada, consulte [Variables de entorno](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)
