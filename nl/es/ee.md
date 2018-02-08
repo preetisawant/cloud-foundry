@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017, 2018
+  years: 2015, 2017
 
 lastupdated: "2017-12-15"
 
@@ -23,18 +23,16 @@ Puede utilizar la consola y la plataforma de {{site.data.keyword.Bluemix}} y una
 ## Registro
 {: #ee_start}
 
-Para empezar, vaya a [la consola de IBM Cloud ![Icono de enlace externo](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}. Regístrese para un IBMid e inicie sesión en {{site.data.keyword.Bluemix_notm}} para iniciar su prueba gratuita de 30 días. {{site.data.keyword.Bluemix_notm}}
+Para poder empezar a trabajar, regístrese para obtener un IBMid en [bluemix.net/ ![Icono de enlace externo](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}. A continuación, inicie sesión en {{site.data.keyword.Bluemix_notm}} e inicie su prueba
+gratuita de 30 días. {{site.data.keyword.Bluemix_notm}}
 proporciona 2 GB de memoria en tiempo de ejecución y 10 instancias de servicio
 para la prueba gratuita.
 
-## Desarrollo de la app
-{: #develop}
-
 Hay tres maneras de desarrollar su app:
 
-* Con el [servicio de entrega continua](#ee_cd)
-* En el panel de control de la [interfaz de usuario de IBM Cloud](#ee_appui)
-* En la [línea de mandatos de Cloud Foundry](#ee_cf)
+* [Servicio Continuous Delivery](#ee_cd)
+* [Interfaz de usuario de IBM Cloud](#ee_appui)
+* [Línea de mandatos de Cloud Foundry](#ee_cf)
 
 ## Despliegue y desarrollo de apps utilizando cadenas de herramientas y el servicio {{site.data.keyword.contdelivery_short}}
 {: #ee_cd}

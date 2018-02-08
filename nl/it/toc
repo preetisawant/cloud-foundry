@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cfapps/index.html"}
-Apps de Cloud Foundry
+{: .toc subcollection="Cloud Foundry Applications" audience="compute" href="/docs/cfapps/index.html"}
+Applicazioni Cloud Foundry
 
     {: .navgroup id="howto"}
     index.md
