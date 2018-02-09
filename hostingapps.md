@@ -79,7 +79,7 @@ Optional: If you want to specify and save the deployment details before you push
   memory: 512M
   ```
 
-For more information about the supported options that you can use in this file, see [App manifest](../manageapps/depapps.html#appmanifest).
+For more information about the supported options that you can use in this file, see [App manifest](depapps.html#appmanifest).
 
 ### Push your app
 
