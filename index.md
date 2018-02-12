@@ -25,8 +25,8 @@ A *runtime* is the set of resources that is used to run an application. {{site.d
 
 To get started creating your application, take the following steps:
   1. Click **Catalog** in the IBM Cloud toolbar.
-  2. Click **Cloud Foundry Apps** and choose a runtime. Follow the guided experience to specify a name, and select how you want to code. Click **Create**.
-  3. When you are finished with the guided experience, click **Overview**.
+  2. Click **Cloud Foundry Apps** and choose a runtime. Follow the Getting Started guide to specify a name, and select how you want to code. Click **Create**.
+  3. When you are finished with the Getting Started guide, click **Overview**.
   5. You can add a service to your app by clicking **Create connection** on the app Overview in the dashboard. Browse and select services from the catalog, or, scroll to the end of the catalog and click **{{site.data.keyword.Bluemix_notm}} Experimental Services** to browse experimental services. Or, you can use the cf command line interface. See Options for working with apps.
   6. On the Overview page, scroll to the "Continuous delivery" card and click **View toolchain**. Your app's source will be saved in a repo that is hosted on Bluemix. An open toolchain that uses that repo and a delivery pipeline to develop and deploy your app is also created. For more information about the Continuous Delivery service, see <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.
 
