@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-15"
 
@@ -23,45 +23,48 @@ lastupdated: "2017-12-15"
 ## 등록
 {: #ee_start}
 
-시작하려면 먼저 [bluemix.net/![외부 링크 아이콘](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}에서 IBM ID를 등록하십시오. 그런 다음 {{site.data.keyword.Bluemix_notm}}에 로그인하고 30일 무료 평가판을 시작하십시오. {{site.data.keyword.Bluemix_notm}}에서는 무료 평가판에 대해 2GB의 런타임 메모리와 10개의 서비스 인스턴스 사용을 허용합니다. 
+시작하려면 [IBM Cloud 콘솔 ![외부 링크 아이콘](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}을 참조하십시오. 30일 무료 평가판을 시작하려면 IBM ID에 등록하고 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. {{site.data.keyword.Bluemix_notm}}에서는 무료 평가판에 대해 2GB의 런타임 메모리와 10개의 서비스 인스턴스 사용을 허용합니다.
+
+## 앱 개발
+{: #develop}
 
 다음은 앱을 개발하는 세 가지 방법입니다.
 
-* [지속적 딜리버리 서비스](#ee_cd)
-* [IBM Cloud 사용자 인터페이스](#ee_appui)
+* [Continuous Delivery 서비스](#ee_cd)
+* [IBM Cloud 사용자 인터페이스](#ee_appui)의 대시보드
 * [Cloud Foundry 명령행](#ee_cf)
 
 ## 도구 체인 및 {{site.data.keyword.contdelivery_short}} 서비스를 사용한 앱 개발 및 배치
 {: #ee_cd}
 
-앱에 {{site.data.keyword.contdelivery_full}} 서비스가 포함된 <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">도구 체인을 추가</a>합니다. 그리고 <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">도구 체인을 사용</a>하여 앱을 개발하고 배치합니다. 
+앱에 {{site.data.keyword.contdelivery_full}} 서비스가 포함된 <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">도구 체인을 추가</a>합니다. 그리고 <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">도구 체인을 사용</a>하여 앱을 개발하고 배치합니다.
 
 ## {{site.data.keyword.Bluemix_notm}} 사용자 인터페이스를 사용한 웹 앱 작성
 {: #ee_appui}
 
 등록한 후 {{site.data.keyword.Bluemix_notm}} 카탈로그 및 대시보드를 사용하여 첫 번째 앱 빌드를 시작하십시오.
 
-{{site.data.keyword.Bluemix_notm}}에서 앱은 조직 및 영역과 연관됩니다. 조직은 다중 협업자에 의해 소유되고 사용됩니다. 처음에는 사용자 이름에 따라 이름 지정된 기본 조직을 갖게 되며 사용자가 유일한 협업자입니다. 이 조직 내에서 영역도 확보합니다. 영역은 앱을 실행하기 위한 환경입니다. 예를 들어, 개발 환경으로 개발 영역을, 테스트 환경으로 테스트 영역을, 프로덕션 환경으로 프로덕션 영역을 확보합니다. 각 환경은 지역에 속합니다. {{site.data.keyword.Bluemix_notm}}에서는 네트워크 대기 시간의 감소, 데이터 개인정보 보호정책 및 가용성 증진을 위해 애플리케이션을 특정 지리적 지역에 배치할 수 있습니다. 
+{{site.data.keyword.Bluemix_notm}}에서 앱은 조직 및 영역과 연관됩니다. 조직은 다중 협업자에 의해 소유되고 사용됩니다. 처음에는 사용자 이름에 따라 이름 지정된 기본 조직을 갖게 되며 사용자가 유일한 협업자입니다. 이 조직 내에서 영역도 확보합니다. 영역은 앱을 실행하기 위한 환경입니다. 예를 들어, 개발 환경으로 개발 영역을, 테스트 환경으로 테스트 영역을, 프로덕션 환경으로 프로덕션 영역을 확보합니다. 각 환경은 지역에 속합니다. {{site.data.keyword.Bluemix_notm}}에서는 네트워크 대기 시간의 감소, 데이터 개인정보 보호정책 및 가용성 증진을 위해 애플리케이션을 특정 지리적 지역에 배치할 수 있습니다.
 
 이 시나리오에서는 Node.js를 사용하여 웹 앱을 개발하고자 합니다. 현재 미국에 거주하고 있으며 대부분의 앱 사용자도 미국에 있다고 가정합니다. 네트워크 대기 시간 감소의 장점을 이용할 수 있도록, 사용자 기반에 근접한 앱을 빌드하고 실행하기로 결정합니다. {{site.data.keyword.Bluemix_notm}}에 로그인하고 사용자 계정 환경 설정 링크를 클릭한 후 **미국 남부** 지역을 선택하십시오. 그리고 다음 단계에 따라 앱을 작성하십시오.
 
   1. {{site.data.keyword.Bluemix_notm}} 도구 모음에서 **카탈로그**를 클릭하십시오.
   2. **Cloud Foundry 앱**을 선택하십시오.
-  3. **SDK for Node.js**를 선택하십시오. 
-  4. 앱의 고유 이름을 입력하고 **작성**을 클릭하십시오. 앱 이름은 전체 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다. 
+  3. **SDK for Node.js**를 선택하십시오.
+  4. 앱의 고유 이름을 입력하고 **작성**을 클릭하십시오. 앱 이름은 전체 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다.
 
 이제 **시작하기 튜토리얼**을 볼 수 있습니다. 지시사항에 따라 앱의 스타터 코드를 다운로드하고 수정하고 배치하십시오.
 
-앱에는 기본적으로 1개의 인스턴스 및 512MB 메모리 할당량이 지정됩니다. 메모리를 늘리거나 인스턴스를 더 추가함으로써 앱의 가용성을 높일 수 있습니다(예: 인스턴스당 1GB의 메모리가 있는 3개의 인스턴스). 앱 인스턴스 및 메모리 할당량을 지정하려면 **앱 개요 보기**를 클릭하십시오. 예를 들어, 인스턴스에 대해 3을 입력하고 메모리 할당량에 대해 1GB를 입력한 후에 **저장**을 클릭하십시오. 파일, 로그 및 환경 변수를 보고 문제점을 해결할 수도 있습니다. 
+앱에는 기본적으로 1개의 인스턴스 및 512MB 메모리 할당량이 지정됩니다. 메모리를 늘리거나 인스턴스를 더 추가함으로써 앱의 가용성을 높일 수 있습니다(예: 인스턴스당 1GB의 메모리가 있는 3개의 인스턴스). 앱 인스턴스 및 메모리 할당량을 지정하려면 **앱 개요 보기**를 클릭하십시오. 예를 들어, 인스턴스에 대해 3을 입력하고 메모리 할당량에 대해 1GB를 입력한 후에 **저장**을 클릭하십시오. 파일, 로그 및 환경 변수를 보고 문제점을 해결할 수도 있습니다.
 
 ### {{site.data.keyword.Bluemix_notm}} 사용자 인터페이스를 사용한 서비스 바인딩
 {: #ee_bindui}
 
-앱을 작성한 후에는 앱으로 데이터베이스에 연결하십시오. 데이터베이스 조회 언어를 사용하여 앱 데이터를 저장하고 관찰할 수 있습니다. 이 시나리오에서는 {{site.data.keyword.Bluemix_notm}}에서 제공하는 {{site.data.keyword.cloudant}} 서비스를 사용하기로 결정합니다. 
+앱을 작성한 후에는 앱으로 데이터베이스에 연결하십시오. 데이터베이스 조회 언어를 사용하여 앱 데이터를 저장하고 관찰할 수 있습니다. 이 시나리오에서는 {{site.data.keyword.Bluemix_notm}}에서 제공하는 {{site.data.keyword.cloudant}} 서비스를 사용하기로 결정합니다.
 
 애플리케이션 내에서 서비스를 사용하려면 다음 단계를 수행하여 서비스 인스턴스를 작성하고 애플리케이션을 서비스 인스턴스에 바인드하십시오.
 
-  1. {{site.data.keyword.Bluemix_notm}} 카탈로그에서 {{site.data.keyword.cloudant}} 서비스를 선택하십시오. Cloudant 서비스의 고유 이름을 추가하고 **작성**을 클릭하십시오. Cloudant 관리 패널에서 **실행**을 클릭하여 서비스를 실행하십시오.
+  1. {{site.data.keyword.Bluemix_notm}} 카탈로그에서 {{site.data.keyword.cloudant}} 서비스를 선택하십시오.  Cloudant 서비스의 고유 이름을 추가하고 **작성**을 클릭하십시오. Cloudant 관리 패널에서 **실행**을 클릭하여 서비스를 실행하십시오.
   2. **연결**을 클릭하십시오. 그런 다음 **연결 작성**을 클릭하십시오.
   3. 앱 옆에 있는 **연결**을 클릭하십시오.
   4. 앱 다시 스테이징 창이 표시됩니다. **다시 스테이징**을 클릭하십시오.
@@ -70,33 +73,32 @@ lastupdated: "2017-12-15"
 
 대시보드에서 앱과 연관된 VCAP_SERVICES의 전체 목록을 볼 수 있습니다. 해당 목록을 보려면 IBM Cloud 도구 모음에서 메뉴를 클릭한 다음 **대시보드**를 클릭하십시오. 앱을 클릭하십시오. 그런 다음 **런타임**을 클릭하고 **환경 변수** 탭을 선택하십시오.
 
-**참고:** 이 환경 변수는 앱이 바인딩된 각 서비스 인스턴스마다 하나의 항목이 있는 JSON 오브젝트의 직렬화입니다. 각 서비스 인스턴스가 제공하는 데이터의 양 및 유형은 서비스에 따라 정해집니다. 앱이 서비스를 사용하지 않는 경우 VCAP_SERVICES는 비어 있는 JSON 오브젝트입니다. 이 환경 변수는 앱에 서비스를 추가할 때만 사용됩니다. 
+**참고:** 이 환경 변수는 앱이 바인딩된 각 서비스 인스턴스마다 하나의 항목이 있는 JSON 오브젝트의 직렬화입니다. 각 서비스 인스턴스가 제공하는 데이터의 양 및 유형은 서비스에 따라 정해집니다. 앱이 서비스를 사용하지 않는 경우 VCAP_SERVICES는 비어 있는 JSON 오브젝트입니다. 이 환경 변수는 앱에 서비스를 추가할 때만 사용됩니다.
 
 ## cf cli를 사용하여 앱 빌드
 {: #ee_cf}
 
 {{site.data.keyword.Bluemix_notm}}는 앱에서 코딩을 시작할 수 있도록 다수의 도구(예: cf 명령행 인터페이스 및 Eclipse 도구)를 제공합니다. cf 명령 인터페이스를 선택하여 앱에서 코딩을 시작할 수 있습니다.
 
-  1. 우선 앱의 코드를 다운로드하고 개발하십시오. 
+  1. 우선 앱의 코드를 다운로드하고 개발하십시오.
 
     1. 앱 대시보드에서 시작하기를 클릭하십시오. **샘플 코드 다운로드** 링크를 클릭하여 앱 코드를 다운로드하십시오.
-    2. 다운로드한 파일을 디렉토리(예: `C:\test`)로 추출하십시오. 
-    3. 로컬 통합 개발 환경에서 코드를 개발하십시오. 
+    2. 다운로드한 파일을 디렉토리(예: `C:\test`)로 추출하십시오.
+    3. 로컬 통합 개발 환경에서 코드를 개발하십시오.
 
-  2. **cf** 명령행 인터페이스(CLI)를 설치하십시오. 
+  2. **cf** 명령행 인터페이스(CLI)를 설치하십시오.
 
     1. 운영 체제에 맞는 cf 명령행 도구 설치 프로그램을 다운로드하십시오.
-    2. 도구 마법사에 따라 설치를 완료하십시오. 
-    3. `cf -v` 명령을 사용하여 cf 명령행 인터페이스의 버전을 확인하십시오. 
+    2. 도구 마법사에 따라 설치를 완료하십시오.
+    3. `cf -v` 명령을 사용하여 cf 명령행 인터페이스의 버전을 확인하십시오.
 
     **요구사항:** 항상 cf 명령행 도구의 최신 버전을 사용해야 합니다.
-
 
   3. **cf** 명령행 인터페이스를 설치한 후에는 **cf api** 명령을 사용하여 작업할 {{site.data.keyword.Bluemix_notm}} 지역을 지정해야 합니다. **cf** 명령 인터페이스는 *https://api.[Bluemix_URL]*을 사용하며, 여기서 *Bluemix_URL*은 지역의 URL입니다. 미국 남부 지역의 API 엔드포인트는 `ng.bluemix.net`입니다. 다음 명령을 입력하여 {{site.data.keyword.Bluemix_notm}}에 연결하십시오.
 
   ```
   cf api https://api.ng.bluemix.net
-   ```
+  ```
 
   다른 API 엔드포인트를 찾으려면 [지역](/docs/overview/cf.html#ov_intro_reg)을 참조하십시오. {{site.data.keyword.Bluemix_notm}} 지역을 지정한 후에 사용자가 지정한 위치 정보가 저장됩니다.
 
@@ -109,8 +111,7 @@ lastupdated: "2017-12-15"
   조직이 싱글 사인온을 사용하는 경우 `cf login -sso`를 사용하십시오.
 
   5. {{site.data.keyword.Bluemix_notm}}에 로그인한 후에는
-{{site.data.keyword.Bluemix_notm}}로 다시 앱을 배치할 준비가 됩니다.
-앱 디렉토리 `C:\test`에서 다음 명령을 입력하십시오. 
+{{site.data.keyword.Bluemix_notm}}로 다시 앱을 배치할 준비가 됩니다. 앱 디렉토리 `C:\test`에서 다음 명령을 입력하십시오.
 
   ```
   cf push [your_appname]
@@ -130,11 +131,11 @@ lastupdated: "2017-12-15"
 
 **cf** 명령 인터페이스를 사용하여 서비스를 바인드할 수 있습니다. cf 명령 인터페이스를 사용하여 앱에 {{site.data.keyword.cloudant}} 서비스를 추가하려 한다고 가정하십시오.
 
-앱 내에서 {{site.data.keyword.cloudant}} 서비스를 사용하려면, Cloudant 서비스 인스턴스를 작성하고 앱을 서비스 인스턴스에 바인드한 후에 서비스 인스턴스를 사용하십시오. 동일한 프로시저가 기타 모든 서비스에 적용됩니다. 
+앱 내에서 {{site.data.keyword.cloudant}} 서비스를 사용하려면, Cloudant 서비스 인스턴스를 작성하고 앱을 서비스 인스턴스에 바인드한 후에 서비스 인스턴스를 사용하십시오. 동일한 프로시저가 기타 모든 서비스에 적용됩니다.
 
   1. Cloudant NoSQL DB 서비스 인스턴스를 작성하십시오.
 
-  cf create-service 명령을 사용하여 서비스의 새 인스턴스를 작성하십시오. 다음 예에서 *Lite*는 플랜의 이름입니다. 예:
+  cf create-service 명령을 사용하여 서비스의 새 인스턴스를 작성하십시오. 다음 예에서 *Lite*는 플랜의 이름입니다. 예를 들어, 다음과 같습니다.
 
   ```
   cf create-service cloudantNoSQLDB Lite [your_name_for_your_cloudant_service]
@@ -148,7 +149,7 @@ lastupdated: "2017-12-15"
 
   서비스 인스턴스를 작성한 후에는 임의의 애플리케이션을 바인딩하고 사용하는 데 사용할 수 있습니다.
 
-  2. 서비스 인스턴스를 앱에 바인딩하십시오. 
+  2. 서비스 인스턴스를 앱에 바인딩하십시오.
 
   서비스 인스턴스를 사용하려면 애플리케이션을 바인딩해야 합니다. 사용자가 작성한 애플리케이션 이름 및 서비스 인스턴스를 지정하고 cf bind-service 명령을 사용하여 서비스 인스턴스를 애플리케이션에 바인딩하십시오.
 
@@ -156,7 +157,7 @@ lastupdated: "2017-12-15"
   cf bind-service [your_app_name] [your_name_for_your_cloudant_service]
   ```
 
-  서비스 인스턴스를 애플리케이션에 바인딩하면 {{site.data.keyword.Bluemix_notm}}가 서비스와 통신할 수 있으며 새 애플리케이션이 해당 서비스 인스턴스와 통신하도록 지정할 수 있습니다. 다른 서비스의 경우, {{site.data.keyword.Bluemix_notm}}가 바인딩 동안 애플리케이션 및 서비스 인스턴스를 다르게 처리할 수 있습니다. 예를 들어, 일부 서비스는 서비스 인스턴스와 통신하는 각 애플리케이션에 대해 새 테넌트를 작성할 수 있습니다. 서비스는 애플리케이션과 서비스 사이의 통신을 위해 반드시 애플리케이션에 전달되어야 하는 신임 정보 등의 정보를 사용하여 {{site.data.keyword.Bluemix_notm}}에 다시 응답합니다. 
+  서비스 인스턴스를 애플리케이션에 바인딩하면 {{site.data.keyword.Bluemix_notm}}가 서비스와 통신할 수 있으며 새 애플리케이션이 해당 서비스 인스턴스와 통신하도록 지정할 수 있습니다. 다른 서비스의 경우, {{site.data.keyword.Bluemix_notm}}가 바인딩 동안 애플리케이션 및 서비스 인스턴스를 다르게 처리할 수 있습니다. 예를 들어, 일부 서비스는 서비스 인스턴스와 통신하는 각 애플리케이션에 대해 새 테넌트를 작성할 수 있습니다. 서비스는 애플리케이션과 서비스 사이의 통신을 위해 반드시 애플리케이션에 전달되어야 하는 신임 정보 등의 정보를 사용하여 {{site.data.keyword.Bluemix_notm}}에 다시 응답합니다.
 
   **참고:** 애플리케이션이 서비스 인스턴스에 바인딩될 때 실행 중이면 애플리케이션이 다시 시작될 때까지 VCAP_SERVICES 환경 변수가 업데이트되지 않습니다. 애플리케이션을 다시 시작하려면 cf restart 명령을 사용하십시오.
 
@@ -166,12 +167,12 @@ lastupdated: "2017-12-15"
 
   <dl><dt>username</dt>
   <dd>d72837bb-b341-4038-9c8e-7f7232916197-bluemix</dd>
-  <dt>password</dt>
+  <dt>비밀번호</dt>
   <dd>secret</dd>
   <dt>url</dt>
   <dd>https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com</dd></dl>
 
-  예를 들어, Node.js 앱이 다음과 같이 이 정보에 액세스할 수 있습니다. 
+  예를 들어, Node.js 앱이 다음과 같이 이 정보에 액세스할 수 있습니다.
   ```
   if (process.env.VCAP_SERVICES) {
         var env = JSON.parse(process.env.VCAP_SERVICES);
@@ -189,7 +190,7 @@ lastupdated: "2017-12-15"
 
   4. 서비스 인스턴스와 상호작용하십시오.
 
-  신임 정보를 사용하여 서비스 인스턴스와 상호작용할 수 있습니다. 취할 수 있는 조치에는 읽기, 쓰기 및 업데이트가 포함됩니다. 다음 예는 JSON 오브젝트를 {{site.data.keyword.cloudant}} 서비스 인스턴스에 삽입하는 방법을 예시합니다. 
+  신임 정보를 사용하여 서비스 인스턴스와 상호작용할 수 있습니다. 취할 수 있는 조치에는 읽기, 쓰기 및 업데이트가 포함됩니다. 다음 예는 JSON 오브젝트를 {{site.data.keyword.cloudant}} 서비스 인스턴스에 삽입하는 방법을 예시합니다.
 
   ```
   // create a new message
@@ -230,13 +231,13 @@ var create_message = function(req, res) {
 
   * 대시보드에서 앱을 클릭하십시오. 그리고 개요 페이지에서 **이 앱의 비용 추정**을 클릭하여 **SDK for Node.js** 런타임 및 지원의 가격 및 앱의 월별 총액을 보십시오.
 
-  * 또는 가격 책정 시트 페이지에서 앱의 서비스 및 런타임의 월별 사용량을 입력하십시오. 예: 각 인스턴스마다 1GB의 메모리가 있는 **SDK for Node.js**의 3개 인스턴스. 월별 가격이 계산되어 표시됩니다. 
+  * 또는 가격 책정 시트 페이지에서 앱의 서비스 및 런타임의 월별 사용량을 입력하십시오. 예: 각 인스턴스마다 1GB의 메모리가 있는 **SDK for Node.js**의 3개 인스턴스. 월별 가격이 계산되어 표시됩니다.
 
 또한 런타임 및 서비스의 가격을 계속 추가하고 무료 사용량을 제외하는 방법을 통해 앱 비용을 수동으로 계산할 수도 있습니다. 자세한 정보는 수동으로 비용 계산을 참조하십시오.
 
 ## 앱 제거
 {: #ee_removing}
 
-앱을 계속 빌드함에 따라 할당량이 한계에 접근할 수 있습니다. 그러나 더 이상 필요하지 않은 일부 앱이 여전히 할당량을 차지하고 있을 수 있습니다. {{site.data.keyword.Bluemix_notm}}에서 공간을 사용 가능하게 하기 위해 언제든지 쉽게 앱을 삭제할 수 있습니다. 
+앱을 계속 빌드함에 따라 할당량이 한계에 접근할 수 있습니다. 그러나 더 이상 필요하지 않은 일부 앱이 여전히 할당량을 차지하고 있을 수 있습니다. {{site.data.keyword.Bluemix_notm}}에서 공간을 사용 가능하게 하기 위해 언제든지 쉽게 앱을 삭제할 수 있습니다.
 
 {{site.data.keyword.Bluemix_notm}} 사용자 인터페이스에서 앱 개요 페이지로 이동한 다음 **메뉴** 아이콘을 클릭하고 더 이상 사용하지 않는 앱을 삭제하십시오. 또한 **cf delete** 명령을 사용하여 앱을 삭제할 수도 있습니다.

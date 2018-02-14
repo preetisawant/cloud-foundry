@@ -1,12 +1,10 @@
 ---
 
-
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
-lastupdated: "2015-12-15"
-
+lastupdated: "2018-01-18"
 
 ---
 
@@ -58,7 +56,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-对于 IBM 创建的 buildpack 不支持但内置社区 buildpack 支持的运行时或框架，不必使用带 -b 选项的 cf push 命令。</p><p>例如，对于 Ruby 应用程序，没有 IBM 创建的 buildpack。可以通过输入以下命令使用内置社区 buildpack：
+对于 IBM 创建的 buildpack 不支持但内置社区 buildpack 支持的运行时或框架，不必使用带 -b 选项的 cf push 命令。例如，对于 Ruby 应用程序，没有 IBM 创建的 buildpack。可以通过输入以下命令使用内置社区 buildpack：
 
 ```
 cf push app_name -p app_path
@@ -98,12 +96,18 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 
 ## 指定 Java buildpack 版本
 
-<ul>
-<li>
-使用 <strong>cf set-env</strong> 命令。例如，输入以下命令，将 Java 版本设置为 1.7.0：
-<pre class="pre"><code>cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;</code></pre>
-<p>然后，重新编译打包应用程序以使更改生效：</p>
-<pre class="pre"><code>cf restage app_name</code></pre>
-</li>
-<li>
-使用 <code>manifest.yml</code> 文件。您可以添加想要直接对文件指定的环境变量和值。有关详细信息，请参阅<a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block">环境变量</a>。</li></ul>
+使用 `cf set-env` 命令。例如，输入以下命令，将 Java 版本设置为 1.7.0：
+
+```
+cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
+```
+{:pre}
+
+然后，重新编译打包应用程序以使更改生效：
+
+```
+cf restage app_name
+```
+{:pre}
+
+使用 `manifest.yml` 文件。您可以添加想要直接对文件指定的环境变量和值。有关详细信息，请参阅[环境变量](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)

@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-15"
 
@@ -23,13 +23,16 @@ lastupdated: "2017-12-15"
 ## 注册
 {: #ee_start}
 
-开始之前，请通过以下链接注册 IBM 标识：[bluemix.net/ ![外部链接图标](../icons/launch-glyph.svg)](https://bluemix.net/){: new_window}。然后，登录到 {{site.data.keyword.Bluemix_notm}}，即可开始 30 天免费试用。{{site.data.keyword.Bluemix_notm}} 提供了 2 GB 运行时内存和 10 个服务实例供您免费试用。
+首先，转至 [IBM Cloud 控制台 ![外部链接图标](../icons/launch-glyph.svg)](https://bluemix.net){: new_window}。注册 IBM 标识，然后登录到 {{site.data.keyword.Bluemix_notm}} 开始 30 天免费试用。{{site.data.keyword.Bluemix_notm}} 提供了 2 GB 运行时内存和 10 个服务实例供您免费试用。
+
+## 开发应用程序
+{: #develop}
 
 有三种方法可用于开发应用程序：
 
-* [Continuous Delivery 服务](#ee_cd)
-* [IBM Cloud 用户界面](#ee_appui)
-* [Cloud Foundry 命令行](#ee_cf)
+* 使用 [Continuous Delivery 服务](#ee_cd)
+* 通过 [IBM Cloud 用户界面](#ee_appui)的仪表板
+* 通过 [Cloud Foundry 命令行](#ee_cf)
 
 ## 使用工具链和 {{site.data.keyword.contdelivery_short}} 服务开发和部署应用程序
 {: #ee_cd}

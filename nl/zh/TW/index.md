@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-14"
 
@@ -19,7 +19,7 @@ lastupdated: "2017-12-14"
 
 在 {{site.data.keyword.Bluemix_notm}} 中建立應用程式時，您可以從入門範本開始。*入門範本* 是一種範本，它包含預先定義的服務，以及使用特定建置套件進行配置的應用程式碼。入門範本有兩種類型：樣板及運行環境。
 
-*樣板* 是一種容器，它適用於應用程式及其相關聯運行環境，以及特定網域的預先定義服務。例如，Mobile Cloud 樣板包含 Node.js 運行環境，以及 Mobile Data、Mobile Application Security 和 Push 服務。此外，也包含 SDK 及範例應用程式，以便開始開發用來存取這些服務的行動應用程式。
+*樣板* 是一種容器，它包含一個應用程式及其相關聯運行環境，以及特定網域的預先定義服務。例如，Mobile Cloud 樣板包含 Node.js 運行環境，以及 Mobile Data、Mobile Application Security 和 Push 服務。此外，也包含 SDK 及範例應用程式，以便開始開發用來存取這些服務的行動應用程式。
 
 *運行環境* 是用來執行應用程式的資源集。{{site.data.keyword.Bluemix_notm}} 提供運行環境作為不同類型之應用程式的容器。運行環境會以建置套件的方式，整合到 {{site.data.keyword.Bluemix_notm}}，並會自動配置以供使用，且幾乎不需要維護。
 
@@ -28,7 +28,7 @@ lastupdated: "2017-12-14"
   2. 按一下 **Cloud Foundry 應用程式**，然後選擇運行環境。遵循引導式體驗來指定名稱，並選取您要用來撰寫程式碼的方式。按一下**建立**。
   3. 完成引導式體驗後，請按一下**概觀**。
   5. 您可以在儀表板的應用程式「概觀」上，按一下**建立連線**，以將服務新增至您的應用程式。從型錄中瀏覽並選取服務，或捲動至型錄結尾，然後按一下 **{{site.data.keyword.Bluemix_notm}} 實驗性服務**來瀏覽實驗性服務。或者，您可以使用 cf 指令行介面。請參閱「用於處理應用程式的選項」。
-  6. 在「概觀」頁面上，捲動至 "Continuous Delivery" 卡片，然後按一下**檢視工具鏈**。您應用程式的原始檔將會儲存至在 Bluemix 上管理的儲存庫中。同時會建立使用該儲存庫的開放式工具以及開發與部署應用程式的 Delivery Pipeline。如需 Continuous Delivery 服務的相關資訊，請參閱<a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">開始使用 Continuous Delivery</a>。
+  6. 在「概觀」頁面上，捲動至 "Continuous Delivery" 卡片，然後按一下**檢視工具鏈**。您應用程式的原始檔將會儲存至在 Bluemix 上管理的儲存庫中。同時會建立開放式工具鏈，以使用該儲存庫以及 Delivery Pipeline 來開發與部署應用程式。如需 Continuous Delivery 服務的相關資訊，請參閱<a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">開始使用 Continuous Delivery</a>。
 
 **附註：**如果您連結至應用程式的服務當機，應用程式可能會停止執行或發生錯誤。{{site.data.keyword.Bluemix_notm}} 不會自動重新啟動應用程式，以從這些問題回復。請考慮撰寫應用程式碼，以識別運行中斷、異常狀況和連線失敗，並從其中回復。如需相關資訊，請參閱「應用程式未自動重新啟動」疑難排解主題。
 
