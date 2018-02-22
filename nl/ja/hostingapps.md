@@ -28,7 +28,7 @@ lastupdated: "2018-01-18"
 ## アプリのマイグレーション
 {: #ht_hostapp}
 
-アプリを完全にクラウド環境に移す代わりに、アプリを {{site.data.keyword.Bluemix_notm}} にインクリメンタルにマイグレーションできます。アプリの一部を先にマイグレーションし、Cloud Integration サービスを使用して、既存のデータまたは SoR (Systems of Record、定型業務処理システム) に接続することができます。
+アプリを完全にクラウド環境に移す代わりに、アプリを {{site.data.keyword.Bluemix_notm}} にインクリメンタルにマイグレーションできます。 アプリの一部を先にマイグレーションし、Cloud Integration サービスを使用して、既存のデータまたは SoR (Systems of Record、定型業務処理システム) に接続することができます。
 
 クラウド・アプリ内で、バックエンドのデータまたはサービス (例えば、SoR) にアクセスすることが必要になる場合があります。 {{site.data.keyword.Bluemix_notm}} では、Secure Gateway サービスを使用して、{{site.data.keyword.Bluemix_notm}} 組織とエンタープライズ・バックエンド・ネットワークの間にセキュア・トンネルを確立できます。 このサービスによって、{{site.data.keyword.Bluemix_notm}} 上のアプリがバックエンド・ネットワークのデータおよびサービスにアクセスできるようになります。 詳細については、[Reaching enterprise backend with {{site.data.keyword.Bluemix_notm}} Secure Gateway via console ![「外部リンク」アイコン](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window} を参照してください。
 
@@ -79,7 +79,7 @@ Cloud Foundry コマンド・ライン・インターフェースをインスト
   memory: 512M
   ```
 
-このファイル内で使用できるサポートされるオプションについて詳しくは、[アプリのマニフェスト](../manageapps/depapps.html#appmanifest)を参照してください。
+このファイル内で使用できるサポートされるオプションについて詳しくは、[アプリのマニフェスト](depapps.html#appmanifest)を参照してください。
 
 ### アプリのプッシュ
 
@@ -88,7 +88,7 @@ Cloud Foundry コマンド・ライン・インターフェースをインスト
   ```
   cf login -a https://api.ng.bluemix.net
   ```
-組織でシングル・サインオンが使用されている場合、`-sso` フラグを追加します。
+  組織でシングル・サインオンが使用されている場合、`-sso` フラグを追加します。
 
   2. アプリ・ディレクトリーから、アプリ名を指定して cf push コマンドを入力します。 アプリ名は、{{site.data.keyword.Bluemix_notm}} 環境内で固有でなければなりません。
 
@@ -103,8 +103,6 @@ Cloud Foundry コマンド・ライン・インターフェースをインスト
   ```
 
   詳しくは、『[コミュニティー・ビルドパックの使用](byob.html)』を参照してください。
-
-
 
 オプション: アプリを変更した場合、再度 `cf push コマンド`を入力して、変更をアップロードする必要があります。 cf コマンド・ライン・インターフェースは、アプリの実行中のインスタンスを新規コードで更新するようプロンプトを出されたときに、ユーザーの過去のオプションとユーザーの応答を使用します。
 

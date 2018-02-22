@@ -56,7 +56,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-IBM 製ビルドパックではサポートされないが組み込みコミュニティー・ビルドパックではサポートされるランタイムまたはフレームワークの場合、cf push コマンドで -b オプションを使用する必要はありません。例えば、Ruby アプリ用の IBM 製のビルドパックはありません。 以下のコマンドを入力することによって、組み込みのコミュニティー・ビルドパックを使用できます。
+IBM 製ビルドパックではサポートされないが組み込みコミュニティー・ビルドパックではサポートされるランタイムまたはフレームワークの場合、cf push コマンドで -b オプションを使用する必要はありません。 例えば、Ruby アプリ用の IBM 製のビルドパックはありません。 以下のコマンドを入力することによって、組み込みのコミュニティー・ビルドパックを使用できます。
 
 ```
 cf push app_name -p app_path
@@ -97,7 +97,6 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 ## Java ビルドパックのバージョンの指定
 
 `cf set-env` コマンドを使用します。 例えば、Java バージョンを 1.7.0 に設定するには、次のコマンドを入力します。
-
 ```
 cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
 ```
@@ -110,4 +109,4 @@ cf restage app_name
 ```
 {:pre}
 
-`manifest.yml` ファイルを使用します。指定したい環境変数と値を直接このファイルに追加することができます。 詳細情報については、『[環境変数](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)』を参照してください。
+`manifest.yml` ファイルを使用します。 指定したい環境変数と値を直接このファイルに追加することができます。 詳細情報については、『[環境変数](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)』を参照してください。

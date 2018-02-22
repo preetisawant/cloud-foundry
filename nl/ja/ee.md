@@ -23,7 +23,7 @@ lastupdated: "2017-12-15"
 ## サインアップ
 {: #ee_start}
 
-開始するには、[IBM Cloud コンソール ![外部リンク・アイコン](../icons/launch-glyph.svg)](https://bluemix.net){: new_window} に移動します。IBMid に登録し、{{site.data.keyword.Bluemix_notm}} にログインして、30 日間の無料トライアルを開始します。{{site.data.keyword.Bluemix_notm}} の無料トライアルでは、2 GB のランタイム・メモリーと 10 個のサービス・インスタンスを使用できます。
+開始するには、[IBM Cloud コンソール ![外部リンク・アイコン](../icons/launch-glyph.svg)](https://bluemix.net){: new_window} に移動します。 IBMid に登録し、{{site.data.keyword.Bluemix_notm}} にログインして、30 日間の無料トライアルを開始します。 {{site.data.keyword.Bluemix_notm}} の無料トライアルでは、2 GB のランタイム・メモリーと 10 個のサービス・インスタンスを使用できます。
 
 ## アプリの開発
 {: #develop}
