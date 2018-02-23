@@ -14,7 +14,7 @@ lastupdated: "2017-12-14"
 # Cloud Foundry 앱 작성
 {: #creating_cloud_foundry_apps}
 
-{{site.data.keyword.Bluemix}}를 사용하면 {{site.data.keyword.Bluemix_notm}} 콘솔에서 앱을 작성할 수 있습니다. 그런 다음 콘솔 또는 cf 명령 인터페이스를 계속 사용하거나 {{site.data.keyword.jazzhub_title}}를 사용하여 앱을 개발하고 추적하고 계획하고 배치할 수 있습니다.
+{{site.data.keyword.Bluemix}}를 사용하면 {{site.data.keyword.Bluemix_notm}} 콘솔에서 앱을 작성할 수 있습니다. 그런 다음 콘솔 또는 cf 명령행 인터페이스를 계속 사용하거나 {{site.data.keyword.jazzhub_title}}를 사용하여 앱을 개발하고 추적하고 계획하고 배치할 수 있습니다.
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}}에서 앱을 작성할 때 스타터로 시작할 수 있습니다. *스타터*는 특정 빌드팩으로 구성되는 미리 정의된 서비스와 애플리케이션 코드를 포함하는 템플리트입니다. 표준 유형 및 런타임이라는 두 가지 유형의 스타터가 있습니다.
@@ -25,8 +25,8 @@ lastupdated: "2017-12-14"
 
 애플리케이션 작성을 시작하려면 다음 단계를 수행하십시오.
   1. IBM Cloud 도구 모음에서 **카탈로그**를 클릭하십시오.
-  2. **Cloud Foundry 앱**을 클릭하고 런타임을 선택하십시오. 유도된 체험에 따라 이름을 지정하고 코딩 방법을 선택하십시오. **작성**을 클릭하십시오.
-  3. 유도된 체험을 완료하면 **개요**를 클릭하십시오.
+  2. **Cloud Foundry 앱**을 클릭하고 런타임을 선택하십시오. 시작하기 안내서에 따라 이름을 지정하고 코딩 방법을 선택하십시오. **작성**을 클릭하십시오.
+  3. 시작하기 안내서가 완료되면 **개요**를 클릭하십시오. 
   5. 대시보드의 개요 앱에서 **연결 작성**을 클릭하여 앱에 서비스를 추가할 수 있습니다. 카탈로그에서 서비스를 찾아보고 선택하거나 카탈로그의 끝으로 스크롤한 후에 **{{site.data.keyword.Bluemix_notm}} 시범 서비스**를 클릭하여 시범 서비스를 찾아보십시오. 또는 cf 명령행 인터페이스를 사용할 수 있습니다. 앱으로 작업하기 위한 옵션을 참조하십시오.
   6. 개요 페이지에서 "Continuous Delivery" 카드로 스크롤하고 **도구 체인 보기**를 클릭하십시오. 앱의 소스가 Bluemix에서 호스팅되는 저장소에 저장됩니다. 해당 저장소와 딜리버리 파이프라인을 사용하여 앱을 개발하고 배치하는 열린 도구 체인도 작성됩니다. Continuous Delivery 서비스에 대한 자세한 정보는 <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Continuous Delivery 시작하기</a>를 참조하십시오.
 
@@ -37,7 +37,7 @@ lastupdated: "2017-12-14"
 앱이 작성된 후에 앱에 계속 서비스를 추가하고 앱을 빌드 및 배치할 수 있는 몇 가지 옵션이 있습니다.
 
 <dl><dt>cf 명령행 인터페이스</dt>
-<dd>애플리케이션을 업데이트하거나 서비스 인스턴스를 작성하거나 서비스를 애플리케이션에 바인드하려면 <a href="https://github.com/cloudfoundry/cli#getting-started">cf 명령 인터페이스</a>를 사용하십시오. 또한 cloud-cli 명령행 인터페이스를 사용하는 방법으로도 서비스 오퍼링을 작성, 업데이트 및 삭제할 수 있습니다.</dd>
+<dd>애플리케이션을 업데이트하거나 서비스 인스턴스를 작성하거나 서비스를 애플리케이션에 바인드하려면 <a href="https://github.com/cloudfoundry/cli#getting-started">cf 명령행 인터페이스</a>를 사용하십시오. 또한 cloud-cli 명령행 인터페이스를 사용하는 방법으로도 서비스 오퍼링을 작성, 업데이트 및 삭제할 수 있습니다.</dd>
 <dt>{{site.data.keyword.Bluemix_notm}} 사용자 인터페이스</dt>
 <dd>{{site.data.keyword.Bluemix_notm}} <a href="https://console.bluemix.net/dashboard/apps">사용자 인터페이스</a>를 사용하여 비즈니스 문제점을 해결하기 위해 결합할 서비스 및 런타임을 선택하는 등 애플리케이션을 빌드하십시오.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>

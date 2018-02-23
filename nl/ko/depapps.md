@@ -24,12 +24,12 @@ lastupdated: "2018-01-18"
 ### 애플리케이션 스테이징
 {: #diego}
 
-스테이징 단계 중에 {{site.data.keyword.Bluemix_notm}}는 애플리케이션 컨테이너 오케스트레이션을 처리합니다. 앱을 푸시하는 경우 클라우드 제어기는 스테이징 요청을 {{site.data.keyword.Bluemix_notm}}로 보내고 앱 인스턴스 할당 태스크를 넘겨받습니다. {{site.data.keyword.Bluemix_notm}} 백엔드는 결함 허용 및 장기적 일관성을 보장하는 방식으로 애플리케이션 컨테이너를 조율합니다. 
+스테이징 단계 중에 {{site.data.keyword.Bluemix_notm}}는 애플리케이션 컨테이너 오케스트레이션을 처리합니다. 앱을 푸시하는 경우 클라우드 제어기는 스테이징 요청을 {{site.data.keyword.Bluemix_notm}}로 보내고 앱 인스턴스 할당 태스크를 넘겨받습니다. {{site.data.keyword.Bluemix_notm}} 백엔드는 결함 허용 및 장기적 일관성을 보장하는 방식으로 애플리케이션 컨테이너를 조율합니다.
 
 #### 새 앱 스테이징
 {: #stageapp}
 
-모든 새 앱이 Diego 아키텍처에 배치됩니다. 새 애플리케이션을 스테이징하려면 `bx push` 명령으로 앱을 배치하십시오. 
+모든 새 앱이 Diego 아키텍처에 배치됩니다. 새 애플리케이션을 스테이징하려면 `bx push` 명령으로 앱을 배치하십시오.
 
   1. 애플리케이션을 배치하십시오.
 
@@ -37,7 +37,7 @@ lastupdated: "2018-01-18"
   $ bx app push APPLICATION_NAME
   ```
 
-`bx app push` 명령에 대한 자세한 정보는 [bx app push](/docs/cli/reference/bluemix_cli/bx_cli.html#cf_target)를 참조하십시오. 
+`bx app push` 명령에 대한 자세한 정보는 [bx app push](/docs/cli/reference/bluemix_cli/bx_cli.html#cf_target)를 참조하십시오.
 
 ### 기존 앱을 {{site.data.keyword.Bluemix_notm}}로 마이그레이션
 {: #migrateapp}

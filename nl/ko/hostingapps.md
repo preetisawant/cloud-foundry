@@ -23,7 +23,7 @@ lastupdated: "2018-01-18"
 ## 앱 클라우드 준비 상태 만들기
 {: #cloud-readyapps}
 
-앱에 다음 원칙이 모두 있는 경우 앱은 클라우드 준비 상태이며 {{site.data.keyword.Bluemix_notm}}에 마이그레이션할 수 있습니다. 앱에서 원칙이 위반되는 경우, 일반적으로 원칙을 고수하도록 [앱 수정](../apps/cloud-ready.html)을 수행할 수 있습니다. 
+앱에 다음 원칙이 모두 있는 경우 앱은 클라우드 준비 상태이며 {{site.data.keyword.Bluemix_notm}}에 마이그레이션할 수 있습니다. 앱에서 원칙이 위반되는 경우, 일반적으로 원칙을 고수하도록 [앱 수정](../apps/cloud-ready.html)을 수행할 수 있습니다.
 
 ## 앱 마이그레이션
 {: #ht_hostapp}
@@ -38,7 +38,7 @@ lastupdated: "2018-01-18"
 
 | 도구 | 방법 |
 |:------|:--------|
-| Cloud Foundry 명령행 인터페이스(cf cli) | 로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령 인터페이스를 사용하여 앱을 {{site.data.keyword.Bluemix_notm}}에 수동으로 푸시하십시오. 자세한 정보는 [앱 업로드](../starters/upload_app.html)를 참조하십시오. |
+| Cloud Foundry 명령행 인터페이스(cf cli) | 로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령행 인터페이스를 사용하여 앱을 {{site.data.keyword.Bluemix_notm}}에 수동으로 푸시하십시오. 자세한 정보는 [앱 업로드](../starters/upload_app.html)를 참조하십시오. |
 | Eclipse | Eclipse에서 코드를 관리하고 {{site.data.keyword.Bluemix_notm}}용 IBM Eclipse 도구를 사용하여 앱을 푸시하십시오. |
 | Git 통합 | GitHub에서 코드를 관리하고 Git를 {{site.data.keyword.Bluemix_notm}}로 통합하십시오. 다른 개발자과 협업할 수 있습니다. 앱은 코드의 변경사항을 커미트할 때 {{site.data.keyword.Bluemix_notm}}에 자동으로 배치됩니다. 앱을 수동으로 푸시할 필요가 없습니다. |
 | {{site.data.keyword.Bluemix_notm}} DevOps Delivery Pipeline | DevOps GitHub 저장소에서 코드를 관리하고 DevOps Delivery Pipeline을 사용하여 앱을 {{site.data.keyword.Bluemix_notm}}에 배치하십시오. |
@@ -54,14 +54,14 @@ Cloud Foundry 플랫폼이 앱 요구사항을 충족하지 않는 경우에는 
 ## cf cli를 사용하여 앱 업로드
 {: #ht_cfcli}
 
-로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령 인터페이스를 사용하여 앱을 {{site.data.keyword.Bluemix_notm}}에 수동으로 업로드할 수 있습니다. 코드를 변경하는 경우에는 앱을 {{site.data.keyword.Bluemix_notm}}에 다시 푸시하여 업데이트된 코드를 실행해야 합니다.
+로컬 클라이언트에서 코드를 관리하고 Cloud Foundry 명령행 인터페이스를 사용하여 앱을 {{site.data.keyword.Bluemix_notm}}에 수동으로 업로드할 수 있습니다. 코드를 변경하는 경우에는 앱을 {{site.data.keyword.Bluemix_notm}}에 다시 푸시하여 업데이트된 코드를 실행해야 합니다.
 
 다음 단계를 수행하여 앱을 마이그레이션하십시오.
 
 Cloud Foundry 명령행 인터페이스를 설치하십시오.  최신 버전의 cf 명령행 인터페이스를 사용 중인지 확인하십시오.
   1. 운영 체제의 설치 프로그램을 다운로드하십시오.
   2. 도구 마법사에 따라 명령행을 설치하십시오.
-  3. 다음 명령을 사용하여 cf 명령 인터페이스의 버전을 확인하십시오. `cf -v`
+  3. 다음 명령을 사용하여 cf 명령행 인터페이스의 버전을 확인하십시오. `cf -v`
 
 선택사항: 앱을 {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 배치 세부사항을 지정하고 저장하려는 경우 다음 단계를 수행하여 앱 Manifest를 추가할 수 있습니다.
 
@@ -79,7 +79,7 @@ Cloud Foundry 명령행 인터페이스를 설치하십시오.  최신 버전의
   memory: 512M
   ```
 
-  이 파일에서 사용할 수 있는 지원 옵션에 대한 자세한 정보는 [앱 Manifest](../manageapps/depapps.html#appmanifest)를 참조하십시오.
+이 파일에서 사용할 수 있는 지원 옵션에 대한 자세한 정보는 [앱 Manifest](depapps.html#appmanifest)를 참조하십시오.
 
 ### 앱 푸시
 
@@ -104,7 +104,7 @@ cf login -a https://api.ng.bluemix.net
 
   세부사항은 [커뮤니티 빌드팩 사용](byob.html)을 참조하십시오.
 
-선택사항: 앱을 변경하는 경우 `cf push 명령`을 다시 입력하여 해당 변경사항을 업로드해야 합니다. cf 명령 인터페이스는 이전 옵션 및 프롬프트에 대한 사용자 응답을 사용하여 새 코드 비트로 앱의 실행 중인 인스턴스를 업데이트합니다.
+선택사항: 앱을 변경하는 경우 `cf push 명령`을 다시 입력하여 해당 변경사항을 업로드해야 합니다. cf 명령행 인터페이스는 이전 옵션 및 프롬프트에 대한 사용자 응답을 사용하여 새 코드 비트로 앱의 실행 중인 인스턴스를 업데이트합니다.
 
 #### 참고:
 

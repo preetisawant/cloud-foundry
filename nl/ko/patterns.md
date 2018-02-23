@@ -189,7 +189,7 @@ lastupdated: "2018-01-18"
 
 조직 내에서 영역은 추가 레벨의 경계 적용 및 추출을 제공합니다.
 
-영역은 사용자가 애플리케이션 및 서비스를 개발하고 실행할 수 있는 조직에서 예약된 영역입니다. 조직에서 임의의 수의 영역을 작성할 수 있으며, 영역에 액세스할 수 있는 사용자를 제어할 수 있습니다. 추가 세부사항은 [영역](/docs/account/orgs_spaces.html#orgsspacesusers)을 참조하십시오. 
+영역은 사용자가 애플리케이션 및 서비스를 개발하고 실행할 수 있는 조직에서 예약된 영역입니다. 조직에서 임의의 수의 영역을 작성할 수 있으며, 영역에 액세스할 수 있는 사용자를 제어할 수 있습니다. 추가 세부사항은 [영역](/docs/account/orgs_spaces.html#orgsspacesusers)을 참조하십시오.
 
 많은 수의 영역을 정의하려는 경우 영역 관리에 도움이 되도록 애플리케이션을 작성할 수 있습니다. 영역 수가 60을 넘으면 다른 조직 정의를 고려할 수 있습니다.
 
@@ -240,14 +240,14 @@ lastupdated: "2018-01-18"
 
 영역 및 인프라별로 계정 할당량을 관리하고 모니터링합니다. 영역에 프로비저닝된 다음 배치된 애플리케이션에서 사용되는 리소스는 조직에서 사용 가능한 할당량의 일부를 이용합니다.
 * {{site.data.keyword.Bluemix_notm}} 퍼블릭에서 조직 할당량을 보고 관리하는 방법에 대한 자세한 정보는 [할당량 관리](/docs/account/manageorg.html#managequota)를 참조하십시오.
-* {{site.data.keyword.Bluemix_dedicated_notm}} 또는 {{site.data.keyword.Bluemix_local_notm}}에서 조직의 할당량을 보고 관리하는 방법에 대한 자세한 정보는 [사용량 및 보고서 보기](/docs/hybrid/index.html#oc_resource)를 참조하십시오. 
+* {{site.data.keyword.Bluemix_dedicated_notm}} 또는 {{site.data.keyword.Bluemix_local_notm}}에서 조직의 할당량을 보고 관리하는 방법에 대한 자세한 정보는 [사용량 및 보고서 보기](/docs/hybrid/index.html#oc_resource)를 참조하십시오.
 
 ## 역할 지정
 {: #roles}
 
 {{site.data.keyword.Bluemix_notm}} 계정에서 팀 구성원에 대해 다중 역할을 부여할 수 있습니다. 이러한 역할은 사용자 권한을 정의하여 계정 및 조직 리소스를 관리합니다.
 * 조직의 구성원에게 [사용자 역할](/docs/iam/users_roles.html#userrolesinfo "사용자 역할")을 부여할 수 있습니다. 이러한 역할은 조직 내 액세스 레벨을 정의하고 영역 및 해당 리소스에 액세스할 수 있는 사용자를 제한합니다. 예를 들어, 서로 다른 영역에 대한 서로 다른 권한을 사용자에게 부여할 수 있습니다.
-* {{site.data.keyword.Bluemix_dedicated_notm}} 및 {{site.data.keyword.Bluemix_local_notm}}에서만 시스템 정보, 계정 리소스의 사용량, 보고서 및 로그, 카탈로그 서비스, 사용자 및 조직당 리소스 사용량을 관리할 수 있도록 계정의 구성원에게 [관리자 역할](/docs/hybrid/index.html#oc_useradmin)을 부여할 수 있습니다. 
+* {{site.data.keyword.Bluemix_dedicated_notm}} 및 {{site.data.keyword.Bluemix_local_notm}}에서만 시스템 정보, 계정 리소스의 사용량, 보고서 및 로그, 카탈로그 서비스, 사용자 및 조직당 리소스 사용량을 관리할 수 있도록 계정의 구성원에게 [관리자 역할](/docs/hybrid/index.html#oc_useradmin)을 부여할 수 있습니다.
 
 ### 계정 소유자
 {: #accountowner}

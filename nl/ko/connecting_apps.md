@@ -11,7 +11,7 @@ lastupdated: "2018-01-18"
 # 연결 관리
 {: #connect_app}
 
-서비스 대시보드의 **연결** 탭에서 서비스를 기존의 또는 새 {{site.data.keyword.Bluemix}} 애플리케이션에 연결할 수 있습니다. Cloud Foundry 서비스를 Cloud Foundry 애플리케이션에 연결하면 서로 간에 바인딩이 작성되며, **Connections** 탭에서 연결을 언바인딩하거나 연결을 더 추가하거나 연결을 삭제할 수 있습니다.
+서비스 대시보드의 **연결** 탭에서 서비스를 기존의 또는 새 {{site.data.keyword.Bluemix}} 애플리케이션에 연결할 수 있습니다. Cloud Foundry 서비스를 Cloud Foundry 애플리케이션에 연결하면 서로 간에 바인딩이 작성되며, **연결** 탭에서 연결을 언바인딩하거나 연결을 더 추가하거나 연결을 삭제할 수 있습니다.
 
 그러나 {{site.data.keyword.Bluemix_notm}} Identity and Access Management(IAM)에서 관리하는 서비스 인스턴스를 Cloud Foundry 애플리케이션에 연결할 때는 IAM에서 관리하는 서비스의 별명이 지정된 바인딩 정보로 대응되는 Cloud Foundry 영역에서 자동으로 작성됩니다. 이 별명은 IAM-관리 서비스의 Cloud Foundry 서비스 인스턴스로서 표시됩니다.
 {:shortdesc}

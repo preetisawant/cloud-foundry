@@ -78,7 +78,7 @@ lastupdated: "2017-12-15"
 ## cf cli를 사용하여 앱 빌드
 {: #ee_cf}
 
-{{site.data.keyword.Bluemix_notm}}는 앱에서 코딩을 시작할 수 있도록 다수의 도구(예: cf 명령행 인터페이스 및 Eclipse 도구)를 제공합니다. cf 명령 인터페이스를 선택하여 앱에서 코딩을 시작할 수 있습니다.
+{{site.data.keyword.Bluemix_notm}}는 앱에서 코딩을 시작할 수 있도록 다수의 도구(예: cf 명령행 인터페이스 및 Eclipse 도구)를 제공합니다. cf 명령행 인터페이스를 선택하여 앱에서 코딩을 시작할 수 있습니다.
 
   1. 우선 앱의 코드를 다운로드하고 개발하십시오.
 
@@ -94,7 +94,7 @@ lastupdated: "2017-12-15"
 
     **요구사항:** 항상 cf 명령행 도구의 최신 버전을 사용해야 합니다.
 
-  3. **cf** 명령행 인터페이스를 설치한 후에는 **cf api** 명령을 사용하여 작업할 {{site.data.keyword.Bluemix_notm}} 지역을 지정해야 합니다. **cf** 명령 인터페이스는 *https://api.[Bluemix_URL]*을 사용하며, 여기서 *Bluemix_URL*은 지역의 URL입니다. 미국 남부 지역의 API 엔드포인트는 `ng.bluemix.net`입니다. 다음 명령을 입력하여 {{site.data.keyword.Bluemix_notm}}에 연결하십시오.
+  3. **cf** 명령행 인터페이스를 설치한 후에는 **cf api** 명령을 사용하여 작업할 {{site.data.keyword.Bluemix_notm}} 지역을 지정해야 합니다. **cf** 명령행 인터페이스는 *https://api.[Bluemix_URL]*을 사용하며, 여기서 *Bluemix_URL*은 지역의 URL입니다. 미국 남부 지역의 API 엔드포인트는 `ng.bluemix.net`입니다. 다음 명령을 입력하여 {{site.data.keyword.Bluemix_notm}}에 연결하십시오.
 
   ```
   cf api https://api.ng.bluemix.net
@@ -129,7 +129,7 @@ lastupdated: "2017-12-15"
 ### cf cli를 사용하여 서비스 바인딩
 {: #ee_cfbind}
 
-**cf** 명령 인터페이스를 사용하여 서비스를 바인드할 수 있습니다. cf 명령 인터페이스를 사용하여 앱에 {{site.data.keyword.cloudant}} 서비스를 추가하려 한다고 가정하십시오.
+**cf** 명령행 인터페이스를 사용하여 서비스를 바인드할 수 있습니다. cf 명령행 인터페이스를 사용하여 앱에 {{site.data.keyword.cloudant}} 서비스를 추가하려 한다고 가정하십시오.
 
 앱 내에서 {{site.data.keyword.cloudant}} 서비스를 사용하려면, Cloudant 서비스 인스턴스를 작성하고 앱을 서비스 인스턴스에 바인드한 후에 서비스 인스턴스를 사용하십시오. 동일한 프로시저가 기타 모든 서비스에 적용됩니다.
 
