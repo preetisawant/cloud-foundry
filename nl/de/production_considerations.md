@@ -28,6 +28,6 @@ Für die Cloud geeignete Apps sind horizontal skalierbar und somit in der Lage, 
 ## Unterstützungsoptionen
 {: #support}
 
-Die gebührenpflichtigen {{site.data.keyword.Bluemix_notm}}-Preisstrukturpläne bieten eine Reihe unterschiedlicher Kontotypen mit *optionalem* gebührenpflichtigen Support. Eine Registrierung dieser Option sollten Sie ungeachtet Ihres Kontotyps auf jeden Fall in Erwägung ziehen, wenn Sie Ihre Anwendung in einer {{site.data.keyword.Bluemix_notm}}-Produktionsumgebung nutzen wollen.
+Die gebührenpflichtigen {{site.data.keyword.Bluemix_notm}}-Preisstrukturpläne bieten eine Reihe unterschiedlicher Kontotypen mit *optionalem* gebührenpflichtigen Support.  Eine Registrierung dieser Option sollten Sie ungeachtet Ihres Kontotyps auf jeden Fall in Erwägung ziehen, wenn Sie Ihre Anwendung in einer {{site.data.keyword.Bluemix_notm}}-Produktionsumgebung nutzen wollen.
 
 Im Abschnitt [Support erhalten](../get-support/howtogetsupport.html) ist beschrieben, wie Sie - ob mit oder ohne gebührenpflichtigem Support - Unterstützung anfordern können. Die Nutzung des gebührenpflichtigen Supports stellt sicher, dass Ihre Support-Tickets mit entsprechender Aufmerksamkeit behandelt werden.

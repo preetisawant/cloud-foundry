@@ -80,7 +80,7 @@ Optional: Wenn Sie die Bereitstellungsdetails angeben und speichern möchten, be
   ```
 
 Weitere Informationen zu den unterstützten Optionen, die Sie in dieser Datei verwenden können, finden Sie unter
-[App-Manifest](../manageapps/depapps.html#appmanifest).
+[App-Manifest](depapps.html#appmanifest).
 
 ### App mit Push-Operation übertragen
 

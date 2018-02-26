@@ -23,7 +23,7 @@ Sie können die {{site.data.keyword.Bluemix}}-Konsole, -Plattform und eine Auswa
 ## Registrieren
 {: #ee_start}
 
-Rufen Sie zum Einstieg die [IBM Cloud-Konsole ![Symbol für externen Link](../icons/launch-glyph.svg)](https://bluemix.net){: new_window} auf. Registrieren Sie sich für eine IBMid und melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, damit Ihr kostenloser dreißigtägiger Testzeitraum beginnt.{{site.data.keyword.Bluemix_notm}} stellt im Rahmen Ihrer kostenlosen Testversion ein Volumen von 2 GB Laufzeitspeicher und 10 Serviceinstanzen bereit.
+Rufen Sie zum Einstieg die [IBM Cloud-Konsole ![Symbol für externen Link](../icons/launch-glyph.svg)](https://bluemix.net){: new_window} auf. Registrieren Sie sich für eine IBMid und melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, damit Ihr kostenloser dreißigtägiger Testzeitraum beginnt. {{site.data.keyword.Bluemix_notm}} stellt im Rahmen Ihrer kostenlosen Testversion ein Volumen von 2 GB Laufzeitspeicher und 10 Serviceinstanzen bereit.
 
 ## App entwickeln
 {: #develop}
