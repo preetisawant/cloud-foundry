@@ -28,6 +28,6 @@ Les applications prêtes pour le cloud sont évolutives horizontalement, et sont
 ## Options de support
 {: #support}
 
-Le forfait payant {{site.data.keyword.Bluemix_notm}} offre plusieurs autres types de compte avec un support payant *facultatif*. Quel que soit le type de votre compte, si vous prévoyez de mettre en production une application sur {{site.data.keyword.Bluemix_notm}}, envisagez de vous inscrire à cette option.
+Le forfait payant {{site.data.keyword.Bluemix_notm}} offre plusieurs autres types de compte avec un support payant *facultatif*.  Quel que soit le type de votre compte, si vous prévoyez de mettre en production une application sur {{site.data.keyword.Bluemix_notm}}, envisagez de vous inscrire à cette option.
 
 Avec ou sans support payant, vous pouvez obtenir de l'aide comme décrit à la rubrique [Comment obtenir l'aide dont j'ai besoin ?](../get-support/howtogetsupport.html), mais payer pour le support vous permettra de vous assurer que vos tickets de demande de service recevront le niveau d'attention qu'ils méritent.

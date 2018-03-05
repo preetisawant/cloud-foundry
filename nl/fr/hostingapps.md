@@ -23,7 +23,7 @@ Avec {{site.data.keyword.Bluemix}}, vous pouvez créer des applications et hébe
 ## Comment préparer vos applications pour le cloud ?
 {: #cloud-readyapps}
 
-Si tous les principes ci-après sont respectés dans votre application, l'application est prête pour le cloud et peut être migrée dans {{site.data.keyword.Bluemix_notm}}. Si un principe n'est pas appliqué dans votre application, vous pouvez généralement [modifier votre application](../apps/cloud-ready.html) pour qu'elle le respecte. 
+Si tous les principes ci-après sont respectés dans votre application, l'application est prête pour le cloud et peut être migrée dans {{site.data.keyword.Bluemix_notm}}. Si un principe n'est pas appliqué dans votre application, vous pouvez généralement [modifier votre application](../apps/cloud-ready.html) pour qu'elle le respecte.
 
 ## Migration de vos applications
 {: #ht_hostapp}
@@ -80,7 +80,7 @@ Facultatif : si vous voulez spécifier et sauvegarder les détails du déploieme
   memory: 512M
   ```
 
-Pour plus d'informations sur les options prises en charge que vous pouvez utiliser dans ce fichier, voir [Manifeste d'application](../manageapps/depapps.html#appmanifest).
+Pour plus d'informations sur les options prises en charge que vous pouvez utiliser dans ce fichier, voir [Manifeste d'application](depapps.html#appmanifest).
 
 ### Envoi de votre application par commande push
 
@@ -104,7 +104,7 @@ votre organisation et votre espace lorsque vous y êtes invité.
   cf push nom_app -b URL_pack_construction
   ```
 
-  Voir [Utilisation de packs de construction de communauté](byob.html) pour plus de détails. 
+  Voir [Utilisation de packs de construction de communauté](byob.html) pour plus de détails.
 
 Facultatif : Si vous modifiez votre application, vous devez télécharger ces changements en entrant à nouveau la commande `cf push`. La ligne de commande cf utilise vos options précédentes et vos réponses aux invites pour mettre à jour les instances en cours d'exécution de votre application avec
 les nouvelles parties de code.

@@ -25,8 +25,8 @@ Un *contexte d'exécution* est un ensemble de ressources utilisé pour exécuter
 
 Pour commencer à créer une application, procédez comme suit :
   1. Cliquez sur **Catalogue** dans la barre d'outils IBM Cloud.
-  2. Cliquez sur **Applications Cloud Foundry** et choisissez un contexte d'exécution. Suivez l'expérience guidée pour spécifier un nom et sélectionnez comment vous voulez coder. Cliquez sur **Créer**.
-  3. Une fois que vous avez terminé l'expérience guidée, cliquez sur **Présentation**.
+  2. Cliquez sur **Applications Cloud Foundry** et choisissez un contexte d'exécution. Suivez le guide d'initiation pour spécifier un nom et sélectionnez la manière dont vous souhaitez coder. Cliquez sur **Créer**.
+  3. Une fois que vous avez terminé de suivre le guide d'initiation, cliquez sur **Présentation**.
   5. Vous pouvez ajouter un service à votre application en cliquant sur **Créer une connexion** dans la présentation de l'application sur le tableau de bord. Parcourez et sélectionnez des services dans le catalogue ou accédez à la fin du catalogue et cliquez sur
 **Services expérimentaux {{site.data.keyword.Bluemix_notm}}** pour examiner ces services. Vous pouvez aussi
 utiliser l'interface de

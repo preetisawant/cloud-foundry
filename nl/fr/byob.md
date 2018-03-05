@@ -104,4 +104,4 @@ cf restage app_name
 ```
 {:pre}
 
-Utilisez le fichier `manifest.yml`. Vous pouvez ajouter la variable d'environnement et la valeur que vous voulez spécifier directement dans le fichier. Pour des informations détaillées, voir la rubrique relative aux [variables d'environnement](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block). 
+Utilisez le fichier `manifest.yml`. Vous pouvez ajouter la variable d'environnement et la valeur que vous voulez spécifier directement dans le fichier. Pour des informations détaillées, voir la rubrique relative aux [variables d'environnement](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block).
