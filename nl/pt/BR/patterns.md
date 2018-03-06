@@ -46,7 +46,7 @@ A tabela a seguir fornece um resumo de alguns dos elementos chave.
 | Element   | Descrição |
 |---------------------------------------|--------------------------------------------------------------------------------------|
 | Conta   | Cada conta possui um proprietário da conta. |
-|| Contém uma ou mais organizações. Deve-se ter uma conta Pay-As-You-Go para criar mais de uma organização. |
+|| Contém uma ou mais organizações. Deve-se ter uma conta pré-paga para criar mais de uma organização. |
 | Proprietário da conta   | Responsável por todos os encargos de uso que são acumulados na conta. |
 || Pode possuir somente uma conta. |
 || Pode incluir um ou mais gerenciadores de organização para delegar o gerenciamento da organização, que inclui as permissões de leitura e gravação para as organizações. |
@@ -109,7 +109,7 @@ as fases de entrega, projetos específicos, aplicativos, permissões de usuário
 Para implementar uma arquitetura de organização múltipla, crie uma conta no {{site.data.keyword.Bluemix_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} ou {{site.data.keyword.Bluemix_local_notm}}. Em seguida, é possível definir as organizações que correspondem a diferentes LOBs, fases de entrega,
 projetos específicos, permissões de usuário ou uma combinação desses componentes. É possível, então, definir múltiplos espaços com base em aplicativos ou projetos que são entregues pelo mesmo departamento na empresa.
 
-Deve-se ter uma conta faturável, como Pagamento por uso ou Assinatura, para definir múltiplas organizações.
+Deve-se ter uma conta faturável, como pré-paga ou de assinatura, para definir múltiplas organizações.
 {: tip}
 
 ### Considerações sobre organização

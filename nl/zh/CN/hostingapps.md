@@ -79,7 +79,7 @@ lastupdated: "2018-01-18"
   memory: 512M
   ```
 
-  有关可在此文件中使用的受支持选项的更多信息，请参阅[应用程序清单](../manageapps/depapps.html#appmanifest)。
+有关可在此文件中使用的受支持选项的更多信息，请参阅[应用程序清单](depapps.html#appmanifest)。
 
 
 

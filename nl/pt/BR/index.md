@@ -39,8 +39,8 @@ automaticamente configurados para uso e requerem pouca ou nenhuma manutenção.
 
 Para iniciar a criação de seu aplicativo, execute as etapas a seguir:
   1. Clique em **Catálogo** na barra de ferramentas do IBM Cloud.
-  2. Clique em **Apps Cloud Foundry** e escolha um tempo de execução. Siga a experiência orientada para especificar um nome e selecione como deseja codificar. Clique em **Criar**.
-  3. Quando concluir a experiência orientada, clique em **Visão geral**.
+  2. Clique em **Apps Cloud Foundry** e escolha um tempo de execução. Siga o guia Introdução para especificar um nome e selecione como deseja codificar. Clique em **Criar**.
+  3. Quando tiver concluído o guia Introdução, clique em **Visão geral**.
   5. É possível incluir um serviço em seu app clicando em **Criar conexão** na Visão geral do app no painel. Procure e selecione serviços a partir do catálogo ou role até o término do catálogo e clique em **Serviços experimentais do {{site.data.keyword.Bluemix_notm}}** para procurar serviços experimentais. Ou, é possível usar a interface de linha de comandos cf. Consulte Opções para trabalhar com apps.
   6. Na página Visão geral, role para o cartão "Entrega contínua" e clique em **Visualizar cadeia de ferramentas**. A origem de seu app será salva em um repositório hospedado no Bluemix. Uma cadeia de ferramentas aberta que usa esse repositório e um pipeline de entrega para desenvolver e implementar seu app também é criada. Para obter mais informações sobre o serviço Continuous Delivery, veja <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Introdução ao Continuous Delivery</a>.
 

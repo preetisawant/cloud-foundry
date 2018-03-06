@@ -80,7 +80,7 @@ Opcional: se você desejar especificar e salvar os detalhes da implementação a
   memory: 512M
   ```
 
-Para obter mais informações sobre as opções suportadas que podem ser usadas nesse arquivo, veja [Manifest do app](../manageapps/depapps.html#appmanifest).
+Para obter mais informações sobre as opções suportadas que podem ser usadas nesse arquivo, veja [Manifest do app](depapps.html#appmanifest).
 
 ### Envie seu app por push
 

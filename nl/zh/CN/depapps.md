@@ -328,8 +328,7 @@ cf push -f appManifest.yml
   <dt><strong>VCAP_APP_HOST</strong></dt>
   <dd>Diego 主机的 IP 地址。</dd>
   <dt><strong>VCAP_APPLICATION</strong></dt>
-  <dd>JSON 字符串，其中包含有关部署的应用程序的信息。此信息包括应用程序名称、URI、内存限制、应用程序达到其当前状态时的时间戳记等。例如：
-<pre class="pre codeblock"><code>
+  <dd>JSON 字符串，其中包含有关部署的应用程序的信息。此信息包括应用程序名称、URI、内存限制、应用程序达到其当前状态时的时间戳记等。例如：<pre class="pre codeblock"><code>
   {
 "limits": {
         "mem": 512,
@@ -361,8 +360,7 @@ cf push -f appManifest.yml
 }
 </code></pre></dd>
   <dt><strong>VCAP_SERVICES</strong></dt>
-  <dd>JSON 字符串，包含与已部署应用程序绑定的服务的信息。例如：
-<pre class="pre codeblock"><code>
+  <dd>JSON 字符串，包含与已部署应用程序绑定的服务的信息。例如：<pre class="pre codeblock"><code>
   {
     "mysql-5.5": [
         {

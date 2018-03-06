@@ -25,8 +25,8 @@ lastupdated: "2017-12-14"
 
 要开始创建应用程序，请执行以下步骤：
   1. 单击 IBM Cloud 工具栏中的**目录**。
-  2. 单击 **Cloud Foundry 应用程序**，然后选择运行时。按照指导经验来指定名称以及选择编码方式。单击**创建**。
-  3. 按照指导经验完成操作后，单击**概述**。
+  2. 单击 **Cloud Foundry 应用程序**，然后选择运行时。按照《入门》指南来指定名称以及选择编码方式。单击**创建**。
+  3. 按照《入门》指南完成操作后，单击**概述**。
   5. 在仪表板中，通过单击应用程序的“概述”上的**创建连接**，可以向该应用程序添加服务。浏览目录并从中选择服务，或者滚动到目录结尾并单击 **{{site.data.keyword.Bluemix_notm}} 试验性服务**以浏览试验性服务。也可以使用 cf 命令行界面。请参阅“用于处理应用程序的选项”。
   6. 在“概述”页面上，滚动到“Continuous Delivery”卡，然后单击**查看工具链**。应用程序的源代码将保存在 Bluemix 上托管的存储库中。此外，还将创建开放工具链，此工具链使用该存储库和 Delivery Pipeline 来开发和部署应用程序。有关 Continuous Delivery 服务的更多信息，请参阅 <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Continuous Delivery 入门</a>。
 
