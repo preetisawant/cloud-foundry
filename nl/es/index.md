@@ -2,7 +2,7 @@
 
 copyright:
 
-  years: 2015, 2017
+  years: 2015, 2017, 2018
 
 lastupdated: "2017-12-14"
 
@@ -25,8 +25,8 @@ Un *tiempo de ejecución* es el conjunto de recursos que se utiliza para ejecuta
 
 Para empezar a crear la aplicación, siga los pasos siguientes:
   1. Pulse **Catálogo** en la barra de herramientas de IBM Cloud.
-  2. Pulse **Apps de Cloud Foundry** y elija un tiempo de ejecución. Siga las instrucciones para especificar un nombre y seleccione cómo desea codificar. Pulse **Crear**.
-  3. Cuando acabe con las instrucciones, pulse **Visión general**.
+  2. Pulse **Apps de Cloud Foundry** y elija un tiempo de ejecución. Siga la Guía de inicio para especificar un nombre y seleccione cómo desea codificar. Pulse **Crear**.
+  3. Cuando acabe con la Guía de inicio, pulse **Visión general**.
   5. Puede añadir un servicio a la app pulsando **Crear conexión** en la Visión general de la app en el panel de control. Examine y seleccione servicios del catálogo, o desplácese hasta el final del catálogo y pulse **Servicios experimentales de {{site.data.keyword.Bluemix_notm}}** para examinar servicios experimentales. También puede utilizar la interfaz de línea de mandatos cf. Consulte Opciones para trabajar con apps.
   6. En la página Visión general, desplácese a la tarjeta "Entrega continua" y pulse **Ver cadena de herramientas**. El código fuente de su app se guardará en un repositorio que está alojado en Bluemix. También se creará una cadena de herramientas abierta que utilizará dicho repositorio y un conducto de entrega para desarrollar y desplegar su app. Para obtener más información sobre el servicio Continuous Delivery, consulte <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Iniciación a Continuous Delivery</a>.
 
