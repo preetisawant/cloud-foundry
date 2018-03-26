@@ -6,9 +6,10 @@ Cloud Foundry Apps
 
     {: .navgroup id="learn"}
     index.md
+    cf.md
     ee.md
     production_considerations.md
-    
+
     {: .topicgroup}
     Cloud Foundry Buildpacks
         [Available buildpacks](https://console.bluemix.net/docs/runtimes/common/index.html)
@@ -16,7 +17,7 @@ Cloud Foundry Apps
         [Working with a proxy](https://console.bluemix.net/docs/runtimes/common/workingWithProxy.html)
         [Troubleshooting for creating runtimes](https://console.bluemix.net/docs/troubleshoot/ts_runtimes.html)
         [Buildpack support statement](https://console.bluemix.net/docs/runtimes/common/buildpackSupport.html)
-    
+
     {: .topicgroup}
     Best practices
         patterns.md
