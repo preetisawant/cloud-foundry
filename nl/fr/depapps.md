@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -142,7 +142,7 @@ Si vous rencontrez des problèmes lors de la constitution de vos applications da
 
 Lorsque vous déployez vos applications sur {{site.data.keyword.Bluemix_notm}} depuis l'interface de ligne de commande, un pack de construction doit être fourni comme environnement d'exécution en fonction du langage et de l'infrastructure de votre application. Vous pouvez également utiliser le service Delivery Pipeline afin de déployer des applications dans {{site.data.keyword.Bluemix_notm}}.
 
-{{site.data.keyword.Bluemix_notm}} fournit des packs de construction intégrés qui prennent en charge Java et Node.js. Si vous utilisez ces langages et infrastructures, vous n'avez pas besoin de spécifier le pack de construction lorsque vous déployez votre application à l'aide de l'interface de ligne de commande. Etant donné que {{site.data.keyword.Bluemix_notm}} repose sur Cloud Foundry, la commande utilise par défaut ces packs de construction.
+{{site.data.keyword.Bluemix_notm}} [fournit des packs de construction](/docs/runtimes/common/index.html#available_buildpacks) qui prennent notamment en charge Java et Node.js. Si vous utilisez ces langages et infrastructures, vous n'avez pas besoin de spécifier le pack de construction lorsque vous déployez votre application à l'aide de l'interface de ligne de commande. Etant donné que {{site.data.keyword.Bluemix_notm}} repose sur Cloud Foundry, la commande utilise par défaut ces packs de construction.
 
 Si vous utilisez un pack de construction externe, vous devez spécifier son URL à l'aide de l'option **-b** lorsque vous déployez votre application sur {{site.data.keyword.Bluemix_notm}} depuis l'invite de commande.
 
