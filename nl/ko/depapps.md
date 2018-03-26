@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -112,7 +112,7 @@ $ cf start APPLICATION_NAME
 
 명령행 인터페이스를 통해 애플리케이션을 {{site.data.keyword.Bluemix_notm}}에 배치하는 경우 애플리케이션 언어 및 프레임워크에 따라 빌드팩을 런타임 환경으로 제공해야 합니다. Delivery Pipeline 서비스를 사용하여 애플리케이션을 {{site.data.keyword.Bluemix_notm}}에 배치할 수도 있습니다.
 
-{{site.data.keyword.Bluemix_notm}}에서는 Java 및 Node.js를 지원하는 기본 제공 빌드팩을 제공합니다. 이 언어와 프레임워크를 사용할 경우 명령행 인터페이스를 사용하여 애플리케이션을 배치할 때 빌드팩을 지정하지 않아도 됩니다. {{site.data.keyword.Bluemix_notm}}는 Cloud Foundry를 기반으로 빌드되었으므로 명령이 기본적으로 이 빌드팩으로 설정됩니다.
+{{site.data.keyword.Bluemix_notm}}는 Java 및 Node.js 등을 지원하는 [빌드팩을 제공](/docs/runtimes/common/index.html#available_buildpacks)합니다. 이 언어와 프레임워크를 사용할 경우 명령행 인터페이스를 사용하여 애플리케이션을 배치할 때 빌드팩을 지정하지 않아도 됩니다. {{site.data.keyword.Bluemix_notm}}는 Cloud Foundry를 기반으로 빌드되었으므로 명령이 기본적으로 이 빌드팩으로 설정됩니다.
 
 외부 빌드팩을 사용하는 경우 명령 프롬프트에서 애플리케이션을 {{site.data.keyword.Bluemix_notm}}에 배치할 때 **-b** 옵션을 사용하여 빌드팩의 URL을 지정해야 합니다.
 
