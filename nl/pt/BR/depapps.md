@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -125,7 +125,7 @@ Ao implementar seus aplicativos no
 pela interface de linha de comandos, um buildpack deve ser fornecido como o ambiente de
 tempo de execução, de acordo com o idioma e a estrutura de seu aplicativo. Também é possível usar o serviço Delivery Pipeline para implementar aplicativos no {{site.data.keyword.Bluemix_notm}}.
 
-O {{site.data.keyword.Bluemix_notm}} fornece buildpacks integrados que suportam Java e Node.js. Se você estiver usando esses idiomas e estruturas, não precisará especificar o
+O {{site.data.keyword.Bluemix_notm}} [fornece buildpacks](/docs/runtimes/common/index.html#available_buildpacks) que suportam o Java e o Node.js entre outros. Se você estiver usando esses idiomas e estruturas, não precisará especificar o
 buildpack quando implementar o aplicativo usando a interface de linha de comandos. Como o
 {{site.data.keyword.Bluemix_notm}}
 é construído no Cloud Foundry, o comando é padronizado com esses buildpacks.
