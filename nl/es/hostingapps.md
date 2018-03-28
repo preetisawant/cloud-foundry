@@ -48,7 +48,7 @@ Puede utilizar las herramientas y servicios siguientes que {{site.data.keyword.B
 
 | Herramienta | Método |
 |:------|:--------|
-| Interfaz de línea de mandatos de Cloud Foundry (cf cli) | Gestione su código en el cliente local y utilizar la interfaz de línea de mandatos de Cloud Foundry para enviar por push su app manualmente a {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Subir sus apps](../starters/upload_app.html).|
+| Interfaz de línea de mandatos de Cloud Foundry (cf cli) | Gestione su código en el cliente local y utilizar la interfaz de línea de mandatos de Cloud Foundry para enviar por push su app manualmente a {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Subir sus apps](../starters/upload_app.html). |
 | Eclipse | Gestione su código en Eclipse y utilice IBM Eclipse tools for {{site.data.keyword.Bluemix_notm}} para enviar por push su app. |
 | Integración con Git | Gestione su código en GitHub e integre Git en {{site.data.keyword.Bluemix_notm}}. Puede colaborar con otros desarrolladores. Su app se despliega automáticamente en
 {{site.data.keyword.Bluemix_notm}} cuando confirma los cambios en el código. No necesita enviar por push manualmente
@@ -103,8 +103,6 @@ puede añadir el manifiesto de la app realizando los pasos siguientes:
 Para obtener más información sobre las opciones admitidas que puede utilizar en este archivo, consulte
 [Manifiesto de la app](depapps.html#appmanifest).
 
-
-
 ### Envíe la app por push
 
 Puede subir su app utilizando el mandato `cf push`.
@@ -114,8 +112,6 @@ organización y espacio cuando se le solicite.
   cf login -a https://api.ng.bluemix.net
   ```
   Añada el distintivo `-sso` si su organización utiliza Single Sign On.
-
-
 
   2. En el directorio de la app, escriba el mandato cf push con el nombre de la app. El nombre de la app debe ser exclusivo en el entorno {{site.data.keyword.Bluemix_notm}}.
 

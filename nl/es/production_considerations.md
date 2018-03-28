@@ -28,6 +28,6 @@ Las apps listas para Cloud son escalables horizontalmente, y por lo tanto se pue
 ## Opciones de soporte
 {: #support}
 
-El plan de precios de pago de {{site.data.keyword.Bluemix_notm}} ofrece un número de tipos de cuenta distintos con soporte de pago *opcional*. Sin importar el tipo de cuenta, si piensa en llevar una aplicación a producción en {{site.data.keyword.Bluemix_notm}}, considere la posibilidad de inscribirse en esta opción.
+El plan de precios de pago de {{site.data.keyword.Bluemix_notm}} ofrece un número de tipos de cuenta distintos con soporte de pago *opcional*.  Sin importar el tipo de cuenta, si piensa en llevar una aplicación a producción en {{site.data.keyword.Bluemix_notm}}, considere la posibilidad de inscribirse en esta opción.
 
 Con o sin soporte de pago, puede obtener ayuda como se describe en [¿Cómo obtengo el apoyo que necesito?](../get-support/howtogetsupport.html), pero pagando por el apoyo garantizará que las incidencias de soporte recibirán el nivel de atención que se merecen.

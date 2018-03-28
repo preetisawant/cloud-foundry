@@ -64,7 +64,7 @@ cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Para un tiempo de ejecución o infraestructura que no reciba soporte de los paquetes de compilación creados por IBM pero sí de los integrados de la comunidad, no tiene que utilizar la opción -b con el mandato cf push.Por ejemplo, para apps Ruby, no hay paquetes de compilación creados por IBM. Puede utilizar el paquete de compilación integrado de la comunidad especificando
+Para un tiempo de ejecución o infraestructura que no reciba soporte de los paquetes de compilación creados por IBM pero sí de los integrados de la comunidad, no tiene que utilizar la opción -b con el mandato cf push. Por ejemplo, para apps Ruby, no hay paquetes de compilación creados por IBM. Puede utilizar el paquete de compilación integrado de la comunidad especificando
 el mandato siguiente:
 
 ```
@@ -110,7 +110,6 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 ## Especificación de la versión de paquete de compilación de Java
 
 Utilice el mandato `cf set-env`. Por ejemplo, especifique el mandato siguiente para establecer la versión de Java a 1.7.0:
-
 ```
 cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
 ```

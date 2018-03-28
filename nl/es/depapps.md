@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -113,7 +113,7 @@ Si tiene problemas para transferir sus apps en {{site.data.keyword.Bluemix_notm}
 
 Cuando despliegue sus apps en {{site.data.keyword.Bluemix_notm}} desde la interfaz de línea de mandatos, debe especificar un paquete de compilación como entorno de tiempo ejecución de acuerdo con el lenguaje de la app y la infraestructura. También puede utilizar el servicio Delivery Pipeline para desplegar apps en {{site.data.keyword.Bluemix_notm}}.
 
-{{site.data.keyword.Bluemix_notm}} ofrece paquetes de compilación integrados que dan soporte a Java y a Node.js. Si utiliza estos lenguajes e infraestructuras, no necesita especificar el paquete de compilación cuando despliegue la app mediante la interfaz de línea de mandatos. Puesto que {{site.data.keyword.Bluemix_notm}} se basa en Cloud Foundry, el mandato utiliza como valores predeterminados estos paquetes de compilación.
+{{site.data.keyword.Bluemix_notm}} [ proporciona buildpacks ](/docs/runtimes/common/index.html#available_buildpacks) que dan soporte, entre otros, a Java y Node.js. Si utiliza estos lenguajes e infraestructuras, no necesita especificar el paquete de compilación cuando despliegue la app mediante la interfaz de línea de mandatos. Puesto que {{site.data.keyword.Bluemix_notm}} se basa en Cloud Foundry, el mandato utiliza como valores predeterminados estos paquetes de compilación.
 
 Si utiliza un paquete de compilación externo, debe especificar el URL del paquete de compilación mediante la opción **-b** cuando despliegue la app en {{site.data.keyword.Bluemix_notm}} desde el indicador de mandatos.
 
@@ -138,8 +138,6 @@ utilice el mandato siguiente:
   cf push nombre_app -p app.war
   ```
   O, puede especificar un directorio que contenga los archivos de app mediante el mandato siguiente:
-
-  
 
   ```
   cf push nombre_app -p "./app"
@@ -344,15 +342,15 @@ Diego define las siguientes variables:
     "application_version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
     "application_name": "testapp",
     "application_uris": [
-"testapp.AppDomainNamestage1.mybluemix.net"
-        ],
+        "testapp.AppDomainNamestage1.mybluemix.net"
+    ],
     "version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
     "name": "testapp",
     "space_name": "dev",
     "space_id": "c6ed3a8e-436b-43ac-9f96-b676ee335000",
     "uris": [
-"testapp.AppDomainNamestage1.mybluemix.net"
-        ],
+        "testapp.AppDomainNamestage1.mybluemix.net"
+    ],
     "users": null,
     "application_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
     "instance_id": "09f50e22848d4ec0b943e9e487c23569",
@@ -401,8 +399,6 @@ Las variables definidas por un paquete de compilación varían según cada paque
 
 <ul>
     <li>Las variables siguientes están definidas por el paquete de compilación de Liberty:
-
-	  
 
 	  <dl>
 	  <dt><strong>JAVA_HOME</strong></dt>
