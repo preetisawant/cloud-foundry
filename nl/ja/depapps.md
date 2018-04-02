@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -113,7 +113,7 @@ staging errors)」](/docs/debug/index.html#debugging-staging-errors)のステッ
 
 アプリケーションをコマンド・ライン・インターフェースから {{site.data.keyword.Bluemix_notm}} にデプロイする場合、ご使用のアプリケーションの言語とフレームワークに基づいて、ビルドパックをランタイム環境として提供する必要があります。 Delivery Pipeline サービスを使用して、{{site.data.keyword.Bluemix_notm}} にアプリケーションをデプロイすることもできます。
 
-{{site.data.keyword.Bluemix_notm}} は、Java および Node.js をサポートする組み込みビルドパックを提供します。 これらの言語およびフレームワークを使用する場合、コマンド・ライン・インターフェースを使用することで、アプリケーションのデプロイ時にビルドパックを指定する必要がなくなります。 {{site.data.keyword.Bluemix_notm}} は Cloud Foundry にビルドされているため、コマンドはデフォルトでこれらのビルドパックに設定されます。
+{{site.data.keyword.Bluemix_notm}} は、Java や Node.js などをサポートする[ビルドパック](/docs/runtimes/common/index.html#available_buildpacks)を提供します。これらの言語およびフレームワークを使用する場合、コマンド・ライン・インターフェースを使用することで、アプリケーションのデプロイ時にビルドパックを指定する必要がなくなります。 {{site.data.keyword.Bluemix_notm}} は Cloud Foundry にビルドされているため、コマンドはデフォルトでこれらのビルドパックに設定されます。
 
 外部ビルドパックを使用する場合、アプリケーションをコマンド・プロンプトから {{site.data.keyword.Bluemix_notm}} にデプロイする際に **-b** オプションを使用して、ビルドパックの URL を指定する必要があります。
 
