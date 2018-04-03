@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -124,7 +124,7 @@ Quando distribuisci le tue applicazioni in {{site.data.keyword.Bluemix_notm}} da
 riga di comando, devi fornire un pacchetto di build come ambiente di runtime a seconda del linguaggio
 e del framework della tua applicazione. Inoltre, puoi utilizzare il servizio Delivery Pipeline per distribuire le applicazioni in {{site.data.keyword.Bluemix_notm}}.
 
-{{site.data.keyword.Bluemix_notm}} fornisce pacchetti di build integrati che supportano Java e Node.js. Se utilizzi questi
+{{site.data.keyword.Bluemix_notm}} [fornisce pacchetti di build](/docs/runtimes/common/index.html#available_buildpacks) che supportano Java e Node.js tra gli altri. Se utilizzi questi
 linguaggi e questi framework, non dovrai specificare il pacchetto di build durante
 la distribuzione della tua applicazione mediante l'interfaccia riga di comando. Poiché {{site.data.keyword.Bluemix_notm}} è
         creato su Cloud Foundry, il comando è impostato come valore predefinito su questi pacchetti di build.

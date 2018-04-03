@@ -124,14 +124,14 @@ Facoltativo: se modifichi la tua applicazione, devi caricare queste modifiche im
 ## Migrazione dei tuoi dati e utilizzo dei servizi
 {: #ht_service}
 
-Dopo aver caricato la tua applicazione in {{site.data.keyword.Bluemix_notm}}, seleziona il servizio a cui è connessa l'applicazione dal catalogo {{site.data.keyword.Bluemix_notm}}, crea un'istanza del servizio, esegui il bind dell'istanza all'applicazione e quindi riavvia l'applicazione. 
+Dopo aver caricato la tua applicazione in {{site.data.keyword.Bluemix_notm}}, seleziona il servizio a cui è connessa l'applicazione dal catalogo {{site.data.keyword.Bluemix_notm}}, crea un'istanza del servizio, esegui il bind dell'istanza all'applicazione e quindi riavvia l'applicazione.
 
 La variabile di ambiente VCAP_SERVICES della tua applicazione è un oggetto JSON che contiene informazioni su come interagire con un'istanza del servizio in {{site.data.keyword.Bluemix_notm}}. Tali informazioni includono il nome dell'istanza di servizio, le credenziali e
 l'URL di connessione all'istanza di servizio.
 
 Per eseguire il codice su {{site.data.keyword.Bluemix_notm}},
 devi aggiungere la logica del codice per l'analisi della variabile VCAP_SERVICES,
-al fine di ottenere informazioni sulla connessione al servizio. Modifica la tua applicazione per ottenere attraverso le variabili di ambiente la porta e l'host dell'istanza del servizio assegnati dinamicamente.  Il seguente esempio mostra come ottenere le credenziali di un'istanza del servizio Postgre SQL in un'applicazione Ruby:
+al fine di ottenere informazioni sulla connessione al servizio. Modifica la tua applicazione per ottenere attraverso le variabili di ambiente la porta e l'host dell'istanza del servizio assegnati dinamicamente. Il seguente esempio mostra come ottenere le credenziali di un'istanza del servizio Postgre SQL in un'applicazione Ruby:
 
 ```
 services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
