@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -129,8 +129,7 @@ Wenn Sie Ihre Anwendungen über die Befehlszeilenschnittstelle für
 entsprechend Ihrer Anwendungssprache und Ihrem Framework angegeben
 werden. Sie können auch den Service 'Delivery Pipeline' verwenden, um Anwendungen für {{site.data.keyword.Bluemix_notm}} bereitzustellen.
 
-{{site.data.keyword.Bluemix_notm}} stellt integrierte Buildpacks
-zur Verfügung, die Java und Node.js unterstützen. Wenn Sie diese Sprachen und Frameworks verwenden, brauchen Sie bei der
+{{site.data.keyword.Bluemix_notm}} [stellt Buildpacks bereit](/docs/runtimes/common/index.html#available_buildpacks), die unter anderem Java und Node.js unterstützen. Wenn Sie diese Sprachen und Frameworks verwenden, brauchen Sie bei der
 Bereitstellung Ihrer Anwendung über die Befehlszeilenschnittstelle kein Buildpack anzugeben. Da {{site.data.keyword.Bluemix_notm}} auf der Grundlage von Cloud Foundry erstellt ist, nimmt der
 Befehl diese
 Buildpacks standardmäßig als Wert an.
