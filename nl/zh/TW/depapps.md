@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -112,7 +112,7 @@ $ cf start APPLICATION_NAME
 
 從指令行介面將應用程式部署至 {{site.data.keyword.Bluemix_notm}} 時，必須依據您的應用程式語言及架構，提供建置套件作為運行環境。您也可以使用 Delivery Pipeline 服務，將應用程式部署至 {{site.data.keyword.Bluemix_notm}}。
 
-{{site.data.keyword.Bluemix_notm}} 提供支援 Java 及 Node.js 的內建建置套件。如果您是使用這些語言及架構，則在使用指令行介面來部署應用程式時，不需要指定建置套件。因為 {{site.data.keyword.Bluemix_notm}} 是以 Cloud Foundry 為建置基礎，所以指令預設為這些建置套件。
+特別值得一提的是，{{site.data.keyword.Bluemix_notm}} [提供支援 Java 及 Node.js 的內建建置套件](/docs/runtimes/common/index.html#available_buildpacks)。如果您是使用這些語言及架構，則在使用指令行介面來部署應用程式時，不需要指定建置套件。因為 {{site.data.keyword.Bluemix_notm}} 是以 Cloud Foundry 為建置基礎，所以指令預設為這些建置套件。
 
 如果您使用外部建置套件，則必須在從命令提示字元將應用程式部署至 {{site.data.keyword.Bluemix_notm}} 時，使用 **-b** 選項來指定建置套件的 URL。
 

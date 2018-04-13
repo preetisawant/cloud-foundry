@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -112,7 +112,7 @@ Diego 是 {{site.data.keyword.Bluemix_notm}} 的缺省 Cloud Foundry 体系结�
 
 通过命令行界面将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 时，必须根据应用程序语言和框架来提供 buildpack，以作为运行时环境。您还可以使用 Delivery Pipeline 服务将应用程序部署到 {{site.data.keyword.Bluemix_notm}}。
 
-{{site.data.keyword.Bluemix_notm}} 提供了支持 Java 和 Node.js 的内置 buildpack。如果要使用这些语言和框架，那么使用命令行界面部署应用程序时，无需指定 buildpack。由于 {{site.data.keyword.Bluemix_notm}} 是基于 Cloud Foundry 构建的，因此命令缺省为这些 buildpack。
+{{site.data.keyword.Bluemix_notm}} [提供 buildpack](/docs/runtimes/common/index.html#available_buildpacks)，用于支持 Java 和 Node.js 等。如果要使用这些语言和框架，那么使用命令行界面部署应用程序时，无需指定 buildpack。由于 {{site.data.keyword.Bluemix_notm}} 是基于 Cloud Foundry 构建的，因此命令缺省为这些 buildpack。
 
 如果使用外部 buildpack，那么在通过命令提示符将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 时，必须使用 **-b** 选项来指定 buildpack 的 URL。
 
@@ -328,7 +328,8 @@ cf push -f appManifest.yml
   <dt><strong>VCAP_APP_HOST</strong></dt>
   <dd>Diego 主机的 IP 地址。</dd>
   <dt><strong>VCAP_APPLICATION</strong></dt>
-  <dd>JSON 字符串，其中包含有关部署的应用程序的信息。此信息包括应用程序名称、URI、内存限制、应用程序达到其当前状态时的时间戳记等。例如：<pre class="pre codeblock"><code>
+  <dd>JSON 字符串，其中包含有关部署的应用程序的信息。此信息包括应用程序名称、URI、内存限制、应用程序达到其当前状态时的时间戳记等。例如：
+<pre class="pre codeblock"><code>
   {
 "limits": {
         "mem": 512,
@@ -360,7 +361,8 @@ cf push -f appManifest.yml
 }
 </code></pre></dd>
   <dt><strong>VCAP_SERVICES</strong></dt>
-  <dd>JSON 字符串，包含与已部署应用程序绑定的服务的信息。例如：<pre class="pre codeblock"><code>
+  <dd>JSON 字符串，包含与已部署应用程序绑定的服务的信息。例如：
+<pre class="pre codeblock"><code>
   {
     "mysql-5.5": [
         {
