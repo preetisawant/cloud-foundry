@@ -4,60 +4,55 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2017-12-14"
+lastupdated: "2018-04-13"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
 
-# Creating Cloud Foundry apps
-{: #creating_cloud_foundry_apps}
+# About IBM Cloud Foundry Enterprise Environment
+{: #creating}
 
-With {{site.data.keyword.Bluemix}}, you can create your app in the {{site.data.keyword.Bluemix_notm}} console. Then, you can decide to continue to use the console, use the cf command line interface, or use {{site.data.keyword.jazzhub_title}} to develop, track, plan, and deploy your app.
+With the IBM Cloud Foundry Enterprise Environment, you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the IBM Cloud Foundry Enterprise service that is run within your own account in the IBM Cloud, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
+o start administering the environment.
 {:shortdesc}
 
-When you create an app in {{site.data.keyword.Bluemix_notm}}, you can begin with a starter. A *starter* is a template that includes predefined services and application code that is configured with a particular buildpack. There are two types of starters: boilerplates and runtimes.
+For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
 
-A *boilerplate* is a container for an application and its associated runtime environment and predefined services for a particular domain. For example, the Mobile Cloud boilerplate includes a Node.js runtime, as well as the Mobile Data, Mobile Application Security, and Push services. It also includes an SDK and sample applications to get started developing mobile apps that access these services.
+* How many, and what type of, apps are you developing?
+* Which services do the apps need to access?
+* Who collaborates in the development process and what role do they play?
+* What degree of isolation is required for each phase of the project?
+* Does your enterprise supply the infrastructure resources?
+* How does your company communicate?
+* Is there a naming standard that you can implement to clearly identify the organization and space usage?
 
-A *runtime* is the set of resources that is used to run an application. {{site.data.keyword.Bluemix_notm}} provides runtime environments as containers for different types of applications. The runtime environments are integrated as buildpacks into {{site.data.keyword.Bluemix_notm}}, are automatically configured for use, and require little to no maintenance.
+As part of deciding which type of cloud environment you need, plan the structure of your account, organizations, spaces, resources, and team members.
 
-To get started creating your application, take the following steps:
-  1. Click **Catalog** in the IBM Cloud toolbar.
-  2. Click **Cloud Foundry Apps** and choose a runtime. Follow the Getting Started guide to specify a name, and select how you want to code. Click **Create**.
-  3. When you are finished with the Getting Started guide, click **Overview**.
-  5. You can add a service to your app by clicking **Create connection** on the app Overview in the dashboard. Browse and select services from the catalog, or, scroll to the end of the catalog and click **{{site.data.keyword.Bluemix_notm}} Experimental Services** to browse experimental services. Or, you can use the cf command line interface. See Options for working with apps.
-  6. On the Overview page, scroll to the "Continuous delivery" card and click **View toolchain**. Your app's source will be saved in a repo that is hosted on Bluemix. An open toolchain that uses that repo and a delivery pipeline to develop and deploy your app is also created. For more information about the Continuous Delivery service, see <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.
+For most companies, a single {{site.data.keyword.Bluemix_notm}} account is sufficient. For larger companies where there is more than one business area, you might want a separate {{site.data.keyword.Bluemix_notm}} account for each business domain. For example, within a large banking corporation, there can be separate accounts for the retail and commercial sectors.
 
-**Note:** If a service that you bind to an app crashes, the app might stop running or have errors. {{site.data.keyword.Bluemix_notm}} does not automatically restart the app to recover from these problems. Consider coding your app to identify and recover from outages, exceptions, and connection failures. See the Apps are not automatically restarted troubleshooting topic for more information.
+The following table provides a summary of some of the key elements.
 
-## Options for working with apps
+| Element   | Description |
+|-----------|---------------|
+|| Contains one or more organizations. You must have a Pay-As-You-Go account to create more than one organization. |
+|| Can own only one account. |
+|| Can add one or more organization managers to delegate the org management, which includes the read and write permissions to the organizations. |
+|| Can be a team member in organizations and spaces in other {{site.data.keyword.Bluemix_notm}} accounts. |
+| Organization   | Contains one or more spaces. |
+|| Contains one or more org managers. |
+|| Contains one or more team members. Each team member can be granted one or more roles. |
+|| The usage charges, which are generated by a deployed application within a space, are reported at the organization level. |
+| Space   | Contains one or more resources. |
+|| Contains one or more apps. |
+|| Contains one or more space managers. |
+|| Contains one or more team members. Each user must already be a team member in the owning organization. Each team member can be granted one or more roles. |
+| Team member   | Can be added to one or more organizations and spaces across different accounts. |
+|| Can be given more than one role within the same organization, space, or both. |
+{:caption="Table 1. Description of key elements" caption-side="top"}
 
-After your app is created, you have a few options for continuing to add services to your app and to build and deploy your app:
-
-<dl><dt>cf command line interface</dt>
-<dd>Use the <a href="https://github.com/cloudfoundry/cli#getting-started">cf command line interface</a> to update your application, create a service instance, or bind the service to your application. You can also use the cloud-cli command line interface to create, update, and delete service offerings.</dd>
-<dt>{{site.data.keyword.Bluemix_notm}} user interface</dt>
-<dd>Use the {{site.data.keyword.Bluemix_notm}} <a href="https://console.bluemix.net/dashboard/apps">user interface</a> to build your application, including picking which services and runtimes to combine to solve your business problem.</dd>
-<dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="https://console.ng.bluemix.net/docs/services/ContinuousDelivery/index.html#cd_getting_started">Getting started with Continuous Delivery</a>.</dd>
-</dl>
-
-## Tips
-
-Use the following tips while developing your web apps:
-
-<dl><dt>Persistence</dt>
-<dd>Don't specify any local storage for your applications. Each instance of your application, even if only one instance is running, can be restarted or moved to a different virtual machine at any time, typically for load balancing. Anything stored in local storage is erased when the application is moved or deleted. Use one of the {{site.data.keyword.Bluemix_notm}} data store services for persistence.</dd>
-<dt>Resource limits</dt>
-<dd>Be aware of limits on the quantities of resources that a trial account can use. The limits are as follows:
-<table style="width:100%">
-<caption>Table 1. {{site.data.keyword.Bluemix_notm}} resource limits for a trial account</caption>
-  <th>Resource type</th>	<th>Quantity limit</th>
-<tr><td>Number of services that are used across all apps</td> <td>10</td>
-<tr><td>Memory used across all apps</td> <td>	2 G</td>
-<tr><td>Number of routes</td> <td>500</td>
-</table>
-</dd>
-</dl>
