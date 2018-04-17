@@ -15,7 +15,7 @@ lastupdated: "2018-04-13"
 
 # Creating organizations and spaces
 {: #create_orgs}
-__
+
 Apps in an IBM Cloud Foundry Enterprise Environment are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains. After organizations and spaces are created, users can be added to them with specific roles that determine the level of access and control to those organizations and spaces. To create organizations and assign managers to those organizations, you need an administrator role for both the IBM Cloud Foundry Enterprise Environment service and to the specific environment instance to which users are being added. These permissions are set in the _Identity & Access_ page under the **Manage > Users** menu in the IBM Cloud header.
 {: shortdesc}
 
