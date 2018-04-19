@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-04-13"
+lastupdated: "2018-04-18"
 
 ---
 
@@ -15,11 +15,10 @@ lastupdated: "2018-04-13"
 {:screen: .screen}
 {:tip: .tip}
 
-# About IBM Cloud Foundry Enterprise Environment
+# About {{site.data.keyword.cfee_full_notm}}
 {: #creating}
 
-With the IBM Cloud Foundry Enterprise Environment, you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the IBM Cloud Foundry Enterprise service that is run within your own account in the IBM Cloud, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
-o start administering the environment.
+With the {{site.data.keyword.cfee_full}}, you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service that is run within your own account in the {{site.data.keyword.Bluemix_notm}}, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
 {:shortdesc}
 
 For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:

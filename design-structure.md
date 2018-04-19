@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-04-13"
+lastupdated: "2018-04-18"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-13"
 # Design the structure of your {{site.data.keyword.Bluemix_notm}} environment
 {: #bpimplementation}
 
-Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create {{site.data.keyword.Bluemix_notm}} spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your {{site.data.keyword.Bluemix_notm}} environment from the space level up.
+Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create {{site.data.keyword.Bluemix}} spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your {{site.data.keyword.Bluemix_notm}} environment from the space level up.
 
 Consider the scale and scope of the apps you plan to develop and deploy. An {{site.data.keyword.Bluemix_notm}} space can be used as a development environment for one or more apps that are tightly connected or defined. Apart from a development space, for example, you can create spaces for unit testing, performance testing, and integration testing. Spaces can also be defined for build, staging, and production. Each of the spaces that you create can be shared with different team members within the same organization.
 

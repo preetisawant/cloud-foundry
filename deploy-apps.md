@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-04-13"
+lastupdated: "2018-04-18"
 
 ---
 
@@ -16,12 +16,12 @@ lastupdated: "2018-04-13"
 # Deploying apps
 {: #deploy_apps}
 
-Download and install the IBM Cloud command line interface. [Download the IBM Cloud CLI](https://clis.ng.bluemix.net){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Download and install the {{site.data.keyword.Bluemix}} command line interface. [Download the {{site.data.keyword.Bluemix_notm}} CLI](https://clis.ng.bluemix.net){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 After you install the command line interface, follow these steps:
 
 1. Change to the directory where your code is located. `cd <your_directory>`
-2. Go to the IBM Cloud Foundry Enterprise environment _Overview_ page and locate the environment's _API endpoint_.
+2. Go to the {{site.data.keyword.cfee_full}} Overview page and locate the environment's API endpoint.
 3. In the command line interface, set the API endpoint to your environment's endpoint:
  ```
 cf api <api_enpoint>
