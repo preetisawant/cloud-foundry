@@ -40,7 +40,7 @@ On the creation page:
 
 Proceed to the second creation page, which includes the configuration fields for the container cluster where the {{site.data.keyword.cfee_full_notm}} is deployed:
 
-This page includes fields for the Kubernetes cluster configuration. The name of the Kubernetes cluster is synchronized with the CFEE name you entered earlier.
+This page includes fields for the Kubernetes cluster configuration. The name of the Kubernetes cluster is synchronized with the ICFEE name you entered earlier.
 
 Click **Create**, which opens the user interface for the environment and indicates the creation progress and status. The environment's creation status is also indicated in the {{site.data.keyword.Bluemix_notm}} dashboard, where the environment is listed.
 

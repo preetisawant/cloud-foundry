@@ -18,7 +18,7 @@ lastupdated: "2018-04-18"
 # About {{site.data.keyword.cfee_full_notm}}
 {: #creating}
 
-With the {{site.data.keyword.cfee_full}}, you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service that is run within your own account in the {{site.data.keyword.Bluemix_notm}}, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
+With the {{site.data.keyword.cfee_full}} (ICFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service that is run within your own account in the {{site.data.keyword.Bluemix_notm}}, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
 {:shortdesc}
 
 For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
