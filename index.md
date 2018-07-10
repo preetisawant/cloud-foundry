@@ -39,7 +39,7 @@ The following table provides a summary of some of the key elements.
 
 | Element   | Description |
 |-----------|---------------|
-|| Contains one or more organizations. You must have a Pay-As-You-Go account to create more than one organization. |
+| Account| Contains one or more organizations. You must have a Pay-As-You-Go account to create more than one organization. |
 || Can own only one account. |
 || Can add one or more organization managers to delegate the org management, which includes the read and write permissions to the organizations. |
 || Can be a team member in organizations and spaces in other {{site.data.keyword.Bluemix_notm}} accounts. |
