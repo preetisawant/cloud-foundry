@@ -24,4 +24,5 @@ Cloud Foundry Enterprise Environment
     deploy-apps.md
     add-serv-inst.md
     binding.md
+    prepare-account.md
     {: .navgroup-end}

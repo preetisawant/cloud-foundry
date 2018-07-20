@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-07-12"
 
 ---
 
@@ -29,30 +29,7 @@ To work with instances of the {{site.data.keyword.cfee_full_notm}}, service user
 ## Step 1: Ensuring that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
-ICFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the IBM Container service. The IBM Cloud account under which the ICFEE instance is created must allow creation of infrastructure resources, such as a Pay-As-You-Go or Subscription account. For more information, see [Account types](https://console.bluemix.net/docs/account/index.html#accounts). The cost of those infrastructure resources shows up in your IBM Cloud invoice.
-
-If you have a SoftLayer account, you can link that SoftLayer account with the IBM Cloud account. To link the IBM Cloud and SoftLayer accounts:
-
-1. Get the SofLayer account's user name and API Key by accessing the [SoftLayer console](https://control.softlayer.com). Once you log in to SoftLayer, select the account you want to link to the {{site.data.keyword.Bluemix_notm}} account. Selecting the account opens the account's profile page. Scroll down to the end of the page to find the account's user name and API key. If you don't have an API key, you can generate it if you're the account owner. If you're not the account owner, ask the account owner to generate it.
-2. Log in to {{site.data.keyword.Bluemix_notm}} from the command line. If your organization uses a federated login, you might need to use the `-sso` option.
-
-  ```
-  ibmcloud login
-  ```
-
-3. In the command line interface, initialize the container service:
-
-  ```
-  ibmcloud cs init
-  ```
-
-4. Set your SoftLayer credentials in the IBM Container Service registry:
-
-  ```
-  ibmcloud cs credentials-set --infrastructure-username <SofLayer_username> --infrastructure-api-key <SoftLayer_api_key>
-  ```
-
-**Note:** You must have sufficient permissions in the SoftLayer account to create a regular Kubernetes cluster from the IBM Container service. If you don't, ask the SoftLayer account administrator, or the user who gave you access to the SoftLayer account to grant you those additional permissions.
+ICFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the IBM Container service.  [Prepare your IBM Cloud account](prepare-account.html) to ensure that it can create the infrastructure resources necessary for an ICFEE instance.
 
 ## Step 2: Creating your ICFEE instance
 {: #creating-environment}
