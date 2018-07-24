@@ -6,6 +6,7 @@ Cloud Foundry Enterprise Environment
 
     {: .navgroup id="learn"}
     index.md
+    prepare-account.md
     permissions.md
     getting-started.md
 
@@ -24,5 +25,4 @@ Cloud Foundry Enterprise Environment
     deploy-apps.md
     add-serv-inst.md
     binding.md
-    prepare-account.md
     {: .navgroup-end}
