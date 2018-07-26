@@ -29,32 +29,23 @@ In the example below user _Mary Smith_ is logged into the IBM Cloud account _MyC
 In the example below the same IBM Cloud account _MyCompany_ has been upgraded to a paid account.  As a result of the upgrade the account is now linked to the SoftLayer account _1684806_.  Both accounts are shown in the "Account" field.
 ![Account Checking](img/AccountExample_2.png)
 
-## Switching the SoftLayer account linked to the IBM Cloud account
+If the IBM Cloud account is a trial account, you will be prompted to upgrade it when you try to create an ICFEE instance. See the screen shown below:
+
+![Account Checking](img/UpgradeAccountPage_1.png)
+
+## Using a SoftLayer account instead of upgrading the IBM Cloud account
 {: #account-linkswitching}
 
-If you have Administrator role in an IBM Cloud account you can set the SoftLayer account to which that IBM Cloud account is linked. This would allow users in an IBM Cloud account to use an existing SoftLayer account to create the infrastructure resources that support ICFEE instances.
+If you have Administrator role in an IBM Cloud account you can a SoftLayer account to to create the ICFEE instance without upgrading the IBM Cloud account. 
 
-**Warning:**  Switching the SoftLayer account linked to the IBM Cloud account (by issuing  the commands that follow) can prevent users to access infrastructure resources previously provisioned under the SoftLayer account to which the IBM Cloud account was previously linked.  We recommend not to switch the SoftLayer account linked to an upgraded IBM Cloud account.
 
-To manually link an IBM Cloud account to a SoftLayer account:
+**Warning:** If you use a SoftLayer account now and you update the IBM Cloud account in the future (to a Pay-As-You-Go or a Subscription account), the updated IBM Cloud may still use the Softlayer account (whose credentials you set now) when creating future infrastructure resources. Furthermore, if you use a different SofLayer account in the future for creating Cloud Foundry Enterprise Environments, users in the IBM Cloud account may not be able to access infrastructure resources created under the SoftLayer account whose credentials you set now. We recommend that you upgrade the IBM Cloud account instead. 
 
-1. Get the SofLayer account's user name and API Key by accessing the [SoftLayer console](https://control.softlayer.com). Once you log in to SoftLayer, select the account you want to link to the {{site.data.keyword.Bluemix_notm}} account. Selecting the account opens the account's profile page. Scroll down to the end of the page to find the account's user name and API key. If you don't have an API key, you can generate it if you're the account owner. If you're not the account owner, ask the account owner to generate it.
-2. Log in to {{site.data.keyword.Bluemix_notm}} from the command line. If your organization uses a federated login, you might need to use the `-sso` option.
+To use a SoftLayer account without upgrading the IBM Cloud account (see the screen below for illustration):
+1. In the screen shown when the IBM Cloud account is not upgraded, click **Use a SoftLayer account**.
+2. Enter the **Username** and **API Key** from a SoftLayer account. To get the SoftLayer's Username and API key access the [SoftLayer console](https://control.softlayer.com). Once you log in to SoftLayer, select the account you want to link to the {{site.data.keyword.Bluemix_notm}} account. Selecting the account opens the account's profile page. Scroll down to the end of the page to find the account's user name and API key. If you don't have an API key, you can generate it if you are the account owner. If you are not the account owner, ask the account owner to generate it.
+3. Click **Set credentials**.
 
-  ```
-  ibmcloud login
-  ```
-
-3. In the command line interface, set the API endpoint to the us-south region of the IBM Cloud:
-
-  ```
-  ibmcloud api https://api.ng.mybluemix.net
-  ```
-
-4. Set your SoftLayer credentials in the IBM Container Service registry:
-
-  ```
-  ibmcloud cs credentials-set --infrastructure-username <SofLayer_username> --infrastructure-api-key <SoftLayer_api_key>
-  ```
+![Account Checking](img/UpgradeAccountPage_2.png)
 
 **Note:** You must have sufficient permissions in the SoftLayer account to create a regular Kubernetes cluster from the IBM Container service. If you don't, ask the SoftLayer account administrator, or the user who gave you access to the SoftLayer account to grant you those additional permissions.
