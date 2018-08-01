@@ -24,12 +24,12 @@ This getting started tutorial shows how to create an {{site.data.keyword.cfee_fu
 ## Understanding permissions
 {: #permissions}
 
-To work with instances of the {{site.data.keyword.cfee_full_notm}}, service users must have the correct permissions. For more information, see [Permissions](permissions.html).
+To work with instances of the {{site.data.keyword.cfee_full_notm}}, service users must have the correct permissions. For more information, see [Permissions](/docs/cloud-foundry/permissions.html).
 
 ## Step 1: Ensuring that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
-ICFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the IBM Container service.  [Prepare your IBM Cloud account](prepare-account.html) to ensure that it can create the infrastructure resources necessary for an ICFEE instance.
+ICFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the IBM Container service.  [Prepare your IBM Cloud account](/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an ICFEE instance.
 
 ## Step 2: Creating your ICFEE instance
 {: #creating-environment}
@@ -49,23 +49,23 @@ The automated process that creates the environment deploys the hardware infrastr
 
 ## Step 3: Creating organizations and spaces
 
-After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
+After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
 
 ## Step 4: Adding users to organizations and spaces
 
-Then, [add users](add-users.html) to those organizations and spaces under specific role assignments. You can control the level of access available to users in those organizations and spaces.
+Then, [add users](/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments. You can control the level of access available to users in those organizations and spaces.
 
 ## Step 5: Deploying applications
 
-When you're ready, you can [deploy the app](deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.
+When you're ready, you can [deploy the app](/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.
 
 ## Step 6: Creating service instances
 
-Create [service instances](add-serv-inst.html) to start service functions and make them available to your applications.
+Create [service instances](/docs/cloud-foundry/add-serv-inst.html) to start service functions and make them available to your applications.
 
 ## Step 7: Binding applications to service instances
 
-[Bind your app](binding.html) to a service instance to use the service's functions.
+[Bind your app](/docs/cloud-foundry/binding.html) to a service instance to use the service's functions.
 
 ## Step 8: Installing the Stratos Console to manage applications (optional)
 
