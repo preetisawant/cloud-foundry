@@ -33,6 +33,6 @@ To create organizations in an {{site.data.keyword.cfee_full_notm}}:
 
 In addition to managing organization membership, organization managers can create, view, edit, or delete spaces within the organization. Organization managers can also view the organization's usage and quota, invite users to the organization, manage membership and roles in the organization, and manage custom domains for the organization.
 
-To create spaces within an organization, in the _Organizations_ page, go to the **Spaces** tab and click **Add new**. Members of an organization can also create and manage their own spaces within an organization. For more information, see [Cloud Foundry Access](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}.
+To create spaces within an organization, in the _Organizations_ page, go to the **Spaces** tab and click **Add new**. Members of an organization can also create and manage their own spaces within an organization. For more information on Cloud Foundry roles, see [Cloud Foundry Access](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}.
 
 **Note**: Access to organizations and spaces within an {{site.data.keyword.cfee_full_notm}} requires that users have permission to access the environment itself. Without permission to access the {{site.data.keyword.cfee_full_notm}}, users can't access organizations and spaces within the environment, regardless of their membership and role in those organizations and spaces.
