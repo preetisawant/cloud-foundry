@@ -34,13 +34,20 @@ ICFEE instances are deployed on infrastructure resources, which are Kubernetes w
 ## Step 2: Creating your ICFEE instance
 {: #creating-environment}
 
-Before you create your ICFEE, make sure that you're in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment and that you have the access policies that you need.
+Before you create your ICFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} IBM Cloud account where you want to create the environment and that you have the required access policies (per step 1 above).
 
 1. Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
-2. Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the creation page.
-3. On the creation page, provide a name for the environment.
-4. Then, select the **Location** where the environment is to be deployed and the **Resource group** under which the environment is grouped.
-5. On the second creation page, which includes the configuration fields for the container cluster where the {{site.data.keyword.cfee_full_notm}} is deployed. Add information to the fields for the Kubernetes cluster configuration. The name of the Kubernetes cluster is synchronized with the ICFEE name you entered earlier.
+2. Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.
+3. The first page of the creation page provides an overview of the main features of the service. Click **Continue**.
+4. Configure the instance to be created by providing the following:
+    * Select a plan (plan availability may be restricted during the service's _experimental_ phase).
+    * Enter a **Name** for the service instance.
+    * Select a **Location** where the service instance is to be provisioned.
+    * Select the **Number of cells** for the Cloud Foundry environment.
+    * Select the **Machine type**, which determines the size of the Cloud Foundry cells (CPU and memory). The availability of machine types may be restricted during the service's _experimental_ phase.
+    * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an ICFEE. 
+5. Optionally, open the **Infrastructure** section to see the properties of the Kubernetes cluster supporting the ICFEE instance. Note that the **Number of worker nodes** equals the number of cells plus 2 (two of the provisioned Kubernetes worker nodes support the ICFEE control plane).
+5. The **Order Summary** in the right-hand side of the page reflects the cost of the ICFEE instance and the estimated total.
 6. Click **Create**, which opens the environment dashboard and indicates the creation progress and status. The environment's creation status is also indicated in the {{site.data.keyword.Bluemix_notm}} dashboard, where the environment is listed.
 
 The automated process that creates the environment deploys the hardware infrastructure on a container cluster, deploys the Cloud Foundry components into that cluster, and configures the environment to make it ready to use. The process takes 45 - 60 minutes.
