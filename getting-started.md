@@ -51,7 +51,7 @@ Before you create your ICFEE, make sure that you are in the {{site.data.keyword.
 7. Click **Create**, which opens the environment dashboard and indicates the creation progress and status. 
 8. Once provisioning has started the environment is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, as well as in the [Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  The status indicates when provisioning is completed.
 
-The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 60 - 90 minutes.
+The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 
 **Note:** The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see [{{site.data.keyword.Bluemix_notm}} Container Service documentation](/docs/containers/cs_why.html#cs_ov).
 
