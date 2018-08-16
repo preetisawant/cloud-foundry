@@ -79,18 +79,20 @@ Create [service aliases](/docs/cloud-foundry/add-serv-inst.html) from service in
 
 ## Step 8: Installing the Stratos Console to manage applications (optional)
 
-The Stratos Console is an open source web-based application to manage Cloud Foundry. The Stratos Console application can be optionally installed and used in a specific ICFEE environment to manage its organizations, spaces, and applications.
+The Stratos Console is an open source web-based tool for working with Cloud Foundry. The Stratos Console application can be optionally installed and used in a specific ICFEE environment to manage its organizations, spaces, and applications.
 
-Users with IBM Cloud administrator or editor roles in the ICFEE instance can install the Stratos Console application in that ICFEE instance. To install the Stratos Console application:
+Users with IBM Cloud administrator or editor roles in the ICFEE instance can install the Stratos Console application in that ICFEE instance. 
+
+To install the Stratos Console application:
 
 1. Open the ICFEE instance where you want to install the Stratos console.
 2. Click **Install Stratos Console** on the overview page. The button is visible only to users with administrator or editor permissions to that ICFEE instance.
 3. In the Install Stratos Console dialog, select an installation option. You can install the Stratos console application either on the ICFEE control plane or in one of the cells. Select a version of the Stratos console and the number of instances of the application to install. If you install the Stratos console app in a cell, you're prompted for the organization and space where to deploy the application.
 4. Click **Install**.
 
-The app takes about 5 minutes to install. Once the installation is complete, a **Stratos Console** button appears in place of the **Install Stratos Console** button on the overview page to start the application. The **Stratos Console** button is available to all users with access to the ICFEE instance. However, the organization and space membership assignments limit what a user can see in manage in the Stratos console.
+The application takes about 5 minutes to install. Once installation is complete, a **Stratos Console** button appears in place of the _Install Stratos Console_ button on the overview page. The _Stratos Console_ button is available to all users with access to the ICFEE instance. However, the organization and space membership assignments limit what a user can see and manage in the Stratos console.
 
-Start the Stratos console:
+To start the Stratos console:
 
 1. Open the ICFEE instance where the Stratos console was installed.
 2. Click **Stratos Console** on the overview page.
