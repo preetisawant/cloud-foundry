@@ -40,7 +40,7 @@ The Applications page has two sections:
   The first column in the table is a checkbox that determines if the corresponding application is to be included in the set of *Selected Apps* to be included in the chart at the top of the page. To include (or exlude) an application in the selected set, click on the correspondng checkbox.  When an application is selected or unselected for inclusion in the set, the graph is refreshed.  The _Selected Apps_ legend to the right of the bar chart indicates (in parenthesis) the number of applications currently select for inclusion in the graph.
  
   The following information is displayed as columns in the applications table:
-   * **Application Name**: the name of the application or application instance. 
+   * **Application Name**: the name of the application or application instance. If the user does not have permission to access the application, the application GUID is displayed instead.
    * **Instances**: For an application it represents the number of running instances.  For an application instance (shown below the application name when the application row is expanded) it represents the name of the cell where the application instance runs.
    * **Total Memory-Physical**: MBs of physical memory used by all the instances of an application.  The physical memory used by an application equals the sum of the physical memory used by all the application's instances.
    * **Total Memory-Reserved**: MBs of memory reserved by all the instances of an application.  The memory reserved by an application equals the sum of the memory reserved by all the application's instances.
@@ -48,7 +48,7 @@ The Applications page has two sections:
    * **Max CPU (% of cell)**: For application instances, the metric represents the maximum CPU used by that instance **within the cell in which it runs**.  For an application, it represents the highest of its instances maximum CPU usage.
    * **CPU (% of system)**: The percentage of total CPU available in the ICFEE used by an application and its instances.  The CPU used by an application equals the sum of CPU percentages used by all the application's instances.
    * **Average Requests**: The average number of incoming requests to an application during the latest data collection cycle.
-   * **Organization**: The organization where the application is deployed.
+   * **Organization**: The organization where the application is deployed. If the user is not a member of the organization, the organization GUID is displayed instead.
    
 Expand an application row in the table to see the list of application instances and their corresponding resource usage metrics. 
   
@@ -78,7 +78,7 @@ The Cells page has two sections:
   
   The following information is displayed as columns in the table:
    * **Cell name**: The name of the cell.
-   * **Application name**: The name of the application running on the cell.
+   * **Application name**: The name of the application running on the cell. If the user does not have permission to access the application, the application GUID is displayed instead.
    * **Instances**: The number of the application instances running on the cell.
    * **Memory-Physical**: MBs of physical memory used by the application instance running in the cell. 
    * **Memory-Reserved**: MBs of memory reserved by the application instance running in the cell.
