@@ -13,7 +13,7 @@ lastupdated: "2018-07-17"
 {:screen: .screen}
 {:tip: .tip}
 
-# Deploying apps
+# Deploying and viewing apps
 {: #deploy_apps}
 
 You can deploy applications to {{site.data.keyword.Bluemix}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
@@ -36,6 +36,7 @@ After you install the command line interface, follow these steps:
   {: pre}
 
 4. Log in to the environment
+
   ```
   cf login -u <username> -o <org_name> -s <space_name>
   ```
@@ -58,6 +59,59 @@ After you install the command line interface, follow these steps:
   {: pre}
 
 6.  Access your app by browsing to `https://<app_url>.<AppDomainName>`.
+
+## Viewing deployed applications in the user interface
+{: #view_apps}
+
+You can view ICFEE deployed applications either in the context of a specific space, or gobally across all ICFEE instances.
+
+### Viewing applications deployed in a specific ICFEE space
+{: #view_specific}
+
+To view applications deployed in a specific space of a specific ICFEE instance:
+1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want to create organizations.
+2. In the {{site.data.keyword.cfee_full_notm}} user interface, go to the **Organizations** entry in the navigation pane to open the _organizations_ page.
+3. Go to the **Spaces** tab at the top of the page.
+4. In the __Spaces__ tab, click on a space in the table to open the space's page.
+5. In the __Space__ page, go to the **Applications** tab.
+6. The __Applications_)_ tab shows all the applications deployed in that space.
+Optionally, you can Start, Restart, Stop or Delete an application by accessing the menu in the far right of the row representing the application.
+
+You can also expand the row for an application to view the service instances to which the application is bound.
+
+### Viewing applications deployed across all ICFEE instances
+{: #view_global}
+
+To view all applications deployed across all ICFEE instances:
+1. Click the Menu icon ![Account Checking](img/HamburgerMenu.png  "Screen cap that shows the menu icon") > **Cloud Foundry** to open the Cloud Foundry dashboard.  
+2. Click **Enterprise > Applications** in the left navigation pane.
+The table in the view shows the following information: 
+
+| Element   | Description |
+|-----------|---------------|
+| Name | The name of the application. |
+| Instances | The number of instances of the application. |
+| Environment | The {{site.data.keyword.cfee_full}} environment whre the application is deployed. | 
+| Organization | The organization where the application is deployed. |
+| Space | The organization in the ICFEE instance where the alias resides. |
+| Memory | The amount of memory used by the application. |
+| Status | The status of the application. |
+{:caption="Table 1. Description of key elements" caption-side="top"}
+
+Optionally, you can Start, Restart, Stop or Delete an application by accessing the menu in the far right of the row representing the application.
+You can click any of the applications, environments, organizations or spaces to navigate to the corresponding page in the ICFEE user interface.
+
+In this view you  have the option to group applications by organization, space, and/or application name.  This capability allows you to coalesce into a single entity applications that may have different names and/or be deployed into different ICFEE organizations or spaces, but that correspond to the same logical application entity.  For example, you may have different applications that represent components of a broader project or that are deployed across different delivery stages (e.g., development, testing, production) but that you would like to view grouped as part of the same logical entity. 
+
+To group applications go to the **Group** dropdown located at the page's top-right.
+When you group applications, each resulting group is represented by a single entry in the table. You can expand that row to show the applications under that group.
+
+You can perform the following actions in this view:
+* Sort the items in the table by any of the properties displays as table columns.
+* Bind applications to a specific alias by accessing the alias overflow menu of the alias located at the row's far right.
+* Expand an alias (row) to see all the applications bound that alias.
+* Start, stop applications by accessing the application overflow menu of the alias located at the row's far right.
+* Navigate to an ICFEE, ICFEE organization or ICFEE space by clicking on the link with the corresponding ICFEE, organization, or space.
 
 ## Application manifest
 {: #appmanifest}
@@ -90,7 +144,7 @@ cf push -f appManifest.yml
 | **random-route** | A Boolean value to assign a random route to the application. The default value is **false**. | `random-route: true` |
 | **services** | The services to bind to the application. | `services: - mysql_maptest` |
 | **env** | The custom environment variables for the application. | `env: DEV_ENV: production` |
-{: caption="Table 1. Supported options in the manifest YAML file" caption-side="top"}
+{: caption="Table 2. Supported options in the manifest YAML file" caption-side="top"}
 
 ### A sample manifest.yml file
 {: #sample}
