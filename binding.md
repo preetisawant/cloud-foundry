@@ -13,7 +13,7 @@ lastupdated: "2018-04-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Binding and unbinding apps to services instances
+# Binding apps to services instances
 {: #bind_services}
 
 To bind an application to a service instance:
