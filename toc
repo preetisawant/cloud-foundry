@@ -9,6 +9,8 @@ Cloud Foundry Enterprise Environment
     prepare-account.md
     permissions.md
     getting-started.md
+    manage-capacity.md
+    monitoring.md
 
     {: .topicgroup}
     Structuring your IBM Cloud environment
