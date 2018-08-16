@@ -18,7 +18,7 @@ lastupdated: "2018-07-10"
 # About {{site.data.keyword.cfee_full_notm}}
 {: #creating}
 
-With the {{site.data.keyword.cfee_full}} (ICFEE), you can instantiate many, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service that is run within your own account in the {{site.data.keyword.Bluemix_notm}}, and can be deployed on either shared or dedicated hardware (Kubernetes clusters). On shared hardware, virtual isolation gives you full control over the environment, including capacity changes, change management, services exposed, user services. Additionally, with Hardware isolation, you get single-tenant compute for your environment.
+With the {{site.data.keyword.cfee_full}} (ICFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services.
 {:shortdesc}
 
 For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
@@ -56,4 +56,7 @@ The following table provides a summary of some of the key elements.
 || Includes one or more team members. Each user must already be a team member in the owning organization. Each team member can be granted one or more roles. |
 | Team member | Can be added to one or more organizations and spaces across different accounts. |
 || Can be given more than one role within the same organization, space, or both. |
+| Service alias | An alias of a service instance in the IBM Cloud. |
+|| Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed within a ICFEE.|
 {:caption="Table 1. Description of key elements" caption-side="top"}
+
