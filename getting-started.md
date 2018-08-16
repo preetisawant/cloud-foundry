@@ -90,7 +90,7 @@ To install the Stratos Console application:
 3. In the Install Stratos Console dialog, select an installation option. You can install the Stratos console application either on the ICFEE control plane or in one of the cells. Select a version of the Stratos console and the number of instances of the application to install. If you install the Stratos console app in a cell, you're prompted for the organization and space where to deploy the application.
 4. Click **Install**.
 
-The application takes about 5 minutes to install. Once installation is complete, a **Stratos Console** button appears in place of the _Install Stratos Console_ button on the overview page. The _Stratos Console_ button is available to all users with access to the ICFEE instance. However, the organization and space membership assignments limit what a user can see and manage in the Stratos console.
+The application takes about 5 minutes to install. Once installation is complete, a **Stratos Console** button appears in place of the _Install Stratos Console_ button on the overview page. The _Stratos Console_ button launches the console and is available to all users with access to the ICFEE instance. Organization and space membership assignments may limit what a user can see and manage in the Stratos console.
 
 To start the Stratos console:
 
