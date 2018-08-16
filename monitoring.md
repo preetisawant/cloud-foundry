@@ -52,7 +52,7 @@ The following guides you through the steps for installing the required CLI's, fo
 
 1. Check your [Access Policies](https://console.bluemix.net/iam/#/users) to ensure that you have at least a Viewer role on the Kubernetes cluster supporting the environment.
 2. Install the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
-3. Install the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+3. Install the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  If you have an existing Kubernetes CLI, we recommend that you install the latest version.
 4. Install the container service plug-in:
 ```
     ibmcloud plugin install container-service -r Bluemix
