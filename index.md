@@ -57,6 +57,6 @@ The following table provides a summary of some of the key elements.
 | Team member | Can be added to one or more organizations and spaces across different accounts. |
 || Can be given more than one role within the same organization, space, or both. |
 | Service alias | An alias of a service instance in the IBM Cloud. |
-|| Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed within a ICFEE.|
+|| Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed in a space within a ICFEE.|
 {:caption="Table 1. Description of key elements" caption-side="top"}
 
