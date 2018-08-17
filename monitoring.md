@@ -92,11 +92,7 @@ The following guides you through the steps for installing the required CLI's, fo
 4. Set up port-forwarding in the Kubernetes cluster for the pods running Prometheus, AlertManager and Grafana. This will enable you to host the monitoring metrics by proxy on your local machine (localhost):
 
   ```
-  kubectl -n monitoring port-forward deployment/prometheus-server 9090 & \
-
-  kubectl -n monitoring port-forward deployment/prometheus-alertmanager 9093 & \
-
-  kubectl -n monitoring port-forward deployment/grafana 3000 &
+  sh -c 'kubectl -n monitoring port-forward deployment/prometheus-server 9090 & kubectl -n monitoring port-forward deployment/prometheus-alertmanager 9093 & kubectl -n monitoring port-forward deployment/grafana 3000'
   ```
   {: pre}
   
