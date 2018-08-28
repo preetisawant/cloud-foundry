@@ -13,17 +13,17 @@ lastupdated: "2018-08-07"
 {:screen: .screen}
 {:tip: .tip}
 
-# Monitoring 
+# Monitoring
 {: #monitoring}
 
 Monitoring an {{site.data.keyword.cfee_full}} instance and its supported infrastructure is supported by an open-source toolset consisting of Prometheus and Grafana.  The solution enables you to analyze, visualize and manage alerts for metrics in the Cloud Foundry environment.  There are three web consoles from which monitoring takes place: A Grafana console, a Prometheus console, and a Prometheus Alert Manager console.
 
-**Note:** Access to the monitoring capability in a {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in that Kubernetes cluster supporting the ICFEE instance.  The default name of the Kubernetes cluster supporting a ICFEE instance is _`<ICFEEname>`-cluster_. 
+**Note:** Access to the monitoring capability in a {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in that Kubernetes cluster supporting the CFEE instance.  The default name of the Kubernetes cluster supporting a CFEE instance is _`<CFEEname>`-cluster_.
 
 ## Prometheus
 {: #prometheus}
 
-Prometheus is an open-source systems monitoring and alerting toolkit. Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community. 
+Prometheus is an open-source systems monitoring and alerting toolkit. Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community.
 It is a standalone open source project and maintained independently of any company. To emphasize this, and to clarify the project's governance structure, Prometheus joined the Cloud Native Computing Foundation in 2016 as the second hosted project, after Kubernetes. See the [Prometheus documentation](https://prometheus.io/docs/introduction/overview/) for more information.
 
 The Prometheus ecosystem consists of multiple components, many of which are optional:
@@ -33,7 +33,7 @@ The Prometheus ecosystem consists of multiple components, many of which are opti
 * Various special-purpose exporters like node exporter, blackbox exporter, etc.</li>
 * A push gateway for supporting short-lived jobs.</li>
 
-Prometheus gatheres metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. It stores all gathered samples locally and runs rules over this data to either aggregate and record new time series from existing data, or to generate alerts. 
+Prometheus gatheres metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. It stores all gathered samples locally and runs rules over this data to either aggregate and record new time series from existing data, or to generate alerts.
 
 ## Grafana
 {: #grafana}
@@ -43,10 +43,10 @@ Grafana is an open-source analytics platform for all metrics collected by Promet
 ## Getting Started with Monitoring
 {: #gettingStarted_monitor}
 
-The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the ICFEE instance.  To access the monitoring tools require to forward the ports of the Prometheus, Prometheus AlertManager, and Grafana serverers.  This is done through the Kubernetes CLI. 
+The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the CFEE instance.  To access the monitoring tools require to forward the ports of the Prometheus, Prometheus AlertManager, and Grafana serverers.  This is done through the Kubernetes CLI.
 The following guides you through the steps for installing the required CLI's, forwarding the server ports, and launching the consoles.
 
-**Note:** The following instrutions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the ICFEE instance user interface and click **Monitoring** in the left navigation pane to see the instructions displayed.
+**Note:** The following instrutions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface and click **Monitoring** in the left navigation pane to see the instructions displayed.
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ The following guides you through the steps for installing the required CLI's, fo
 ```
     ibmcloud plugin install container-service -r Bluemix
 ```
-    
+
 ### Access the Kubernetes cluster
 
 1. Log into your IBM Cloud account:
@@ -66,7 +66,7 @@ The following guides you through the steps for installing the required CLI's, fo
   ibmcloud login -a https://api.ng.bluemix.net
   ```
   {: pre}
-  
+
   If you have a federated ID, use __ibmcloud login -sso__ to log into the IBM Cloud CLI.
 
 2. Target the IBM Cloud Container Service region in which you want to work (e.g., us-south):
@@ -75,16 +75,16 @@ The following guides you through the steps for installing the required CLI's, fo
   ibmcloud cs region-set us-south
   ```
   {: pre}
-    
-3. Set the context of the cluster in your cli: 
+
+3. Set the context of the cluster in your cli:
 
   a. Get the command to set the environment variable and download the Kubernetes configuraton files:
 
   ```
-  ibmcloud cs cluster-config <ICFEE_instance_name>-cluster
+  ibmcloud cs cluster-config <CFEE_instance_name>-cluster
   ```
   {: pre}
-    
+
   b. Set the KUBECONFIG environment variable. Copy the output from the previous command and paste it in your terminal. The command output should look similar to the following:
   __export KUBECONFIG=/Users/$USER/.bluemix/plugins/container-service/clusters/cf-admin-0703-cluster/kube-config-dal10-cf-admin-0703-cluster.yml__
 
@@ -95,26 +95,26 @@ The following guides you through the steps for installing the required CLI's, fo
   sh -c 'kubectl -n monitoring port-forward deployment/prometheus-server 9090 & kubectl -n monitoring port-forward deployment/prometheus-alertmanager 9093 & kubectl -n monitoring port-forward deployment/grafana 3000'
   ```
   {: pre}
-  
+
 ### Launch the monitoring consoles on your local web proxy
 
-5. Launch the Grafana console to see analytics on selected metrics.  The are default Grafana dashboards included in the ICFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your ICFEE instance. (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
+5. Launch the Grafana console to see analytics on selected metrics.  The are default Grafana dashboards included in the CFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your CFEE instance. (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
 
    There is a default `admin` user in Grafana, with the default password set to `admin`. We recommend to login with Userd/Password `admin/admin`, and change them to new credentials:
 
      [Launch Grafana server](https://localhost:3000)
 
-   The following default dashboards are provided with the ICFEE instance and are available from the _Home_ dropdown.
+   The following default dashboards are provided with the CFEE instance and are available from the _Home_ dropdown.
 
-   Dashboards for the Kubernetes infrastructure supporting your ICFEE environment:
+   Dashboards for the Kubernetes infrastructure supporting your CFEE environment:
    - _Kubernetes Capacity Planing_ dashboard
         - Shows the capacity of the kubernetes infrastructure .
-   - _Kubernetes Cluster Health_ dashboard 
+   - _Kubernetes Cluster Health_ dashboard
         - Shows the health of the Kubernetes cluster.
    - _Kubernetes Cluster Status_ dashboard
         - Shows the status of the Kubernetes cluster.
-   - _Kubernetes Resource Requests_ dashboard 
-        - Shows the used CPU, memory and other parameters of the Kubernetes cluster. 
+   - _Kubernetes Resource Requests_ dashboard
+        - Shows the used CPU, memory and other parameters of the Kubernetes cluster.
    - _Nodes_ dashboard
         - Shows details for each worker node of the Kubernetes cluster.
    - _Pods_ dashboard
@@ -123,12 +123,12 @@ The following guides you through the steps for installing the required CLI's, fo
         - Shows the status of the Kubernetes replica sets.
    - _Deployment_ dashboard
         - Shows the status of your Kubernetes deployments.
-        
+
    Cloud Foundry dashboards:
-   - _CF: Cells Capacity_ dashboard 
-        - Shows the general status of the Cloud Foundry cells where the Cloud Foundry applications are deployed. 
+   - _CF: Cells Capacity_ dashboard
+        - Shows the general status of the Cloud Foundry cells where the Cloud Foundry applications are deployed.
    - _CF: Router_ dashboard
-        - Shows the Cloud Foundry router status running on your ICFEE environment.
+        - Shows the Cloud Foundry router status running on your CFEE environment.
    - _CF: Diego_Cell_ dashboard
         - Shows the status of the Cloud Foundry cells and Diego components.
 

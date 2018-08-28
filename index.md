@@ -18,7 +18,7 @@ lastupdated: "2018-07-10"
 # About {{site.data.keyword.cfee_full_notm}}
 {: #creating}
 
-With the {{site.data.keyword.cfee_full}} (ICFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services.
+With the {{site.data.keyword.cfee_full}} (CFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services.
 {:shortdesc}
 
 For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
@@ -39,12 +39,12 @@ The following table provides a summary of some of the key elements.
 
 | Element   | Description |
 |-----------|---------------|
-| IBM Cloud Account | ICFEE instances are created under a specific IBM Cloud account, making it available to users in that account according to the roles and access policies defined for those users. |
-|| The account under which ICFEE instances are created must be Pay-As-You-Go or a Subscription account type (not a Trial account).  |
-| ICFEE | IBM Cloud Foundry Enterprise Environment service for hosting applications. |
+| IBM Cloud Account | CFEE instances are created under a specific IBM Cloud account, making it available to users in that account according to the roles and access policies defined for those users. |
+|| The account under which CFEE instances are created must be Pay-As-You-Go or a Subscription account type (not a Trial account).  |
+| CFEE | IBM Cloud Foundry Enterprise Environment service for hosting applications. |
 || Is available in the IBM Cloud catalog. |
-| ICFEE instance | An instance of the IBM Cloud Foundry Enterprise Environment service created under an IBM Cloud account by a user in with an administrator or editor role in that account. | 
-|| There can be multiple ICFEE instances in an IBM Cloud Account. |
+| CFEE instance | An instance of the IBM Cloud Foundry Enterprise Environment service created under an IBM Cloud account by a user in with an administrator or editor role in that account. |
+|| There can be multiple CFEE instances in an IBM Cloud Account. |
 || Can have one or more organizations. |
 | Organization | Includes one or more spaces. |
 || Includes one or more org managers. |
@@ -57,6 +57,6 @@ The following table provides a summary of some of the key elements.
 | Team member | Can be added to one or more organizations and spaces across different accounts. |
 || Can be given more than one role within the same organization, space, or both. |
 | Service alias | An alias of a service instance in the IBM Cloud. |
-|| Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed in a space within a ICFEE.|
+|| Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed in a space within a CFEE.|
 {:caption="Table 1. Description of key elements" caption-side="top"}
 
