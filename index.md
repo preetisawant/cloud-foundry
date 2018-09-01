@@ -21,7 +21,7 @@ lastupdated: "2018-07-10"
 With the {{site.data.keyword.cfee_full}} (CFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services.
 {:shortdesc}
 
-{{site.data.keyword.cfee_full}}is currently in its beta phase and we are looking for feedback! To get started, create your own instance of {{site.data.keyword.cfee_full}} at [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) and [request access](http://ibm.biz/cfee-forum-signup) to the [IBM CFEE Slack forum](https://ibm-cfee.slack.com) to share your feedback, ask questions, and engage with the product team.
+{{site.data.keyword.cfee_full}} is currently in its beta phase and we are looking for feedback! To get started, create your own instance of {{site.data.keyword.cfee_full}} at [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) and [request access](http://ibm.biz/cfee-forum-signup) to the [IBM CFEE Slack forum](https://ibm-cfee.slack.com) to share your feedback, ask questions, and engage with the product team.
 {:tip}
 
 For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
