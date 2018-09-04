@@ -28,3 +28,7 @@ Cloud Foundry Enterprise Environment
     add-serv-inst.md
     binding.md
     {: .navgroup-end}
+    
+    {: .navgroup id="help"}
+    known-issues.md
+    {: .navgroup-end}
