@@ -36,7 +36,8 @@ To create new instances of the {{site.data.keyword.cfee_full_notm}} service, use
    To add a user from the IBM Cloud account to the _cfee-`<accountId>`_ public organization:
     * Go to **Manage > Account > Cloud Foundry Orgs**.
     * Click on the **_cfee-`<accountId>`_** organization.
-    * Find the user who needs to create CFEE instances and click the **Manager** checkbox for that user.
+    * Go to the **Users** tab at the top of the page.
+    * Find the user who needs to create CFEE instances and click the **Manager** checkbox for that user. If the user you want to be able to create CFEE instances is not in the list, click **Add or invite user** above the table to add or invite users to the **_cfee-`<accountId>`_** organization.
 
    **Note**: Although the _cfee-<accountId>_ public organization is implicitely and automatically created when the IBM Cloud account owner creates a CFEE instance, the account owner could instead create the public Cloud Foundry organization manually, without the need to create a CFEE instance. The IBM Cloud account owner can create the public _cfee-`<accountId>`_ in the **Manage > Account > Cloud Foundry Orgs** page. If you create the public organization, make sure that you name it exactly as _cfee-`<accountId>`_. To  find the IBM Cloud account ID, go to the **Manage > Account > Cloud Foundry Orgs** page and look at the page URL available in your browser.  The IBM Cloud account ID is the set of alphanumeric values following the `=` in the page URL. Alternatively, you can go to the __Manage > Account > Users__ and hover over the tooltip to the left of the _Account_ name located at page's top-right corner.
    
