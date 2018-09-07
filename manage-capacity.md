@@ -28,10 +28,13 @@ Administrators and developers can see how the resource capacity (memory and CPU)
 {: #usage_apps}
 
 The Applications page has two sections:
-1. Horizontal bar charts for memory and CPU showing:
-   * *Total available* memory and CPU available in the CFEE instance.
-   * Memory and CPU used by *all the apps* in the CFEE instance.
-   * Memory and CPU used by the *selected apps* in the table below.
+1. Horizontal bar charts showing physical and reserved memory usage.
+   * Reserved and physical memory used by the **selected apps** in the table below.
+   * Reserved and physical memory used by **all the apps** in the CFEE instance.
+   * Physical memory used by the **system**, which includes memory used by the Cloud Foundry control plane, and application memory cached by the Cloud Foundry control plane.
+   * **Total available** reserved and physical memory in the CFEE instance.
+   
+   **Note:** When applications reserve more memory than there is physically available, a dotted red outline in the reserved memory bar chart is shown to represent the amount of memory overreserved by the selected application(s).
 
    To show the percentage of memory and CPU used by all the apps or those selected in the table, hover over the corresponding portion of the chart.  Hovering over the *all apps* portion of the chart shows the percentage of memory and CPU relative to the total available. Hovering over the *selected apps* portion of the chart shows the percentage of memory and CPU relative to the total available memory or CPU.
 
@@ -47,7 +50,7 @@ The Applications page has two sections:
    * **Average CPU (% of cell)**: For application instances, the metric represents the average CPU **within the cell in which it runs**.  For an application, it represents CPU usage averaged acrossed its instance averages.
    * **Max CPU (% of cell)**: For application instances, the metric represents the maximum CPU used by that instance **within the cell in which it runs**.  For an application, it represents the highest of its instances maximum CPU usage.
    * **CPU (% of system)**: The percentage of total CPU available in the CFEE used by an application and its instances.  The CPU used by an application equals the sum of CPU percentages used by all the application's instances.
-   * **Average Requests**: The average number of incoming requests to an application during the latest data collection cycle.
+   * **Requests**: The number of requests to an application during the latest data collection cycle (five minutes).
    * **Organization**: The organization where the application is deployed. If the user is not a member of the organization, the organization GUID is displayed instead.
 
 Expand an application row in the table to see the list of application instances and their corresponding resource usage metrics.
