@@ -33,12 +33,13 @@ To create new instances of the {{site.data.keyword.cfee_full_notm}} service, use
 
 * An instance of the Compose for PostgreSQL service is a required dependency of the CFEE service.  Compose for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  That instance of the **Compose for PostgreSQL service** is deployed in a space within a public Cloud Foundry organization (unrelated to CFEE organizations) that you select when creating a {{site.data.keyword.cfee_full_notm}} instance.  This means that when you create a {{site.data.keyword.cfee_full_notm}} instance you need to have manager access to at least an organization in the location where you intend to provision the CFEE instance.  You also need developer access to at least one space in that organization. 
 
-If you are not a member of at least one public organization in the location where you intend to create a CFEE instance, ask an IBM Cloud administrator to invite you to one. If you have administrator role in the account you can add users to public organizations and spaces in the account by performing the following:
-    * Go to [**Manage > Account > Cloud Foundry Orgs**](https://console.bluemix.net/account/organizations) and either click on **Add an organization** or select an existing organization.
-    * Go to the **Users** tab at the top of the organization's page.
-    * Find the user who needs to create CFEE instances. If the user you want to be able to create CFEE instances is not in the list, click **Add or invite user** above the table to add or invite users to the organization.
-    * Go to the **Spaces** tab at the top of organization's page.
-    * Find the space where the instance of Compose for PostgreSQL service would be provisioned and check the **Developer** role checkbox.
+  If you are not a member of at least one public organization in the location where you intend to create a CFEE instance, ask an IBM Cloud administrator to invite you to one. If you have administrator role in the account you can add users to public organizations and spaces in the account by performing the following:
+
+       * Go to [**Manage > Account > Cloud Foundry Orgs**](https://console.bluemix.net/account/organizations) and either click on **Add an organization** or select an existing organization.
+       * Go to the **Users** tab at the top of the organization's page.
+       * Find the user who needs to create CFEE instances. If the user you want to be able to create CFEE instances is not in the list, click **Add or invite user** above the table to add or invite users to the organization.
+       * Go to the **Spaces** tab at the top of organization's page.
+       * Find the space where the instance of Compose for PostgreSQL service would be provisioned and check the **Developer** role checkbox.
    
 * Administrator or editor role to the **{{site.data.keyword.Bluemix_notm}} Container service** in the resource group to which the environment is assigned. Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the {{site.data.keyword.Bluemix_notm}} Container service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster where the {{site.data.keyword.cfee_full_notm}} is deployed. Access to the IBM Container service, specifically in the resource group to which the environment is assigned, is required for creating that cluster infrastructure.
 
