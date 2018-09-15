@@ -29,7 +29,7 @@ To work with instances of the {{site.data.keyword.cfee_full_notm}}, service user
 ## Step 1: Ensuring that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
-CFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the IBM Container service.  [Prepare your IBM Cloud account](/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an CFEE instance.
+CFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an CFEE instance.
 
 ## Step 2: Creating your CFEE instance
 {: #creating-environment}
@@ -50,7 +50,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
 
 **Note:** Only organizations in the location where you intend to provision the CFEE instance (step 4 above) and to which you have access are available for selection.  Within a specific organization, only spaces to which you have _developer_ access are available for selection. 
 6. Optionally, open the **Infrastructure** section to see the properties of the Kubernetes cluster supporting the CFEE instance. Note that the **Number of worker nodes** equals the number of cells plus 2 (two of the provisioned Kubernetes worker nodes support the CFEE control plane).
-**Note:** The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see [{{site.data.keyword.Bluemix_notm}} Container Service documentation](/docs/containers/cs_why.html#cs_ov).
+**Note:** The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see Kubernetes Service documentation](/docs/containers/cs_why.html#cs_ov).
 7. The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
 8. Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
 9. Once provisioning has started the environment is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, as well as in the [Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  The status indicates when provisioning is completed.
