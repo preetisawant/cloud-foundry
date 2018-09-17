@@ -31,7 +31,7 @@ After you install the command line interface, follow these steps:
 3. In the command line interface, set the API endpoint to your environment's endpoint:
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
