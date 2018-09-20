@@ -18,16 +18,22 @@ lastupdated: "2018-04-18"
 # Permissions
 {: #permissions}
 
-Before you begin creating and working with instances of the {{site.data.keyword.cfee_full}} service, the permissions of the administrator and the rest of the team must be set correctly.
+Before users begin creating and working with instances of the {{site.data.keyword.cfee_full}} service, their permissions must be set correctly by an administrator of the account where the instance is to be created:
 
 ## Permissions required to create a new environment
 {: #perm-creating}
 
-To create new instances of the {{site.data.keyword.cfee_full_notm}} service, users must be granted access policies by the administrator of the account where the instance is to be created:
+To create new instances of the {{site.data.keyword.cfee_full_notm}} service, users must be granted access policies by the administrator of the account where the instance is to be created. To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
+1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
-* Access to at least one **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance.
+The following access policies are required for users to be able to create an {{site.data.keyword.cfee_full_notm instance:
 
-* Administrator or editor role to the **{{site.data.keyword.cfee_full_notm}} service** in the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
+* _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
+
+* Administrator or editor role to **{{site.data.keyword.cfee_full_notm}} service** resources. in the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
+   
+* Administrator role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions.
 
 * Administrator or editor role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 
@@ -40,13 +46,6 @@ To create new instances of the {{site.data.keyword.cfee_full_notm}} service, use
      * Find the user who needs to create CFEE instances. If the user you want to be able to create CFEE instances is not in the list, click **Add or invite user** above the table to add or invite users to the organization.
      * Go to the **Spaces** tab at the top of organization's page.
      * Find the space where the instance of Compose for PostgreSQL service would be provisioned and check the **Developer** role checkbox.
-   
-* Administrator or editor role to the **Kubernetes Service** in the resource group to which the environment is assigned. Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster where the {{site.data.keyword.cfee_full_notm}} is deployed. Access to the Kubernetes Service, specifically in the resource group to which the environment is assigned, is required for creating that cluster infrastructure.
-
-To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
-2. In the Access policies tab, click the user who is creating the environment.
-3. Confirm that access policies for the user who is creating the environment are consistent with the policies described previously.
 
 The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.Bluemix_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
 
@@ -58,8 +57,8 @@ The following screen illustrates access policies as they would appear in the Ide
 To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must be:
 1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
 2. Granted the following _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
-  - Access to at least one resource group in the {{site.data.keyword.Bluemix_notm}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance.
-  - Users must be assigned access to the {{site.data.keyword.cfee_full_notm}} service in the resource group under which the environment instance was created. The level of access and control that users have in an {{site.data.keyword.cfee_full_notm}} instance depends on the role that is granted in the access policy:
+
+  - Access to the {{site.data.keyword.cfee_full_notm}} service in the resource group under which the environment instance was created. The level of access and control that users have in an {{site.data.keyword.cfee_full_notm}} instance depends on the role that is granted in the access policy:
      - Users assigned administrator or editor roles can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions by using the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
      - Users assigned a viewer role can see that environment in the main {{site.data.keyword.Bluemix_notm}} dashboard and can open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](add-users.html).
 
