@@ -18,16 +18,14 @@ lastupdated: "2018-04-18"
 # Permissions
 {: #permissions}
 
-Before users begin creating and working with instances of the {{site.data.keyword.cfee_full}} service, their permissions must be set correctly by an administrator of the account where the instance is to be created:
+Before users begin creating and working with instances of the {{site.data.keyword.cfee_full}} service, their permissions must be set correctly by an administrator of the account where the instance is to be created. 
 
 ## Permissions required to create a new environment
 {: #perm-creating}
 
-To create new instances of the {{site.data.keyword.cfee_full_notm}} service, users must be granted access policies by the administrator of the account where the instance is to be created. To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
-2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
+In order to create new instances of the CFEE service, users must be granted access policies by an account administrator, not only to the CFEE service itself, but also to the supporting services that are also created automatically when the CFEE is created.
 
-The following access policies are required for users to be able to create an {{site.data.keyword.cfee_full_notm instance:
+The following access policies are required for users to be able to create an {{site.data.keyword.cfee_full_notm}} instance:
 
 * _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
 
@@ -50,6 +48,10 @@ The following access policies are required for users to be able to create an {{s
 The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.Bluemix_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
 
 ![Access policies](img/AccessPolicies_Creator.png)
+
+To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
+1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
 ## Permissions required to work with an environment
 {: #perm-working}
