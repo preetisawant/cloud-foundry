@@ -37,8 +37,11 @@ CFEE instances are deployed on infrastructure resources, which are Kubernetes wo
 Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} IBM Cloud account where you want to create the environment and that you have the required access policies (per step 1 above).
 
 1. Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
+
 2. Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.
+
 3. The first page of the creation page provides an overview of the main features of the service. Click **Continue**.
+
 4. Configure the CFEE instance to be created by providing the following:
     * Select a plan (plan availability may be restricted during Beta).
     * Enter a **Name** for the service instance.
@@ -46,13 +49,20 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
     * Select the **Number of cells** for the Cloud Foundry environment.
     * Select the **Machine type**, which determines the size of the Cloud Foundry cells (CPU and memory) .
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
-5. In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service.
+
+5. In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service
 
 **Note:** Only organizations in the location where you intend to provision the CFEE instance (step 4 above) and to which you have access are available for selection.  Within a specific organization, only spaces to which you have _developer_ access are available for selection. 
+
 6. Optionally, open the **Infrastructure** section to see the properties of the Kubernetes cluster supporting the CFEE instance. Note that the **Number of worker nodes** equals the number of cells plus 2 (two of the provisioned Kubernetes worker nodes support the CFEE control plane).
-**Note:** The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see Kubernetes Service documentation](/docs/containers/cs_why.html#cs_ov).
+The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov).
+
+**Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
+
 7. The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
+
 8. Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
+
 9. Once provisioning has started the environment is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, as well as in the [Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  The status indicates when provisioning is completed.
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
