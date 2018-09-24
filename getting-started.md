@@ -36,13 +36,13 @@ CFEE instances are deployed on infrastructure resources, which are Kubernetes wo
 
 Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} IBM Cloud account where you want to create the environment and that you have the required access policies (per step 1 above).
 
-1. Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
+1.  Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
 
-2. Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.
+2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.
 
-3. The first page of the creation page provides an overview of the main features of the service. Click **Continue**.
+3.  The first page of the creation page provides an overview of the main features of the service. Click **Continue**.
 
-4. Configure the CFEE instance to be created by providing the following:
+4.  Configure the CFEE instance to be created by providing the following:
     * Select a plan (plan availability may be restricted during Beta).
     * Enter a **Name** for the service instance.
     * Select a **Location** where the service instance is to be provisioned.
@@ -50,20 +50,20 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
     * Select the **Machine type**, which determines the size of the Cloud Foundry cells (CPU and memory) .
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
 
-5. In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service
+5.  In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service
 
 **Note:** Only organizations in the location where you intend to provision the CFEE instance (step 4 above) and to which you have access are available for selection.  Within a specific organization, only spaces to which you have _developer_ access are available for selection. 
 
-6. Optionally, open the **Infrastructure** section to see the properties of the Kubernetes cluster supporting the CFEE instance. Note that the **Number of worker nodes** equals the number of cells plus 2 (two of the provisioned Kubernetes worker nodes support the CFEE control plane).
+6.  Optionally, open the **Infrastructure** section to see the properties of the Kubernetes cluster supporting the CFEE instance. Note that the **Number of worker nodes** equals the number of cells plus 2 (two of the provisioned Kubernetes worker nodes support the CFEE control plane).
 The Kubernetes cluster on which the environment is deployed appears in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov).
 
 **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
 
-7. The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
+7.  The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
 
-8. Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
+8.  Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
 
-9. Once provisioning has started the environment is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, as well as in the [Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  The status indicates when provisioning is completed.
+9.  Once provisioning has started the environment is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, as well as in the [Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  The status indicates when provisioning is completed.
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 
@@ -83,9 +83,9 @@ After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organiz
 
 When you're ready, you can [deploy the app](/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
-## Step 6: Creating service instances and aliases
+## Step 6: Working with services
 
-Create [service aliases](/docs/cloud-foundry/add-serv-inst.html) from service instances available in the IBM Cloud account in order to leverage them in your CFEE applications.
+[Create services](/docs/cloud-foundry/add-serv-inst.html) or [Add existing services](/docs/cloud-foundry/add-serv-inst.html) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
 ## Step 7: Binding applications to service instances
 
