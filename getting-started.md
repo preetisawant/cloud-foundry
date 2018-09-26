@@ -113,4 +113,5 @@ To start the Stratos console:
 3. The Stratos console is opened in a separate browser tab. When you open the console for the first time, you're prompted to accept two consecutive warnings because of self-signed certificates.
 4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.Bluemix_notm}} credentials.
 
-What you can see and manage is limited by your organizations and space membership and roles.
+Information on the CFEE API's is available in the CFEE [API documentation](https://console.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+{:tip}
