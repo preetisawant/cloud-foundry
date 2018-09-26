@@ -69,9 +69,10 @@ Additionally, you can use the filter entry field above the table to show only ap
 The Cells page has two sections:
 1. Vertical bar charts showing:
    * *Total available* memory and CPU available in the CFEE instance.
-   * Memory and CPU used by the *All app instances* in the CFEE instance.
-   * Memory and CPU used by the *Selected app instances* in the CFEE instance.
-   * memory and CPU used by the *System* in the table below.  The system usage represents the resource used by the CFEE service componentry plus application cache.
+   * Memory and CPU used by the **Selected app instances** in the CFEE instance.
+   * Memory and CPU used by the **All app instances** in the CFEE instance.
+   * memory and CPU used by the **System** in the table below.  The system usage represents the resource used by the CFEE service componentry plus application cache.
+   * Total Memory and CPU available in the Cell. The **Total Cell** equals the total (memory or CPU) available in the Kubernetes worker node (where the cell is provisioned) minus what is used by the system.
 
    To show the percentage of memory or CPU used by all the app instances or by the app instances selected in the table, hover over the corresponding portion of the chart.  Hovering over the chart bar shows the absolute memory or CPU available, the memory or CPU used by all the apps, and the memory or CPU used by system+cache.  It also shows the percentage of memory or CPU used by all apps and by system+cache relative to the total available.
 
