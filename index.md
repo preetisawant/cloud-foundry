@@ -68,40 +68,40 @@ The following table provides a summary of some of the key elements.
 
 Following are the geographies, locations and data centeres where the CFEE service and the dependent services (Kubernetes service, Compose for PostgreSQL and Cloud Object Storage services) are available for provisioning:
 
-| **Geography**              | **CFEE instance & Kubernetes Cluster** | **Compose for PostgreSQL (CF Region)** | **Cloud Object Storage** |
+|  **Geography** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| **CFEE instance & Kubernetes Cluster** | **Cloud Object Storage** | **Compose for PostgreSQL (CF Region)** |
 |----------------------------------------|-------------------|-------------------|-------------------|
-|North America | Montreal (mon01) | us-east| us-geo 
-|North America | Toronto (tor01) | us-east| us-geo|
-|North America | Washington DC (wdc04) | us-east| us-geo |
-|North America | Washington DC (wdc06) | us-east| us-geo |
-|North America | Washington DC (wdc07) | us-east| us-geo |
-|North America | Dallas (das10) | us-south| us-geo |
-|North America | Dallas (das12) | us-south| us-geo |
-|North America | Dallas (das13)) | us-south| us-geo |
-|North America | San Jose (sjc03) | us-south| us-geo |
-|North America | San Jose (sjc04) | us-south| us-geo |
-|South America | Sao Paolo (sao01) | us-south| us-geo |
-|Europe | London (lon02) | eu-gb | eu-geo |
-|Europe | London (lon04) | eu-gb | eu-geo |
-|Europe | London (lon06) | eu-gb | eu-geo |
-|Europe | Amsterdam (ams03) | eu-de | eu-geo |
-|Europe | Oslo (osl01) | eu-de | eu-geo |
-|Europe | Paris (par01) | eu-de | eu-geo |
-|Europe | Frankfurt (fra02) | eu-de | eu-geo |
-|Europe | Frankfurt (fra04) | eu-de | eu-geo |
-|Europe | Frankfurt (fra05) | eu-de | eu-geo |
-|Asia Pacific | Melbourne (mel01) | au-syd | ap-geo |
-|Asia Pacific | Sydney (syd01) | au-syd | ap-geo |
-|Asia Pacific | Sydney (syd04) | au-syd | ap-geo |
-|Asia Pacific | Hong Kong (hkg02) | au-syd | ap-geo |
-|Asia Pacific | Hong Kong (seo01) | au-syd | ap-geo |
-|Asia Pacific | Singapore (sng01) | au-syd | ap-geo |
-|Asia Pacific | Tokyo (gok02) | au-syd | ap-geo |
-|Asia Pacific | Tokyo (gok04) | au-syd | ap-geo |
-|Asia Pacific | Tokyo (gok05) | au-syd | ap-geo |
+|North America | Montreal (mon01) | us-geo | us-east |
+|North America | Toronto (tor01) | us-geo| us-east |
+|North America | Washington DC (wdc04) | us-geo | us-east |
+|North America | Washington DC (wdc06) | us-geo | us-east | 
+|North America | Washington DC (wdc07) | us-geo | us-east |
+|North America | Dallas (das10) | us-geo | us-south |
+|North America | Dallas (das12) | us-geo | us-south |
+|North America | Dallas (das13) | us-geo |us-south |
+|North America | San Jose (sjc03) | us-geo | us-south |
+|North America | San Jose (sjc04) | us-geo | us-south |
+|South America &nbsp; &nbsp;| Sao Paolo (sao01) |  us-geo | us-south |
+|Europe | London (lon02) | eu-geo | eu-gb |
+|Europe | London (lon04) | eu-geo | eu-gb |
+|Europe | London (lon06) | eu-geo | eu-gb | 
+|Europe | Amsterdam (ams03) | eu-geo | eu-de |
+|Europe | Oslo (osl01) |eu-geo | eu-de | 
+|Europe | Paris (par01) | eu-geo | eu-de |
+|Europe | Frankfurt (fra02) | eu-geo | eu-de |
+|Europe | Frankfurt (fra04) | eu-geo | eu-de | 
+|Europe | Frankfurt (fra05) |  eu-geo | eu-de |
+|Asia Pacific | Melbourne (mel01) | ap-geo | au-syd |
+|Asia Pacific | Sydney (syd01) | ap-geo | au-syd |
+|Asia Pacific | Sydney (syd04) | ap-geo | au-syd | 
+|Asia Pacific | Hong Kong (hkg02) | ap-geo | au-syd |
+|Asia Pacific | Hong Kong (seo01) | ap-geo | au-syd |
+|Asia Pacific | Singapore (sng01) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (gok02) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (gok04) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (gok05) | ap-geo | au-syd |
 
-{: caption="Table 1. Dedicated Services" caption-side="top"}
-{: #table01}
+{: caption="Table 2. Provisioning targets for CFEE and supporting services" caption-side="top"}
+
 
 
 For **example**, the CFEE service can provisioned in three data centers in Europe: Amsterdam (1 data center), Frankfurt (3 data centers), London (3 data centers), Oslo (1 data center), and Paris (1 data center). If the CFEE is provisioned in Frankfurt, the Cloud Object Store service instance will be deployed in the _eu-geo_ region, and the Compose for PostgreSQL service instance will be deployed in the _eu-de_ public Cloud Foundry region.
