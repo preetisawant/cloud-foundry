@@ -45,7 +45,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
 4.  Configure the CFEE instance to be created by providing the following:
     * Select a plan (plan availability may be restricted during Beta).
     * Enter a **Name** for the service instance.
-    * Select a **Location** where the service instance is to be provisioned.
+    * Select a **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets) ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
     * Select the **Number of cells** for the Cloud Foundry environment.
     * Select the **Machine type**, which determines the size of the Cloud Foundry cells (CPU and memory) .
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
