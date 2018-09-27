@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-12"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -91,7 +91,7 @@ When you're ready, you can [deploy the app](/docs/cloud-foundry/deploy-apps.html
 
 [Bind your app](/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
 
-In the [Cloud Foundry home page](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both _public_ and _enterprise_.  Once in the Cloud Foundry home page, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+In the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both _public_ and _enterprise_.  Once in the Cloud Foundry dashboard, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
 ## Step 8: Installing the Stratos Console to manage applications (optional)
