@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -22,7 +22,7 @@ You can deploy applications to {{site.data.keyword.Bluemix}} with the command li
 ## Deploying applications with the Cloud Foundry command
 {: #dep_apps}
 
-Download and install the {{site.data.keyword.Bluemix}} command line interface. [Download the {{site.data.keyword.Bluemix_notm}} CLI](https://clis.ng.bluemix.net){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+[Download and install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 After you install the command line interface, follow these steps:
 
@@ -96,7 +96,7 @@ The table in the view shows the following information:
 | Space | The organization in the CFEE instance where the alias resides. |
 | Memory | The amount of memory used by the application. |
 | Status | The status of the application. |
-{:caption="Table 1. Description of key elements" caption-side="top"}
+{:caption="Table 1. Columns in the applications table of the Cloud Foundry dashboard" caption-side="top"}
 
 Optionally, you can Start, Restart, Stop or Delete an application by accessing the menu in the far right of the row representing the application.
 You can click any of the applications, environments, organizations or spaces to navigate to the corresponding page in the CFEE user interface.
