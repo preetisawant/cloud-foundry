@@ -102,7 +102,7 @@ The following guides you through the steps for installing the required CLI's, fo
 
    There is a default `admin` user in Grafana, with the default password set to `admin`. We recommend to login with Userd/Password `admin/admin`, and change them to new credentials:
 
-     [Launch Grafana server](https://localhost:3000)
+     [Launch Grafana console](https://localhost:3000)
 
    The following default dashboards are provided with the CFEE instance and are available from the _Home_ dropdown.
 
