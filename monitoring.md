@@ -43,7 +43,7 @@ Grafana is an open-source analytics platform for all metrics collected by Promet
 ## Getting Started with Monitoring
 {: #gettingStarted_monitor}
 
-The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the CFEE instance.  To access the monitoring tools require to forward the ports of the Prometheus, Prometheus AlertManager, and Grafana serverers.  This is done through the Kubernetes CLI.
+The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the CFEE instance.  To access the monitoring tools require to forward the ports of the Prometheus, Prometheus AlertManager, and Grafana servers.  This is done through the Kubernetes CLI.
 The following guides you through the steps for installing the required CLI's, forwarding the server ports, and launching the consoles.
 
 **Note:** The following instrutions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface and click **Monitoring** in the left navigation pane to see the instructions displayed.
