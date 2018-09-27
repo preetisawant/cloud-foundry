@@ -45,7 +45,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
 4.  Configure the CFEE instance to be created by providing the following:
     * Select a plan (plan availability may be restricted during Beta).
     * Enter a **Name** for the service instance.
-    * Select a **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets) ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
+    * Select a **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
     * Select the **Number of cells** for the Cloud Foundry environment.
     * Select the **Machine type**, which determines the size of the Cloud Foundry cells (CPU and memory) .
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
@@ -91,7 +91,7 @@ When you're ready, you can [deploy the app](/docs/cloud-foundry/deploy-apps.html
 
 [Bind your app](/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
 
-In the [Cloud Foundry home page](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both _public_ and _enterprise_.  Once in the Cloud Foundry home page, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+In the [Cloud Foundry home page](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both _public_ and _enterprise_.  Once in the Cloud Foundry home page, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
 ## Step 8: Installing the Stratos Console to manage applications (optional)
