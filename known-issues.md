@@ -70,4 +70,4 @@ kubectl -n cf-monitoring apply -f config.yaml.
 
 ```
 
-See (Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")for more information on the Firehose Prometheus exporter.
+For more information on the Firehose Prometheus exporter see [Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
