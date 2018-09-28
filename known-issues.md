@@ -27,7 +27,8 @@ You can determine if the firehose exporter pod is using high CPU, and potentiall
 2. Check the CPU usage in the _Resource Usage > Applications_ page and see if there is an unusually high number of http requests. See an illustrative example of high-cpu usage below:
 ![Account Checking](img/FirehoseExporterIssue_ResourceUsage.png)
 
-3. Check the POD Grafana console (launched from the _Monitoring_ page) that shows CPU usage for the Firehouse pod.
+3. Check the POD Grafana console (launched from the _Monitoring_ page) that shows CPU usage for the Firehouse pod. See an illustrative example of high-cpu usage below:
+![Account Checking](img/FirehoseExporterIssue_Grafana.png)
 
 If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the overall Control plane CPU is high, you may need to turn off the http request metric collection via the following steps:
 
