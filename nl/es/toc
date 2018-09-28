@@ -1,0 +1,34 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cloud-foundry/index.html"}
+Cloud Foundry Enterprise Environment
+
+    {: .navgroup id="learn"}
+    index.md
+    prepare-account.md
+    permissions.md
+    getting-started.md
+    manage-capacity.md
+    monitoring.md
+
+    {: .topicgroup}
+    Structuring your IBM Cloud environment
+        design-structure.md
+        org-structure.md
+        spaces.md
+        quota.md
+        assigning-roles.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    orgs-spaces.md
+    add-users.md
+    deploy-apps.md
+    add-serv-inst.md
+    binding.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="help"}
+    known-issues.md
+    {: .navgroup-end}
