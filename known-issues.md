@@ -22,13 +22,13 @@ CFEE environments include a Prometheus Firehose exporter for collecting Cloud Fo
 
 You can determine if the firehose exporter pod is using high CPU, and potentially causing instability in the CFEE environment, by one of the following methods: 
 1.  Check the overall CPU usage of the CF control plane via the CFEE Overview page for that CFEE environment. See an illustrative example of high-cpu usage below:
-![Account Checking](img/FirehoseExporterIssue_OverviewMetrics.png)
+![High CPU in Overview page](img/FirehoseExporterIssue_OverviewMetrics.png)
 
 2. Check the CPU usage in the _Resource Usage > Applications_ page and see if there is an unusually high number of http requests. See an illustrative example of high-cpu usage below:
-![Account Checking](img/FirehoseExporterIssue_ResourceUsage.png)
+![High CPU in Reource Usage page](img/FirehoseExporterIssue_ResourceUsage.png)
 
 3. Check the POD Grafana console (launched from the _Monitoring_ page) that shows CPU usage for the Firehouse pod. See an illustrative example of high-cpu usage below:
-![Account Checking](img/FirehoseExporterIssue_Grafana.png)
+![High CPU in Grafana console](img/FirehoseExporterIssue_Grafana.png)
 
 If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the overall Control plane CPU is high, you may need to turn off the http request metric collection via the following steps:
 
