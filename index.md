@@ -66,7 +66,7 @@ The following table provides a summary of some of the key elements.
 ## Provisioning targets for CFEE and supporting services
 {: #provisioning-targets}
 
-Following are the geographies, locations and data centeres where the CFEE service and the dependent services (Kubernetes service, Compose for PostgreSQL and Cloud Object Storage services) are available for provisioning:
+Following are the geographies, locations and data centers where the CFEE service and the dependent services (Kubernetes service, Compose for PostgreSQL and Cloud Object Storage services) are available for provisioning:
 
 |  **Geography** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| **CFEE instance & Kubernetes Cluster** | **Cloud Object Storage** | **Compose for PostgreSQL (CF Region)** |
 |----------------------------------------|-------------------|-------------------|-------------------|
