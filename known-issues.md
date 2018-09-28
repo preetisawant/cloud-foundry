@@ -39,7 +39,7 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
    ```
    {: pre}
   
-2. Edit the `config.yaml` and add the following line in ```spec.template.spec.containers.args``` array:
+2. Edit the `config.yaml` and add the following line in `spec.template.spec.containers.args` array:
 
    ```
    - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
