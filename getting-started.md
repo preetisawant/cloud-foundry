@@ -24,12 +24,12 @@ This getting started tutorial shows how to create an {{site.data.keyword.cfee_fu
 ## Understanding permissions
 {: #permissions}
 
-To work with instances of the {{site.data.keyword.cfee_full_notm}}, service users must have the correct permissions. For more information, see [Permissions](/docs/cloud-foundry/permissions.html).
+To work with instances of the {{site.data.keyword.cfee_full_notm}}, service users must have the correct permissions. For more information, see [Permissions](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
 
 ## Step 1: Ensuring that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
-CFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an CFEE instance.
+CFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an CFEE instance.
 
 ## Step 2: Creating your CFEE instance
 {: #creating-environment}
@@ -71,25 +71,25 @@ Once you successfully create the environment you will receive multiple emails co
 
 ## Step 3: Creating organizations and spaces
 
-After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
+After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://console.bluemix.net/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
 
 **Note:** The _Cloud Foundry organizations_ page available from the **_Manage > Account > Cloud Foundry orgs_** menu located in the top IBM Cloud header is intended exclusively for public IBM Cloud organizations, **not for CFEE organizations**. CFEE organizations are managed within the _Organizations_ page of an CFEE instance.  Open the CFEE user interface and click  the **_Organizations_** page to create and manage organizations for that CFEE.
 
 ## Step 4: Adding users to organizations and spaces
 
-[Add users](/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](/docs/cloud-foundry/permissions.html).
+[Add users](https://console.bluemix.net/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
 
 ## Step 5: Deploying and viewing applications
 
-When you're ready, you can [deploy the app](/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+When you're ready, you can [deploy the app](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
 ## Step 6: Working with services
 
-[Create services](/docs/cloud-foundry/add-serv-inst.html) or [Add existing services](/docs/cloud-foundry/add-serv-inst.html) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+[Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
 ## Step 7: Binding applications to service instances
 
-[Bind your app](/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
+[Bind your app](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#bind_services) to a service instance alias in order to use the service's functions.
 
 Did you know about the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")? There you can see a consolidated view of all the applications and services in the {{site.data.keyword.Bluemix_notm}}, both _Public_ and _Enterprise_ (CFEE).  Once in the Cloud Foundry dashboard, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
