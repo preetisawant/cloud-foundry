@@ -17,6 +17,7 @@ lastupdated: "2018-09-04"
 {: #known-issues}
 
 ## Instability due to high cpu usage by the Firehose Prometheus exporter
+{: #instabilityCPU-issue}
 
 CFEE environments include a Prometheus Firehose exporter for collecting Cloud Foundry metrics on http and https _start_ and _stop_ requests . A CFEE environment with a high number of http requests may cause the Prometheus firehose exporter to use a large amount of CPU. This can lead to some instability in the environment since the firehouse exporter pod runs on one of the Cloud Foundry control plane worker nodes.
 
@@ -71,3 +72,8 @@ kubectl -n cf-monitoring apply -f config.yaml.
 ```
 
 For more information on the Firehose Prometheus exporter see [Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+
+## Intermittent error accessing cell metrics
+{: #cellmetrics-issue}
+
+When accessing Cloud Foundry cell metrics in the _Overview_ or _Resource Usage_ pages there is an intermittent error preventing the collection of those metrics from the Kubernetes worker nodes in which the cells are depoloyed.  Retry at a later time by refresing the page.
