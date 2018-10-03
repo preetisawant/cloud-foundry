@@ -34,7 +34,7 @@ Go to the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboa
 
 This view shows all the {{site.data.keyword.Bluemix_notm}} service instances available in the account and indicates which ones have been added (aliased) to which CFEE spaces. Expand a service instance to show the CFEE spaces where it has been added.  You can further expand those to see the applications in those CFEE spaces to which those service instances have been bound.  
 
-From this view you can also bind applications deployed into the CFEE spaces to which those service instances have been added by. Go to the menu located at the far right of the table row for the corresponding service (available to a specific CFEE space) and select **Bind to applications**.
+From this view you can also bind applications deployed into the CFEE spaces to which those service instances have been added. Go to the menu located at the far right of the table row for the corresponding service (available to a specific CFEE space) and select **Bind to applications**.
 
 ## Adding existing {{site.data.keyword.Bluemix_notm}} service instances to a CFEE space
 {: #adding-services_inspace}
