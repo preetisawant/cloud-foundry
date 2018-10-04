@@ -56,6 +56,8 @@ To confirm that you have the required access policies to create an {{site.data.k
 1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
 2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
+For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://console.stage1.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
+
 ## Permissions required to work with an environment
 {: #perm-working}
 
