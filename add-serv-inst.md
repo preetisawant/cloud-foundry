@@ -55,7 +55,7 @@ Alternatively, you can add {{site.data.keyword.Bluemix_notm}} service instance f
 1. In your {{site.data.keyword.Bluemix_notm}} [dashboard](https://console.bluemix.net/dashboard) or [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services), find the Cloud Foundry Enterprise environment that hosts your application.
 2. Go to **Organizations** in the navigation pane and open the organization and space where the application is located.
 3. Go to the **Spaces** tab and locate the space that contains the application.
-4. In the target space page, go to the **Services** tab and click **Add service**.  This will open the __Add service__ dialog.  The page lists services service instances available in the {{site.data.keyword.Bluemix_notm}} account.
+4. In the target space page, go to the **Services** tab and click **Add service**.  This will open the __Add service__ dialog.  The page lists service instances available in the {{site.data.keyword.Bluemix_notm}} account.
 5. Find and select an available service instance you want to add to the CFEE space. 
 6. The service instance will be added to the list of services available in the CFEE space.
 
@@ -84,13 +84,13 @@ You can create a service instance from the CLI from a space in a CFEE.  Creating
 * The {{site.data.keyword.Bluemix_notm}} service instance is created in the IBM Cloud.  This is equivalent to creating the service instance from the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
 * The {{site.data.keyword.Bluemix_notm}} service instance is added (alised) into the CFEE space from which the creation action was initiated.
 
-The difference between creating a service instance from a CFEE space vs. crating it from the CLI is in the lifecycle of the created service instance.  When you create the service instance in the CFEE space UI the lifecycle of the created service instance is controlled from the service instance itself in the {{site.data.keyword.Bluemix_notm}} account.  This means that updates to the service plan is control from the instance in the {{site.data.keyword.Bluemix_notm}} acount, not from the CFEE space.  Alternative, if the service instance is created from the CLI, the service's lifecycle is controlled from the CFEE space (the service is updated from the CFEE space).
+The difference between creating a service instance from a CFEE space vs. creating it from the CLI is in the lifecycle of the created service instance.  When you create the service instance in the CFEE space UI the lifecycle of the created service instance is controlled from the service instance itself in the {{site.data.keyword.Bluemix_notm}} account.  This means that updates to the service plan is controlled from the instance in the {{site.data.keyword.Bluemix_notm}} acount, not from the CFEE space.  Alternatively, if the service instance is created from the CLI, the service's lifecycle is controlled from the CFEE space (the service is updated from the CFEE space).
 
-Service instances created from the CLI are also displayed in the UI, and are indicated by an ` * ` nexts to the service instance name.
+Service instances created from the CLI are also displayed in the UI, and are indicated by an ` * ` next to the service instance name.
 
 To create service instances using the CLI follow the following steps:
 
-1. Download and install the {{site.data.keyword.Bluemix}} command line interface (if you haven't. [Download the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+1. Download and install the {{site.data.keyword.Bluemix}} command line interface (if you haven't done it already). [Download the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 2. Go to the {{site.data.keyword.cfee_full}} Overview page and locate the environment's API endpoint.
 
@@ -160,7 +160,7 @@ To bind a service instance to an application from the [Cloud Foundry services da
 3. Expand the corresponding view to see all the CFEE spaces where that service instance has been added. If that service instance has not been added to the CFEE space where the application is deployed, select **Add** from the menu at the row's far right to make the service instance available in the target CFEE space.
 4. Go to the menu located in the far right of the row corresponding to the CFEE/space where the service instance is available, and select **Bind application**.
 5. In the __Bind application__ dialog select the application you want to bind.
-6. The application is now bound to the service instance in the CFEE space where the application is deployed.  You can expand the row to corresponding row in the table to see the bound applications in the CFEE space.
+6. The application is now bound to the service instance.  You can expand a service instance in the table to see the applications bound to it (in a specific CFEE space).
 
 
 To bind an application to a service instance from the __Services__ page of a CFEE space:
