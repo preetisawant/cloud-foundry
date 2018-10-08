@@ -102,7 +102,7 @@ ibmcloud plugin install container-service -r Bluemix
 
    在 Grafana 中有缺省 `admin` 用户，缺省密码设置为 `admin`。建议使用用户/密码 `admin/admin` 登录，然后将其更改为新的凭证：
 
-     [启动 Grafana 服务器](https://localhost:3000)
+     [启动 Grafana 控制台](https://localhost:3000)
 
    以下缺省仪表板随 CFEE 实例一起提供，可从_主页_下拉列表中获得。
 

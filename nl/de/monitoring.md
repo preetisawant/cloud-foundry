@@ -16,14 +16,15 @@ lastupdated: "2018-08-07"
 # Überwachung
 {: #monitoring}
 
-Die Überwachung einer {{site.data.keyword.cfee_full}}-Instanz und der zugehörigen unterstützten Infrastruktur wird durch ein Open-Source-Toolset unterstützt, das aus Prometheus und Grafana besteht.  Die Lösung ermöglicht das Analysieren, Visualisieren und Verwalten von Alerts für Metriken in der Cloud Foundry-Umgebung. Für die Überwachung stehen drei Webkonsolen zur Verfügung: Eine Grafana-Konsole, eine Prometheus-Konsole und eine Prometheus Alert Manager-Konsole.
+Die Überwachung einer {{site.data.keyword.cfee_full}}-Instanz und der zugehörigen unterstützten Infrastruktur wird durch ein Open-Source-Toolset unterstützt, das aus Prometheus und Grafana besteht.  Die Lösung ermöglicht das Analysieren, Visualisieren und Verwalten von Alerts für Metriken in der Cloud Foundry-Umgebung.  Für die Überwachung stehen drei Webkonsolen zur Verfügung: Eine Grafana-Konsole, eine Prometheus-Konsole und eine Prometheus Alert Manager-Konsole.
 
-**Hinweis:** Für den Zugriff auf die Überwachungsfunktion in einer {{site.data.keyword.cfee_full}}-Instanz ist die Rolle _Administrator_ oder _Bearbeiter_ in dem Kubernetes-Cluster erforderlich, der die CFEE-Instanz unterstützt. Der Standardname des Kubernetes-Clusters, der eine CFEE-Instanz unterstützt, lautet _`<CFEEname>`-cluster_.
+**Hinweis:** Für den Zugriff auf die Überwachungsfunktion in einer {{site.data.keyword.cfee_full}}-Instanz ist die Rolle _Administrator_ oder _Bearbeiter_ in dem Kubernetes-Cluster erforderlich, der die CFEE-Instanz unterstützt.  Der Standardname des Kubernetes-Clusters, der eine CFEE-Instanz unterstützt, lautet _`<CFEEname>`-cluster_.
 
 ## Prometheus
 {: #prometheus}
 
-Prometheus ist ein Open-Source-Toolkit für Systemüberwachung und Alertausgabe. Seit der Gründung im Jahr 2012 haben viele Unternehmen und Organisationen Prometheus übernommen und das Projekt verfügt über eine sehr aktive Entwickler- und Benutzer-Community. Es handelt sich um ein eigenständiges Open-Source-Projekt, das unabhängig von Unternehmen gepflegt wird. Um dies zu betonen und die Governance-Struktur des Projekts zu verdeutlichen, wurde Prometheus 2016 nach Kubernetes als zweites gehostetes Projekt in die Cloud Native Computing Foundation aufgenommen. Weitere Informationen finden Sie in der [Prometheus-Dokumentation](https://prometheus.io/docs/introduction/overview/).
+Prometheus ist ein Open-Source-Toolkit für Systemüberwachung und Alertausgabe. Seit der Gründung im Jahr 2012 haben viele Unternehmen und Organisationen Prometheus übernommen und das Projekt verfügt über eine sehr aktive Entwickler- und Benutzer-Community.
+Es handelt sich um ein eigenständiges Open-Source-Projekt, das unabhängig von Unternehmen gepflegt wird. Um dies zu betonen und die Governance-Struktur des Projekts zu verdeutlichen, wurde Prometheus 2016 nach Kubernetes als zweites gehostetes Projekt in die Cloud Native Computing Foundation aufgenommen. Weitere Informationen finden Sie in der [Prometheus-Dokumentation](https://prometheus.io/docs/introduction/overview/).
 
 Das Ökosystem von Prometheus besteht aus mehreren Komponenten, von denen viele optional sind:
 
@@ -37,20 +38,21 @@ Prometheus erfasst Metriken aus instrumentierten Jobs entweder direkt oder über
 ## Grafana
 {: #grafana}
 
-Grafana ist eine Open-Source-Analyseplattform für alle Metriken, die von Prometheus erfasst werden. Die im Cluster bereitgestellte Grafana-Version ist bereits für die Verwendung der zugrunde liegenden Prometheus-Datenbank konfiguriert. Auch einige aussagekräftige Grafana-Dashboards sind enthalten. Weitere Informationen finden Sie in der [Grafana-Dokumentation](http://docs.grafana.org/guides/getting_started/).
+Grafana ist eine Open-Source-Analyseplattform für alle Metriken, die von Prometheus erfasst werden. Die im Cluster bereitgestellte Grafana-Version ist bereits für die Verwendung der zugrunde liegenden Prometheus-Datenbank konfiguriert. Auch einige aussagekräftige Grafana-Dashboards sind enthalten.  Weitere Informationen finden Sie in der [Grafana-Dokumentation](http://docs.grafana.org/guides/getting_started/).
 
 ## Einführung in die Überwachung
 {: #gettingStarted_monitor}
 
-Die Komponenten Prometheus und Grafana, aus denen die Überwachungslösung besteht, sind in der Kubernetes Infrastruktur vorinstalliert, die die CFEE-Instanz unterstützt. Für den Zugriff auf die Überwachungstools ist eine Weiterleitung zu den Ports der Prometheus-, Prometheus Alert Manager- und Grafana-Server erforderlich. Diese wird über die Kubernetes-Befehlszeilenschnittstelle festgelegt. Im Folgenden werden Sie durch die Schritte für die Installation der erforderlichen Benutzerschnittstellen, für die Weiterleitung der Server-Ports und das Starten der Konsolen geführt.
+Die Komponenten Prometheus und Grafana, aus denen die Überwachungslösung besteht, sind in der Kubernetes Infrastruktur vorinstalliert, die die CFEE-Instanz unterstützt.  Für den Zugriff auf die Überwachungstools ist eine Weiterleitung zu den Ports der Prometheus-, Prometheus Alert Manager- und Grafana-Server erforderlich.  Diese wird über die Kubernetes-Befehlszeilenschnittstelle festgelegt.
+Im Folgenden werden Sie durch die Schritte für die Installation der erforderlichen Benutzerschnittstellen, für die Weiterleitung der Server-Ports und das Starten der Konsolen geführt.
 
-**Hinweis:** Die folgenden Anweisungen sind auch in der {{site.data.keyword.cfee_full}}-Benutzerschnittstelle verfügbar. Öffnen Sie die Benutzerschnittstelle der CFEE-Instanz und klicken Sie im linken Navigationsbereich auf **Überwachung**, um die aufgeführten Anweisungen anzuzeigen.
+**Hinweis:** Die folgenden Anweisungen sind auch in der {{site.data.keyword.cfee_full}}-Benutzerschnittstelle verfügbar.  Öffnen Sie die Benutzerschnittstelle der CFEE-Instanz und klicken Sie im linken Navigationsbereich auf **Überwachung**, um die aufgeführten Anweisungen anzuzeigen.
 
 ### Voraussetzungen
 
 1. Überprüfen Sie Ihre [Zugriffsrichtlinien](https://console.bluemix.net/iam/#/users), um sicherzustellen, dass Sie zumindest über die Rolle eines Anzeigeberechtigten für den Kubernetes-Cluster verfügen, der die Umgebung unterstützt.
 2. Installieren Sie die [IBM Cloud-Befehlszeilenschnittstelle](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
-3. Installieren Sie die [Kubernetes-Befehlszeilenschnittstelle](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Wenn Sie bereits über eine Kubernetes-Befehlszeilenschnittstelle verfügen, wird empfohlen, die aktuelle Version zu installieren.
+3. Installieren Sie die [Kubernetes-Befehlszeilenschnittstelle](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  Wenn Sie bereits über eine Kubernetes-Befehlszeilenschnittstelle verfügen, wird empfohlen, die aktuelle Version zu installieren.
 4. Installieren Sie das Plug-in für den Container-Service:
 ```
     ibmcloud plugin install container-service -r Bluemix
@@ -74,7 +76,7 @@ Die Komponenten Prometheus und Grafana, aus denen die Überwachungslösung beste
   ```
   {: pre}
 
-3. Legen Sie den Kontext des Clusters in der Befehlszeilenschnittstelle fest: 
+3. Legen Sie den Kontext des Clusters in der Befehlszeilenschnittstelle fest:
 
   a. Rufen Sie den Befehl zum Festlegen der Umgebungsvariablen und Download der Kubernetes-Konfigurationsdateien ab:
 
@@ -95,11 +97,11 @@ Die Komponenten Prometheus und Grafana, aus denen die Überwachungslösung beste
 
 ### Überwachungskonsolen auf lokalem Web-Proxy starten
 
-5. Starten Sie die Grafana-Konsole, um Analysen zu ausgewählten Metriken anzuzeigen. Die Grafana-Standarddashboards sind in der CFEE-Instanz enthalten. Diese Standarddashboards sind interaktiv und bieten eine Ansicht der Infrastruktur, die zum Hosten der CFEE-Instanz verwendet wird. (Kubernetes-Cluster). Klicken Sie beim Starten der Grafana-Konsole oben in der Grafana-Konsole auf die Schaltfläche **Home**, um eines der vorab bereitgestellten Dashboards auszuwählen (siehe Liste unten), in der die entsprechenden Metriken grafisch dargestellt werden:
+5. Starten Sie die Grafana-Konsole, um Analysen zu ausgewählten Metriken anzuzeigen.  Die Grafana-Standarddashboards sind in der CFEE-Instanz enthalten. Diese Standarddashboards sind interaktiv und bieten eine Ansicht der Infrastruktur, die zum Hosten der CFEE-Instanz verwendet wird. (Kubernetes-Cluster). Klicken Sie beim Starten der Grafana-Konsole oben in der Grafana-Konsole auf die Schaltfläche **Home**, um eines der vorab bereitgestellten Dashboards auszuwählen (siehe Liste unten), in der die entsprechenden Metriken grafisch dargestellt werden:
 
    In Grafana lauten der Standardbenutzername `admin` und das Standardkennwort `admin`. Es wird empfohlen, sich mit dem Benutzernamen und Kennwort `admin` anzumelden und anschließend neue Berechtigungsnachweise festzulegen:
 
-     [Grafana-Server starten](https://localhost:3000)
+     [Grafana-Konsole starten](https://localhost:3000)
 
    Die folgenden Standarddashboards werden mit der CFEE-Instanz bereitgestellt und sind im Dropdown-Menü _Home_ verfügbar.
 

@@ -16,7 +16,7 @@ lastupdated: "2018-07-17"
 # Preparando sua Conta
 {: #prepare}
 
-As instâncias do CFEE são implementadas em recursos de infraestrutura (os nós do trabalhador do Kubernetes do serviço IBM Container) que são faturados para a conta do IBM Cloud. Isso significa que a conta do IBM Cloud sob a qual a instância do CFEE é criada deve ser uma conta paga (uma conta Pré-paga ou de Assinatura). Se a conta do IBM Cloud sob a qual você pretende criar uma instância do CFEE for uma conta para teste, será solicitado que você faça upgrade da conta quando tentar criar uma instância do CFEE. Quando uma conta do IBM Cloud é submetida a upgrade (de uma conta para teste para uma conta Pré-paga ou de Assinatura), a conta do IBM Cloud se torna vinculada a uma conta do SoftLayer (por meio da qual os recursos de infraestrutura podem ser criados). Para obter mais informações, consulte  [ Tipos de conta ](https://console.bluemix.net/docs/account/index.html#accounts). O custo desses recursos de infraestrutura é mostrado em sua fatura do IBM Cloud.
+As instâncias do CFEE são implementadas em recursos de infraestrutura (os nós do trabalhador do Kubernetes do serviço IBM Container) que são faturados para a conta do IBM Cloud. Isso significa que a conta do IBM Cloud sob a qual a instância do CFEE é criada deve ser uma conta paga (uma conta Pré-paga ou de Assinatura).  Se a conta do IBM Cloud sob a qual você pretende criar uma instância do CFEE for uma conta para teste, será solicitado que você faça upgrade da conta quando tentar criar uma instância do CFEE.  Quando uma conta do IBM Cloud é submetida a upgrade (de uma conta para teste para uma conta Pré-paga ou de Assinatura), a conta do IBM Cloud se torna vinculada a uma conta do SoftLayer (por meio da qual os recursos de infraestrutura podem ser criados). Para obter mais informações, consulte  [ Tipos de conta ](https://console.bluemix.net/docs/account/index.html#accounts). O custo desses recursos de infraestrutura é mostrado em sua fatura do IBM Cloud.
 
 ## Como determinar se a conta do IBM Cloud pode criar instâncias do CFEE
 {: #account-check}
@@ -26,7 +26,7 @@ As instâncias do CFEE são implementadas em recursos de infraestrutura (os nós
 No exemplo abaixo, a usuária _Mary Smith_ efetuou login na conta do IBM Cloud _MyCompany_, que é uma conta para teste.
 ![Verificação de conta](img/AccountExample_1.png)
 
-No exemplo abaixo, a mesma conta do IBM Cloud _MyCompany_ foi submetida a upgrade para uma conta paga. Como resultado do upgrade, a conta agora está vinculada à conta do SoftLayer _1684806_. Ambas as contas são mostradas no campo "Conta".
+No exemplo abaixo, a mesma conta do IBM Cloud _MyCompany_ foi submetida a upgrade para uma conta paga.  Como resultado do upgrade, a conta agora está vinculada à conta do SoftLayer _1684806_.  Ambas as contas são mostradas no campo "Conta".
 ![Verificação de conta](img/AccountExample_2.png)
 
 Se a conta do IBM Cloud for uma conta para teste, você será solicitado a fazer upgrade dela quando tentar criar uma instância do CFEE. Consulte a tela mostrada abaixo:

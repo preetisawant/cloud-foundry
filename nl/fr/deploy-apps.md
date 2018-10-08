@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -22,7 +22,7 @@ Vous pouvez déployer des applications dans {{site.data.keyword.Bluemix}} avec l
 ## Déploiement d'applications avec la commande Cloud Foundry
 {: #dep_apps}
 
-Téléchargez et installez l'interface de ligne de commande {{site.data.keyword.Bluemix}}. [Téléchargement de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} ](https://clis.ng.bluemix.net){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+[Téléchargement et installation de l'interface de ligne de commande Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
 
 Une fois l'interface de ligne de commande installée, procédez comme suit :
 
@@ -31,25 +31,25 @@ Une fois l'interface de ligne de commande installée, procédez comme suit :
 3. Dans l'interface de ligne de commande, définissez le noeud final d'API sur le noeud final de votre environnement :
 
   ```
-  cf api <noeud_final_api>
+  cf api <api_endpoint>
   ```
   {: pre}
 
 4. Connectez-vous à l'environnement
 
   ```
-  cf login -u <nom_utilisateur> -o <nom_organisation> -s <nom_espace>
+  cf login -u <username> -o <org_name> -s <space_name>
   ```
   {: pre}
 
   Si vous vous servez d'un ID fédéré, utilisez l'option `-sso`.
 
   ```
-  cf login -o <nom_organisation> -s <nom_espace> -sso
+  cf login -o <org_name> -s <space_name> -sso
   ```
   {: pre}
 
-  **Remarque **: vous devez ajouter des apostrophes ou des guillemets autour de `nom_utilisateur`, `nom_organisation` et `nom_espace`, si cette valeur contient un espace. Par exemple, `-o "mon organisation"`.
+  **Remarque **: vous devez ajouter des apostrophes ou des guillemets autour de `username`, `org_name` et `space_name`, si cette valeur contient un espace. Par exemple, `-o "mon organisation"`.
 
 5.  A partir de `<your_new_directory>`, redéployez votre application dans {{site.data.keyword.Bluemix_notm}} à l'aide de la commande `bluemix app push`. Pour plus d'informations sur la commande `cf app push`, voir [Téléchargement de votre application](/docs/starters/upload_app.html).
 
@@ -75,7 +75,7 @@ Pour afficher les applications déployées dans un espace spécifique d'une inst
 4. Dans l'onglet __Espaces__, cliquez sur l'espace dans le tableau pour ouvrir la page de l'espace.
 5. Dans la page __Espace__, accédez à l'onglet **Applications**.
 6. L'onglet __Applications_)_ affiche toutes les applications déployées dans cet espace.
-Eventuellement, vous pouvez démarrer, redémarrer, arrêter ou supprimer une application via le menu situé tout à fait à droite de la ligne correspondant à l'application. 
+Eventuellement, vous pouvez démarrer, redémarrer, arrêter ou supprimer une application via le menu situé tout à fait à droite de la ligne correspondant à l'application.
 
 Vous pouvez également développer la ligne d'une application pour afficher les instances de service auxquelles l'application est liée.
 
@@ -96,11 +96,12 @@ Le tableau de la vue affiche les informations suivantes :
 | Espace | Organisation de l'instance CFEE où réside l'alias. |
 | Mémoire | Quantité de mémoire utilisée par l'application. |
 | Statut | Statut de l'application. |
-{:caption="Tableau 1. Description des éléments clés" caption-side="top"}
+{:caption="Tableau 1. Colonnes du tableau des applications du tableau de bord Cloud Foundry" caption-side="top"}
 
-Eventuellement, vous pouvez démarrer, redémarrer, arrêter ou supprimer une application via le menu situé tout à fait à droite de la ligne correspondant à l'application. Vous pouvez cliquer sur des applications, des environnements, des organisations ou des espaces pour accéder à la page correspondante dans l'interface utilisateur CFEE.
+Eventuellement, vous pouvez démarrer, redémarrer, arrêter ou supprimer une application via le menu situé tout à fait à droite de la ligne correspondant à l'application.
+Vous pouvez cliquer sur des applications, des environnements, des organisations ou des espaces pour accéder à la page correspondante dans l'interface utilisateur CFEE.
 
-Dans cette vue, vous avez la possibilité de regrouper des applications par organisation, espace, et/ou nom d'application. Cette option vous permet de fusionner en une seule entité plusieurs applications ayant des noms différents et/ou devant être déployées dans différents espaces ou organisation CFEE, mais qui correspondent à la même entité d'applications logique. Par exemple, vous pouvez avoir différentes applications qui représentent des composants d'un projet plus vaste ou qui sont déployées à différents stades de distribution (par exemple, développement, test, production) mais que vous voulez visualiser comme un ensemble d'une même entité logique.
+Dans cette vue, vous avez la possibilité de regrouper des applications par organisation, espace, et/ou nom d'application.  Cette option vous permet de fusionner en une seule entité plusieurs applications ayant des noms différents et/ou devant être déployées dans différents espaces ou organisation CFEE, mais qui correspondent à la même entité d'applications logique.  Par exemple, vous pouvez avoir différentes applications qui représentent des composants d'un projet plus vaste ou qui sont déployées à différents stades de distribution (par exemple, développement, test, production) mais que vous voulez visualiser comme un ensemble d'une même entité logique.
 
 Pour regrouper des applications, accédez au menu déroulant **Groupe** en haut de la page à droite.
 Lorsque vous regroupez des applications, chaque groupe obtenu est représenté par une seule entrée dans le tableau. Vous pouvez développer la ligne d'une entrée pour afficher les applications que contient le groupe.

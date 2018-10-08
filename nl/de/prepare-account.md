@@ -16,7 +16,7 @@ lastupdated: "2018-07-17"
 # Konto vorbereiten
 {: #prepare}
 
-CFEE-Instanzen werden auf Infrastrukturressourcen (Kubernetes-Workerknoten des IBM Container-Service) bereitgestellt, die für das IBM Cloud-Konto abgerechnet werden. Dies bedeutet, dass das IBM Cloud-Konto, unter dem die CFEE-Instanz erstellt wird, ein gebührenpflichtiges Konto sein muss (ein nutzungsabhängiges Konto oder ein Abonnementkonto). Falls das IBM Cloud-Konto, unter dem Sie eine CFEE-Instanz erstellen möchten, ein Testkonto ist, werden Sie bei dem Versuch eine CFEE-Instanz zu erstellen, aufgefordert, ein Upgrade für das Konto durchzuführen. Wenn für ein IBM Cloud-Konto ein Upgrade durchgeführt wird (von einem Testkonto auf ein nutzungsabhängiges Konto oder ein Abonnementkonto), wird das IBM Cloud-Konto mit einem SoftLayer-Konto verknüpft (über das Infrastrukturressourcen erstellt werden können). Weitere Informationen finden Sie unter [Kontotypen](https://console.bluemix.net/docs/account/index.html#accounts). Die Kosten für diese Infrastrukturressourcen werden in Ihrer IBM Cloud-Rechnung angezeigt.
+CFEE-Instanzen werden auf Infrastrukturressourcen (Kubernetes-Workerknoten des IBM Container-Service) bereitgestellt, die für das IBM Cloud-Konto abgerechnet werden. Dies bedeutet, dass das IBM Cloud-Konto, unter dem die CFEE-Instanz erstellt wird, ein gebührenpflichtiges Konto sein muss (ein nutzungsabhängiges Konto oder ein Abonnementkonto).  Falls das IBM Cloud-Konto, unter dem Sie eine CFEE-Instanz erstellen möchten, ein Testkonto ist, werden Sie bei dem Versuch eine CFEE-Instanz zu erstellen, aufgefordert, ein Upgrade für das Konto durchzuführen.  Wenn für ein IBM Cloud-Konto ein Upgrade durchgeführt wird (von einem Testkonto auf ein nutzungsabhängiges Konto oder ein Abonnementkonto), wird das IBM Cloud-Konto mit einem SoftLayer-Konto verknüpft (über das Infrastrukturressourcen erstellt werden können). Weitere Informationen finden Sie unter [Kontotypen](https://console.bluemix.net/docs/account/index.html#accounts). Die Kosten für diese Infrastrukturressourcen werden in Ihrer IBM Cloud-Rechnung angezeigt.
 
 ## Methode zum Feststellen, ob vom IBM Cloud-Konto CFEE-Instanzen erstellt werden können
 {: #account-check}
@@ -25,7 +25,7 @@ Sie können feststellen, ob ein IBM Cloud-Konto ein Testkonto oder ein gebühren
 
 Im folgenden Beispiel wird der Benutzer _Mary Smith_ am IBM Cloud-Konto _MyCompany_ angemeldet, bei dem es sich um ein Testkonto handelt. ![Kontoprüfung](img/AccountExample_1.png)
 
-Im Beispiel darunter wurde für dasselbe IBM Cloud-Konto _MyCompany_ ein Upgrade auf ein kostenpflichtiges Konto durchgeführt. Aufgrund des Upgrades ist das Konto nun mit dem SoftLayer-Konto _1684806_ verknüpft. Beide Konten werden im Feld 'Konto: angezeigt. ![Kontoprüfung](img/AccountExample_2.png)
+Im Beispiel darunter wurde für dasselbe IBM Cloud-Konto _MyCompany_ ein Upgrade auf ein kostenpflichtiges Konto durchgeführt.  Aufgrund des Upgrades ist das Konto nun mit dem SoftLayer-Konto _1684806_ verknüpft.  Beide Konten werden im Feld 'Konto: angezeigt. ![Kontoprüfung](img/AccountExample_2.png)
 
 Falls das IBM Cloud-Konto ein Testkonto ist, werden Sie bei dem Versuch eine CFEE-Instanz zu erstellen, aufgefordert, ein Upgrade für das Konto durchzuführen. Informationen hierzu finden Sie in der nachfolgenden Anzeige:
 

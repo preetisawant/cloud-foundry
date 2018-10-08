@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -23,7 +23,7 @@ implementar aplicativos. Ao usar um manifest do aplicativo, você reduz o númer
 ## Implementando aplicativos com o comando Cloud Foundry
 {: #dep_apps}
 
-Faça download e instale a interface da linha de comandos do {{site.data.keyword.Bluemix}}. [Faça download da CLI do {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+[Faça download e instale a CLI do Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
 
 Depois de instalar a interface da linha de comandos, siga estas etapas:
 
@@ -32,7 +32,7 @@ Depois de instalar a interface da linha de comandos, siga estas etapas:
 3. Na interface da linha de comandos, configure o terminal de API para o terminal do seu ambiente:
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
@@ -97,12 +97,12 @@ A tabela na visualização mostra as informações a seguir:
 | Espaço | A organização na instância do CFEE na qual o alias reside. |
 | Memória | A quantia de memória usada pelo aplicativo. |
 | Status | O status do aplicativo. |
-{:caption="Tabela 1. Descrição dos elementos-chave" caption-side="top"}
+{:caption="Tabela 1. Colunas na tabela de aplicativos do painel do Cloud Foundry" caption-side="top"}
 
 Opcionalmente, é possível Iniciar, Reiniciar, Parar ou Excluir um aplicativo acessando o menu na extrema direita da linha que representa o aplicativo.
 É possível clicar em qualquer um dos aplicativos, ambientes, organizações ou espaços para navegar para a página correspondente na interface com o usuário do CFEE.
 
-Nessa visualização, você tem a opção de agrupar aplicativos por organização, espaço e/ou nome do aplicativo. Esse recurso permite unir em uma única entidade os aplicativos que podem ter nomes diferentes e/ou ser implementados em diferentes organizações ou espaços do CFEE, mas que correspondem à mesma entidade de aplicativo lógico. Por exemplo, você pode ter aplicativos diferentes que representam componentes de um projeto mais amplo ou que são implementados em estágios de entrega diferentes (por exemplo, desenvolvimento, teste, produção), mas que você gostaria de visualizar agrupados como parte da mesma entidade lógica.
+Nessa visualização, você tem a opção de agrupar aplicativos por organização, espaço e/ou nome do aplicativo.  Esse recurso permite unir em uma única entidade os aplicativos que podem ter nomes diferentes e/ou ser implementados em diferentes organizações ou espaços do CFEE, mas que correspondem à mesma entidade de aplicativo lógico.  Por exemplo, você pode ter aplicativos diferentes que representam componentes de um projeto mais amplo ou que são implementados em estágios de entrega diferentes (por exemplo, desenvolvimento, teste, produção), mas que você gostaria de visualizar agrupados como parte da mesma entidade lógica.
 
 Para agrupar aplicativos, acesse a lista suspensa **Grupo** localizada na parte superior da página.
 Quando você agrupa aplicativos, cada grupo resultante é representado por uma única entrada na tabela. É possível expandir essa linha para mostrar os aplicativos sob esse grupo.

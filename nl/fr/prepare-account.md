@@ -16,7 +16,7 @@ lastupdated: "2018-07-17"
 # Préparation de votre compte
 {: #prepare}
 
-Les instances CFEE sont déployées dans des ressources d'infrastructure (noeuds worker Kubernetes issus du service de conteneur IBM) qui sont facturées au compte IBM Cloud. Cela signifie que le compte IBM Cloud sous lequel l'instance CFEE est créée doit être un compte payant (paiement à la carte ou compte d'abonnement). Si le compte IBM Cloud sous lequel vous prévoyez de créer une instance CFEE est un compte d'essai, vous devrez convertir le compte lorsque vous voudrez créer une instance CFEE. Lorsqu'un compte IBM Cloud est mis à niveau (depuis un compte d'essai vers un compte de paiement à la carte ou d'abonnement), il est lié à un compte SoftLayer (par le biais duquel des ressources d'infrastructure peuvent être créées). Pour plus d'informations, voir [Types de compte](https://console.bluemix.net/docs/account/index.html#accounts). Le coûts de ces ressources d'infrastructure apparaissent sur votre facture IBM Cloud.
+Les instances CFEE sont déployées dans des ressources d'infrastructure (noeuds worker Kubernetes issus du service de conteneur IBM) qui sont facturées au compte IBM Cloud. Cela signifie que le compte IBM Cloud sous lequel l'instance CFEE est créée doit être un compte payant (paiement à la carte ou compte d'abonnement).  Si le compte IBM Cloud sous lequel vous prévoyez de créer une instance CFEE est un compte d'essai, vous devrez convertir le compte lorsque vous voudrez créer une instance CFEE.  Lorsqu'un compte IBM Cloud est mis à niveau (depuis un compte d'essai vers un compte de paiement à la carte ou d'abonnement), il est lié à un compte SoftLayer (par le biais duquel des ressources d'infrastructure peuvent être créées). Pour plus d'informations, voir [Types de compte](https://console.bluemix.net/docs/account/index.html#accounts). Le coûts de ces ressources d'infrastructure apparaissent sur votre facture IBM Cloud.
 
 ## Comment déterminer si le compte IBM Cloud peut créer des instances CFEE
 {: #account-check}
@@ -26,7 +26,7 @@ Vous pouvez déterminer si un compte IBM Cloud est un compte d'essai ou payant, 
 Dans l'exemple suivant, l'utilisateur _Mary Smith_ est connecté au compte IBM Cloud _MyCompany_, qui est un compte d'essai.
 ![Vérification du compte](img/AccountExample_1.png)
 
-Dans l'exemple suivant, le même compte IBM Cloud _MyCompany_ a été transformé en compte payant. Le compte est désormais lié au compte SoftLayer _1684806_. Les deux comptes s'affichent dans la zone "Compte".
+Dans l'exemple suivant, le même compte IBM Cloud _MyCompany_ a été transformé en compte payant.  Le compte est désormais lié au compte SoftLayer _1684806_.  Les deux comptes s'affichent dans la zone "Compte".
 ![Vérification du compte](img/AccountExample_2.png)
 
 Si le compte IBM Cloud est un compte d'essai, vous serez invité à le mettre à niveau lorsque vous essayez de créer une instance CFEE. Observez l'écran illustré ci-dessous :

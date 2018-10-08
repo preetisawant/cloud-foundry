@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -13,69 +13,170 @@ lastupdated: "2018-04-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Creazione e visualizzazione delle istanze del servizio
-{: #creating-services}
+# Gestione dei servizi
+{: #workingwith-services}
 
 Le applicazioni distribuite in {{site.data.keyword.cfee_full_notm}} possono essere associate a due tipi di istanze del servizio:
-1. Le istanze del servizio gestite da un broker dei servizi Cloud Foundry locale (locale per la CFEE). A loro volta, possono essere di due tipi:
-   *  1a. Un'istanza di un'offerta di servizi creata dal marketplace Cloud Foundry dell'istanza {{site.data.keyword.cfee_full_notm}} corrente. Questo tipo di istanza del servizio richiede un broker dei servizi registrato disponibile nell'ambiente. Un broker dei servizi mostra un catalogo di offerte e piani del servizio, oltre a consentire la creazione, la rimozione, il bind e l'annullamento del bind delle istanze da tali offerte di servizi. Per ulteriori informazioni, consulta [Managing Service Brokers](https://docs.cloudfoundry.org/services/managing-service-brokers.html) nella documentazione Cloud Foundry.
-   * 1b. Un'istanza del servizio fornita dall'utente. La creazione di questo tipo è supportata tramite la CLI, ma non tramite l'interfaccia utente. Tuttavia, le istanze del servizio fornite dall'utente verranno elencate nell'interfaccia utente.
-2. Le istanze del servizio pubbliche create dal catalogo {{site.data.keyword.Bluemix}} e disponibili nell'account {{site.data.keyword.Bluemix}}.
-Le istanze del servizio pubbliche disponibili nell'account {{site.data.keyword.Bluemix}} non possono essere disponibili, da sole, agli ambienti CFEE. Affinché un'istanza del servizio pubblica (disponibile nell'account {{site.data.keyword.Bluemix}}) diventi disponibile per gli spazi in un ambiente CFEE, è necessario creare un alias per l'istanza del servizio nello spazio CFEE di destinazione. L'alias funziona come riferimento all'istanza del servizio pubblica effettiva.  Una volta che l'alias del servizio viene creato in uno spazio CFEE, può essere associato alle applicazioni in tale CFEE.  L'aliasing del servizio consente agli sviluppatori di sfruttare l'ampio catalogo dei servizi {{site.data.keyword.Bluemix}} nelle proprie applicazioni distribuite negli ambienti CFEE.
+1. Le istanze del servizio pubbliche create dal catalogo {{site.data.keyword.Bluemix}} e disponibili nell'account {{site.data.keyword.Bluemix}}.  
+Le istanze del servizio pubbliche disponibili nell'account {{site.data.keyword.Bluemix}} non possono essere disponibili, da sole, agli ambienti CFEE.  Affinché un'istanza del servizio pubblica (disponibile nell'account {{site.data.keyword.Bluemix}}) diventi disponibile per gli spazi in un ambiente CFEE, è necessario che venga specificamente aggiunta allo spazio CFEE di destinazione. Dopo che l'istanza del servizio {{site.data.keyword.Bluemix}} è aggiunta allo spazio CFEE, è possibile eseguirne il bind (associazione) alle applicazioni in tale spazio CFEE. Ciò consente agli sviluppatori di avvalersi del vasto catalogo di servizi {{site.data.keyword.Bluemix}} nelle loro applicazioni distribuite in ambienti CFEE, consentendo al tempo stesso il controllo dell'accesso a tali servizi {{site.data.keyword.Bluemix}}.
+
+   Oltre ad aggiungere le istanze del servizio {{site.data.keyword.Bluemix}} esistenti a uno spazio CFEE, puoi creare una nuova istanza del servizio {{site.data.keyword.Bluemix}} dall'interno di uno spazio CFEE, che ne esegue anche automaticamente l'aggiunta a tale spazio CFEE.
+
+2. Le istanze del servizio gestite da un broker dei servizi Cloud Foundry locale (locale per la CFEE). A loro volta, possono essere di due tipi:
+   *  2a. Un'istanza di un'offerta di servizi creata dal marketplace Cloud Foundry dell'istanza di {{site.data.keyword.cfee_full_notm}} corrente. Questo tipo di istanza del servizio richiede un broker dei servizi registrato disponibile nell'ambiente. Un broker dei servizi mostra un catalogo di offerte e piani del servizio, oltre a consentire la creazione, la rimozione, il bind (associazione) e l'annullamento del bind delle istanze da tali offerte di servizi. Per ulteriori informazioni, vedi il documento relativo alla [gestione dei broker dei servizi](https://docs.cloudfoundry.org/services/managing-service-brokers.html) nella documentazione Cloud Foundry.
+   * 2b. Un'istanza del servizio fornita dall'utente. La creazione di questo tipo è supportata tramite la CLI, ma non tramite l'interfaccia utente. Tuttavia, le istanze del servizio fornite dall'utente verranno elencate nell'interfaccia utente.
+   
+
+## Visualizzazione delle istanze del servizio {{site.data.keyword.Bluemix_notm}} in tutti gli ambienti CFEE
+{: #viewing-services_across}
+
+Vai al [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) per visualizzare una vista consolidata di tutte le istanze del servizio {{site.data.keyword.Bluemix_notm}} (a cui hai accesso) nell'account {{site.data.keyword.Bluemix_notm}} e vedi quali sono state aggiunte ai diversi spazi CFEE.
+
+Questa vista mostra tutte le istanze del servizio {{site.data.keyword.Bluemix_notm}} disponibili nell'account e indica quali sono state aggiunte (con alias) ai diversi spazi CFEE. Espandi un'istanza del servizio per visualizzare gli spazi CFEE dove è stata aggiunta. Puoi eseguirne un'ulteriore espansione per visualizzare le applicazioni in tali spazi a cui è stato eseguito il bind (associazione) di tali istanze del servizio.  
+
+Da questa vista, puoi anche eseguire il bind (associazione) delle applicazioni distribuite negli spazi CFEE a cui queste istanze del servizio sono state aggiunte. Vai al menu che si trova all'estrema destra della riga della tabella per il servizio corrispondente (disponibile per uno specifico spazio CFEE) e seleziona **Associa ad applicazioni**.
+
+## Aggiunta delle istanze del servizio {{site.data.keyword.Bluemix_notm}} esistenti a uno spazio CFEE
+{: #adding-services_inspace}
+
+Puoi eseguire il bind (associazione) di istanze del servizio {{site.data.keyword.Bluemix_notm}} alle applicazioni distribuite in uno spazio CFEE. Prima che sia possibile eseguirne il bind (associazione) a un'applicazione distribuita in CFEE, l'istanza del servizio deve essere aggiunta allo spazio CFEE in cui è distribuita l'applicazione. Prima di poter aggiungere un'istanza del servizio {{site.data.keyword.Bluemix_notm}} a uno spazio CFEE, è necessario quanto segue:
+* Il servizio {{site.data.keyword.Bluemix_notm}} deve essere disponibile nello stesso account {{site.data.keyword.Bluemix_notm}} in cui si trova l'istanza CFEE.
+* Devi disporre dell'accesso all'istanza del servizio {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, consulta la pagina Identity & Access nel menu**Gestisci > Utenti** nell'intestazione {{site.data.keyword.Bluemix_notm}} per controllare le tue politiche di accesso all'account correnti.
+
+Per aggiungere un'istanza del servizio {{site.data.keyword.Bluemix_notm}} esistente a uno spazio CFEE:
+1. Vai al [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
+2. Individua l'istanza del servizio {{site.data.keyword.Bluemix_notm}} dall'elenco e richiama il menu all'estrema destra della riga di tabella corrispondente.
+3. Seleziona **Aggiungi servizio**.
+4. Nella finestra di dialogo _Aggiungi servizio_, seleziona il CFEE, l'organizzazione e lo spazio dove vuoi aggiungere il servizio e fai clic su **Aggiungi**.
+5. Espandi il servizio {{site.data.keyword.Bluemix_notm}} di destinazione per trovare il nuovo CFEE in cui è stato aggiunto il servizio.
 
 
-## Creazione e visualizzazione degli alias in uno spazio CFEE 
+In alternativa, puoi aggiungere un'istanza del servizio {{site.data.keyword.Bluemix_notm}} dall'interno dello spazio CFEE dove vuoi aggiungerlo:
+1. Nel tuo [dashboard](https://console.bluemix.net/dashboard) {{site.data.keyword.Bluemix_notm}} o nel [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services), trova l'ambiente Cloud Foundry Enterprise che ospita la tua applicazione.
+2. Vai a **Organizzazioni** nel riquadro di navigazione e apri l'organizzazione e lo spazio in cui si trova l'applicazione.
+3. Passa alla scheda **Spazi** e individua lo spazio che contiene l'applicazione.
+4. Nella pagina dello spazio di destinazione, vai alla scheda **Servizi** e fai clic su **Aggiungi servizio**.  Verrà visualizzata la pagina di dialogo __Aggiungi servizio__.  La pagina elenca le istanze del servizio disponibili nell'account {{site.data.keyword.Bluemix_notm}}.
+5. Trova e seleziona un'istanza del servizio disponibile che vuoi aggiungere allo spazio CFEE. 
+6. L'istanza del servizio verrà aggiunta all'elenco dei servizi disponibili nello spazio CFEE.
+
+   **Nota:** quando aggiungi un servizio {{site.data.keyword.Bluemix_notm}} a uno spazio CFEE, viene creato un alias a tale istanza del servizio in tale spazio. Quando **Rimuovi** l'istanza del servizio da uno spazio CFEE (dal menu che si trova all'estrema destra della riga dell'istanza del servizio corrispondente nella tabella), il servizio non viene eliminato dall'account pubblico. L'azione si limita a rimuoverlo dall'account CFEE specifico e non è più disponibile per il bind (associazione) ad applicazioni in tale spazio CFEE. Inoltre, quando elimini l'istanza del servizio stessa dall'account {{site.data.keyword.Bluemix_notm}}, il servizio non è più disponibile per nessuno degli spazi CFEE. 
+
+## Creazione di istanze del servizio {{site.data.keyword.Bluemix_notm}} da una IU di spazio CFEE
 {: #creating-services_inspace}
+Puoi creare le istanze del servizio {{site.data.keyword.Bluemix_notm}} dall'interno di uno spazio CFEE. La creazione di un'istanza del servizio {{site.data.keyword.Bluemix_notm}} determina quanto segue:
+* L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene creata in IBM Cloud.  Questo è equivalente alla creazione dell'istanza del servizio dal {{site.data.keyword.Bluemix_notm}} [catalogo](https://console.bluemix.net/catalog).
+* L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene aggiunta (aggiunta con alias) nello spazio CFEE da cui è stata avviata l'azione di creazione.
 
-Un alias a un'istanza del servizio pubblica esistente disponibile nel tuo account IBM Cloud ti consente di eseguire il bind di tale istanza del servizio alle applicazioni distribuite in uno spazio CFEE. La creazione di un alias per un'istanza del servizio {{site.data.keyword.Bluemix_notm}} esistente richiede l'accesso da parte dell'utente all'istanza stessa. Per ulteriori informazioni, consulta la pagina Identity & Access nel menu**Manage > Users** nell'intestazione {{site.data.keyword.Bluemix_notm}} per controllare le tue politiche di accesso all'account correnti.
 
-Per creare un alias dell'istanza del servizio all'interno di uno spazio in una CFEE:
-
-1. Nel tuo dashboard {{site.data.keyword.Bluemix_notm}}, trova l'ambiente Cloud Foundry Enterprise che ospita la tua applicazione.
-2. Vai a **Organizations** nel pannello di navigazione e apri l'organizzazione e lo spazio in cui si trova l'applicazione.
-3. Passa alla scheda **Spaces** e individua lo spazio che contiene l'applicazione.
-4. Nella pagina dello spazio di destinazione, vai alla scheda **Services** e fai clic su **Create service**.  Si aprirà la pagina **Catalog** per il {{site.data.keyword.cfee_full_notm}}.  La pagina elenca le offerte di servizi da due origini (consulta la colonna _Source_):
-   * Offerte dal catalogo di IBM Cloud.
+Per creare un'istanza del servizio dall'interno di uno spazio CFEE:
+1. Nella pagina dello spazio di destinazione, vai alla scheda **Servizi** e fai clic su **Crea servizio**.  Verrà aperta la vista **Marketplace** per {{site.data.keyword.cfee_full_notm}}.  La vista elenca le offerte di servizi da due origini (vedi la colonna __Origine__):
+   * Le offerte dal catalogo di {{site.data.keyword.Bluemix_notm}} .
    * Le offerte dal marketplace {{site.data.keyword.cfee_full_notm}} locale.
-5. Trova e seleziona un'offerta di servizi disponibile che vuoi istanziare.
-6. A seconda dell'origine dell'offerta di servizi (IBM Cloud o CFEE locale) procedi con una delle seguenti operazioni:
-   * **Continua** alla pagina di creazione dell'offerta di servizi IBM Cloud per fornire il nome della nuova istanza del servizio, della regione, del piano e delle altre proprietà richieste per creare il servizio in IBM Cloud.  Dopo aver fatto clic su *Create* l'istanza del servizio sarà creata in IBM Cloud.  Inoltre, un alias di tale istanza del servizio verrà creato in {{site.data.keyword.cfee_full_notm}}. L'alias sarà disponibile per il bind con le applicazioni in {{site.data.keyword.cfee_full_notm}}.
-**Nota:** quando crei un {{site.data.keyword.Bluemix_notm}} in questa fase, oltre alla creazione di un'istanza pubblica disponibile agli utenti nell'account IBM Cloud, viene creato un alias per tale istanza del servizio nel {{site.data.keyword.cfee_full_notm}} da cui è stata creata.
-   * **Crea** l'istanza del servizio nel marketplace Cloud Foundry locale. In questo modo verrà aperta una finestra di dialogo in cui fornire il nome della nuova istanza del servizio e il piano. Dopo aver fatto clic su *Create* l'istanza del servizio sarà creata in {{site.data.keyword.cfee_full_notm}} e sarà disponibile per il bind con le applicazioni in {{site.data.keyword.cfee_full_notm}}.
+5. Trova e seleziona un'offerta di servizi disponibile che vuoi istanziare. 
+6. A seconda dell'origine dell'offerta di servizi (catalogo di IBM Cloud o marketplace CFEE locale), procedi con una delle seguenti operazioni:
+   * Se l'offerta di servizi selezionata è un'offerta del catalogo di {{site.data.keyword.Bluemix_notm}}, vedrai un pulsante **Continua** per continuare alla pagina di creazione dell'offerta di servizi IBM Cloud. È la stessa pagina disponibile dal catalogo di {{site.data.keyword.Bluemix_notm}}.  In questa pagina, fornisci il nome della nuova istanza del servizio, la regione, il piano ed altre proprietà necessarie per creare il servizio in IBM Cloud. Dopo che avrai creato l'istanza del servizio, essa verrà creata in IBM Cloud e aggiunta automaticamente allo spazio CFEE corrente.
+   * Se l'offerta di servizi selezionata proviene dal catalogo CFEE locale, vedrai un pulsante **Crea** per creare l'istanza del servizio. Ti verranno richiesti un'organizzazione e uno spazio nel CFEE corrente dove verrà creata l'istanza del servizio.
 
-Dopo che l'istanza del servizio è stata creata, l'istanza del servizio (se viene creata nel marketplace Cloud Foundry locale) o l'alias (se l'istanza del servizio è stata creata dal catalogo IBM Cloud) è elencata nella scheda **Services**.
+## Creazione di istanze del servizio {{site.data.keyword.Bluemix_notm}} da uno spazio CFEE utilizzando la CLI
+{: #creating-services_cli}
+
+Puoi creare un'istanza del servizio dalla CLI da uno spazio in un CFEE. La creazione di un servizio dalla CLI in uno spazio CFEE è equivalente a crearlo dall'IU in tale spazio. La creazione di un servizio ha, cioè, il seguente duplice risultato:
+* L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene creata in IBM Cloud.  Questo è equivalente alla creazione dell'istanza del servizio dal {{site.data.keyword.Bluemix_notm}} [catalogo](https://console.bluemix.net/catalog).
+* L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene aggiunta (aggiunta con alias) nello spazio CFEE da cui è stata avviata l'azione di creazione.
+
+La differenza tra la creazione di un'istanza del servizio da uno spazio CFEE rispetto alla sua creazione dalla CLI consiste nel ciclo di vita dell'istanza del servizio creata. Quando crei l'istanza del servizio nell'IU dello spazio CFEE, il ciclo di vita dell'istanza del servizio creata è controllato dall'istanza del servizio stessa nell'account {{site.data.keyword.Bluemix_notm}}. Ciò significa che gli aggiornamenti al piano di servizio sono controllati dall'istanza nell'account {{site.data.keyword.Bluemix_notm}}, non dallo spazio CFEE. In alternativa, se l'istanza del servizio viene creata dalla CLI, il ciclo di vita del servizio è controllato dallo spazio CFEE (il servizio viene aggiornato dallo spazio CFEE).
+
+Le istanze del servizio create dalla CLI sono visualizzate anche nell'IU e sono indicate da un ` * ` accanto al nome dell'istanza del servizio.
+
+Per creare le istanze del servizio utilizzando la CLI, attieniti alla seguente procedura:
+
+1. Scarica e installa la CLI (command line interface) {{site.data.keyword.Bluemix}} (se non l'hai già fatto). [Scarica la CLI Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+
+2. Vai alla pagina Panoramica di {{site.data.keyword.cfee_full}} e individua l'endpoint API dell'ambiente.
+
+3. Nella CLI (command line interface), imposta l'endpoint API sull'endpoint del tuo ambiente CFEE.
+
+  ```
+  cf api <api_enpoint>
+  ```
+  {: pre}
+
+4. Accedi all'ambiente CFEE:
+
+  ```
+  cf login -u <username> -o <org_name> -s <space_name>
+  ```
+  {: pre}
+
+  Se stai utilizzando un ID federato, utilizza l'opzione `-sso`:
+
+  ```
+  cf login -o <org_name> -s <space_name> -sso
+  ```
+  {: pre}
+  
+5. Crea il servizio:
+  
+  ```
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"name":"value","name":"value"}'
+  ```
+  {: pre}
+
+  Facoltativamente, puoi fornire un file che contiene i parametri in un oggetto JSON valido richiesto per la creazione di uno specifico servizio.
+  Il percorso al file dei parametri può essere un percorso assoluto o relativo a un file.
+  
+  ```
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
+  ```
+  {: pre}
+   
+  Il seguente è un esempio di un oggetto JSON valido:
+   
+  ```
+   {
+      "cluster_nodes": {
+         "count": 5,
+         "memory_mb": 1024
+      }
+   }
+  ```
+  {: pre}
+  
+   Per una guida nella creazione di un servizio dalla CLI, immetti:
+  
+  ```
+  cf cs -help
+  ```
+  Per ulteriori informazioni, vedi il documento relativo alla [gestione delle istanze del servizio con la CLI cf](https://docs.cloudfoundry.org/devguide/services/managing-services.html){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") nella documentazione di Cloud Foundry.
+  
+## Esecuzione del bind (associazione) di servizi alle applicazioni
+{: #bind_services}
+
+Puoi eseguire il bind (associazione) di un'istanza del servizio a un'applicazione distribuita in un CFEE dal [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) oppure dalla scheda Servizi della pagina dello spazio CFEE.  
+
+Per eseguire il bind (associazione) di un'istanza del servizio a un'applicazione dal [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services):
+1. Vai al [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) per visualizzare una vista consolidata di tutte le istanze del servizio {{site.data.keyword.Bluemix_notm}} disponibili per te nell'account {{site.data.keyword.Bluemix_notm}}.  La vista è anche concepita per visualizzare quali istanze del servizio {{site.data.keyword.Bluemix_notm}} sono disponibili (con alias) nei diversi spazi CFEE. Puoi espandere un'istanza del servizio per visualizzare gli spazi CFEE dove è stata aggiunta. Puoi eseguirne un'ulteriore espansione per visualizzare le applicazioni in tali spazi a cui è stato eseguito il bind (associazione) di tali istanze del servizio. 
+2. Individua l'istanza del servizio {{site.data.keyword.Bluemix_notm}} di cui vuoi eseguire il bind (associazione).
+3. Espandi la vista corrispondente per visualizzare tutti gli spazi CFEE dove è stata aggiunta tale istanza del servizio. Se tale istanza del servizio non è stata aggiunta allo spazio CFEE dove è distribuita l'applicazione, seleziona **Aggiungi** dal menu all'estrema destra della riga per rendere l'istanza del servizio disponibile nello spazio CFEE di destinazione.
+4. Vai al menu che si trova all'estrema destra della riga corrispondente al CFEE e/o allo spazio dove l'istanza del servizio è disponibile e seleziona **Associa applicazione**.
+5. Nella finestra di dialogo __Associa applicazione__, seleziona l'applicazione di cui vuoi eseguire il bind (associazione).
+6. Per l'applicazione è stato ora eseguito il bind (associazione) all'istanza del servizio nello spazio CFEE dove è distribuita l'applicazione. Puoi espandere la riga alla riga corrispondente nella tabella per visualizzare le applicazioni di cui è stato eseguito il bind (associazione) nello spazio CFEE.
 
 
-## Creazione e visualizzazione degli alias del servizio in tutti gli ambienti CFEE nel dashboard Cloud Foundry globale
-{: #creating-services_across}
+Per eseguire il bind (associazione) di un'applicazione a un'istanza del servizio dalla pagina __Servizi__ di uno spazio CFEE:
 
-Puoi visualizzare una vista consolidata di tutti gli alias dell'istanza del servizio (tra tutte le istanze CFEE) nel dashboard Cloud Foundry globale.
+1. Apri l'interfaccia utente CFEE dove è distribuita l'applicazione.
+2. Vai a **Organizzazioni** nel riquadro di navigazione a sinistra e apri l'organizzazione e lo spazio dove è distribuita l'applicazione.
+3. Passa alla scheda **Spazi** e individua lo spazio che contiene l'applicazione.
+4. Nella pagina dello spazio di destinazione, vai alla scheda **Servizi**.
+5. Nella tabella di **Istanze del servizio**, vai al menu __Azioni__ all'estrema destra della riga corrispondente all'istanza del servizio di cui desideri eseguire il bind (associazione) e seleziona **Associa**.
+6. Seleziona l'applicazione di cui vuoi eseguire il bind (associazione) all'istanza del servizio.
 
-1. Fai clic sull'icona Menu ![Account Checking](img/HamburgerMenu.png "Acquisizione schermo che mostra l'icona menu") > **Cloud Foundry** per aprire il dashboard Cloud Foundry.
-2. Fai clic su **Enterprise > Services** nel pannello di navigazione di sinistra.
-La tabella nella vista mostra le seguenti informazioni:
+Per annullare l'associazione da un'istanza del servizio:
 
-| Elemento   | Descrizione |
-|-----------|---------------|
-| Alias del servizio | Il nome dell'alias dell'istanza del servizio. |
-| Istanza del servizio | L'istanza del servizio IBM Cloud pubblica da cui viene creato l'alias. |
-| Offerta | L'offerta di servizi dal catalogo IBM Cloud da cui è stata creata l'istanza del servizio. |
-| CFEE | Il {{site.data.keyword.cfee_full}} in cui si trova l'alias. |
-| Organizzazione | L'organizzazione nell'istanza CFEE in cui si trova l'alias. |
-| Spazio | Lo spazio nell'organizzazione nell'istanza CFEE in cui si trova l'alias. |
-{:caption="Tabella 1. Descrizione degli elementi chiave" caption-side="top"}
+1. Nella scheda **Servizi** dello spazio, espandi l'istanza del servizio di destinazione per mostrare le applicazioni che sono associate ad essa.
+2. Vai al menu Azioni in una riga dell'applicazione e seleziona **Annulla associazione del servizio**.
 
-In questa vista puoi eseguire le seguenti azioni:
-* Ordinare gli elementi nella tabella per una qualsiasi delle proprietà visualizzate come colonne della tabella.
-* Eseguire il bind delle applicazioni a un alias specifico accedendo al menu di overflow dell'alias ubicato all'estrema destra della riga.
-* Espandere un alias (riga) per visualizzare tutte le applicazioni associate a tale alias.
-* Avviare, arrestare le applicazioni accedendo al menu di overflow dell'applicazione dell'alias ubicato all'estrema destra della riga.
-* Passare ad un CFEE, a un'organizzazione CFEE o a uno spazio CFEE facendo clic sul collegamento al corrispondente CFEE, organizzazione o spazio.
-
-Per creare un alias del servizio dal dashboard Cloud Foundry globale:
-1. Fai clic sul pulsante **Create service alias** all'inizio della pagina. Verrà visualizzata la finestra di dialogo _Create Service Alias_.  La finestra di dialogo elenca tutte le istanze del servizio pubbliche disponibili nell'account IBM Cloud corrente.
-2. Seleziona una delle istanze del servizio pubbliche.
-3. Fai clic su **Create**. Una volta creato, il nuovo alias dell'istanza del servizio verrà aggiunto all'elenco.
-L'alias del servizio verrà visualizzato anche nell'elenco dei servizi nello spazio CFEE, in cui può essere associato alle applicazioni in tale spazio (CFEE > Organizations > Space > Services).
+Vedi il documento relativo [al bind (associazione) di un'istanza del servizio](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") nella documentazione di Cloud Foundry per ulteriori informazioni sull'esecuzione del bind delle applicazioni utilizzando la CLI.
 
 

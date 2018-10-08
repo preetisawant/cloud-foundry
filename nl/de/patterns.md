@@ -17,7 +17,8 @@ lastupdated: "2018-04-13"
 # Strukturelle Übersicht
 {: #patterns}
 
-Für den Erfolg eines Projekts ist es wichtig, sich Zeit zum Planen und Entwerfen zu nehmen, um die erforderlichen Ressourcen und die Anforderungen Ihres Unternehmens zu klären. Beginnen Sie zunächst mit den folgenden Fragen:{:shortdesc}
+Für den Erfolg eines Projekts ist es wichtig, sich Zeit zum Planen und Entwerfen zu nehmen, um die erforderlichen Ressourcen und die Anforderungen Ihres Unternehmens zu klären. Beginnen Sie zunächst mit den folgenden Fragen:
+{:shortdesc}
 
 * Wie viele und welche Art von Anwendungen entwickeln Sie?
 * Auf welche Services müssen die Anwendungen zugreifen können?
@@ -39,15 +40,15 @@ Die folgende Tabelle enthält eine Zusammenfassung einiger Schlüsselelemente.
 || Kann nur Eigner eines Kontos sein. |
 || Kann einen oder mehrere Organisationsmanager zur Delegierung des Organisationsmanagements hinzufügen, das Lese- und Schreibberechtigungen für die Organisationen umfasst. |
 || Kann ein Teammitglied in Organisationen und Bereichen in anderen {{site.data.keyword.Bluemix_notm}}-Konten sein. |
-| Organisation | Enthält mindestens einen Bereich. |
+| Organisation   | Enthält mindestens einen Bereich. |
 || Enthält mindestens einen Organisationsmanager. |
 || Enthält mindestens ein Teammitglied. Jedem Teammitglied kann mindestens eine Rolle erteilt werden. |
 || Die Nutzungsgebühren, die durch eine bereitgestellte Anwendung in einem Bereich generiert werden, werden auf Organisationsebene gemeldet. |
-| Bereich | Enthält mindestens eine Ressource. |
+| Bereich   | Enthält mindestens eine Ressource. |
 || Enthält mindestens eine App. |
 || Enthält mindestens einen Bereichsmanager. |
 || Enthält mindestens ein Teammitglied. Jeder Benutzer muss bereits ein Teammitglied in der Eignerorganisation sein. Jedem Teammitglied kann mindestens eine Rolle erteilt werden. |
-| Teammitglied | Kann mindestens einer Organisation und mindestens einem Bereich über verschiedene Konten hinweg hinzugefügt werden. |
+| Teammitglied   | Kann mindestens einer Organisation und mindestens einem Bereich über verschiedene Konten hinweg hinzugefügt werden. |
 || Kann mehrere Rollen innerhalb derselben Organisation und/oder desselben Bereichs innehaben. |
 {:caption="Tabelle 1. Beschreibung von Schlüsselelementen" caption-side="top"}
 

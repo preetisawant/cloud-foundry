@@ -16,9 +16,9 @@ lastupdated: "2018-08-07"
 # Surveillance
 {: #monitoring}
 
-La surveillance d'une instance {{site.data.keyword.cfee_full}} et de l'infrastructure prise en charge est assurée par un ensemble d'outils open source composé de Prometheus et Grafana. La solution permet d'analyser, de visualiser et de gérer les alertes liées aux métriques de l'environnement Cloud Foundry. Trois consoles Web permettent de mettre en oeuvre la surveillance : la console Grafana, la console Prometheus et la console Prometheus Alert Manager.
+La surveillance d'une instance {{site.data.keyword.cfee_full}} et de l'infrastructure prise en charge est assurée par un ensemble d'outils open source composé de Prometheus et Grafana.  La solution permet d'analyser, de visualiser et de gérer les alertes liées aux métriques de l'environnement Cloud Foundry.  Trois consoles Web permettent de mettre en oeuvre la surveillance : la console Grafana, la console Prometheus et la console Prometheus Alert Manager.
 
-**Remarque :** l'accès à la fonction de surveillance dans une instance {{site.data.keyword.cfee_full}} nécessite d'avoir le rôle _Administrateur_ ou _Editeur_ dans le cluster Kubernetes qui prend en charge l'instance CFEE. Le nom par défaut du cluster Kubernetes qui prend en charge l'instance CFEE est _`<CFEEname>`-cluster_.
+**Remarque :** l'accès à la fonction de surveillance dans une instance {{site.data.keyword.cfee_full}} nécessite d'avoir le rôle _Administrateur_ ou _Editeur_ dans le cluster Kubernetes qui prend en charge l'instance CFEE.  Le nom par défaut du cluster Kubernetes qui prend en charge l'instance CFEE est _`<CFEEname>`-cluster_.
 
 ## Prometheus
 {: #prometheus}
@@ -38,12 +38,12 @@ Prometheus rassemble des métriques à partir de travaux instrumentés, soit dir
 ## Grafana
 {: #grafana}
 
-Grafana est une plateforme d'analyse open source pour toutes les métriques que Prometheus collecte. La version de Grafana déployée dans votre cluster est déjà configurée pour utiliser la base de données Prometheus sous-jacente. Elle contient également certains tableaux de bord Grafana très utiles. Voir la [documentation Grafana](http://docs.grafana.org/guides/getting_started/) pour plus d'informations.
+Grafana est une plateforme d'analyse open source pour toutes les métriques que Prometheus collecte. La version de Grafana déployée dans votre cluster est déjà configurée pour utiliser la base de données Prometheus sous-jacente. Elle contient également certains tableaux de bord Grafana très utiles.  Voir la [documentation Grafana](http://docs.grafana.org/guides/getting_started/) pour plus d'informations.
 
 ## Initiation à la surveillance
 {: #gettingStarted_monitor}
 
-Les composants Prometheus et Grafana qui contiennent la solution de surveillance sont préinstallés dans l'infrastructure Kubernetes qui prend en charge l'instance CFEE. L'accès aux outils de surveillance nécessite de réacheminer les ports des serveurs Prometheus, Prometheus AlertManager et Grafana. Cette opération s'effectue à l'aide de l'interface de ligne de commande Kubernetes.
+Les composants Prometheus et Grafana qui contiennent la solution de surveillance sont préinstallés dans l'infrastructure Kubernetes qui prend en charge l'instance CFEE.  L'accès aux outils de surveillance nécessite de réacheminer les ports des serveurs Prometheus, Prometheus AlertManager et Grafana. Cette opération s'effectue à l'aide de l'interface de ligne de commande Kubernetes.
 Les sections qui suivent vous guident dans les étapes d'installation de l'interface de ligne de commande requise, de réacheminement des ports des serveurs et de lancement des consoles.
 
 **Remarque :** les instructions suivantes sont également disponibles dans l'interface utilisateur {{site.data.keyword.cfee_full}}.  Ouvrez l'interface utilisateur de l'instance CFEE, puis cliquez sur **Surveillance** dans le volet de navigation de gauche pour afficher les instructions.
@@ -52,7 +52,7 @@ Les sections qui suivent vous guident dans les étapes d'installation de l'inter
 
 1. Vérifiez dans vos [règles d'accès](https://console.bluemix.net/iam/#/users) que vous détenez au minimum le rôle d'afficheur sur le cluster Kubernetes qui prend en charge l'environnement.
 2. Vous avez installé l'[interface de ligne de commande d'IBM Cloud](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
-3. Installez l'[interface de ligne de commande Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Si vous disposez déjà d'une interface de ligne de commande Kubernetes, nous vous recommandons d'installer la version la plus récente.
+3. Installez l'[interface de ligne de commande Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  Si vous disposez déjà d'une interface de ligne de commande Kubernetes, nous vous recommandons d'installer la version la plus récente.
 4. Installez le plug-in du service de conteneur :
 ```
     ibmcloud plugin install container-service -r Bluemix
@@ -98,11 +98,11 @@ Les sections qui suivent vous guident dans les étapes d'installation de l'inter
 
 ### Lancement des consoles de surveillance sur votre proxy Web local
 
-5. Lancez la console Grafana pour visualiser l'analyse de métriques sélectionnées. Des tableaux de bord Grafana par défaut sont inclus dans l'instance CFEE. Ces tableaux de bord par défaut sont interactifs et vous permettent de visualiser l'infrastructure utilisée pour héberger votre instance CFEE. (cluster Kubernetes). Une fois la console Grafana lancée, cliquez sur le bouton **Accueil** en haut de la console Grafana pour sélectionner l'un des tableaux de bord prédéployés (voir la liste ci-dessous), qui présentera sous forme graphique les métriques correspondantes :
+5. Lancez la console Grafana pour visualiser l'analyse de métriques sélectionnées.  Des tableaux de bord Grafana par défaut sont inclus dans l'instance CFEE. Ces tableaux de bord par défaut sont interactifs et vous permettent de visualiser l'infrastructure utilisée pour héberger votre instance CFEE. (cluster Kubernetes). Une fois la console Grafana lancée, cliquez sur le bouton **Accueil** en haut de la console Grafana pour sélectionner l'un des tableaux de bord prédéployés (voir la liste ci-dessous), qui présentera sous forme graphique les métriques correspondantes :
 
    Dans Grafana, il existe un utilisateur `admin` par défaut dont le mot de passe par défaut est `admin`. Nous vous recommandons de vous connecter avec le nom d'utilisateur et le mot de passe `admin/admin`, puis de les remplacer par de nouvelles données d'identification :
 
-     [Lancement du serveur Grafana](https://localhost:3000)
+     [Lancement de la console Grafana](https://localhost:3000)
 
    Les tableaux de bord par défaut suivants sont fournis avec l'instance CFEE et sont disponibles à partir du menu déroulant _Accueil_.
 

@@ -43,14 +43,14 @@ Grafana è una piattaforma di analisi open-source per tutte le metriche raccolte
 ## Introduzione al monitoraggio
 {: #gettingStarted_monitor}
 
-I componenti Prometheus e Grafana che comprendono la soluzione di monitoraggio sono preinstallati nell'infrastruttura Kubernetes che supporta l'istanza CFEE.  Per accedere agli strumenti di monitoraggio devi inoltrare le porte dei server Prometheus, Prometheus AlertManager e Grafana.  Questa operazione viene eseguita tramite la CLI Kubernetes.
+I componenti Prometheus e Grafana che comprendono la soluzione di monitoraggio sono preinstallati nell'infrastruttura Kubernetes che supporta l'istanza CFEE.  Per accedere agli strumenti di monitoraggio, è necessario inoltrare le porte dei server Prometheus, Prometheus AlertManager e Grafana.  Questa operazione viene eseguita tramite la CLI Kubernetes.
 Di seguito vengono riportate le istruzioni per l'installazione delle CLI richieste, l'inoltro delle porte del server e l'avvio delle console.
 
-**Nota:** le seguenti istruzioni sono disponibili anche nell'interfaccia utente di {{site.data.keyword.cfee_full}}.  Apri l'interfaccia utente dell'istanza CFEE e fai clic su **Monitoring** nel pannello di navigazione di sinistra per visualizzare le istruzioni visualizzate.
+**Nota:** le seguenti istruzioni sono disponibili anche nell'interfaccia utente di {{site.data.keyword.cfee_full}}.  Apri l'interfaccia utente dell'istanza CFEE e fai clic su **Monitoraggio** nel riquadro di navigazione di sinistra per visualizzare le istruzioni visualizzate.
 
 ### Prerequisiti
 
-1. Spunta [Access Policies](https://console.bluemix.net/iam/#/users) per assicurarti di avere almeno un ruolo di visualizzatore nel cluster Kubernetes che supporta l'ambiente.
+1. Spunta [Politiche di accesso](https://console.bluemix.net/iam/#/users) per assicurarti di avere almeno un ruolo di visualizzatore nel cluster Kubernetes che supporta l'ambiente.
 2. Installa la [CLI IBM Cloud](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
 3. Installa la [CLI Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  Se hai una CLI Kubernetes esistente, ti consigliamo di installare la versione più recente.
 4. Installa il plug-in del servizio contenitore:
@@ -102,34 +102,34 @@ Di seguito vengono riportate le istruzioni per l'installazione delle CLI richies
 
    Esiste un utente `admin` predefinito in Grafana, la cui password predefinita è impostata su `admin`. Ti consigliamo di accedere con il nome utente e la password `admin/admin` e di modificarle in nuove credenziali:
 
-     [Avvia il server Grafana](https://localhost:3000)
+     [Avvia la console Grafana](https://localhost:3000)
 
    I seguenti dashboard predefiniti sono forniti con l'istanza CFEE e sono disponibili dall'elenco a discesa _Home_.
 
    I dashboard per l'infrastruttura Kubernetes che supporta l'ambiente CFEE:
    - Dashboard _Kubernetes Capacity Planing_ 
         - Mostra la capacità dell'infrastruttura Kubernetes.
-   - Dashboard _Kubernetes Cluster Health_ 
+   - Dashboard _Kubernetes Cluster Health_
         - Mostra l'integrità del cluster Kubernetes.
-   - Dashboard _Kubernetes Cluster Status_ 
+   - Dashboard _Kubernetes Cluster Status_
         - Mostra lo stato del cluster Kubernetes.
-   - Dashboard _Kubernetes Resource Requests_ 
+   - Dashboard _Kubernetes Resource Requests_
         - Mostra la CPU, la memoria e altri parametri utilizzati nel cluster Kubernetes.
-   - Dashboard _Nodes_ 
+   - Dashboard _Nodes_
         - Mostra i dettagli di ogni nodo di lavoro del cluster Kubernetes.
-   - Dashboard _Pods_ 
+   - Dashboard _Pods_
         - Mostra i dettagli di ogni pod in esecuzione nel cluster Kubernetes.
-   - Dashboard _Replica Set_ 
+   - Dashboard _Replica Set_
         - Mostra lo stato delle serie di repliche Kubernetes.
-   - Dashboard _Deployment_ 
+   - Dashboard _Deployment_
         - Mostra lo stato delle tue distribuzioni Kubernetes.
 
    Dashboard Cloud Foundry:
-   - Dashboard _CF: Cells Capacity_ 
+   - Dashboard _CF: Cells Capacity_
         - Mostra lo stato generale delle celle Cloud Foundry in cui sono distribuite le applicazioni Cloud Foundry.
-   - Dashboard _CF: Router_ 
+   - Dashboard _CF: Router_
         - Mostra lo stato del router Cloud Foundry in esecuzione sul tuo ambiente CFEE.
-   - Dashboard _CF: Diego_Cell_ 
+   - Dashboard _CF: Diego_Cell_
         - Mostra lo stato delle celle Cloud Foundry e dei componenti di Diego.
 
 6. Facoltativamente, puoi anche avviare la console Prometheus per visualizzare i dati non elaborati raccolti dai server Prometheus e Prometheus Alertmanager per gestire gli avvisi inviati dal server Prometheus:

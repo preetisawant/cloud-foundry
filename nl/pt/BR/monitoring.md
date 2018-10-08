@@ -16,9 +16,9 @@ lastupdated: "2018-08-07"
 # Monitoramento
 {: #monitoring}
 
-O monitoramento de uma instância do {{site.data.keyword.cfee_full}} e de sua infraestrutura suportada é suportado por um conjunto de ferramentas de software livre consistindo no Prometheus e Grafana. A solução permite que você analise, visualize e gerencie alertas para métricas no ambiente do Cloud Foundry. Há três consoles da web nos quais ocorre o monitoramento: um console do Grafana, um console do Prometheus e um console do Prometheus Alert Manager.
+O monitoramento de uma instância do {{site.data.keyword.cfee_full}} e de sua infraestrutura suportada é suportado por um conjunto de ferramentas de software livre consistindo no Prometheus e Grafana.  A solução permite que você analise, visualize e gerencie alertas para métricas no ambiente do Cloud Foundry.  Há três consoles da web nos quais ocorre o monitoramento: um console do Grafana, um console do Prometheus e um console do Prometheus Alert Manager.
 
-**Nota ** o acesso ao recurso de monitoramento em uma instância do {{site.data.keyword.cfee_full}} requer uma função de _Administrador_ ou _Editor_ nesse cluster do Kubernetes que suporte a instância do CFEE. O nome padrão do cluster do Kubernetes que suporta uma instância do CFEE é _`<CFEEname>` -cluster _.
+**Nota ** o acesso ao recurso de monitoramento em uma instância do {{site.data.keyword.cfee_full}} requer uma função de _Administrador_ ou _Editor_ nesse cluster do Kubernetes que suporte a instância do CFEE.  O nome padrão do cluster do Kubernetes que suporta uma instância do CFEE é _`<CFEEname>` -cluster _.
 
 ## Prometheus.
 {: #prometheus}
@@ -38,15 +38,15 @@ O Prometheus reúne métricas de tarefas instrumentadas, diretamente ou por meio
 ## Grafana
 {: #grafana}
 
-Grafana é uma plataforma de análise de software livre para todas as métricas coletadas pelo Prometheus. A versão do Grafana implementada em seu cluster já está configurada para usar o banco de dados Prometheus subjacente. Ela também contém alguns valiosos painéis do Grafana. Consulte [Documentação do Grafana](http://docs.grafana.org/guides/getting_started/) para obter mais informações.
+Grafana é uma plataforma de análise de software livre para todas as métricas coletadas pelo Prometheus. A versão do Grafana implementada em seu cluster já está configurada para usar o banco de dados Prometheus subjacente. Ela também contém alguns valiosos painéis do Grafana.  Consulte [Documentação do Grafana](http://docs.grafana.org/guides/getting_started/) para obter mais informações.
 
 ## Introdução ao Monitoramento
 {: #gettingStarted_monitor}
 
-Os componentes Prometheus e Grafana que compõem a solução de monitoramento são pré-instalados na infraestrutura do Kubernetes que suporta a instância do CFEE. Para acessar as ferramentas de monitoramento, é necessário encaminhar as portas dos servidores Prometheus, Prometheus AlertManager e Grafana. Isso é feito por meio da CLI do Kubernetes.
+Os componentes Prometheus e Grafana que compõem a solução de monitoramento são pré-instalados na infraestrutura do Kubernetes que suporta a instância do CFEE.  Para acessar as ferramentas de monitoramento, é necessário encaminhar as portas dos servidores Prometheus, Prometheus AlertManager e Grafana. Isso é feito por meio da CLI do Kubernetes.
 A seguir você é conduzido pelas etapas para instalar a CLI necessária, encaminhar as portas do servidor e ativar os consoles.
 
-**Nota:** as instruções a seguir também estão disponíveis na interface com o usuário do {{site.data.keyword.cfee_full}}. Abra a interface com o usuário da instância do CFEE e clique em **Monitoramento** na área de janela de navegação esquerda para ver as instruções exibidas.
+**Nota:** as instruções a seguir também estão disponíveis na interface com o usuário do {{site.data.keyword.cfee_full}}.  Abra a interface com o usuário da instância do CFEE e clique em **Monitoramento** na área de janela de navegação esquerda para ver as instruções exibidas.
 
 ### Pré-requisito
 
@@ -98,11 +98,11 @@ A seguir você é conduzido pelas etapas para instalar a CLI necessária, encami
 
 ### Ativar os consoles de monitoramento em seu proxy da web local
 
-5. Ative o console do Grafana para ver a analítica nas métricas selecionadas. Há painéis padrão do Grafana incluídos na instância do CFEE. Esses painéis padrão são interativos e fornecem uma visualização da infraestrutura usada para hospedar sua instância do CFEE. (Cluster de Kubernetes). Depois de ativar o console do Grafana, clique no botão **Página inicial** na parte superior do console do Grafana para selecionar um dos painéis pré-implementados (veja a lista a seguir), que criará o gráfico das métricas correspondentes:
+5. Ative o console do Grafana para ver a analítica nas métricas selecionadas.  Há painéis padrão do Grafana incluídos na instância do CFEE. Esses painéis padrão são interativos e fornecem uma visualização da infraestrutura usada para hospedar sua instância do CFEE. (Cluster de Kubernetes). Depois de ativar o console do Grafana, clique no botão **Página inicial** na parte superior do console do Grafana para selecionar um dos painéis pré-implementados (veja a lista a seguir), que criará o gráfico das métricas correspondentes:
 
    Há um usuário padrão `admin` no Grafana, com a senha padrão configurada como `admin`. Recomendamos efetuar login com o ID do usuário/Senha `admin/admin` e mudá-los para novas credenciais:
 
-     [ Ativar servidor Grafana ](https://localhost:3000)
+     [ Ativar console do Grafana ](https://localhost:3000)
 
    Os painéis padrão a seguir são fornecidos com a instância do CFEE e estão disponíveis na lista suspensa _Página inicial_.
 

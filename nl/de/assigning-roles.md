@@ -58,9 +58,11 @@ Ein Organisationsmanager ist unter anderem für Tasks wie die Erstellung von Ber
 ### Organisationsauditor
 {: #bporgauditor}
 
-Die Teammitglieder mit der Organisationsrolle **Auditor** können das Kontingent, die Ressourcennutzung und die Teammitglieder für alle Bereiche in einer Organisation überwachen. Die Auditoren können anschließend Berichte zur Organisationseffizienz erstellen und auf potenzielle Probleme hinweisen.
+Die Teammitglieder mit der Organisationsrolle **Auditor** können das Kontingent, die Ressourcennutzung und die Teammitglieder für alle Bereiche in einer Organisation überwachen.
+Die Auditoren können anschließend Berichte zur Organisationseffizienz erstellen und auf potenzielle Probleme hinweisen.
 
-* Wenn Sie eine Architektur mit mehreren Organisationen einrichten, kann es sinnvoll sein, die Auditorrolle den gleichen Teammitgliedern für jede Organisation zu erteilen, die Teil des Kontos ist. Diese Teammitglieder können dann das Kontingent für alle Organisationen in Ihrer Cloudumgebung überwachen und sich einen umfassenden Überblick über das Konto verschaffen.
+* Wenn Sie eine Architektur mit mehreren Organisationen einrichten, kann es sinnvoll sein, die Auditorrolle den gleichen Teammitgliedern für jede Organisation zu erteilen, die Teil des Kontos ist.
+Diese Teammitglieder können dann das Kontingent für alle Organisationen in Ihrer Cloudumgebung überwachen und sich einen umfassenden Überblick über das Konto verschaffen.
 * Wenn Sie eine Architektur mit einer Einzelorganisation einrichten, erteilen Sie die Auditorrolle den Teammitgliedern, die für die Überwachung der Kontingentnutzung und der allgemeinen Effizienz der Organisation zuständig sind.
 
 ### Abrechnungsmanager der Organisation

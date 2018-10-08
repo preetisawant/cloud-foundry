@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-07-17"
 ## 使用 Cloud Foundry 命令部署应用程序
 {: #dep_apps}
 
-下载并安装 {{site.data.keyword.Bluemix}} 命令行界面。[下载 {{site.data.keyword.Bluemix_notm}} CLI ](https://clis.ng.bluemix.net){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+[下载并安装 Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 
 安装命令行界面后，请执行以下步骤：
 
@@ -31,7 +31,7 @@ lastupdated: "2018-07-17"
 3. 在命令行界面中，将 API 端点设置为您的环境的端点：
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
@@ -58,7 +58,7 @@ lastupdated: "2018-07-17"
   ```
   {: pre}
 
-6.  通过浏览至 `https://<app_url>.<AppDomainName>` 来访问应用程序。
+6.  通过浏览至 `https://<app_url>.<AppDomainName>`.
 
 ## 在用户界面中查看部署的应用程序
 {: #view_apps}
@@ -96,7 +96,7 @@ lastupdated: "2018-07-17"
 |空间|别名所在的 CFEE 实例中的组织。|
 |内存|应用程序使用的内存量。|
 |状态|应用程序的状态。|
-{:caption="表 1. 关键元素描述" caption-side="top"}
+{:caption="表 1. Cloud Foundry 仪表板的应用程序表中的列" caption-side="top"}
 
 （可选）可以通过访问表示应用程序的行最右边的菜单来启动、重新启动、停止或删除应用程序。可以在 CFEE 用户界面中单击任何应用程序、环境、组织或空间，以浏览至相应的页面。
 

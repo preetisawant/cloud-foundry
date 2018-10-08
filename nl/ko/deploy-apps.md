@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-07-17"
 ## Cloud Foundry 명령을 사용하여 애플리케이션 배치
 {: #dep_apps}
 
-{{site.data.keyword.Bluemix}} 명령행 인터페이스를 다운로드하여 설치하십시오. [{{site.data.keyword.Bluemix_notm}} CLI를 다운로드](https://clis.ng.bluemix.net){: new_window}하십시오. ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
+[Cloud Foundry CLI를 다운로드하여 설치 ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")하십시오. 
 
 명령행 인터페이스를 설치한 후 다음 단계를 따르십시오.
 
@@ -31,7 +31,7 @@ lastupdated: "2018-07-17"
 3. 명령행 인터페이스에서 API 엔드포인트를 사용자 환경의 엔드포인트로 설정하십시오.
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
@@ -58,7 +58,7 @@ lastupdated: "2018-07-17"
   ```
   {: pre}
 
-6.  `https://<app_url>.<AppDomainName>`을 찾아서 앱에 액세스하십시오.
+6.  `https://<app_url>.<AppDomainName>`.
 
 ## 사용자 인터페이스에서 배치된 애플리케이션 보기
 {: #view_apps}
@@ -96,12 +96,12 @@ lastupdated: "2018-07-17"
 |영역 |별명이 상주하는 CFEE 인스턴스의 조직입니다. |
 |메모리 |애플리케이션에서 사용된 메모리의 양입니다. |
 |상태 |애플리케이션의 상태입니다. |
-{:caption="표 1. 핵심 요소 설명" caption-side="top"}
+{:caption="표 1. Cloud Foundry 대시보드의 애플리케이션 테이블의 열" caption-side="top"}
 
 선택적으로 애플리케이션을 표시하는 행의 맨 오른쪽에 있는 메뉴에 액세스하여 애플리케이션을 시작, 다시 시작, 중지 또는 삭제할 수 있습니다.
 애플리케이션, 환경, 조직 또는 영역 중 하나를 클릭하여 CFEE 사용자 인터페이스의 해당 페이지로 이동할 수 있습니다.
 
-이 보기에는 애플리케이션을 조직, 영역 및/또는 애플리케이션 이름으로 그룹화하는 옵션이 있습니다. 이 기능을 사용하면 여러 이름이 있거나 여러 CFEE 조직 또는 영역에 배치될 수 있지만 동일한 논리 애플리케이션 엔티티에 해당하는 단일 엔티티 애플리케이션으로 통합할 수 있습니다. 예를 들어, 광범위한 프로젝트의 컴포넌트를 나타내거나 여러 전달 단계(예: 개발, 테스트, 프로덕션)에서 배치되지만 동일한 논리 엔티티의 일부로 그룹화하여 보려는 여러 애플리케이션이 있을 수 있습니다.
+이 보기에는 애플리케이션을 조직, 영역 및/또는 애플리케이션 이름으로 그룹화하는 옵션이 있습니다.  이 기능을 사용하면 여러 이름이 있거나 여러 CFEE 조직 또는 영역에 배치될 수 있지만 동일한 논리 애플리케이션 엔티티에 해당하는 단일 엔티티 애플리케이션으로 통합할 수 있습니다.  예를 들어, 광범위한 프로젝트의 컴포넌트를 나타내거나 여러 전달 단계(예: 개발, 테스트, 프로덕션)에서 배치되지만 동일한 논리 엔티티의 일부로 그룹화하여 보려는 여러 애플리케이션이 있을 수 있습니다.
 
 애플리케이션을 그룹화하려면 페이지의 오른쪽 상단에 있는 **그룹** 드롭 다운으로 이동하십시오.
 애플리케이션을 그룹화하면 각 결과 그룹이 테이블에 단일 항목으로 표시됩니다. 해당 행을 펼쳐서 해당 그룹 아래에 애플리케이션을 표시할 수 있습니다.
@@ -131,19 +131,19 @@ cf push -f appManifest.yml
 |옵션 |설명 |사용법 또는 예 |
 |:----------|:--------------|:---------------|
 |**buildpack** |사용자 정의 빌드팩의 URL 또는 이름입니다. |`buildpack:` *buildpack_URL* |
-|**disk_quota** |애플리케이션에 대해 할당된 디스크 할당량입니다. 기본값은 1G입니다.	|`disk_quota: 500M` |
-|**domain** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 도메인 이름입니다.	|`domain:` ng.bluemix.net |
-|**host** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 호스트 이름입니다. 이 값은 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다.	|`host:` *host_name* |
-|**name** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 이름입니다. 이 값은 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다.	|`name:` *appname* |
-|**path** |애플리케이션의 위치입니다. 이 값은 상대 경로 또는 절대 경로일 수 있습니다.	|`path:` *path_to_application* |
-|**command** | 애플리케이션에 대한 사용자 정의 시작 명령 또는 스크립트 파일을 실행하는 명령입니다.	|`command:` *custom_command* `command:` *bash ./run.sh* |
-|**memory** | 애플리케이션에 대해 할당할 메모리의 양입니다. 기본값은 1G입니다.	|`memory: 512M` |
-|**instances** | 애플리케이션에 대해 작성될 인스턴스 수입니다.	|`instances: 2` |
-|**timeout** |애플리케이션을 시작하는 데 사용되는 최대 시간(초)입니다. 기본값은 60초입니다.	|`timeout: 80` |
+|**disk_quota** |애플리케이션에 대해 할당된 디스크 할당량입니다. 기본값은 1G입니다. |`disk_quota: 500M` |
+|**domain** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 도메인 이름입니다. |`domain:` ng.bluemix.net |
+|**host** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 호스트 이름입니다. 이 값은 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다. |`host:` *host_name* |
+|**name** |{{site.data.keyword.Bluemix_notm}}의 애플리케이션 이름입니다. 이 값은 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다. |`name:` *appname* |
+|**path** |애플리케이션의 위치입니다. 이 값은 상대 경로 또는 절대 경로일 수 있습니다. |`path:` *path_to_application* |
+|**command** | 애플리케이션에 대한 사용자 정의 시작 명령 또는 스크립트 파일을 실행하는 명령입니다. |`command:` *custom_command* `command:` *bash ./run.sh* |
+|**memory** | 애플리케이션에 대해 할당할 메모리의 양입니다. 기본값은 1G입니다. |`memory: 512M` |
+|**instances** | 애플리케이션에 대해 작성될 인스턴스 수입니다. |`instances: 2` |
+|**timeout** |애플리케이션을 시작하는 데 사용되는 최대 시간(초)입니다. 기본값은 60초입니다. |`timeout: 80` |
 |**no-route** |애플리케이션이 백그라운드에서 실행 중인 경우 라우트가 애플리케이션에 지정되지 않도록 하는 부울 값입니다. 기본값은 **false**입니다. |`no-route: true` |
 |**random-route** |애플리케이션에 랜덤 라우트를 지정하는 부울 값입니다. 기본값은 **false**입니다. |`random-route: true` |
-|**services** |애플리케이션에 바인딩할 서비스입니다.	|`services: - mysql_maptest` |
-|**env** |애플리케이션에 대한 사용자 정의 환경 변수입니다.|`env: DEV_ENV: production` |
+|**services** |애플리케이션에 바인딩할 서비스입니다. |`services: - mysql_maptest` |
+|**env** |애플리케이션에 대한 사용자 정의 환경 변수입니다. |`env: DEV_ENV: production` |
 {: caption="표 2. Manifest YAML 파일에서 지원되는 옵션" caption-side="top"}
 
 ### 샘플 manifest.yml 파일

@@ -18,14 +18,20 @@
    viewBox="0 0 1630 523"
    style="enable-background:new 0 0 1630 523;"
    xml:space="preserve"
-   inkscape:version="0.48.0 r9654"
+   inkscape:version="0.47 r22583"
    width="100%"
    height="100%"
-   sodipodi:docname="documentation-bank-orgs-ML.svg"><metadata
+   sodipodi:docname="bank_example.svg"><metadata
    id="metadata1181"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
-   id="defs1179" /><sodipodi:namedview
+   id="defs1179"><inkscape:perspective
+     sodipodi:type="inkscape:persp3d"
+     inkscape:vp_x="0 : 261.5 : 1"
+     inkscape:vp_y="0 : 1000 : 0"
+     inkscape:vp_z="1630 : 261.5 : 1"
+     inkscape:persp3d-origin="815 : 174.33333 : 1"
+     id="perspective593" /></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -34,16 +40,16 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="640"
-   inkscape:window-height="455"
+   inkscape:window-width="1440"
+   inkscape:window-height="838"
    id="namedview1177"
    showgrid="false"
-   inkscape:zoom="0.28504683"
+   inkscape:zoom="0.57009366"
    inkscape:cx="815"
    inkscape:cy="261.5"
-   inkscape:window-x="277"
-   inkscape:window-y="237"
-   inkscape:window-maximized="0"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
    inkscape:current-layer="Layer_1" />
 <style
    type="text/css"
@@ -2435,12 +2441,22 @@
 		<text
    transform="matrix(1 0 0 1 36.9332 47)"
    class="st10 st11 st12"
-   id="text829">Bank A - Retail Organization</text>
+   id="text829"><tspan
+   style="-inkscape-font-specification:SimHei;font-family:SimHei"
+   id="tspan3399">银行</tspan> A - <tspan
+   style="-inkscape-font-specification:SimHei;font-family:SimHei"
+   id="tspan3401">零售组织</tspan></text>
+
 
 		<text
    transform="matrix(1 0 0 1 864.0109 47.7661)"
    class="st10 st11 st12"
-   id="text831">Bank A - Investment Organization</text>
+   id="text831"><tspan
+   style="-inkscape-font-specification:SimHei;font-family:SimHei"
+   id="tspan3403">银行</tspan> A - <tspan
+   style="-inkscape-font-specification:SimHei;font-family:SimHei"
+   id="tspan3405">投资组织</tspan></text>
+
 
 		<g
    id="g833">

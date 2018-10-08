@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cloud-foundry/index.html"}
-Cloud Foundry 企業環境
+{: .toc subcollection="cloud-foundry" audience="compute" arm="4095474" href="/docs/cloud-foundry/index.html"}
+Cloud Foundry Enterprise Environment
 
     {: .navgroup id="learn"}
     index.md
@@ -26,7 +26,6 @@ Cloud Foundry 企業環境
     add-users.md
     deploy-apps.md
     add-serv-inst.md
-    binding.md
     {: .navgroup-end}
     
     {: .navgroup id="help"}

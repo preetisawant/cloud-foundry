@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -13,69 +13,170 @@ lastupdated: "2018-04-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Création et affichage d'instances de service
-{: #creating-services}
+# Utilisation des services
+{: #workingwith-services}
 
 Les applications déployées dans un environnement {{site.data.keyword.cfee_full_notm}} peuvent être liées à deux types d'instances de service :
-1. Les instances de service gérées par un courtier de services Cloud Foundry local (local pour l'environnement CFEE). Ces instances peuvent elles-mêmes être de deux types :
-   *  1a. Instance d'une offre de service créée depuis la place du marché Cloud Foundry de l'instance {{site.data.keyword.cfee_full_notm}} en cours. Ce type d'instance de service nécessite qu'un courtier de services enregistré soit disponible dans l'environnement. Un courtier de services affiche un catalogue des plans et offres de services, et permet de créer, supprimer, lier et délier des instances depuis ces offres de services. Pour plus d'informations, voir [Gestion des courtiers de services](https://docs.cloudfoundry.org/services/managing-service-brokers.html) dans la documentation Cloud Foundry.
-   * 1b. Instance de service fournie par l'utilisateur. La création de ce type d'instance est prise en charge par le biais de l'interface de ligne de commande, et non via l'interface utilisateur. Les instances de service fournies par l'utilisateur sont néanmoins répertoriées dans l'interface utilisateur.
-2. Les instances de service public créées à partir du catalogue {{site.data.keyword.Bluemix}} et disponibles dans le compte {{site.data.keyword.Bluemix}}.
-Les instances de service public disponibles dans le compte {{site.data.keyword.Bluemix}} ne peuvent pas en tant que telles être disponibles pour les environnements CFEE. Pour qu'une instance de service public (disponible dans le compte {{site.data.keyword.Bluemix}}) soit disponible pour les espaces d'un environnement CFEE, vous devez créer un alias d'instance de service dans l'espace CFEE cible. L'alias fonctionne comme une référence à l'instance de service public réelle. Une fois l'alias de service créé dans un espace CFEE, il peut être lié à des applications de cet environnement CFEE. La création d'alias de service permet aux développeurs d'optimiser le vaste catalogue des services {{site.data.keyword.Bluemix}} dans leurs applications déployées dans des environnements CFEE.
+1. Les instances de service public créées à partir du catalogue {{site.data.keyword.Bluemix}} et disponibles dans le compte {{site.data.keyword.Bluemix}}.  
+Les instances de service public disponibles dans le compte {{site.data.keyword.Bluemix}} ne peuvent pas en tant que telles être disponibles pour les environnements CFEE.  Pour qu'une instance de service public (disponible dans le compte {{site.data.keyword.Bluemix}}) devienne disponible pour les espaces d'un environnement CFEE, elle doit être spécifiquement ajoutée à l'espace CFEE cible. Une fois l'instance de service {{site.data.keyword.Bluemix}} ajoutée à l'espace CFEE, elle peut être liée à des applications dans cet espace CFEE. Cela permet aux développeurs d'optimiser le vaste catalogue des services {{site.data.keyword.Bluemix}} dans leurs applications déployées dans des environnements CFEE tout en autorisant le contrôle d'accès à ces services {{site.data.keyword.Bluemix}}.
+
+   Outre l'ajout d'instances de service {{site.data.keyword.Bluemix}} existantes à un espace CFEE, vous pouvez créer une nouvelle instance de service {{site.data.keyword.Bluemix}} à partir d'un espace CFEE, ce qui entraîne son ajout automatique dans cet espace CFEE. 
+
+2. Les instances de service gérées par un courtier de services Cloud Foundry local (local pour l'environnement CFEE). Ces instances peuvent elles-mêmes être de deux types :
+   *  2a. Instance d'une offre de service créée depuis la place du marché Cloud Foundry de l'instance {{site.data.keyword.cfee_full_notm}} en cours. Ce type d'instance de service nécessite qu'un courtier de services enregistré soit disponible dans l'environnement. Un courtier de services affiche un catalogue des plans et offres de services, et permet de créer, supprimer, lier et délier des instances depuis ces offres de services. Pour plus d'informations, voir [Gestion des courtiers de services](https://docs.cloudfoundry.org/services/managing-service-brokers.html) dans la documentation Cloud Foundry.
+   * 2b. Instance de service fournie par l'utilisateur. La création de ce type d'instance est prise en charge par le biais de l'interface de ligne de commande, et non via l'interface utilisateur. Les instances de service fournies par l'utilisateur sont néanmoins répertoriées dans l'interface utilisateur.
+   
+
+## Affichage des instances de service {{site.data.keyword.Bluemix_notm}} dans tous les environnements CFEE
+{: #viewing-services_across}
+
+Accédez au [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) pour visualiser une vue consolidée de toutes les instances de service {{site.data.keyword.Bluemix_notm}} (auxquelles vous avez accès) dans le compte {{site.data.keyword.Bluemix_notm}} et déterminer quelles instances de service ont été ajoutées à quels espaces CFEE. 
+
+Cette vue montre toutes les instances de service {{site.data.keyword.Bluemix_notm}} disponibles dans le compte et indique quelles sont celles qui ont été ajoutées (associées à un alias) à quels espaces CFEE. Développez une instance de service pour afficher les espaces CFEE auxquels elle a été ajoutée. Vous pouvez développer davantage ces espaces pour identifier les applications dans ces espaces CFEE auxquelles ces instances de service ont été liées.   
+
+A partir de cette vue, vous pouvez également lier des applications déployées dans les espaces CFEE auxquelles ces instances de service ont été ajoutées. Accédez au menu situé tout à fait à droite de la ligne de l'instance de service correspondante dans le tableau (disponible pour un espace CFEE spécifique) et sélectionnez **Lier à une application**.
+
+## Ajout d'instances de service {{site.data.keyword.Bluemix_notm}} existantes à un espace CFEE
+{: #adding-services_inspace}
+
+Vous pouvez lier des instances de service {{site.data.keyword.Bluemix_notm}} à des applications déployées dans un espace CFEE. Avant de pouvoir être liée à une application déployée dans CFEE, une instance de service IBM Cloud doit être ajoutée à l'espace CFEE dans lequel l'application est déployée. Les prérequis s'appliquent avant l'ajout d'une instance de service {{site.data.keyword.Bluemix_notm}} à un espace CFEE : 
+* Le service {{site.data.keyword.Bluemix_notm}} doit être disponible dans le même compte {{site.data.keyword.Bluemix_notm}} que celui dans lequel l'instance CFEE réside. 
+* Vous devez disposer de droits d'accès à l'instance de service {{site.data.keyword.Bluemix_notm}} proprement dite. Pour plus d'informations, voir la page Identity & Access du menu **Gérer > Utilisateurs** dans l'en-tête {{site.data.keyword.Bluemix_notm}} pour vérifier vos règles d'accès au compte en cours.
+
+Pour ajouter une instance de service {{site.data.keyword.Bluemix_notm}} existante à un espace CFEE :
+1. Accédez au [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
+2. Localisez l'instance de service {{site.data.keyword.Bluemix_notm}} dans la liste et appelez le menu situé tout à fait à droite de la ligne de l'instance de service correspondante dans le tableau. 
+3. Sélectionnez **Ajouter un service**.
+4. Dans la boîte de dialogue _Ajouter un service_, sélectionnez l'environnement CFEE, l'organisation et l'espace dans lesquels vous souhaitez ajouter le service, puis cliquez sur **Ajouter**.
+5. Développez le service {{site.data.keyword.Bluemix_notm}} cible pour trouver le nouvel environnement CFEE auquel le service a été ajouté. 
 
 
-## Création et affichage d'alias de service dans un espace CFEE
-{: #creating-services_inspace}
-
-Un alias d'une instance de service public existante disponible dans votre compte IBM Cloud vous permet de lier cette instance de service à des applications déployées dans un espace CFEE. La création d'un alias pour une instance de service {{site.data.keyword.Bluemix_notm}} existante nécessite de disposer d'un accès utilisateur à l'instance elle-même. Pour plus d'informations, voir la page Identité et accès du menu **Gérer > Utilisateurs** dans l'en-tête {{site.data.keyword.Bluemix_notm}} pour vérifier vos règles d'accès au compte en cours.
-
-Pour créer un alias d'instance de service dans un espace d'un environnement CFEE :
-
-1. Dans le tableau de bord {{site.data.keyword.Bluemix_notm}}, recherchez l'environnement CFEE qui héberge votre application.
+Vous avez aussi la possibilité d'ajouter une instance de service {{site.data.keyword.Bluemix_notm}} à partir de l'espace CFEE où vous voulez l'ajouter : 
+1. Dans votre [tableau de bord](https://console.bluemix.net/dashboard) {{site.data.keyword.Bluemix_notm}} ou votre [tableau de bord de services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services), recherchez l'environnement Cloud Foundry Enterprise qui héberge votre application. 
 2. Accédez à **Organisations** dans le volet de navigation et ouvrez l'organisation et l'espace où se trouve l'application.
 3. Accédez à l'onglet **Espaces** et recherchez l'espace qui contient l'application.
-4. Dans la page de l'espace cible, accédez à l'onglet **Services**, puis cliquez sur **Créer un service**. La page **Catalogue** de l'environnement {{site.data.keyword.cfee_full_notm}} s'ouvre. Cette page répertorie les offres de services de deux sources (voir la colonne _Source_) :
-   * Offres du catalogue IBM Cloud.
+4. Sur la page de l'espace cible, accédez à l'onglet **Services**, puis cliquez sur **Ajouter un service**.  La boîte de dialogue __Ajouter un service__ s'ouvre. Cette page répertorie les instances de service disponibles dans le compte {{site.data.keyword.Bluemix_notm}}. 
+5. Recherchez et sélectionnez une instance de service disponible que vous voulez ajouter à l'espace CFEE.  
+6. L'instance de service sera ajoutée à la liste de services disponibles dans l'espace CFEE. 
+
+   **Remarque :** lorsque vous ajoutez un service {{site.data.keyword.Bluemix_notm}} à un espace CFEE, un alias de cette instance de service est créé dans cet espace. Lorsque vous **retirez** l'instance de service d'un espace CFEE (à partir du menu situé tout à fait à droite de la ligne de l'instance de service correspondante dans le tableau), le service n'est pas supprimé du compte public. Il est simplement retiré du compte CFEE spécifique et il n'est plus disponible pour être lié aux applications présentes dans cet espace CFEE. En outre, lorsque vous supprimez l'instance de service proprement dite du compte {{site.data.keyword.Bluemix_notm}}, le service n'est plus disponible pour les espaces CFEE.  
+
+## Création d'instances de service {{site.data.keyword.Bluemix_notm}} à partir d'une interface utilisateur d'espace CFEE
+{: #creating-services_inspace}
+Vous pouvez créer des instances de service {{site.data.keyword.Bluemix_notm}} à partir d'un espace CFEE. La création d'une instance de service {{site.data.keyword.Bluemix_notm}} provoque ce qui suit : 
+* L'instance de service {{site.data.keyword.Bluemix_notm}} est créée dans IBM Cloud. Cela revient à créer l'instance de service à partir du [catalogue](https://console.bluemix.net/catalog) {{site.data.keyword.Bluemix_notm}}. 
+* L'instance de service {{site.data.keyword.Bluemix_notm}} est ajoutée (associée à un alias) dans l'espace CFEE à partir duquel l'action de création a été déclenchée. 
+
+
+Pour créer une instance de service à partir d'un espace CFEE :
+1. Sur la page de l'espace cible, accédez à l'onglet **Services**, puis cliquez sur **Créer un service**.  La vue **Place de marché** s'ouvre pour le service {{site.data.keyword.cfee_full_notm}}. La vue recense les offres de service à partir de deux sources (voir la colonne __Source__) :
+   * Offres du catalogue {{site.data.keyword.Bluemix_notm}}. 
    * Offres de la place du marché {{site.data.keyword.cfee_full_notm}} local.
-5. Recherchez et sélectionnez une offre de services disponible que vous voulez instancier.
-6. Selon la source de l'offre de services (IBM Cloud ou environnement CFEE local) procédez de l'une des manières suivantes :
-   * **Continuez** jusqu'à la page de création d'offre de services IBM Cloud où vous indiquez le nom de la nouvelle instance de service, la région, le plan et d'autres propriétés requises pour créer le service dans IBM Cloud.  Dès que vous cliquez sur *Créer*, l'instance de service est créée dans IBM Cloud. De plus, un alias de cette instance de service est créé dans l'environnement {{site.data.keyword.cfee_full_notm}}. L'alias sera disponible pour liaison à des applications de l'environnement {{site.data.keyword.cfee_full_notm}}.
-   **Remarque :** lors de la création d'un {{site.data.keyword.Bluemix_notm}} de cette manière, outre la création d'une instance de service public disponible pour les utilisateurs dans le compte IBM Cloud, un alias de cette instance de service est créé dans l'environnement {{site.data.keyword.cfee_full_notm}} à partir duquel l'instance a été créée.
-   * **Créez** l'instance de service dans la place du marché Cloud Foundry local. Une boîte de dialogue dans laquelle vous indiquez le plan et le nom de la nouvelle instance de service s'ouvre. Lorsque vous cliquez sur *Créer*, l'instance de service est créée dans l'environnement {{site.data.keyword.cfee_full_notm}} et disponible pour liaison à des applications dans l'environnement {{site.data.keyword.cfee_full_notm}}.
+5. Recherchez et sélectionnez une offre de services disponible que vous voulez instancier. 
+6. Selon la source de l'offre de services (catalogue IBM Cloud ou place du marché CFEE local) procédez de l'une des manières suivantes :
+   * Si l'offre de service sélectionnée est une offre de catalogue {{site.data.keyword.Bluemix_notm}}, un bouton **Continuer** est présent pour vous permettre de passer à la page de création d'offre de service IBM Cloud. Il s'agit de la même page que celle qui est disponible à partir du catalogue {{site.data.keyword.Bluemix_notm}}. Sur cette page, vous indiquez le nom de la nouvelle instance de service, la région, le plan et d'autres propriétés requises pour créer le service dans IBM Cloud. Lorsque vous cliquez sur Créer, l'instance de service est créée dans IBM Cloud et elle est automatiquement ajoutée à l'espace CFEE en cours. 
+   * Si l'offre de service sélectionnée provient du catalogue CFEE local, un bouton **Créer** est présent pour vous permettre de créer l'instance de service. Vous êtes invité à spécifier une organisation et un espace dans l'environnement CFEE en cours où l'instance de service sera créée. 
 
-Une fois l'instance de service créée, l'instance (si elle a été créée dans la place du marché Cloud Foundry local) ou son alias (si elle a été créée à partir du catalogue IBM Cloud) est répertorié dans l'onglet **Services**.
+## Création d'instances de service {{site.data.keyword.Bluemix_notm}} à partir d'un espace CFEE à l'aide de l'interface de ligne de commande
+{: #creating-services_cli}
+
+Vous pouvez créer une instance de service à l'aide de l'interface de ligne de commande à partir d'un espace CFEE. Créer un service à l'aide de l'interface de ligne de commande dans un espace CFEE revient à le créer à l'aide de l'interface utilisateur dans cet espace. Autrement dit, la création d'un service permet d'obtenir les deux résultats suivants :
+* L'instance de service {{site.data.keyword.Bluemix_notm}} est créée dans IBM Cloud. Cela revient à créer l'instance de service à partir du [catalogue](https://console.bluemix.net/catalog) {{site.data.keyword.Bluemix_notm}}. 
+* L'instance de service {{site.data.keyword.Bluemix_notm}} est ajoutée (associée à un alias) dans l'espace CFEE à partir duquel l'action de création a été déclenchée. 
+
+La différence entre la création d'une instance de service à partir d'un espace CFEE et la création d'une instance de service à partir de l'interface de ligne de commande concerne le cycle de vie de l'instance de service créée. Lorsque vous créez l'instance de service dans l'interface utilisateur de l'espace CFEE, le cycle de vie de l'instance de service créée est contrôlé à partir de l'instance de service proprement dite dans le compte {{site.data.keyword.Bluemix_notm}}. Cela signifie que les mises à jour apportées au plan de service sont contrôlées à partir de l'instance dans le compte {{site.data.keyword.Bluemix_notm}} et non à partir de l'espace CFEE. Sinon, si l'instance de service est créée à partir de l'interface de ligne de commande, le cycle de vie du service est contrôlé à partir de l'espace CFEE (le service est mis à jour à partir de l'espace CFEE). 
+
+Les instances de service créées à partir de l'interface de ligne de commande sont également affichées dans l'interface utilisateur et sont signalées par un astérisque (`*`) placé en regard de leur nom. 
+
+Pour créer des instances de service à l'aide de l'interface de ligne de commande, procédez comme suit :
+
+1. Téléchargez et installez l'interface de ligne de commande {{site.data.keyword.Bluemix}}, le cas échéant. [Téléchargement de l'interface de ligne de commande Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icône de ligne externe](../icons/launch-glyph.svg "Icône de ligne externe").
+
+2. Accédez à la page de présentation d'{{site.data.keyword.cfee_full}} et localisez le noeud final d'API de l'environnement.
+
+3. Dans l'interface de ligne de commande, définissez le noeud final d'API sur le noeud final de votre environnement CFEE :
+
+  ```
+  cf api <api_enpoint>
+  ```
+  {: pre}
+
+4. Connectez-vous à l'environnement CFEE :
+
+  ```
+  cf login -u <username> -o <org_name> -s <space_name>
+  ```
+  {: pre}
+
+  Si vous utilisez un ID fédéré, utilisez l'option `-sso` :
+
+  ```
+  cf login -o <org_name> -s <space_name> -sso
+  ```
+  {: pre}
+  
+5. Créez le service :
+  
+  ```
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"name":"value","name":"value"}'
+  ```
+  {: pre}
+
+  Eventuellement, vous pouvez fournir un fichier contenant des paramètres dans un objet JSON valide requis pour la création d'un service spécifique.
+Le chemin d'accès au fichier de paramètres peut être un chemin d'accès relatif ou absolu à un fichier :
+  
+  ```
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
+  ```
+  {: pre}
+   
+  Voici un exemple d'objet JSON valide :
+   
+  ```
+   {
+      "cluster_nodes": {
+         "count": 5,
+         "memory_mb": 1024
+      }
+   }
+  ```
+  {: pre}
+  
+   Pour obtenir de l'aide à propos de la création d'un service à partir de l'interface de ligne de commande, exécutez la commande suivante :
+  
+  ```
+  cf cs -help
+  ```
+  Pour plus d'informations, voir [Gestion d'instances de service à l'aide de l'interface de ligne de commande cf](https://docs.cloudfoundry.org/devguide/services/managing-services.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") dans la documentation Cloud Foundry. 
+  
+## Liaison de services aux applications
+{: #bind_services}
+
+Vous pouvez lier une instance de service à une application déployée dans un espace CFEE, que ce soit à partir du [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) ou de l'onglet Services d'une page d'espace CFEE.   
+
+Pour lier une instance de service à une application à partir du [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) :
+1. Accédez au [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) pour visualiser une vue consolidée de toutes les instances de service {{site.data.keyword.Bluemix_notm}} qui sont à votre disposition dans le compte {{site.data.keyword.Bluemix_notm}}. La vue permet également de déterminer quelles instances de service {{site.data.keyword.Bluemix_notm}} sont disponibles (associées à un alias) dans quels espaces CFEE. Vous pouvez développer une instance de service pour afficher les espaces CFEE auxquels elle a été ajoutée. Vous pouvez développer davantage ces espaces pour identifier les applications dans ces espaces CFEE auxquelles ces instances de service ont été liées.  
+2. Localisez l'instance de service {{site.data.keyword.Bluemix_notm}} que vous souhaitez lier. 
+3. Développez la vue correspondante pour visualiser tous les espaces CFEE où cette instance de service a été ajoutée. Si cette instance de service n'a pas été ajoutée à l'espace CFEE où l'application est déployée, sélectionnez **Ajouter** dans le menu situé tout à fait à droite de la ligne pour rendre l'instance de service disponible dans l'espace CFEE cible. 
+4. Accédez au menu situé tout à fait à droite de la ligne correspondant à l'environnement CFEE/l'espace où l'instance de service est disponible et sélectionnez **Lier une application**.
+5. Dans la boîte de dialogue __Lier une application__, sélectionnez l'application que vous souhaitez lier. 
+6. L'application est désormais liée à l'instance de service dans l'espace CFEE où l'application est déployée. Vous pouvez développer la ligne correspondante dans le tableau pour visualiser les applications liées à l'espace CFEE. 
 
 
-## Création et affichage des alias de service dans tous les environnements CFEE dans le tableau de bord Cloud Foundry global
-{: #creating-services_across}
+Pour lier une application à une instance de service à partir de la page __Services__ d'un espace CFEE :
 
-Vous pouvez afficher une vue d'ensemble de tous les alias d'instance de service (de toutes les instances CFEE) dans le tableau de bord Cloud Foundry global.
+1. Ouvrez l'interface utilisateur CFEE où l'application est déployée. 
+2. Accédez à **Organisations** dans le panneau de navigation de gauche et ouvrez l'organisation et l'espace où l'application est déployée.
+3. Accédez à l'onglet **Espaces** et recherchez l'espace qui contient l'application.
+4. Dans l'espace cible, accédez à l'onglet **Services**.
+5. Dans le tableau **Instances de service**, accédez au menu __Actions__ situé tout à fait à droite de la ligne correspondant à l'instance de service que vous souhaitez lier, puis sélectionnez **Lier**.
+6. Sélectionnez l'application que vous voulez lier à l'instance de service.
 
-1. Cliquez sur l'icône de menu ![Vérification du compte](img/HamburgerMenu.png "Capture d'écran de l'icône de menu") > **Cloud Foundry** pour ouvrir le tableau de bord Cloud Foundry.
-2. Cliquez sur **Enterprise > Services** dans le volet de navigation de gauche.
-Le tableau de la vue affiche les informations suivantes :
+Pour annuler la liaison d'une application à une instance de service :
 
-| Elément   | Description |
-|-----------|---------------|
-| Alias de service | Nom de l'alias de l'instance de service. |
-| Instance de service | Instance de service IBM Cloud public à partir de laquelle l'alias est créé. |
-| Offre | Offre de service issue du catalogue IBM Cloud où l'instance de service a été créée. |
-| CFEE | Environnement {{site.data.keyword.cfee_full}} où réside l'alias. |
-| Organisation | Organisation de l'instance CFEE où réside l'alias. |
-| Espace | Espace dans l'organisation de l'instance CFEE où réside l'alias. |
-{:caption="Tableau 1. Description des éléments clés" caption-side="top"}
+1. Dans l'onglet **Services** de l'espace, développez l'instance de service cible pour afficher les applications qui lui sont liées.
+2. Accédez au menu Actions dans la ligne d'une application et sélectionnez **Annuler la liaison du service**.
 
-Dans cette vue, vous pouvez effectuer les actions suivantes :
-* Trier les éléments du tableau selon n'importe laquelle des propriétés affichées sous forme de colonnes de tableau.
-* Lier des applications à un alias spécifique en accédant au menu déroulant dynamique des alias situé tout à fait à droite de la ligne.
-* Développer un alias (ligne) afin de visualiser toutes les applications liées à cet alias.
-* Démarrer et arrêter des applications en accédant au menu déroulant dynamique des applications de l'alias situé tout à fait à droite de la ligne.
-* Accéder à un environnement, une organisation ou un espace CFEE en cliquant sur le lien à l'environnement, organisation ou espace CFEE correspondant.
-
-Pour créer un alias de service à partir du tableau de bord Cloud Foundry global :
-1. Cliquez sur le bouton **Créer un alias de service** en haut de la page. La boîte de dialogue _Créer un alias de service_ s'ouvre. Elle répertorie toutes les instances de service public disponibles dans le compte IBM Cloud en cours.
-2. Sélectionnez l'une des instances de service public.
-3. Cliquez sur **Créer**. Une fois créé, le nouvel alias d'instance de service est ajouté à la liste.
-L'alias de service s'affiche également dans la liste des services de l'espace CFEE, où il peut être lié à des applications dans cet espace (CFEE > Organisations > Espace > Services).
+Pour plus d'informations sur la liaison d'applications à l'aide de l'interface de ligne de commande, voir [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") dans la documentation Cloud Foundry. 
 
 
