@@ -18,24 +18,18 @@ lastupdated: "2018-07-10"
 # About {{site.data.keyword.cfee_full_notm}}
 {: #about}
 
-With the {{site.data.keyword.cfee_full}} (CFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services.
+Welcome to the {{site.data.keyword.cfee_full}} service (CFEE).
+
+With the {{site.data.keyword.cfee_full}} service (CFEE), you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity management, change management, monitoring, and services. Furthermore, the integration into the {{site.data.keyword.Bluemix_notm}} allows developers to leverage services available in their {{site.data.keyword.Bluemix_notm}} account and use them in their CFEE environments for binding to applications deployed into those environments.
+
+Find out how you can [get started](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) creating and using a CFEE instance.
+
 {:shortdesc}
 
-For a successful project, take time to plan and design which resources you need and what your enterprise requirements are. To help you get started, consider the following questions:
+# Key elements of CFEE
+{: #key-elements}
 
-* How many, and what type of, apps are you developing?
-* Which services do the apps need to access?
-* Who collaborates in the development process and what role do they play?
-* What degree of isolation is required for each phase of the project?
-* Does your enterprise supply the infrastructure resources?
-* How does your company communicate?
-* Is there a naming standard that you can implement to clearly identify the organization and space usage?
-
-As part of deciding which type of cloud environment you need, plan the structure of your account, organizations, spaces, resources, and team members.
-
-A single {{site.data.keyword.Bluemix_notm}} account is sufficient for most organizations. If your organization has more than one business area, you can create a separate {{site.data.keyword.Bluemix_notm}} account for each business domain, for example, a large banking corporation might create separate accounts for the retail and commercial sectors.
-
-The following table provides a summary of some of the key elements.
+The following table provides a summary of the key elements of the {{site.data.keyword.cfee_full}} service.
 
 | Element   | Description |
 |-----------|---------------|
@@ -99,7 +93,4 @@ Following are the geographies, locations and data centers where the CFEE service
 
 {: caption="Table 2. Provisioning targets for CFEE and supporting services" caption-side="top"}
 
-
-
-For **example**, the CFEE service can provisioned in three data centers in Europe: Amsterdam (1 data center), Frankfurt (3 data centers), London (3 data centers), Oslo (1 data center), and Paris (1 data center). If the CFEE is provisioned in Frankfurt, the Cloud Object Store service instance will be deployed in the _eu-geo_ region, and the Compose for PostgreSQL service instance will be deployed in the _eu-de_ public Cloud Foundry region.
-
+As an **example**, the CFEE service can provisioned in three data centers in Europe: Amsterdam (1 data center), Frankfurt (3 data centers), London (3 data centers), Oslo (1 data center), and Paris (1 data center). If the CFEE is provisioned in Frankfurt, the Cloud Object Store service instance will be deployed in the _eu-geo_ region, and the Compose for PostgreSQL service instance will be deployed in the _eu-de_ public Cloud Foundry region.
