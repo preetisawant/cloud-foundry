@@ -26,10 +26,10 @@ Find out how you can [get started](https://console.bluemix.net/docs/cloud-foundr
 
 {:shortdesc}
 
-# Key elements of CFEE
+## Key elements of CFEE
 {: #key-elements}
 
-The following table provides a summary of the key elements of the {{site.data.keyword.cfee_full}} service.
+The following table provides a summary of the key elements of the {{site.data.keyword.cfee_full}} service:
 
 | Element   | Description |
 |-----------|---------------|
@@ -90,7 +90,6 @@ Following are the geographies, locations and data centers where the CFEE service
 |Asia Pacific | Tokyo (gok02) | ap-geo | au-syd |
 |Asia Pacific | Tokyo (gok04) | ap-geo | au-syd |
 |Asia Pacific | Tokyo (gok05) | ap-geo | au-syd |
-
 {: caption="Table 2. Provisioning targets for CFEE and supporting services" caption-side="top"}
 
 As an **example**, the CFEE service can provisioned in three data centers in Europe: Amsterdam (1 data center), Frankfurt (3 data centers), London (3 data centers), Oslo (1 data center), and Paris (1 data center). If the CFEE is provisioned in Frankfurt, the Cloud Object Store service instance will be deployed in the _eu-geo_ region, and the Compose for PostgreSQL service instance will be deployed in the _eu-de_ public Cloud Foundry region.
