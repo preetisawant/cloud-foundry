@@ -45,6 +45,7 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
    ```
    - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
    ```
+   {: pre}
 
 ### Example
 
