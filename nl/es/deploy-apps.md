@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -22,7 +22,7 @@ Puede desplegar aplicaciones en {{site.data.keyword.Bluemix}} con la interfaz de
 ## Despliegue de aplicaciones con el mandato Cloud Foundry
 {: #dep_apps}
 
-Descargar e instalar la interfaz de línea de mandatos de {{site.data.keyword.Bluemix}}. [Descargue la CLI de {{site.data.keyword.Bluemix_notm}} ](https://clis.ng.bluemix.net){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
+[Descargue e instale la CLI de Cloud Foundry de ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
 
 Después de instalar la interfaz de línea de mandatos, siga los pasos siguientes:
 
@@ -31,7 +31,7 @@ Después de instalar la interfaz de línea de mandatos, siga los pasos siguiente
 3. En la interfaz de línea de mandatos, fije el punto final de API en el punto final de su entorno:
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
@@ -96,7 +96,7 @@ La tabla de la vista muestra la información siguiente:
 | Espacio | La organización de la instancia del CFEE en la que reside el alias. |
 | Memoria | La cantidad de memoria utilizada por la aplicación. |
 | Estado | El estado de la aplicación. |
-{:caption="Tabla 1. Descripción de elementos clave" caption-side="top"}
+{:caption="Tabla 1. Columnas de la tabla de aplicaciones del panel de control de Cloud Foundry" caption-side="top"}
 
 De forma opcional, puede Iniciar, Reiniciar, Detener o Suprimir una aplicación accediendo al menú del extremo derecho de la fila que representa la aplicación.
 Puede pulsar en cualquiera de las aplicaciones, entornos, organizaciones o espacios para ir a la página correspondiente en la interfaz de usuario de CFEE.

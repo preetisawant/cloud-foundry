@@ -102,7 +102,7 @@ A continuación, se le guiará por los pasos para instalar las CLI necesarias, r
 
    Hay un usuario `admin` predeterminado en Grafana, con la contraseña predeterminada `admin`. Recomendamos iniciar sesión con el Usuario/Contraseña `admin/admin` y que los cambie por nuevas credenciales:
 
-     [Iniciar el servidor de Grafana](https://localhost:3000)
+     [Iniciar la consola de Grafana](https://localhost:3000)
 
    Los paneles de control por defecto se proporcionan con la instancia de CFEE y están disponibles desde el desplegable _Inicio_.
 

@@ -22,7 +22,7 @@ Para enlazar una aplicación a una instancia de servicio:
 2. Vaya a **Organizaciones** en el panel de navegación y abra la organización y espacio en los que se ubica la aplicación.
 3. Vaya al separador **Espacios** y ubique el espacio que contiene la aplicación.
 4. En la página del espacio de destino, vaya al separador **Servicios**.
-5. En la tabla de **Instancias de servicio**, vaya al menú Acciones en la parte derecha de la fila correspondiente a la instancia de servicio que desea enlazar y seleccione **Enlazar**.
+5. En la tabla de **Instancias de servicio**, vaya al menú Acciones en el extremo derecho de la fila correspondiente a la instancia de servicio que desea enlazar y seleccione **Enlazar**.
 6. Seleccione la aplicación que desea enlazar a la instancia de servicio.
 
 Para desenlazar una aplicación de la instancia de servicio:

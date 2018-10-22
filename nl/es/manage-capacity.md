@@ -28,10 +28,13 @@ Los administradores y desarrolladores pueden ver cómo utilizan las aplicaciones
 {: #usage_apps}
 
 La página Aplicaciones tiene dos secciones:
-1. Gráficos de barras horizontales para la CPU y la memoria que muestran:
-   * La memoria y CPU *total disponible*, disponibles en la instancia de CFEE.
-   * La memoria y CPU utilizadas por *todas las apps* de la instancia de CFEE.
-   * La memoria y CPU utilizadas por las *apps seleccionadas* en la tabla siguiente.
+1. Gráficos de barras horizontales que muestran el uso de memoria física y reservada.
+   * La memoria física y reservada utilizadas por las **apps seleccionadas** en la tabla siguiente.
+   * La memoria física y reservada utilizada por **todas las apps** en la instancia de CFEE.
+   * La memoria física utilizada por el **sistema**, que incluye memoria utilizada por el panel de control de Cloud Foundry, y la memoria de la aplicación almacenada en memoria caché por el panel de control de Cloud Foundry.
+   * Memoria física y reservada **total disponible** en la instancia de CFEE.
+   
+   **Nota:** Cuando las aplicaciones reservan más memoria de la que físicamente hay disponible, se muestra un esquema rojo punteado en el gráfico de barras de la memoria reservada para representar la representar la cantidad de memoria reservada por las aplicaciones seleccionadas.
 
    Para mostrar el porcentaje de memoria y CPU utilizado por todas las apps o las apps seleccionadas en la tabla, pase el cursor por la parte correspondiente del gráfico.  Al pasar el cursor por la parte *todas las apps* del gráfico se muestra el porcentaje de memoria y CPU relativo al total disponible. Al pasar el cursor por la parte *apps seleccionadas* del gráfico se muestra el porcentaje de memoria y CPU relativo al total de memoria o CPU disponible.
 
@@ -47,7 +50,7 @@ La página Aplicaciones tiene dos secciones:
    * **Promedio de CPU (% de la célula)**: Para las instancias de aplicación, la métrica representa el promedio de CPU **en la célula en la que se ejecuta**.  Para una aplicación, representa el promedio de uso de CPU en todos los promedios de instancia.
    * **Máximo de CPU (% de células)**: Para instancias de aplicación, la métrica representa el máximo de CPU utilizado por la instancia **en la célula en la que se ejecuta**.  Para una aplicación, representa el máximo del uso de CPU máximo de las instancias.
    * **CPU (% del sistema)**: El porcentaje de CPU total disponible en el CFEE utilizado por una aplicación y sus instancias.  La CPU utilizada por una aplicación es igual al total de porcentajes de CPU utilizados por todas las instancias de la aplicación.
-   * **Promedio de solicitudes**: El promedio de solicitudes entrantes a una aplicación durante el último ciclo de recopilación de datos.
+   * **Solicitudes**: El número de solicitudes a una aplicación durante el último ciclo de recopilación de datos (cinco minutos).
    * **Organización**: La organización en la que se despliega la aplicación. Si el usuario no es un miembro de la organización, en su lugar, se mostrará el GUID de la organización.
 
 Expanda una fila de aplicación en la tabla para ver la lista de instancias de aplicación y las métricas de uso de recursos correspondientes.
@@ -66,9 +69,10 @@ Asimismo, puede utilizar el campo de entrada de filtro sobre la tabla para mostr
 La página Células tiene dos secciones:
 1. Gráficos de barras verticales que muestran:
    * La memoria y CPU *total disponible*, disponibles en la instancia de CFEE.
-   * La memoria y la CPU utilizadas por *Todas las instancias de la app* de la instancia de CFEE.
-   * La memoria y la CPU utilizadas por las *Instancias de la app seleccionadas* de la instancia de CFEE.
-   * La memoria y la CPU utilizadas por el *Sistema* en la tabla siguiente.  El uso del sistema representa el recurso utilizado por los componentes del servicio de CFEE más la memoria caché de aplicaciones.
+   * La memoria y la CPU utilizadas por las **Instancias de la app seleccionadas** de la instancia de CFEE.
+   * La memoria y la CPU utilizadas por **Todas las instancias de la app** de la instancia de CFEE.
+   * La memoria y la CPU utilizadas por el **Sistema** en la tabla siguiente.  El uso del sistema representa el recurso utilizado por los componentes del servicio de CFEE más la memoria caché de aplicaciones.
+   * La memoria total y CPU disponible en la célula. El **total de células** es igual al total (memoria o CPU) disponible en el nodo de trabajador de Kubernetes (donde la célula es suministrada) menos lo que es utilizado por el sistema.
 
    Para mostrar el porcentaje de memoria o CPU utilizado por todas las instancias de app o por las instancias de app seleccionadas en la tabla, pase el cursor por la parte del gráfico correspondiente.  Al pasar el curso por la barra del gráfico se muestra la memoria o CPU absoluta disponible, la memoria o CPU utilizas por todas las apps y la memoria o CPU utilizada por el sistema + memoria caché.  También muestra el porcentaje de memoria o CPU utilizado por todas las apps y por el sistema + memoria caché relativos al total disponible.
 

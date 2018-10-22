@@ -16,7 +16,7 @@ lastupdated: "2018-07-10"
 {:tip: .tip}
 
 # Acerca de {{site.data.keyword.cfee_full_notm}}
-{: #creating}
+{: #about}
 
 Con {{site.data.keyword.cfee_full}} (CFEE), puede crear una instancia de varias plataformas de Cloud Foundry aisladas y de nivel empresarial a petición. Instancias de la ejecución de servicio de {{site.data.keyword.Bluemix_notm}} Foundry Enterprise en su cuenta de {{site.data.keyword.Bluemix_notm}}. El entorno se despliega en un hardware aislado (clústeres de Kubernetes). Tiene el control completo del entorno, incluido el control de acceso, la gestión de la capacidad, la gestión de cambios, la supervisión y los servicios.
 {:shortdesc}
@@ -62,4 +62,47 @@ En la tabla siguiente se proporciona un resumen de algunos de los elementos clav
 | Alias de servicio | Un alias de la instancia de servicio en IBM Cloud. |
 || Permite a los desarrolladores enlazar instancias de servicio existentes disponibles en su cuenta de IBM Cloud a las aplicaciones desplegadas en un espacio de un CFEE.|
 {:caption="Tabla 1. Descripción de elementos clave" caption-side="top"}
+
+## Suministro de destinos para CFEE y servicios de soporte
+{: #provisioning-targets}
+
+A continuación se muestran las geografías, ubicaciones y centros de datos donde el servicio CFEE y los servicios dependientes (servicio de Kubernetes, Compose for PostgreSQL y servicios de Cloud Object Storage) están disponibles para el suministro:
+
+|  **Geografía** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| **Instancia de CFEE y clúster de Kubernetes** | **Cloud Object Storage** | **Compose for PostgreSQL (CF Region)** |
+|----------------------------------------|-------------------|-------------------|-------------------|
+|América del Norte | Montreal (mon01) | us-geo | us-east |
+|América del Norte | Toronto (tor01) | us-geo| us-east |
+|América del Norte | Washington DC (wdc04) | us-geo | us-east |
+|América del Norte | Washington DC (wdc06) | us-geo | us-east | 
+|América del Norte | Washington DC (wdc07) | us-geo | us-east |
+|América del Norte | Dallas (das10) | us-geo | us-south |
+|América del Norte | Dallas (das12) | us-geo | us-south |
+|América del Norte | Dallas (das13) | us-geo |us-south |
+|América del Norte | San José (sjc03) | us-geo | us-south |
+|América del Norte | San José (sjc04) | us-geo | us-south |
+|América del Sur &nbsp; &nbsp;| Sao Paolo (sao01) |  us-geo | us-south |
+|Europa | Londres (lon02) | eu-geo | eu-gb |
+|Europa | Londres (lon04) | eu-geo | eu-gb |
+|Europa | Londres (lon06) | eu-geo | eu-gb | 
+|Europa | Amsterdam (ams03) | eu-geo | eu-de |
+|Europa | Oslo (osl01) |eu-geo | eu-de | 
+|Europa | París (par01) | eu-geo | eu-de |
+|Europa | Frankfurt (fra02) | eu-geo | eu-de |
+|Europa | Frankfurt (fra04) | eu-geo | eu-de | 
+|Europa | Frankfurt (fra05) |  eu-geo | eu-de |
+|Asia Pacífico | Melbourne (mel01) | ap-geo | au-syd |
+|Asia Pacífico | Sídney (syd01) | ap-geo | au-syd |
+|Asia Pacífico | Sídney (syd04) | ap-geo | au-syd | 
+|Asia Pacífico | Hong Kong (hkg02) | ap-geo | au-syd |
+|Asia Pacífico | Hong Kong (seo01) | ap-geo | au-syd |
+|Asia Pacífico | Singapur (sng01) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (gok02) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (gok04) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (gok05) | ap-geo | au-syd |
+
+{: caption="Tabla 2. Destinos de suministro para los servicios de soporte y CFEE" caption-side="top"}
+
+
+
+Por **ejemplo**, el servicio CFEE puede suministrarse en tres centros de datos en Europa: Amsterdam (1 centro de datos), Frankfurt (3 centros de datos), Londres (3 centros de datos), Oslo (1 centro de datos) y París (1 centro de datos). Si se suministra CFEE en Frankfurt, la instancia de servicio de Cloud Object Store se desplegará en la región _ eu-geo _ y la instancia de servicio de Compose for PostgreSQL se desplegará en la región de Cloud Foundry pública de _eu-de_.
 
