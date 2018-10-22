@@ -67,7 +67,7 @@ Modified `config.yam`:
 The following command would reconfigure and restart the worker node pod:
 
 ```
-kubectl -n cf-monitoring apply -f config.yaml.
+kubectl -n cf-monitoring apply -f config.yaml
 
 ```
 
