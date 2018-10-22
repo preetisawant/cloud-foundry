@@ -36,7 +36,7 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
 1. Create the `config.yaml`:
 
    ```
-   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml.
+   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml
    ```
    {: pre}
   
@@ -48,7 +48,7 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
 
 ### Example
 
-Original `config.yam`:
+Modified `config.yam`:
 
 ```
   ...
