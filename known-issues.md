@@ -71,10 +71,7 @@ The following command would reconfigure and restart the worker node pod:
 kubectl -n cf-monitoring apply -f config.yaml
 
 ```
+{: pre}
 
 For more information on the Firehose Prometheus exporter see [Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-## Intermittent error accessing cell metrics
-{: #cellmetrics-issue}
-
-When accessing Cloud Foundry cell metrics in the _Overview_ or _Resource Usage_ pages there is an intermittent error preventing the collection of those metrics from the Kubernetes worker nodes in which the cells are depoloyed.  Retry at a later time by refresing the page.
