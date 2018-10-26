@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-10-26"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-04-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Design the structure of your {{site.data.keyword.Bluemix_notm}}
+# Design the structure of your {{site.data.keyword.cfee_full}}
 {: #bpimplementation}
 
 Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your {{site.data.keyword.cfee_full}} (CFEE) from the space level up.
@@ -33,4 +33,4 @@ The number of spaces can multiply rapidly because of iterative development. You 
 
 Have one person create and manage an organization, define the spaces, and grant team member access. A second person can be given the same access to maintain the environment when the organization manager is disabled.  
 
-Identify all of the people who need access to each space and organization. Determine their role. The job role of a team member determines their authority. For example, a senior developer needs the authority to view and update the whole {{site.data.keyword.Bluemix_notm}} development environment. However, a junior developer is limited as to what they can view and update.
+Identify all of the people who need access to each space and organization. Determine their role. The job role of a team member determines their authority. For example, a senior developer needs the authority to view and update the whole {{site.data.keyword.cfee_full}} development environment. However, a junior developer is limited as to what they can view and update.
