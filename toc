@@ -29,5 +29,6 @@ Cloud Foundry Enterprise Environment
     {: .navgroup-end}
     
     {: .navgroup id="help"}
+    cfee_faq.md
     known-issues.md
     {: .navgroup-end}
