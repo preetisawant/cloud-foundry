@@ -16,7 +16,7 @@ lastupdated: "2018-29-10"
 {:tip: .tip}
 
 # Auditing and logging
-{: #logging-auditing}
+{: #auditing-logging}
 
 The logging and auditing capabilities in {{site.data.keyword.cfee_full}} (CFEE) allow administrators audit any event taking place in a CFEE instance, and developers to track log events generated from their applications.
 
