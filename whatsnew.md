@@ -32,6 +32,7 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
    * New capability to audit Cloud Foundry activities through the integration with an automatically configured IBM Cloud Activity Tracker service instance.
    * New capability to persist Cloud Foundry log events through an automatically configured IBM Cloud Log Analysis service instance.
    * New `ibmcloud cfee` commands to retrieve and set permissions to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
+   * New `ibmcloud catalog blacklist` command to simplify visibility control of IBM Cloud services for users in an IBM Cloud account.
 
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
