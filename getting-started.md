@@ -125,6 +125,6 @@ Information on the CFEE API's is available in the CFEE [API documentation](https
 
 You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE_Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 Information on the CFEE API's in the CFEE [API documentation](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
