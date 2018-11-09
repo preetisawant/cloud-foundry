@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-04"
+lastupdated: "2018-11-09"
 
 ---
 
@@ -179,4 +179,5 @@ To unbind an application from a service instance:
 
 See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information about binding applications using the CLI.
 
-
+You can find videos with in-depth discussions and demonstrations on CFEE services in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+{:tip}
