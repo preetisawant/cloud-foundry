@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-08"
+lastupdated: "2018-11-09"
 
 ---
 
@@ -42,13 +42,13 @@ Logging of Cloud Foundry events is supported through integration with the Log An
 
 To enable logging for a CFEE instance:
 
-1. Open a CFEE's user interface and to **Operations > Logging** entry in the left navigation pane to open the Logging page.
-2. Click **Enable persistence** and select one of the **Log Analysis instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
-3. Once logging persistance is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the Log Analysis service instance itself, where they user can go to see and manage logging events.
+1. Make sure that you have an [IAM access policy](https://console.bluemix.net/iam/#/users) that assigns you editor, operator, or administrator role to the Log Analysis service instance into which you intend to persist the logging events.
+2. Open a CFEE's user interface and to **Operations > Logging** entry in the left navigation pane to open the Logging page.
+3. Click **Enable persistence** and select one of the **Log Analysis instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
+4. Once logging persistance is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the Log Analysis service instance itself, where they user can go to see and manage logging events.
 
 **Warning:** Enabling Logging Persistence requires a disruptive restart of the CFEE control plane and cells.  During the restart, all administrative functionality will be available, but some applications and services running in this CFEE instance may be unavailable.  The status of the CFEE components will be reflected in the Health Check page during the restart.  The restart takes approximately 20 minutes.
 
 You can disable Log persistence by clicking **Disable log persistence**, which will remove the service instance previously added and configured. This action will not delete the Log Analysis service instance.
 
 **Note:** When you disable log persistance, the Cloud Foundry logging events are still being generated, they are just not persisted outside the CFEE instance.
-
