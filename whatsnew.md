@@ -36,3 +36,7 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
 
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
+   
+See a demonstration of what's new in CFEE v1.1.0 in this [brief video](https://ibm.biz/CFEE-v110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+
+You can find other videos on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
