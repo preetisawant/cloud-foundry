@@ -15,7 +15,7 @@ lastupdated: "2018-11-08"
 {:screen: .screen}
 {:tip: .tip}
 
-# What's New in {{site.data.keyword.cfee_full_notm}}
+# What's New in IBM Cloud Foundry Enterprise Environment
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
