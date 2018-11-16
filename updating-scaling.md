@@ -66,7 +66,7 @@ New capabilities and enhancements to existing capabilities delivered regularly b
 Patches are delivered on the latest available version of a given _major_. For example, if a CFEE instance is running version 3.1.2 but the latest available version in the 3.x.x _major_ is version 3.3.4, any patches will be delivered on the code base of version 3.3.x, which means that the patch will be delivered in a (new) version 3.3.5. The CFEE instance with version 3.1.2 would need to be updated to version 3.3.5 in order to receive the new patch (i.e., udating just to version 3.3.4 will not solve the provlem fixed in the patch, which is delivered only in version 3.3.5).
 
 ## Scaling the CFEE infrastructure
-{: #update}
+{: #scale}
 
 To add application cells in your CFEE instance:
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
