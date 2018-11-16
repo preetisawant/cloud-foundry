@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -74,4 +74,3 @@ kubectl -n cf-monitoring apply -f config.yaml
 {: pre}
 
 For more information on the Firehose Prometheus exporter see [Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-
