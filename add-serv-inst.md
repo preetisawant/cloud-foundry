@@ -21,10 +21,10 @@ Applications deployed in an {{site.data.keyword.cfee_full_notm}} can be bound to
 Public service instances available in the {{site.data.keyword.Bluemix}} account cannot be available, by themselves, to CFEE environments.  In order for a public service instance (available in the {{site.data.keyword.Bluemix}} account) to become available to spaces in an CFEE environment, they have to be specifically added to the target CFEE space. Once the {{site.data.keyword.Bluemix}} service instance is added to the CFEE space, it can be bound to applications in that CFEE space.  This allows developers to leverage the vast catalog of {{site.data.keyword.Bluemix}} services in their applications deployed in CFEE environments, while allowing access control to those {{site.data.keyword.Bluemix}} services.
 
    In addition to adding existing {{site.data.keyword.Bluemix}} service instances to a CFEE space you can create a new {{site.data.keyword.Bluemix}} service instance from within a CFEE space, which also adds it automatically to that CFEE space.
-
+  
 2. Service instances managed by a local Cloud Foundry service broker (local to the CFEE). These in turn can be of two types:
    *  2a. An instance of a service offering created from the Cloud Foundry marketplace of the current {{site.data.keyword.cfee_full_notm}} instance. This type of service instance requires a registered service broker available in the environment. A service broker shows a catalog of service offerings and plans, as well as enables the creation, removal, binding and unbinding of instances from those service offerings. See the [Managing Service Brokers](https://docs.cloudfoundry.org/services/managing-service-brokers.html) in the Cloud Foundry documentation for more information.
-   * 2b. A user-provided service instance. Creation of this type is supported through the CLI, but not through the user interface. Nonetheless, user-provided service instances will be listed in the user interface.
+   * 2b. A user-provided service instance. Creation of this type is supported through the Command Line Interface (CLI), but not through the user interface. Nonetheless, user-provided service instances will be listed in the user interface.
    
 
 ## Viewing {{site.data.keyword.Bluemix_notm}} service instances across all CFEE environments
@@ -65,8 +65,7 @@ Alternatively, you can add {{site.data.keyword.Bluemix_notm}} service instance f
 {: #creating-services_inspace}
 You can create {{site.data.keyword.Bluemix_notm}} service instances from within a CFEE space.  Creating an {{site.data.keyword.Bluemix_notm}} service instance results in the following:
 * The {{site.data.keyword.Bluemix_notm}} service instance is created in the IBM Cloud.  This is equivalent to creating the service instance from the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
-* The {{site.data.keyword.Bluemix_notm}} service instance is added (aliased) into the CFEE space from which the creation action was initiated.
-
+* An alias to the {{site.data.keyword.Bluemix_notm}} service instance is added (aliased) to the CFEE space from which the creation action was initiated. An alias service instance (in a CFEE space) is a reference to the actual service instance (in the IBM Cloud account). The service instance alias allows developers to interact with the service instance (e.g., binding to applications) by handling all the credentials automatically for interacting with the service instance. .
 
 To create a service instance from within a CFEE space:
 1. In the target space page, go to the **Services** tab and click **Create service**.  This will open the **Marketplace** view for the {{site.data.keyword.cfee_full_notm}}.  The view lists services offerings from two sources (See __Source__ column):
@@ -178,6 +177,95 @@ To unbind an application from a service instance:
 2. Go the Actions menu in an application's row and select **Unbind service**.
 
 See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information about binding applications using the CLI.
+
+## Service visibility
+{: #service_visibility}
+
+Customers can control who can create new IBM Cloud services from a CFEE environment.  They can also control who can add existing IBM Cloud services to a CFEE space.  This control is exerted by controlling the visibility of service offerings (and/or instances of those service offerings) to users.
+
+### Controlling the creation of service instances
+{: #control_servicecreation}
+
+Controlling the creation of services can be accomplished by controlling the visibility of service offerings in the IBM Cloud Catalog for either all users in the IBM Cloud account or for users in specific Cloud Foundry organizations.
+
+#### Controlling visibility to users in an IBM Cloud account to the IBM Cloud catalog
+{: #creation_accountvisibility}
+
+IBM Cloud account administrators (users with _Administrator_ role to all IAM enabled services) can prevent a service or service plan from showing int the catalog for all users in a given **IBM Cloud account**.  Account administrators can prevent all account users from using a service by blacklisting a service or service plan for all the users in an account. Blacklisting a service will prevent users in that account from even seeing that service (or service plan) in the IBM Cloud catalog.  This is done through an `ibmcloud catalog blacklist` command which has the following syntax:
+
+  ```
+  ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
+  ```
+
+In its simoplest form, you can backlist you can make a service offering (all its plans) invisibile for users in the current account by issueing the following command:
+
+  ```
+  Ibmcloud catalog blacklist <thisService>
+  ```
+  {: pre}
+
+You could blacklist visibility not just generally for the entire service offering, but for a specific plan in a specific region.  For this, though you need to use the ID for the corresponding entry in the global catalog, not the name.   If you want to prevent users from seeing a specific plan in a specific region you can issue the following:
+
+  ```
+  Ibmcloud catalog blacklist -add <catalogEntryID>
+  ```
+  {: pre}
+  
+ To remove services from the blacklist:
+ ```
+  Ibmcloud catalog blacklist -remove <catalogEntryID>
+  ```
+  {: pre}
+ 
+You can find the ID of a given catalog entry (e.g., a service's plan and its deployment region) through the following command. The command returns all the plans and their deployment regions for a given service:
+
+  ```
+  ibmcloud catalog service <thisService>
+  ```
+  {: pre}
+
+You can find more details for the `ibmcloud catalog blacklist` by issuing the following:
+
+  ```
+  Ibmcloud catalog blacklist -help
+  ```
+  {: pre}
+
+
+#### Controlling visibility to users in a Cloud Foundry organization
+{: #creation_orgvisibility}
+
+You can use the `cf enable-service-access` and `cf disable-service-access` commands to control access to services for specific **Cloud Foundry organizations**.  Here the control point for access is Cloud Foundry (not the IBM Cloud Account).  Note that this is a native `cf` command (not an `ibmcloud` command). 
+
+Consider the following when setting service visibility through the `cf` CLI:
+
+*  `cf` commands enable and/or disable service offerings (optionally, specific service offering plans) for all users of specific Cloud Foundry organizations
+* Enablement works by building an organization “whitelist”. That is, an inclusion list of Cloud Foundry organizations that do have access to a service (as opposed to the "blacklist" approach in the `ibmcloud` command described earlier, which works by defining a list of services excluded from visibility to account users). This means that access control to a catalog service with this approach works, not by defining which organizations cannot see a service (blacklisting), but by defining which organizations can see it (whitelisting).
+*  When you give an organization access to a service (or service plan) by adding that organization to a whitelist, you are de facto disabling (excluding) all other organization from accessing it.  That is, once you whitelist an organization, you are disabling all other organization from access to that service (or service plan)
+*  Before you add organizations to the "can see" list, you have to disable visibility for all the organizations.  You cannot disable access to a service plan if the plan is currently available to all organizations.
+
+In accordance to the general behavior described above, we recommend to control organization access to services by issuing the following commands:
+1. **Disable** access to a service plan for all orgs:
+  ```
+  cf disable-service-access <service name> -p <plan name>
+  ```
+  {: pre}
+  
+2. **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
+  ```
+  cf enable-service-access <service name> -p <plan name> -o <org name>
+  ```
+  {: pre}
+  
+**Note:** We recommend to execute the Cloud Foundry enable and disable service commands for the entire service, not for specific plans.
+
+
+### Controlling access to existing service instances
+{: #control_serviceaddition}
+
+Developers in a CFEE space can use existing service instances available in the IBM Cloud account.  Within a specific space of a CFEE, users can *Add** a service instance to that space (See [Adding existing service instances](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services_inspace). Adding a service instance to a CFEE space creates an alias (reference) to the service instance, which allows a developer to bind the service instance to an application deployed into that CFEE space as if it were the actual service instance.
+
+Account administrators can control the use of service instances through [IAM access policies](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).  From either the UI or the ibmcloud CLI they can assign roles to either the service instances themselves or to the resource groups in which those instances resided.  A developer would need _Viewer_ role or higher to a service instance (or its resource group) before they can add that instance to a space.
 
 You can find videos with in-depth discussions and demonstrations on CFEE services in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 {:tip}
