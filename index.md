@@ -93,3 +93,6 @@ Following are the geographies, locations and data centers where the CFEE service
 {: caption="Table 2. Provisioning targets for CFEE and supporting services" caption-side="top"}
 
 As an **example**, the CFEE service can provisioned in three data centers in Europe: Amsterdam (1 data center), Frankfurt (3 data centers), London (3 data centers), Oslo (1 data center), and Paris (1 data center). If the CFEE is provisioned in Frankfurt, the Cloud Object Store service instance will be deployed in the _eu-geo_ region, and the Compose for PostgreSQL service instance will be deployed in the _eu-de_ public Cloud Foundry region.
+
+You can find videos with detailed information and demonstrations for working with services in CFEE in the [CFEE video playlist](https://ibm.biz/CFEE_Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+{:tip}
