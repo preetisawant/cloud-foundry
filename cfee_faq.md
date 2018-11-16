@@ -21,7 +21,7 @@ lastupdated: "2018-11-09"
 # FAQs
 {: #cfeefaq}
 
-## What is the difference between {{site.data.keyword.cfee_full}} (CFEE) and public Cloud Foundry?
+## What is the difference between IBM Cloud Foundry Enterprise Environment (CFEE) and public Cloud Foundry?
 {: #cfee_diff}
 
 You can use {{site.data.keyword.cloud}} Foundry public to run cloud-native applications that are using Cloud Foundry for simple setup, powerful scaling, and traffic management. You also have easy access to all {{site.data.keyword.cloud}} services.
@@ -29,7 +29,7 @@ You can use {{site.data.keyword.cloud}} Foundry public to run cloud-native appli
 You can use {{site.data.keyword.cfee_full}} for everything as you would with Cloud Foundry Public, but also to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
 
 
-## How is the new offering different from previous {{site.data.keyword.cloud}} Foundry offerings?
+## How is the new offering different from previous IBM Cloud Foundry offerings?
 {: #cfOfferings_diff}
 
 With respect to the public multi-tenant the most noteworthy difference is certainly the isolation properties. With respect to the existing single-tenant offering on IBM Cloud infrastructure, the main two differences are the reduced infrastructure footprint (and therefore the cost) as well as the service integration model into such a single-tenant environment.
