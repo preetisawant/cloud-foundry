@@ -27,12 +27,12 @@ _Release Date:_
 The following changes were released in version 1.1.0 of the {{site.data.keyword.cfee_full_notm}} service:
 
 * New capabilities:
-   * [Updating](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#update){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") a CFEE instance to a new version.
-   * [Scaling](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#scale){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") the capacity of a CFEE instance by adding or deleting Cloud Foundry cells.
-   * [Auditing](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") Cloud Foundry activities through integration with an automatically configured IBM Cloud Activity Tracker service instance.
-   * Persisting Cloud Foundry [log events](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#logging){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") through an automatically configured IBM Cloud Log Analysis service instance.
-   * New `ibmcloud cfee` [commands](https://console.bluemix.net/docs/cloud-foundry/permissions.html#permissions#permcli-creating){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") to retrieve and set permissions to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
-   * New `ibmcloud catalog blacklist` command to simplify [visibility control](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#service_visibility) ![External link icon](../icons/launch-glyph.svg "External link icon") of IBM Cloud services for users in an IBM Cloud account.
+   * [Updating](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#update) a CFEE instance to a new version.
+   * [Scaling](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#scale) the capacity of a CFEE instance by adding or deleting Cloud Foundry cells.
+   * [Auditing](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) Cloud Foundry activities through integration with an automatically configured IBM Cloud Activity Tracker service instance.
+   * Persisting Cloud Foundry [log events](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#logging) through an automatically configured IBM Cloud Log Analysis service instance.
+   * New `ibmcloud cfee` [commands](https://console.bluemix.net/docs/cloud-foundry/permissions.html#permissions#permcli-creating) to retrieve and set permissions to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
+   * New `ibmcloud catalog blacklist` command to simplify [visibility control](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#service_visibility) of IBM Cloud services for users in an IBM Cloud account.
 
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
