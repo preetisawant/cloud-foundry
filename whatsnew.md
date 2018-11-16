@@ -27,7 +27,7 @@ _Release Date:_
 The following changes were released in version 1.1.0 of the {{site.data.keyword.cfee_full_notm}} service:
 
 * New capabilities:
-   * [Updating](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#updating){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") a CFEE instance to a new version.
+   * [Updating](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#update){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") a CFEE instance to a new version.
    * [Scaling](https://console.bluemix.net/docs/cloud-foundry/updating-scaling.html#update-scale#scale){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") the capacity of a CFEE instance by adding or deleting Cloud Foundry cells.
    * [Auditing](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") Cloud Foundry activities through integration with an automatically configured IBM Cloud Activity Tracker service instance.
    * Persisting Cloud Foundry [log events](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#logging){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") through an automatically configured IBM Cloud Log Analysis service instance.
@@ -37,6 +37,6 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
    
-See a demonstration of what's new in CFEE v1.1.0 in this [brief video](https://ibm.biz/CFEE-v110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+See a demonstration of what's new in CFEE v1.1.0 in this [brief video](https://ibm.biz/CFEE-V110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 You can find other videos on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
