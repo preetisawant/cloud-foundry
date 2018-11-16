@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -29,13 +29,13 @@ The following Identity & Access Management (IAM) access policies are required fo
 
 * _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
 
-* Administrator or editor role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
+* _Administrator_ or _editor_ role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
    
-* Administrator role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions.
+* _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions.
 
-* Administrator or editor platform role, and manager service access role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
+* _Administrator_ or _editor_ platform role, and manager service access role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 
-* An instance of the Compose for PostgreSQL service is a required dependency of the CFEE service.  Compose for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  That instance of the **Compose for PostgreSQL service** is deployed in a space within a public Cloud Foundry organization (unrelated to CFEE organizations) that you select when creating a {{site.data.keyword.cfee_full_notm}} instance.  This means that when you create a {{site.data.keyword.cfee_full_notm}} instance you need to have manager access to at least an organization in the location where you intend to provision the CFEE instance.  You also need developer access to at least one space in that organization. 
+* An instance of the Compose for PostgreSQL service is a required dependency of the CFEE service.  Compose for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  That instance of the **Compose for PostgreSQL service** is deployed in a space within a public Cloud Foundry organization (unrelated to CFEE organizations) that you select when creating a {{site.data.keyword.cfee_full_notm}} instance.  This means that when you create a {{site.data.keyword.cfee_full_notm}} instance you need to have _manager_ access to at least an organization in the location where you intend to provision the CFEE instance.  You also need _developer_ access to at least one space in that organization. 
 
   If you are not a member of at least one public organization in the location where you intend to create a CFEE instance, ask an IBM Cloud administrator to invite you to one. If you have administrator role in the account you can add users to public organizations and spaces in the account by performing the following:
 
@@ -71,9 +71,9 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 
      **Note:** _viewer_ access to the resource group under which a CFEE instance is grouped is not, by itself, sufficient to make the CFEE visibile to a user.  Users need need explicit access to the CFEE instance (with viewer role or higher) to have have visibility into that instance.
 
-  - Users need _editor_ role or higher to an {{site.data.keyword.Bluemix_notm}} service in order to **bind** an instance of that service to an application deployed in a CFEE space.
+  - Users need _editor_ role or higher to an {{site.data.keyword.Bluemix_notm}} service to be able to **bind** an instance of that service to an application deployed in a CFEE space.
 
-  - Users need _editor_ role or higher to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned in order to **update the CFEE to a new version**.
+  - Users need _editor_ role or higher to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **update the CFEE to a new version**.
 
-  - Users need _administrator_ role to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned in order to **change the capacity** of a cfee (adding or removing cells in that CFEE).
+  - Users need _administrator_ role to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **change the capacity** of a cfee (adding or removing cells).
 
