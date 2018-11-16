@@ -33,7 +33,6 @@ Cloud Foundry Enterprise Environment
     updating-scaling.md
     {: .navgroup-end}
 
-
     {: .navgroup id="help"}
     whatsnew.md
     cfee_faq.md
