@@ -32,7 +32,7 @@ Users need the following permissions to be able to update a CFEE instance to a n
 
 Updating the CFEE version of your CFEE instance is a two-step process. First, update the control plane that hosts the CFEE componentry. Then, update the cells that host your applications.
 
-The following rules and constraints apply:
+The following rules and constraints apply when updating a CFEE to a new version:
 * The control plane must be updated first. Once the control plane has been updated the cells can be updated.
 * Application cells can be updated only to the version of the control plane.  That is, control plane cells can be at a higher CFEE version level than application cells, but not viceversa.
 
