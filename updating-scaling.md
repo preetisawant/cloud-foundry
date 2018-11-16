@@ -26,6 +26,10 @@ The CFEE version updates take place on the control plane containing the CFEE com
 ## Updating the CFEE version
 {: #update}
 
+Users need the following permissions to be able to update a CFEE instance to a new version:
+   * _Editor_ role or higher to a CFEE instance.
+   * _Operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned.
+
 Updating the CFEE version of your CFEE instance is a two-step process. First, update the control plane that hosts the CFEE componentry. Then, update the cells that host your applications.
 
 The following rules and constraints apply:
@@ -67,6 +71,10 @@ Patches are delivered on the latest available version of a given _major_. For ex
 
 ## Scaling the CFEE infrastructure
 {: #scale}
+
+Users need the following permissions to be able to add or remove Cloud Foundry cells to a CFEE instance:
+* _Administrator_ role or higher to a CFEE instance.
+* _Operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned.
 
 To add application cells in your CFEE instance:
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
