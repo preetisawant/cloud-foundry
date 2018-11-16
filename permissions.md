@@ -58,6 +58,38 @@ To confirm that you have the required access policies to create an {{site.data.k
 
 For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
 
+### Expediting the setting of permissions to create an environment using the CLI
+{: #permcli-creating}
+
+You can expedite the setting of permissions for creating CFEE instances through the `ibmcloud cfee create-permission-set`.  The command allows a CFEE administrator to setup in a single command the required access policies for creating a CFEE instance and all its ancillary services. 
+
+The command sets the permissions to an IAM _Access Group_ and adds a user to that _Access Group_.  The administrator issuing the command can include in the command an existing _Access Group_.  If no _Access Group_ is provided, a default _cfee-provision-access-group_ is created automatically.
+
+```
+ibmcloud cfee create-permission-set USER_NAME [-ag, --access-group GROUP_NAME] [--output TYPE]
+```
+{: pre}
+
+The command sets the following access policies for the target user:
+
+*  Editor roles to the Cloud Object Storage and CFEE services in the current IBM Cloud account.
+*  Administrator role to the Kubernetes Service in the current IBM Cloud account.
+*  Developer role to the current space in the current org for provisioning of the Compose for PostgreSQL.
+
+For more details on the command issue the following:
+
+```
+cfee create-permission-set -help
+```
+{: pre}
+
+You can use the `ibmcloud cfee create-permission-get` to find out or validate the access policies in place for a user:
+
+```
+ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME] [--output TYPE]
+```
+{: pre}
+
 ## Permissions required to work with an environment
 {: #perm-working}
 
