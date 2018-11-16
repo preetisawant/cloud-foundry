@@ -37,7 +37,7 @@ This view shows all the {{site.data.keyword.Bluemix_notm}} service instances ava
 From this view you can also bind applications deployed into the CFEE spaces to which those service instances have been added. Go to the menu located at the far right of the table row for the corresponding service (available to a specific CFEE space) and select **Bind to applications**.
 
 ## Adding existing {{site.data.keyword.Bluemix_notm}} service instances to a CFEE space
-{: #adding-services_inspace}
+{: #adding-services-inspace}
 
 You can bind an {{site.data.keyword.Bluemix_notm}} service instances to applications deployed into a CFEE space.  Before an IBM Cloud service instance can be bound to appplication deployed in CFEE it has to be added to the CFEE space in which the application is deployed. The following is required before you can add an {{site.data.keyword.Bluemix_notm}} service instance to a CFEE Space:
 * The {{site.data.keyword.Bluemix_notm}} service must be available in the same {{site.data.keyword.Bluemix_notm}} account where the CFEE instance resides.
@@ -263,7 +263,7 @@ In accordance to the general behavior described above, we recommend to control o
 ### Controlling access to existing service instances
 {: #control_serviceaddition}
 
-Developers in a CFEE space can use existing service instances available in the IBM Cloud account.  Within a specific space of a CFEE, users can *Add** a service instance to that space (See [Adding existing service instances](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services_inspace). Adding a service instance to a CFEE space creates an alias (reference) to the service instance, which allows a developer to bind the service instance to an application deployed into that CFEE space as if it were the actual service instance.
+Developers in a CFEE space can use existing service instances available in the IBM Cloud account.  Within a specific space of a CFEE, users can **Add** a service instance to that space (See [Adding existing service instances](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace)above). Adding a service instance to a CFEE space creates an alias (a reference) to the service instance, which allows a developer to bind the service instance to an application deployed into that CFEE space as if it were the actual service instance.
 
 Account administrators can control the use of service instances through [IAM access policies](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).  From either the UI or the ibmcloud CLI they can assign roles to either the service instances themselves or to the resource groups in which those instances resided.  A developer would need _Viewer_ role or higher to a service instance (or its resource group) before they can add that instance to a space.
 
