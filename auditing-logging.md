@@ -36,7 +36,7 @@ To enable auditing for a CFEE instance:
 You can disable Auditing by clicking **Disable auditing**, which will remove the Activity tracker service instance previously added and configured. This action does not delete the Activity Tracker service instance.
 
 ## Logging persistence
-{: #logging-auditing}
+{: #logging}
 
 Logging of Cloud Foundry events is supported through integration with the Log Analysis service in the IBM Cloud. An instance of the Log Analysis service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry logging events generated from the CFEE instance.  The user can see and manage those logging events in the user interface of the Log Analysis service instance.
 
