@@ -20,7 +20,7 @@ lastupdated: "2018-11-19"
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
 ## Version 1.1.0
-{: #v101}
+{: #v110}
 
 _Release Date:_ 2018-11-16
 
