@@ -17,7 +17,7 @@ lastupdated: "2018-11-14"
 # Updating and scaling
 {: #update-scale}
 
-Update the {{site.data.keyword.cfee_full_notm}} service instance to the latest version to get the latest CFEE functions and fixes. Updates for ICDEE can include new versions of the Cloud Foundry platform and Kubernetes cluster that supports the CFEE infrastructure.
+Update the {{site.data.keyword.cfee_full_notm}} service instance to the latest version to get the latest CFEE functions and fixes. Updates for CFEE can include new versions of the Cloud Foundry platform and Kubernetes cluster that supports the CFEE infrastructure.
 
 The CFEE version updates take place on the control plane containing the CFEE components and on the cells. You can also scale the capacity of your CFEE instance by adding or deleting application cells.
 
