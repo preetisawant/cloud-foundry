@@ -25,7 +25,7 @@ Auditing and logging in CFEE are suppoted through integration with the Log Analy
 ## Auditing
 {: #auditing}
 
-Auditing allows CFEE administrators to track Cloud Foundry auditable activities taking place in a CFEE instance.  Those activities include login, creation of organizations and spaces, user membership and role assignments, application deployments, service bindings, and domain configuration. Auditing is supported through integration with the Activity Tracker service in the IBM Cloud. An instance of the Activity Tracker service selected by the CFEE administrator is configured automatically to receive events representing actions performed within Cloud FOundry and on the CFEE control plane.  The user can see and manage those events in the user interface of the Activity Tracker service instance.
+Auditing allows CFEE administrators to track Cloud Foundry auditable activities taking place in a CFEE instance.  Those activities include login, creation of organizations and spaces, user membership and role assignments, application deployments, service bindings, and domain configuration. Auditing is supported through integration with the Activity Tracker service in the IBM Cloud. An instance of the Activity Tracker service selected by the CFEE administrator is configured automatically to receive events representing actions performed within Cloud Foundry and on the CFEE control plane.  The user can see and manage those events in the user interface of the Activity Tracker service instance.
 
 To enable auditing for a CFEE instance:
 
