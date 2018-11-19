@@ -36,7 +36,7 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
    * Health Check view that indicates the operational status of CFEE components.
    * New commands to perform CFEE related actions on the command line interface (CLI):
      * `ibmcloud cfee create`, `ibmcloud cfee create-locations`, and `ibmcloud cfee create-status` commands to create CFEE instances from the command line interface, get a list of available data centers where a CFEE can be provisioned, and check the provisioning status of a CFEE being created.
-     * `ibmcloud cfee create-permission-get` and`ibmcloud cfee create-permission-set`  [commands](https://console.bluemix.net/docs/cloud-foundry/permissions.html#permissions#permcli-creating) to retrieve and set the permissions required to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
+     * `ibmcloud cfee create-permission-get` and `ibmcloud cfee create-permission-set`  [commands](https://console.bluemix.net/docs/cloud-foundry/permissions.html#permissions#permcli-creating) to retrieve and set the permissions required to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
      * `ibmcloud catalog blacklist` command to simplify [visibility control](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#service_visibility) of IBM Cloud services for users in an IBM Cloud account.
 
 * Resolved problems:
