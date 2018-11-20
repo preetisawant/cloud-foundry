@@ -101,7 +101,7 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
   - The resource group under which the CFEE instance was created.
   - The CFEE instance itself. 
   
-    The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
+   The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
   - Users assigned _administrator_ or _editor_ roles can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
   - Users with _viewer_ role to a CFEE can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](add-users.html).
 
