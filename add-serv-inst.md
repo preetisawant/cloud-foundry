@@ -151,7 +151,7 @@ To create service instances using the CLI follow the following steps:
 ## Binding services to applications
 {: #bind_services}
 
-Users with _editor_ role or higher to a {{site.data.keyword.Bluemix_notm}} service instance can bind that instance to an application deployed in a CFEE space,  either from the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) or from the Services tab of a CFEE space's user interface.   
+Users with _operator_ platform role (or higher) and _writer_ service role (or higher) to a {{site.data.keyword.Bluemix_notm}} service instance can bind that instance to an application deployed in a CFEE space,  either from the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) or from the Services tab of a CFEE space's user interface.   
 
 To bind a service instance to an application from the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services):
 1. Go to the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) to see a consolidated view of all the {{site.data.keyword.Bluemix_notm}} service instances available to you in the {{site.data.keyword.Bluemix_notm}} account.  The view is also intended to show which {{site.data.keyword.Bluemix_notm}} services instances are available (aliased into) in which CFEE spaces. You can expand a service instance to show the CFEE spaces where it has been added.  You can further expand those to see the applications in those CFEE spaces to which those service instances have been bound. 
