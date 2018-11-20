@@ -105,12 +105,10 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
   - Users assigned _administrator_ or _editor_ roles can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
   - Users with _viewer_ role to a CFEE can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](add-users.html).
 
-  - Users need _editor_ platform role or higher to an {{site.data.keyword.Bluemix_notm}} service to be able to **bind** an instance of that service to an application deployed in a CFEE space.
-
   - Users need _editor_ platform role or higher to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **update the CFEE to a new version**.
 
   - Users need _administrator_ platform role to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **change the capacity** of a cfee (adding or removing cells).
  
-  - Users need _operator_ platform role (or higher) to be able to *add* an IBM Cloud *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
+  - Users need _operator_ platform role (or higher) to be able to **add** an IBM Cloud *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
  
-  - Users need _operator_ platform role (or higher) and _writer_ service role (or higher) to an IBM Cloud service instance to be able to *bind* that service instance to an application deployed in a CFEE space.
+  - Users need _operator_ platform role (or higher) and _writer_ service role (or higher) to an IBM Cloud service instance to be able to **bind** that service instance to an application deployed in a CFEE space.
