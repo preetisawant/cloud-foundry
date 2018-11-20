@@ -97,11 +97,13 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
 2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
 
-    All users need _viewer_ access or higher to the {{site.data.keyword.cfee_full_notm}} instance in the resource group under which the environment instance was created. The level of access and control that users have in an {{site.data.keyword.cfee_full_notm}} instance depends on the role that is granted in the access policy:
+    Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
+  - The resource group under which the CFEE instance was created.
+  - The CFEE instance itself. 
+  
+    The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
   - Users assigned _administrator_ or _editor_ roles can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
   - Users with _viewer_ role to a CFEE can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](add-users.html).
-
-     **Note:** A _viewer_ platform role to the resource group under which a CFEE instance is grouped is not, by itself, sufficient to make the CFEE visibile to a user.  Users need need explicit access to the CFEE instance (with _viewer_ role or higher) to have have visibility into that instance.
 
   - Users need _editor_ platform role or higher to an {{site.data.keyword.Bluemix_notm}} service to be able to **bind** an instance of that service to an application deployed in a CFEE space.
 
