@@ -41,7 +41,7 @@ From this view you can also bind applications deployed into the CFEE spaces to w
 
 You can bind an {{site.data.keyword.Bluemix_notm}} service instances to applications deployed into a CFEE space.  Before an IBM Cloud service instance can be bound to appplication deployed in CFEE it has to be added to the CFEE space in which the application is deployed. The following is required before you can add an {{site.data.keyword.Bluemix_notm}} service instance to a CFEE Space:
 * The {{site.data.keyword.Bluemix_notm}} service must be available in the same {{site.data.keyword.Bluemix_notm}} account where the CFEE instance resides.
-* You must have access to the {{site.data.keyword.Bluemix_notm}} service instance itself. For more information, see the Identity & Access page under the **Manage > Users** menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies.
+* You must have _operator_ platform role (or higher) to the {{site.data.keyword.Bluemix_notm}} service instance itself. For more information, see the Identity & Access page under the **Manage > Users** menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies.
 
 To Add an existing {{site.data.keyword.Bluemix_notm}} service instance to a CFEE space:
 1. Go to the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services).  
