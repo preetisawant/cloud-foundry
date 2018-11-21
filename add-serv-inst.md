@@ -197,7 +197,7 @@ IBM Cloud account administrators (users with _Administrator_ role to all IAM ena
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-In its simoplest form, you can backlist you can make a service offering (all its plans) invisibile for users in the current account by issueing the following command:
+In its simplest form, you can use the `catalog backlist` command to make a service offering (all its plans) invisibile to all users in the current account:
 
   ```
   Ibmcloud catalog blacklist <thisService>
