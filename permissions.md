@@ -111,6 +111,6 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 
   - Users need _administrator_ platform role to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **change the capacity** of a cfee (adding or removing cells).
  
-  - Users need _operator_ platform role (or higher) to be able to **add** an IBM Cloud *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
+  - Users need _operator_ platform role (or higher) to an IBM Cloud service instance to be able to **add** that *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
  
   - Users need _operator_ platform role (or higher) and _writer_ service role (or higher) to an IBM Cloud service instance to be able to **bind** that service instance to an application deployed in a CFEE space.
