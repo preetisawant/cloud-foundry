@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-08-07"
 
 Monitoring an {{site.data.keyword.cfee_full}} instance and its supported infrastructure is supported by an open-source toolset consisting of Prometheus and Grafana.  The solution enables you to analyze, visualize and manage alerts for metrics in the Cloud Foundry environment.  There are three web consoles from which monitoring takes place: A Grafana console, a Prometheus console, and a Prometheus Alert Manager console.
 
-**Note:** Access to the monitoring capability in a {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in that Kubernetes cluster supporting the CFEE instance.  The default name of the Kubernetes cluster supporting a CFEE instance is _`<CFEEname>`-cluster_.
+**Note:** Access to the monitoring capability in an {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in that Kubernetes cluster supporting the CFEE instance.  The default name of the Kubernetes cluster supporting a CFEE instance is _`<CFEEname>`-cluster_.
 
 ## Prometheus
 {: #prometheus}
@@ -33,7 +33,7 @@ The Prometheus ecosystem consists of multiple components, many of which are opti
 * Various special-purpose exporters like node exporter, blackbox exporter, etc.</li>
 * A push gateway for supporting short-lived jobs.</li>
 
-Prometheus gatheres metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. It stores all gathered samples locally and runs rules over this data to either aggregate and record new time series from existing data, or to generate alerts.
+Prometheus gathers metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. It stores all gathered samples locally and runs rules over this data to either aggregate and record new time series from existing data, or to generate alerts.
 
 ## Grafana
 {: #grafana}
@@ -46,7 +46,7 @@ Grafana is an open-source analytics platform for all metrics collected by Promet
 The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the CFEE instance.  To access the monitoring tools require to forward the ports of the Prometheus, Prometheus AlertManager, and Grafana servers.  This is done through the Kubernetes CLI.
 The following guides you through the steps for installing the required CLI's, forwarding the server ports, and launching the consoles.
 
-**Note:** The following instrutions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface and click **Monitoring** in the left navigation pane to see the instructions displayed.
+**Note:** The following instructions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface and click **Monitoring** in the left navigation pane to see the instructions displayed.
 
 ### Prerequisites
 
@@ -98,7 +98,7 @@ The following guides you through the steps for installing the required CLI's, fo
 
 ### Launch the monitoring consoles on your local web proxy
 
-5. Launch the Grafana console to see analytics on selected metrics.  The are default Grafana dashboards included in the CFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your CFEE instance. (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
+5. Launch the Grafana console to see analytics on selected metrics.  There are default Grafana dashboards included in the CFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your CFEE instance (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
 
    There is a default `admin` user in Grafana, with the default password set to `admin`. We recommend to login with Userd/Password `admin/admin`, and change them to new credentials:
 
@@ -107,7 +107,7 @@ The following guides you through the steps for installing the required CLI's, fo
    The following default dashboards are provided with the CFEE instance and are available from the _Home_ dropdown.
 
    Dashboards for the Kubernetes infrastructure supporting your CFEE environment:
-   - _Kubernetes Capacity Planing_ dashboard
+   - _Kubernetes Capacity Planning_ dashboard
         - Shows the capacity of the kubernetes infrastructure .
    - _Kubernetes Cluster Health_ dashboard
         - Shows the health of the Kubernetes cluster.
