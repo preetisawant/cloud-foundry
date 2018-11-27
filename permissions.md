@@ -53,7 +53,7 @@ You can grant user permissions using the {{site.data.keyword.Bluemix}} command l
 {:tip}
 
 To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+1. Go to the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
 2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
 For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
@@ -95,7 +95,7 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
 To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must be:
 1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
-2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Account > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
+2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
 
     Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
   - The resource group under which the CFEE instance was created.
