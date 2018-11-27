@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -52,12 +52,12 @@ Prima di creare il tuo CFEE, assicurati di essere nell'account {{site.data.keywo
 
 5.  Nei campi **Compose for PostgreSQL**, seleziona una delle organizzazioni pubbliche e seleziona quindi uno degli spazi disponibili in tale organizzazione. Verrà eseguito il provisioning dell'istanza di Compose for PostgreSQL nello spazio selezionato. Il servizio Compose for PostgreSQL è una dipendenza richiesta del servizio CFEE.
 
-**Nota:** solo le organizzazioni nell'ubicazione in cui intendi eseguire il provisioning dell'istanza CFEE (passo 4 in alto) e a cui hai accesso sono disponibili per la selezione. All'interno di una specifica organizzazione, sono disponibili per la selezione solo gli spazi a cui hai un accesso di _sviluppatore_. 
+**Nota:** solo le organizzazioni nell'ubicazione in cui intendi eseguire il provisioning dell'istanza CFEE (passo 4 in alto) e a cui hai accesso sono disponibili per la selezione.  All'interno di una specifica organizzazione, sono disponibili per la selezione solo gli spazi a cui hai un accesso di _sviluppatore_. 
 
 6.  Facoltativamente, apri la sezione **Infrastruttura** per visualizzare le proprietà del cluster Kubernetes che supporta l'istanza CFEE. Tieni presente che il **Numero di nodi di lavoro** è uguale al numero di celle più 2 (due dei nodi di lavoro Kubernetes di cui è stato eseguito il provisioning supportano il piano di controllo CFEE).
 Il cluster Kubernetes su cui è distribuito l'ambiente compare nel [dashboard](https://console.bluemix.net/dashboard/apps/) di {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi la [documentazione del servizio Kubernetes](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov).
 
-**Nota:** consigliamo che lo spanning della VLAN sia abilitato se il provisioning dei nodi di lavoro nel cluster Kubernetes viene eseguito su sottoreti differenti.I nodi di lavoro su sottoreti differenti potrebbero impedire l'interconnettività se lo spanning della VLAN è disabilitato. Per ulteriori informazioni, vedi la documentazione dello [spanning della VLAN](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning).
+**Nota:** consigliamo che lo spanning della VLAN sia abilitato se il provisioning dei nodi di lavoro nel cluster Kubernetes viene eseguito su sottoreti differenti.  I nodi di lavoro su sottoreti differenti potrebbero impedire l'interconnettività se lo spanning della VLAN è disabilitato.  Per ulteriori informazioni, vedi la documentazione dello [spanning della VLAN](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning).
 
 7.  Il **Riepilogo ordine** sul lato destro della pagina riflette il costo dell'istanza CFEE e dei servizi ausiliari insieme al totale mensile stimato.
 
@@ -85,13 +85,13 @@ Quando sei pronto, puoi [distribuire l'applicazione](https://console.bluemix.net
 
 ## Passo 6: gestione dei servizi
 
-[Crea i servizi](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) oppure [Aggiungi dei servizi esistenti](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) disponibili nell'account IBM Cloud. Una volta che un'istanza del servizio è disponibile in uno spazio CFEE, puoi eseguirne il bind (associazione) alle applicazioni CFEE distribuite in tale spazio.
+[Crea i servizi](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) oppure [Aggiungi dei servizi esistenti](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) disponibili nell'account IBM Cloud.  Una volta che un'istanza del servizio è disponibile in uno spazio CFEE, puoi eseguirne il bind (associazione) alle applicazioni CFEE distribuite in tale spazio.
 
 ## Passo 7: associazione delle applicazioni alle istanze del servizio
 
 [Associa la tua applicazione](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#bind_services) a un alias dell'istanza del servizio per poter utilizzare le funzioni del servizio.
 
-Sapevi del [dashboard di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview)? In esso puoi consultare una vista consolidata di tutte le applicazioni e tutti i servizi in {{site.data.keyword.Bluemix_notm}}, sia _Pubblico_ che _Enterprise_ (CFEE).  Una volta all'interno del dashboard Cloud Foundry, fai clic su _Pubblico_ nel riquadro di navigazione a sinistra per visualizzare le applicazioni e i servizi pubblici disponibili nell'account IBM Cloud. Fai clic su _Enterprise_ per visualizzare tutti gli ambienti CFEE, le applicazioni distribuite negli spazi CFEE e i servizi disponibili agli spazi CFEE.
+Sapevi del [dashboard di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview)? In esso puoi consultare una vista consolidata di tutte le applicazioni e tutti i servizi in {{site.data.keyword.Bluemix_notm}}, sia _Pubblico_ che _Enterprise_ (CFEE).  Una volta all'interno del dashboard Cloud Foundry, fai clic su _Pubblico_ nel riquadro di navigazione a sinistra per visualizzare le applicazioni e i servizi pubblici disponibili nell'account IBM Cloud.  Fai clic su _Enterprise_ per visualizzare tutti gli ambienti CFEE, le applicazioni distribuite negli spazi CFEE e i servizi disponibili agli spazi CFEE.
 {:tip}
 
 ## Passo 8: installazione della console Stratos per gestire le applicazioni (facoltativo)
@@ -116,5 +116,15 @@ Per avviare la console Stratos:
 3. La console Stratos viene aperta in una scheda del browser separata. Quando apri la console per la prima volta, ti viene richiesto di accettare due avvertenze consecutive per via dei certificati autofirmati.
 4. Fai clic su **Login** per aprire la console. Non è richiesta alcuna credenziale poiché l'applicazione utilizza le tue credenziali {{site.data.keyword.Bluemix_notm}}.
 
-Le informazioni sull'API CFEE sono disponibili nella [documentazione della API](https://console.bluemix.net/apidocs/cfaas){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+Le informazioni sull'API CFEE sono disponibili nella [documentazione dell'API](https://console.bluemix.net/apidocs/cfaas){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 {:tip}
+
+
+## Risorse aggiuntive
+{: #additional-resources}
+
+Puoi eseguire alcune attività di gestione in un CFEE utilizzando i comandi CLI `ibmcloud CFEE`. I comandi ti consentono di ottenere informazioni su un'istanza CFEE, così come di gestire le tue organizzazioni e i tuoi spazi. Consulta i [Riferimenti ai comandi IBM Cloud CLI CFEE](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+
+Puoi trovare i video su discussioni e dimostrazioni approfondite su vari argomenti CFEE in [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+
+Le informazioni sull'API CFEE sono disponibili nella [documentazione dell'API](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").

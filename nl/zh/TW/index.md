@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-07-10"
+lastupdated: "2018-29-10"
 
 ---
 
@@ -18,26 +18,18 @@ lastupdated: "2018-07-10"
 # 關於 {{site.data.keyword.cfee_full_notm}}
 {: #about}
 
-使用 {{site.data.keyword.cfee_full}} (CFEE)，您可以根據需求，將多個隔離的企業級 Cloud Foundry 平台實例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服務實例會以您自己的帳戶在 {{site.data.keyword.Bluemix_notm}} 中執行。環境部署至隔離的硬體（Kubernetes 叢集）。您可以完全控制環境，包括存取控制、容量管理、變更管理、監視及服務。
+歡迎使用 {{site.data.keyword.cfee_full}} 服務。
+
+使用 {{site.data.keyword.cfee_full}} (CFEE)，您可以依需求將多個隔離的企業級 Cloud Foundry 平台實例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服務實例會以您自己的帳戶在 {{site.data.keyword.Bluemix_notm}} 中執行。環境部署至隔離的硬體（Kubernetes 叢集）。您可以完全控制環境，包括存取控制、容量、版本更新、資源用量及監視。此外，{{site.data.keyword.Bluemix_notm}} 中的 CFEE 整合可讓開發人員利用其 {{site.data.keyword.Bluemix_notm}} 帳戶中可用的服務。使用者可以將這些服務新增至 CFEE，並將它們連結至部署到 CFEE 空間的應用程式。
+
+找出如何[**開始**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)建立及使用 CFEE 實例。
+
 {:shortdesc}
 
-{{site.data.keyword.cfee_full}} 目前處於其測試版階段，我們希望能聽到您的意見！若要開始使用，請在 [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) 建立您自己的 {{site.data.keyword.cfee_full}} 實例，並[要求存取](http://ibm.biz/cfee-forum-signup) [IBM CFEE Slack 討論區](https://ibm-cfee.slack.com)來分享您的意見、提問以及與產品團隊接觸。{:tip}
+## CFEE 的重要元素
+{: #key-elements}
 
-一個成功的專案，需要花時間計劃和設計您需要哪些資源，以及您的企業需求為何。為了協助您開始使用，請考量下列問題：
-
-* 您要開發多少個應用程式？其類型為何？
-* 應用程式需要存取哪些服務？
-* 誰可以在開發處理程序中分工合作？他們扮演什麼角色？
-* 專案的每一個階段所需的隔離程度為何？
-* 您的企業是否提供基礎架構資源？
-* 貴公司的通訊方式？
-* 是否有可以實作的命名標準，以清楚識別組織和空間用途？
-
-在決定您需要哪種類型的雲端環境時，您會計劃帳戶、組織、空間、資源和團隊成員的結構。
-
-對於大部分組織而言，單一 {{site.data.keyword.Bluemix_notm}} 帳戶就已足夠。如果您的組織有多個業務領域，則可以針對每個業務領域建立個別的 {{site.data.keyword.Bluemix_notm}} 帳戶，例如，大型銀行金融公司可能會針對零售和商業部門建立個別的帳戶。
-
-下表提供部分重要元素的摘要。
+下表提供 {{site.data.keyword.cfee_full}} 服務重要元素的摘要：
 
 |元素|說明|
 |-----------|---------------|
@@ -79,16 +71,16 @@ lastupdated: "2018-07-10"
 |北美 | 達拉斯 (das13) | us-geo |us-south |
 |北美 | 聖荷西 (sjc03) | us-geo | us-south |
 |北美 | 聖荷西 (sjc04) | us-geo | us-south |
-|南美 &nbsp; &nbsp;| 聖保羅 (sao01) |  us-geo | us-south |
+|南美 &nbsp; &nbsp;| 聖保羅 (sao01) | us-geo |us-south |
 |歐洲| 倫敦 (lon02) | eu-geo | eu-gb |
 |歐洲| 倫敦 (lon04) | eu-geo | eu-gb |
 |歐洲| 倫敦 (lon06) | eu-geo | eu-gb | 
 |歐洲| 阿姆斯特丹 (ams03) | eu-geo | eu-de |
-|歐洲| 奧斯陸 (osl01) |eu-geo | eu-de | 
+|歐洲| 奧斯陸 (osl01) | eu-geo | eu-de | 
 |歐洲| 巴黎 (par01) | eu-geo | eu-de |
 |歐洲| 法蘭克福 (fra02) | eu-geo | eu-de |
-|歐洲| 法蘭克福 (fra04) | eu-geo | eu-de | 
-|歐洲| 法蘭克福 (fra05) |  eu-geo | eu-de |
+|歐洲| 法蘭克福 (fra04) |eu-geo | eu-de | 
+|歐洲| 法蘭克福 (fra05) | eu-geo | eu-de |
 |亞太地區| 墨爾本 (mel01) | ap-geo | au-syd |
 |亞太地區| 雪梨 (syd01) | ap-geo | au-syd |
 |亞太地區| 雪梨 (syd04) | ap-geo | au-syd | 
@@ -98,10 +90,9 @@ lastupdated: "2018-07-10"
 |亞太地區| 東京 (gok02) | ap-geo | au-syd |
 |亞太地區| 東京 (gok04) | ap-geo | au-syd |
 |亞太地區| 東京 (gok05) | ap-geo | au-syd |
-
 {: caption="表 2. CFEE 及支援服務的佈建目標" caption-side="top"}
 
+**例如**，CFEE 服務可以佈建在歐洲的三個資料中心：阿姆斯特丹（1 個資料中心）、法蘭克福（3 個資料中心）、倫敦（3 個資料中心）、奧斯陸（1 個資料中心）和巴黎（1 個資料中心）。如果 CFEE 佈建在法蘭克福，Cloud Object Storage 服務實例將部署在 _eu-geo_ 地區，而 Compose for PostgreSQL 服務實例將部署在 _eu-de_ 公用 Cloud Foundry 地區。
 
-
-例如，CFEE 服務可以佈建在歐洲的三個資料中心：阿姆斯特丹（1 個資料中心）、法蘭克福（3 個資料中心）、倫敦（3 個資料中心）、奧斯陸（1 個資料中心）和巴黎（1 個資料中心）。如果 CFEE 佈建在法蘭克福，Cloud Object Storage 服務實例將部署在 _eu-geo_ 地區，而 Compose for PostgreSQL 服務實例將部署在 _eu-de_ 公用 Cloud Foundry 地區。
-
+您可以在 [CFEE 視訊播放清單](https://ibm.biz/CFEE_Playlist){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中找到具有使用 CFEE 中服務之詳細資訊及示範的視訊。
+{:tip}

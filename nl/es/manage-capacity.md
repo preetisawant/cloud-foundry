@@ -17,7 +17,7 @@ lastupdated: "2018-08-15"
 
 Los administradores y desarrolladores pueden ver cómo utilizan las aplicaciones y las células la capacidad de recursos (memoria y CPU) de un CFEE. Para supervisar el uso de recursos de un entorno CFEE:
 
-1. Vaya al [{{site.data.keyword.Bluemix_notm}} panel de control de Cloud Foundry Environments](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Uso de recursos** en la parte izquierda del panel de navegación y abra la página _Uso de recursos_. En la página _Uso de recursos_ puede ir a _Aplicaciones_ o a las subentradas _Células_ para abrir las páginas correspondientes.  La información que se muestra en las páginas _Aplicaciones_ y _Células_ puede considerarse dos formas de desglosar el uso de recursos:
    * La página **Aplicaciones** analiza el uso de recursos según las aplicaciones agregadas entre instancias.
    * La página **Células** muestra el uso de recursos de las instancias de aplicación que se ejecutan en células específicas. El patrón de uso de recursos entre células puede proporcionar conocimientos en la distribución de carga y capacidad.  Por ejemplo, puede ayudar a identificar problemas con el equilibrio de carga de aplicaciones (p. ej., diferencias importantes en los recursos utilizados por una aplicación entre células) o el uso de recursos que se acerca a la capacidad total (p. ej., porcentajes altos del uso de recursos en todas las células).
@@ -56,7 +56,7 @@ La página Aplicaciones tiene dos secciones:
 Expanda una fila de aplicación en la tabla para ver la lista de instancias de aplicación y las métricas de uso de recursos correspondientes.
 
 ### Filtrado de aplicaciones
-Puede filtrar los contenidos de la tabla mediante los desplegables de filtro **Aplicaciones** y **Organizaciones** ubicados sobre la tabla.
+Puede filtrar el contenido de la tabla mediante los desplegables de filtro **Aplicaciones** y **Organizaciones** ubicados sobre la tabla.
 
 Asimismo, puede utilizar el campo de entrada de filtro sobre la tabla para mostrar únicamente las aplicaciones que coinciden con la serie que ha introducido en el campo de filtro.  El filtro se refleja en la tabla y en el gráfico sobre la misma.
 
@@ -89,7 +89,7 @@ La página Células tiene dos secciones:
    * **CPU (% )**: El porcentaje de CPU total disponible en el CFEE utilizado por la instancia de aplicación que se ejecuta en la célula.
 
 ### Filtración de células e instancias de app
-Puede filtrar los contenidos de la tabla mediante el desplegable del filtro **Células** ubicado sobre la tabla y seleccionando las células que se deben mostrar en la tabla.
+Puede filtrar el contenido de la tabla mediante el desplegable del filtro **Células** ubicado sobre la tabla y seleccionando las células que se deben mostrar en la tabla.
 
 Asimismo, puede utilizar el campo de entrada de filtro sobre la tabla para mostrar únicamente las instancias de aplicación que coinciden con la serie que ha introducido en el campo de filtro.  El filtro se refleja en la tabla y en el gráfico sobre la misma.
 

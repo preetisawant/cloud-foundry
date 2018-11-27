@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-28"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -21,10 +21,10 @@ Anwendungen, die in {{site.data.keyword.cfee_full_notm}} bereitgestellt werden, 
 Öffentliche Serviceinstanzen, die im {{site.data.keyword.Bluemix}}-Konto verfügbar sind, sind ohne eine weitere Aktion nicht für CFEE-Umgebungen verfügbar.  Damit eine öffentliche Serviceinstanz (im {{site.data.keyword.Bluemix}}-Konto verfügbar) für Bereiche in einer CFEE-Umgebung verfügbar wird, muss sie explizit zum Ziel-CFEE-Bereich hinzugefügt werden. Nachdem die {{site.data.keyword.Bluemix}}-Serviceinstanz zum CFEE-Bereich hinzugefügt wurde, kann sie an Anwendungen in diesem CFEE-Bereich gebunden werden.  Dies ermöglicht es Entwicklern, den umfangreichen Katalog der {{site.data.keyword.Bluemix}}-Services in ihren Anwendungen, die in CFEE-Umgebungen bereitgestellt sind, zu nutzen, während die Zugriffssteuerung für diese {{site.data.keyword.Bluemix}}-Services zugelassen wird.
 
    Zusätzlich zum Hinzufügen vorhandener {{site.data.keyword.Bluemix}}-Serviceinstanzen zu einem CFEE-Bereich können Sie eine neue {{site.data.keyword.Bluemix}}-Serviceinstanz aus einem CFEE-Bereich heraus erstellen, wodurch sie ebenfalls automatisch zu diesem CFEE-Bereich hinzufügt wird.
-
+  
 2. Serviceinstanzen, die von einem lokalen Cloud Foundry-Service-Broker verwaltet werden (lokal für die CFEE-Umgebung). Diese können wiederum zwei Typen aufweisen:
    *  2a. Eine Instanz eines Serviceangebots, das im Cloud Foundry-Marktplatz der aktuellen {{site.data.keyword.cfee_full_notm}}-Instanz erstellt wurde. Für diesen Serviceinstanztyp muss ein registrierter Service-Broker in der Umgebung verfügbar sein. Von einem Service-Broker wird ein Katalog mit Serviceangeboten und -plänen angezeigt; außerdem ermöglicht er es, Instanzen dieser Serviceangebote zu erstellen, zu entfernen, zu binden und Bindungen zu ihnen aufzuheben. Weitere Informationen hierzu finden Sie unter [Service-Broker verwalten](https://docs.cloudfoundry.org/services/managing-service-brokers.html) in der Dokumentation zu Cloud Foundry.
-   * 2b. Eine vom Benutzer bereitgestellte Serviceinstanz. Die Erstellung dieses Typs wird über die Befehlszeilenschnittstelle (CLI) unterstützt, aber nicht über die Benutzerschnittstelle. Dennoch werden vom Benutzer bereitgestellte Serviceinstanzen in der Benutzerschnittstelle aufgelistet.
+   * 2b. Eine vom Benutzer bereitgestellte Serviceinstanz. Die Erstellung dieses Typs wird über die Befehlszeilenschnittstelle (Command Line Interface, CLI) unterstützt, aber nicht über die Benutzerschnittstelle. Dennoch werden vom Benutzer bereitgestellte Serviceinstanzen in der Benutzerschnittstelle aufgelistet.
    
 
 ## {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen für alle CFEE-Umgebungen anzeigen
@@ -37,7 +37,7 @@ Diese Ansicht zeigt alle im Konto verfügbaren {{site.data.keyword.Bluemix_notm}
 In dieser Ansicht können Sie auch Anwendungen binden, die in den CFEE-Bereichen bereitgestellt wurden, zu denen diese Serviceinstanzen hinzugefügt wurden. Wechseln Sie in das Menü ganz rechts in der Tabellenzeile für den entsprechenden Service (für einen bestimmten CFEE-Bereich verfügbar) und wählen Sie **An Anwendungen binden** aus.
 
 ## Vorhandene {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen zu einem CFEE-Bereich hinzufügen
-{: #adding-services_inspace}
+{: #adding-services-inspace}
 
 Sie können {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen an Anwendungen binden, die in einem CFEE-Bereich bereitgestellt sind.  Damit eine IBM Cloud-Serviceinstanz an eine Anwendung gebunden werden kann, die in einer CFEE bereitgestellt ist, muss sie einem CFEE-Bereich hinzugefügt werden, in dem die Anwendung bereitgestellt ist. Folgendes ist erforderlich, bevor Sie eine {{site.data.keyword.Bluemix_notm}}-Serviceinstanz zu einem CFEE-Bereich hinzufügen können:
 * Der {{site.data.keyword.Bluemix_notm}}-Service muss in demselben {{site.data.keyword.Bluemix_notm}}-Konto verfügbar sein, in dem sich die CFEE-Instanz befindet.
@@ -65,8 +65,7 @@ Alternativ können Sie die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz aus
 {: #creating-services_inspace}
 Sie können {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen aus einem CFEE-Bereich heraus erstellen.  Das Erstellen einer {{site.data.keyword.Bluemix_notm}}-Serviceinstanz führt zu folgenden Ergebnissen:
 * Die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz wird in der IBM Cloud erstellt.  Dies ist äquivalent zum Erstellen der Serviceinstanz aus dem {{site.data.keyword.Bluemix_notm}} [-Katalog ](https://console.bluemix.net/catalog).
-* Die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz wird (mit Aliasnamen versehen) in den CFEE-Bereich eingefügt, von dem aus die Erstellungsaktion initiiert wurde.
-
+* Ein Alias für die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz wird (mit Aliasnamen versehen) zum CFEE-Bereich hinzugefügt, von dem aus die Erstellungsaktion initiiert wurde. Eine Aliasserviceinstanz (in einem CFEE-Bereich) ist ein Verweis auf die tatsächliche Serviceinstanz (im IBM Cloud-Konto). Der Aliasname der Serviceinstanz ermöglicht Entwicklern die Interaktion mit der Serviceinstanz (zum Beispiel die Bindung an Anwendungen), indem alle Berechtigungsnachweise automatisch für die Interaktion mit der Serviceinstanz verarbeitet werden. .
 
 Gehen Sie wie folgt vor, um eine Serviceinstanz aus einem CFEE-Bereich zu erstellen:
 1. Wechseln Sie auf der Seite des Zielbereichs zur Registerkarte **Services** und klicken Sie auf **Service erstellen**.  Dadurch wird die Ansicht **Marketplace** für {{site.data.keyword.cfee_full_notm}} geöffnet.  In der Ansicht werden Serviceangebote aus zwei Quellen aufgelistet (siehe Spalte __Quelle__):
@@ -84,13 +83,13 @@ Sie können eine Serviceinstanz über die CLI aus einem Bereich in einer CFEE er
 * Die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz wird in der IBM Cloud erstellt.  Dies ist äquivalent zum Erstellen der Serviceinstanz aus dem {{site.data.keyword.Bluemix_notm}} [-Katalog ](https://console.bluemix.net/catalog).
 * Die {{site.data.keyword.Bluemix_notm}}-Serviceinstanz wird (mit Aliasnamen versehen) in den CFEE-Bereich eingefügt, von dem aus die Erstellungsaktion initiiert wurde.
 
-Der Unterschied zwischen der Erstellung einer Serviceinstanz aus einem CFEE-Bereich und ihrer Erstellung über die CLI liegt im Lebenszyklus der erstellten Serviceinstanz.  Wenn Sie die Serviceinstanz in der Benutzerschnittstelle des CFEE-Bereichs erstellen, wird der Lebenszyklus der erstellten Serviceinstanz von der Serviceinstanz selbst im {{site.data.keyword.Bluemix_notm}}-Konto gesteuert.  Dies bedeutet, dass Aktualisierungen am Serviceplan über die Instanz im {{site.data.keyword.Bluemix_notm}}-Konto und nicht über den CFEE-Bereich gesteuert werden.  Wird die Serviceinstanz hingegen über die CLI erstellt, wird der Servicelebenszyklus über den CFEE-Bereich gesteuert (der Service wird über den CFEE-Bereich aktualisiert).
+Der Unterschied zwischen der Erstellung einer Serviceinstanz aus einem CFEE-Bereich und ihrer Erstellung über die CLI liegt im Lebenszyklus der erstellten Serviceinstanz.  Wenn Sie die Serviceinstanz in der Benutzerschnittstelle des CFEE-Bereichs erstellen, wird der Lebenszyklus der erstellten Serviceinstanz von der Serviceinstanz selbst im {{site.data.keyword.Bluemix_notm}}-Konto gesteuert. Dies bedeutet, dass Aktualisierungen am Serviceplan über die Instanz im {{site.data.keyword.Bluemix_notm}}-Konto und nicht über den CFEE-Bereich gesteuert werden. Wird die Serviceinstanz hingegen über die Befehlszeilenschnittstelle (CLI) erstellt, wird der Servicelebenszyklus über den CFEE-Bereich gesteuert (der Service wird über den CFEE-Bereich aktualisiert).
 
-Serviceinstanzen, die über die CLI erstellt werden, werden auch in der Benutzerschnittstelle angezeigt und durch einen Stern `*` neben dem Namen der Serviceinstanz angezeigt.
+Serviceinstanzen, die über die Befehlszeilenschnittstelle erstellt werden, werden auch in der Benutzerschnittstelle angezeigt und durch einen Stern `*` neben dem Namen der Serviceinstanz angezeigt.
 
 Führen Sie die folgenden Schritte aus, um Serviceinstanzen über die CLI zu erstellen:
 
-1. Laden Sie die {{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunter und installieren Sie sie, wenn noch nicht geschehen. [Laden Sie die Cloud Foundry-CLI herunter](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
+1. Laden Sie die {{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunter und installieren Sie sie, wenn noch nicht geschehen.[Laden Sie die Cloud Foundry-CLI herunter](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
 
 2. Wechseln Sie auf die {{site.data.keyword.cfee_full}}-Übersichtsseite und suchen Sie den API-Endpunkt der Umgebung.
 
@@ -152,7 +151,7 @@ Führen Sie die folgenden Schritte aus, um Serviceinstanzen über die CLI zu ers
 ## Services an Anwendungen binden
 {: #bind_services}
 
-Sie können eine Serviceinstanz, die in einer CFEE bereitgestellt ist, entweder über das [Cloud Foundry-Service-Dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) oder über die Registerkarte 'Services' einer Seite des CFEE-Bereichs an eine Anwendung binden.  
+Benutzer, die über die Rolle _Editor_ oder eine höhere Rolle für eine {{site.data.keyword.Bluemix_notm}}-Serviceinstanz verfügen, können diese Instanz an eine Anwendung binden, die in einem CFEE-Bereich bereitgestellt wird; dies ist entweder über das [Cloud Foundry-Service-Dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) oder über die Registerkarte "Services" der Benutzerschnittstelle eines CFEE-Bereichs möglich.   
 
 Gehen Sie wie folgt vor, um eine Serviceinstanz über das [Cloud Foundry-Service-Dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) an eine Anwendung zu binden:
 1. Rufen Sie das [Cloud Foundry-Service-Dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) auf, um eine konsolidierte Ansicht aller {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen anzuzeigen, die Ihnen im {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung stehen.  Die Ansicht soll auch zeigen, welche {{site.data.keyword.Bluemix_notm}}-Serviceinstanzen (mit Alias versehen) in welchen CFEE-Bereichen verfügbar sind. Sie können eine Serviceinstanz erweitern, um die CFEE-Bereiche anzuzeigen, denen sie hinzugefügt wurde.  Sie können diese nochmals erweitern, um die Anwendungen in denjenigen CFEE-Bereichen anzuzeigen, an die diese Serviceinstanzen gebunden wurden. 
@@ -160,7 +159,7 @@ Gehen Sie wie folgt vor, um eine Serviceinstanz über das [Cloud Foundry-Service
 3. Erweitern Sie die entsprechende Ansicht, um alle CFEE-Bereiche anzuzeigen, in denen diese Serviceinstanz hinzugefügt wurde. Wenn diese Serviceinstanz nicht zu dem CFEE-Bereich hinzugefügt wurde, in dem die Anwendung bereitgestellt ist, wählen Sie **Hinzufügen** aus dem Menü in der Zeile ganz rechts aus, um die Serviceinstanz im Ziel-CFEE-Bereich verfügbar zu machen.
 4. Wechseln Sie in das Menü ganz rechts in der Zeile für die CFEE/den Bereich, in dem die Serviceinstanz verfügbar ist, und wählen Sie **Anwendung binden** aus.
 5. Wählen Sie im Dialog __Anwendung binden__ die Anwendung aus, die Sie binden möchten.
-6. Die Anwendung wird jetzt an die Serviceinstanz in dem CFEE-Bereich gebunden, in dem die Anwendung bereitgestellt ist.  Sie können die Zeile für die entsprechende Zeile in der Tabelle erweitern, um die gebundenen Anwendungen im CFEE-Bereich anzuzeigen.
+6. Die Anwendung ist jetzt an die Serviceinstanz gebunden. Sie können eine Serviceinstanz in der Tabelle erweitern, um die Anwendungen anzuzeigen, die an sie gebunden sind (in einem bestimmten CFEE-Bereich).
 
 
 Gehen Sie wie folgt vor, um eine Anwendung über die Seite __Services__ eines CFEE-Bereichs an eine Serviceinstanz zu binden:
@@ -179,4 +178,94 @@ Gehen Sie wie folgt vor, um die Bindung einer Anwendung an eine Serviceinstanz a
 
 Weitere Informationen zum Binden von Anwendungen über die CLI finden Sie im Abschnitt [Eine Serviceinstanz binden](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") der Cloud Foundry-Dokumentation.
 
+## Sichtbarkeit von Services
+{: #service_visibility}
 
+Kunden können steuern, wer neue IBM Cloud-Services in einer CFEE-Umgebung erstellen kann. Sie können auch steuern, wer vorhandene IBM Cloud-Services zu einem CFEE-Bereich hinzufügen kann. Diese Steuerung wird durch das Steuern der Sichtbarkeit von Serviceangeboten (und/oder Instanzen dieser Serviceangebote) für den Benutzer ausgeübt.
+
+### Erstellung von Serviceinstanzen steuern
+{: #control_servicecreation}
+
+Die Steuerung der Serviceerstellung kann durch das Steuern der Sichtbarkeit von Serviceangeboten im IBM Cloud-Katalog für alle Benutzer im IBM Cloud-Konto oder für Benutzer in bestimmten Cloud-Foundry-Organisationen durchgeführt werden.
+
+#### Sichtbarkeit für Benutzer in einem IBM Cloud-Konto im IBM Cloud-Katalog steuern
+{: #creation_accountvisibility}
+
+IBM Cloud-Kontoadministratoren (Benutzer mit der Rolle _Administrator_ für alle für IAM aktivierten Services) können verhindern, dass ein Service oder Serviceplan im Katalog für alle Benutzer in einem bestimmten **IBM Cloud-Konto** anzeigt wird. Kontoadministratoren können verhindern, dass alle Kontenbenutzer einen Service verwenden, indem sie den Service bzw. Serviceplan für alle Benutzer in einem Konto in die Blacklist aufnehmen. Durch das Blacklisting eines Service wird sogar verhindert, dass Benutzer in diesem Konto diesen Service (oder Serviceplan) im IBM Cloud-Katalog anzeigen können. Dazu wird der Befehl `ibmcloud catalog blacklist` mit der folgenden Syntax ausgeführt:
+
+  ```
+  ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
+  ```
+
+Die einfachste Möglichkeit, ein Serviceangebot (alle zugehörigen Pläne) durch Blacklisting für die Benutzer im aktuellen Konto nicht sichtbar zu machen, ist das Absetzen des folgenden Befehls:
+
+  ```
+  Ibmcloud catalog blacklist <thisService>
+  ```
+  {: pre}
+
+Sie können die Sichtbarkeit aber nicht nur generell für ein ganzes Serviceangebot durch Blacklisting verhindern, sondern auch für einen bestimmten Plan in einer bestimmten Region. Hierfür benötigen Sie jedoch die ID für den entsprechenden Eintrag im globalen Katalog und nicht den Namen. Wenn Sie verhindern möchten, dass Benutzern ein bestimmter Plan in einer bestimmten Region angezeigt wird, können Sie folgenden Befehl absetzen:
+
+  ```
+  Ibmcloud catalog blacklist -add <catalogEntryID>
+  ```
+  {: pre}
+  
+ Gehen Sie wie folgt vor, um Services aus der Blacklist zu entfernen:
+ ```
+  Ibmcloud catalog blacklist -remove <catalogEntryID>
+  ```
+  {: pre}
+ 
+Die ID eines bestimmten Katalogeintrags (zum Beispiel eines Serviceplans und der zugehörigen Bereitstellungsregion) können Sie mit dem folgenden Befehl suchen. Nach dem Absetzen des Befehls werden alle Pläne und ihre Bereitstellungsregionen für einen bestimmten Service zurückgegeben:
+
+  ```
+  ibmcloud catalog service <thisService>
+  ```
+  {: pre}
+
+Weitere Details zum Befehl `ibmcloud catalog blacklist` erhalten Sie, wenn Sie den folgenden Befehl absetzen:
+
+  ```
+  Ibmcloud catalog blacklist -help
+  ```
+  {: pre}
+
+
+#### Sichtbarkeit für Benutzer in einer Cloud-Foundry-Organisation steuern
+{: #creation_orgvisibility}
+
+Mit den Befehlen `cf enable-service-access` und `cf disable-service-access` können Sie den Zugriff auf Services für bestimmte **Cloud Foundry-Organisationen** steuern. Der Steuerpunkt für den Zugriff ist in diesem Fall Cloud Foundry (nicht das IBM Cloud-Konto). Beachten Sie, dass es sich hierbei um einen nativen `cf`-Befehl handelt (nicht um einen `ibmcloud`-Befehl). 
+
+Beachten Sie Folgendes, wenn Sie die Servicesichtbarkeit über die Befehlszeilenschnittstelle `cf` festlegen:
+
+*  Mit `cf`-Befehlen werden Serviceangebote (optional auch Pläne von Serviceangeboten) für alle Benutzer bestimmter Cloud Foundry-Organisationen aktiviert bzw. inaktiviert.
+* Die Aktivierung wird durch die Erstellung einer Whitelist für die Organisation durchgeführt. Diese Whitelist ist eine Einschlussliste der Cloud Foundry-Organisationen, die über Zugriff auf einen Service verfügen (im Gegensatz zum Konzept der Blacklist des vorher beschriebenen `ibmcloud`-Befehls, durch den ein Service in eine Liste aus Services aufgenommen wird, die von den Kontobenutzern nicht angezeigt werden können). Dies bedeutet, dass für die Zugriffssteuerung auf einen Katalogservice bei diesem Konzept nicht definiert wird, welche Organisationen einen Service nicht anzeigen können (Blacklisting), sondern dass definiert wird, welche Organisationen einen Service anzeigen können (Whitelisting).
+*  Wenn Sie einer Organisation Zugriff auf einen Service (oder Serviceplan) gewähren, indem Sie diese Organisation einer Whitelist hinzufügen, inaktivieren Sie dadurch faktisch den Zugriff aller anderen Organisationen auf den Service (schließen diese vom Zugriff aus). Dies bedeutet, dass Sie durch das Aufnehmen einer Organisation in die Whitelist den Zugriff aller anderen Organisationen auf diesen Service (oder Serviceplan) inaktivieren.
+*  Bevor Sie Organisationen zu der Liste der Organisationen hinzufügen, die einen Service anzeigen können, müssen Sie die Sichtbarkeit für alle Organisationen inaktivieren. Sie können den Zugriff auf einen Serviceplan nicht inaktivieren, wenn der Plan derzeit für alle Organisationen verfügbar ist.
+
+In Übereinstimmung mit dem oben beschriebenen allgemeinen Verhalten wird empfohlen, den Zugriff der Organisationen auf Services durch das Absetzen der folgenden Befehle zu steuern:
+1. **Inaktivieren** des Zugriffs auf einen Serviceplan für alle Organisationen:
+  ```
+  cf disable-service-access <service name> -p <plan name>
+  ```
+  {: pre}
+  
+2. **Aktivieren** des Zugriffs auf den Serviceplan für bestimmte CFEE-Organisationen. Dadurch wird der Serviceplan für aller anderen Organisationen inaktiviert, für die der im Befehl nicht ausdrücklich aktiviert wird. 
+  ```
+  cf enable-service-access <service name> -p <plan name> -o <org name>
+  ```
+  {: pre}
+  
+**Anmerkung:** Es wird empfohlen, die Cloud Foundry-Befehle zum Aktivieren und Inaktivieren des Service für den gesamten Service und nicht für bestimmte Pläne auszuführen.
+
+
+### Zugriff auf vorhandene Serviceinstanzen steuern
+{: #control_serviceaddition}
+
+Entwickler in einem CFEE-Bereich können vorhandene Serviceinstanzen verwenden, die im IBM Cloud-Konto verfügbar sind. Innerhalb eines bestimmten Bereichs einer CFEE können Benutzer eine Serviceinstanz zu diesem Bereich **hinzufügen** (siehe [Vorhandene Serviceinstanzen hinzufügen](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) weiter oben). Durch das Hinzufügen einer Serviceinstanz zu einem CFEE-Bereich wird ein Aliasname (eine Referenz) für die Serviceinstanz erstellt, der es einem Entwickler ermöglicht, die Serviceinstanz so an eine Anwendung zu binden, die in diesem CFEE-Bereich bereitgestellt wird, als wäre sie die tatsächliche Serviceinstanz.
+
+Kontoadministratoren können die Verwendung von Serviceinstanzen über [IAM-Zugriffsrichtlinien](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage) steuern. Über die Benutzerschnittstelle oder die ibmcloud-Befehlszeilenschnittstelle können Sie die Rollen entweder den Serviceinstanzen selbst oder den Ressourcengruppen zuordnen, in denen sich diese Instanzen befinden. Damit ein Entwickler eine Instanz zu einem Bereich hinzufügen kann, benötigt er für die Serviceinstanz die Rolle _Anzeigeberechtigter_ oder eine höhere Rolle.
+
+Videos mit umfassenden Diskussionen und Vorführungen zu CFEE-Services finden Sie in der [CFEE-Videowiedergabeliste](https://ibm.biz/CFEE-Playlist){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
+{:tip}

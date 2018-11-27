@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-07-10"
+lastupdated: "2018-29-10"
 
 ---
 
@@ -18,27 +18,18 @@ lastupdated: "2018-07-10"
 # {{site.data.keyword.cfee_full_notm}} 정보
 {: #about}
 
-{{site.data.keyword.cfee_full}}(CFEE)를 사용하면 요청 시 여러 개의 격리된 엔터프라이즈급 Cloud Foundry 플랫폼을 인스턴스화할 수 있습니다. {{site.data.keyword.Bluemix_notm}} Foundry Enterprise 서비스의 인스턴스는 {{site.data.keyword.Bluemix_notm}}의 고유 계정 내에서 실행됩니다. 환경이 격리된 하드웨어(Kubernetes 클러스터)에 배치됩니다. 액세스 제어, 용량 관리, 변경 관리, 모니터링 및 서비스를 포함하여 환경을 완전히 제어할 수 있습니다.
+{{site.data.keyword.cfee_full}} 서비스를 시작합니다.
+
+{{site.data.keyword.cfee_full}}(CFEE)를 사용하면 요청 시 격리된 여러 엔터프라이즈급 Cloud Foundry 플랫폼을 인스턴스화할 수 있습니다. {{site.data.keyword.Bluemix_notm}} Foundry Enterprise 서비스의 인스턴스는 {{site.data.keyword.Bluemix_notm}}의 고유 계정 내에서 실행됩니다. 환경이 격리된 하드웨어(Kubernetes 클러스터)에 배치됩니다. 액세스 제어, 용량, 버전 업데이트, 리소스 사용 및 모니터링을 포함하여 환경을 완전히 제어할 수 있습니다. 뿐만 아니라, {{site.data.keyword.Bluemix_notm}}로의 CFEE 통합을 통해 개발자들은 {{site.data.keyword.Bluemix_notm}} 계정에서 사용 가능한 서비스를 활용할 수 있습니다. 사용자는 이러한 서비스를 CFEE에 추가하고, CFEE 영역으로 배치된 애플리케이션에 서비스를 바인드할 수 있습니다. 
+
+CFEE 인스턴스의 작성 및 사용을 [**시작하는**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) 방법에 대해 알아보십시오. 
+
 {:shortdesc}
 
-{{site.data.keyword.cfee_full}}는 현재 베타 단계에 있으며 피드백을 찾고 있습니다! 시작하려면 [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create)에서 고유한 {{site.data.keyword.cfee_full}} 인스턴스를 작성하고 [IBM CFEE Slack 포럼](https://ibm-cfee.slack.com)에 대한 [액세스 권한을 요청](http://ibm.biz/cfee-forum-signup)하여 피드백을 공유하고 질문하고 제품 팀과 연계하십시오.
-{:tip}
+## CFEE의 핵심 요소
+{: #key-elements}
 
-프로젝트 성공을 위해 충분한 시간을 들여 필요한 리소스 및 엔터프라이즈 요구사항을 계획하고 디자인하십시오. 시작하는 데 도움을 받으려면 다음 질문을 고려하십시오.
-
-* 개발 중인 앱의 수와 유형은 무엇입니까?
-* 앱이 어떤 서비스에 액세스해야 합니까?
-* 개발 프로세스에서 누가 협업하고 각각 어떤 역할을 수행합니까?
-* 프로젝트의 각 단계에 어느 정도의 격리가 필요합니까?
-* 엔터프라이즈에서 인프라 리소스를 제공합니까?
-* 회사에서 어떻게 의사소통합니까?
-* 조직 및 영역 사용을 명확히 식별하기 위해 구현할 수 있는 이름 지정 표준이 있습니까?
-
-필요한 클라우드 환경의 유형을 결정하는 과정의 일부로 계정, 조직, 영역, 리소스 및 팀 구성원의 구조를 계획하십시오.
-
-대부분의 조직에서는 단일 {{site.data.keyword.Bluemix_notm}} 계정으로 충분합니다. 조직에 둘 이상의 비즈니스 영역이 있는 경우 각 비즈니스 도메인마다 별도의 {{site.data.keyword.Bluemix_notm}} 계정을 작성할 수 있습니다. 예를 들어, 대형 은행은 소매 및 상업 분야에 대한 별도의 계정을 작성할 수 있습니다.
-
-다음 표는 일부 핵심 요소를 요약하여 보여줍니다.
+다음 표에서는 {{site.data.keyword.cfee_full}} 서비스의 핵심 요소를 요약하여 보여줍니다.
 
 |요소   |설명 |
 |-----------|---------------|
@@ -66,30 +57,30 @@ lastupdated: "2018-07-10"
 ## CFEE의 대상 프로비저닝 및 서비스 지원
 {: #provisioning-targets}
 
-다음은 CFEE 서비스와 종속 서비스(Kubernetes 서비스, Compose for PostgreSQL 및 Cloud Object Storage 서비스)가 프로비저닝에 사용될 수 있는 지역, 위치 및 데이터센터입니다. 
+다음은 CFEE 서비스와 종속 서비스(Kubernetes 서비스, Compose for PostgreSQL 및 Cloud Object Storage 서비스)가 프로비저닝에 사용될 수 있는 지역, 위치 및 데이터 센터입니다.
 
 |  **지역** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| **CFEE 인스턴스 & Kubernetes 클러스터** | **Cloud Object Storage** | **Compose for PostgreSQL(CF 지역)** |
 |----------------------------------------|-------------------|-------------------|-------------------|
 |북미 | 몬트리올(mon01) | us-geo | us-east |
-|북미 | 토론토(tor01) | us-geo | us-east |
+|북미 | 토론토(tor01) | us-geo| us-east |
 |북미 | 워싱톤 DC(wdc04) | us-geo | us-east |
 |북미 | 워싱톤 DC(wdc06) | us-geo | us-east | 
 |북미 | 워싱톤 DC(wdc07) | us-geo | us-east |
-|북미 | 달라스(das10) | us-geo |us-south|
-|북미 | 달라스(das12) | us-geo |us-south|
-|북미 | 달라스(das13) | us-geo |us-south|
-|북미 | 산호세(sjc03) | us-geo |us-south|
-|북미 | 산호세(sjc04) | us-geo |us-south|
-|남미 &nbsp; &nbsp;| 상파울로(sao01) | us-geo |us-south|
-|유럽 | 런던(lon02) |eu-geo| eu-gb |
-|유럽 | 런던(lon04) |eu-geo| eu-gb |
-|유럽 | 런던(lon06) |eu-geo| eu-gb | 
-|유럽 | 암스테르담(ams03) |eu-geo| eu-de |
-|유럽 | 오슬로(osl01) |eu-geo| eu-de | 
-|유럽 | 파리(par01) |eu-geo| eu-de |
-|유럽 | 프랑크푸르트(fra02) |eu-geo| eu-de |
-|유럽 | 프랑크푸르트(fra04) |eu-geo| eu-de | 
-|유럽 | 프랑크푸르트(fra05) |eu-geo| eu-de |
+|북미 | 달라스(das10) | us-geo |us-south |
+|북미 | 달라스(das12) | us-geo |us-south |
+|북미 | 달라스(das13) | us-geo |us-south |
+|북미 | 산호세(sjc03) | us-geo |us-south |
+|북미 | 산호세(sjc04) | us-geo |us-south |
+|남미 &nbsp; &nbsp;| 상파울로(sao01) | us-geo |us-south |
+|유럽 | 런던(lon02) |eu-geo | eu-gb |
+|유럽 | 런던(lon04) |eu-geo | eu-gb |
+|유럽 | 런던(lon06) |eu-geo | eu-gb | 
+|유럽 | 암스테르담(ams03) |eu-geo | eu-de |
+|유럽 | 오슬로(osl01) |eu-geo | eu-de | 
+|유럽 | 파리(par01) |eu-geo | eu-de |
+|유럽 | 프랑크푸르트(fra02) |eu-geo | eu-de |
+|유럽 | 프랑크푸르트(fra04) |eu-geo | eu-de | 
+|유럽 | 프랑크푸르트(fra05) |eu-geo | eu-de |
 |아시아 태평양 | 멜버른(mel01) | ap-geo | au-syd |
 |아시아 태평양 | 시드니(syd01) | ap-geo | au-syd |
 |아시아 태평양 | 시드니(syd04) | ap-geo | au-syd | 
@@ -99,10 +90,9 @@ lastupdated: "2018-07-10"
 |아시아 태평양 | 도쿄(gok02) | ap-geo | au-syd |
 |아시아 태평양 | 도쿄(gok04) | ap-geo | au-syd |
 |아시아 태평양 | 도쿄(gok05) | ap-geo | au-syd |
-
 {: caption="표2. CFEE의 대상 프로비저닝 및 서비스 지원" caption-side="top"}
 
+**예를 들어**, CFEE 서비스는 유럽에서 세 개 데이터 센터에 프로비저닝할 수 있습니다(암스테르담(1개 데이터 센터), 프랑크푸르트(3개 데이터 센터), 런던(3개 데이터 센터), 오슬로(1개 데이터 센터) 및 파리(1개 데이터 센터)). CFEE가 프랑크푸르트에서 프로비저닝되는 경우, Cloud Object Store 서비스 인스턴스는 _eu-geo_ 지역에 배치되며 Compose for PostgreSQL 서비스 인스턴스는 _eu-de_ 퍼블릭 Cloud Foundry 지역에 배치됩니다.
 
-
-**예**: CFEE 서비스는 유럽의 3개의 데이터센터에서 프로비저닝될 수 있습니다(암스테르담(데이터센터 1개), 프랑크푸르트(데이터센터 3개), 런던(데이터센터 3개), 오슬로(데이터센터 1개) 및 파리(데이터센터 1개)). CFEE가 프랑크푸르트에서 프로비저닝되는 경우, Cloud Object Store 서비스 인스턴스는 _eu-geo_ 지역에 배치되며 Compose for PostgreSQL 서비스 인스턴스는 _eu-de_ 퍼블릭 Cloud Foundry 지역에 배치됩니다. 
-
+CFEE의 서비스 관련 작업을 위한 자세한 정보 및 데모가 포함된 동영상은 [CFEE 동영상 재생 목록](https://ibm.biz/CFEE_Playlist){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")에서 참조할 수 있습니다.
+{:tip}

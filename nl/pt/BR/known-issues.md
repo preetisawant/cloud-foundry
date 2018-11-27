@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-09-04"
 {: #known-issues}
 
 ## Instabilidade devido ao alto uso de CPU pelo exportador Firehose Prometheus
+{: #instabilityCPU-issue}
 
 Os ambientes do CFEE incluem um exportador Prometheus Firehose para coletar as métricas do Cloud Foundry nas solicitações _start_ e _stop_ http e https. Um ambiente do CFEE com um alto número de solicitações de HTTP pode fazer com que o exportador Prometheus Firehose use uma grande quantia de CPU. Isso pode levar a alguma instabilidade no ambiente já que o pod do exportador Firehouse é executado em um dos nós do trabalhador do plano de controle do Cloud Foundry.
 
@@ -35,7 +36,7 @@ Se o exportador Firehouse estiver usando a CPU entre 0.5 e 0.7 (50-70%) e a CPU 
 1. Crie o  ` config.yaml `:
 
    ```
-   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml.
+   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml
    ```
    {: pre}
   
@@ -44,10 +45,11 @@ Se o exportador Firehouse estiver usando a CPU entre 0.5 e 0.7 (50-70%) e a CPU 
    ```
    --- filter.events=ContainerMetric, CounterEvent, ValueMetric          
    ```
+   {: pre}
 
 ### Exemplo:
 
-Original  ` config.yam `:
+`config.yam` modificado:
 
 ```
   ...
@@ -66,8 +68,9 @@ Original  ` config.yam `:
 O comando a seguir reconfiguraria e reiniciaria o pod do nó do trabalhador:
 
 ```
-kubectl -n cf-monitoring apply -f config.yaml.
+kubectl -n cf-monitoring apply -f config.yaml
 
 ```
+{: pre}
 
 Para obter mais informações sobre o exportador Firehose Prometheus, veja [Exportador Cloud Foundry Firehose Prometheus](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").

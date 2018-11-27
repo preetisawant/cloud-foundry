@@ -24,7 +24,7 @@ Las apps de {{site.data.keyword.cfee_full}} abarcan espacios específicos. A su 
 
 Para crear organizaciones en {{site.data.keyword.cfee_full_notm}}:
 
-1. Vaya al panel de control [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments ](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} y abra el {{site.data.keyword.cfee_full_notm}} en el que desea crear organizaciones.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} y abra el {{site.data.keyword.cfee_full_notm}} en el que desea crear organizaciones.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Organizaciones** en el panel de navegación para abrir la página _Organizaciones_.
 3. Pulse **Añadir nuevo**.
 4. Escriba un **Nombre** para la nueva organización.

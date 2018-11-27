@@ -9,8 +9,6 @@ Cloud Foundry Enterprise Environment
     prepare-account.md
     permissions.md
     getting-started.md
-    manage-capacity.md
-    monitoring.md
 
     {: .topicgroup}
     Structuring your IBM Cloud environment
@@ -19,6 +17,11 @@ Cloud Foundry Enterprise Environment
         spaces.md
         quota.md
         assigning-roles.md
+    
+    manage-capacity.md
+    monitoring.md
+    auditing-logging.md
+    compliance.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -26,8 +29,12 @@ Cloud Foundry Enterprise Environment
     add-users.md
     deploy-apps.md
     add-serv-inst.md
+    domains.md
+    updating-scaling.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="help"}
+    whatsnew.md
+    cfee_faq.md
     known-issues.md
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -117,3 +117,13 @@ Stratos Console 是用于使用 Cloud Foundry 的基于 Web 的开放式源代�
 
 有关 CFEE API 的信息，请参阅 CFEE [API 文档](https://console.bluemix.net/apidocs/cfaas){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 {:tip}
+
+
+## 其他资源
+{: #additional-resources}
+
+您可以使用 `ibmcloud CFEE` CLI 命令在 CFEE 中执行某些管理任务。这些命令允许您获取有关 CFEE 实例的信息，以及管理其组织和空间的信息。请参阅 [IBM Cloud CLI CFEE 命令参考](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+
+您可以在 [CFEE 视频播放列表](https://ibm.biz/CFEE-Playlist){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 中找到有关各种 CFEE 主题的深入讨论和演示的视频。
+
+有关 CFEE API 的信息，请参阅 CFEE [API 文档](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。

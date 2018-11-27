@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -118,3 +118,13 @@ Gehen Sie wie folgt vor, um die Stratos-Konsole zu starten:
 
 Informationen zu den CFEE-APIs sind in der CFEE-[API-Dokumentation](https://console.bluemix.net/apidocs/cfaas){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") verfügbar.
 {:tip}
+
+
+## Zusätzliche Ressourcen
+{: #additional-resources}
+
+In einer CFEE-Instanz können Sie eine Reihe von Verwaltungstasks mit `ibmcloud CFEE`-Befehlen in der Befehlszeilenschnittstelle ausführen. Mit den Befehlen können Sie Informationen zu einer CFEE-Instanz abrufen und die zugehörigen Organisationen und Bereiche verwalten. Informationen hierzu finden Sie unter [CFEE-Befehlsreferenz für IBM Cloud-Befehlszeilenschnittstelle](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
+
+Videos mit umfassenden Diskussionen und Vorführungen zu verschiedenen CFEE-Themen finden Sie in der [CFEE-Videowiedergabeliste](https://ibm.biz/CFEE-Playlist){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
+
+Informationen zu den CFEE-APIs finden Sie in der [API-Dokumentation](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") der CFEE-Instanz.

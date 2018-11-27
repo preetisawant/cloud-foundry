@@ -56,7 +56,7 @@ La pagina Applicazioni contiene due sezioni:
 Espandi una riga dell'applicazione nella tabella per visualizzare l'elenco delle istanze dell'applicazione e le relative metriche di utilizzo delle risorse corrispondenti.
 
 ### Filtro delle applicazioni
-Puoi utilizzare il filtro del contenuto della tabella mediante gli elenchi a discesa dei filtri **Applicazioni** e **Organizzazioni** che si trovano sopra la tabella.
+Puoi filtrare il contenuto della tabella mediante gli elenchi a discesa dei filtri **Applicazioni** e **Organizzazioni** che si trovano sopra la tabella.
 
 Inoltre, puoi utilizzare il campo di immissione del filtro sopra la tabella per visualizzare solo le applicazioni corrispondenti alla stringa che hai immesso nel campo del filtro.  Il filtro si riflette in entrambi, la tabella e il grafico sopra di essa.
 
@@ -71,8 +71,8 @@ La pagina Celle contiene due sezioni:
    * *Totale disponibile* di memoria e CPU disponibili nell'istanza CFEE.
    * Memoria e CPU utilizzate dalle **Istanze dell'applicazione selezionate** nell'istanza CFEE.
    * Memoria e CPU utilizzate da **Tutte le istanze dell'applicazione** nell'istanza CFEE.
-   * Memoria e CPU utilizzate dal **Sistema** nella tabella riportata di seguito.  L'utilizzo del sistema rappresenta la risorsa utilizzata dal componente del servizio CFEE più la cache dell'applicazione.
-   * Memoria totale e CPU disponibili nella cella.Il **Totale cella** è uguale al totale (memoria o CPU) disponibile nel nodo di lavoro Kubernetes (dove è eseguito il provisioning della cella) meno quanto utilizzato dal sistema.
+   * Memoria e CPU utilizzate dal **Sistema** nella tabella riportata di seguito. L'utilizzo del sistema rappresenta la risorsa utilizzata dal componente del servizio CFEE più la cache dell'applicazione.
+   * Memoria totale e CPU disponibili nella cella. Il **Totale cella** è uguale al totale (memoria o CPU) disponibile nel nodo di lavoro Kubernetes (dove è eseguito il provisioning della cella) meno quanto utilizzato dal sistema.
 
    Per visualizzare la percentuale di memoria o CPU utilizzata da tutte le istanze dell'applicazione o da quelle selezionate nella tabella, passa con il mouse sulla parte corrispondente del grafico.  Passando con il mouse sulla barra del grafico viene visualizzata la memoria o la CPU assoluta disponibile, la memoria o la CPU utilizzata da tutte le applicazioni e la memoria o la CPU utilizzata da sistema+cache.  Mostra anche la percentuale di memoria o CPU utilizzata da tutte le applicazioni e da sistema+cache rispetto al totale disponibile.
 
@@ -89,7 +89,7 @@ La pagina Celle contiene due sezioni:
    * **CPU (% )**: la percentuale di CPU totale disponibile nella CFEE utilizzata dall'istanza dell'applicazione in esecuzione sulla cella.
 
 ### Filtro delle celle e delle istanze dell'applicazione
-Puoi utilizzare il filtro del contenuto della tabella tramite l'elenco a discesa del filtro **Celle** che si trova sopra la tabella e selezionando le celle da visualizzare nella tabella.
+Puoi filtrare il contenuto della tabella tramite l'elenco a discesa del filtro **Celle** che si trova sopra la tabella e selezionando le celle da visualizzare nella tabella.
 
 Inoltre, puoi utilizzare il campo di immissione del filtro sopra la tabella per visualizzare solo le istanze dell'applicazione corrispondenti alla stringa che hai immesso nel campo del filtro.  Il filtro si riflette in entrambi, la tabella e il grafico sopra di essa.
 

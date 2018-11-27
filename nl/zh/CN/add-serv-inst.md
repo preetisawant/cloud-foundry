@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-28"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -22,10 +22,10 @@ lastupdated: "2018-09-28"
 {{site.data.keyword.Bluemix}} 帐户中可用的公共服务实例本身不能直接供 CFEE 环境使用。为了使公共服务实例（在 {{site.data.keyword.Bluemix}} 帐户中可用）变为可供 CFEE 环境中的空间使用，必须将其明确添加到目标 CFEE 空间。将 {{site.data.keyword.Bluemix}} 服务实例添加到 CFEE 空间后，即可以将其绑定到该 CFEE 空间中的应用程序。这允许开发者在 CFEE 环境中部署的应用程序中利用大量 {{site.data.keyword.Bluemix}} 服务，同时允许对这些 {{site.data.keyword.Bluemix}} 服务进行访问控制。
 
    除了将现有的 {{site.data.keyword.Bluemix}} 服务实例添加到 CFEE 空间外，还可以在 CFEE 空间内创建新的 {{site.data.keyword.Bluemix}} 服务实例，这样也会自动将新实例添加到该 CFEE 空间。
-
+  
 2. 由本地 Cloud Foundry 服务代理程序（相对于 CFEE 的本地代理程序）管理的服务实例。这些实例可以为以下两种类型中的任一类型：
    *  2a. 通过当前 {{site.data.keyword.cfee_full_notm}} 实例的 Cloud Foundry 市场创建的服务产品的实例。此类型的服务实例需要已注册服务代理程序在环境中可用。服务代理程序显示服务产品和套餐的目录，并从这些服务产品启用实例的创建、除去、绑定和取消绑定操作。有关更多信息，请参阅 Cloud Foundry 文档中的[管理服务代理程序](https://docs.cloudfoundry.org/services/managing-service-brokers.html)。
-   * 2b. 用户提供的服务实例。此类型服务实例的创建通过 CLI（而不是通过用户界面）予以支持。但是，用户提供的服务实例将在用户界面中列出。
+   * 2b. 用户提供的服务实例。此类型服务实例的创建通过命令行界面 (CLI)（而不是通过用户界面）予以支持。但是，用户提供的服务实例将在用户界面中列出。
    
 
 ## 查看所有 CFEE 环境中的 {{site.data.keyword.Bluemix_notm}} 服务实例
@@ -35,10 +35,10 @@ lastupdated: "2018-09-28"
 
 此视图显示帐户中可用的所有 {{site.data.keyword.Bluemix_notm}} 服务实例，并指示哪些已添加（创建别名）到哪些 CFEE 空间。展开服务实例可显示添加了该实例的 CFEE 空间。您可以进一步展开这些空间，以查看这些 CFEE 空间中所添加服务实例已绑定到的应用程序。  
 
-在此视图中，还可以将已部署到 CFEE 空间中的应用程序绑定到空间中已添加的这些服务实例。转至位于相应服务（可用于特定 CFEE 空间）的表行最右侧的菜单，然后选择**绑定到应用程序**。
+在此视图中，还可以绑定已部署到添加了这些服务实例的 CFEE 空间中的应用程序。转至位于相应服务（可用于特定 CFEE 空间）的表行最右侧的菜单，然后选择**绑定到应用程序**。
 
 ## 向 CFEE 空间添加现有 {{site.data.keyword.Bluemix_notm}} 服务实例
-{: #adding-services_inspace}
+{: #adding-services-inspace}
 
 您可以将 {{site.data.keyword.Bluemix_notm}} 服务实例绑定到 CFEE 空间中部署的应用程序。要能够将 IBM Cloud 服务实例绑定到 CFEE 中部署的应用程序，必须先将该实例添加到部署了该应用程序的 CFEE 空间。要能够向 CFEE 空间添加 {{site.data.keyword.Bluemix_notm}} 服务实例，需要先满足以下条件：
 * {{site.data.keyword.Bluemix_notm}} 服务必须在 CFEE 实例所在的 {{site.data.keyword.Bluemix_notm}} 帐户中可用。
@@ -62,12 +62,11 @@ lastupdated: "2018-09-28"
 
    **注：**向 CFEE 空间添加 {{site.data.keyword.Bluemix_notm}} 服务时，会在该空间中创建该服务实例的别名。从 CFEE 空间中**除去**服务实例时（通过位于表中相应服务实例行最右侧的菜单），不会从公共帐户中删除该服务。该操作只会从特定的 CFEE 帐户中除去该服务，并且该服务不再可用于绑定到该 CFEE 空间中的应用程序。此外，从 {{site.data.keyword.Bluemix_notm}} 帐户中删除服务实例本身时，该服务将不再可用于任何 CFEE 空间。 
 
-## 在 CFEE 空间 UI 中创建 {{site.data.keyword.Bluemix_notm}} 服务实例
+## 在 CFEE 空间的用户界面中创建 {{site.data.keyword.Bluemix_notm}} 服务实例
 {: #creating-services_inspace}
 您可以在 CFEE 空间内创建 {{site.data.keyword.Bluemix_notm}} 服务实例。创建 {{site.data.keyword.Bluemix_notm}} 服务实例会生成以下结果：
 * 在 IBM Cloud 中创建 {{site.data.keyword.Bluemix_notm}} 服务实例。这等同于在 {{site.data.keyword.Bluemix_notm}} [目录](https://console.bluemix.net/catalog)中创建服务实例。
-* 将 {{site.data.keyword.Bluemix_notm}} 服务实例添加（创建别名）到启动创建操作的 CFEE 空间中。
-
+* 将 {{site.data.keyword.Bluemix_notm}} 服务实例的别名添加（创建别名）到启动创建操作的 CFEE 空间中。别名服务实例（CFEE 空间中）是对实际服务实例（IBM Cloud 帐户中）的引用。服务实例别名允许开发者通过自动处理所有凭证，从而与服务实例进行交互（例如，绑定到应用程序）。
 
 要在 CFEE 空间内创建服务实例，请执行以下操作：
 1. 在目标空间页面中，转至**服务**选项卡，然后单击**创建服务**。这将打开 {{site.data.keyword.cfee_full_notm}} 的**市场**视图。该视图会列出两个源中的服务产品（请查看__源__列）：
@@ -153,7 +152,7 @@ lastupdated: "2018-09-28"
 ## 将服务绑定到应用程序
 {: #bind_services}
 
-您可以在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)或 CFEE 空间页面的“服务”选项卡中，将服务实例绑定到 CFEE 中部署的应用程序。  
+具有针对 {{site.data.keyword.Bluemix_notm}} 服务实例的_编辑者_角色或更高角色的用户可以在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)或 CFEE 空间用户界面的“服务”选项卡中，将该实例绑定到 CFEE 空间中部署的应用程序。   
 
 要在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)中将服务实例绑定到应用程序，请执行以下操作：
 1. 转至 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)，以查看 {{site.data.keyword.Bluemix_notm}} 帐户中可用的所有 {{site.data.keyword.Bluemix_notm}} 服务实例的统一视图。该视图还旨在显示哪些 {{site.data.keyword.Bluemix_notm}} 服务实例在哪些 CFEE 空间中可用（创建了别名）。可以展开服务实例以显示添加了该服务实例的 CFEE 空间。您可以进一步展开这些空间，以查看这些 CFEE 空间中所添加服务实例已绑定到的应用程序。 
@@ -161,7 +160,7 @@ lastupdated: "2018-09-28"
 3. 展开相应的视图以查看添加了该服务实例的所有 CFEE 空间。如果尚未将该服务实例添加到部署了应用程序的 CFEE 空间，请从行最右侧的菜单中选择**添加**，以使该服务实例在目标 CFEE 空间中可用。
 4. 转至与其中服务实例可用的 CFEE/空间相对应的行最右侧的菜单，然后选择**绑定应用程序**。
 5. 在__绑定应用程序__对话框中，选择要绑定的应用程序。
-6. 现在，应用程序会绑定到部署了应用程序的 CFEE 空间中的服务实例。可以展开行以显示表中的相应行，从而查看 CFEE 空间中绑定的应用程序。
+6. 现在，应用程序会绑定到服务实例。您可以展开表中的服务实例，以查看与其绑定的应用程序（在特定 CFEE 空间中）。
 
 
 要在 CFEE 空间的__服务__页面中将应用程序绑定到服务实例，请执行以下操作：
@@ -180,4 +179,94 @@ lastupdated: "2018-09-28"
 
 有关使用 CLI 绑定应用程序的更多信息，请参阅 Cloud Foundry 文档中的[绑定服务实例](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 
+## 服务可视性
+{: #service_visibility}
 
+客户可以控制谁能通过 CFEE 环境创建新的 IBM Cloud 服务。客户还可以控制谁能将现有 IBM Cloud 服务添加到 CFEE 空间。此控制权可通过控制向用户提供的服务产品（和/或这些服务产品的实例）的可视性来实现。
+
+### 控制服务实例的创建
+{: #control_servicecreation}
+
+通过控制服务产品在 IBM Cloud“目录”中是针对 IBM Cloud 帐户中的所有用户可视，还是针对特定 Cloud Foundry 组织中的用户可视，从而实现对服务创建的控制。
+
+#### 控制 IBM Cloud“目录”对 IBM Cloud 帐户中用户的可视性
+{: #creation_accountvisibility}
+
+IBM Cloud 帐户管理员（具有针对所有启用 IAM 的服务的_管理员_角色的用户）可以阻止服务或服务套餐在目录中向给定 **IBM Cloud 帐户**中的所有用户显示。帐户管理员可以通过将用于帐户中所有用户的服务或服务套餐列入黑名单，从而阻止所有帐户用户使用相应服务。将服务列入黑名单甚至会阻止该帐户中的用户在 IBM Cloud“目录”中看到该服务（或服务套餐）。这可通过语法如下的 `ibmcloud catalog blacklist` 命令来完成：
+
+  ```
+  ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
+  ```
+
+最简单的列入黑名单的形式是，通过发出以下命令，使服务产品（及其所有套餐）对当前帐户中的用户不可视：
+
+  ```
+  Ibmcloud catalog blacklist <thisService>
+  ```
+  {: pre}
+
+您不仅可以通过黑名单使整个服务产品不可视，还可以使特定区域中的特定套餐不可视。但要实现此操作，您需要使用全局目录中相应条目的标识，而不使用条目的名称。如果要阻止用户查看特定区域中的特定套餐，可以发出以下命令：
+
+  ```
+  Ibmcloud catalog blacklist -add <catalogEntryID>
+  ```
+  {: pre}
+  
+ 要从黑名单中除去服务，请发出以下命令：
+ ```
+  Ibmcloud catalog blacklist -remove <catalogEntryID>
+  ```
+  {: pre}
+ 
+可以通过以下命令查找给定目录条目（例如，服务套餐及其部署区域）的标识。此命令将返回给定服务的所有套餐及其部署区域：
+
+  ```
+  ibmcloud catalog service <thisService>
+  ```
+  {: pre}
+
+可以通过发出以下命令找到 `ibmcloud catalog blacklist` 的更多详细信息：
+
+  ```
+  Ibmcloud catalog blacklist -help
+  ```
+  {: pre}
+
+
+#### 控制对 Cloud Foundry 组织中用户的可视性
+{: #creation_orgvisibility}
+
+您可以使用 `cf enable-service-access` 和 `cf disable-service-access` 命令来控制对特定 **Cloud Foundry 组织**的服务的访问权。此处，访问权的控制点是 Cloud Foundry（而非 IBM Cloud 帐户）。请注意，这是本机 `cf` 命令（而不是 `ibmcloud` 命令）。 
+
+通过 `cf` CLI 设置服务可视性时，请考虑以下事项：
+
+*  `cf` 命令针对特定 Cloud Foundry 组织的所有用户启用和/或禁用服务产品（可选择特定服务产品套餐）
+* 通过构建组织“白名单”使启用生效。即，有权访问服务的 Cloud Foundry 组织的包含列表（与前面描述的 `ibmcloud` 命令中的“blacklist”方法相反，blacklist 命令的生效方式是定义排除在外而对帐户用户不可视的服务的列表）。这意味着使用此方法对目录服务进行访问控制的生效方式是定义哪些组织可以看到服务（列入白名单），而不是定义哪些组织看不到服务（列入黑名单）。
+*  通过将组织添加到白名单来授予该组织对服务（或服务套餐）的访问权时，您实际上是禁止（排除）其他所有组织访问该服务（或服务套餐）。也就是说，将组织列入白名单后，即会禁止其他所有组织访问该服务（或服务套餐）
+*  在向“可以查看”列表添加组织之前，必须禁用所有组织的可视性。如果服务套餐当前可供所有组织使用，那么无法禁用对该套餐的访问权。
+
+按照上文所述的一般行为，我们建议通过发出以下命令来控制组织对服务的访问权：
+1. **禁用**所有组织对服务套餐的访问权：
+  ```
+  cf disable-service-access <service name> -p <plan name>
+  ```
+  {: pre}
+  
+2. **启用**特定 CFEE 组织对服务套餐的访问权。这将对在该命令中未明确启用的其他所有组织禁用该服务套餐。 
+  ```
+  cf enable-service-access <service name> -p <plan name> -o <org name>
+  ```
+  {: pre}
+  
+**注：**我们建议您针对整个服务（而不是针对特定套餐）执行 Cloud Foundry 启用和禁用服务命令。
+
+
+### 控制对现有服务实例的访问权
+{: #control_serviceaddition}
+
+CFEE 空间中的开发者可以使用 IBM Cloud 帐户中可用的现有服务实例。在 CFEE 的特定空间内，用户可以向该空间**添加**服务实例（请参阅上面的[添加现有服务实例](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace)）。向 CFEE 空间添加服务实例会创建服务实例的别名（对服务实例的引用），这将允许开发者使用别名将服务实例绑定到部署在该 CFEE 空间中的应用程序，就像使用实际服务实例一样。
+
+帐户管理员可以通过 [IAM 访问策略](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage)来控制服务实例的使用。在 UI 或 ibmcloud CLI 中，帐户管理员可以分配针对服务实例本身的角色，或分配针对这些实例所在的资源组的角色。开发者需要针对服务实例（或其资源组）的_查看者_角色或更高角色，才能将该实例添加到空间。
+
+您可以在 [CFEE 视频播放列表](https://ibm.biz/CFEE-Playlist){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 中找到有关 CFEE 服务的深入讨论和演示的视频。
+{:tip}

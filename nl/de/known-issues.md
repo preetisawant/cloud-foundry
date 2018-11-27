@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-09-04"
 {: #known-issues}
 
 ## Instabilität aufgrund hoher CPU-Belastung durch die Exportkomponente Firehose Prometheus
+{: #instabilityCPU-issue}
 
 CFEE-Umgebungen umfassen eine Prometheus Firehose-Exportkomponente zur Erfassung von Cloud Foundry-Metriken in den HTTP- und HTTPS-Anforderungen _start_ und _stop_. Eine CFEE-Umgebung mit einer hohen Anzahl von HTTP-Anforderungen kann dazu führen, dass die Exportkomponente Prometheus Firehose einen großen CPU-Anteil belegt. Dies kann zu einer gewissen Instabilität in der Umgebung führen, da der Firehose Export-Pod auf einem der Workerknoten der Cloud Foundry-Steuerebene ausgeführt wird.
 
@@ -32,7 +33,7 @@ Wenn die Firehouse-Exportkomponente eine CPU-Auslastung von 0,5 bis 0,7 (50-70%)
 1. Erstellen Sie `config.yaml`:
 
    ```
-   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml.
+   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml
    ```
    {: pre}
   
@@ -41,10 +42,11 @@ Wenn die Firehouse-Exportkomponente eine CPU-Auslastung von 0,5 bis 0,7 (50-70%)
    ```
    - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
    ```
+   {: pre}
 
 ### Beispiel
 
-Ursprüngliche `config.yam`:
+Geänderte Datei `config.yam`:
 
 ```
   ...
@@ -63,8 +65,9 @@ Ursprüngliche `config.yam`:
 Der folgende Befehl würde den Workerknoten-Pod neu konfigurieren und erneut starten:
 
 ```
-kubectl -n cf-monitoring apply -f config.yaml.
+kubectl -n cf-monitoring apply -f config.yaml
 
 ```
+{: pre}
 
 Weitere Informationen zur Exportkomponente Firehose Prometheus finden Sie unter [Cloud Foundry Firehose Prometheus-Exportkomponente](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").

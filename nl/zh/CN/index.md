@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-07-10"
+lastupdated: "2018-29-10"
 
 ---
 
@@ -18,27 +18,18 @@ lastupdated: "2018-07-10"
 # 关于 {{site.data.keyword.cfee_full_notm}}
 {: #about}
 
-通过 {{site.data.keyword.cfee_full}} (CFEE)，您可以根据需要对多个隔离的企业级 Cloud Foundry 平台进行实例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服务的实例会在 {{site.data.keyword.Bluemix_notm}} 中您自己的帐户中运行。该环境部署在隔离的硬件（Kubernetes 集群）上。您对环境具有完全控制权，包括访问控制、容量管理、变更管理、监视和服务。
+欢迎使用 {{site.data.keyword.cfee_full}} 服务。
+
+通过 {{site.data.keyword.cfee_full}} (CFEE)，您可以根据需要将多个隔离的企业级 Cloud Foundry 平台实例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服务的实例会在 {{site.data.keyword.Bluemix_notm}} 中您自己的帐户中运行。该环境部署在隔离的硬件（Kubernetes 集群）上。您对环境具有完全控制权，包括访问控制、容量、版本更新、资源使用情况和监视。此外，通过将 CFEE 集成到 {{site.data.keyword.Bluemix_notm}} 中，开发者能够利用其 {{site.data.keyword.Bluemix_notm}} 帐户中可用的服务。用户可以将这些服务添加到 CFEE 中，并将其绑定到部署在 CFEE 空间中的应用程序。
+
+了解如何[**开始**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)创建和使用 CFEE 实例。
+
 {:shortdesc}
 
-{{site.data.keyword.cfee_full}} 目前处于 Beta 阶段，我们期待您的反馈！首先，请在 [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) 上创建您自己的 {{site.data.keyword.cfee_full}} 实例，然后[请求访问权](http://ibm.biz/cfee-forum-signup)来访问 [IBM CFEE Slack 论坛](https://ibm-cfee.slack.com)，以分享您的反馈，提出问题以及与产品团队互动。
-{:tip}
+## CFEE 的关键元素
+{: #key-elements}
 
-要想成功实施项目，需要花时间规划和设计需要哪些资源，以及您的企业需求是什么。为了帮助您开始使用项目，请考虑以下问题：
-
-* 将开发哪种类型的应用程序，打算开发多少个？
-* 应用程序需要访问哪些服务？
-* 谁将在开发过程中进行协作，他们将承担什么角色？
-* 项目的每个阶段需要多大程度的隔离？
-* 企业是否将提供基础架构资源？
-* 公司以何种方式进行沟通？
-* 是否有命名标准可以实施，以用于明确地标识组织和空间用途？
-
-在决定需要的云环境类型的同时，请规划帐户、组织、空间、资源和团队成员的结构。
-
-单个 {{site.data.keyword.Bluemix_notm}} 帐户对于大多数组织而言已足够使用。如果您的组织有多个业务领域，那么您可以为每个业务领域创建一个单独的 {{site.data.keyword.Bluemix_notm}} 帐户，例如对于大型银行机构，可创建不同的帐户分别用于零售和商业部门。
-
-下表提供了其中一些关键元素的摘要。
+下表提供了 {{site.data.keyword.cfee_full}} 服务关键元素的摘要：
 
 |元素| 描述 |
 |-----------|---------------|
@@ -99,10 +90,9 @@ lastupdated: "2018-07-10"
 |亚太地区|东京 (gok02)|ap-geo|au-syd|
 |亚太地区|东京 (gok04)|ap-geo|au-syd|
 |亚太地区|东京 (gok05)|ap-geo|au-syd|
-
 {: caption="表 2. 为 CFEE 和支持服务供应目标" caption-side="top"}
-
-
 
 **例如**，CFEE 服务可以在欧洲的三个数据中心供应：阿姆斯特丹（1 个数据中心）、法兰克福（3 个数据中心）、伦敦（3 个数据中心）、奥斯陆（1 个数据中心）和巴黎（1 个数据中心）。如果在法兰克福供应 CFEE，那么 Cloud Object Storage 服务实例将部署在 _eu-geo_ 区域，而 Compose for PostgreSQL 服务实例将部署在 _eu-de_ 公共 Cloud Foundry 区域。
 
+您可以在 [CFEE 视频播放列表](https://ibm.biz/CFEE_Playlist){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 中找到有关使用 CFEE 中服务的详细信息和演示的视频。
+{:tip}

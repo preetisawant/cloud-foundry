@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-07-10"
+lastupdated: "2018-29-10"
 
 ---
 
@@ -18,27 +18,23 @@ lastupdated: "2018-07-10"
 # Sobre o {{site.data.keyword.cfee_full_notm}}
 {: #about}
 
-Com o {{site.data.keyword.cfee_full}} (CFEE), é possível instanciar plataformas Cloud Foundry múltiplas, isoladas e de classificação corporativa sob demanda. As instâncias do serviço {{site.data.keyword.Bluemix_notm}} Foundry Enterprise são executadas dentro de sua própria conta no {{site.data.keyword.Bluemix_notm}}. O ambiente é implementado em hardware isolado (clusters do Kubernetes). Você tem controle total sobre o ambiente, incluindo controle de acesso, gerenciamento da capacidade, gerenciamento de mudanças, monitoramento e serviços.
+Bem-vindo ao serviço do {{site.data.keyword.cfee_full}}.
+
+Com o {{site.data.keyword.cfee_full}} (CFEE), é possível instanciar múltiplas plataformas Cloud Foundry isoladas e de classificação corporativa on-demand. As instâncias do serviço {{site.data.keyword.Bluemix_notm}} Foundry Enterprise são executadas dentro de sua própria conta no {{site.data.keyword.Bluemix_notm}}. O ambiente é implementado em hardware isolado (clusters do Kubernetes). Você tem controle total sobre o ambiente, incluindo o controle de acesso, a capacidade, as atualizações de versão, o uso de recurso e o monitoramento. 
+Além disso, a integração do CFEE no {{site.data.keyword.Bluemix_notm}} permite que os desenvolvedores
+aproveitem os serviços disponíveis na conta do {{site.data.keyword.Bluemix_notm}}. Os usuários podem incluir
+esses serviços em um CFEE e ligá-los aos aplicativos implementados nos espaços do CFEE.
+
+Descubra como é possível
+[**iniciar**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)
+criando e usando uma instância do CFEE.
+
 {:shortdesc}
 
-O {{site.data.keyword.cfee_full}} está atualmente em sua fase beta e nós estamos em busca de feedback! Para começar, crie sua própria instância do {{site.data.keyword.cfee_full}} em [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) e [solicite acesso](http://ibm.biz/cfee-forum-signup) ao [Fórum de Slack do IBM CFEE](https://ibm-cfee.slack.com) para compartilhar seu feedback, fazer perguntas e se envolver com a equipe do produto.
-{:tip}
+## Elementos-chave do CFEE
+{: #key-elements}
 
-Para um projeto bem-sucedido, reserve um tempo para planejar e projetar quais recursos você precisa e quais são seus requisitos corporativos. Para ajudá-lo a começar, considere as perguntas a seguir:
-
-* Quantos e que tipo de apps você está desenvolvendo?
-* Que serviços os apps precisam acessar?
-* Quem colabora no processo de desenvolvimento e que função essa pessoa executa?
-* Qual grau de isolamento é necessário para cada fase do projeto?
-* A sua empresa fornece os recursos de infraestrutura?
-* Como a sua empresa se comunica?
-* Existe um padrão de nomenclatura que é possível implementar para identificar claramente a organização e o uso de espaço?
-
-Como parte da decisão de qual tipo de ambiente de nuvem você precisa, planeje a estrutura de sua conta, organizações, espaços, recursos e membros da equipe.
-
-Uma única conta do {{site.data.keyword.Bluemix_notm}} é suficiente para a maioria das organizações. Se a sua organização tiver mais de uma área de negócios, será possível criar uma conta do {{site.data.keyword.Bluemix_notm}} separada para cada domínio de negócios, por exemplo, uma grande corporação bancária pode criar contas separadas para os setores varejista e comercial.
-
-A tabela a seguir fornece um resumo de alguns dos elementos chave.
+A tabela a seguir fornece um resumo dos elementos-chave do serviço do {{site.data.keyword.cfee_full}}:
 
 | Elemento   | Descrição |
 |-----------|---------------|
@@ -99,10 +95,13 @@ A seguir estão as geografias, os locais e os data centers nos quais o serviço 
 |Ásia Pacífico | Tóquio (gok02) | ap-geo | au-syd |
 |Ásia Pacífico | Tóquio (gok04) | ap-geo | au-syd |
 |Ásia Pacífico | Tóquio (gok05) | ap-geo | au-syd |
-
 {: caption="Tabela 2. Destinos de provisionamento para CFEE e serviços de apoio" caption-side="top"}
 
+Como um **exemplo**, o serviço do CFEE pode ser fornecido em três data centers na Europa:
+Amsterdã (1 data center), Frankfurt (3 data centers), Londres (3 data centers), Oslo (1 data center) e Paris (1
+data center). Se o CFEE for provisionado em Frankfurt, a instância de serviço do Cloud Object Store será implementada na região _eu-geo_ e a instância de serviço do Compose for PostgreSQL será implementada na região pública do Cloud Foundry _eu-de_.
 
-
-Por **exemplo**, o serviço CFEE pode ser provisionado em três data centers na Europa: Amsterdã (um data center), Frankfurt (três data centers), Londres (três data centers), Oslo (um data center) e Paris (um data center). Se o CFEE for provisionado em Frankfurt, a instância de serviço do Cloud Object Store será implementada na região _eu-geo_ e a instância de serviço do Compose for PostgreSQL será implementada na região pública do Cloud Foundry _eu-de_.
-
+É possível localizar vídeos com informações e demonstrações detalhadas para trabalhar com os serviços no CFEE na
+[lista de execução de vídeos do CFEE](https://ibm.biz/CFEE_Playlist){: new_window}
+![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+{:tip}

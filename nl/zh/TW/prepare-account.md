@@ -38,7 +38,7 @@ CFEE 實例部署在基礎架構資源（IBM Container 服務中的 Kubernetes �
 如果您在 IBM Cloud 帳戶中具有「管理者」角色，則可以在不升級 IBM Cloud 帳戶的情況下，使用 SoftLayer 帳戶來建立 CFEE 實例。
 
 
-**警告：**如果您現在使用 SoftLayer 帳戶，而且未來更新 IBM Cloud 帳戶（成為「隨收隨付制」或「訂閱」帳戶），則在建立未來的基礎架構資源時，更新過的 IBM Cloud 仍然可以使用 SoftLayer 帳戶（您現在設定其認證）。此外，如果您未來使用不同的 SoftLayer 帳戶來建立 Cloud Foundry Enterprise Environment，則 IBM Cloud 帳戶中的使用者可能無法存取使用您現在設定認證之 SoftLayer 帳戶所建立的基礎架構資源。建議您改為升級 IBM Cloud 帳戶。
+**警告：**如果您現在使用 SoftLayer 帳戶，而且未來更新 IBM Cloud 帳戶（成為「隨收隨付制」或「訂閱」帳戶），則在建立未來的基礎架構資源時，更新過的 IBM Cloud 帳戶仍然可以使用 SoftLayer 帳戶（您現在設定其認證）。此外，如果您未來使用不同的 SoftLayer 帳戶來建立 Cloud Foundry Enterprise Environment，則 IBM Cloud 帳戶中的使用者可能無法存取使用您現在設定認證之 SoftLayer 帳戶所建立的基礎架構資源。建議您改為升級 IBM Cloud 帳戶。
 
 若要在不升級 IBM Cloud 帳戶的情況下使用 SoftLayer 帳戶，請執行下列動作（如需說明，請參閱下列的畫面）：
 1. 在未升級 IBM Cloud 帳戶時所顯示的畫面中，按一下**使用 SoftLayer 帳戶**。

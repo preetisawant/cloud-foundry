@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -29,7 +29,7 @@ Pour travailler avec des instances d'{{site.data.keyword.cfee_full_notm}}, les u
 ## Etape 1 : Veillez à ce que le compte {{site.data.keyword.Bluemix_notm}} puisse créer des ressources d'infrastructure
 {: #accountprep-environment}
 
-Les instances CFEE sont déployées dans des ressources d'infrastructure, qui sont des noeuds worker Kubernetes issus du service Kubernetes. [Préparez votre compte IBM Cloud](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html) de sorte qu'il puisse créer les ressources d'infrastructure nécessaires à une instance CFEE.
+Les instances CFEE sont déployées dans des ressources d'infrastructure, qui sont des noeuds worker Kubernetes issus du service Kubernetes.  [Préparez votre compte IBM Cloud](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html) de sorte qu'il puisse créer les ressources d'infrastructure nécessaires à une instance CFEE.
 
 ## Etape 2 : Créez votre instance CFEE
 {: #creating-environment}
@@ -45,21 +45,21 @@ Avant de créer votre environnement CFEE, vérifiez que vous vous trouvez dans l
 4.  Configurez l'instance CFEE à créer comme suit :
     * Sélectionnez un plan (la disponibilité des plans peut être restreinte en phase bêta).
     * Entrez un **Nom** pour l'instance de service.
-    * Sélectionnez un **Emplacement** où l'instance de service doit être mise à disposition. Consultez la liste des [emplacements et centres de données de mise à disposition disponibles](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") par zone géographique pour CFEE et les services de prise en charge.  
+    * Sélectionnez un **Emplacement** où l'instance de service doit être mise à disposition. Consultez la liste des [emplacements et centres de données de mise à disposition disponibles](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") par zone géographique pour CFEE et les services de prise en charge. 
     * Sélectionnez le **Nombre de cellules** pour l'environnement Cloud Foundry.
     * Sélectionnez le **Type de machine**, qui détermine la taille des cellules Cloud Foundry (unité centrale et mémoire).
     * Sélectionnez un **Groupe de ressources** sous lequel l'environnement est regroupé. Seuls les groupes de ressources auxquels vous avez accès dans le compte IBM Cloud en cours sont répertoriés dans le menu déroulant _Groupes de ressources_, ce qui signifie que vous devez détenir le droit d'accès à au moins un groupe de ressources du compte pour pouvoir créer une instance CFEE.
 
-5.  Dans les zones **Compose for PostgreSQL**, sélectionnez l'une des organisations publiques, puis choisissez l'un des espaces disponibles dans cette organisation. L'instance de l'instance Compose for PostgreSQL sera mise à disposition dans l'espace sélectionné. Le service Compose for PostgreSQL est une dépendance requise du service CFEE. 
+5.  Dans les zones **Compose for PostgreSQL**, sélectionnez l'une des organisations publiques, puis choisissez l'un des espaces disponibles dans cette organisation. L'instance de l'instance Compose for PostgreSQL sera mise à disposition dans l'espace sélectionné. Le service Compose for PostgreSQL est une dépendance requise du service CFEE.
 
-**Remarque :** seules les organisations situées à l'emplacement où vous prévoyez de mettre à disposition l'instance CFEE (voir l'étape 4 ci-dessus) et auxquelles vous avez accès sont disponibles pour la sélection. Au sein d'une organisation spécifique, seuls les espaces pour lesquels vous disposez de droits d'accès _développeur_ sont disponibles pour la sélection.  
+**Remarque :** seules les organisations situées à l'emplacement où vous prévoyez de mettre à disposition l'instance CFEE (voir l'étape 4 ci-dessus) et auxquelles vous avez accès sont disponibles pour la sélection.  Au sein d'une organisation spécifique, seuls les espaces pour lesquels vous disposez de droits d'accès _développeur_ sont disponibles pour la sélection. 
 
 6.  Eventuellement, ouvrez la section **Infrastructure** pour afficher les propriétés du cluster Kubernetes qui prend en charge l'instance CFEE. Le **nombre de noeuds worker** est égal au nombre de cellules plus 2 (deux des noeuds worker Kubernetes mis à disposition prennent en charge le plan de contrôle CFEE).
 Le cluster Kubernetes dans lequel l'environnement est déployé s'affiche dans le [tableau de bord {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/). Pour plus d'informations, voir la [documentation du service Kubernetes](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov).
 
-**Remarque :** il est recommandé d'activer le spanning VLAN si les noeuds worker du cluster Kubernetes sont mis à disposition sur différents sous-réseaux. Les noeuds worker présents sur différents sous-réseaux peuvent empêcher la connectivité entre eux si le spanning VLAN est désactivé. Pour plus d'informations, voir la documentation [spanning VLAN](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning). 
+**Remarque :** il est recommandé d'activer le spanning VLAN si les noeuds worker du cluster Kubernetes sont mis à disposition sur différents sous-réseaux.  Les noeuds worker présents sur différents sous-réseaux peuvent empêcher la connectivité entre eux si le spanning VLAN est désactivé.  Pour plus d'informations, voir la documentation [spanning VLAN](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning).
 
-7.  Le **Récapitulatif de la commande**, sur la droite de la page, indique le coût de l'instance CFEE et des services auxiliaires, ainsi qu'une estimation mensuelle totale. 
+7.  Le **Récapitulatif de la commande**, sur la droite de la page, indique le coût de l'instance CFEE et des services auxiliaires, ainsi qu'une estimation mensuelle totale.
 
 8.  Cliquez sur **Créer** pour ouvrir le tableau de bord de l'environnement et afficher le statut et la progression de l'opération de création.
 
@@ -67,7 +67,7 @@ Le cluster Kubernetes dans lequel l'environnement est déployé s'affiche dans l
 
 Le processus automatisé de création de l'environnement déploie l'infrastructure dans un cluster Kubernetes et la configure de sorte qu'elle soit prête pour utilisation. Ce processus prend entre 90 et 120 minutes.
 
-Une fois l'environnement créé, vous recevez plusieurs courriers électroniques confirmant que l'instance CFEE et les services de prise en charge ont été mis à disposition, ainsi que des courriers électroniques mentionnant le statut des commandes correspondantes. 
+Une fois l'environnement créé, vous recevez plusieurs courriers électroniques confirmant que l'instance CFEE et les services de prise en charge ont été mis à disposition, ainsi que des courriers électroniques mentionnant le statut des commandes correspondantes.
 
 ## Etape 3: Créez des organisations et des espaces
 
@@ -85,13 +85,13 @@ Lorsque vous êtes prêt, vous pouvez [déployer l'application](https://console.
 
 ## Etape 6 : Gérez les services
 
-[Créez des services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) ou [ajoutez des services existants](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) disponibles dans le compte IBM Cloud. Une fois qu'une instance de service est disponible dans un espace CFEE, vous pouvez la lier aux applications CFEE qui sont déployées dans cet espace. 
+[Créez des services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) ou [ajoutez des services existants](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) disponibles dans le compte IBM Cloud.  Une fois qu'une instance de service est disponible dans un espace CFEE, vous pouvez la lier aux applications CFEE qui sont déployées dans cet espace.
 
 ## Etape 7 : Liez des applications à des instances de service
 
 [Liez votre application](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#bind_services) à un alias d'instance de service afin d'utiliser les fonctions du service.
 
-Connaissez-vous le [tableau de bord Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview) ? Il offre une vue consolidée de l'ensemble des applications et services de l'{{site.data.keyword.Bluemix_notm}}, _Public_ et _Enterprise_ (CFEE). Une fois dans le tableau de bord Cloud Foundry, cliquez sur _Public_ dans le panneau de navigation de gauche pour voir les applications publiques et les services disponibles dans le compte IBM Cloud. Cliquez sur _Enterprise_ pour voir tous les environnements CFEE, les applications déployées dans des espaces CFEE et les services disponibles pour les espaces CFEE.
+Connaissez-vous le [tableau de bord Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview) ? Il offre une vue consolidée de l'ensemble des applications et services de l'{{site.data.keyword.Bluemix_notm}}, _Public_ et _Enterprise_ (CFEE).  Une fois dans le tableau de bord Cloud Foundry, cliquez sur _Public_ dans le panneau de navigation de gauche pour voir les applications publiques et les services disponibles dans le compte IBM Cloud.  Cliquez sur _Enterprise_ pour voir tous les environnements CFEE, les applications déployées dans des espaces CFEE et les services disponibles pour les espaces CFEE.
 {:tip}
 
 ## Etape 8 : Installez la console Stratos pour gérer les applications (facultatif)
@@ -118,3 +118,14 @@ Pour démarrer la console Stratos :
 
 Vous trouverez des informations sur l'API CFEE dans la [documentation API](https://console.bluemix.net/apidocs/cfaas){: new_window} pour CFEE ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
 {:tip}
+
+
+## Ressources supplémentaires
+{: #additional-resources}
+
+Vous pouvez effectuer des tâches d'administration dans une instance CFEE à l'aide de commandes d'interface de ligne de commande `ibmcloud CFEE`. Ces commandes vous permettent d'obtenir des informations sur une instance CFEE et de gérer ses organisations et espaces. Voir le site de [référence de commande CFEE d'interface de ligne de commande IBM Cloud](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+
+Vous trouverez des vidéos contenant des discussions et des démonstrations relatives à différents sujets concernant CFEE dans la [liste de lecture des vidéos CFEE](https://ibm.biz/CFEE-Playlist){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+
+
+Des informations relatives à l'API CFEE sont disponibles dans la [documentation API CFEE](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").

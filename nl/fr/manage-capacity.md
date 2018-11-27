@@ -18,7 +18,7 @@ lastupdated: "2018-08-15"
 Les administrateurs et les développeurs peuvent désormais visualiser comment les applications et les cellules utilisent la capacité de ressources (mémoire et unité centrale) d'un environnement CFEE. Pour surveiller l'utilisation des ressources dans un environnement CFEE :
 
 1. Accédez au [tableau de bord des environnements Cloud Foundry d'{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} dans lequel vous voulez gérer l'utilisation des ressources.
-2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Utilisation des ressources** dans le volet de navigation de gauche pour ouvrir la page _Utilisation des ressources_. Depuis la page _Utilisation des ressources_ vous pouvez accéder aux _Applications_ ou aux sous-entrées _Cellules_ pour ouvrir les pages correspondantes.  Les informations affichées dans les pages _Applications_ et _Cellules_ constituent deux aspects différents de l'utilisation des ressources :
+2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Utilisation des ressources** dans le volet de navigation de gauche pour ouvrir la page _Utilisation des ressources_. Depuis la page _Utilisation des ressources_, vous pouvez accéder aux _Applications_ ou aux sous-entrées _Cellules_ pour ouvrir les pages correspondantes. Les informations affichées dans les pages _Applications_ et _Cellules_ constituent deux aspects différents de l'utilisation des ressources :
    * La page **Applications** analyse l'utilisation des ressources par applications cumulées entre les instances.
    * La page **Cellules** affiche l'utilisation des ressources des instances d'application qui s'exécutent sur des cellules spécifiques. Le schéma d'utilisation des ressources entre les cellules peut fournir un aperçu de la distribution de capacité et de charge.  Il peut, par exemple, vous aider à identifier des problèmes au niveau de l'équilibrage de charge des applications (telles de grandes différences d'utilisation des ressources par une application entre les cellules) ou à déceler que l'utilisation des ressources est sur le point d'atteindre la capacité globale (tels de forts pourcentages d'utilisation des ressources dans toutes les cellules).
 
@@ -28,13 +28,13 @@ Les administrateurs et les développeurs peuvent désormais visualiser comment l
 {: #usage_apps}
 
 La page Applications se compose de deux sections :
-1. Des graphiques à barres horizontales qui montrent l'utilisation de la mémoire réservée et de la mémoire physique. 
+1. Des graphiques à barres horizontales qui montrent l'utilisation de la mémoire réservée et de la mémoire physique.
    * La mémoire réservée et la mémoire physique qu'utilisent les **applications sélectionnées** dans le tableau du dessous.
-   * La mémoire réservée et la mémoire physique qu'utilisent **toutes les applications** dans l'instance CFEE. 
-   * La mémoire physique qu'utilise le **système**, incluant la mémoire utilisée par le plan de contrôle Cloud Foundry et la mémoire d'application mise en cache par le plan de contrôle Cloud Foundry. 
+   * La mémoire réservée et la mémoire physique qu'utilisent **toutes les applications** dans l'instance CFEE.
+   * La mémoire physique qu'utilise le **système**, incluant la mémoire utilisée par le plan de contrôle Cloud Foundry et la mémoire d'application mise en cache par le plan de contrôle Cloud Foundry.
    * Le **volume total disponible** de mémoire réservée et de mémoire physique dans l'instance CFEE.
    
-   **Remarque :** lorsque des applications réservent un volume de mémoire supérieur au volume de mémoire physique disponible, la quantité de mémoire surréservée par la ou les applications sélectionnées est représentée par un contour en pointillés de couleur rouge dans le graphique à barres de la mémoire réservée. 
+   **Remarque :** lorsque des applications réservent un volume de mémoire supérieur au volume de mémoire physique disponible, la quantité de mémoire surréservée par la ou les applications sélectionnées est représentée par un contour en pointillés de couleur rouge dans le graphique à barres de la mémoire réservée.
 
    Pour afficher le pourcentage de mémoire et d'unité centrale qu'utilisent toutes les applications ou celles sélectionnées dans le tableau, survolez la portion correspondante du graphique.  Lorsque vous survolez la portion *toutes les applications* du graphique, le pourcentage de mémoire et d'unité centrale utilisé par rapport au total disponible s'affiche. Si vous survolez la portion *applications sélectionnées* du graphique, le pourcentage de mémoire et d'unité centrale utilisé par rapport au total de mémoire ou d'unité centrale disponible s'affiche.
 
@@ -56,7 +56,7 @@ La page Applications se compose de deux sections :
 Développez une ligne d'application du tableau pour afficher la liste des instances de l'application et leurs mesures correspondantes d'utilisation des ressources.
 
 ### Filtrage des applications
-Vous pouvez filtrer le contenu du tableau à l'aide des menus déroulants de filtrage des **Applications** et des **Organisations** situés au-dessus le tableau.
+Vous pouvez filtrer le contenu du tableau à l'aide des menus déroulants de filtrage **Applications** et **Organisations** situés au-dessus le tableau.
 
 En outre, vous pouvez utiliser la zone d'entrée de filtre au-dessus du tableau pour afficher uniquement les applications correspondant à la chaîne que vous entrez dans la zone de filtre.  Le filtrage est reflété à la fois dans le tableau et dans le graphique.
 
@@ -71,8 +71,8 @@ La page Cellules se compose de deux sections :
    * La mémoire *totale disponible* et l'unité centrale disponible dans l'instance CFEE.
    * La mémoire et l'unité centrale qu'utilisent les **instances d'application sélectionnées** dans l'instance CFEE.
    * La mémoire et l'unité centrale qu'utilisent **toutes les instances d'application** dans l'instance CFEE.
-   * La mémoire et l'unité centrale qu'utilise le **système** dans le tableau du dessous.  L'utilisation du système correspond à la ressource utilisée par les composantes du service CFEE plus le cache d'applications.
-   * Le volume total de mémoire et d'unité centrale disponible dans la cellule. Le nombre **total de cellules** équivaut au volume total (mémoire ou unité centrale) disponible dans le noeud worker Kubernetes (où la cellule est mise à disposition) moins ce qui est utilisé par le système. 
+   * La mémoire et l'unité centrale qu'utilise le **système** dans le tableau du dessous. L'utilisation du système correspond à la ressource utilisée par les composantes du service CFEE plus le cache d'applications.
+   * Le volume total de mémoire et d'unité centrale disponible dans la cellule. Le nombre **total de cellules** équivaut au volume total (mémoire ou unité centrale) disponible dans le noeud worker Kubernetes (où la cellule est mise à disposition) moins ce qui est utilisé par le système.
 
    Pour afficher le pourcentage de mémoire ou d'unité centrale qu'utilisent toutes les instances d'application ou celles sélectionnées dans le tableau, survolez la portion correspondante du graphique.  Lorsque vous survolez le graphique à barres, la quantité absolue de mémoire ou d'unité centrale disponible, la quantité de mémoire ou d'unité centrale utilisée par toutes les applications et la quantité de mémoire ou d'unité centrale utilisée par le système+cache s'affichent.  Le pourcentage de mémoire ou d'unité centrale utilisé par toutes les applications et par le système+cache par rapport au total disponible s'affiche également.
 
@@ -89,7 +89,7 @@ La page Cellules se compose de deux sections :
    * **Unité centrale (% )** : pourcentage du total d'unité centrale disponible dans l'environnement CFEE qu'utilise l'instance d'application qui s'exécute dans la cellule.
 
 ### Filtrage des cellules et des instances d'application
-Vous pouvez filtrer le contenu du tableau à l'aide des menus déroulants de filtrage des **Cellules** situés au-dessus du tableau et en sélectionnant les cellules à afficher dans le tableau.
+Vous pouvez filtrer le contenu du tableau à l'aide des menus déroulants de filtrage **Cellules** situés au-dessus du tableau et en sélectionnant les cellules à afficher dans le tableau.
 
 En outre, vous pouvez utiliser la zone d'entrée de filtre au-dessus du tableau pour afficher uniquement les instances d'application correspondant à la chaîne que vous entrez dans la zone de filtre.  Le filtrage est reflété à la fois dans le tableau et dans le graphique.
 

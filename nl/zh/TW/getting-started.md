@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -117,3 +117,13 @@ CFEE 實例部署在基礎架構資源上，而基礎架構資源是來自 Kuber
 
 CFEE API 的相關資訊提供於 CFEE [API 文件](https://console.bluemix.net/apidocs/cfaas){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
 {:tip}
+
+
+## 其它資源
+{: #additional-resources}
+
+您可以在 CFEE 中使用 `ibmcloud CFEE` CLI 指令來執行部分管理作業。這些指令可讓您取得 CFEE 實例的相關資訊，以及管理其組織及空間。請參閱 [IBM Cloud CLI CFEE 指令參考手冊](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+
+您可以在 [CFEE 視訊播放清單](https://ibm.biz/CFEE-Playlist){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中找到各種 CFEE 主題深度討論及示範的視訊。
+
+CFEE [API 文件](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中提供 CFEE API 的相關資訊。

@@ -18,8 +18,9 @@ lastupdated: "2018-08-15"
 Os administradores e desenvolvedores podem ver como a capacidade do recurso (memória e CPU) de um CFEE é usada por aplicativos e células. Para monitorar o uso de recursos em um ambiente do CFEE:
 
 1. Acesse o[Painel do {{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) e abra o {{site.data.keyword.cfee_full_notm}} no qual você deseja gerenciar o uso de recursos.
-2. Na interface com o usuário do {{site.data.keyword.cfee_full_notm}}, acesse a entrada **Uso de recursos** na área de janela de navegação à esquerda para abrir a página _Uso de recursos_. Sob a página _Uso de recursos_, é possível acessar as subentradas _Aplicativos_ ou _Células_ para abrir as páginas correspondentes.  As informações exibidas nas páginas _Aplicativos_ e _Células_ podem ser consideradas duas maneiras de dividir o uso de recursos:
-   * A página **Aplicativos** analisa o uso de recursos por aplicativos agregados nas instâncias.
+2. Na interface com o usuário do {{site.data.keyword.cfee_full_notm}}, acesse a entrada **Uso de recursos** na área de janela de navegação à esquerda para abrir a página _Uso de recursos_. 
+Na página _Uso de recurso_, é possível acessar as subentradas _Aplicativos_ ou _Células_ para abrir as páginas correspondentes. As informações exibidas nas páginas _Aplicativos_ e _Células_ podem ser consideradas duas maneiras de dividir o uso de recursos:
+   * A página **Aplicativos** analisa o uso de recurso por aplicativos agregados nas instâncias.
    * A página **Células** mostra o uso de recursos de instâncias do aplicativo em execução em células específicas. O padrão de uso de recursos entre células pode fornecer insights sobre a capacidade e a distribuição de carga.  Por exemplo, isso pode ajudar a identificar problemas com o balanceamento de carga de aplicativos (por exemplo, grandes diferenças nos recursos usados por um aplicativo entre células) ou uso de recursos que se aproxima da capacidade geral (ou seja, grandes porcentagens de uso de recursos em todas as células).
 
 **Nota:** os dados de uso de recursos representam o uso de recursos durante o ciclo de coleta dos últimos 5 minutos. Os dados de uso de recursos podem ser atualizados clicando em **Atualizar dados** na parte superior da página.
@@ -40,7 +41,9 @@ A página Aplicativos possui duas seções:
 
 2. Uma tabela que lista todos os aplicativos.  Cada linha na tabela exibe informações de recursos para esse aplicativo.  Expandir uma linha mostra informações de uso de recursos para as várias instâncias desse aplicativo.
 
-  A primeira coluna na tabela é uma caixa de seleção que determina se o aplicativo correspondente deve ser incluído no conjunto de *Apps selecionados* a ser incluído no gráfico na parte superior da página. Para incluir (ou excluir) um aplicativo no conjunto selecionado, clique na caixa de seleção correspondente.  Quando um aplicativo é selecionado ou desmarcado para inclusão no conjunto, o gráfico é atualizado.  A legenda _Apps selecionados_ à direita do gráfico de barras indica (entre parênteses) o número de aplicativos atualmente selecionados para inclusão no gráfico.
+  A primeira coluna na tabela é uma caixa de seleção que determina se o aplicativo correspondente deve ser incluído no conjunto de *Apps selecionados* a ser incluído no gráfico na parte superior da página. Para incluir (ou excluir) um aplicativo no conjunto selecionado, clique na caixa de seleção correspondente.  Quando um aplicativo é selecionado ou desmarcado para inclusão no conjunto, o gráfico é atualizado.  
+A legenda _Aplicativos selecionados_ à direita do gráfico de barras indica (entre parênteses) o número
+de aplicativos atualmente selecionados para inclusão no gráfico.
 
   As informações a seguir são exibidas como colunas na tabela de aplicativos:
    * **Nome do aplicativo**: o nome do aplicativo ou da instância do aplicativo. Se o usuário não tiver permissão para acessar o aplicativo, o GUID do aplicativo será exibido no lugar.
@@ -56,7 +59,8 @@ A página Aplicativos possui duas seções:
 Expanda uma linha do aplicativo na tabela para ver a lista de instâncias do aplicativo e suas métricas de uso de recursos correspondentes.
 
 ### Filtrando aplicativos
-É possível usar o filtro do conteúdo da tabela por meio das listas suspensas de filtro **Aplicativos** e **Organizações** localizadas acima da tabela.
+Filtre o conteúdo da tabela por meio dos menus suspensos de filtro **Aplicativos** e
+**Organizações** localizados acima da tabela.
 
 Além disso, é possível usar o campo de entrada de filtro acima da tabela para mostrar somente os aplicativos que correspondem à sequência que você insere no campo de filtro.  O filtro é refletido em ambos, na tabela e no gráfico acima dele.
 
@@ -71,7 +75,7 @@ A página Células possui duas seções:
    * Memória *total disponível* e CPU disponível na instância do CFEE.
    * Memória e CPU usadas pelas **Instâncias do app selecionadas** na instância do CFEE.
    * Memória e CPU usadas por **Todas as instâncias do app** na instância do CFEE.
-   * Memória e CPU usadas pelo **Sistema** na tabela abaixo.  O uso do sistema representa o recurso usado pelo componente de serviço CFEE mais o cache do aplicativo.
+   * Memória e CPU usadas pelo **Sistema** na tabela abaixo. O uso do sistema representa o recurso usado pelo componente de serviço CFEE mais o cache do aplicativo.
    * Total de memória e de CPU disponíveis na célula. O **Total de células** é igual ao total (memória ou CPU) disponível no nó do trabalho do Kubernetes (no qual a célula é provisionada) menos o que é usado pelo sistema.
 
    Para mostrar a porcentagem de memória ou CPU usada por todas as instâncias do app ou pelas instâncias do app selecionadas na tabela, passe o mouse sobre a parte correspondente do gráfico.  Passar o mouse sobre a barra de gráfico mostra a memória ou CPU absoluta disponível, a memória ou CPU usada por todos os apps e a memória ou CPU usada pelo sistema + cache.  Também mostra a porcentagem de memória ou CPU usada por todos os apps e pelo sistema + cache relativa ao total disponível.
@@ -89,7 +93,8 @@ A página Células possui duas seções:
    * **CPU (% )**: a porcentagem de total de CPU disponível no CFEE usado pela instância do aplicativo em execução na célula.
 
 ### Filtrando células e instâncias do aplicativo
-É possível usar o filtro do conteúdo da tabela por meio da lista suspensa de filtro **Células** localizada acima da tabela e selecionando as células a serem exibidas na tabela.
+É possível filtrar o conteúdo da tabela por meio do menu suspenso de filtro **Células** localizado
+acima da tabela e selecionando as células a serem exibidas na tabela.
 
 Além disso, é possível usar o campo de entrada de filtro acima da tabela para mostrar somente as instâncias de aplicativos que correspondem à sequência que você insere no campo de filtro.  O filtro é refletido em ambos, na tabela e no gráfico acima dele.
 

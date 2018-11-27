@@ -36,10 +36,10 @@ IBM Cloud 계정이 평가판 계정이면 CFEE 인스턴스를 작성하려고 
 ## IBM Cloud 계정을 업그레이드하는 대신 SoftLayer 계정 사용
 {: #account-linkswitching}
 
-IBM Cloud 계정의 관리자 역할이 있는 경우 IBM Cloud 계정을 업그레이드하지 않고 SoftLayer 계정을 사용하여 CFEE 인스턴스를 작성할 수 있습니다.
+IBM Cloud 계정의 관리자 역할이 있는 경우 IBM Cloud 계정을 업그레이드하지 않고 CFEE 인스턴스를 작성하는 데 SoftLayer 계정을 사용할 수 있습니다. 
 
 
-**경고:** 현재 SoftLayer 계정을 사용하고 나중에 IBM Cloud 계정을 업데이트하는 경우(종량 과금제 또는 구독 계정으로) 업데이트된 IBM Cloud에서 향후 인프라 리소스를 작성할 때 Softlayer 계정(현재 설정하는 신임 정보 포함)을 계속 사용할 수 있습니다. 또한 나중에 Cloud Foundry Enterprise Environment를 작성하기 위해 다른 SofLayer 계정을 사용하는 경우 IBM Cloud 계정의 사용자가 지금 신임 정보를 설정한 SoftLayer 계정으로 작성된 인프라 리소스에 액세스하지 못할 수도 있습니다. 대신 IBM Cloud 계정을 업그레이드하십시오.
+**경고:** 지금 SoftLayer 계정을 사용하고 나중에 IBM Cloud 계정을 업데이트하는 경우(종량과금제 또는 구독 계정으로), 업데이트된 IBM Cloud 계정은 나중에 인프라 리소스를 작성할 때 (지금 설정하는 신임 정보의) Softlayer 계정을 계속 사용할 수 있습니다. 또한 나중에 Cloud Foundry Enterprise Environment를 작성하기 위해 다른 SofLayer 계정을 사용하는 경우 IBM Cloud 계정의 사용자가 지금 신임 정보를 설정한 SoftLayer 계정으로 작성된 인프라 리소스에 액세스하지 못할 수도 있습니다. 대신 IBM Cloud 계정을 업그레이드하십시오.
 
 IBM Cloud 계정을 업그레이드하지 않고 SoftLayer 계정을 사용하려면 다음을 수행하십시오(예시는 아래 화면 참조).
 1. IBM Cloud 계정이 업그레이드되지 않은 경우 표시되는 화면에서 **SoftLayer 계정 사용**을 클릭하십시오.

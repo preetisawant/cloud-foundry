@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-09-04"
 {: #known-issues}
 
 ## 由於 Firehose Prometheus 匯出程式的高 CPU 使用率而致的不穩定性
+{: #instabilityCPU-issue}
 
 CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及 https _start_ 及 _stop_ 要求的 Cloud Foundry 度量值。具有大量 http 要求的 CFEE 環境，可能會導致 Prometheus Firehose 匯出程式使用大量的 CPU。這可能導致環境中的部分不穩定性，因為 Firehouse 匯出程式 Pod 在其中一個 Cloud Foundry 控制平面工作者節點上執行。
 
@@ -35,7 +36,7 @@ CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及
 1. 建立 `config.yaml`：
 
    ```
-   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml.
+   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml
    ```
    {: pre}
   
@@ -44,10 +45,11 @@ CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及
    ```
    - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
    ```
+   {: pre}
 
 ### 範例
 
-原始 `config.yam`：
+已修改的 `config.yam`：
 
 ```
   ...
@@ -66,8 +68,9 @@ CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及
 下列指令會重新配置並重新啟動工作者節點 Pod：
 
 ```
-kubectl -n cf-monitoring apply -f config.yaml.
+kubectl -n cf-monitoring apply -f config.yaml
 
 ```
+{: pre}
 
 如需 Firehose Prometheus 匯出程式的相關資訊，請參閱 [Cloud Foundry Firehose Prometheus 匯出程式](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。

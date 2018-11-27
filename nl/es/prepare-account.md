@@ -35,10 +35,10 @@ Si la cuenta de IBM Cloud es de prueba, se le solicitará que la actualice cuand
 ## Utilización de una cuenta de SoftLayer en lugar de actualizar la cuenta de IBM Cloud
 {: #account-linkswitching}
 
-Si tiene el rol de Administrador en una cuenta de IBM Cloud, puede crear una cuenta de SoftLayer para crear la instancia de CFEE sin actualizar la cuenta de IBM Cloud.
+Si tiene el rol de Administrador en una cuenta de IBM Cloud, puede utilizar una cuenta de SoftLayer para crear la instancia de CFEE sin actualizar la cuenta de IBM Cloud.
 
 
-< MD:STRONG>Aviso:** Si utiliza una cuenta de SoftLayer ahora y actualiza la cuenta de IBM Cloud en el futuro (a una cuenta de Pago según uso o de suscripción), es posible que el IBM Cloud actualizado siga utilizando la cuenta de SoftLayer (cuyas credenciales establece ahora) cuando cree recursos de infraestructura en el futuro. Además, si utiliza una cuenta de SoftLayer distinta en el futuro para crear Cloud Foundry Enterprise Environments, es posible que los usuarios de la cuenta de IBM Cloud no puedan acceder a los recursos de infraestructura creados con la cuenta de SoftLayer cuyas credenciales establece ahora. Le recomendamos que actualice en su lugar la cuenta de IBM Cloud.
+**Aviso:** si utiliza una cuenta de SoftLayer ahora y actualiza la cuenta de IBM Cloud en el futuro (a una cuenta de Pago según uso o de suscripción), es posible que la cuenta de IBM Cloud actualizada siga utilizando la cuenta de SoftLayer (cuyas credenciales establece ahora) cuando cree recursos de infraestructura en el futuro. Además, si utiliza una cuenta de SoftLayer distinta en el futuro para crear Cloud Foundry Enterprise Environments, es posible que los usuarios de la cuenta de IBM Cloud no puedan acceder a los recursos de infraestructura creados con la cuenta de SoftLayer cuyas credenciales establece ahora. Le recomendamos que actualice en su lugar la cuenta de IBM Cloud.
 
 Para utilizar una cuenta de SoftLayer sin actualizar la cuenta de IBM Cloud (observe la pantalla siguiente para ver ejemplos):
 1. En la pantalla que se muestra cuando la cuenta de IBM Cloud no está actualizada, haga clic en **Utilizar una cuenta de SoftLayer**.

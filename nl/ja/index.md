@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-07-10"
+lastupdated: "2018-29-10"
 
 ---
 
@@ -18,27 +18,18 @@ lastupdated: "2018-07-10"
 # {{site.data.keyword.cfee_full_notm}} の概要
 {: #about}
 
-{{site.data.keyword.cfee_full}} (CFEE) を使用して、オンデマンドで複数の分離したエンタープライズ・クラスの Cloud Foundry プラットフォームのインスタンスを生成できます。 {{site.data.keyword.Bluemix_notm}} Foundry Enterprise サービスのインスタンスは、{{site.data.keyword.Bluemix_notm}} の自分自身のアカウント内で実行されます。 環境は、分離したハードウェア (Kubernetes クラスター) 上にデプロイされます。 アクセス制御、キャパシティー管理、変更管理、モニター、サービスなど、環境を完全に制御できます。
+{{site.data.keyword.cfee_full}} サービスへようこそ。
+
+{{site.data.keyword.cfee_full}} (CFEE) では、エンタープライズ・クラスの独立した Cloud Foundry プラットフォームを、オンデマンドでいくつもインスタンス化できます。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise サービスのインスタンスは、{{site.data.keyword.Bluemix_notm}} の自分自身のアカウント内で実行されます。 環境は、分離したハードウェア (Kubernetes クラスター) 上にデプロイされます。 アクセス制御、キャパシティー、バージョンの更新、リソース使用量とモニターなど、環境を完全に制御できます。さらに、CFEE には {{site.data.keyword.Bluemix_notm}} が統合されているので、開発者は {{site.data.keyword.Bluemix_notm}} アカウントで使用可能なサービスを利用できます。ユーザーはそれらのサービスを CFEE に追加し、CFEE スペースにデプロイしたアプリケーションにバインドできます。
+
+CFEE インスタンスの作成と使用を[**開始する**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)方法について説明します。
+
 {:shortdesc}
 
-現在、{{site.data.keyword.cfee_full}} はベータ・フェーズであり、フィードバックを必要としています。 まず、{{site.data.keyword.cfee_full}} の自身のインスタンスを [https://console.bluemix.net/cfadmin/create](https://console.bluemix.net/cfadmin/create) で作成し、フィードバックの提供、質問、製品チームとのエンゲージのために [IBM CFEE Slack フォーラム](https://ibm-cfee.slack.com)への[アクセス権限を要求](http://ibm.biz/cfee-forum-signup)してください。
-{:tip}
+## CFEE の主な要素
+{: #key-elements}
 
-プロジェクトを成功させるために、時間をかけて、必要なリソースおよびエンタープライズの要件を計画し、設計してください。 始めるにあたって、以下の点を検討してください。
-
-* どのようなタイプのアプリをいくつ開発するか?
-* どのサービスにアプリでアクセスする必要があるか?
-* 開発プロセスで誰がコラボレーションし、どのような役割を果たすか?
-* プロジェクトの各フェーズにどの程度の分離が必要か?
-* エンタープライズでインフラストラクチャー・リソースを提供するか?
-* 会社はどのようにして通信するか?
-* 組織およびスペースの使用を明確に識別するために実装できる命名標準はあるか?
-
-必要なクラウド環境のタイプを決定する一環として、アカウント、組織、スペース、リソース、およびチーム・メンバーの構造を計画します。
-
-ほとんどの組織では、単一の {{site.data.keyword.Bluemix_notm}} アカウントで十分です。 組織に複数のビジネス・エリアがある場合、ビジネス・ドメインごとに別個の {{site.data.keyword.Bluemix_notm}} アカウントを作成できます。例えば、大規模なバンキング・コーポレーションでは、個人向け部門と商業部門に別個のアカウントを作成できます。
-
-以下の表に、主な要素のいくつかの要約を示します。
+以下の表に、{{site.data.keyword.cfee_full}} サービスの主な要素の要約を示します。
 
 | 要素   | 説明 |
 |-----------|---------------|
@@ -80,7 +71,7 @@ lastupdated: "2018-07-10"
 |北アメリカ | ダラス (das13) | us-geo |us-south |
 |北アメリカ | サンノゼ (sjc03) | us-geo | us-south |
 |北アメリカ | サンノゼ (sjc04) | us-geo | us-south |
-|南アメリカ &nbsp; &nbsp;| サンパウロ (sao01) | us-geo | us-south |
+|南アメリカ &nbsp; &nbsp;| サンパウロ (sao01) |  us-geo | us-south |
 |ヨーロッパ | ロンドン (lon02) | eu-geo | eu-gb |
 |ヨーロッパ | ロンドン (lon04) | eu-geo | eu-gb |
 |ヨーロッパ | ロンドン (lon06) | eu-geo | eu-gb | 
@@ -89,7 +80,7 @@ lastupdated: "2018-07-10"
 |ヨーロッパ | パリ (par01) | eu-geo | eu-de |
 |ヨーロッパ | フランクフルト (fra02) | eu-geo | eu-de |
 |ヨーロッパ | フランクフルト (fra04) | eu-geo | eu-de | 
-|ヨーロッパ | フランクフルト (fra05) | eu-geo | eu-de |
+|ヨーロッパ | フランクフルト (fra05) |  eu-geo | eu-de |
 |アジア太平洋 | メルボルン (mel01) | ap-geo | au-syd |
 |アジア太平洋 | シドニー (syd01) | ap-geo | au-syd |
 |アジア太平洋 | シドニー (syd04) | ap-geo | au-syd | 
@@ -99,10 +90,9 @@ lastupdated: "2018-07-10"
 |アジア太平洋 | 東京 (gok02) | ap-geo | au-syd |
 |アジア太平洋 | 東京 (gok04) | ap-geo | au-syd |
 |アジア太平洋 | 東京 (gok05) | ap-geo | au-syd |
-
 {: caption="表 2. CFEE およびサポートされるサービスのプロビジョン・ターゲット" caption-side="top"}
-
-
 
 **例えば**、CFEE サービスを、ヨーロッパのアムステルダム (1 データ・センター)、フランクフルト (3 つのデータ・センター)、ロンドン (3 つのデータ・センター)、オスロ (1 データ・センター)、およびパリ (1 データ・センター) のうち、3 つのデータ・センターにプロビジョンできます。CFEE がフランクフルトにプロビジョンされる場合、Cloud Object Store サービス・インスタンスは _eu-geo_ 地域にデプロイされ、Compose for PostgreSQL サービス・インスタンスは _eu-de_ パブリック Cloud Foundry 地域にデプロイされます。
 
+CFEE でサービスを使用する方法について詳しく説明し、実演しているビデオが、[CFEE ビデオの再生リスト](https://ibm.biz/CFEE_Playlist){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") にあります。
+{:tip}

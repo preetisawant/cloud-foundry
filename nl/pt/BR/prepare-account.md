@@ -36,10 +36,13 @@ Se a conta do IBM Cloud for uma conta para teste, você será solicitado a fazer
 ## Usando uma conta do SoftLayer em vez de fazer upgrade da conta do IBM Cloud
 {: #account-linkswitching}
 
-Se você tiver a função de Administrador em uma conta do IBM Cloud, será possível usar uma conta do SoftLayer para criar a instância do CFEE sem fazer upgrade da conta do IBM Cloud.
+Se você tiver a função de administrador em uma conta do IBM Cloud, será possível usar uma conta do SoftLayer para
+criar a instância do CFEE sem fazer upgrade da conta do IBM Cloud.
 
 
-**Aviso:** se você usar uma conta do SoftLayer agora e atualizar a conta do IBM Cloud no futuro (para uma conta Pré-paga ou de Assinatura), o IBM Cloud atualizado poderá ainda usar a conta do Softlayer (cujas credenciais você configura agora) ao criar futuros recursos de infraestrutura. Além disso, se você usar uma conta do SofLayer diferente no futuro para criar Cloud Foundry Enterprise Environments, os usuários na conta do IBM Cloud poderão não ser capazes de acessar os recursos de infraestrutura criados na conta do SoftLayer cujas credenciais você configurou agora. Recomendamos fazer o upgrade da conta do IBM Cloud no lugar.
+**Aviso:** se você usar uma conta do SoftLayer agora e atualizar a conta do IBM Cloud no
+futuro (para uma conta pré-paga ou de assinatura), a conta do IBM Cloud atualizada ainda poderá usar a
+conta do Softlayer (cujas credenciais você configura agora) ao criar os futuros recursos de infraestrutura. Além disso, se você usar uma conta do SofLayer diferente no futuro para criar Cloud Foundry Enterprise Environments, os usuários na conta do IBM Cloud poderão não ser capazes de acessar os recursos de infraestrutura criados na conta do SoftLayer cujas credenciais você configurou agora. Recomendamos fazer o upgrade da conta do IBM Cloud no lugar.
 
 Para usar uma conta do SoftLayer sem fazer upgrade da conta do IBM Cloud (veja a tela abaixo para ilustração):
 1. Na tela mostrada quando a conta do IBM Cloud não é submetida a upgrade, clique em **Usar uma conta do SoftLayer**.
