@@ -67,7 +67,13 @@ The Kubernetes cluster on which the environment is deployed appears in the {{sit
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 
-Once you successfully create the environment you will receive multiple emails confirming the provisioning of the CFEE and supporting services, as well as emails notifying you of the status of the corresponding orders.
+Once you successfully create the environment you will receive email notifications confirming the provisioning of the CFEE and supporting services, as well as emails notifying you of the status of the corresponding orders.
+
+**Note** that when you create a CFEE instance, there are three additional supporting service instances created in the same IBM Cloud account. Those supporting service instances are named after the CFEE instance name. Hence, creating a CFEE results in a total of four service instances created in the IBM Cloud account:
+* CFEE instance ("_cfeename_").
+* Kubernetes cluster ("_cfeename_-cluster"). The cluster provides the infrastructure into which the CFEE instance is provisioned.
+* Cloud Object Storage instance ("_cfeename_-cos"). The instance is used to store data generated during the creation of the CFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
+* Compose for PosgreSQL instance ("_cfeename_-postgres"). The instance is used to store Cloud Foundry data on the CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections). 
 
 ## Step 3: Creating organizations and spaces
 
