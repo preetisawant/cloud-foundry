@@ -41,7 +41,7 @@ To update the CFEE version of your CFEE instance:
 2. In {{site.data.keyword.cfee_full_notm}}, go to the **Cells** entry in the navigation pane to open the cells page.
 3. (optional) In the _Control Plane_ table you can expand the row to see the worker nodes in the control plane.
 4. Click **Update**.
-5. In the Update _Control Plane_ dialog, select one of the available CFEE versions and click **Update**.The update takes about 5 minutes.  The version description details the versions of the components included in the selected CFEE version package, along with a link to the _What's New_ document describing the content delivered in that version.
+5. In the Update _Control Plane_ dialog, select one of the available CFEE versions and click **Update**.The update takes about 45 minutes.  The version description details the versions of the components included in the selected CFEE version package, along with a link to the _What's New_ document describing the content delivered in that version.
 6. The _Nodes Status_ column shows the progress of the update. Once the update is complete, the _Version_ column reflects the new CFEE version.
 7. Once the update of the control plane cells is complete, find the _Cells_ table and click **Update**.
 8. In the _Update Control Plane_ dialog select the CFEE version and click *Update*. There is only available version for the cells to update because cells can be updated only to the version of the control plane. A single update action updates all cells.
