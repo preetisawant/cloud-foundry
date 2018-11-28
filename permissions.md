@@ -23,7 +23,7 @@ Before users begin creating and working with an {{site.data.keyword.cfee_full}} 
 ## Permissions overview
 {: #perm-summary}
 
-Following is a summary of the minimum IAM and Cloud Foundry role assignments required for performing various tasks in an CFEE instance. The remaining section describes these permissions in more detail.
+Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam#/users) and [Cloud Foundry role assignments](https://cloud.ibm.com/account/cloud-foundry) required for performing various tasks in an CFEE instance. The remaining section describes these permissions in more detail.
 
 |  **Activity** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM Access Roles** &nbsp; &nbsp; &nbsp; |**Cloud Foundry Roles** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
