@@ -19,6 +19,14 @@ lastupdated: "2018-11-19"
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
+## Version 1.1.1
+{: #v111}
+
+_Release Date:_ 2018-11-28
+
+The following changes were released in version 1.1.1 of the {{site.data.keyword.cfee_full_notm}} service:
+* Resolved potential exposure to sensitive information in internal update logs.
+   
 ## Version 1.1.0
 {: #v110}
 
