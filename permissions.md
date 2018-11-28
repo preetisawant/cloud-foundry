@@ -18,7 +18,35 @@ lastupdated: "2018-11-20"
 # Permissions
 {: #permissions}
 
-Before users begin creating and working with instances of the {{site.data.keyword.cfee_full}} service, their permissions must be set correctly by an administrator of the account where the instance is to be created. 
+Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created. 
+
+## Permissions overview
+{: #perm-summary}
+
+Following is a summary of the minimum IAM and Cloud Foundry role assignments required for performing various tasks in an CFEE instance. The remaining section describes these permissions in more detail.
+
+|  **Activity** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM Access Roles** &nbsp; &nbsp; &nbsp; |**Cloud Foundry Roles** &nbsp; &nbsp; &nbsp; |
+|----------------------------------------|-------------------|-------------------|
+|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User in one public organization.</li> <li>Developer in a space in that pubic organization. </li></ul>|
+|Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User in one public organization.</li> <li>Developer in a space in that pubic organization. </li></ul>|
+|Scale CFEE capacity (add/remove cells)|  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Administrator role in the CFEE instance.</li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | |
+|Monitor CFEE |  <ul><li>Viewer role in CFEE Resource Group</li> <li>Editor role in the CFEE instance.</li></ul> |  |
+|View CFEE resource usage |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Viewer role in the CFEE instance.</li></ul> |  |
+|Enable CFEE auditing| <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor role in the CFEE instance.</li></ul> | <ul><li>Auditor role in the public Cloud Foundry space where the Activity Tracker service instance is deployed.</li></ul>  |
+|View CFEE auditing events| <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor role in the CFEE instance.</li></ul> | <ul><li>Auditor role in the public Cloud Foundry space where the Activity Tracker service instance is deployed.</li></ul>  |
+|Enable CFEE log persistance| <ul><li>Viewer role in CFEE Resource Group</li> <li>Editor role in the CFEE instance.</li></ul> |<ul><li>Auditor role in the public Cloud Foundry space where the Log Analysis service instance is deployed.</li></ul>  |
+|View CFEE persisted logs| <ul><li>Viewer role in CFEE Resource Group</li> <li>Editor role in the CFEE instance.</li></ul> | <ul><li>Auditor role in the public Cloud Foundry space where the Log Analysis service instance is deployed.</li></ul> |
+|Create CFEE organizations| <ul><li>Viewer role in CFEE Resource Group</li> <li>Editor role in the CFEE instance.</li></ul> |  |
+|Create CFEE spaces| <ul><li>Viewer role in CFEE Resource Group</li> <li>Viewer role in the CFEE instance.</li></ul> | <ul><li>Manager in organization where space is to be created.</li></ul> |
+|Manage shared domains|<ul><li>Viewer in the CFEE Resource Group. </li><li>Editor role in the CFEE instance. </li></ul>|  |
+|View shared domains|<ul><li>Viewer in the CFEE Resource Group. </li><li>Viewer role in the CFEE instance. </li></ul>|  |
+|Manage private domains|<ul> <li>Viewer in the CFEE Resource Group. </li><li>Viewer role in the CFEE instance. </li></ul>| <ul><li>Manager role in organization owning the domain. </li></ul>|
+|View Private domains|<ul> <li>Viewer in the CFEE Resource Group </li><li>Viewer role in the CFEE instance. </li></ul>|<ul><li>Viewer role in organization owning the domain  |
+|Create/Delete an IBM Cloud service instance in a CFEE space| <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Viewer role in the CFEE instance.</li> <li>Editor in the Resource Group where the service instance is to be created, or to the IAM-managed service to be instantiated.</li> </ul>| <ul><li>Developer role in the CFEE space from where the service instance is created.</li></ul> |
+|Add/Remove an IBM Cloud service instance to/from a CFEE space (i.e., create/delete an alias to an IBM Cloud service in a CFEE space)| <ul><li>Viewer role in CFEE Resource Group , or to the IAM-managed service to be instantiated.</li><li>Viewer role in the CFEE instance. </li><li>Operator platform role and reader service role to the service instance to be added. </li></ul>|<ul><li>Developer role in the CFEE space from where the service instance is created.</li></ul> |
+|Bind or unbind an IBM Cloud service instace in a CFEE space|<ul> <li>Editor in the Resource Group where the service instance is to be created, or to the IAM-managed service to be instantiated.</li><li>Viewer role in the CFEE instance. </li><li>Operator platform role and writer service role to the service instance to be add.</li></ul> | <ul><li>Developer role in the CFEE space where the service instance is to be added.</li></ul> |
+|Issue `cf` cli commands|<ul> <li>Viewer in the CFEE Resource Group. </li><li>Viewer role in the CFEE instance.</li></ul> | <ul><li>Cloud Foundry roles in the organization/space required to perform the command.</li></ul> |
+{: caption="Table 1. Permissions required to perform tasks in a CFEE" caption-side="top"}
 
 ## Permissions required to create a new environment
 {: #perm-creating}
