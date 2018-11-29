@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-28"
+lastupdated: "2018-11-29"
 
 ---
 
@@ -27,8 +27,8 @@ Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam#/users) an
 
 |  **Task** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM Access Roles** &nbsp; &nbsp; &nbsp; |**Cloud Foundry Roles** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User in one public organization.</li> <li>Developer in a space in that pubic organization. </li></ul>|
-|Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User in one public organization.</li> <li>Developer in a space in that pubic organization. </li></ul>|
+|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User role in a public organization.</li> <li>Developer role in a space in that pubic organization. </li></ul>|
+|Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User role in a public organization.</li> <li>Developer role in a space in that pubic organization. </li></ul>|
 |Scale CFEE capacity (add/remove cells)|  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Administrator role in the CFEE instance.</li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | |
 |Monitor CFEE |  <ul><li>Viewer role in the CFEE instance Resource Group</li> <li>Editor role in the CFEE instance.</li></ul> |  |
 |View CFEE resource usage |  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Viewer role in the CFEE instance.</li></ul> |  |
@@ -45,7 +45,7 @@ Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam#/users) an
 |Create/Delete an IBM Cloud service instance in a CFEE space| <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Viewer role in the CFEE instance.</li> <li>Editor in the Resource Group where the service instance is to be created, or to the IAM-managed service to be instantiated.</li> </ul>| <ul><li>Developer role in the CFEE space from where the service instance is created (and where will be added/aliased automatically).</li></ul> |
 |Add/Remove an IBM Cloud service instance to/from a CFEE space (i.e., create/delete an alias to an IBM Cloud service in a CFEE space)| <ul><li>Viewer role in the CFEE instance Resource Group.</li><li>Viewer role in the CFEE instance. </li><li>Operator platform role and reader service role to the service instance to be added. </li></ul>|<ul><li>Developer role in the CFEE space where the service instance is to be added (aliased).</li></ul> |
 |Bind or unbind an IBM Cloud service instace in a CFEE space|<ul> <li>Editor in the Resource Group of the service instance to bind or unbind.</li><li>Viewer role in the CFEE instance. </li><li>Operator platform role and writer service role to the service instance to bind.</li></ul> | <ul><li>Developer role in the CFEE space where the service instance to bind.</li></ul> |
-|Issue `cf` cli commands|<ul> <li>Viewer in the CFEE instance Resource Group. </li><li>Viewer role in the CFEE instance.</li></ul> | <ul><li>Cloud Foundry roles in the organization/space required to perform the command.</li></ul> |
+|Issue `cf` cli commands|<ul> <li>Viewer role in the CFEE instance Resource Group. </li><li>Viewer role in the CFEE instance.</li></ul> | <ul><li>Cloud Foundry roles in the organization/space required to perform the command.</li></ul> |
 {: caption="Table 1. Permissions required to perform tasks in a CFEE" caption-side="top"}
 
 ## Permissions required to create a new environment
