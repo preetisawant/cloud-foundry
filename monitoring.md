@@ -106,31 +106,31 @@ The following guides you through the steps for installing the required CLI's, fo
 
    The following default dashboards are provided with the CFEE instance and are available from the _Home_ dropdown.
 
-   Dashboards for the Kubernetes infrastructure supporting your CFEE environment:
-   - _Kubernetes Capacity Planning_ dashboard
-        - Shows the capacity of the kubernetes infrastructure .
-   - _Kubernetes Cluster Health_ dashboard
-        - Shows the health of the Kubernetes cluster.
-   - _Kubernetes Cluster Status_ dashboard
-        - Shows the status of the Kubernetes cluster.
-   - _Kubernetes Resource Requests_ dashboard
-        - Shows the used CPU, memory and other parameters of the Kubernetes cluster.
-   - _Nodes_ dashboard
-        - Shows details for each worker node of the Kubernetes cluster.
-   - _Pods_ dashboard
-        - Shows details for each pod running on the Kubernetes cluster.
-   - _Replica Set_ dashboard
-        - Shows the status of the Kubernetes replica sets.
-   - _Deployment_ dashboard
-        - Shows the status of your Kubernetes deployments.
-
-   Cloud Foundry dashboards:
-   - _CF: Cells Capacity_ dashboard
+    Cloud Foundry dashboards:
+   - _CF: Cells Capacity_ 
         - Shows the general status of the Cloud Foundry cells where the Cloud Foundry applications are deployed.
-   - _CF: Router_ dashboard
-        - Shows the Cloud Foundry router status running on your CFEE environment.
-   - _CF: Diego_Cell_ dashboard
+   - _CF: Diego Cell dashboard_ 
         - Shows the status of the Cloud Foundry cells and Diego components.
+   - _CF: Router_ 
+        - Shows the Cloud Foundry router status running on your CFEE environment.
+  
+   Dashboards for the Kubernetes infrastructure supporting your CFEE environment:
+   - _Deployment_ 
+        - Shows the status of your Kubernetes deployments.
+   - _Kubernetes Cluster Health_ 
+        - Shows the health of the Kubernetes cluster.
+   - _Kubernetes Cluster Status_ 
+        - Shows the status of the Kubernetes cluster.
+   - _Kubernetes Resource Requests_ 
+        - Shows the used CPU, memory and other parameters of the Kubernetes cluster.
+   - _Pods_ 
+        - Shows details for each pod running on the Kubernetes cluster.
+   - _Replica Set_ 
+        - Shows the status of the Kubernetes replica sets.       
+   - _Worker Nodes_ 
+        - Shows details for each worker node of the Kubernetes cluster.
+   - _Worker Nodes Overview_ 
+        - Shows the CPU and memory usage of the kubernetes infrastructure, along with its network traffic.
 
 6. Optionally, you can also launch the Prometheus console to see the raw data collected by the Prometheus server, and the Prometheus Alertmanager to manage the alerts sent by the Prometheus server:
 
