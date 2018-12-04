@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-04"
 
 ---
 
@@ -66,9 +66,9 @@ Following are the geographies, locations and data centers where the CFEE service
 |North America | Washington DC (wdc04) | us-geo | us-east |
 |North America | Washington DC (wdc06) | us-geo | us-east | 
 |North America | Washington DC (wdc07) | us-geo | us-east |
-|North America | Dallas (das10) | us-geo | us-south |
-|North America | Dallas (das12) | us-geo | us-south |
-|North America | Dallas (das13) | us-geo |us-south |
+|North America | Dallas (dal10) | us-geo | us-south |
+|North America | Dallas (dal12) | us-geo | us-south |
+|North America | Dallas (dal13) | us-geo |us-south |
 |North America | San Jose (sjc03) | us-geo | us-south |
 |North America | San Jose (sjc04) | us-geo | us-south |
 |South America &nbsp; &nbsp;| Sao Paolo (sao01) |  us-geo | us-south |
@@ -87,9 +87,9 @@ Following are the geographies, locations and data centers where the CFEE service
 |Asia Pacific | Hong Kong (hkg02) | ap-geo | au-syd |
 |Asia Pacific | Hong Kong (seo01) | ap-geo | au-syd |
 |Asia Pacific | Singapore (sng01) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok02) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok04) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok05) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok02) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok04) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok05) | ap-geo | au-syd |
 |Asia Pacific | Chennai (che01) | ap-geo | au-syd |
 {: caption="Table 2. Provisioning targets for CFEE and supporting services" caption-side="top"}
 
