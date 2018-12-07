@@ -19,6 +19,16 @@ lastupdated: "2018-11-19"
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
+## Version 1.1.2
+{: #v112}
+
+_Release Date:_ 2018-12-07
+
+The following changes were released in version 1.1.2 of the {{site.data.keyword.cfee_full_notm}} service:
+* New data centers in Chennai (che01) and Milan (mil01) are now available for provisionng CFEE instances.
+* When a CFEE instance is created, the supporting Kubernetes cluster and Cloud Object Storage service instance are now created in the same Resource Group as the CFEE service instance (instead of under the "Default" resource group).
+* Security patches.
+
 ## Version 1.1.1
 {: #v111}
 
