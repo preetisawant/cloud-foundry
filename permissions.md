@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-29"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -142,3 +142,39 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
   - Users need _operator_ platform role (or higher) to an IBM Cloud service instance to be able to **add** that *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
  
   - Users need _operator_ platform role (or higher) and _writer_ service role (or higher) to an IBM Cloud service instance to be able to **bind** that service instance to an application deployed in a CFEE space.
+
+
+## Best practices: Access Groups
+{: #access-groups}
+
+Consider using access groups to manage and simplify access control for your CFEE.  Access groups allow you define arbitrary groups to which you can assign access policies.  Any user added to that group will automaticaly by assigned the group's access policy. 
+
+You can create and manage access groups from either the IBM Cloud user interface or through the `ibmcloud` cli. 
+
+From the user interface, go the menu bar, click **Manage > Access (IAM)**, and select [Access Groups](https://cloud.ibm.com/iam#/groups).
+
+Alternatively, you can use the `ibmcloud` cli:
+
+1. Create an access group:
+
+  ```
+  ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
+```
+  {: pre}
+
+2. Create an access policy for that access group:
+
+  ```
+  ibmcloud iam access-group-policy-create GROUP_NAME
+  ```
+  {: pre}
+
+3. Add users to the access group:
+
+  ```
+  ibmcloud iam access-group-user-add <user-name> [<user-name2...]
+  ```
+  {: pre}
+
+<br>
+For more information, see [Setting up access groups](https://cloud.ibm.com/docs/iam/groups.html#groups).
