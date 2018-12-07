@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-12-04"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -81,6 +81,7 @@ Following are the geographies, locations and data centers where the CFEE service
 |Europe | Frankfurt (fra02) | eu-geo | eu-de |
 |Europe | Frankfurt (fra04) | eu-geo | eu-de | 
 |Europe | Frankfurt (fra05) |  eu-geo | eu-de |
+|Europe | Milan (mil01) |  eu-geo | eu-de |
 |Asia Pacific | Melbourne (mel01) | ap-geo | au-syd |
 |Asia Pacific | Sydney (syd01) | ap-geo | au-syd |
 |Asia Pacific | Sydney (syd04) | ap-geo | au-syd | 
