@@ -26,7 +26,7 @@ _Release Date:_ 2018-12-07
 
 The following changes were released in version 1.1.2 of the {{site.data.keyword.cfee_full_notm}} service:
 * New data centers in Chennai (che01) and Milan (mil01) are now available for provisioning CFEE instances.
-* Security patches.
+* Security patche.
 
 ## Version 1.1.1
 {: #v111}
@@ -34,7 +34,7 @@ The following changes were released in version 1.1.2 of the {{site.data.keyword.
 _Release Date:_ 2018-11-28
 
 The following changes were released in version 1.1.1 of the {{site.data.keyword.cfee_full_notm}} service:
-* Resolved potential exposure to sensitive information in internal update logs.
+* Security patche.
    
 ## Version 1.1.0
 {: #v110}
