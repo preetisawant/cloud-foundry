@@ -147,7 +147,7 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 ## Best practices: Access Groups
 {: #access-groups}
 
-Consider using access groups to manage and simplify access control for your CFEE.  Access groups allow you define arbitrary groups to which you can assign access policies.  Any user added to that group will automaticaly by assigned the group's access policy. 
+Consider using access groups to manage and simplify access control for your CFEE.  Access groups allow you to define arbitrary groups to which you can assign access policies.  Any user added to that group automaticaly is assigned the group's access policy. 
 
 You can create and manage access groups from either the IBM Cloud user interface or through the `ibmcloud` cli. 
 
