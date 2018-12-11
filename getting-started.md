@@ -92,7 +92,7 @@ After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organiz
 
 When you're ready, you can [deploy the app](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
-## Step 6: Create or Add IBM Cloud service instances to CFEE spaces
+## Step 6: Create or add IBM Cloud service instances to CFEE spaces
 {: #service-instances}
 
 [Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
