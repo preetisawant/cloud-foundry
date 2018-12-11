@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-08"
+lastupdated: "2018-12-11"
 
 ---
 
@@ -26,15 +26,15 @@ This getting started tutorial shows how to create an {{site.data.keyword.cfee_fu
 
 To work with instances of the {{site.data.keyword.cfee_full_notm}}, service users must have the correct permissions. For more information, see [Permissions](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
 
-## Step 1: Ensuring that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
+## Step 1: Ensure that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
 CFEE instances are deployed on infrastructure resources, which are Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for an CFEE instance.
 
-## Step 2: Creating your CFEE instance
-{: #creating-environment}
+## Step 2: Create your CFEE instance
+{: #create-environment}
 
-Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment and that you have the required access policies (per step 1 above).
+Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} IBM Cloud account where you want to create the environment and that you have the required access policies (per step 1 above).
 
 1.  Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
 
@@ -67,7 +67,7 @@ The Kubernetes cluster on which the environment is deployed appears in the {{sit
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 
-Once you successfully create the environment you will receive email notifications confirming the provisioning of the CFEE and supporting services, as well as emails notifying you of the status of the corresponding orders.
+Once you successfully create the environment you will receive multiple emails confirming the provisioning of the CFEE and supporting services, as well as emails notifying you of the status of the corresponding orders.
 
 **Note** that when you create a CFEE instance, there are three additional supporting service instances created in the same IBM Cloud account. Those supporting service instances are named after the CFEE instance name. Hence, creating a CFEE results in a total of four service instances created in the IBM Cloud account:
 * CFEE instance ("_cfeename_").
@@ -75,32 +75,49 @@ Once you successfully create the environment you will receive email notification
 * Cloud Object Storage instance ("_cfeename_-cos"). The instance is used to store data generated during the creation of the CFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 * Compose for PosgreSQL instance ("_cfeename_-postgres"). The instance is used to store Cloud Foundry data on the CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections). 
 
-## Step 3: Creating organizations and spaces
+## Step 3: Create organizations and spaces
+{: #create-orgsandspaces}
 
 After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://console.bluemix.net/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
 
 **Note:** The _Cloud Foundry organizations_ page available from the **_Manage > Account > Cloud Foundry orgs_** menu located in the top IBM Cloud header is intended exclusively for public IBM Cloud organizations, **not for CFEE organizations**. CFEE organizations are managed within the _Organizations_ page of an CFEE instance.  Open the CFEE user interface and click  the **_Organizations_** page to create and manage organizations for that CFEE.
 
-## Step 4: Adding users to organizations and spaces
+## Step 4: Add users to organizations and spaces
+{: #add-users}
 
 [Add users](https://console.bluemix.net/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
 
-## Step 5: Deploying and viewing applications
+## Step 5: Deploy and view applications
+{: #deploy-apps}
 
 When you're ready, you can [deploy the app](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
-## Step 6: Working with services
+## Step 6: Create or Add IBM Cloud service instances to CFEE spaces
+{: #service-instances}
 
-[Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+[Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
-## Step 7: Binding applications to service instances
+## Step 7: Bind applications to service instances
+{: #bind-apps}
 
-[Bind your app](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#bind_services) to a service instance alias in order to use the service's functions.
+[Bind your app](https://console.bluemix.net/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
 
-Did you know about the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview)? There you can see a consolidated view of all the applications and services in the {{site.data.keyword.Bluemix_notm}}, both _Public_ and _Enterprise_ (CFEE).  Once in the Cloud Foundry dashboard, click _Public_ in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on _Enterprise_ to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+In the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
-## Step 8: Installing the Stratos Console to manage applications (optional)
+## Step 8: Enable auditing and logging persistance (optional)
+{: #enable-auditingandlogging}
+
+Enable the environment for [auditing events](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) and [logging persistence](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#logging).
+
+## Step 9: Create and secure Cloud Foundry domains (optional)
+{: #create-domains}
+
+Create [domains](https://console.bluemix.net/docs/cloud-foundry/domains.html#domains) for all applications in the CFEE (shared domains) or for a specific organization (private domains), and secure them with SSL certificates.
+
+
+## Step 10: Install the Stratos Console to manage applications (optional)
+{: #install-stratos}
 
 The Stratos Console is an open source web-based tool for working with Cloud Foundry. The Stratos Console application can be optionally installed and used in a specific CFEE environment to manage its organizations, spaces, and applications.
 
@@ -122,9 +139,6 @@ To start the Stratos console:
 3. The Stratos console is opened in a separate browser tab. When you open the console for the first time, you're prompted to accept two consecutive warnings because of self-signed certificates.
 4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.Bluemix_notm}} credentials.
 
-Information on the CFEE API's is available in the CFEE [API documentation](https://console.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-{:tip}
-
 
 ## Additional resources
 {: #additional-resources}
@@ -133,4 +147,4 @@ You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI co
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-Information on the CFEE API's in the CFEE [API documentation](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Information on the CFEE API's in the CFEE [API documentation](https://console.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
