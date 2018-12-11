@@ -63,6 +63,7 @@ Alternatively, you can add {{site.data.keyword.Bluemix_notm}} service instance f
 
 ## Creating {{site.data.keyword.Bluemix_notm}} service instances from a CFEE space's user interface
 {: #creating-services_inspace}
+
 You can create {{site.data.keyword.Bluemix_notm}} service instances from within a CFEE space.  Creating an {{site.data.keyword.Bluemix_notm}} service instance results in the following:
 * The {{site.data.keyword.Bluemix_notm}} service instance is created in the IBM Cloud.  This is equivalent to creating the service instance from the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.bluemix.net/catalog).
 * An alias to the {{site.data.keyword.Bluemix_notm}} service instance is added (aliased) to the CFEE space from which the creation action was initiated. An alias service instance (in a CFEE space) is a reference to the actual service instance (in the IBM Cloud account). The service instance alias allows developers to interact with the service instance (e.g., binding to applications) by handling all the credentials automatically for interacting with the service instance. .
