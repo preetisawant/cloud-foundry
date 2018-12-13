@@ -19,6 +19,28 @@ lastupdated: "2018-11-19"
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
+## Version 2.0.0
+{: #v200}
+
+_Release Date:_ 2018-12-13
+
+The following changes were released in version 2.0.0 of the {{site.data.keyword.cfee_full_notm}} service:
+
+* Improved CFEE version update resiliency.
+* Improvements to the operational availability and resiliency of CFEE instances.
+* Client side certificates for more secured access to applications, allowing the server to grant application access only to certified clients.
+* When a CFEE instance is created, the supporting Kubernetes cluster and Cloud Object Storage service instance are now created in the same Resource Group as the CFEE service instance (instead of under the "Default" resource group).
+* Security patch.
+* Improvements to the `ibmcloud cfee` CLI:
+    * New commands for creating an IBM Cloud service instance from a CFEE space and adding it to that CFEE space (`ibmcloud cfee service-create`, `ibmcloud cfee service-alias-create`).
+    * New commands for scaling the capacity of a CFEE (`ibmcloud cfee scale-up`, `ibmcloud cfee scale-down`).
+    * Improvements to the command for managing CFEE instances (`ibmcloud cfee environments`).
+    
+      Update the ibmcloud CLI (`ibmcloud update`) to access these command enhancements, and issue `ibmcloud cfee -help` for more details.
+      
+**Note**: Updating a CFEE instance to version 2.0.0 only requires a single "update" action that updates both, the control plane and the cells. No separate updates are required for the CFEE control plane and cells.
+
+
 ## Version 1.1.2
 {: #v112}
 
