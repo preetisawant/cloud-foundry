@@ -24,7 +24,7 @@ This document describes what's new in each version released up to this date of t
 
 _Release Date:_ 2018-12-13
 
-The following changes were released in version 2.0.0 of the {{site.data.keyword.cfee_full_notm}} service:
+The following changes were released in version 2.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
 
 * Improved CFEE version update resiliency.
 * Improvements to the operational availability and resiliency of CFEE instances.
