@@ -38,7 +38,7 @@ The following changes were released in version 2.0.0 of the {{site.data.keyword.
     
       Update the ibmcloud CLI (`ibmcloud update`) to access these command enhancements, and issue `ibmcloud cfee -help` for more details.
       
-**Note**: Updating a CFEE instance to version 2.0.0 only requires a single "update" action that updates both, the control plane and the cells. No separate updates are required for the CFEE control plane and cells.
+**Note**: Updating a CFEE instance to version 2.0.0 only requires a single _update_ action that updates both, the control plane and the cells. No separate updates are required for the CFEE control plane and cells.
 
 
 ## Version 1.1.2
