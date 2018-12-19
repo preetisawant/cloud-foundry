@@ -94,3 +94,15 @@ You can filter the content of the table through the **Cells** filter dropdown lo
 Additionally, you can use the filter entry field above the table to show only applications instances maching the string you enter in the filter field.  The filter is reflected in both, the table and the chart above it.
 
 **Note:** The filters work independently of the table rows selected (through the checkbox in the first column table) for inclusion in the set of _Selected App Instances_ included in the chart above. For example,  if there is a total of ten application instances in the CFEE environment, and five of them are selected for inclusion in the chart, when you apply a filter that matches only one application instance, only that application instance will appear in the table.  Furthermore, the set of _Selected App Instances_ will now include only that app instance, and the chart will be refreshed accordingly.  When you remove the filter, all ten application instances will be shown again in the table, and the set of _Selected App Instances_  will be reset to include all app instances.
+
+## Memory metrics
+{: #memory_metrics}
+
+There are various types of memory metrics shown in CFEE:
+
+* Overall memory used by the Kubernetes worker nodes supporting the Cloud Foundry cells relative to the total memory capacity of those nodes.  This reflects worker node memory used not only by Cloud Foundry cells, but also by system or cache  overhead unrelated to Cloud Foundry.  This is shown as **Overall usage** gauge in the **Overview** page.
+* Memory allocated to applications relative to the available cell memory, irrespective of that memory actually being used or not.This is shown as **Allocated** gauge in the **Overview** page.
+* Memory physically used by applications relative to the available cell memory. The overall application memory used is shown in the **App usage** gauge in the **Overview** page. The memory used by specific applications is shown in the **Resources Usage - Applications** page.
+* Memory used by Cloud Foundry cells relative to the memory capacity of the worker node.  This is shown in the **Resources Usage - Cells ** page.
+* Total memory used by worker nodes (related or not to Cloud Foundry). This is shown in the **Updates and Scaling** page for both, nodes supporting the CFEE cells and  nodes supporting the CFEE control plane.
+* Additional memory metrics are shown in Grafana dashboards, which can be launched from the **Monitoring** page.  These metrics show detailed memory capacity and usage for Cloud Foundry cells and Kubernetes cluster and worker nodes.
