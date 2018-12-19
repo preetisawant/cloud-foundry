@@ -98,7 +98,9 @@ Additionally, you can use the filter entry field above the table to show only ap
 ## Memory metrics
 {: #memory_metrics}
 
-There are various types of memory metrics shown in CFEE:
+There are various types of memory metrics available in CFEE.  This variety of memory metrics stems from the various perspectives from which memory utilization can be analyzed. Memory utilization can be measured relative to the capacity available to the Cloud Foundry cell(s), or relative to the total physical capacity of the Kubernetes worker node into which cells are provisioned (which may include other memory utilization unrelated to Cloud Foundry). Memory capacity can also be seen from the perspective of the memory reserved (allocated) by applications, or from the perspective of the memory actually used by those applications.  
+
+Following are the memory metrics available to users of a CFEE instance:
 
 * Overall memory used by the Kubernetes worker nodes supporting the Cloud Foundry cells relative to the total memory capacity of those nodes.  This reflects worker node memory used not only by Cloud Foundry cells, but also by system or cache  overhead unrelated to Cloud Foundry.  This is shown as **Overall usage** gauge in the **Overview** page.
 * Memory allocated to applications relative to the available cell memory, irrespective of that memory actually being used or not.This is shown as **Allocated** gauge in the **Overview** page.
