@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -40,6 +40,7 @@ From this view you can also bind applications deployed into the CFEE spaces to w
 {: #adding-services-inspace}
 
 You can bind an {{site.data.keyword.Bluemix_notm}} service instances to applications deployed into a CFEE space.  Before an IBM Cloud service instance can be bound to appplication deployed in CFEE it has to be added to the CFEE space in which the application is deployed. The following is required before you can add an {{site.data.keyword.Bluemix_notm}} service instance to a CFEE Space:
+* The service whose instance is to be added cannot be a Cloud Foundry service.  Only {{site.data.keyword.Bluemix_notm}} services that support resource groups and IAM can be added (aliased) into a CFEE. Services instantiated into public Cloud Foundry orgs, spaces, and roles cannot be added (aliased) into a CFEE.  {{site.data.keyword.Bluemix_notm}} services are progressively moving to benefit from resource groups.  Once a services moves to using resource groups instead of Cloud Foundry orgs and spaces, you can migrate any previously existing instances of that service to a resource group, at which point it can be added to a CFEE.  See [Migrating Cloud Foundry service instances to a resource group](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate).
 * The {{site.data.keyword.Bluemix_notm}} service must be available in the same {{site.data.keyword.Bluemix_notm}} account where the CFEE instance resides.
 * You must have _operator_ platform role (or higher) to the {{site.data.keyword.Bluemix_notm}} service instance itself. For more information, see the Identity & Access page under the **Manage > Users** menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies.
 
