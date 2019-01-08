@@ -6,7 +6,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-11-09"
+lastupdated: "2019-01-08"
 
 
 
@@ -57,7 +57,7 @@ The CFEE service runs on Kuberneters containers, which allows for lower infrastr
 ## What are my isolation options when creating a CFEE?
 {: #isolation}
 
-You have two hardware options on the type of Kubernetes infrastructure into which the CFEE instance is deployed: _Virtual shared_ or _Virtual dedicated_ hardware. With _Virtual shared_ hardware, the worker nodes (into which the Cloud Foundry platform container is deployed) is distributed between you and other IBM customers.  With _Virtual dedicated_ the worker nodes are hosted on hardware that is dedicated exlusively to your account.  Note that in both cases (_Virtual shared_ and _Virtual dedicated_, each worker node is single-tenant to the customer.  That means, that the Cloud Foundry cells on which applications run are not shared with other customers.
+You have two hardware options on the type of Kubernetes infrastructure into which the CFEE instance is deployed: _Virtual shared_ or _Virtual dedicated_ hardware. With _Virtual shared_ hardware, the worker nodes (into which the Cloud Foundry platform container is deployed) is distributed between you and other IBM customers.  With _Virtual dedicated_ the worker nodes are hosted on hardware that is dedicated exlusively to your account.  Note that in both cases, _Virtual shared_ and _Virtual dedicated_, each worker node is single-tenant to the customer.  That means, that the Cloud Foundry cells on which applications run are not shared with other customers.
 
 ## Can I scale the capacity of a CFEE?
 {: #scaling}
