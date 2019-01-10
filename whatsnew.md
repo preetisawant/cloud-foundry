@@ -19,6 +19,18 @@ lastupdated: "2018-12-13"
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
+
+## Version 2.0.1
+{: #v201}
+
+_Release Date:_ 2019-01-10
+
+The following changes were released in version 2.0.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface::
+
+* Resolved problem that prevents custom domains from working properly.
+* Resolved problem whereby organization metrics are not available while new metrics are retrieved.
+
+
 ## Version 2.0.0
 {: #v200}
 
