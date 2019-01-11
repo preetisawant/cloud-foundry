@@ -15,9 +15,9 @@ lastupdated: "2018-12-19"
 
 # Resource usage
 
-Administrators and developers can see how the resource capacity (memory and CPU) of an CFEE is used by applications and cells. To monitor resource usage in an CFEE environment:
+Administrators and developers can see how the resource capacity (memory and CPU) of an CFEE is used by applications and cells. To monitor resource usage in a CFEE instance:
 
-1. Go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) and open the {{site.data.keyword.cfee_full_notm}} where you want to manage resource usage.
+1. Go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) and open the {{site.data.keyword.cfee_full_notm}} where you want to manage resource usage.
 2. In the {{site.data.keyword.cfee_full_notm}} user interface, go to the **Resource Usage** entry in the left navigation pane to open the _Resource Usage_ page. Under the _Resource Usage_ page you can either go to the _Applications_ or the _Cells_ sub-entries to open the corresponding pages.  The information displayed in the _Applications_ and _Cells_ pages can be considered two ways of breaking down resource usage:
    * The **Applications** page analyzes resource usage by applications aggregated across instances.
    * The **Cells** page shows resource usage of application instances running on specific cells. The pattern of resource usage across cells can provide insights into capacity and load distribution.  For example, it may help identify problems with the load balancing of applications (e.g., large differences in the resources used by an application across cells) or resource usage approaching overall capacity (i.e., large percentages of resource usage in all cells).
@@ -40,7 +40,7 @@ The Applications page has two sections:
 
 2. A table listing all the applications.  Each row in the table displays resource information for that application.  Expanding a row shows resource usage information for the various instances of that application.
 
-  The first column in the table is a checkbox that determines if the corresponding application is to be included in the set of *Selected Apps* to be included in the chart at the top of the page. To include (or exlude) an application in the selected set, click on the correspondng checkbox.  When an application is selected or unselected for inclusion in the set, the graph is refreshed.  The _Selected Apps_ legend to the right of the bar chart indicates (in parenthesis) the number of applications currently selected for inclusion in the graph.
+  The first column in the table is a checkbox that determines if the corresponding application is to be included in the set of *Selected Apps* to be included in the chart at the top of the page. To include (or exclude) an application in the selected set, click on the corresponding checkbox.  When an application is selected or unselected for inclusion in the set, the graph is refreshed.  The _Selected Apps_ legend to the right of the bar chart indicates (in parenthesis) the number of applications currently selected for inclusion in the graph.
 
   The following information is displayed as columns in the applications table:
    * **Application Name**: the name of the application or application instance. If the user does not have permission to access the application, the application GUID is displayed instead.
@@ -78,7 +78,7 @@ The Cells page has two sections:
 
 2. A table listing all the cells and applications instances running in them.  Each row in the table displays resource information for that cell and application instance.
 
-  The first column in the table is a checkbox that determines if the corresponding application instance is to be included in the set of *Selected App instances* to be included in the chart at the top of the page. To include (or exlude) an application instance in the selected set, click on the correspondng checkbox.  When an application instance is selected or unselected for inclusion in the set, the graph is refreshed.
+  The first column in the table is a checkbox that determines if the corresponding application instance is to be included in the set of *Selected App instances* to be included in the chart at the top of the page. To include (or exclude) an application instance in the selected set, click on the corresponding checkbox.  When an application instance is selected or unselected for inclusion in the set, the graph is refreshed.
 
   The following information is displayed as columns in the table:
    * **Cell name**: The name of the cell.
@@ -86,7 +86,7 @@ The Cells page has two sections:
    * **Instances**: The number of the application instances running on the cell.
    * **Memory-Physical**: MBs of physical memory used by the application instance running in the cell.
    * **Memory-Reserved**: MBs of memory reserved by the application instance running in the cell.
-   * **CPU (% )**: The pertentage of total CPU available in the CFEE used by the application instance running on the  cell.
+   * **CPU (% )**: The percentage of total CPU available in the CFEE used by the application instance running on the  cell.
 
 ### Filtering cells and app instances
 You can filter the content of the table through the **Cells** filter dropdown located above the table and selecting the cells to be displayed in the table.
@@ -103,7 +103,7 @@ There are various types of memory metrics available in CFEE.  This variety of me
 Following are the memory metrics available to users of a CFEE instance:
 
 * Overall memory used by the Kubernetes worker nodes supporting the Cloud Foundry cells relative to the total memory capacity of those nodes.  This reflects worker node memory used not only by Cloud Foundry cells, but also by system or cache  overhead unrelated to Cloud Foundry.  This is shown as **Overall usage** gauge in the **Overview** page.
-* Memory allocated to applications relative to the available cell memory, irrespective of that memory actually being used or not.This is shown as **Allocated** gauge in the **Overview** page.
+* Memory allocated to applications relative to the available cell memory, irrespective of that memory actually being used or not. This is shown as **Allocated** gauge in the **Overview** page.
 * Memory physically used by applications relative to the available cell memory. The overall application memory used is shown in the **App usage** gauge in the **Overview** page. The memory used by specific applications is shown in the **Resources Usage - Applications** page.
 * Memory used by Cloud Foundry cells relative to the memory capacity of the worker node.  This is shown in the **Resources Usage - Cells ** page.
 * Total memory used by worker nodes (related or not to Cloud Foundry). This is shown in the **Updates and Scaling** page for both, nodes supporting the CFEE cells and  nodes supporting the CFEE control plane.
