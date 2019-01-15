@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-15"
 
 ---
 
@@ -36,7 +36,7 @@ The Applications page has two sections:
    
    **Note:** When applications reserve more memory than there is physically available, a dotted red outline in the reserved memory bar chart is shown to represent the amount of memory overreserved by the selected application(s).
 
-   To show the percentage of memory and CPU used by all the apps or those selected in the table, hover over the corresponding portion of the chart.  Hovering over the *all apps* portion of the chart shows the percentage of memory and CPU relative to the total available. Hovering over the *selected apps* portion of the chart shows the percentage of memory and CPU relative to the total available memory or CPU.
+   To show the number representing the percentage of memory used by all the applications or those selected in the table, hover over the corresponding portion of the chart.  Hovering over the *all apps* portion of the chart shows the percentage of memory used by all the application in the CFEE relative to the total available. Hovering over the *selected apps* portion of the chart shows the percentage of memory used by the applications selected in the table, relative to the total available memory.
 
 2. A table listing all the applications.  Each row in the table displays resource information for that application.  Expanding a row shows resource usage information for the various instances of that application.
 
@@ -81,12 +81,12 @@ The Cells page has two sections:
   The first column in the table is a checkbox that determines if the corresponding application instance is to be included in the set of *Selected App instances* to be included in the chart at the top of the page. To include (or exclude) an application instance in the selected set, click on the corresponding checkbox.  When an application instance is selected or unselected for inclusion in the set, the graph is refreshed.
 
   The following information is displayed as columns in the table:
-   * **Cell name**: The name of the cell.
-   * **Application name**: The name of the application running on the cell. If the user does not have permission to access the application, the application GUID is displayed instead.
+   * **Cell Name**: The name of the cell.
+   * **Application Name**: The name of the application running on the cell. If the user does not have permission to access the application, the application GUID is displayed instead.
    * **Instances**: The number of the application instances running on the cell.
    * **Memory-Physical**: MBs of physical memory used by the application instance running in the cell.
    * **Memory-Reserved**: MBs of memory reserved by the application instance running in the cell.
-   * **CPU (% )**: The percentage of total CPU available in the CFEE used by the application instance running on the  cell.
+   * **CPU (% of Cell )**: The percentage of total CPU available in the CFEE used by the application instance running on the  cell.
 
 ### Filtering cells and app instances
 You can filter the content of the table through the **Cells** filter dropdown located above the table and selecting the cells to be displayed in the table.
