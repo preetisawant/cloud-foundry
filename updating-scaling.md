@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -78,7 +78,7 @@ Users need the following permissions to be able to add or remove Cloud Foundry c
 
 To add application cells in your CFEE instance:
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
-2. Click **Add cell** near the _Cells_ table, which opens the _Add Cloud Foundry Cells_ page.
-3. In the _Add Cloud Foundry Cells_ page, select the number of cells to add. The page also shows the geography and location of the CFEE instance where they cells will be added. It also shows the current number of cells and the capacity of the cells to be added (which is the same as the capacity of the current cells). The page's right pane shows the estimated cost of the added cells along with the new total estimated cost of the environment.
-4. Click **Add cell**.  
-5. Go to the _Nodes_ page. A new row is added in the _Cells_ table for each new node. The _Node Status_ column indicates the progress of adding and deploying the cell to your CFEE environment.
+2. Click **Change Cloud Foundry cell count** near the _Cells_ table, which opens the _Add Cloud Foundry Cells_ page.
+3. In the _Change Cloud Foundry cell count page_, select the total number of cells in the Target cell count field. The page also shows the Geography and Location of the CFEE instance where they cells will be added. It also shows the current number of cells in the _Current Cell count_ field and the capacity of the cells to be added (which is the same as the capacity of the current cells) in the Node size filed. The page's right pane shows the estimated cost of the added cells along with the new total estimated cost of the environment.
+4. Click **Add cells**.  In the _Add Cells_ dialog, click **Add**
+5. Go back to the _Updates and Scaling_ page. A new row is added in the _Cell Nodes_ table for each new Cell node. The Node Status column indicates the progress of adding and deploying the cell to your CFEE environment.
