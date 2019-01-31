@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2019-01-25"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -34,7 +34,7 @@ Updating the CFEE version of your CFEE instance is a two-step process. First, up
 
 The following rules and constraints apply when updating a CFEE to a new version:
 * The control plane must be updated first. Once the control plane has been updated the cells can be updated.
-* Application cells can be updated only to the version of the control plane.  That is, control plane can be at a higher CFEE version level than application cells, but not viceversa.
+* Application cells can be updated only to the version of the control plane.  That is, the control plane can be at a higher CFEE version level than application cells, but not viceversa.
 
 To update the CFEE version of your CFEE instance:
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} that you want to update.
