@@ -38,7 +38,7 @@ The following rules and constraints apply when updating a CFEE to a new version:
 
 To update the CFEE version of your CFEE instance:
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} that you want to update.
-2. In {{site.data.keyword.cfee_full_notm}}, go to the **Cells** entry in the navigation pane to open the cells page.
+2. Go to the **Updates and Scaling** page under the _Operations_ entry in the navigation pane.
 3. (optional) In the _Control Plane_ table you can expand the row to see the worker nodes in the control plane.
 4. Click **Update**.
 5. In the Update _Control Plane_ dialog, select one of the available CFEE versions and click **Update**.The update takes about 45 minutes.  The version description details the versions of the components included in the selected CFEE version package, along with a link to the _What's New_ document describing the content delivered in that version.
