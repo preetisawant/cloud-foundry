@@ -60,7 +60,7 @@ Alternatively, you can add {{site.data.keyword.Bluemix_notm}} service instance f
 5. Find and select an available service instance you want to add to the CFEE space. 
 6. The service instance will be added to the list of services available in the CFEE space.
 
-   **Note:** When you add an {{site.data.keyword.Bluemix_notm}} service to a CFEE space, an alias to that service instance is created in that space. When you **Remove** the service instance from a CFEE space (from the menu located in the far right of the corresponding service instance row in the table), the service is not deleted from the public account.  The action simmply removes it from the specific CFEE account and is no longer available for binding to applications in that CFEE space.  Also, when you delete the service instance itself from the {{site.data.keyword.Bluemix_notm}} account, the service is no longer available to any CFEE spaces. 
+   **Note:** When you add an {{site.data.keyword.Bluemix_notm}} service to a CFEE space, an alias to that service instance is created in that space. When you **Remove** the service instance from a CFEE space (from the menu located in the far right of the corresponding service instance row in the table), the service is not deleted from the public account.  The action simply removes it from the specific CFEE account and is no longer available for binding to applications in that CFEE space.  Also, when you delete the service instance itself from the {{site.data.keyword.Bluemix_notm}} account, the service is no longer available to any CFEE spaces. 
 
 ## Creating {{site.data.keyword.Bluemix_notm}} service instances from a CFEE space's user interface
 {: #creating-services-inspace}
