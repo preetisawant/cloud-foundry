@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-12-13"
+lastupdated: "2018-02-20"
 
 ---
 
@@ -18,6 +18,34 @@ lastupdated: "2018-12-13"
 # What's New in IBM Cloud Foundry Enterprise Environment
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
+
+## Version 2.1.0
+{: #v210}
+
+_Release Date:_ 2019-02-20
+
+**Note:** You can only update to this version from version **2.0.2**. Update to version 2.0.2 before updating to version v2.1.0.
+
+The following changes were released in version 2.1.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the **Updates and Scaling** page in the CFEE's user interface and click **Update**:
+
+* New autoscaling capability that automatically scales Cloud Foundry application instances based on custom rules. Autoscaling is accessible from the CLI and from the Stratos console. The Stratos console can be optionally installed and launched from the _Overview_ page in the CFEE user interface. In the _Applications_ page of the Stratos console, select an  application and look for the **Auto Scaling** tab. Click *Create Policy* to launch the autoscaling editor to define the scaling policy for the target application.
+  See the [autoscaling documentation](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps) for more information.
+* New capability to manage buildapcks from the user interface, including drag-and-drop positioning of a buildpack in the priority list. The capability is available in a new **Buildpacks** page of the CFEE user interface.
+* New capability to manage organization quotas from the user interface, including visualizing which organizations are using a specific quota. The capability is available in a new **Quotas** page in the CFEE user interface. You can create new quotas and edit existing ones. You can also update the values of the default quota with the values from any existing quota by invoking the **Copy to Default** from the quota's menu.
+* A new **Getting Started** page in the user interface guides users to the most important tasks to setup and use the environment.
+* **Tags** can be added to a CFEE instance in the IBM Cloud resource list.  Tags added in the resource list will also appear in the header of the CFEE overview page.
+* Security patch for Stratos console. Note that updating the CFEE version will not apply this patch. You need to delete and re-install the Stratos console, which automatically picks the latest Stratos console version containing the patch.
+
+**Note:** If you update to v2.1.0 from a v2.0.x version, the update takes place with a single _Update_ action that automatically updates both, the control plane and the cells in sequence. If you update from a v1.x.x version, the update requires two separate _Update_ actions, one for updating the control plane (first), and one for updatting the cells.
+
+## Version 2.0.2
+{: #v202}
+
+_Release Date:_ 2019-02-08
+
+The following changes were released in version 2.0.2 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
+
+* Resolved problems preventing successful version updates. This version is a pre-req for updating to version **2.1.0**
 
 
 ## Version 2.0.1
