@@ -39,7 +39,8 @@ The following changes were released in version 2.1.0 of the {{site.data.keyword.
 
 **Note:** If you update to CFEE v2.1.0 from a v2.0.x version, the update takes place with a single _Update_ action that automatically updates both, the control plane and the cells in sequence. If you update from a v1.x.x version, the update requires two separate _Update_ actions, one for updating the control plane (first), and one for updatting the cells.
 
-See a demonstration of what's new in CFEE v2.1.0 in this [brief video](https://ibm.biz/CFEE-V210){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+See a demonstration of what's new in CFEE v2.1.0 in this [brief video](https://ibm.biz/CFEE-V210){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+
 
 ## Version 2.0.2
 {: #v202}
@@ -48,7 +49,7 @@ _Release Date:_ 2019-02-08
 
 The following changes were released in version 2.0.2 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
 
-* Resolved problems preventing successful version updates. This version is a pre-req for updating to version **2.1.0**
+* Resolved problems preventing successful version updates. This version is a pre-req for updating to version **2.1.0**.
 
 
 ## Version 2.0.1
