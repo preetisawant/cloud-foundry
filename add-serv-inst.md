@@ -117,9 +117,9 @@ To create service instances using the CLI follow the following steps:
   {: pre}
   
 5. Create the service:
-  
+  Optionally service-specific configuration parameters can be provided in a valid JSON object in-line (e.g., the resource group ID under which the service instance will be created, and the target location where the service instance will be provisioned) :
   ```
-  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"name":"value","name":"value"}'
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"resource_group":"value","target":"value"}'
   ```
   {: pre}
 
@@ -135,9 +135,9 @@ To create service instances using the CLI follow the following steps:
    
   ```
    {
-      "cluster_nodes": {
-         "count": 5,
-         "memory_mb": 1024
+      "service_instance": {
+         "resource_group": b0daaf6c3ccd4392a266da916cce2e8c,
+         "target": bluemix-us-south
       }
    }
   ```
