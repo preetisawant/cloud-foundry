@@ -37,5 +37,9 @@ Cloud Foundry Enterprise Environment
     {: .navgroup id="help"}
     whatsnew.md
     cfee_faq.md
+    
+    {: .topicgroup}
+    Troubleshooting CFEE instances
+        cf_stager_is_unavailable.md
     known-issues.md
     {: .navgroup-end}
