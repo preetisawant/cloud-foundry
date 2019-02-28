@@ -39,7 +39,7 @@ Cloud Foundry Enterprise Environment
     cfee_faq.md
     
     {: .topicgroup}
-    Troubleshooting CFEE instances
+    Troubleshooting
         cf_stager_is_unavailable.md
     known-issues.md
     {: .navgroup-end}
