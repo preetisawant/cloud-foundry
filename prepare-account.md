@@ -36,7 +36,7 @@ If the IBM Cloud account is a trial account, you will be prompted to upgrade it 
 ## Using a SoftLayer account instead of upgrading the IBM Cloud account
 {: #account-linkswitching}
 
-If you have Administrator role in an IBM Cloud account you can use a SoftLayer account to to create the CFEE instance without upgrading the IBM Cloud account.
+If you have Administrator role in an IBM Cloud account you can use a SoftLayer account to create the CFEE instance without upgrading the IBM Cloud account.
 
 
 **Warning:** If you use a SoftLayer account now and you update the IBM Cloud account in the future (to a Pay-As-You-Go or a Subscription account), the updated IBM Cloud account may still use the Softlayer account (whose credentials you set now) when creating future infrastructure resources. Furthermore, if you use a different SofLayer account in the future for creating Cloud Foundry Enterprise Environments, users in the IBM Cloud account may not be able to access infrastructure resources created under the SoftLayer account whose credentials you set now. We recommend that you upgrade the IBM Cloud account instead.
