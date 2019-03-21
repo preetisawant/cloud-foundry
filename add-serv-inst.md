@@ -123,6 +123,8 @@ To create service instances using the CLI follow the following steps:
   ```
   {: pre}
 
+  **Note:** The "resource_group" above needs to be specified with the _resource group ID_, not with _resource group name_.  You can find the _ID_ of a specific resource group with the command `ibmcloud resource groups`.
+
   Optionally, you can provide a file containing parameters in a valid JSON object required for creating a specific service.
   The path to the parameters file can be an absolute or relative path to a file:
   
@@ -130,8 +132,8 @@ To create service instances using the CLI follow the following steps:
   cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
   ```
   {: pre}
-   
-  Following is an example of a valid JSON object:
+  
+   Following is an example of a valid JSON object:
    
   ```
    {
