@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -40,8 +40,9 @@ CFEE 環境無法單獨使用 {{site.data.keyword.Bluemix}} 帳戶中可用的�
 {: #adding-services-inspace}
 
 您可以將 {{site.data.keyword.Bluemix_notm}} 服務實例連結至部署到 CFEE 空間中的應用程式。IBM Cloud 服務實例必須要先新增至應用程式部署所在的 CFEE 空間，才能夠連結至部署在 CFEE 中的應用程式。必須先完成下列各項，您才能將 {{site.data.keyword.Bluemix_notm}} 服務實例新增至 CFEE 空間：
+* 要新增其實例的服務不能是 Cloud Foundry 服務。只有支援資源群組及 IAM 的 {{site.data.keyword.Bluemix_notm}} 服務才能新增（建立別名）至 CFEE。實例化進入公用 Cloud Foundry 組織、空間及角色的服務無法新增（建立別名）至 CFEE。{{site.data.keyword.Bluemix_notm}} 服務正在逐步利用資源群組的好處。服務移至使用資源群組取代 Cloud Foundry 組織及空間之後，您可以將任何先前已存在的該服務實例移轉至資源群組，那時便可以新增至 CFEE。請參閱[將 Cloud Foundry 服務實例移轉至資源群組](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate)。
 * {{site.data.keyword.Bluemix_notm}} 服務必須提供在 CFEE 實例所在的同一個 {{site.data.keyword.Bluemix_notm}} 帳戶。
-* 您必須具有 {{site.data.keyword.Bluemix_notm}} 服務實例本身的存取權。如需相關資訊，請參閱 {{site.data.keyword.Bluemix_notm}} 標頭的**管理 > 使用者**功能表下的「身分及存取」頁面，以檢查現行帳戶存取原則。
+* 您必須具有 {{site.data.keyword.Bluemix_notm}} 服務實例本身的_操作員_ 平台角色（或更高角色）。如需相關資訊，請參閱 {{site.data.keyword.Bluemix_notm}} 標頭的**管理 > 使用者**功能表下的「身分及存取」頁面，以檢查現行帳戶存取原則。
 
 若要將現有的 {{site.data.keyword.Bluemix_notm}} 服務實例新增至 CFEE 空間：
 1. 移至 [Cloud Foundry 服務儀表板](https://console.bluemix.net/dashboard/cloudfoundry/services)。  
@@ -62,7 +63,8 @@ CFEE 環境無法單獨使用 {{site.data.keyword.Bluemix}} 帳戶中可用的�
    **附註：**當您將 {{site.data.keyword.Bluemix_notm}} 服務新增至 CFEE 空間時，會在該空間裡建立該服務實例的別名。當您從 CFEE 空間**移除**服務實例（從位於表格中相對應服務實例列最右邊的功能表）時，並不會從公用帳戶刪除服務。此動作只會從特定的 CFEE 帳戶移除它，且再也無法連結至該 CFEE 空間中的應用程式。此外，當您從 {{site.data.keyword.Bluemix_notm}} 帳戶刪除服務實例本身時，任何 CFEE 空間便無法再使用該服務。 
 
 ## 從 CFEE 空間的使用者介面建立 {{site.data.keyword.Bluemix_notm}} 服務實例
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 您可以從 CFEE 空間內建立 {{site.data.keyword.Bluemix_notm}} 服務實例。建立 {{site.data.keyword.Bluemix_notm}} 服務實例會導致下列幾點：
 * 在 IBM Cloud 中建立 {{site.data.keyword.Bluemix_notm}} 服務實例。這相等於從 {{site.data.keyword.Bluemix_notm}} [型錄](https://console.bluemix.net/catalog)建立服務實例。
 * {{site.data.keyword.Bluemix_notm}} 服務實例的別名會新增（建立別名）至當初起始建立動作所在的 CFEE 空間。別名服務實例（在 CFEE 空間中）是對實際服務實例（在 IBM Cloud 帳戶中）的參照。服務實例別名容許開發人員與服務實例互動（例如連結至應用程式），方法是自動處理所有用於與服務實例互動的認證。
@@ -150,7 +152,7 @@ CFEE 環境無法單獨使用 {{site.data.keyword.Bluemix}} 帳戶中可用的�
 ## 將服務連結至應用程式
 {: #bind_services}
 
-具有 {{site.data.keyword.Bluemix_notm}} 服務實例之_編輯者_ 角色或更高角色的使用者可以將該實例連結至 CFEE 空間中所部署的應用程式，不論是從 [Cloud Foundry 服務儀表板](https://console.bluemix.net/dashboard/cloudfoundry/services)還是從 CFEE 空間使用者介面的「服務」標籤。   
+具有_操作員_ 平台角色（或更高角色）及 {{site.data.keyword.Bluemix_notm}} 服務實例之_撰寫者_ 服務角色（或更高角色）的使用者可以將該實例連結至 CFEE 空間中所部署的應用程式，不論是從 [Cloud Foundry 服務儀表板](https://console.bluemix.net/dashboard/cloudfoundry/services)還是從 CFEE 空間使用者介面的「服務」標籤。   
 
 若要從 [Cloud Foundry 服務儀表板](https://console.bluemix.net/dashboard/cloudfoundry/services)，將服務實例連結至應用程式，請執行下列動作：
 1. 移至 [Cloud Foundry 服務儀表板](https://console.bluemix.net/dashboard/cloudfoundry/services)，以查看 {{site.data.keyword.Bluemix_notm}} 帳戶中您可用的所有 {{site.data.keyword.Bluemix_notm}} 服務實例的合併視圖。視圖預期也會顯示哪些 {{site.data.keyword.Bluemix_notm}} 服務實例可用於（已建立別名至）哪些 CFEE 空間。您可以展開服務實例，以顯示它已新增到的 CFEE 空間。您可以進一步展開它們以查看服務實例連結的那些 CFEE 空間裡的應用程式。 
@@ -190,20 +192,20 @@ CFEE 環境無法單獨使用 {{site.data.keyword.Bluemix}} 帳戶中可用的�
 #### 控制 IBM Cloud 帳戶中使用者對 IBM Cloud 型錄的可見性
 {: #creation_accountvisibility}
 
-IBM Cloud 帳戶管理者（具有所有啟用 IAM 功能服務之_管理者_ 角色的使用者）可以防止服務或服務方案顯示於給定 **IBM Cloud 帳戶**中所有使用者的型錄。帳戶管理者可以將帳戶中所有使用者的服務或服務方案設為黑名單，以防止所有帳戶使用者使用服務。將服務設為黑名單，將防止該帳戶中的使用者看到 IBM Cloud 型錄中的服務（或服務方案）。這是透過 `ibmcloud catalog blacklist` 指令來完成，語法如下：
+IBM Cloud 帳戶管理者（具有所有啟用 IAM 功能服務之_管理者_ 角色的使用者）可以防止服務或服務方案顯示於給定 **IBM Cloud 帳戶**中所有使用者的型錄。帳戶管理者可以將帳戶中所有使用者的服務或服務方案列入黑名單，以防止所有帳戶使用者使用服務。將服務列入黑名單，將防止該帳戶中的使用者在 IBM Cloud 型錄中看到該服務（或服務方案）。這是透過 `ibmcloud catalog blacklist` 指令完成，語法如下：
 
   ```
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-您可以發出下列指令，以最簡單的形式設為黑名單，讓現行帳戶中的使用者看不到服務供應項目（其所有方案）：
+您可以以最簡單的形式使用 `catalog backlist` 指令，讓現行帳戶中的使用者看不到服務供應項目（其所有方案）：
 
   ```
   Ibmcloud catalog blacklist <thisService>
   ```
   {: pre}
 
-您一般不只可以將整個服務供應項目的可見性設為黑名單，還可以將特定地區中的特定方案設為黑名單。因此，您還是需要使用廣域型錄中對應項目的 ID，而非名稱。如果您要防止使用者看到特定地區中的特定方案，則可以發出下列指令：
+您不僅可以將整個服務供應項目的可見性列入黑名單，還可以將特定地區中的特定方案列入黑名單。因此，您還是需要使用廣域型錄中對應項目的 ID，而非名稱。如果您要防止使用者看到特定地區中的特定方案，則可以發出下列指令：
 
   ```
   Ibmcloud catalog blacklist -add <catalogEntryID>
@@ -240,7 +242,7 @@ IBM Cloud 帳戶管理者（具有所有啟用 IAM 功能服務之_管理者_ �
 
 *  `cf` 指令會針對特定 Cloud Foundry 組織的所有使用者，啟用及（或）停用服務供應項目（選擇性地啟用及（或）停用特定服務供應項目方案）
 * 啟用的運作方式是建置組織「白名單」。亦即，確實存取服務的 Cloud Foundry 組織併入清單（相對於先前所述 `ibmcloud` 指令中的「黑名單」方式，其運作方式是定義看不到帳戶使用者的服務清單）。這表示可以使用此方式存取型錄服務的控制，而不是藉由定義哪些組織看不到服務（黑名單），而是藉由定義哪些組織可以看到它（白名單）。
-*  當您將組織新增至白名單以提供該組織對服務（或服務方案）的存取時，將會實際停用（排除）所有其他組織存取該服務（或服務方案）。亦即，在您將組織設為白名單之後，將會停用所有其他組織存取該服務（或服務方案）。
+*  當您將組織新增至白名單以提供該組織對服務（或服務方案）的存取時，將會實際停用（排除）所有其他組織存取該服務（或服務方案）。亦即，在您將組織列入白名單之後，將會停用所有其他組織存取該服務（或服務方案）。
 *  在您將組織新增至「可以查看」清單之前，必須停用所有組織的可見性。如果所有組織目前都可以使用服務方案，則您無法停用對該方案的存取。
 
 根據上述一般行為，建議您發出下列指令來控制組織對服務的存取：
@@ -262,7 +264,7 @@ IBM Cloud 帳戶管理者（具有所有啟用 IAM 功能服務之_管理者_ �
 ### 控制對現有服務實例的存取
 {: #control_serviceaddition}
 
-CFEE 空間中的開發人員可以使用 IBM Cloud 帳戶中的可用現有服務實例。在 CFEE 的特定空間內，使用者可以將服務實例**新增**至該空間（請參閱上面的[新增現有服務實例](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace)）。將服務實例新增至 CFEE 空間會建立服務實例的別名（參照），以讓開發人員將服務實例連結至已部署至該 CFEE 空間的應用程式，就像它是實際服務實例一樣。
+CFEE 空間中的開發人員可以使用 IBM Cloud 帳戶中可用的現有服務實例。在 CFEE 的特定空間內，使用者可以將服務實例**新增**至該空間（請參閱上面的[新增現有服務實例](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace)）。將服務實例新增至 CFEE 空間會建立服務實例的別名（參照），以讓開發人員將服務實例連結至已部署至該 CFEE 空間的應用程式，就像它是實際服務實例一樣。
 
 帳戶管理者可以透過 [IAM 存取原則](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage)來控制服務實例的使用。從使用者介面或 ibmcloud CLI 中，他們可以將角色指派給服務實例本身或那些實例所在的資源群組。開發人員需要先具有對服務實例（或其資源群組）的_檢視者_ 角色或更高角色，才能將該實例新增至空間。
 

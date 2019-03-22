@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-29-10"
 
 Willkommen beim {{site.data.keyword.cfee_full}}-Service.
 
-Mit {{site.data.keyword.cfee_full}} (CFEE) können Sie mehrere isolierte und auf Unternehmen abgestimmte Cloud Foundry-Plattformen bedarfsgesteuert instanziieren. Instanzen des {{site.data.keyword.Bluemix_notm}} Foundry Enterprise Environment-Service werden im eigenen Konto in {{site.data.keyword.Bluemix_notm}} ausgeführt. Die Umgebung wird auf isolierter Hardware (Kubernetes-Cluster) bereitgestellt. Sie haben volle Kontrolle über die Umgebung, einschließlich Zugriffssteuerung, Kapazitätsmanagement, Versionsaktualisierungen, Ressourcennutzung und Überwachung. Darüber hinaus ermöglicht die CFEE-Integration in {{site.data.keyword.Bluemix_notm}} den Entwicklern die Nutzung von Services, die in ihrem {{site.data.keyword.Bluemix_notm}}-Konto verfügbar sind. Benutzer können diese Services zu einer CFEE-Instanz hinzufügen und sie an Anwendungen binden, die in CFEE-Bereichen bereitgestellt werden.
+Mit {{site.data.keyword.cfee_full}} (CFEE) können Sie mehrere isolierte und auf Unternehmen abgestimmte Cloud Foundry-Plattformen bedarfsgesteuert instanziieren. Instanzen des {{site.data.keyword.Bluemix_notm}} Foundry Enterprise Environment-Service werden im eigenen Konto in {{site.data.keyword.Bluemix_notm}} ausgeführt. Die Umgebung wird auf isolierter Hardware (Kubernetes-Cluster) bereitgestellt. Sie haben volle Kontrolle über die Umgebung, einschließlich Zugriffssteuerung, Kapazitätsmanagement, Versionsaktualisierungen, Ressourcennutzung und Überwachung. Darüber hinaus ermöglicht die CFEE-Integration in {{site.data.keyword.Bluemix_notm}} den Entwicklern die Nutzung von Services, die in ihrem {{site.data.keyword.Bluemix_notm}}-Konto verfügbar sind.  Benutzer können diese Services zu einer CFEE-Instanz hinzufügen und sie an Anwendungen binden, die in CFEE-Bereichen bereitgestellt werden.
 
 Hier erhalten Sie Informationen für den [**Einstieg**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) in die Erstellung und Verwaltung einer CFEE-Instanz.
 
@@ -66,9 +66,9 @@ Im Folgenden sind die Geografien, Standorte und Rechenzentren, in denen der CFEE
 |North America | Washington DC (wdc04) | us-geo | us-east |
 |North America | Washington DC (wdc06) | us-geo | us-east | 
 |North America | Washington DC (wdc07) | us-geo | us-east |
-|North America | Dallas (das10) | us-geo | us-south |
-|North America | Dallas (das12) | us-geo | us-south |
-|North America | Dallas (das13) | us-geo |us-south |
+|North America | Dallas (dal10) | us-geo | us-south |
+|North America | Dallas (dal12) | us-geo | us-south |
+|North America | Dallas (dal13) | us-geo |us-south |
 |North America | San Jose (sjc03) | us-geo | us-south |
 |North America | San Jose (sjc04) | us-geo | us-south |
 |South America &nbsp; &nbsp;| Sao Paolo (sao01) |  us-geo | us-south |
@@ -81,15 +81,17 @@ Im Folgenden sind die Geografien, Standorte und Rechenzentren, in denen der CFEE
 |Europe | Frankfurt (fra02) | eu-geo | eu-de |
 |Europe | Frankfurt (fra04) | eu-geo | eu-de | 
 |Europe | Frankfurt (fra05) |  eu-geo | eu-de |
+|Europe | Milan (mil01) |  eu-geo | eu-de |
 |Asia Pacific | Melbourne (mel01) | ap-geo | au-syd |
 |Asia Pacific | Sydney (syd01) | ap-geo | au-syd |
 |Asia Pacific | Sydney (syd04) | ap-geo | au-syd | 
 |Asia Pacific | Hong Kong (hkg02) | ap-geo | au-syd |
 |Asia Pacific | Hong Kong (seo01) | ap-geo | au-syd |
 |Asia Pacific | Singapore (sng01) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok02) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok04) | ap-geo | au-syd |
-|Asia Pacific | Tokyo (gok05) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok02) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok04) | ap-geo | au-syd |
+|Asia Pacific | Tokyo (tok05) | ap-geo | au-syd |
+|Asia Pacific | Chennai (che01) | ap-geo | au-syd |
 {: caption="Tabelle 2. Ziele für CFEE und unterstützende Services bereitstellen" caption-side="top"}
 
 **Beispiel:** Der CFEE-Service kann in Europa in drei Rechenzentren bereitgestellt werden: Amsterdam (1 Rechenzentrum), Frankfurt (3 Rechenzentren), London (3 Rechenzentren), Oslo (1 Rechenzentrum) und Paris (1 Rechenzentrum). Wenn die CFEE in Frankfurt bereitgestellt wird, wird die Cloud Object Store-Serviceinstanz in der Region _eu-geo_ und die Compose for PostgreSQL-Serviceinstanz in der öffentlichen Cloud Foundry-Region _eu-de_ bereitgestellt.

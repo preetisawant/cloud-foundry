@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-11-08"
 # 入門指導教學
 {: #getting-started}
 
-{{site.data.keyword.cfee_full}} 是用於在雲端管理應用程式及服務的雲端平台。{{site.data.keyword.cfee_full_notm}} 可讓您隨著使用量成長而輕鬆擴充應用程式，並且簡化運行環境、中介軟體及基礎架構，以著重於開發應用程式。
+{{site.data.keyword.cfee_full}} (CFEE) 是用於在雲端管理應用程式及服務的雲端平台。{{site.data.keyword.cfee_full_notm}} 可讓您隨著使用量成長而輕鬆擴充應用程式，並且簡化運行環境、中介軟體及基礎架構，以著重於開發應用程式。
 {: shortdesc}
 
 此入門指導教學顯示如何建立 {{site.data.keyword.cfee_full_notm}}、新增使用者、建立組織和空間、部署應用程式，以及將這些應用程式連結至服務。
@@ -24,35 +24,35 @@ lastupdated: "2018-11-08"
 ## 瞭解許可權
 {: #permissions}
 
-若要使用 {{site.data.keyword.cfee_full_notm}} 實例，服務使用者必須具有正確的許可權。如需相關資訊，請參閱[許可權](https://console.bluemix.net/docs/cloud-foundry/permissions.html)。
+您需要有正確的存取原則才能建立 {{site.data.keyword.cfee_full_notm}} 的實例。如需相關資訊，請參閱[許可權](https://console.bluemix.net/docs/cloud-foundry/permissions.html)。
 
 ## 步驟 1：確定 {{site.data.keyword.Bluemix_notm}} 帳戶可以建立基礎架構資源
 {: #accountprep-environment}
 
-CFEE 實例部署在基礎架構資源上，而基礎架構資源是來自 Kubernetes 服務的 Kubernetes 工作者節點。[準備 IBM Cloud 帳戶](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html)，確保它可以建立 CFEE 實例所需的基礎架構資源。
+CFEE 實例部署在來自 Kubernetes 服務的 Kubernetes 工作者節點。[準備 IBM Cloud 帳戶](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html)，確保它可以建立 CFEE 實例所需的基礎架構資源。
 
 ## 步驟 2：建立 CFEE 實例
-{: #creating-environment}
+{: #create-environment}
 
-建立 CFEE 之前，請確定您位於要建立環境的 {{site.data.keyword.Bluemix_notm}} 帳戶中，而且您具有必要的存取原則（根據上方的步驟 1）。
+建立 CFEE 之前，請確定您位於要建立環境的 {{site.data.keyword.Bluemix_notm}} 帳戶中，而且您具有必要的存取原則（上方的步驟 1）。
 
 1.  開啟 {{site.data.keyword.Bluemix_notm}} [型錄](https://console.bluemix.net/catalog)。
 
-2.  在型錄中找到 {{site.data.keyword.cfee_full_notm}} 服務，然後按一下它以開啟服務的概觀頁面。
+2.  在型錄中找到 {{site.data.keyword.cfee_full_notm}} 服務，然後按一下它以開啟服務的概觀頁面。第一頁提供服務主要特性的概觀。按一下**繼續**。
 
-3.  建立頁面的第一頁提供服務主要特性的概觀。按一下**繼續**。
-
-4.  提供下列資訊，以配置要建立的 CFEE 實例：
-    * 選取方案（方案可用性在測試版期間可能受限）。
-    * 輸入服務實例的**名稱**。
-    * 選取要在其中佈建服務實例的**位置**。請參閱[可用佈建位置及資料中心](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 的清單（依 CFEE 和支援服務的地理區域排列）。 
-    * 針對 Cloud Foundry 環境，選取 **Cell 數目**。
-    * 選取**機型**，其決定 Cloud Foundry Cell 的大小（CPU 及記憶體）。
+3.  配置要建立的 CFEE 實例：
+    * 選取其中一個可用的方案。
+    * 輸入 CFEE 實例的**名稱**。
     * 選取環境分組在其下的**資源群組**。只有您在現行 IBM Cloud 帳戶中有權存取的資源群組才會列在_資源群組_ 下拉清單中，這表示您必須有權在帳戶中存取至少一個資源群組，才能建立 CFEE。
+    * 選取要在其中佈建服務實例的**地理**和**位置**。請參閱[可用佈建位置及資料中心](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 的清單（依 CFEE 和支援服務的地理區域排列）。 
 
-5.  在 **Compose for PostgreSQL** 欄位中，選取其中一個公用組織，然後選取該組織中其中一個可用的空間。Compose for PostgreSQL 服務實例將佈建在選取的空間。Compose for PostgreSQL 服務是 CFEE 服務的必要相依關係。
+4.  在 **Compose for PostgreSQL** 欄位中，選取其中一個公用組織，然後選取該組織中其中一個可用的空間。Compose for PostgreSQL 服務實例將佈建在選取的空間。Compose for PostgreSQL 服務是 CFEE 服務的必要相依關係。
 
-**附註：**只有您打算佈建 CFEE 實例（上述步驟 4）的位置，以及您可存取的位置，當中的組織才可供選取。在特定的組織內，只有您具有_開發人員_ 存取權的空間可供選取。 
+**附註：**在 _Compose for PostgreSQL_ 下，只有您打算佈建 CFEE 實例（上述步驟 4）的位置，以及您可存取的位置，當中的組織才可供選取。在特定的組織內，只有您具有_開發人員_ 存取權的空間可供選取。 
+
+5. 配置 CFEE 的容量：
+    * 選取 CFEE 的 **Cell 數目**。 
+    * 選取**節點大小**，其決定 Cloud Foundry Cell 的大小（CPU 及記憶體）。
 
 6.  （選用）開啟**基礎架構**區段，以查看支援 CFEE 實例的 Kubernetes 叢集內容。請注意，**工作者節點數目**等於 Cell 數目加 2（所佈建 Kubernetes 工作者節點中的其中兩個會支援 CFEE 控制平面）。在其上部署環境的 Kubernetes 叢集會出現在 {{site.data.keyword.Bluemix_notm}} [儀表板](https://console.bluemix.net/dashboard/apps/)中。如需相關資訊，請參閱 [Kubernetes Service 文件](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov)。
 
@@ -62,38 +62,61 @@ CFEE 實例部署在基礎架構資源上，而基礎架構資源是來自 Kuber
 
 8.  按一下**建立**，以開啟環境儀表板，並指出建立進度和狀態。
 
-9.  開始佈建之後，會在 {{site.data.keyword.Bluemix_notm}} 儀表板及 [Cloud Foundry 環境儀表板](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments)中顯示該環境。狀態指出佈建何時完成。
+**附註：**建立程序開始之後，在 {{site.data.keyword.Bluemix_notm}} 儀表板的_資源清單_，以及 [Cloud Foundry 環境儀表板](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments)中，會顯示 CFEE 的表格列。表格列中的狀態指出建立的完成時間。
 
 建立環境的自動化處理程序會將基礎架構部署至 Kubernetes 叢集，並配置它以供使用。此處理程序需要 90 - 120 分鐘。
 
-順利建立環境之後，您會收到多封電子郵件，確認佈建 CFEE 及支援服務，也會收到通知您相對應訂單狀態的電子郵件。
+建立 CFEE 之後，您會收到多封電子郵件，確認佈建 CFEE 及支援服務，也會收到通知您相對應訂單狀態的電子郵件。
+
+建立 CFEE 實例時，在相同的 IBM Cloud 帳戶中會額外建立三個支援服務實例。那些支援服務實例會以 CFEE 實例名稱來命名。因此，建立 CFEE 會導致在 IBM Cloud 帳戶中建立總計 4 個服務實例：
+* CFEE 實例 ("_cfeename_")。
+* Kubernetes 叢集 ("_cfeename_-cluster")。叢集提供在其中佈建 CFEE 實例的基礎架構。
+* Cloud Object Storage 實例 ("_cfeename_-cos")。實例用來儲存在建立 CFEE 應用程式容器期間所產生的資料（例如：上傳的應用程式套件、建置套件及已編譯的執行檔）。
+* Compose for PosgreSQL 實例 ("_cfeename_-postgres")。實例用來將 Cloud Foundry 資料儲存至 CFEE 實例（例如：審核應用程式部署、啟動及停止事件；保留 CFEE 使用者成員資格、組織、空間、應用程式及服務連線的記錄）。 
 
 ## 步驟 3：建立組織及空間
+{: #create-orgsandspaces}
 
 在您建立 {{site.data.keyword.cfee_full_notm}} 之後，請參閱[建立組織及空間](https://console.bluemix.net/docs/cloud-foundry/orgs-spaces.html)，以了解如何建立組織及空間來建構環境的相關資訊。{{site.data.keyword.cfee_full_notm}} 中的應用程式是以特定空間為範圍。空間則是存在於特定組織內。組織的成員會共用配額方案、應用程式、服務實例及自訂網域。
 
 **附註：**_Cloud Foundry 組織_ 頁面可從位於頂端 IBM Cloud 標頭的**_管理 > 帳戶 > Cloud Foundry 組織_** 功能表中取得，它是要專用於公用 IBM Cloud 組織，**而非 CFEE 組織**。CFEE 組織是在 CFEE 實例的_組織_ 頁面中進行管理。開啟 CFEE 使用者介面，然後按一下**_組織_** 頁面以建立及管理該 CFEE 的組織。
 
 ## 步驟 4：將使用者新增至組織及空間
+{: #add-users}
 
 透過控制存取層次的特定角色指派，[新增使用者](https://console.bluemix.net/docs/cloud-foundry/add-users.html)至這些組織及空間。使用者必須先前已可存取 CFEE 實例，才能新增為 CFEE 中組織及空間的成員。請參閱[許可權](https://console.bluemix.net/docs/cloud-foundry/permissions.html)。
 
 ## 步驟 5：部署及檢視應用程式
+{: #deploy-apps}
 
 當您準備就緒，就可以使用 {{site.data.keyword.Bluemix_notm}} 指令行介面來[部署應用程式](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html)。在使用者介面中，檢視特定 CFEE 空間的環境定義內或廣域跨所有 CFEE 實例的已部署應用程式清單。您也可以從那些視圖啟動、停止或刪除應用程式。
 
-## 步驟 6：使用服務
+## 步驟 6：建立或新增 IBM Cloud 服務實例至 CFEE 空間
+{: #service-instances}
 
-在 IBM Cloud 帳戶裡[建立服務](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#creating-services_inspace)或[新增現有可用服務](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#adding-services_inspace)。服務實例提供於 CFEE 空間之後，您便可以將它連結至部署在該空間的 CFEE 應用程式。
+在 IBM Cloud 帳戶裡[建立服務](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace)或[新增現有可用服務](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace)。服務實例提供於 CFEE 空間之後，您便可以將它連結至部署在該空間的 CFEE 應用程式。
 
 ## 步驟 7：將應用程式連結至服務實例
+{: #bind-apps}
 
-[連結應用程式](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#bind_services)至服務實例別名，以使用服務的功能。
+[連結應用程式](https://console.bluemix.net/docs/cloud-foundry/binding.html)至服務實例別名，以使用服務的功能。
 
-您知道 [Cloud Foundry 儀表板](https://console.bluemix.net/dashboard/cloudfoundry/overview)嗎？在那裡，您可以看到 {{site.data.keyword.Bluemix_notm}} 中所有應用程式及服務的合併視圖，不論是 _Public_ 還是 _Enterprise_ (CFEE)。在 Cloud Foundry 儀表板之後，請按一下左導覽窗格的 _Public_，即可看到 IBM Cloud 帳戶中可用的公用應用程式及服務。按一下 _Enterprise_ 可以看到所有 CFEE 環境、部署到 CFEE 空間的應用程式，以及 CFEE 空間可用的服務。
+在 [Cloud Foundry 儀表板](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中，您可以看到所有應用程式及服務的合併視圖，不論是*公用* 還是*企業*。在 Cloud Foundry 儀表板之後，請按一下左導覽窗格的 *Public*，即可看到 IBM Cloud 帳戶中可用的公用應用程式及服務。按一下 *Enterprise* 可以看到所有 CFEE 環境、部署到 CFEE 空間的應用程式，以及 CFEE 空間可用的服務。
 {:tip}
 
-## 步驟 8：安裝 Stratos 主控台來管理應用程式（選用）
+## 步驟 8：啟用審核及記載持續性（選用）
+{: #enable-auditingandlogging}
+
+啟用環境以便[審核事件](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing)及[記載持續性](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#logging)。
+
+## 步驟 9：建立及保護 Cloud Foundry 網域（選用）
+{: #create-domains}
+
+針對 CFEE 中的所有應用程式建立[網域](https://console.bluemix.net/docs/cloud-foundry/domains.html#domains)（共用網域），或是針對特定組織建立網域（專用網域），並使用 SSL 憑證保護它們。
+
+
+## 步驟 10：安裝 Stratos 主控台來管理應用程式（選用）
+{: #install-stratos}
 
 「Stratos 主控台」是用來使用 Cloud Foundry 的開放程式碼 Web 型工具。「Stratos 主控台」應用程式可以選擇性地安裝並用於特定 CFEE 環境，以管理其組織、空間及應用程式。
 
@@ -103,7 +126,7 @@ CFEE 實例部署在基礎架構資源上，而基礎架構資源是來自 Kuber
 
 1. 開啟您要安裝 Stratos 主控台的 CFEE 實例。
 2. 按一下概觀頁面上的**安裝 Stratos 主控台**。只有具有該 CFEE 實例之管理者或編輯者許可權的使用者才能看到此按鈕。
-3. 在「安裝 Stratos 主控台」對話框中，選取安裝選項。您可以在 CFEE 控制平面上或其中一個 Cell 中安裝 Stratos 主控台應用程式。選取 Stratos 主控台的版本，以及要安裝之應用程式的實例數。如果您將 Stratos 主控台應用程式安裝在 Cell 中，則系統會提示您輸入要部署應用程式的組織及空間。
+3. 在「安裝 Stratos 主控台」對話框中，選取安裝選項。您可以將 Stratos 應用程式安裝在 Cloud Foundry Cell 或 Kubernetes 叢集中。選取 Stratos 主控台的版本，以及要安裝之應用程式的實例數。如果您將 Stratos 主控台應用程式安裝在 Cloud Foundry Cell 中，則系統會提示您輸入要部署應用程式的組織及空間。
 4. 按一下**安裝**。
 
 應用程式需要大約 5 分鐘才能安裝。安裝完成之後，會在概觀頁面上出現 **Stratos 主控台**按鈕，代替_安裝 Stratos 主控台_ 按鈕。_Stratos 主控台_ 按鈕會啟動主控台，並且可供所有具有 CFEE 實例存取權的使用者使用。組織及空間成員資格指派可能會限制使用者在 Stratos 主控台中可以查看及管理的內容。
@@ -115,15 +138,12 @@ CFEE 實例部署在基礎架構資源上，而基礎架構資源是來自 Kuber
 3. Stratos 主控台會在個別的瀏覽器標籤中開啟。因為是自簽憑證，所以第一次開啟主控台時，系統會提示您接受兩次連續警告。
 4. 按一下**登入**來開啟主控台。因為應用程式會使用您的 {{site.data.keyword.Bluemix_notm}} 認證，所以不需要認證。
 
-CFEE API 的相關資訊提供於 CFEE [API 文件](https://console.bluemix.net/apidocs/cfaas){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
-{:tip}
 
-
-## 其它資源
+## 其他資源
 {: #additional-resources}
 
-您可以在 CFEE 中使用 `ibmcloud CFEE` CLI 指令來執行部分管理作業。這些指令可讓您取得 CFEE 實例的相關資訊，以及管理其組織及空間。請參閱 [IBM Cloud CLI CFEE 指令參考手冊](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+您可以在 CFEE 中使用 `ibmcloud CFEE` CLI 指令來執行部分管理作業。這些指令容許您取得 CFEE 實例的相關資訊，以及用來管理其組織及空間。請參閱 [IBM Cloud CLI CFEE 指令參考手冊](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
 
 您可以在 [CFEE 視訊播放清單](https://ibm.biz/CFEE-Playlist){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中找到各種 CFEE 主題深度討論及示範的視訊。
 
-CFEE [API 文件](https://console.stage1.bluemix.net/apidocs/cfaas){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中提供 CFEE API 的相關資訊。
+CFEE [API 文件](https://console.bluemix.net/apidocs/cfaas){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中提供 CFEE API 的相關資訊。

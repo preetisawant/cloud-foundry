@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-29-10"
 
 歡迎使用 {{site.data.keyword.cfee_full}} 服務。
 
-使用 {{site.data.keyword.cfee_full}} (CFEE)，您可以依需求將多個隔離的企業級 Cloud Foundry 平台實例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服務實例會以您自己的帳戶在 {{site.data.keyword.Bluemix_notm}} 中執行。環境部署至隔離的硬體（Kubernetes 叢集）。您可以完全控制環境，包括存取控制、容量、版本更新、資源用量及監視。此外，{{site.data.keyword.Bluemix_notm}} 中的 CFEE 整合可讓開發人員利用其 {{site.data.keyword.Bluemix_notm}} 帳戶中可用的服務。使用者可以將這些服務新增至 CFEE，並將它們連結至部署到 CFEE 空間的應用程式。
+使用 {{site.data.keyword.cfee_full}} (CFEE)，您可以依需求將多個隔離的企業級 Cloud Foundry 平台實例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服務實例會以您自己的帳戶在 {{site.data.keyword.Bluemix_notm}} 中執行。環境部署至隔離的硬體（Kubernetes 叢集）。您可以完全控制環境，包括存取控制、容量、版本更新、資源用量及監視。此外，{{site.data.keyword.Bluemix_notm}} 中的 CFEE 整合可讓開發人員運用其 {{site.data.keyword.Bluemix_notm}} 帳戶中可用的服務。使用者可以將這些服務新增至 CFEE，並將它們連結至部署到 CFEE 空間的應用程式。
 
 找出如何[**開始**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)建立及使用 CFEE 實例。
 
@@ -66,9 +66,9 @@ lastupdated: "2018-29-10"
 |北美 | 華盛頓特區 (wdc04) | us-geo | us-east |
 |北美 | 華盛頓特區 (wdc06) | us-geo | us-east | 
 |北美 | 華盛頓特區 (wdc07) | us-geo | us-east |
-|北美 | 達拉斯 (das10) | us-geo | us-south |
-|北美 | 達拉斯 (das12) | us-geo | us-south |
-|北美 | 達拉斯 (das13) | us-geo |us-south |
+|北美 | 達拉斯 (dal10) | us-geo | us-south |
+|北美 | 達拉斯 (dal12) | us-geo | us-south |
+|北美 | 達拉斯 (dal13) | us-geo |us-south |
 |北美 | 聖荷西 (sjc03) | us-geo | us-south |
 |北美 | 聖荷西 (sjc04) | us-geo | us-south |
 |南美 &nbsp; &nbsp;| 聖保羅 (sao01) | us-geo |us-south |
@@ -81,18 +81,20 @@ lastupdated: "2018-29-10"
 |歐洲| 法蘭克福 (fra02) | eu-geo | eu-de |
 |歐洲| 法蘭克福 (fra04) |eu-geo | eu-de | 
 |歐洲| 法蘭克福 (fra05) | eu-geo | eu-de |
+|歐洲| 米蘭 (mil01) | eu-geo | eu-de |
 |亞太地區| 墨爾本 (mel01) | ap-geo | au-syd |
 |亞太地區| 雪梨 (syd01) | ap-geo | au-syd |
 |亞太地區| 雪梨 (syd04) | ap-geo | au-syd | 
 |亞太地區| 香港 (hkg02) | ap-geo | au-syd |
 |亞太地區| 香港 (seo01) | ap-geo | au-syd |
 |亞太地區| 新加坡 (sng01) | ap-geo | au-syd |
-|亞太地區| 東京 (gok02) | ap-geo | au-syd |
-|亞太地區| 東京 (gok04) | ap-geo | au-syd |
-|亞太地區| 東京 (gok05) | ap-geo | au-syd |
+|亞太地區| 東京 (tok02) | ap-geo | au-syd |
+|亞太地區| 東京 (tok04) | ap-geo | au-syd |
+|亞太地區| 東京 (tok05) | ap-geo | au-syd |
+|亞太地區| 清奈 (che01) | ap-geo | au-syd |
 {: caption="表 2. CFEE 及支援服務的佈建目標" caption-side="top"}
 
-**例如**，CFEE 服務可以佈建在歐洲的三個資料中心：阿姆斯特丹（1 個資料中心）、法蘭克福（3 個資料中心）、倫敦（3 個資料中心）、奧斯陸（1 個資料中心）和巴黎（1 個資料中心）。如果 CFEE 佈建在法蘭克福，Cloud Object Storage 服務實例將部署在 _eu-geo_ 地區，而 Compose for PostgreSQL 服務實例將部署在 _eu-de_ 公用 Cloud Foundry 地區。
+**舉例來說**，CFEE 服務可以佈建在歐洲的三個資料中心：阿姆斯特丹（1 個資料中心）、法蘭克福（3 個資料中心）、倫敦（3 個資料中心）、奧斯陸（1 個資料中心）和巴黎（1 個資料中心）。如果 CFEE 佈建在法蘭克福，Cloud Object Storage 服務實例將部署在 _eu-geo_ 地區，而 Compose for PostgreSQL 服務實例將部署在 _eu-de_ 公用 Cloud Foundry 地區。
 
 您可以在 [CFEE 視訊播放清單](https://ibm.biz/CFEE_Playlist){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 中找到具有使用 CFEE 中服務之詳細資訊及示範的視訊。
 {:tip}

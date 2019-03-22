@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-08-07"
 
 La supervisión de una instancia de {{site.data.keyword.cfee_full}} y de su infraestructura soportada están soportados por un conjunto de herramientas de código abierto formado por Prometheus y Grafana.  La solución le permite analizar, visualizar y gestionar alertas para métricas en el entorno de Cloud Foundry.  Hay tres consolas web desde las que se lleva a cabo la supervisión: Una consola de Grafana, una consola de Prometheus y una consola del Alert Manager de Prometheus.
 
-**Nota:** El acceso a la función de supervisión en una instancia de {{site.data.keyword.cfee_full}} requiere un rol de _Administrador_ o _Editor_ en el clúster de Kubernetes que ofrece soporte a la instancia de CFEE.  El nombre predeterminado del clúster de Kubernetes que ofrece soporte a la instancia de CFEE es _`<CFEEname>`-cluster_.
+**Nota:** El acceso a la función de supervisión en una instancia de {{site.data.keyword.cfee_full}} requiere un rol de _Administrador_ o de _Editor_ en el clúster de Kubernetes que ofrece soporte a la instancia de CFEE.  El nombre predeterminado del clúster de Kubernetes que ofrece soporte a la instancia de CFEE es _`<CFEEname>`-cluster_.
 
 ## Prometheus
 {: #prometheus}
@@ -38,7 +38,7 @@ Prometheus reúne las métricas de trabajos instrumentados, ya sea directamente 
 ## Grafana
 {: #grafana}
 
-Grafana es una plataforma de análisis de código abierto para todas las métricas recopiladas por Prometheus. La versión de Grafana desplegada en su clúster ya está configurada para utilizar la base de datos de Prometheus subyacente. También contiene paneles de control de Grafana valiosos.  Consulte la [documentación de Grafana ](http://docs.grafana.org/guides/getting_started/) para obtener más información.
+Grafana es una plataforma de análisis de código abierto para todas las métricas recopiladas por Prometheus. La versión de Grafana desplegada en su clúster ya está configurada para utilizar la base de datos de Prometheus subyacente. También contiene paneles de control de Grafana valiosos.  Consulte la [documentación de Grafana](http://docs.grafana.org/guides/getting_started/) para obtener más información.
 
 ## Iniciación a la supervisión
 {: #gettingStarted_monitor}
@@ -98,7 +98,7 @@ A continuación, se le guiará por los pasos para instalar las CLI necesarias, r
 
 ### Inicie las consolas de supervisión en su proxy web local
 
-5. Inicie la consola de Grafana para ver análisis sobre las métricas seleccionadas.  Hay paneles de control de Grafana predeterminados incluidos en la instancia de CFEE. Estos paneles de control predeterminados son interactivos y le proporcionan una vista de la infraestructura utilizada para alojar su instancia de CFEE. (clúster de Kubernetes). Cuando haya iniciado la consola de Grafana, haga clic en el botón **Inicio** en la parte superior de la consola de Grafana para seleccionar uno de los paneles de control desplegados previamente (vea la lista siguiente) que graficará las métricas correspondientes:
+5. Inicie la consola de Grafana para ver análisis sobre las métricas seleccionadas.  Hay paneles de control de Grafana predeterminados incluidos en la instancia de CFEE. Estos paneles de control predeterminados son interactivos y le proporcionan una vista de la infraestructura utilizada para alojar su instancia de CFEE (clúster Kubernetes). Cuando haya iniciado la consola de Grafana, haga clic en el botón **Inicio** en la parte superior de la consola de Grafana para seleccionar uno de los paneles de control desplegados previamente (vea la lista siguiente) que graficará las métricas correspondientes:
 
    Hay un usuario `admin` predeterminado en Grafana, con la contraseña predeterminada `admin`. Recomendamos iniciar sesión con el Usuario/Contraseña `admin/admin` y que los cambie por nuevas credenciales:
 
@@ -106,31 +106,31 @@ A continuación, se le guiará por los pasos para instalar las CLI necesarias, r
 
    Los paneles de control por defecto se proporcionan con la instancia de CFEE y están disponibles desde el desplegable _Inicio_.
 
-   Paneles de control para la infraestructura de Kubernetes que ofrecen soporte a su entorno de CFEE:
-   - Panel de control _Planificación de capacidad de Kubernetes_
-        - Muestra la capacidad de la infraestructura de Kubernetes.
-   - Panel de control _Estado del clúster de Kubernetes_
-        - Muestra el estado del clúster de Kubernetes.
-   - Panel de control _Estado del clúster de Kubernetes_
-        - Muestra el estado del clúster de Kubernetes.
-   - Panel de control _Solicitudes de recurso de Kubernetes_
-        - Muestra la CPU utilizada, la memoria y otros parámetros del clúster de Kubernetes.
-   - Panel de control _Nodos_
-        - Muestra los detalles de cada nodo de trabajador del clúster de Kubernetes.
-   - Panel de control _Pods_
-        - Muestra los detalles de cada pod en ejecución del clúster de Kubernetes.
-   - Panel de control _Conjunto de réplicas_
-        - Muestra el estado de los conjuntos de réplicas de Kubernetes.
-   - Panel de control _Despliegue_
-        - Muestra el estado de los despliegues de Kubernetes.
-
-   Paneles de control de Cloud Foundry:
-   - Panel de control _CF: Capacidad de células_
+    Paneles de control de Cloud Foundry:
+   - _CF: Capacidad de células_ 
         - Muestra el estado general de las células de Cloud Foundry en las que se despliegan las aplicaciones de Cloud Foundry.
-   - Panel de control _CF: Direccionador_
-        - Muestra el estado del direccionador de Cloud Foundry que se está ejecutando en su entorno de CFEE.
-   - Panel de control _CF: Célula_Diego_
+   - _CF: Panel de control de la célula Diego_ 
         - Muestra el estado de las células de Cloud Foundry y los componentes Diego.
+   - _CF: Direccionador_ 
+        - Muestra el estado del direccionador de Cloud Foundry que se está ejecutando en su entorno de CFEE.
+  
+   Paneles de control para la infraestructura de Kubernetes que ofrecen soporte a su entorno de CFEE:
+   - _Despliegue_ 
+        - Muestra el estado de los despliegues de Kubernetes.
+   - _Estado del clúster de Kubernetes_ 
+        - Muestra el estado del clúster de Kubernetes.
+   - _Estado del clúster de Kubernetes_ 
+        - Muestra el estado del clúster de Kubernetes.
+   - _Solicitudes de recurso de Kubernetes_ 
+        - Muestra la CPU utilizada, la memoria y otros parámetros del clúster de Kubernetes.
+   - _Pods_ 
+        - Muestra los detalles de cada pod en ejecución del clúster de Kubernetes.
+   - _Conjunto de réplicas_ 
+        - Muestra el estado de los conjuntos de réplicas de Kubernetes.       
+   - _Nodos trabajadores_ 
+        - Muestra los detalles de cada nodo de trabajador del clúster de Kubernetes.
+   - _Visión general de los nodos trabajadores_ 
+        - Muestra el uso de CPU y de memoria de la infraestructura de kubernetes, junto con su tráfico de red.
 
 6. Opcionalmente, también puede iniciar la consola de Prometheus para ver los datos en bruto recopilados por el servidor de Prometheus y el Alertmanager de Prometheus para gestionar las alertas enviadas por el servidor de Prometheus:
 

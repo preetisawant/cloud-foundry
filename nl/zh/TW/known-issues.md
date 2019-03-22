@@ -49,7 +49,7 @@ CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及
 
 ### 範例
 
-已修改的 `config.yam`：
+修改過的 `config.yam`：
 
 ```
   ...
@@ -69,7 +69,6 @@ CFEE 環境包含 Prometheus Firehose 匯出程式，以便收集關於 http 及
 
 ```
 kubectl -n cf-monitoring apply -f config.yaml
-
 ```
 {: pre}
 

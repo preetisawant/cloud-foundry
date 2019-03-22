@@ -6,7 +6,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-11-09"
+lastupdated: "2019-01-08"
 
 
 
@@ -57,7 +57,7 @@ El servicio CFEE se ejecuta en contenedores de Kubernetes, lo que permite un men
 ## ¿Cuáles son mis opciones de aislamiento al crear un CFEE?
 {: #isolation}
 
-Tiene dos opciones de hardware sobre el tipo de infraestructura de Kubernetes en la que se despliega la instancia de CFEE: hardware _virtual compartido_ o _virtual dedicado_. Con el hardware _virtual compartido_, los nodos trabajadores (en los que se despliega el contenedor de la plataforma Cloud Foundry) se distribuyen entre usted y otros clientes de IBM.  Con el hardware _virtual dedicado_, los nodos trabajadores están alojados en hardware que está dedicado de forma exclusiva a su cuenta.  Tenga en cuenta que en ambos casos (_virtual compartido_ y _virtual dedicado_, cada nodo trabajador es de un solo arrendatario para el cliente.  Esto significa que las células de Cloud Foundry en las que se ejecutan las aplicaciones no se comparten con otros clientes.
+Tiene dos opciones de hardware sobre el tipo de infraestructura de Kubernetes en la que se despliega la instancia de CFEE: hardware _virtual compartido_ o _virtual dedicado_. Con el hardware _virtual compartido_, los nodos trabajadores (en los que se despliega el contenedor de la plataforma Cloud Foundry) se distribuyen entre usted y otros clientes de IBM.  Con el hardware _virtual dedicado_, los nodos trabajadores están alojados en hardware que está dedicado de forma exclusiva a su cuenta.  Tenga en cuenta que en ambos casos, _virtual compartido_ y _virtual dedicado_, cada nodo trabajador es de un solo arrendatario para el cliente.  Esto significa que las células de Cloud Foundry en las que se ejecutan las aplicaciones no se comparten con otros clientes.
 
 ## ¿Puedo escalar la capacidad de un CFEE?
 {: #scaling}
@@ -86,5 +86,5 @@ Sí.  Un administrador puede registrar un intermediario de servicios en el CFEE 
 ## ¿Cómo puedo controlar el acceso de los usuarios a un CFEE?
 {: #Services}
 
-Al igual que cualquier otro servicio de {{site.data.keyword.Bluemix_notm}}, el acceso a un CFEE se controla mediante _ Identity & Access Management_ (IAM). La asignación de políticas de acceso de usuario (ya sea individualmente o a través de grupos de acceso) con roles específicos les proporciona niveles específicos de acceso a un CFEE.  Además del acceso al servicio de CFEE, el acceso a las organizaciones y espacios de Cloud Foundry en CFEE se controla mediante la pertenencia de Cloud Foundry y los roles asignados a los usuarios en organizaciones y espacios específicos.
+Al igual que cualquier otro servicio de {{site.data.keyword.Bluemix_notm}}, el acceso a un CFEE se controla mediante _Identity & Access Management_ (IAM). La asignación de políticas de acceso de usuario (ya sea individualmente o a través de grupos de acceso) con roles específicos les proporciona niveles específicos de acceso a un CFEE.  Además del acceso al servicio de CFEE, el acceso a las organizaciones y espacios de Cloud Foundry en CFEE se controla mediante la pertenencia de Cloud Foundry y los roles asignados a los usuarios en organizaciones y espacios específicos.
 

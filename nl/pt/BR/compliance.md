@@ -35,8 +35,7 @@ execução no CFEE, uma vez que as células do Cloud Foundry são implementadas 
 cluster pertence e é gerenciado pela conta SoftLayer do cliente.
 
 O banco de dados Compose for PostgreSQL é usado pelo CFEE para manter os metadados sobre as organizações,
-os espaços, os usuários e as funções. Se a instância do CFEE for usada como recomendado, não haverá dados sensíveis expostos. 
-No entanto, se um cliente decidir nomear as organizações e os espaços com informações pessoais ou sensíveis sobre os
+os espaços, os usuários e as funções. Se a instância do CFEE for usada como recomendado, não haverá dados sensíveis expostos. No entanto, se um cliente decidir nomear as organizações e os espaços com informações pessoais ou sensíveis sobre os
 clientes, o banco de dados do PostgreSQL poderá conter informações do HIPAA ou outro tipo de informações sensíveis.
 
 A instância do Cloud Object Storage é usada pelo CFEE para manter os droplets de um aplicativo, de modo que eles

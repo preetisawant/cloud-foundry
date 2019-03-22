@@ -29,9 +29,9 @@ La auditoría permite a los administradores de CFEE realizar un seguimiento de l
 
 Para habilitar la auditoría para una instancia de CFEE:
 
-1. Abra una interfaz de usuario de CFEE y vaya a la entrada ** Operaciones > Auditoría** en el panel de navegación de la izquierda para abrir la página Registro.
+1. Abra una interfaz de usuario de CFEE y vaya a la entrada **Operaciones > Auditoría** en el panel de navegación de la izquierda para abrir la página Registro.
 2. Pulse **Habilitar auditoría** y seleccione una de las **instancias de Activity Tracker** disponibles en la cuenta de IBM Cloud.  Si no hay ninguna instancia disponible, el usuario verá una opción para crear una nueva instancia de Activity Tracker en el catálogo de IBM Cloud.
-3.  Una vez que se ha habilitado la persistencia de registro, los detalles de la configuración se visualizan en la página. Los detalles incluyen el estado de la configuración y un enlace con la propia instancia de servicio de Activity Tracker, donde el usuario puede acudir para ver y gestionar sucesos de auditoría.
+3.  Una vez que se ha habilitado la auditoría, los detalles de la configuración se visualizan en la página. Los detalles incluyen el estado de la configuración y un enlace con la propia instancia de servicio de Activity Tracker, donde el usuario puede acudir para ver y gestionar sucesos de auditoría.
 
 Para inhabilitar la auditoría, pulse **Inhabilitar auditoría**, lo que eliminará la instancia de servicio de Activity Tracker que se ha añadido y configurado previamente. Esta acción no suprime la instancia del servicio Activity Tracker.
 
@@ -43,7 +43,7 @@ El registro de los sucesos de Cloud Foundry recibe soporte a través de la integ
 Para habilitar el registro para una instancia de CFEE:
 
 1. Asegúrese de que tiene una [política de acceso de IAM](https://console.bluemix.net/iam/#/users) que le asigna el rol de editor, operador o administrador sobre la instancia de servicio de Log Analysis en la que tiene previsto guardar de forma permanente los sucesos de registro.
-2. Abra una interfaz de usuario de CFEE y vaya a la entrada ** Operaciones > Registro** en el panel de navegación de la izquierda para abrir la página Registro.
+2. Abra una interfaz de usuario de CFEE y vaya a la entrada **Operaciones > Registro** en el panel de navegación de la izquierda para abrir la página Registro.
 3. Pulse **Habilitar persistencia** y seleccione una de las **instancias de Log Analysis** disponibles en la cuenta de IBM Cloud.  Si no hay ninguna instancia disponible, el usuario verá una opción para crear una instancia en el catálogo de IBM Cloud.
 4. Una vez que se ha habilitado la persistencia de registro, los detalles de la configuración se visualizan en la página. Los detalles incluyen el estado de la configuración y un enlace con la propia instancia de servicio de Log Analysis, donde el usuario puede acudir para ver y gestionar sucesos de registro.
 

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-15"
 
 ---
 
@@ -18,7 +18,35 @@ lastupdated: "2018-11-16"
 # 許可權
 {: #permissions}
 
-使用者開始建立及使用 {{site.data.keyword.cfee_full}} 服務實例之前，要在其中建立實例之帳戶的管理者必須先正確設定他們的許可權。 
+使用者開始建立及使用 {{site.data.keyword.cfee_full}} (CFEE) 服務之前，要在其中建立 CFEE 實例之帳戶的管理者必須先正確設定他們的許可權。 
+
+## 許可權概觀
+{: #perm-summary}
+
+以下是在 CFEE 實例中執行各項作業所需之最低 [IAM](https://cloud.ibm.com/iam#/users) 及 [Cloud Foundry 角色指派](https://cloud.ibm.com/account/cloud-foundry)的摘要。剩下的小節會更詳細地說明這些許可權。
+
+|  **作業** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM 存取角色** &nbsp; &nbsp; &nbsp; |**Cloud Foundry 角色** &nbsp; &nbsp; &nbsp; |
+|----------------------------------------|-------------------|-------------------|
+|建立 CFEE |  <ul><li>要建立 CFEE 之資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者角色。</li> <li>Kubernetes 服務中的管理者角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
+|更新 CFEE 版本|  <ul><li>CFEE 資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者角色。</li></li> <li>Kubernetes 服務中的操作員角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
+|調整 CFEE 容量（新增/移除 Cell）|  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的管理者角色。</li> <li>Kubernetes 服務中的操作員角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | |
+|監視 CFEE |  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> |  |
+|檢視 CFEE 資源用量|  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的檢視者角色。</li></ul> |  |
+|啟用 CFEE 審核| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> | <ul><li>部署 Activity Tracker 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul>  |
+|檢視 CFEE 審核事件| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> | <ul><li>部署 Activity Tracker 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul>  |
+|啟用 CFEE 日誌持續性| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> |<ul><li>部署 Log Analysis 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul>  |
+|檢視 CFEE 持續保存日誌| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> | <ul><li>部署 Log Analysis 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul> |
+|建立 CFEE 組織 | <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> |  |
+|建立 CFEE 空間 | <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的檢視者角色。</li></ul> | <ul><li>要建立空間之組織中的管理員。</li></ul> |
+|管理共用網域|<ul><li>CFEE 實例資源群組中的檢視者。</li><li>CFEE 實例中的編輯者角色。</li></ul>|  |
+|檢視共用網域|<ul><li>CFEE 實例資源群組中的檢視者。</li><li>CFEE 實例中的檢視者角色。</li></ul>|  |
+|管理專用網域|<ul> <li>CFEE 實例資源群組中的檢視者。</li><li>CFEE 實例中的檢視者角色。</li></ul>| <ul><li>擁有網域之組織中的管理員角色。</li></ul>|
+|檢視專用網域|<ul> <li>CFEE 實例資源群組中的檢視者。</li><li>CFEE 實例中的檢視者角色。</li></ul>|<ul><li>擁有網域之組織中的檢視者角色。</li></ul>|
+|在 CFEE 空間中建立/刪除 IBM Cloud 服務實例| <ul><li>要建立 CFEE 之資源群組中的檢視者角色。</li> <li>CFEE 實例中的檢視者角色。</li> <li>要建立服務實例之資源群組中的編輯者，或是要實例化 IAM 管理服務之資源群組中的編輯者。</li> </ul>| <ul><li>建立服務實例（以及將自動新增/建立別名）之 CFEE 空間中的開發人員角色。</li></ul> |
+|在 CFEE 空間中新增/移除 IBM Cloud 服務實例（亦即對 CFEE 空間中的 IBM Cloud 服務建立/刪除別名）| <ul><li>CFEE 實例資源群組中的檢視者角色。</li><li>CFEE 實例中的檢視者角色。</li><li>操作員平台角色及對要新增之服務實例的讀者服務角色。</li></ul>|<ul><li>要新增（建立別名）服務實例之 CFEE 空間中的開發人員角色。</li></ul> |
+|在 CFEE 空間中連結或取消連結 IBM Cloud 服務實例|<ul> <li>要連結或取消連結之服務實例的資源群組中的編輯者。</li><li>CFEE 實例中的檢視者角色。</li><li>操作員平台角色及對要連結之服務實例的撰寫者服務角色。</li></ul> | <ul><li>要連結服務實例之 CFEE 空間中的開發人員角色。</li></ul> |
+|發出 `cf` CLI 指令|<ul> <li>CFEE 實例資源群組中的檢視者角色。</li><li>CFEE 實例中的檢視者角色。</li></ul> | <ul><li>在執行指令所需組織/空間中的 Cloud Foundry 角色。</li></ul> |
+{: caption="表 1. 在 CFEE 中執行作業所需的許可權" caption-side="top"}
 
 ## 建立新環境所需的許可權
 {: #perm-creating}
@@ -29,7 +57,7 @@ lastupdated: "2018-11-16"
 
 * {{site.data.keyword.Bluemix}} 帳戶中，對 **_Default_** **資源群組**的 _Viewer_（或更高）存取權。資源群組容許將資源組織成自訂分組，以協助對這些資源的存取控制。當您建立新的環境實例時，系統會提示您輸入資源群組。需要有對 _Default_ 資源群組的存取權，因為這一定是需要 Kubernetes 叢集的資源群組。使用者可以在不同的資源群組中佈建 CFEE 實例，但 Kuberetes 叢集仍將會佈建到 _Default_ 資源群組。如果使用者在不同的使用者群組中佈建 CFEE，該使用者將需要該資源群組的檢視者存取權。
 
-* 在指派環境的資源群組中，對 **{{site.data.keyword.cfee_full_notm}} 服務**資源的_管理者_ 或_編輯者_ 角色。在 {{site.data.keyword.cfee_full_notm}} 服務中具有管理者或編輯者角色的使用者，可以建立及刪除環境。但是只有具有管理角色的使用者，才能將使用者指派給 {{site.data.keyword.cfee_full_notm}} 實例，或變更指派給該實例中使用者的角色。
+* 在獲指派環境的資源群組中，對 **{{site.data.keyword.cfee_full_notm}} 服務**資源的_管理者_ 或_編輯者_ 角色。在 {{site.data.keyword.cfee_full_notm}} 服務中具有管理者或編輯者角色的使用者，可以建立及刪除環境。但是只有具有管理角色的使用者，才能將使用者指派給 {{site.data.keyword.cfee_full_notm}} 實例，或變更指派給該實例中使用者的角色。
    
 * **Kubernetes 服務**資源的_管理者_ 角色。{{site.data.keyword.cfee_full_notm}} 實例部署在 Kubernetes 服務所提供的容器叢集基礎架構上。當您建立 {{site.data.keyword.cfee_full_notm}} 服務實例時，服務會自動建立 Kubernetes 叢集。需要對 Kubernetes 服務的存取權，才能建立該叢集基礎架構。您可以將 Kubernetes 服務原則的存取權範圍界定在打算佈建 CFEE 實例的特定地區，或是將存取權範圍界定在所有地區。
 
@@ -53,17 +81,17 @@ lastupdated: "2018-11-16"
 {:tip}
 
 若要確認您具有建立 {{site.data.keyword.cfee_full_notm}} 實例所需的存取原則，請執行下列動作：
-1. 移至 {{site.data.keyword.Bluemix_notm}} 標頭中的[**管理 > 帳戶 > 使用者**](https://console.bluemix.net/iam/#/users)功能表，以開啟**身分及存取**頁面。
+1. 移至 {{site.data.keyword.Bluemix_notm}} 標頭中的[**管理 > 存取 (IAM) > 使用者**](https://console.bluemix.net/iam/#/users)功能表，以開啟**身分及存取**頁面。
 2. 在「存取原則」標籤中，按一下將建立環境的使用者，以便指派和檢視該使用者的存取原則。
 
 如需在 {{site.data.keyword.Bluemix}} 中管理使用者及存取權的相關資訊（包括如何組織一組使用者及服務 ID 以協助一次將存取權指派給多位使用者），請參閱[管理使用者及存取權](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage)。
 
-### 使用 CLI 加快設定環境的建立許可權
+### 使用 CLI 加快設定建立環境的許可權
 {: #permcli-creating}
 
-您可以透過 `ibmcloud cfee create-permission-set` 加快設定用於建立 CFEE 實例的許可權。此指令可讓 CFEE 管理者以單一指令設定必要的存取原則，以建立 CFEE 實例及其所有輔助服務。 
+您可以透過 `ibmcloud cfee create-permission-set` 加快設定用於建立 CFEE 實例的許可權。此指令容許 CFEE 管理者以單一指令設定必要的存取原則，以建立 CFEE 實例及其所有輔助服務。 
 
-此指令會設定 IAM _存取群組_ 的許可權，並將使用者新增至該_存取群組_。發出指令的管理者可以將現有_存取群組_ 併入指令中。如果未提供_存取群組_，則會自動建立預設 _cfee-provision-access-group_。
+此指令會設定對 IAM _存取群組_ 的許可權，並將使用者新增至該_存取群組_。發出指令的管理者可以將現有_存取群組_ 併入指令中。如果未提供任何_存取群組_，則會自動建立預設 _cfee-provision-access-group_。
 
 ```
 ibmcloud cfee create-permission-set USER_NAME [-ag, --access-group GROUP_NAME] [--output TYPE]
@@ -83,7 +111,7 @@ cfee create-permission-set -help
 ```
 {: pre}
 
-您可以使用 `ibmcloud cfee create-permission-get` 來找出或驗證使用者的現有存取原則：
+您可以使用 `ibmcloud cfee create-permission-get` 來找出或驗證使用者適用的存取原則：
 
 ```
 ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME] [--output TYPE]
@@ -95,17 +123,58 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
 若要使用 {{site.data.keyword.cfee_full_notm}} 實例，使用者必須：
 1. {{site.data.keyword.cfee_full_notm}} 實例建立所在之 {{site.data.keyword.Bluemix_notm}} 帳戶的成員。
-2. 帳戶管理者已授與下列 IAM _存取原則_（請參閱 {{site.data.keyword.Bluemix_notm}} 標頭的[**管理 > 帳戶 > 使用者**](https://console.bluemix.net/iam/#/users)功能表下的_身分及存取_ 頁面，以檢查現行帳戶存取原則）：
+2. 帳戶管理者已授與下列 IAM _存取原則_（請參閱 {{site.data.keyword.Bluemix_notm}} 標頭的[**管理 > 存取 (IAM) > 使用者**](https://console.bluemix.net/iam/#/users)功能表下的_身分及存取_ 頁面，以檢查現行帳戶存取原則）：
 
-    所有使用者都需要環境實例建立所在資源群組中 {{site.data.keyword.cfee_full_notm}} 實例的_檢視者_ 存取權或更高存取權。使用者在 {{site.data.keyword.cfee_full_notm}} 實例中具有的存取及控制層次，取決於存取原則中所授與的角色：
-  - 獲指派_管理者_ 或_編輯者_ 角色的使用者可以建立組織、將管理員指派給組織及空間、具有環境內所有組織及空間的完整許可權，以及透過 Cloud Controller API 來執行作業動作。這些使用者會自動被授與 Cloud Foundry _使用者帳戶及鑑別範圍_ 中的 _cloud_controller.admin 範圍_。
-  - 具有 CFEE _檢視者_ 角色的使用者可以看到它列在主要 {{site.data.keyword.Bluemix_notm}} 儀表板中，並開啟其使用者介面。對環境內特定組織及空間的使用者存取，是由這些組織及空間管理員所指派的特定組織及空間角色所控管。如需相關資訊，請參閱[將使用者新增至組織](add-users.html)。
+    在 CFEE 實例中工作的任何使用者，都需要對下列項目的_檢視者_ 平台角色（或更高角色）：
+  - CFEE 實例建立所在的資源群組。
+  - CFEE 實例本身。 
+  
+   使用者在 CFEE 實例中具有的存取及控制層次，取決於存取原則中所授與的角色：
 
-     **附註：**CFEE 實例分組所在資源群組的_檢視者_ 存取權本身不足以讓使用者看到 CFEE。使用者需要有 CFEE 實例的明確存取權（具有檢視者角色或更高角色），才能看到該實例。
+  - 具有 CFEE 實例_檢視者_ 角色的使用者，可看到它列在主要 {{site.data.keyword.Bluemix_notm}} 儀表板中，並開啟其使用者介面。對環境內特定組織及空間的使用者存取，是由這些組織及空間管理員所指派的特定組織及空間角色所控管。如需相關資訊，請參閱[將使用者新增至組織](add-users.html)。
+  
+  - 獲指派對 CFEE 實例之_管理者_ 或_編輯者_ 角色的使用者，可以建立組織、將管理員指派給組織及空間、具有對環境內所有組織及空間的完整許可權，以及透過 Cloud Controller API 來執行作業動作。這些使用者會自動被授與 Cloud Foundry _使用者帳戶及鑑別範圍_ 中的 _cloud_controller.admin 範圍_。
 
-  - 使用者需要 {{site.data.keyword.Bluemix_notm}} 服務的_編輯者_ 角色或更高角色，才能將該服務的實例**連結**至 CFEE 空間中所部署的應用程式。
+  - 使用者需要 CFEE 實例的_編輯者_ 平台角色或更高角色，以及 CFEE 佈建所在 Kubernetes 叢集的_操作員_ 角色或更高角色，才能**將 CFEE 更新至新版本**。
 
-  - 使用者需要 CFEE 實例的_編輯者_ 角色或更高角色以及 CFEE 佈建所在 Kubernetes 叢集的_操作員_ 角色或更高角色，才能**將 CFEE 更新至新版本**。
+  - 使用者需要 CFEE 實例的_管理者_ 平台角色，以及 CFEE 佈建所在 Kubernetes 叢集的_操作員_ 角色或更高角色，才能針對 CFEE **變更容量**（新增或移除 Cell）。
+ 
+  - 使用者需要 IBM Cloud 服務實例的_操作員_ 平台角色（或更高角色），才能**新增**該*服務實例* 至 CFEE 空間（亦即在 CFEE 空間中建立服務實例的別名）。
+ 
+  - 使用者需要_操作員_ 平台角色（或更高角色）及 IBM Cloud 服務實例的_撰寫者_ 服務角色（或更高角色），才能將該服務實例**連結**至部署在 CFEE 空間的應用程式。
 
-  - 使用者需要 CFEE 實例的_管理者_ 角色以及 CFEE 佈建所在 Kubernetes 叢集的_操作員_ 角色或更高角色，才能針對 cfee **變更容量**（新增或移除 Cell）。
 
+## 最佳作法：存取群組
+{: #access-groups}
+
+請考慮使用存取群組來管理及簡化 CFEE 的存取控制。存取群組容許您定義任意群組，以便對其指派存取原則。新增至存取群組的任何使用者，都會自動被指派該群組的存取原則。 
+
+您可以從 IBM Cloud 使用者介面或透過 `ibmcloud` CLI 來建立和管理存取群組。 
+
+從使用者介面，移至功能表列、按一下**管理 > 存取 (IAM)**，然後選取[存取群組](https://cloud.ibm.com/iam#/groups)。
+
+或者，您可以使用 `ibmcloud` CLI：
+
+1. 建立存取群組：
+
+  ```
+  ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
+  ```
+  {: pre}
+
+2. 為該存取群組建立存取原則：
+
+  ```
+  ibmcloud iam access-group-policy-create GROUP_NAME
+  ```
+  {: pre}
+
+3. 將使用者新增至存取群組：
+
+  ```
+  ibmcloud iam access-group-user-add <user-name> [<user-name2...]
+  ```
+  {: pre}
+
+<br>
+如需相關資訊，請參閱[設定存取群組](https://cloud.ibm.com/docs/iam/groups.html#groups)。

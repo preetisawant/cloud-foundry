@@ -22,7 +22,7 @@ Puede desplegar aplicaciones en {{site.data.keyword.Bluemix}} con la interfaz de
 ## Despliegue de aplicaciones con el mandato Cloud Foundry
 {: #dep_apps}
 
-[Descargue e instale la CLI de Cloud Foundry de ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
+[Descargue e instale la CLI de Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
 
 Después de instalar la interfaz de línea de mandatos, siga los pasos siguientes:
 
@@ -69,7 +69,7 @@ Puede visualizar aplicaciones desplegadas de CFEE en el contexto de un espacio e
 {: #view_specific}
 
 Para visualizar aplicaciones desplegadas en un espacio específico de una instancia de CFEE específica:
-1. Vaya al panel de control de [{{site.data.keyword.Bluemix_notm}} ](https://console.bluemix.net/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea crear organizaciones.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea crear organizaciones.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Organizaciones** en el panel de navegación para abrir la página _Organizaciones_.
 3. Vaya al separador **Espacios** en la parte superior de la página.
 4. En el separador __Espacios__, haga clic en un espacio de la tabla para abrir la página del espacio.
@@ -130,7 +130,7 @@ cf push -f appManifest.yml
 
 | Opciones | Descripción | Uso o ejemplo |
 |:----------|:--------------|:---------------|
-| **buildpack** | El URL o el nombre del paquete de compilación. | `buildpack: ` *URL_paquete_compilación* |
+| **buildpack** | El URL o el nombre del paquete de compilación. | `buildpack:` *URL_paquete_compilación* |
 | **disk_quota** | La cuota de disco que se debe asignar a la aplicación. El valor predeterminado es 1 G. | `disk_quota: 500M` |
 | **domain** | El nombre de dominio de la aplicación en {{site.data.keyword.Bluemix_notm}}. | `domain:` ng.bluemix.net |
 | **host** | El nombre de host de la aplicación en {{site.data.keyword.Bluemix_notm}}. Este valor debe ser exclusivo en el entorno de {{site.data.keyword.Bluemix_notm}}. | `host:` *nombre_host* |

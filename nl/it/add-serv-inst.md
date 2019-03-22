@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -22,7 +22,7 @@ Le istanze del servizio pubbliche disponibili nell'account {{site.data.keyword.B
 
    Oltre ad aggiungere le istanze del servizio {{site.data.keyword.Bluemix}} esistenti a uno spazio CFEE, puoi creare una nuova istanza del servizio {{site.data.keyword.Bluemix}} dall'interno di uno spazio CFEE, che ne esegue anche automaticamente l'aggiunta a tale spazio CFEE.
   
-2. Le istanze del servizio gestite da un broker dei servizi Cloud Foundry locale (locale per la CFEE). A loro volta, possono essere di due tipi:
+2. Le istanze del servizio gestite da un broker dei servizi Cloud Foundry locale (locale per il CFEE). A loro volta, possono essere di due tipi:
    *  2a. Un'istanza di un'offerta di servizi creata dal marketplace Cloud Foundry dell'istanza di {{site.data.keyword.cfee_full_notm}} corrente. Questo tipo di istanza del servizio richiede un broker dei servizi registrato disponibile nell'ambiente. Un broker dei servizi mostra un catalogo di offerte e piani del servizio, oltre a consentire la creazione, la rimozione, il bind (associazione) e l'annullamento del bind delle istanze da tali offerte di servizi. Per ulteriori informazioni, vedi il documento relativo alla [gestione dei broker dei servizi](https://docs.cloudfoundry.org/services/managing-service-brokers.html) nella documentazione Cloud Foundry.
    * 2b. Un'istanza del servizio fornita dall'utente. La creazione di questo tipo è supportata tramite l'interfaccia riga di comando (CLI), ma non tramite l'interfaccia utente. Tuttavia, le istanze del servizio fornite dall'utente verranno elencate nell'interfaccia utente.
    
@@ -40,8 +40,9 @@ Da questa vista, puoi anche eseguire il bind (associazione) delle applicazioni d
 {: #adding-services-inspace}
 
 Puoi eseguire il bind (associazione) di istanze del servizio {{site.data.keyword.Bluemix_notm}} alle applicazioni distribuite in uno spazio CFEE.  Prima che sia possibile eseguirne il bind (associazione) a un'applicazione distribuita in CFEE, l'istanza del servizio deve essere aggiunta allo spazio CFEE in cui è distribuita l'applicazione. Prima di poter aggiungere un'istanza del servizio {{site.data.keyword.Bluemix_notm}} a uno spazio CFEE, è necessario quanto segue:
+* Il servizio di cui deve essere aggiunta l'istanza non può essere un servizio Cloud Foundry. Solo i servizi {{site.data.keyword.Bluemix_notm}} che supportano i gruppi di risorse e IAM possono essere aggiunti (aggiunti con alias) in un CFEE. I servizi istanziati in ruoli, spazi e organizzazioni Cloud Foundry pubblici non possono essere aggiunti (aggiunti con alias) in un CFEE. I servizi {{site.data.keyword.Bluemix_notm}} stanno progressivamente passando a trarre vantaggio dai gruppi di risorse. Dopo che un servizio passa all'utilizzo dei gruppi di risorse invece delle organizzazioni e degli spazi Cloud Foundry, puoi migrare qualsiasi istanza precedentemente esistente di tale servizio a un gruppo di risorse e, a tal punto, è possibile eseguirne l'aggiunta a un CFEE. Vedi il documento relativo alla [migrazione di istanze del servizio Cloud Foundry a un gruppo di risorse](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate).
 * Il servizio {{site.data.keyword.Bluemix_notm}} deve essere disponibile nello stesso account {{site.data.keyword.Bluemix_notm}} in cui si trova l'istanza CFEE.
-* Devi disporre dell'accesso all'istanza del servizio {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, consulta la pagina Identity & Access nel menu**Gestisci > Utenti** nell'intestazione {{site.data.keyword.Bluemix_notm}} per controllare le tue politiche di accesso all'account correnti.
+* Devi disporre del ruolo della piattaforma di _operatore_ (o superiore) all'istanza del servizio {{site.data.keyword.Bluemix_notm}} stessa. Per ulteriori informazioni, consulta la pagina Identity & Access nel menu**Gestisci > Utenti** nell'intestazione {{site.data.keyword.Bluemix_notm}} per controllare le tue politiche di accesso all'account correnti.
 
 Per aggiungere un'istanza del servizio {{site.data.keyword.Bluemix_notm}} esistente a uno spazio CFEE:
 1. Vai al [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
@@ -62,7 +63,8 @@ In alternativa, puoi aggiungere un'istanza del servizio {{site.data.keyword.Blue
    **Nota:** quando aggiungi un servizio {{site.data.keyword.Bluemix_notm}} a uno spazio CFEE, viene creato un alias a tale istanza del servizio in tale spazio. Quando **Rimuovi** l'istanza del servizio da uno spazio CFEE (dal menu che si trova all'estrema destra della riga dell'istanza del servizio corrispondente nella tabella), il servizio non viene eliminato dall'account pubblico.  L'azione si limita a rimuoverlo dall'account CFEE specifico e non è più disponibile per il bind (associazione) ad applicazioni in tale spazio CFEE.  Inoltre, quando elimini l'istanza del servizio stessa dall'account {{site.data.keyword.Bluemix_notm}}, il servizio non è più disponibile per nessuno degli spazi CFEE. 
 
 ## Creazione di istanze del servizio {{site.data.keyword.Bluemix_notm}} da un'interfaccia utente dello spazio CFEE
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 Puoi creare le istanze del servizio {{site.data.keyword.Bluemix_notm}} dall'interno di uno spazio CFEE.  La creazione di un'istanza del servizio {{site.data.keyword.Bluemix_notm}} determina quanto segue:
 * L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene creata in IBM Cloud.  Questo è equivalente alla creazione dell'istanza del servizio dal {{site.data.keyword.Bluemix_notm}} [catalogo](https://console.bluemix.net/catalog).
 * Un alias dell'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene aggiunta (aggiunta con alias) nello spazio CFEE da cui è stata avviata l'azione di creazione. Un'istanza del servizio alias (in uno spazio CFEE) è un riferimento all'istanza del servizio reale (nell'account di IBM Cloud). L'alias dell'istanza del servizio consente agli sviluppatori di interagire con l'istanza del servizio (ad esempio, bind alle applicazioni) gestendo tutte le credenziali automaticamente per interagire con l'istanza del servizio. .
@@ -83,7 +85,7 @@ Puoi creare un'istanza del servizio dalla CLI da uno spazio in un CFEE.  La crea
 * L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene creata in IBM Cloud.  Questo è equivalente alla creazione dell'istanza del servizio dal {{site.data.keyword.Bluemix_notm}} [catalogo](https://console.bluemix.net/catalog).
 * L'istanza del servizio {{site.data.keyword.Bluemix_notm}} viene aggiunta (aggiunta con alias) nello spazio CFEE da cui è stata avviata l'azione di creazione.
 
-La differenza tra la creazione di un'istanza del servizio da uno spazio CFEE rispetto alla sua creazione dalla CLI consiste nel ciclo di vita dell'istanza del servizio creata. Quando crei l'istanza del servizio nell'IU dello spazio CFEE, il ciclo di vita dell'istanza del servizio creata è controllato dall'istanza del servizio stessa nell'account {{site.data.keyword.Bluemix_notm}}.  Ciò significa che gli aggiornamenti al piano di servizio sono controllati dall'istanza nell'account {{site.data.keyword.Bluemix_notm}}, non dallo spazio CFEE. In alternativa, se l'istanza del servizio viene creata dalla CLI, il ciclo di vita del servizio è controllato dallo spazio CFEE (il servizio viene aggiornato dallo spazio CFEE).
+La differenza tra la creazione di un'istanza del servizio da uno spazio CFEE rispetto alla sua creazione dalla CLI consiste nel ciclo di vita dell'istanza del servizio creata.  Quando crei l'istanza del servizio nell'IU dello spazio CFEE, il ciclo di vita dell'istanza del servizio creata è controllato dall'istanza del servizio stessa nell'account {{site.data.keyword.Bluemix_notm}}.  Ciò significa che gli aggiornamenti al piano di servizio sono controllati dall'istanza nell'account {{site.data.keyword.Bluemix_notm}}, non dallo spazio CFEE.  In alternativa, se l'istanza del servizio viene creata dalla CLI, il ciclo di vita del servizio è controllato dallo spazio CFEE (il servizio viene aggiornato dallo spazio CFEE).
 
 Le istanze del servizio create dalla CLI sono visualizzate anche nell'IU e sono indicate da un ` * ` accanto al nome dell'istanza del servizio.
 
@@ -151,7 +153,7 @@ Per creare le istanze del servizio utilizzando la CLI, attieniti alla seguente p
 ## Esecuzione del bind (associazione) di servizi alle applicazioni
 {: #bind_services}
 
-Gli utenti con ruolo _editor_ o superiori a un'istanza del servizio {{site.data.keyword.Bluemix_notm}} possono eseguire il bind di quell'istanza a un'applicazione distribuita in uno spazio CFEE, dal [dashboard Servizi cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) o dalla scheda Services di un'interfaccia utente di uno spazio CFEE.   
+Gli utenti con il ruolo della piattaforma di _operatore_ (o superiore) e il ruolo del servizio di _scrittore_ (o superiore) a un'istanza del servizio {{site.data.keyword.Bluemix_notm}} possono associare mediante bind tale istanza a un'applicazione distribuita in uno spazio CFEE, dal [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) o dalla scheda Servizi dell'interfaccia utente di uno spazio CFEE.   
 
 Per eseguire il bind (associazione) di un'istanza del servizio a un'applicazione dal [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services):
 1. Vai al [dashboard Servizi di Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) per visualizzare una vista consolidata di tutte le istanze del servizio {{site.data.keyword.Bluemix_notm}} disponibili per te nell'account {{site.data.keyword.Bluemix_notm}}.  La vista è anche concepita per visualizzare quali istanze del servizio {{site.data.keyword.Bluemix_notm}} sono disponibili (con alias) nei diversi spazi CFEE. Puoi espandere un'istanza del servizio per visualizzare gli spazi CFEE dove è stata aggiunta.  Puoi eseguirne un'ulteriore espansione per visualizzare le applicazioni in tali spazi a cui è stato eseguito il bind (associazione) di tali istanze del servizio. 
@@ -159,7 +161,7 @@ Per eseguire il bind (associazione) di un'istanza del servizio a un'applicazione
 3. Espandi la vista corrispondente per visualizzare tutti gli spazi CFEE dove è stata aggiunta tale istanza del servizio. Se tale istanza del servizio non è stata aggiunta allo spazio CFEE dove è distribuita l'applicazione, seleziona **Aggiungi** dal menu all'estrema destra della riga per rendere l'istanza del servizio disponibile nello spazio CFEE di destinazione.
 4. Vai al menu che si trova all'estrema destra della riga corrispondente al CFEE e/o allo spazio dove l'istanza del servizio è disponibile e seleziona **Associa applicazione**.
 5. Nella finestra di dialogo __Associa applicazione__, seleziona l'applicazione di cui vuoi eseguire il bind (associazione).
-6. Per l'applicazione è stato ora eseguito il bind (associazione) all'istanza del servizio. Puoi espandere un'istanza del servizio nella tabella per visualizzare le applicazioni associate ad essa (in uno spazio CFEE specifico).
+6. Per l'applicazione è stato ora eseguito il bind (associazione) all'istanza del servizio.  Puoi espandere un'istanza del servizio nella tabella per visualizzare le applicazioni associate ad essa (in uno spazio CFEE specifico).
 
 
 Per eseguire il bind (associazione) di un'applicazione a un'istanza del servizio dalla pagina __Servizi__ di uno spazio CFEE:
@@ -197,7 +199,7 @@ Gli amministratori dell'account di IBM Cloud (utenti con ruolo _Amministratore_ 
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-Nella sua forma più semplice, puoi inserire nella blacklist un'offerta di servizi (tutti i suoi piani) per renderla invisibile agli utenti nell'account corrente immettendo il seguente comando:
+Nella sua forma più semplice, puoi usare il comando `catalog backlist` per rendere un'offerta di servizi (e tutti i suoi piani) invisibile a tutti gli utenti nell'account corrente:
 
   ```
   Ibmcloud catalog blacklist <thisService>

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -66,9 +66,9 @@ lastupdated: "2018-29-10"
 |北美|华盛顿 (wdc04)|us-geo|us-east|
 |北美|华盛顿 (wdc06)|us-geo|us-east| 
 |北美|华盛顿 (wdc07)|us-geo|us-east|
-|北美|达拉斯 (das10)|us-geo|us-south|
-|北美|达拉斯 (das12)|us-geo|us-south|
-|北美|达拉斯 (das13)|us-geo|us-south|
+|北美|达拉斯 (dal10)|us-geo|us-south|
+|北美|达拉斯 (dal12)|us-geo|us-south|
+|北美|达拉斯 (dal13)|us-geo|us-south|
 |北美|圣何塞 (sjc03)|us-geo|us-south|
 |北美|圣何塞 (sjc04)|us-geo|us-south|
 |南美|圣保罗 (sao01)|us-geo|us-south|
@@ -81,15 +81,17 @@ lastupdated: "2018-29-10"
 |欧洲|法兰克福 (fra02)|eu-geo|eu-de|
 |欧洲|法兰克福 (fra04)|eu-geo|eu-de| 
 |欧洲|法兰克福 (fra05)|eu-geo|eu-de|
+|欧洲|米兰 (mil01)|eu-geo|eu-de|
 |亚太地区|墨尔本 (mel01)|ap-geo|au-syd|
 |亚太地区|悉尼 (syd01)|ap-geo|au-syd|
 |亚太地区|悉尼 (syd04)|ap-geo|au-syd| 
 |亚太地区|香港特别行政区 (hkg02)|ap-geo|au-syd|
 |亚太地区|香港特别行政区 (seo01)|ap-geo|au-syd|
 |亚太地区|新加坡 (sng01)|ap-geo|au-syd|
-|亚太地区|东京 (gok02)|ap-geo|au-syd|
-|亚太地区|东京 (gok04)|ap-geo|au-syd|
-|亚太地区|东京 (gok05)|ap-geo|au-syd|
+|亚太地区|东京 (tok02)|ap-geo|au-syd|
+|亚太地区|东京 (tok04)|ap-geo|au-syd|
+|亚太地区|东京 (tok05)|ap-geo|au-syd|
+|亚太地区|金奈 (che01)|ap-geo|au-syd|
 {: caption="表 2. 为 CFEE 和支持服务供应目标" caption-side="top"}
 
 **例如**，CFEE 服务可以在欧洲的三个数据中心供应：阿姆斯特丹（1 个数据中心）、法兰克福（3 个数据中心）、伦敦（3 个数据中心）、奥斯陆（1 个数据中心）和巴黎（1 个数据中心）。如果在法兰克福供应 CFEE，那么 Cloud Object Storage 服务实例将部署在 _eu-geo_ 区域，而 Compose for PostgreSQL 服务实例将部署在 _eu-de_ 公共 Cloud Foundry 区域。

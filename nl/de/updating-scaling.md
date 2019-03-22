@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-12-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-11-14"
 # Aktualisierung und Skalierung
 {: #update-scale}
 
-Aktualisieren Sie die {{site.data.keyword.cfee_full_notm}}-Serviceinstanz auf die neuste Version, um die neuesten CFEE-Funktionen und -Korrekturen zu erhalten. Aktualisierungen für ICDFEE können neue Versionen der Cloud Foundry-Plattform und des Kubernetes-Clusters umfassen, von dem die CFEE-Infrastruktur unterstützt wird.
+Aktualisieren Sie die {{site.data.keyword.cfee_full_notm}}-Serviceinstanz auf die neuste Version, um die neuesten CFEE-Funktionen und -Korrekturen zu erhalten. CFEE-Aktualisierungen können neue Versionen für unterstützende Services von Cloud Foundry und CFEE enthalten (Kubernetes, Cloud Object Storage oder Compose for PostgreSQL).  Nicht jede CFEE-Aktualisierung enthält jedoch eine neue Version unterstützender Services von Cloud Foundry und CFEE. 
 
 Die Aktualisierungen der CFEE-Version werden auf der Steuerebene durchgeführt, in der die CFEE-Komponenten und Zellen enthalten sind. Sie können die Kapazität der CFEE-Instanz auch durch das Hinzufügen oder Entfernen von Anwendungszellen skalieren.
 
@@ -34,14 +34,14 @@ Die Aktualisierung der CFEE-Version einer CFEE-Instanz ist ein zweistufiger Proz
 
 Beim Aktualisieren einer CFEE-Instanz auf eine neue Version gelten die folgenden Regeln und Einschränkungen:
 * Die Steuerebene muss zuerst aktualisiert werden. Sobald die Steuerebene aktualisiert wurde, können die Zellen aktualisiert werden.
-* Anwendungszellen können nur auf die Version der Steuerebene aktualisiert werden. Somit können die Zellen der Steuerebene eine höhere CFEE-Version als die Anwendungszellen aufweisen, umgekehrt ist dies jedoch nicht möglich.
+* Anwendungszellen können nur auf die Version der Steuerebene aktualisiert werden.  Somit können die Zellen der Steuerebene eine höhere CFEE-Version als die Anwendungszellen aufweisen, umgekehrt ist dies jedoch nicht möglich.
 
 Gehen Sie wie folgt vor, um die CFEE-Version der CFEE-Instanz zu aktualisieren:
 1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}}-Dashboard](https://console.bluemix.net/dashboard/apps/) und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Instanz, die Sie aktualisieren möchten.
 2. Wechseln Sie in der {{site.data.keyword.cfee_full_notm}}-Instanz im Navigationsbereich zum Eintrag **Zellen**, um die Seite 'Zellen' zu öffnen.
 3. (Optional) In der Tabelle _Steuerebene_ können Sie die Zeile erweitern, um die Workerknoten in der Steuerebene anzuzeigen.
 4. Klicken Sie auf **Aktualisieren**.
-5. Wählen Sie im Dialog _Steuerebene aktualisieren_ eine der verfügbaren CFEE-Versionen aus und klicken Sie auf **Aktualisieren**. Die Aktualisierung dauert fünf Minuten. In der Versionsbeschreibung werden die Details zu den Versionen der Komponenten angegeben, die im ausgewählten CFEE-Versionspaket enthalten sind; zusätzlich wird ein Link zum Dokument _Neuerungen_ bereitgestellt, in dem der Inhalt beschrieben wird, der in dieser Version bereitgestellt wird.
+5. Wählen Sie im Dialog _Steuerebene aktualisieren_ eine der verfügbaren CFEE-Versionen aus und klicken Sie auf **Aktualisieren**. Die Aktualisierung dauert etwa 45 Minuten. In der Versionsbeschreibung werden die Details zu den Versionen der Komponenten angegeben, die im ausgewählten CFEE-Versionspaket enthalten sind; zusätzlich wird ein Link zum Dokument _Neuerungen_ bereitgestellt, in dem der Inhalt beschrieben wird, der in dieser Version bereitgestellt wird.
 6. In der Spalte _Knotenstatus_ wird der Fortschritt der Aktualisierung angezeigt. Sobald die Aktualisierung abgeschlossen ist, wird in der Spalte _Version_ die neue CFEE-Version angegeben.
 7. Sobald die Aktualisierung der Zellen der Steuerebene abgeschlossen ist, suchen Sie die Tabelle _Zellen_ und klicken Sie auf **Aktualisieren**.
 8. Wählen Sie im Dialog _Steuerebene aktualisieren_ die CFEE-Version aus und klicken Sie auf *Aktualisieren*. Es ist nur eine Version für die Zellen verfügbar, weil die Anwendungszellen nur auf die Version der Steuerebene aktualisiert werden können. In einer einzigen Aktualisierungsaktion werden alle Zelle aktualisiert.
@@ -50,18 +50,18 @@ Gehen Sie wie folgt vor, um die CFEE-Version der CFEE-Instanz zu aktualisieren:
 ## Unterbrechungen während der Versionsaktualisierung
 {: #update-disruption}
 
-Die Aktualisierung der Cloud Foundry-Steuerebene verläuft ohne Unterbrechungen. Die Aktualisierung der Cloud Foundry-Zellen auf eine neue CFEE-Version kann jedoch zu Unterbrechungen beim Betrieb der CFEE-Umgebung führen. Da eine Zelle nach der anderen aktualisiert wird, werden Anwendungsinstanzen, die in einer Zelle ausgeführt werden, wieder aktiv, sobald die Aktualisierung abgeschlossen ist, während andere Zellen während ihrer Aktualisierung noch inaktiv sind. Dennoch können einige Anwendungen und Services, die in der CFEE ausgeführt werden, unter bestimmten Umständen nicht mehr verfügbar sein. Wenn eine CFEE-Instanz beispielsweise über zwei Cloud Foundry-Zellen mit voller Kapazität verfügt, ist eine Anwendung mit nur einer Instanz während der Versionsaktualisierung inaktiv, da die Anwendungsinstanz während der Aktualisierung der Zelle nicht in eine andere Zelle verschoben werden kann; aus diesem Grund ist die Anwendung nicht verfügbar.  
+Die Aktualisierung der Cloud Foundry-Steuerebene verläuft ohne Unterbrechungen.  Die Aktualisierung der Cloud Foundry-Zellen auf eine neue CFEE-Version kann jedoch zu Unterbrechungen beim Betrieb der CFEE-Umgebung führen.  Da eine Zelle nach der anderen aktualisiert wird, werden Anwendungsinstanzen, die in einer Zelle ausgeführt werden, wieder aktiv, sobald die Aktualisierung abgeschlossen ist, während andere Zellen während ihrer Aktualisierung noch inaktiv sind. Dennoch können einige Anwendungen und Services, die in der CFEE ausgeführt werden, unter bestimmten Umständen nicht mehr verfügbar sein. Wenn eine CFEE-Instanz beispielsweise über zwei Cloud Foundry-Zellen mit voller Kapazität verfügt, ist eine Anwendung mit nur einer Instanz während der Versionsaktualisierung inaktiv, da die Anwendungsinstanz während der Aktualisierung der Zelle nicht in eine andere Zelle verschoben werden kann; aus diesem Grund ist die Anwendung nicht verfügbar.  Selbst bei der Verwendung von drei Zellen und drei Instanzen pro Anwendung kann es während einer Versionsaktualisierung zu temporären Unterbrechungen bei der Anwendungsverfügbarkeit kommen. 
 
 Während der Versionsaktualisierung können Abweichungen zwischen den Metriken für Hauptspeicher und CPU auftreten, die in den Messanzeigen der Zellenknoten auf der CFEE-Seite _Übersicht_ angezeigt werden (vom Kubernetes-Cluster generiert) und denselben Metriken, die im Dashboard _Nodes_ in Grafana angezeigt werden (auf der Betriebssystemebene generiert).
 
-Der Status der CFEE-Komponenten wird während der Aktualisierung auf der Statusprüfungsseite abgebildet. Der Neustart nimmt etwa 45 Minuten in Anspruch.
+Der Status der CFEE-Komponenten wird während der Aktualisierung auf der Statusprüfungsseite abgebildet.  Der Neustart nimmt etwa 45 Minuten in Anspruch.
 
 ## Richtlinie für Versionszyklus und Unterstützung
 {: #version-cycle}
 
 Für den Cloud Foundry Enterprise Environment-Service wird normalerweise regelmäßig eine neue Version freigegeben. Für die Version des Service wird das folgende semantische Versionierungsformat verwendet: _**Hauptversion.Nebenversion.Patch**_ (https://semver.org/)
 
-Für die _Nebenversion_ werden regelmäßige Aktualisierungen freigegeben (in der Regel monatlich). Für die _Hauptversion_ werden auch Aktualisierungen freigegeben, aber nicht so oft (in der Regel nur bei einer wichtigen Änderung). Bei einer Aktualisierung auf eine _Hauptversion_ können während dem Upgrade Unterbrechungen auftreten. _Patches_ stellen eine Korrektur bereit und werden auf die letzte verfügbare Version angewendet. 
+Für die _Nebenversion_ werden regelmäßige Aktualisierungen freigegeben (in der Regel monatlich). Für die _Hauptversion_ werden auch Aktualisierungen freigegeben, aber nicht so oft (in der Regel nur bei einer wichtigen Änderung).  Bei einer Aktualisierung auf eine _Hauptversion_ können während dem Upgrade Unterbrechungen auftreten. _Patches_ stellen eine Korrektur bereit und werden auf die letzte verfügbare Version angewendet. 
 
 Um Systemausfallzeiten zu vermeiden, ist es nur zulässig, CFEE-Instanzen um maximal zwei _Hauptversionen_ oberhalb der aktuellen Version zu aktualisieren. Wenn die CFEE-Instanz aus dem vorherigen Beispiel die Version 3.1.2 aufweist und auf Version 7.0.0 aktualisiert werden soll, muss die CFEE-Instanz zunächst auf Version 5.x.x und anschließend auf die gewünschte Version 7.0.0 aktualisiert werden.
 

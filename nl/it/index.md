@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -29,7 +29,7 @@ Scopri come puoi [**iniziare**](https://console.bluemix.net/docs/cloud-foundry/g
 ## Elementi chiave di CFEE
 {: #key-elements}
 
-La seguente tabella fornisce un riepilogo degli elementi chiave del servizio {{site.data.keyword.cfee_full}}. 
+La seguente tabella fornisce un riepilogo degli elementi chiave del servizio {{site.data.keyword.cfee_full}}.
 
 | Elemento   | Descrizione |
 |-----------|---------------|
@@ -66,9 +66,9 @@ Sono di seguito indicate le aree geografiche, le ubicazioni e i data center in c
 |Nord America | Washington DC (wdc04) | us-geo | us-east |
 |Nord America | Washington DC (wdc06) | us-geo | us-east | 
 |Nord America | Washington DC (wdc07) | us-geo | us-east |
-|Nord America | Dallas (das10) | us-geo | us-south |
-|Nord America | Dallas (das12) | us-geo | us-south |
-|Nord America | Dallas (das13) | us-geo |us-south |
+|Nord America | Dallas (dal10) | us-geo | us-south |
+|Nord America | Dallas (dal12) | us-geo | us-south |
+|Nord America | Dallas (dal13) | us-geo |us-south |
 |Nord America | San Jose (sjc03) | us-geo | us-south |
 |Nord America | San Jose (sjc04) | us-geo | us-south |
 |Sud America &nbsp; &nbsp;| San Paolo (sao01) |  us-geo | us-south |
@@ -81,15 +81,17 @@ Sono di seguito indicate le aree geografiche, le ubicazioni e i data center in c
 |Europa | Francoforte (fra02) | eu-geo | eu-de |
 |Europa | Francoforte (fra04) | eu-geo | eu-de | 
 |Europa | Francoforte (fra05) |  eu-geo | eu-de |
+|Europa | Milano (mil01) |  eu-geo | eu-de |
 |Asia Pacifico | Melbourne (mel01) | ap-geo | au-syd |
 |Asia Pacifico | Sydney (syd01) | ap-geo | au-syd |
 |Asia Pacifico | Sydney (syd04) | ap-geo | au-syd | 
 |Asia Pacifico | Hong Kong (hkg02) | ap-geo | au-syd |
 |Asia Pacifico | Hong Kong (seo01) | ap-geo | au-syd |
 |Asia Pacifico | Singapore (sng01) | ap-geo | au-syd |
-|Asia Pacifico | Tokyo (gok02) | ap-geo | au-syd |
-|Asia Pacifico | Tokyo (gok04) | ap-geo | au-syd |
-|Asia Pacifico | Tokyo (gok05) | ap-geo | au-syd |
+|Asia Pacifico | Tokyo (tok02) | ap-geo | au-syd |
+|Asia Pacifico | Tokyo (tok04) | ap-geo | au-syd |
+|Asia Pacifico | Tokyo (tok05) | ap-geo | au-syd |
+|Asia Pacifico | Chennai (che01) | ap-geo | au-syd |
 {: caption="Tabella 2. Destinazioni di provisioning per CFEE e servizi di supporto" caption-side="top"}
 
 Ad **esempio**, è possibile eseguire il provisioning del servizio CFEE in tre data center in Europa: Amsterdam (1 data center), Francoforte (3 data center), Londra (3 data center), Oslo (1 data center) e Parigi (1 data center). Se viene eseguito il provisioning di CFEE a Francoforte, l'istanza del servizio Cloud Object Store verrà distribuita nella regione _eu-geo_ e l'istanza del servizio Compose for PostgreSQL verrà distribuita nella regione Cloud Foundry pubblica _eu-de_.

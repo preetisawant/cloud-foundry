@@ -22,7 +22,7 @@ lastupdated: "2018-11-16"
 CFEE 環境には、http および https の_開始_ 要求および_停止_ 要求に関する Cloud Foundry メトリックを収集するための Prometheus Firehose エクスポーターが含まれています。 http 要求の数が多い CFEE 環境では、Prometheus Firehose エクスポーターが大量の CPU を使用する可能性があります。 その結果として環境が不安定になることがあります。これは、Firehouse エクスポーター・ポッドは Cloud Foundry 制御プレーン・ワーカー・ノードの 1 つで実行されるためです。
 
 以下のいずれかの方法で、Firehose エクスポーター・ポッドが多くの CPU を使用していて、CFEE 環境を不安定にしている可能性があるかどうかを判別できます。 
-1.  CFEE 環境の CFEE 概要ページを介して、CF 制御プレーンの全体的な CPU 使用量をチェックします。以下の高 CPU 使用例をご覧ください。
+1.  CFEE 環境の CFEE 概要ページを介して、CF 制御プレーンの全体的な CPU 使用量をチェックします。 以下の高 CPU 使用例をご覧ください。
 ![「概要」ページの高 CPU](img/FirehoseExporterIssue_OverviewMetrics.png)
 
 2. _「リソース使用量」 > 「アプリケーション」_ページで CPU 使用量をチェックし、異常なほど多数の http 要求がないか確認します。 以下の高 CPU 使用例をご覧ください。

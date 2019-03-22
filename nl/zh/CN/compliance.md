@@ -29,4 +29,4 @@ Kubernetes 集群用于保存 CFEE 基础架构的大部分内容以及在 CFEE 
 
 CFEE 使用 Compose for PostgreSQL 来保存有关组织、空间、用户和角色的元数据。如果按照建议使用 CFEE 实例，那么不会公开任何敏感数据。但是，如果客户决定使用与其客户相关的个人或敏感信息来命名其组织和空间，那么 PostgreSQL 数据库可能会包含 HIPAA 或其他类型的敏感信息。
 
-CFEE 使用此 Cloud Object Storage 实例来保存应用程序的 Droplet，以便可以对其执行部署、停止和启动等操作。这意味着 Cloud Object Storage 实例不会运行应用程序，而只是保存其映像。因此，如果遵循最佳实践使用 Cloud Object Storage 实例，那么它不会保存任何 HIPAA 敏感信息。客户应负责确保不将任何个人数据硬编码到其任何应用程序中（测试数据等）。
+CFEE 使用此 Cloud Object Storage 实例来保存应用程序的 Droplet，以便可以对其执行部署、停止和启动等操作。这意味着 Cloud Object Storage 实例不会运行应用程序，而只是保存其映像。因此，如果遵循最佳实践使用 Cloud Object Storage 实例，那么它不会保存任何 HIPAA 敏感信息。客户应负责确保不将任何个人数据硬编码到其任何应用程序中（测试数据等）.

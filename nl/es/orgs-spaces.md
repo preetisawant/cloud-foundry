@@ -16,7 +16,7 @@ lastupdated: "2018-04-18"
 # Creación de organizaciones y espacios
 {: #create_orgs}
 
-Las apps de {{site.data.keyword.cfee_full}} abarcan espacios específicos. A su vez, el espacio existe en una organización específica. Los miembros de una organización comparten un plan de cuotas, apps, instancias de servicio y dominios personalizados. Una vez se hayan creado espacios y organizaciones, es posible añadir a los usuarios con roles específicos que determinan el nivel de acceso y control a dichas organizaciones y espacios. Para crear organizaciones y asignar gestores a dichas organizaciones, necesita un rol de administrador para el servicio de {{site.data.keyword.cfee_full_notm}} y para la instancia de entorno específica a la que se añaden los usuarios. Estos permisos se establecen en la página _Identidad y acceso_ en el menú **Gestionar > Usuarios ** en la cabecera de {{site.data.keyword.Bluemix}}.
+Las apps de {{site.data.keyword.cfee_full}} abarcan espacios específicos. A su vez, el espacio existe en una organización específica. Los miembros de una organización comparten un plan de cuotas, apps, instancias de servicio y dominios personalizados. Una vez se hayan creado espacios y organizaciones, es posible añadir a los usuarios con roles específicos que determinan el nivel de acceso y control a dichas organizaciones y espacios. Para crear organizaciones y asignar gestores a dichas organizaciones, necesita un rol de administrador para el servicio de {{site.data.keyword.cfee_full_notm}} y para la instancia de entorno específica a la que se añaden los usuarios. Estos permisos se establecen en la página _Identidad y acceso_ en el menú **Gestionar > Usuarios** en la cabecera de {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 ## Creación de organizaciones

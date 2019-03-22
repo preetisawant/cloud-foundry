@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 # 監視
 {: #monitoring}
 
-包含 Prometheus 及 Grafana 的開放程式碼工具集，能支援監視 {{site.data.keyword.cfee_full}} 實例及其支援的基礎架構。此解決方案可讓您分析、視覺化及管理 Cloud Foundry 環境中的度量值警示。有 3 個可從中進行監視的 Web 主控台：Grafana 主控台、Prometheus 主控台及 Prometheus Alert Manager 主控台。
+包含 Prometheus 及 Grafana 的開放程式碼工具集，能支援監視 {{site.data.keyword.cfee_full}} 實例及其支援的基礎架構。此解決方案可讓您分析、視覺化及管理 Cloud Foundry 環境中的度量值警示。有 3 個可從中進行監視的 Web 主控台：Grafana 主控台、Prometheus 主控台及 Prometheus AlertManager 主控台。
 
 **附註：**存取 {{site.data.keyword.cfee_full}} 實例中的監視功能需要在支援 CFEE 實例的該 Kubernetes 叢集中有_管理者_ 或_編輯者_ 角色。支援 CFEE 實例的預設 Kubernetes 叢集名稱是 _`<CFEEname>`-cluster_。
 
@@ -96,7 +96,7 @@ ibmcloud plugin install container-service -r Bluemix
 
 ### 在本端 Web Proxy 上啟動監視主控台
 
-5. 啟動 Grafana 主控台，以查看針對所選取度量值的分析。CFEE 實例中包含一些預設 Grafana 儀表板。這些預設儀表板是互動式的，可讓您檢視用來管理 CFEE 實例的基礎架構（Kubernetes 叢集）。在您啟動 Grafana 主控台之後，請按一下 Grafana 主控台頂端的**首頁**按鈕，以選取其中一個預先部署的儀表板（請參閱下面的清單），它會繪製對應度量值的圖形：
+5. 啟動 Grafana 主控台，以查看針對所選取度量值的分析。CFEE 實例中包含一些預設 Grafana 儀表板。這些預設儀表板是互動式的，可讓您檢視用來管理 CFEE 實例（Kubernetes 叢集）的基礎架構。在您啟動 Grafana 主控台之後，請按一下 Grafana 主控台頂端的**首頁**按鈕，以選取其中一個預先部署的儀表板（請參閱下面的清單），它會繪製對應度量值的圖形：
 
    Grafana 中有一個預設 `admin` 使用者，而其預設密碼設為 `admin`。建議您以使用者 ID/密碼 `admin/admin` 登入，並將它們變更為新的認證：
 
@@ -104,31 +104,31 @@ ibmcloud plugin install container-service -r Bluemix
 
    下列預設儀表板是與 CFEE 實例一起提供，並且可以從_首頁_ 下拉清單中取得。
 
-   支援 CFEE 環境之 Kubernetes 基礎架構的儀表板：
-   - _Kubernetes 容量規劃_ 儀表板
-        - 顯示 Kubernetes 基礎架構的容量。
-   - _Kubernetes 叢集性能_ 儀表板
-        - 顯示 Kubernetes 叢集的性能。
-   - _Kubernetes 叢集狀態_ 儀表板
-        - 顯示 Kubernetes 叢集的狀態。
-   - _Kubernetes 資源要求_ 儀表板
-        - 顯示 Kubernetes 叢集的已使用 CPU、記憶體及其他參數。
-   - _節點_ 儀表板
-        - 顯示 Kubernetes 叢集之每個工作者節點的詳細資料。
-   - _Pod_ 儀表板
-        - 顯示 Kubernetes 叢集上執行之每個 Pod 的詳細資料。
-   - _抄本集_ 儀表板
-        - 顯示 Kubernetes 抄本集的狀態。
-   - _部署_ 儀表板
-        - 顯示 Kubernetes 部署的狀態。
-
-   Cloud Foundry 儀表板：
-   - _CF：Cell 容量_ 儀表板
+    Cloud Foundry 儀表板：
+   - _CF：Cell 容量_ 
         - 顯示 Cloud Foundry 應用程式部署所在之 Cloud Foundry Cell 的一般狀態。
-   - _CF：路由器_ 儀表板
-        - 顯示 CFEE 環境上執行的 Cloud Foundry 路由器狀態。
-   - _CF：Diego_Cell_ 儀表板
+   - _CF：Diego Cell 儀表板_ 
         - 顯示 Cloud Foundry Cell 及 Diego 元件的狀態。
+   - _CF：路由器_ 
+        - 顯示 CFEE 環境上執行的 Cloud Foundry 路由器狀態。
+  
+   支援 CFEE 環境之 Kubernetes 基礎架構的儀表板：
+   - _部署_ 
+        - 顯示 Kubernetes 部署的狀態。
+   - _Kubernetes 叢集性能_ 
+        - 顯示 Kubernetes 叢集的性能。
+   - _Kubernetes 叢集狀態_ 
+        - 顯示 Kubernetes 叢集的狀態。
+   - _Kubernetes 資源要求_ 
+        - 顯示 Kubernetes 叢集的已使用 CPU、記憶體及其他參數。
+   - _Pod_ 
+        - 顯示 Kubernetes 叢集上執行之每個 Pod 的詳細資料。
+   - _抄本集_ 
+        - 顯示 Kubernetes 抄本集的狀態。       
+   - _工作者節點_ 
+        - 顯示 Kubernetes 叢集之每個工作者節點的詳細資料。
+   - _工作者節點概觀_ 
+        - 顯示 Kubernetes 基礎架構的 CPU 及記憶體用量，以及它的網路資料流量。
 
 6. （選用）您也可以啟動 Prometheus 主控台來查看 Prometheus 伺服器所收集的原始資料，以及啟動 Prometheus Alertmanager 來管理 Prometheus 伺服器所傳送的警示：
 

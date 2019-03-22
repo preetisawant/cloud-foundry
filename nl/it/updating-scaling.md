@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-12-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-11-14"
 # Aggiornamento e ridimensionamento
 {: #update-scale}
 
-Aggiorna l'istanza del servizio {{site.data.keyword.cfee_full_notm}} all'ultima versione per ottenere le ultime correzioni e funzioni di CFEE. Gli aggiornamenti per ICDEE possono includere nuove versioni della piattaforma Cloud Foundry e del cluster Kubernetes che supportano l'infrastruttura CFEE.
+Aggiorna l'istanza del servizio {{site.data.keyword.cfee_full_notm}} all'ultima versione per ottenere le ultime correzioni e funzioni di CFEE. Gli aggiornamenti di CFEE possono includere le nuove versioni dei servizi di supporto CFEE e Cloud Foundry (Kubernetes, Cloud Object Storage o Compose for PostgreSQL).  Tuttavia, non tutti gli aggiornamenti CFEE includeranno una nuova versione dei servizi di supporto CFEE e Cloud Foundry.
 
 Gli aggiornamenti della versione CFEE sono effettuati sul piano di controllo contenente i componenti CFEE e sulle celle. Puoi anche ridimensionare la capacità della tua istanza CFEE aggiungendo o eliminando le celle dell'applicazione.
 
@@ -28,7 +28,7 @@ Gli aggiornamenti della versione CFEE sono effettuati sul piano di controllo con
 
 Gli utenti hanno bisogno delle seguenti autorizzazioni per poter aggiornare un'istanza CFEE a una nuova versione:
    * Ruolo di _Editor_ o superiore per un'istanza CFEE.
-   * Ruolo di _Operatore_ o superiore al cluster Kubernetes in cui viene eseguito il provisioning della CFEE.
+   * Ruolo di _Operatore_ o superiore al cluster Kubernetes in cui viene eseguito il provisioning del CFEE.
 
 L'aggiornamento della versione di CFEE della tua istanza CFEE è un processo a due fasi. Prima, aggiorna il piano di controllo che ospita il componente CFEE. Poi, aggiorna le celle che ospitano le tue applicazioni.
 
@@ -41,7 +41,7 @@ Per aggiornare la versione di CFEE della tua istanza CFEE:
 2. In {{site.data.keyword.cfee_full_notm}}, vai alla voce **Celle** nel pannello di navigazione per aprire la pagina delle celle.
 3. (Facoltativo) Nella tabella _Piano di controllo_ puoi espandere la riga per visualizzare i nodi di lavoro nel piano di controllo.
 4. Fai clic su **Aggiorna**.
-5. Nella finestra di dialogo Aggiorna il _Piano di controllo_, seleziona una delle versioni CFEE disponibili e fai clic su **Aggiorna**. L'aggiornamento dura circa 5 minuti.  La descrizione della versione illustra le versioni dei componenti inclusi nel pacchetto di versione CFEE selezionato, insieme a un link al documento _Novità_ che descrive il contenuto fornito in tale versione.
+5. Nella finestra di dialogo Aggiorna il _Piano di controllo_, seleziona una delle versioni CFEE disponibili e fai clic su **Aggiorna**. L'aggiornamento impiega circa 45 minuti.  La descrizione della versione illustra le versioni dei componenti inclusi nel pacchetto di versione CFEE selezionato, insieme a un link al documento _Novità_ che descrive il contenuto fornito in tale versione.
 6. La colonna _Stato nodi_ mostra l'avanzamento dell'aggiornamento. Una volta che l'aggiornamento è completo, la colonna _Versione_ riflette la nuova versione CFEE.
 7. Una volta completato l'aggiornamento delle celle del piano di controllo, trova la tabella _Celle_ e fai clic su **Aggiorna**.
 8. Nella finestra di dialogo _Aggiorna piano di controllo_ seleziona la versione CFEE e fai clic su *Aggiorna*. È presente solo la versione disponibile per le celle da aggiornare perché le celle possono essere aggiornate solo alla versione del piano di controllo. Una sola azione di aggiornamento aggiorna tutte le celle.
@@ -50,11 +50,11 @@ Per aggiornare la versione di CFEE della tua istanza CFEE:
 ## Interruzioni durante l'aggiornamento della versione
 {: #update-disruption}
 
-L'aggiornamento del piano di controllo Cloud Foundry non comporta interruzioni.  Tuttavia, l'aggiornamento delle celle Cloud Foundry a una nuova versione CFEE può interrompere il funzionamento dell'ambiente CFEE.  L'aggiornamento viene eseguito una cella alla volta, in modo che le istanze dell'applicazione in esecuzione in una cella vengano riattivate una volta completato l'aggiornamento mentre le altre celle vengono disattivate durante il proprio aggiornamento. Tuttavia, alcuni servizi e applicazioni in esecuzione in CFEE potrebbero diventare indisponibili in alcune circostanze. Ad esempio, se il CFEE dispone di due celle Cloud Foundry a piena capacità, un'applicazione con una sola istanza verrà disattivata durante l'aggiornamento della versione perché l'istanza dell'applicazione non può essere spostata in un'altra cella mentre la cella è in fase di aggiornamento e, di conseguenza, l'applicazione non sarà disponibile.  
+L'aggiornamento del piano di controllo Cloud Foundry non comporta interruzioni.  Tuttavia, l'aggiornamento delle celle Cloud Foundry a una nuova versione CFEE può interrompere il funzionamento dell'ambiente CFEE.  L'aggiornamento viene eseguito una cella alla volta, in modo che le istanze dell'applicazione in esecuzione in una cella vengano riattivate una volta completato l'aggiornamento mentre le altre celle vengono disattivate durante il proprio aggiornamento. Tuttavia, alcuni servizi e applicazioni in esecuzione in CFEE potrebbero diventare indisponibili in alcune circostanze. Ad esempio, se il CFEE dispone di due celle Cloud Foundry a piena capacità, un'applicazione con una sola istanza verrà disattivata durante l'aggiornamento della versione perché l'istanza dell'applicazione non può essere spostata in un'altra cella mentre la cella è in fase di aggiornamento e, di conseguenza, l'applicazione non sarà disponibile.  Anche con tre celle e tre istanze per ogni applicazione, può esserci un'interruzione transitoria nella disponibilità dell'applicazione durante un aggiornamento della versione.
 
 Durante l'aggiornamento della versione potrebbe esserci una discrepanza nelle metriche di Memoria e CPU riportate nei misuratori dei nodi della cella mostrati nella pagina CFEE _Overview_ (che sono generati dal cluster Kubernetes) e le stesse metriche mostrate nel dashboard _Nodes_ in Grafana (che sono generate a livello del sistema operativo).
 
-Lo stato dei componenti CFEE mentre l'aggiornamento è in corso si rifletterà nella pagina Health Check.  Il riavvio richiede circa 45 minuti. 
+Lo stato dei componenti CFEE mentre l'aggiornamento è in corso si rifletterà nella pagina Health Check.  Il riavvio richiede circa 45 minuti.
 
 ## Politica del ciclo di versione e supporto
 {: #version-cycle}
@@ -74,7 +74,7 @@ Le patch vengono fornite per la versione _maggiore_ più recente disponibile. Ad
 
 Gli utenti hanno bisogno delle seguenti autorizzazioni per poter aggiungere o rimuovere le celle Cloud Foundry a un'istanza CFEE:
 * Ruolo di _Amministratore_ o superiore per un'istanza CFEE.
-* Ruolo di _Operatore_ o superiore al cluster Kubernetes in cui viene eseguito il provisioning della CFEE.
+* Ruolo di _Operatore_ o superiore al cluster Kubernetes in cui viene eseguito il provisioning del CFEE.
 
 Per aggiungere le celle dell'applicazione nella tua istanza CFEE:
 1. Passa al [Dashboard {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) e apri il {{site.data.keyword.cfee_full_notm}} in cui vuoi aggiungere le celle.

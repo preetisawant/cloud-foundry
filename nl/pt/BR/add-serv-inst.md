@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -43,8 +43,14 @@ quais essas instâncias de serviço foram incluídas. Acesse o menu localizado n
 {: #adding-services-inspace}
 
 É possível ligar uma instância de serviço do {{site.data.keyword.Bluemix_notm}} aos aplicativos implementados em um espaço do CFEE.  Antes que uma instância de serviço do IBM Cloud possa ser ligada ao aplicativo implementado no CFEE, ela deverá ser incluída no espaço do CFEE no qual o aplicativo está implementado. As seguintes condições são necessárias antes de ser possível incluir uma instância de serviço do {{site.data.keyword.Bluemix_notm}} em um Espaço do CFEE:
+* O serviço cuja instância deve ser incluída não pode ser um serviço Cloud Foundry. Apenas os serviços do
+{{site.data.keyword.Bluemix_notm}} que suportam grupos de recursos e o IAM podem ser incluídos (com alias) em um
+CFEE. Os serviços instanciados em organizações, espaços e funções públicos do Cloud Foundry não podem
+ser incluídos (com alias) em um CFEE.  Os serviços do {{site.data.keyword.Bluemix_notm}} estão se
+movendo progressivamente para se beneficiar de grupos de recursos. Depois que um serviço é movido para usar grupos de recursos em vez de organizações e espaços do Cloud Foundry, é possível migrar qualquer instância existente anteriormente desse serviço para um grupo de recursos, quando ela pode ser incluída em um CFEE. Consulte [Migrando instâncias de
+serviço do Cloud Foundry para um grupo de recursos](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate).
 * O serviço do {{site.data.keyword.Bluemix_notm}} deve estar disponível na mesma conta do {{site.data.keyword.Bluemix_notm}} na qual a instância do CFEE reside.
-* Deve-se ter acesso à instância de serviço do {{site.data.keyword.Bluemix_notm}} em si. Para obter mais informações, consulte a página Identidade e acesso sob o menu **Gerenciar > Usuários** no cabeçalho do {{site.data.keyword.Bluemix_notm}} para verificar as suas políticas de acesso de conta atuais.
+* Deve-se ter a função da plataforma de _operador_ (ou superior) para a própria instância de serviço do {{site.data.keyword.Bluemix_notm}}. Para obter mais informações, consulte a página Identidade e acesso sob o menu **Gerenciar > Usuários** no cabeçalho do {{site.data.keyword.Bluemix_notm}} para verificar as suas políticas de acesso de conta atuais.
 
 Para incluir uma instância de serviço existente do {{site.data.keyword.Bluemix_notm}} em um espaço do CFEE:
 1. Acesse o [painel de serviços do Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
@@ -58,8 +64,7 @@ Como alternativa, é possível incluir a instância de serviço do {{site.data.k
 1. Em seu [painel](https://console.bluemix.net/dashboard) do {{site.data.keyword.Bluemix_notm}} ou no [painel de serviço do Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services), localize o ambiente do Cloud Foundry Enterprise que hospeda o seu aplicativo.
 2. Acesse **Organizações** na área de janela de navegação e abra a organização e o espaço nos quais o aplicativo está localizado.
 3. Acesse a guia **Espaços** e localize o espaço que contém o aplicativo.
-4. Na página de espaço de destino, acesse a guia **Serviços** e clique em **Incluir serviço**.  Isso abrirá o diálogo __Incluir serviço__.  
-A página lista as instâncias de serviço disponíveis na conta do {{site.data.keyword.Bluemix_notm}}.
+4. Na página de espaço de destino, acesse a guia **Serviços** e clique em **Incluir serviço**.  Isso abrirá o diálogo __Incluir serviço__.  A página lista as instâncias de serviço disponíveis na conta do {{site.data.keyword.Bluemix_notm}}.
 5. Localize e selecione uma instância de serviço disponível que deseja incluir no espaço do CFEE. 
 6. A instância de serviço será incluída na lista de serviços disponíveis no espaço do CFEE.
 
@@ -67,7 +72,8 @@ A página lista as instâncias de serviço disponíveis na conta do {{site.data.
 
 ## Criando as instâncias de serviço do {{site.data.keyword.Bluemix_notm}} por meio da interface
 com o usuário de um espaço do CFEE
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 É possível criar instâncias de serviço do {{site.data.keyword.Bluemix_notm}} dentro de um espaço do CFEE.  A criação de uma instância de serviço do {{site.data.keyword.Bluemix_notm}} resulta no seguinte:
 * A instância de serviço do {{site.data.keyword.Bluemix_notm}} é criada no IBM Cloud.  Isso é equivalente a criar a instância de serviço no [catálogo](https://console.bluemix.net/catalog) do {{site.data.keyword.Bluemix_notm}}.
 * Um alias para a instância de serviço do {{site.data.keyword.Bluemix_notm}} é incluído (com alias) no
@@ -93,9 +99,9 @@ Para criar uma instância de serviço dentro de um espaço do CFEE:
 * A instância de serviço do {{site.data.keyword.Bluemix_notm}} é incluída (com alias) no espaço do CFEE no qual a ação de criação foi iniciada.
 
 A diferença entre a criação de uma instância de serviço por meio de um espaço do CFEE e sua criação por meio da CLI
-está no ciclo de vida da instância de serviço criada. Quando você cria a instância de serviço na IU de espaço do CFEE, o ciclo de vida da instância de serviço criada é controlado na própria instância de serviço na conta do {{site.data.keyword.Bluemix_notm}}.  Isso
+está no ciclo de vida da instância de serviço criada.  Quando você cria a instância de serviço na IU de espaço do CFEE, o ciclo de vida da instância de serviço criada é controlado na própria instância de serviço na conta do {{site.data.keyword.Bluemix_notm}}.  Isso
 significa que as atualizações para o plano de serviços são controladas por meio da instância na conta do
-{{site.data.keyword.Bluemix_notm}}, não por meio do espaço do CFEE. Como alternativa, se a instância de serviço
+{{site.data.keyword.Bluemix_notm}}, não por meio do espaço do CFEE.  Como alternativa, se a instância de serviço
 for criada por meio da CLI, o ciclo de vida do serviço será controlado por meio do espaço do CFEE (o serviço será
 atualizado por meio do espaço do CFEE).
 
@@ -167,10 +173,11 @@ ainda não tiver feito isso). [Download da CLI do Cloud Foundry](https://docs.cl
 ## Ligando serviços a aplicativos
 {: #bind_services}
 
-Os usuários com a função de _editor_ ou superior para uma instância de serviço do
-{{site.data.keyword.Bluemix_notm}} podem ligar essa instância a um aplicativo implementado em um espaço do CFEE
-por meio do [Painel de serviços do Cloud
-Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) ou da guia Serviços de uma interface com o usuário do espaço do CFEE. 
+Os usuários com a função da plataforma de _operador_ (ou superior) e a função de serviço
+de _gravador_ (ou superior) para uma instância de serviço do {{site.data.keyword.Bluemix_notm}}
+podem ligar essa instância a um aplicativo implementado em um espaço do CFEE por meio do
+[Painel de serviços do Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) ou
+da guia Serviços de uma interface com o usuário do espaço do CFEE.   
 
 Para ligar uma instância de serviço a um aplicativo no [painel de serviços do Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services):
 1. Acesse o [painel de serviços do Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) para ter uma visualização consolidada de todas as instâncias de serviço do {{site.data.keyword.Bluemix_notm}} disponíveis para você na conta do {{site.data.keyword.Bluemix_notm}}.  A visualização também é destinada a mostrar quais instâncias de serviços do {{site.data.keyword.Bluemix_notm}} estão disponíveis (com alias) em quais espaços do CFEE. É possível expandir uma instância de serviço para mostrar os espaços do CFEE nos quais ela foi incluída.  É possível expandi-las ainda mais para ver os aplicativos nos espaços do CFEE aos quais tais instâncias de serviço foram ligadas. 
@@ -178,7 +185,7 @@ Para ligar uma instância de serviço a um aplicativo no [painel de serviços do
 3. Expanda a visualização correspondente para ver todos os espaços do CFEE nos quais essa instância de serviço foi incluída. Se essa instância de serviço não tiver sido incluída no espaço do CFEE no qual o aplicativo está implementado, selecione **Incluir** no menu na extremidade direita da linha para tornar a instância de serviço disponível no espaço do CFEE de destino.
 4. Acesse o menu localizado na extremidade direita da linha correspondente ao CFEE/espaço no qual a instância de serviço está disponível e selecione **Ligar aplicativo**.
 5. No diálogo __Ligar aplicativo__, selecione o aplicativo que você deseja ligar.
-6. Agora, o aplicativo está ligado à instância de serviço. É possível expandir uma instância de serviço na tabela
+6. Agora, o aplicativo está ligado à instância de serviço.  É possível expandir uma instância de serviço na tabela
 para ver os aplicativos ligados a ela (em um espaço do CFEE específico).
 
 
@@ -201,8 +208,8 @@ Veja [Ligar uma instância de serviço](https://docs.cloudfoundry.org/devguide/s
 ## Visibilidade do serviço
 {: #service_visibility}
 
-Os clientes podem controlar quem pode criar novos serviços do IBM Cloud por meio de um ambiente do CFEE. Eles também
-podem controlar quem pode incluir os serviços do IBM Cloud existentes em um espaço do CFEE. Esse controle é exercido
+Os clientes podem controlar quem pode criar novos serviços do IBM Cloud por meio de um ambiente do CFEE.  Eles também
+podem controlar quem pode incluir os serviços do IBM Cloud existentes em um espaço do CFEE.  Esse controle é exercido
 controlando a visibilidade das ofertas de serviços (e/ou das instâncias dessas ofertas de serviços) para os usuários.
 
 ### Controlando a criação das instâncias de serviço
@@ -216,10 +223,10 @@ no catálogo do IBM Cloud para todos os usuários na conta do IBM Cloud ou para 
 
 Os administradores de conta do IBM Cloud (usuários com a função de _administrador_ para todos os
 serviços ativados para o IAM) podem evitar que um serviço ou um plano de serviço seja mostrado no catálogo para todos os
-usuários em uma determinada **conta do IBM Cloud**. Os administradores de conta podem evitar que
+usuários em uma determinada **conta do IBM Cloud**.  Os administradores de conta podem evitar que
 todos os usuários da conta usem um serviço inserindo um serviço ou um plano de serviço em uma lista de bloqueio para
 todos os usuários em uma conta. A inserção de um serviço em uma lista de bloqueio evitará até que os usuários dessa conta
-vejam esse serviço (ou plano de serviço) no catálogo do IBM Cloud. Isso é feito por meio de um comando `ibmcloud catalog
+vejam esse serviço (ou plano de serviço) no catálogo do IBM Cloud.  Isso é feito por meio de um comando `ibmcloud catalog
 blacklist` que tem a seguinte sintaxe:
 
   ```
@@ -227,7 +234,8 @@ blacklist` que tem a seguinte sintaxe:
 [--output TYPE]
   ```
 
-Em sua forma mais simples, é possível tornar uma oferta de serviços (todos os seus planos) invisível para todos os usuários na conta atual emitindo o comando a seguir:
+Em seu formato mais simples, é possível usar o comando `catalog backlist` para tornar uma oferta
+de serviços (todos os seus planos) invisível para todos os usuários na conta atual:
 
   ```
   Ibmcloud catalog blacklist <thisService>
@@ -235,8 +243,8 @@ Em sua forma mais simples, é possível tornar uma oferta de serviços (todos os
   {: pre}
 
 É possível inserir a visibilidade em uma lista de bloqueio não apenas de forma geral para a oferta de serviços
-inteira, mas para um plano específico em uma determinada região. Para isso, no entanto, é necessário usar o ID para a
-entrada correspondente no catálogo global, não o nome. Se você deseja evitar que os usuários vejam um plano específico
+inteira, mas para um plano específico em uma determinada região.  Para isso, no entanto, é necessário usar o ID para a
+entrada correspondente no catálogo global, não o nome.   Se você deseja evitar que os usuários vejam um plano específico
 em uma região específica, é possível emitir o seguinte:
 
   ```
@@ -271,8 +279,7 @@ determinado serviço:
 {: #creation_orgvisibility}
 
 É possível usar os comandos `cf enable-service-access` e `cf
-disable-service-access` para controlar o acesso aos serviços para as **organizações do Cloud Foundry** específicas. 
-Aqui, o ponto de controle para o acesso é o Cloud Foundry (não a conta do IBM Cloud). Observe que este é um comando
+disable-service-access` para controlar o acesso aos serviços para as **organizações do Cloud Foundry** específicas.  Aqui, o ponto de controle para o acesso é o Cloud Foundry (não a conta do IBM Cloud).  Observe que este é um comando
 `cf` nativo (não um comando `ibmcloud`). 
 
 Considere o seguinte ao configurar a visibilidade do serviço por meio da CLI `cf`:
@@ -287,10 +294,10 @@ por meio da definição de quais organizações não podem ver um serviço (list
 definição de quais organizações podem vê-lo (lista de desbloqueio).
 *  Ao conceder a uma organização acesso a um serviço (ou plano de serviços) incluindo essa
 organização em uma lista de desbloqueio, você está, de fato, desativando (excluindo) o acesso de todas as outras
-organizações a ele. Ou seja, uma vez que você inclui uma organização em uma lista de desbloqueio, você está desativando
+organizações a ele.  Ou seja, uma vez que você inclui uma organização em uma lista de desbloqueio, você está desativando
 o acesso de todas as outras organizações a esse serviço (ou plano de serviços).
 *  Antes de incluir as organizações na lista de "visibilidade permitida", é preciso desativar a visibilidade
-para todas as organizações. Não será possível desativar o acesso a um plano de serviços se o plano estiver atualmente
+para todas as organizações.  Não será possível desativar o acesso a um plano de serviços se o plano estiver atualmente
 disponível para todas as organizações.
 
 De acordo com o comportamento geral descrito acima, recomendamos controlar o acesso da organização aos serviços
@@ -301,7 +308,7 @@ emitindo os seguintes comandos:
   ```
   {: pre}
   
-2. **Ativar** o acesso ao plano de serviços para as organizações do CFEE específicas. Isso
+2. **Ativar** o acesso ao plano de serviços para as organizações do CFEE específicas.  Isso
 desativará o plano de serviços para todas as outras organizações não ativadas especificamente no comando. 
   ```
   cf enable-service-access <service name> -p <plan name> -o <org name>
@@ -316,16 +323,15 @@ Foundry para o serviço inteiro, não para planos específicos.
 {: #control_serviceaddition}
 
 Os desenvolvedores em um espaço do CFEE podem usar as instâncias de serviço disponíveis existentes na conta do IBM
-Cloud. Dentro de um espaço específico de um CFEE, os usuários podem **Incluir** uma instância de
-serviço para esse espaço (consulte [Incluindo instâncias de serviço existentes](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) acima). 
-A inclusão de uma instância de serviço em um espaço do CFEE cria um alias (uma referência) para a instância de serviço, o
+Cloud.  Dentro de um espaço específico de um CFEE, os usuários podem **Incluir** uma instância de
+serviço para esse espaço (consulte [Incluindo instâncias de serviço existentes](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) acima). A inclusão de uma instância de serviço em um espaço do CFEE cria um alias (uma referência) para a instância de serviço, o
 que permite que um desenvolvedor ligue a instância de serviço a um aplicativo implementado nesse espaço do CFEE como se
 ela fosse a instância de serviço real.
 
 Os administradores de conta podem controlar o uso de instâncias de serviço por meio
-das [Políticas de acesso do IAM](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage). Por meio da IU ou da
+das [Políticas de acesso do IAM](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).  Por meio da IU ou da
 CLI ibmcloud, eles podem designar funções para as próprias instâncias de serviço ou para os grupos de recursos nos quais
-essas instâncias residiam. Um desenvolvedor precisaria da função de _visualizador_ ou superior para
+essas instâncias residiam.  Um desenvolvedor precisaria da função de _visualizador_ ou superior para
 uma instância de serviço (ou seu grupo de recursos) antes de poder incluir essa instância em um espaço.
 
 É possível localizar vídeos com discussões e demonstrações aprofundadas sobre os serviços do CFEE na

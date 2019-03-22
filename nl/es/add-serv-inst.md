@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -34,14 +34,15 @@ Vaya al [panel de control de servicios de Cloud Foundry](https://console.bluemix
 
 Esta vista muestra todas las instancias de servicio de {{site.data.keyword.Bluemix_notm}} disponibles en la cuenta e indica los que se han añadido (alias) a los espacios de CFEE. Expanda una instancia de servicio para mostrar los espacios de CFEE en los que se ha añadido.  Puede expandirlos para ver las aplicaciones en dichos espacios de CFEE a los que se han enlazado las instancias de servicio.  
 
-Desde esta vista también puede enlazar las aplicaciones desplegadas en los espacios de CFEE a los que se han añadido dichas instancias de servicio. Vaya al menú situado en el extremo derecho de la fila de la tabla del servicio correspondiente (disponible para un espacio de CFEE específico) y seleccione **Enlazar a aplicaciones **.
+Desde esta vista también puede enlazar las aplicaciones desplegadas en los espacios de CFEE a los que se han añadido dichas instancias de servicio. Vaya al menú situado en el extremo derecho de la fila de la tabla del servicio correspondiente (disponible para un espacio de CFEE específico) y seleccione **Enlazar a aplicaciones**.
 
 ## Adición de instancias de servicio de {{site.data.keyword.Bluemix_notm}} existentes a un espacio de CFEE
 {: #adding-services-inspace}
 
 Puede enlazar una instancia de servicio de {{site.data.keyword.Bluemix_notm}} a las aplicaciones desplegadas en un espacio de CFEE.  Antes de que una instancia de servicio de IBM Cloud pueda enlazarse a la aplicación desplegada en CFEE, debe añadirse al espacio de CFEE en el que se despliega la aplicación. Lo siguiente es necesario antes de poder añadir una instancia de servicio de {{site.data.keyword.Bluemix_notm}} a un espacio de CFEE:
+* El servicio cuya instancia se va a añadir no puede ser un servicio de Cloud Foundry.  Solo se pueden añadir (crear alias) en un CFEE servicios de {{site.data.keyword.Bluemix_notm}} que den soporte a grupos de recursos y a IAM. Los servicios de los que se han creado instancias en organizaciones, espacios y roles de Cloud Foundry públicos no se pueden añadir (crear alias) a un CFEE.  Los servicios de {{site.data.keyword.Bluemix_notm}} se están trasladando progresivamente para que se beneficien de los grupos de recursos.  Una vez que un servicio se traslada para que utilice grupos de recursos en lugar de organizaciones y espacios de Cloud Foundry, puede migrar las instancias previamente existentes de dicho servicio a un grupo de recursos, y en ese momento se puede añadir a un CFEE.  Consulte el apartado sobre [Migración de instancias de servicio de Cloud Foundry a un grupo de recursos](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate).
 * El servicio de {{site.data.keyword.Bluemix_notm}} deberá estar disponible en la misma cuenta de {{site.data.keyword.Bluemix_notm}} en la que reside la instancia CFEE.
-* Debe tener acceso a la propia instancia de servicio de {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte la página Identidad y acceso en el menú **Gestionar > Usuarios** en la cabecera de {{site.data.keyword.Bluemix_notm}} para verificar las políticas de acceso de la cuenta actuales.
+* Debe tener el rol de plataforma de _operador_ (o superior) en la propia instancia de servicio de {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte la página Identidad y acceso en el menú **Gestionar > Usuarios** en la cabecera de {{site.data.keyword.Bluemix_notm}} para verificar las políticas de acceso de la cuenta actuales.
 
 Para añadir una instancia de servicio de {{site.data.keyword.Bluemix_notm}} existente a un espacio de CFEE:
 1. Vaya al [panel de control de servicios de Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
@@ -62,7 +63,8 @@ Como alternativa, puede añadir una instancia de servicio de {{site.data.keyword
    **Nota:** Al añadir un servicio de {{site.data.keyword.Bluemix_notm}} a un espacio de CFEE, se crea un alias para dicha instancia de servicio en dicho espacio. Al **Eliminar** la instancia de servicio del espacio de CFEE (en el menú ubicado en el extremo derecho de la correspondiente fila de la instancia de servicio de la tabla), el servicio no se suprime de la cuenta pública.  La acción simplemente la elimina de la cuenta CFEE específica y ya no estará disponible para enlazarla a aplicaciones en ese espacio de CFEE.  Además, cuando suprime la propia instancia de servicio de la cuenta de {{site.data.keyword.Bluemix_notm}}, el servicio deja de estar disponible para cualquier espacio de CFEE. 
 
 ## Creación de instancias de servicio de {{site.data.keyword.Bluemix_notm}} desde una interfaz de usuario del espacio de CFEE
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 Puede crear las instancias de servicio de {{site.data.keyword.Bluemix_notm}} desde un espacio de CFEE.  La creación de una instancia de servicio de {{site.data.keyword.Bluemix_notm}} da como resultado lo siguiente:
 * La instancia de servicio de {{site.data.keyword.Bluemix_notm}} se crea en IBM Cloud.  Esto equivale a crear la instancia de servicio desde el [catálogo](https://console.bluemix.net/catalog) de {{site.data.keyword.Bluemix_notm}}.
 * Se añade un alias a la instancia de servicio de {{site.data.keyword.Bluemix_notm}} en el espacio de CFEE desde el que se ha iniciado la acción de creación. Un alias de instancia de servicio (en un espacio CFEE) es una referencia a la instancia de servicio real (en la cuenta de IBM Cloud). El alias de instancia de servicio permite a los desarrolladores interactuar con la instancia de servicio (es decir, enlazando con aplicaciones) gestionando todas las credenciales automáticamente para interactuar con la instancia de servicio. .
@@ -89,7 +91,7 @@ Las instancias de servicio creadas desde la CLI también se visualizarán en la 
 
 Para crear las instancias de servicio utilizando la CLI siga los pasos siguientes:
 
-1. Descargue e instale la interfaz de línea de mandatos de {{site.data.keyword.Bluemix}} (si no lo ha hecho todavía). [Descargue la CLI de Cloud Foundry de ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
+1. Descargue e instale la interfaz de línea de mandatos de {{site.data.keyword.Bluemix}} (si no lo ha hecho todavía). [Descargue la CLI de Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
 
 2. Vaya a la página Visión general de {{site.data.keyword.cfee_full}} y localice el punto final de API del entorno.
 
@@ -151,7 +153,7 @@ Para crear las instancias de servicio utilizando la CLI siga los pasos siguiente
 ## Enlace de servicios con aplicaciones
 {: #bind_services}
 
-Los usuarios con el rol de _editor_ o superior sobre una instancia de servicio de {{site.data.keyword.Bluemix_notm}} pueden enlazar dicha instancia a una aplicación desplegada en un espacio de CFEE, ya sea desde el [panel de control de servicios de Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) o desde el separador Servicios de la interfaz de usuario de un espacio de CFEE.   
+Los usuarios con el rol de plataforma de _operador_ (o superior) y con el rol de servicio de _escritor_ (o superior) sobre una instancia de servicio de {{site.data.keyword.Bluemix_notm}} pueden vincular dicha instancia a una aplicación desplegada en un espacio de CFEE, tanto desde el [panel de control de servicios de Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) como desde el separador Servicios de la interfaz de usuario del espacio de CFEE.   
 
 Para enlazar una instancia de servicio a una aplicación desde el [panel de control de servicios de Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services):
 1. Vaya al [panel de control de servicios de Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) para obtener una vista consolidada de todas las instancias de servicio de {{site.data.keyword.Bluemix_notm}} disponibles en la cuenta de {{site.data.keyword.Bluemix_notm}}.  La vista también está pensada para mostrar qué instancias de servicios de {{site.data.keyword.Bluemix_notm}} están disponibles (con alias en) en qué espacios de CFEE. Puede expandir una instancia de servicio para mostrar los espacios de CFEE donde se ha añadido.  Puede expandirlos para ver las aplicaciones en dichos espacios de CFEE a los que se han enlazado las instancias de servicio. 
@@ -197,7 +199,7 @@ Los administradores de cuentas de IBM Cloud (los usuarios con el rol _administra
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-En su forma más sencilla, con la lista negra puede hacer que una oferta de servicio (todos sus planes) resulte invisible para los usuarios de la cuenta actual emitiendo el mandato siguiente:
+En su forma más sencilla, puede utilizar el mandato `catalog backlist` para hacer que una oferta de servicio (y sus planes) sean invisibles para todos los usuarios de la cuenta actual:
 
   ```
   Ibmcloud catalog blacklist <thisService>

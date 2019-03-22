@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -20,9 +20,8 @@ lastupdated: "2018-29-10"
 
 Bem-vindo ao serviço do {{site.data.keyword.cfee_full}}.
 
-Com o {{site.data.keyword.cfee_full}} (CFEE), é possível instanciar múltiplas plataformas Cloud Foundry isoladas e de classificação corporativa on-demand. As instâncias do serviço {{site.data.keyword.Bluemix_notm}} Foundry Enterprise são executadas dentro de sua própria conta no {{site.data.keyword.Bluemix_notm}}. O ambiente é implementado em hardware isolado (clusters do Kubernetes). Você tem controle total sobre o ambiente, incluindo o controle de acesso, a capacidade, as atualizações de versão, o uso de recurso e o monitoramento. 
-Além disso, a integração do CFEE no {{site.data.keyword.Bluemix_notm}} permite que os desenvolvedores
-aproveitem os serviços disponíveis na conta do {{site.data.keyword.Bluemix_notm}}. Os usuários podem incluir
+Com o {{site.data.keyword.cfee_full}} (CFEE), é possível instanciar múltiplas plataformas Cloud Foundry isoladas e de classificação corporativa on-demand. As instâncias do serviço {{site.data.keyword.Bluemix_notm}} Foundry Enterprise são executadas dentro de sua própria conta no {{site.data.keyword.Bluemix_notm}}. O ambiente é implementado em hardware isolado (clusters do Kubernetes). Você tem controle total sobre o ambiente, incluindo o controle de acesso, a capacidade, as atualizações de versão, o uso de recurso e o monitoramento. Além disso, a integração do CFEE no {{site.data.keyword.Bluemix_notm}} permite que os desenvolvedores
+aproveitem os serviços disponíveis na conta do {{site.data.keyword.Bluemix_notm}}.  Os usuários podem incluir
 esses serviços em um CFEE e ligá-los aos aplicativos implementados nos espaços do CFEE.
 
 Descubra como é possível
@@ -71,9 +70,9 @@ A seguir estão as geografias, os locais e os data centers nos quais o serviço 
 |América do Norte | Washington DC (wdc04) | us-geo | us-east |
 |América do Norte | Washington DC (wdc06) | us-geo | us-east | 
 |América do Norte | Washington DC (wdc07) | us-geo | us-east |
-|América do Norte | Dallas (das10) | us-geo | us-south |
-|América do Norte | Dallas (das12) | us-geo | us-south |
-|América do Norte | Dallas (das13) | us-geo |us-south |
+|América do Norte | Dallas (dal10) | us-geo | us-south |
+|América do Norte | Dallas (dal12) | us-geo | us-south |
+|América do Norte | Dallas (dal13) | us-geo |us-south |
 |América do Norte | San Jose (sjc03) | us-geo | us-south |
 |América do Norte | San Jose (sjc04) | us-geo | us-south |
 |América do Sul &nbsp; &nbsp;| São Paulo (sao01) |  us-geo | us-south |
@@ -86,15 +85,17 @@ A seguir estão as geografias, os locais e os data centers nos quais o serviço 
 |Europa | Frankfurt (fra02) | eu-geo | eu-de |
 |Europa | Frankfurt (fra04) | eu-geo | eu-de | 
 |Europa | Frankfurt (fra05) |  eu-geo | eu-de |
+|Europa | Milão (mil01) |  eu-geo | eu-de |
 |Ásia Pacífico | Melbourne (mel01) | ap-geo | au-syd |
 |Ásia Pacífico | Sydney (syd01) | ap-geo | au-syd |
 |Ásia Pacífico | Sydney (syd04) | ap-geo | au-syd | 
 |Ásia Pacífico | Hong Kong (hkg02) | ap-geo | au-syd |
 |Ásia Pacífico | Hong Kong (seo01) | ap-geo | au-syd |
 |Ásia Pacífico | Cingapura (sng01) | ap-geo | au-syd |
-|Ásia Pacífico | Tóquio (gok02) | ap-geo | au-syd |
-|Ásia Pacífico | Tóquio (gok04) | ap-geo | au-syd |
-|Ásia Pacífico | Tóquio (gok05) | ap-geo | au-syd |
+|Ásia Pacífico | Tóquio (tok02) | ap-geo | au-syd |
+|Ásia Pacífico | Tóquio (tok04) | ap-geo | au-syd |
+|Ásia Pacífico | Tóquio (tok05) | ap-geo | au-syd |
+|Ásia Pacífico | Chennai (che01) | ap-geo | au-syd |
 {: caption="Tabela 2. Destinos de provisionamento para CFEE e serviços de apoio" caption-side="top"}
 
 Como um **exemplo**, o serviço do CFEE pode ser fornecido em três data centers na Europa:

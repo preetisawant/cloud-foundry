@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -97,7 +97,7 @@ Im Folgenden werden Sie durch die Schritte für die Installation der erforderlic
 
 ### Überwachungskonsolen auf lokalem Web-Proxy starten
 
-5. Starten Sie die Grafana-Konsole, um Analysen zu ausgewählten Metriken anzuzeigen.  Die Grafana-Standarddashboards sind in der CFEE-Instanz enthalten. Diese Standarddashboards sind interaktiv und bieten eine Ansicht der Infrastruktur, die zum Hosten der CFEE-Instanz verwendet wird. (Kubernetes-Cluster). Klicken Sie beim Starten der Grafana-Konsole oben in der Grafana-Konsole auf die Schaltfläche **Home**, um eines der vorab bereitgestellten Dashboards auszuwählen (siehe Liste unten), in der die entsprechenden Metriken grafisch dargestellt werden:
+5. Starten Sie die Grafana-Konsole, um Analysen zu ausgewählten Metriken anzuzeigen.  Grafana-Standarddashboards sind in der CFEE-Instanz enthalten. Diese Standarddashboards sind interaktiv und bieten eine Ansicht der Infrastruktur, die zum Hosten der CFEE-Instanz verwendet wird (Kubernetes-Cluster). Klicken Sie beim Starten der Grafana-Konsole oben in der Grafana-Konsole auf die Schaltfläche **Home**, um eines der vorab bereitgestellten Dashboards auszuwählen (siehe Liste unten), in der die entsprechenden Metriken grafisch dargestellt werden:
 
    In Grafana lauten der Standardbenutzername `admin` und das Standardkennwort `admin`. Es wird empfohlen, sich mit dem Benutzernamen und Kennwort `admin` anzumelden und anschließend neue Berechtigungsnachweise festzulegen:
 
@@ -105,31 +105,31 @@ Im Folgenden werden Sie durch die Schritte für die Installation der erforderlic
 
    Die folgenden Standarddashboards werden mit der CFEE-Instanz bereitgestellt und sind im Dropdown-Menü _Home_ verfügbar.
 
-   Dashboards für die Kubernetes-Infrastruktur, die die CFEE-Umgebung unterstützt:
-   - Dashboard _Kubernetes-Kapazitätsplanung_
-        - Zeigt die Kapazität der Kubernetes-Infrastruktur an.
-   - Dashboard _Kubernetes-Clusterzustand_
-        - Zeigt den Zustand des Kubernetes-Clusters an.
-   - Dashboard _Kubernetes-Clusterstatus_
-        - Zeigt den Status des Kubernetes-Clusters an.
-   - Dashboard _Kubernetes-Ressourcenanforderungen_
-        - Zeigt die Verwendung von CPU und Speicher sowie andere Parameter des Kubernetes-Clusters an.
-   - Dashboard _Knoten_
-        - Zeigt Details für jeden Workerknoten des Kubernetes-Clusters an.
-   - Dashboard _Pods_
-        - Zeigt Details für jeden Pod an, der im Kubernetes-Clusters ausgeführt wird.
-   - Dashboard _Replikatgruppe_
-        - Zeigt den Status der Kubernetes-Replikatgruppe an.
-   - Dashboard _Bereitstellung_
-        - Zeigt den Status der Kubernetes-Bereitstellung an.
-
-   Cloud Foundry-Dashboards:
-   - Dashboard _CF: Zellenkapazität_
+    Cloud Foundry-Dashboards:
+   - _CF: Zellenkapazität_ 
         - Zeigt den allgemeinen Status der Cloud Foundry-Zellen an, in denen die Cloud Foundry-Anwendungen bereitgestellt werden.
-   - Dashboard _CF: Router_
-        - Zeigt den Status des Cloud Foundry-Routers an, der in Ihrer CFEE-Umgebung ausgeführt wird.
-   - Dashboard _CF: Diego-Zelle_
+   - _CF: Diego-Zelle_ 
         - Zeigt den Status der Cloud Foundry-Zellen und Diego-Komponenten an.
+   - _CF: Router_ 
+        - Zeigt den Status des Cloud Foundry-Routers an, der in Ihrer CFEE-Umgebung ausgeführt wird.
+  
+   Dashboards für die Kubernetes-Infrastruktur, die die CFEE-Umgebung unterstützt:
+   - _Bereitstellung_ 
+        - Zeigt den Status der Kubernetes-Bereitstellung an.
+   - _Kubernetes-Clusterzustand_ 
+        - Zeigt den Zustand des Kubernetes-Clusters an.
+   - _Kubernetes-Clusterstatus_ 
+        - Zeigt den Status des Kubernetes-Clusters an.
+   - _Kubernetes-Ressourcenanforderungen_ 
+        - Zeigt die Verwendung von CPU und Speicher sowie andere Parameter des Kubernetes-Clusters an.
+   - _Pods_ 
+        - Zeigt Details für jeden Pod an, der im Kubernetes-Clusters ausgeführt wird.
+   - _Replikatgruppe_ 
+        - Zeigt den Status der Kubernetes-Replikatgruppe an.       
+   - _Workerknoten_ 
+        - Zeigt Details für jeden Workerknoten des Kubernetes-Clusters an.
+   - _Übersicht über die Workerknoten_ 
+        - Zeigt die CPU- und Speichernutzung der Kubernetes-Infrastruktur sowie den zugehörigen Netzdatenverkehr an. 
 
 6. Optional können Sie auch die Prometheus-Konsole zum Anzeigen der vom Prometheus-Server erfassten Rohdaten sowie Prometheus Alert Manager zum Verwalten der vom Prometheus-Server gesendeten Alerts starten:
 

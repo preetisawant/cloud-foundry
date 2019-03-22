@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -98,7 +98,7 @@ ibmcloud plugin install container-service -r Bluemix
 
 ### 在本地 Web 代理上启动监视控制台
 
-5. 启动 Grafana 控制台以查看有关所选度量值的分析。CFEE 实例中随附缺省 Grafana 仪表板。这些缺省仪表板是交互式仪表板，供您查看用于托管 CFEE 实例的基础架构（Kubernetes 集群）。启动 Grafana 控制台后，单击 Grafana 控制台顶部的**主页**按钮，以选择其中一个预先部署的仪表板（请参阅下面的列表），选择的仪表板将绘制对应度量值的图形：
+5. 启动 Grafana 控制台以查看有关所选度量值的分析。CFEE 实例中随附缺省 Grafana 仪表板。这些缺省仪表板是交互式仪表板，供您查看用于托管 CFEE 实例（Kubernetes 集群）的基础架构。启动 Grafana 控制台后，单击 Grafana 控制台顶部的**主页**按钮，以选择其中一个预先部署的仪表板（请参阅下面的列表），选择的仪表板将绘制对应度量值的图形：
 
    在 Grafana 中有缺省 `admin` 用户，缺省密码设置为 `admin`。建议使用用户/密码 `admin/admin` 登录，然后将其更改为新的凭证：
 
@@ -106,31 +106,31 @@ ibmcloud plugin install container-service -r Bluemix
 
    以下缺省仪表板随 CFEE 实例一起提供，可从_主页_下拉列表中获得。
 
-   用于支持 CFEE 环境的 Kubernetes 基础架构的仪表板：
-   - _Kubernetes 容量规划_仪表板
-        - 显示 Kubernetes 基础架构的容量。
-   - _Kubernetes 集群运行状况_仪表板
-        - 显示 Kubernetes 集群的运行状况。
-   - _Kubernetes 集群状态_仪表板
-        - 显示 Kubernetes 集群的状态。
-   - _Kubernetes 资源请求_仪表板
-        - 显示 Kubernetes 集群的已用 CPU、内存和其他参数。
-   - _节点_仪表板
-        - 显示 Kubernetes 集群的每个工作程序节点的详细信息。
-   - _pod_ 仪表板
-        - 显示在 Kubernetes 集群上运行的每个 pod 的详细信息。
-   - _副本集_仪表板
-        - 显示 Kubernetes 副本集的状态。
-   - _部署_仪表板
-        - 显示 Kubernetes 部署的状态。
-
-   Cloud Foundry 仪表板：
-   - _CF：单元容量_仪表板
+    Cloud Foundry 仪表板：
+   - _CF：单元容量_ 
         - 显示部署了 Cloud Foundry 应用程序的 Cloud Foundry 单元的常规状态。
-   - _CF：路由器_仪表板
-        - 显示在 CFEE 环境中运行的 Cloud Foundry 路由器的状态。
-   - _CF：Diego_Cell_ 仪表板
+   - _CF：Diego 单元仪表板_ 
         - 显示 Cloud Foundry 单元和 Diego 组件的状态。
+   - _CF：路由器_ 
+        - 显示在 CFEE 环境中运行的 Cloud Foundry 路由器的状态。
+  
+   用于支持 CFEE 环境的 Kubernetes 基础架构的仪表板：
+   - _部署_ 
+        - 显示 Kubernetes 部署的状态。
+   - _Kubernetes 集群运行状况_ 
+        - 显示 Kubernetes 集群的运行状况。
+   - _Kubernetes 集群状态_ 
+        - 显示 Kubernetes 集群的状态。
+   - _Kubernetes 资源请求_ 
+        - 显示 Kubernetes 集群的已用 CPU、内存和其他参数。
+   - _pod_ 
+        - 显示在 Kubernetes 集群上运行的每个 pod 的详细信息。
+   - _副本集_ 
+        - 显示 Kubernetes 副本集的状态。       
+   - _工作程序节点_ 
+        - 显示 Kubernetes 集群的每个工作程序节点的详细信息。
+   - _工作程序节点概述_ 
+        - 显示 Kubernetes 基础架构的 CPU 和内存使用情况及其网络流量。
 
 6. （可选）您还可以启动 Prometheus 控制台来查看 Prometheus 服务器收集的原始数据，以及启动 Prometheus Alertmanager 来管理 Prometheus 服务器发送的警报：
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -40,8 +40,9 @@ A partir de cette vue, vous pouvez également lier des applications déployées 
 {: #adding-services-inspace}
 
 Vous pouvez lier des instances de service {{site.data.keyword.Bluemix_notm}} à des applications déployées dans un espace CFEE.  Avant de pouvoir être liée à une application déployée dans CFEE, une instance de service IBM Cloud doit être ajoutée à l'espace CFEE dans lequel l'application est déployée. Les prérequis s'appliquent avant l'ajout d'une instance de service {{site.data.keyword.Bluemix_notm}} à un espace CFEE :
+* Le service dont l'instance doit être ajoutée ne peut pas être un service Cloud Foundry. Seuls les services {{site.data.keyword.Bluemix_notm}} qui prennent en charge des groupes de ressources et IAM peuvent être ajoutés (associés à un alias) dans un CFEE. Les services instanciés dans des organisations, espaces et rôles Cloud Foundry publics ne peuvent pas être ajoutés (associés à des alias) dans un environnement CFEE. Les services {{site.data.keyword.Bluemix_notm}} sont progressivement déplacés pour tirer parti des groupes de ressources. Une fois qu'un services a été déplacé pour utiliser des groupes de ressources au lieu d'organisation et d'espaces Coud Foundry, vous pouvez migrer toutes vos instances existantes de ce service vers un groupe de ressources et le service peut alors être ajouté à un environnement CFEE. Voir [Migration d'instances de service Cloud Foundry vers un groupe de ressources](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate).
 * Le service {{site.data.keyword.Bluemix_notm}} doit être disponible dans le même compte {{site.data.keyword.Bluemix_notm}} que celui dans lequel l'instance CFEE réside.
-* Vous devez disposer de droits d'accès à l'instance de service {{site.data.keyword.Bluemix_notm}} proprement dite. Pour plus d'informations, voir la page Identity & Access du menu **Gérer > Utilisateurs** dans l'en-tête {{site.data.keyword.Bluemix_notm}} pour vérifier vos règles d'accès au compte en cours.
+* Vous devez disposer du rôle de plateforme _Opérateur_ (ou supérieur) sur l'instance de service {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir la page Identité & Accès du menu **Gérer > Utilisateurs** dans l'en-tête {{site.data.keyword.Bluemix_notm}} pour vérifier vos règles d'accès au compte en cours.
 
 Pour ajouter une instance de service {{site.data.keyword.Bluemix_notm}} existante à un espace CFEE :
 1. Accédez au [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services).  
@@ -55,14 +56,15 @@ Vous avez aussi la possibilité d'ajouter une instance de service {{site.data.ke
 1. Dans votre [tableau de bord](https://console.bluemix.net/dashboard) {{site.data.keyword.Bluemix_notm}} ou votre [tableau de bord de services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services), recherchez l'environnement Cloud Foundry Enterprise qui héberge votre application.
 2. Accédez à **Organisations** dans le volet de navigation et ouvrez l'organisation et l'espace où se trouve l'application.
 3. Accédez à l'onglet **Espaces** et recherchez l'espace qui contient l'application.
-4. Sur la page de l'espace cible, accédez à l'onglet **Services**, puis cliquez sur **Ajouter un service**.  La boîte de dialogue __Ajouter un service__ s'ouvre.  Cette page répertorie les instances de service disponibles dans le compte {{site.data.keyword.Bluemix_notm}}. 
+4. Sur la page de l'espace cible, accédez à l'onglet **Services**, puis cliquez sur **Ajouter un service**.  La boîte de dialogue __Ajouter un service__ s'ouvre.  Cette page répertorie les instances de service disponibles dans le compte {{site.data.keyword.Bluemix_notm}}.
 5. Recherchez et sélectionnez une instance de service disponible que vous voulez ajouter à l'espace CFEE. 
 6. L'instance de service sera ajoutée à la liste de services disponibles dans l'espace CFEE.
 
    **Remarque :** lorsque vous ajoutez un service {{site.data.keyword.Bluemix_notm}} à un espace CFEE, un alias de cette instance de service est créé dans cet espace. Lorsque vous **retirez** l'instance de service d'un espace CFEE (à partir du menu situé tout à fait à droite de la ligne de l'instance de service correspondante dans le tableau), le service n'est pas supprimé du compte public.  Il est simplement retiré du compte CFEE spécifique et il n'est plus disponible pour être lié aux applications présentes dans cet espace CFEE.  En outre, lorsque vous supprimez l'instance de service proprement dite du compte {{site.data.keyword.Bluemix_notm}}, le service n'est plus disponible pour les espaces CFEE. 
 
 ## Création d'instances de service {{site.data.keyword.Bluemix_notm}} à partir d'une interface utilisateur d'espace CFEE
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 Vous pouvez créer des instances de service {{site.data.keyword.Bluemix_notm}} à partir d'un espace CFEE.  La création d'une instance de service {{site.data.keyword.Bluemix_notm}} provoque ce qui suit :
 * L'instance de service {{site.data.keyword.Bluemix_notm}} est créée dans IBM Cloud.  Cela revient à créer l'instance de service à partir du [catalogue](https://console.bluemix.net/catalog) {{site.data.keyword.Bluemix_notm}}.
 * Un alias est ajouté pour l'instance de service {{site.data.keyword.Bluemix_notm}} dans l'espace CFEE à partir duquel l'action de création a été déclenchée. Une instance de service d'alias (dans un espace CFEE) est une référence vers l'instance de service réelle (dans le compte IBM Cloud). L'alias d'instance de service permet aux développeurs d'interagir avec l'instance de service (c'est-à-dire d'établir des liaisons avec des applications) en gérant toutes les données d'identification automatiquement pour l'interaction avec l'instance de service. .
@@ -83,9 +85,9 @@ Vous pouvez créer une instance de service à l'aide de l'interface de ligne de 
 * L'instance de service {{site.data.keyword.Bluemix_notm}} est créée dans IBM Cloud.  Cela revient à créer l'instance de service à partir du [catalogue](https://console.bluemix.net/catalog) {{site.data.keyword.Bluemix_notm}}.
 * L'instance de service {{site.data.keyword.Bluemix_notm}} est ajoutée (associée à un alias) dans l'espace CFEE à partir duquel l'action de création a été déclenchée.
 
-La différence entre la création d'une instance de service à partir d'un espace CFEE et la création d'une instance de service à partir de l'interface de ligne de commande concerne le cycle de vie de l'instance de service créée. Lorsque vous créez l'instance de service dans l'interface utilisateur de l'espace CFEE, le cycle de vie de l'instance de service créée est contrôlé à partir de l'instance de service proprement dite dans le compte {{site.data.keyword.Bluemix_notm}}. Cela signifie que les mises à jour apportées au plan de service sont contrôlées à partir de l'instance dans le compte {{site.data.keyword.Bluemix_notm}} et non à partir de l'espace CFEE. Sinon, si l'instance de service est créée à partir de l'interface de ligne de commande, le cycle de vie du service est contrôlé à partir de l'espace CFEE (le service est mis à jour à partir de l'espace CFEE). 
+La différence entre la création d'une instance de service à partir d'un espace CFEE et la création d'une instance de service à partir de l'interface de ligne de commande concerne le cycle de vie de l'instance de service créée.  Lorsque vous créez l'instance de service dans l'interface utilisateur de l'espace CFEE, le cycle de vie de l'instance de service créée est contrôlé à partir de l'instance de service proprement dite dans le compte {{site.data.keyword.Bluemix_notm}}.  Cela signifie que les mises à jour apportées au plan de service sont contrôlées à partir de l'instance dans le compte {{site.data.keyword.Bluemix_notm}} et non à partir de l'espace CFEE.  Sinon, si l'instance de service est créée à partir de l'interface de ligne de commande, le cycle de vie du service est contrôlé à partir de l'espace CFEE (le service est mis à jour à partir de l'espace CFEE).
 
-Les instances de service créées à partir de l'interface de ligne de commande sont également affichées dans l'interface utilisateur et sont signalées par un astérisque (`*`) placé en regard de leur nom. 
+Les instances de service créées à partir de l'interface de ligne de commande sont également affichées dans l'interface utilisateur et sont signalées par un astérisque (`*`) placé en regard de leur nom.
 
 Pour créer des instances de service à l'aide de l'interface de ligne de commande, procédez comme suit :
 
@@ -151,7 +153,7 @@ Pour créer des instances de service à l'aide de l'interface de ligne de comman
 ## Liaison de services aux applications
 {: #bind_services}
 
-Les utilisateurs dotés du rôle _Editeur_ ou d'un rôle de niveau supérieur sur une instance de service {{site.data.keyword.Bluemix_notm}} peuvent lier cette instance à une application déployée dans un espace CFEE, que ce soit à partir du [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) ou de l'onglet Services de l'interface utilisateur d'un espace CFEE.     
+Les utilisateurs dotés du rôle de plateforme _Opérateur_ (ou supérieur) et du rôle de service _Auteur_ (ou supérieur) sur une instance de service {{site.data.keyword.Bluemix_notm}} peuvent lier cette instance à une application déployée dans un espace CFEE, soit depuis le [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) ou depuis l'onglet Services de l'interface utilisateur d'un espace CFEE.   
 
 Pour lier une instance de service à une application à partir du [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) :
 1. Accédez au [tableau de bord des services Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/services) pour visualiser une vue consolidée de toutes les instances de service {{site.data.keyword.Bluemix_notm}} qui sont à votre disposition dans le compte {{site.data.keyword.Bluemix_notm}}.  La vue permet également de déterminer quelles instances de service {{site.data.keyword.Bluemix_notm}} sont disponibles (associées à un alias) dans quels espaces CFEE. Vous pouvez développer une instance de service pour afficher les espaces CFEE auxquels elle a été ajoutée.  Vous pouvez développer davantage ces espaces pour identifier les applications dans ces espaces CFEE auxquelles ces instances de service ont été liées. 
@@ -159,7 +161,7 @@ Pour lier une instance de service à une application à partir du [tableau de bo
 3. Développez la vue correspondante pour visualiser tous les espaces CFEE où cette instance de service a été ajoutée. Si cette instance de service n'a pas été ajoutée à l'espace CFEE où l'application est déployée, sélectionnez **Ajouter** dans le menu situé tout à fait à droite de la ligne pour rendre l'instance de service disponible dans l'espace CFEE cible.
 4. Accédez au menu situé tout à fait à droite de la ligne correspondant à l'environnement CFEE/l'espace où l'instance de service est disponible et sélectionnez **Lier une application**.
 5. Dans la boîte de dialogue __Lier une application__, sélectionnez l'application que vous souhaitez lier.
-6. L'application est désormais liée à l'instance de service. Vous pouvez développer une instance de service dans la table pour voir les applications qui lui sont liées (dans un espace CFEE spécifique). 
+6. L'application est désormais liée à l'instance de service.  Vous pouvez développer une instance de service dans la table pour voir les applications qui lui sont liées (dans un espace CFEE spécifique).
 
 
 Pour lier une application à une instance de service à partir de la page __Services__ d'un espace CFEE :
@@ -181,7 +183,7 @@ Pour plus d'informations sur la liaison d'applications à l'aide de l'interface 
 ## Visibilité des services
 {: #service_visibility}
 
-Les clients peuvent décider qui peut créer de nouveaux services IBM Cloud à partir d'un environnement CFEE. Ils peuvent également décider qui peut ajouter des services IBM Cloud existants à un espace CFEE. Ce contrôle s'exerce en vérifiant la visibilité des offres de service (et/ou des instances de ces offres de service) pour les utilisateurs. 
+Les clients peuvent décider qui peut créer de nouveaux services IBM Cloud à partir d'un environnement CFEE.  Ils peuvent également décider qui peut ajouter des services IBM Cloud existants à un espace CFEE.  Ce contrôle s'exerce en vérifiant la visibilité des offres de service (et/ou des instances de ces offres de service) pour les utilisateurs.
 
 ### Contrôle de la création d'instances de service
 {: #control_servicecreation}
@@ -191,20 +193,20 @@ Le contrôle de la création de services peut être réalisé en vérifiant la v
 #### Contrôle de la visibilité dans le catalogue IBM Cloud pour les utilisateurs d'un compte IBM Cloud
 {: #creation_accountvisibility}
 
-Les administrateurs de compte IBM Cloud (utilisateurs dotés du rôle _Administrateur_ sur tous les services activés par IAM) peuvent empêcher l'affichage d'un service ou d'un plan de service dans le catalogue pour tous les utilisateurs d'un **compte IBM Cloud** spécifique.  Les administrateurs de compte peuvent empêcher tous les utilisateurs de compte d'utiliser un service en plaçant sur liste noire un service ou un plan de service pour tous les utilisateurs d'un compte. Le placement d'un service sur liste noire empêchera les utilisateurs de ce compte de voir ce service (ou plan de service) dans le catalogue IBM Cloud. Pour ce faire, utilisez la commande `ibmcloud catalog blacklist` avec la syntaxe suivante : 
+Les administrateurs de compte IBM Cloud (utilisateurs dotés du rôle _Administrateur_ sur tous les services activés par IAM) peuvent empêcher l'affichage d'un service ou d'un plan de service dans le catalogue pour tous les utilisateurs d'un **compte IBM Cloud** spécifique.  Les administrateurs de compte peuvent empêcher tous les utilisateurs de compte d'utiliser un service en plaçant sur liste noire un service ou un plan de service pour tous les utilisateurs d'un compte. Le placement d'un service sur liste noire empêchera les utilisateurs de ce compte de voir ce service (ou plan de service) dans le catalogue IBM Cloud.  Pour ce faire, utilisez la commande `ibmcloud catalog blacklist` avec la syntaxe suivante :
 
   ```
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-Vous pouvez utiliser la forme la plus simple de cette commande pour placer sur liste noire une offre de service (ou tous ses plans) et la rendre invisible pour les utilisateurs du compte en cours :
+Vous pouvez utiliser la forme la plus simple de la commande `catalog backlist` pour rendre une offre de service (ou tous ses plans) invisible pour tous les utilisateurs du compte en cours :
 
   ```
   Ibmcloud catalog blacklist <thisService>
   ```
   {: pre}
 
-Vous avez la possibilité d'empêcher la visibilité non pas de l'ensemble de l'offre de service, mais d'un plan spécifique dans une région donnée. Pour ce faire, vous devez utiliser l'ID de l'entrée correspondante dans le catalogue globale et non le nom. Si vous souhaitez empêcher les utilisateurs de voir un plan spécifique dans une région donnée, vous pouvez exécuter la commande suivante :
+Vous avez la possibilité d'empêcher la visibilité non pas de l'ensemble de l'offre de service, mais d'un plan spécifique dans une région donnée.  Pour ce faire, vous devez utiliser l'ID de l'entrée correspondante dans le catalogue globale et non le nom.   Si vous souhaitez empêcher les utilisateurs de voir un plan spécifique dans une région donnée, vous pouvez exécuter la commande suivante :
 
   ```
   Ibmcloud catalog blacklist -add <catalogEntryID>
@@ -235,14 +237,14 @@ La commande suivante vous permet de visualiser d'autres détails pour la command
 #### Contrôle de la visibilité pour les utilisateurs d'une organisation Cloud Foundry
 {: #creation_orgvisibility}
 
-Vous pouvez utiliser les commandes `cf enable-service-access` et `cf disable-service-access` afin de contrôler l'accès aux services pour des **organisations Cloud Foundry** spécifiques. Dans ce cas, le point de contrôle pour l'accès est Cloud Foundry (et non le compte IBM Cloud). Notez qu'il s'agit d'une commande `cf` native (et non d'une commande `ibmcloud`).  
+Vous pouvez utiliser les commandes `cf enable-service-access` et `cf disable-service-access` afin de contrôler l'accès aux services pour des **organisations Cloud Foundry** spécifiques.  Dans ce cas, le point de contrôle pour l'accès est Cloud Foundry (et non le compte IBM Cloud).  Notez qu'il s'agit d'une commande `cf` native (et non d'une commande `ibmcloud`). 
 
 Tenez compte des points suivants lorsque vous définissez la visibilité des services via l'interface de ligne de commande `fc` :
 
-*  Les commandes `cf` activent et/ou désactivent les offres de service (éventuellement, les plans d'offre de service spécifiques) pour tous les utilisateurs d'organisations Cloud Foundry spécifiques. 
-* L'activation repose sur la création d'une "liste blanche" d'organisations. En d'autres termes, il s'agit d'une liste d'inclusion d'organisations Cloud Foundry qui ont accès à un service (par opposition à l'approche avec une "liste noire" dans la commande `ibmcloud` décrite précédemment qui repose sur la définition d'une liste de services exclus de la visibilité pour les utilisateurs d'un compte). Cela signifie que le contrôle d'accès à un service de catalogue à l'aide de cette approche repose non pas sur la définition des organisations qui ne peuvent pas voir un service (placement sur liste noire) mais sur la définition des organisations qui peuvent le voir (placement sur liste blanche). 
-*  Lorsque vous accordez à une organisation l'accès à un service (ou à un plan de service) en ajoutant cette organisation à une liste blanche, vous empêchez de fait toutes les autres organisations d'accéder à ce service. Autrement dit, dès lors que vous placez une organisation sur liste blanche, vous empêchez toutes les autres organisations d'accéder à ce service (ou à ce plan de service). 
-*  Avant d'ajouter des organisations à la liste blanche, vous devez désactiver la visibilité pour toutes les organisations. Vous ne pouvez pas désactiver l'accès à un plan de service si celui-ci est disponible pour toutes les organisations.
+*  Les commandes `cf` activent et/ou désactivent les offres de service (éventuellement, les plans d'offre de service spécifiques) pour tous les utilisateurs d'organisations Cloud Foundry spécifiques.
+* L'activation repose sur la création d'une "liste blanche" d'organisations. En d'autres termes, il s'agit d'une liste d'inclusion d'organisations Cloud Foundry qui ont accès à un service (par opposition à l'approche avec une "liste noire" dans la commande `ibmcloud` décrite précédemment qui repose sur la définition d'une liste de services exclus de la visibilité pour les utilisateurs d'un compte). Cela signifie que le contrôle d'accès à un service de catalogue à l'aide de cette approche repose non pas sur la définition des organisations qui ne peuvent pas voir un service (placement sur liste noire) mais sur la définition des organisations qui peuvent le voir (placement sur liste blanche).
+*  Lorsque vous accordez à une organisation l'accès à un service (ou à un plan de service) en ajoutant cette organisation à une liste blanche, vous empêchez de fait toutes les autres organisations d'accéder à ce service.  Autrement dit, dès lors que vous placez une organisation sur liste blanche, vous empêchez toutes les autres organisations d'accéder à ce service (ou à ce plan de service).
+*  Avant d'ajouter des organisations à la liste blanche, vous devez désactiver la visibilité pour toutes les organisations.  Vous ne pouvez pas désactiver l'accès à un plan de service si celui-ci est disponible pour toutes les organisations.
 
 En raison du comportement général décrit précédemment, il est recommandé de contrôler l'accès des organisations à des services en exécutant les commandes suivantes :
 1. **Désactiver** l'accès à un plan de service pour toutes les organisations :
@@ -251,21 +253,21 @@ En raison du comportement général décrit précédemment, il est recommandé d
   ```
   {: pre}
   
-2. **Activer** l'accès au plan de service pour des organisations CFEE spécifiques. Le plan de service sera désactivé pour toutes les autres organisations qui ne sont pas spécifiquement activées dans la commande.  
+2. **Activer** l'accès au plan de service pour des organisations CFEE spécifiques.  Le plan de service sera désactivé pour toutes les autres organisations qui ne sont pas spécifiquement activées dans la commande. 
   ```
   cf enable-service-access <service name> -p <plan name> -o <org name>
   ```
   {: pre}
   
-**Remarque :** il est recommandé d'exécuter les commandes d'activation et de désactivation de service Cloud Foundry pour l'ensemble d'un service et non pour certains plans. 
+**Remarque :** il est recommandé d'exécuter les commandes d'activation et de désactivation de service Cloud Foundry pour l'ensemble d'un service et non pour certains plans.
 
 
 ### Contrôle de l'accès à des instances de service existantes
 {: #control_serviceaddition}
 
-Les développeurs dans un espace CFEE peuvent utiliser des instances de service disponibles dans le compte IBM Cloud. Dans un espace d'un environnement CFEE, les utilisateurs peuvent **ajouter** une instance de service à cet espace (voir la rubrique [Ajout d'instances de service existantes](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) précédente). Lorsqu'une instance de service est ajoutée à un espace CFEE, un alias (une référence) est créé vers cette instance de service, ce qui permet à un développeur de lier l'instance de service à une application déployée dans cette espace CFEE comme s'il s'agissait de l'instance de service réelle. 
+Les développeurs dans un espace CFEE peuvent utiliser des instances de service disponibles dans le compte IBM Cloud.  Dans un espace d'un environnement CFEE, les utilisateurs peuvent **ajouter** une instance de service à cet espace (voir la rubrique [Ajout d'instances de service existantes](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) précédente). Lorsqu'une instance de service est ajoutée à un espace CFEE, un alias (une référence) est créé vers cette instance de service, ce qui permet à un développeur de lier l'instance de service à une application déployée dans cette espace CFEE comme s'il s'agissait de l'instance de service réelle.
 
-Les administrateurs de compte peuvent contrôler l'utilisation d'instances de service via des [règles d'accès IAM](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).  Depuis l'interface utilisateur ou l'interface de ligne de commande ibmcloud, ils peuvent affecter des rôles aux instances de service proprement dites ou aux groupes de ressources dans lesquels ces instances résident. Un développeur a besoin du rôle _Afficheur_ ou d'un rôle supérieur sur une instance de service (ou son groupe de ressources) avant de pouvoir ajouter cette instance à un espace. 
+Les administrateurs de compte peuvent contrôler l'utilisation d'instances de service via des [règles d'accès IAM](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).  Depuis l'interface utilisateur ou l'interface de ligne de commande ibmcloud, ils peuvent affecter des rôles aux instances de service proprement dites ou aux groupes de ressources dans lesquels ces instances résident.  Un développeur a besoin du rôle _Afficheur_ ou d'un rôle supérieur sur une instance de service (ou son groupe de ressources) avant de pouvoir ajouter cette instance à un espace.
 
 Vous trouverez des vidéos contenant des discussions et des démonstrations relatives aux services CFEE dans la [liste de lecture des vidéos CFEE](https://ibm.biz/CFEE-Playlist){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
 {:tip}

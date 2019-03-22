@@ -135,7 +135,7 @@ cf push -f appManifest.yml
 | **domain** | Der Domänenname der Anwendung in {{site.data.keyword.Bluemix_notm}}. | `domain:` ng.bluemix.net |
 | **host** | Der Hostname der Anwendung in {{site.data.keyword.Bluemix_notm}}. Dieser Wert muss in der {{site.data.keyword.Bluemix_notm}}-Umgebung eindeutig sein. | `host:` *host_name* |
 | **name** | Der Anwendungsname in {{site.data.keyword.Bluemix_notm}}. Dieser Wert muss in der {{site.data.keyword.Bluemix_notm}}-Umgebung eindeutig sein. | `name:` *appname* |
-| **path** | Die Position der Anwendung. Dieser Wert kann entweder ein relativer Pfad oder ein absoluter Pfad sein. | `path:` *path_to_application* |
+| **path** | Der Standort der Anwendung. Dieser Wert kann entweder ein relativer Pfad oder ein absoluter Pfad sein. | `path:` *path_to_application* |
 | **command** | Der angepasste Startbefehl für Ihre Anwendung oder der Befehl für die Ausführung von Scriptdateien. | `command:` *custom_command* `command:` *bash ./run.sh* |
 | **memory** | Die Speicherkapazität, die der Anwendung zugeordnet werden soll. Der Standardwert ist 1 GB. | `memory: 512M` |
 | **instances** | Die Anzahl der Instanzen, die für Ihre Anwendung erstellt werden sollen. | `instances: 2` |

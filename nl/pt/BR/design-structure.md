@@ -17,8 +17,7 @@ lastupdated: "2018-10-26"
 # Projete a estrutura do IBM Cloud Foundry Enterprise Environment
 {: #bpimplementation}
 
-Em vez da metodologia tradicional estritamente definida de desenvolvimento, teste e produção, é possível implementar um ambiente no qual os desenvolvedores e os testadores podem colaborar com outros membros da equipe. 
-Se você projetar a maneira como deseja desenvolver e entregar os aplicativos, crie espaços para preencher essa
+Em vez da metodologia tradicional estritamente definida de desenvolvimento, teste e produção, é possível implementar um ambiente no qual os desenvolvedores e os testadores podem colaborar com outros membros da equipe. Se você projetar a maneira como deseja desenvolver e entregar os aplicativos, crie espaços para preencher essa
 metodologia. Em vez de projetar o ambiente a partir do nível da organização para baixo, considere projetar o
 {{site.data.keyword.cfee_full}} (CFEE) a partir do nível do espaço para cima.
 
@@ -28,12 +27,10 @@ rígida. Além de um espaço de desenvolvimento, por exemplo, é possível criar
 
 Crie organizações do Cloud Foundry separadas quando você tiver pessoas trabalhando em diferentes áreas de negócios e onde suas atividades não se sobreponham. Se houver dois grupos independentes, a criação de uma organização para cada um define limites claros para a entrega e o gerenciamento de reprodutores e recursos da equipe. É possível definir uma API para se comunicar entre as organizações.
 
-As organizações do Cloud Foundry podem ser criadas para corresponder à maneira como você deseja trabalhar em vez da estrutura dentro de uma empresa. Geralmente, as organizações da empresa podem mudar, mas o desenvolvimento e a manutenção de um aplicativo continuam independentemente. 
-Projete a instância do {{site.data.keyword.cfee_full}} para o tempo de vida dos aplicativos e não sobre a
+As organizações do Cloud Foundry podem ser criadas para corresponder à maneira como você deseja trabalhar em vez da estrutura dentro de uma empresa. Geralmente, as organizações da empresa podem mudar, mas o desenvolvimento e a manutenção de um aplicativo continuam independentemente. Projete a instância do {{site.data.keyword.cfee_full}} para o tempo de vida dos aplicativos e não sobre a
 estrutura da organização da empresa.
 
-O desenvolvimento e a implementação iterativos podem resultar em apps que se expandem rapidamente. Seu design do processo de entrega deve ser capaz de aumentar a capacidade de modo rápido e fácil. Você deseja desenvolvimento contínuo com uma taxa de implementação rápida. 
-Ter os espaços de desenvolvimento e de produção na mesma organização do CFEE fornece acesso aos mesmos recursos. O gerenciamento de espaços diferentes dentro de uma única organização reduz a carga de trabalho de administração. As
+O desenvolvimento e a implementação iterativos podem resultar em apps que se expandem rapidamente. Seu design do processo de entrega deve ser capaz de aumentar a capacidade de modo rápido e fácil. Você deseja desenvolvimento contínuo com uma taxa de implementação rápida. Ter os espaços de desenvolvimento e de produção na mesma organização do CFEE fornece acesso aos mesmos recursos. O gerenciamento de espaços diferentes dentro de uma única organização reduz a carga de trabalho de administração. As
 equipes de desenvolvimento, teste e operações poderão colaborar facilmente se estiverem trabalhando dentro da
 mesma organização do CFEE.
 

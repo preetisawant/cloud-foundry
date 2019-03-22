@@ -6,7 +6,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-11-09"
+lastupdated: "2019-01-08"
 
 
 
@@ -25,8 +25,7 @@ lastupdated: "2018-11-09"
 {: #cfee_diff}
 
 É possível usar o {{site.data.keyword.cloud}} Foundry público para executar aplicativos nativos da
-nuvem que estão usando o Cloud Foundry para configuração simples, ajuste de escala poderoso e gerenciamento de tráfego. 
-Você também tem acesso fácil a todos os serviços do {{site.data.keyword.cloud}}.
+nuvem que estão usando o Cloud Foundry para configuração simples, ajuste de escala poderoso e gerenciamento de tráfego. Você também tem acesso fácil a todos os serviços do {{site.data.keyword.cloud}}.
 
 É possível usar o {{site.data.keyword.cfee_full}} para tudo como você faria com o Cloud Foundry público,
 mas também para criar e gerenciar ambientes isolados para hospedar os aplicativos do Cloud Foundry exclusivamente para a
@@ -74,10 +73,10 @@ operacionais.
 
 Há duas opções de hardware no tipo de infraestrutura do Kubernetes na qual a instância do CFEE é implementada:
 hardware _Virtual compartilhado_ ou _Virtual dedicado_. Com o hardware _Virtual compartilhado_, os nós do trabalhador (no qual o contêiner da plataforma Cloud Foundry é implementado) são
-distribuídos entre você e outros clientes IBM. Com o _Virtual dedicado_, os nós do trabalhador são
-hospedados no hardware que é dedicado exclusivamente à sua conta. Observe que, em ambos os casos (_Virtual compartilhado_ e _Virtual dedicado_, cada nó do trabalhador é um único locatário para o
-cliente. Isso significa que as células do Cloud Foundry nas quais os aplicativos são executados não são compartilhadas
-com outros clientes.
+distribuídos entre você e outros clientes IBM.  Com o _Virtual dedicado_, os nós do trabalhador são
+hospedados no hardware que é dedicado exclusivamente à sua conta.  Observe que, em ambos os casos, _Virtual
+compartilhado_ e _Virtual dedicado_, cada nó do trabalhador é um único locatário para o cliente.  Isso significa que as células do Cloud Foundry, nas quais os aplicativos são executados, não são compartilhadas com
+outros clientes.
 
 ## Posso escalar a capacidade de um CFEE?
 {: #scaling}
@@ -87,33 +86,33 @@ incluindo ou removendo as células do Cloud Foundry.
 
 ## Posso fazer upgrade do CFEE para uma nova versão? Como isso funciona?
 {: #upgrading}
-Sim. A interface com o usuário do CFEE o notifica quando há novas versões do CFEE. Você controla quando atualizar para uma
+Sim. A interface com o usuário do CFEE o notifica quando há novas versões do CFEE.  Você controla quando atualizar para uma
 nova versão. A atualização de versão do CFEE é chamada pelos administradores do CFEE na interface com o usuário. As
 atualizações de versão do CFEE podem empacotar novas versões de seus componentes ou serviços de suporte (por exemplo, Cloud
-Foundry, Kubernetes, etc.). Atualize o plano de controle do CFEE primeiro e, em seguida, as células do Cloud Foundry. O
+Foundry, Kubernetes, etc.).  Atualize o plano de controle do CFEE primeiro e, em seguida, as células do Cloud Foundry.  O
 processo de atualização é otimizado para minimizar a interrupção.
 
 ## O que é necessário para criar uma instância do CFEE?
 {: #create}
 
-É possível localizar o serviço do CFEE listado no catálogo do {{site.data.keyword.Bluemix_notm}}. É
+É possível localizar o serviço do CFEE listado no catálogo do {{site.data.keyword.Bluemix_notm}}.  É
 necessário ter uma conta do {{site.data.keyword.Bluemix_notm}} atualizada e as permissões para o
-serviço do CFEE e seus serviços suportados (Kubernetes, Cloud Object Storage e Compose for PostgreSQL). Depois de ter
-essas permissões, apenas forneça um nome para o ambiente e clique em _Criar_. A criação leva
+serviço do CFEE e seus serviços suportados (Kubernetes, Cloud Object Storage e Compose for PostgreSQL).  Depois de ter
+essas permissões, apenas forneça um nome para o ambiente e clique em _Criar_.  A criação leva
 aproximadamente 90 minutos.
 
 ## Posso usar os serviços do {{site.data.keyword.Bluemix_notm}} no CFEE?
 {: #Services-ibmcloud}
 
-Com certeza! Por serem integrados no {{site.data.keyword.Bluemix_notm}}, os desenvolvedores em um CFEE
+Com certeza!  Por serem integrados no {{site.data.keyword.Bluemix_notm}}, os desenvolvedores em um CFEE
 podem criar instâncias de serviço do {{site.data.keyword.Bluemix_notm}} (ou usar instâncias existentes) e
 ligá-las aos aplicativos implementados nos espaços do CFEE.
 
 ## Posso ter meus próprios serviços no CFEE?
 {: #Services-ibmcloud}
 
-Sim. Um administrador pode registrar um broker de serviço no CFEE e disponibilizar os planos de serviços
-customizados para os usuários neste CFEE. O mercado local do MCFEE inclui os serviços do catálogo do
+Sim.  Um administrador pode registrar um broker de serviço no CFEE e disponibilizar os planos de serviços
+customizados para os usuários neste CFEE.  O mercado local do MCFEE inclui os serviços do catálogo do
 {{site.data.keyword.Bluemix_notm}} mais quaisquer atendimentos ao cliente gerenciados pelo broker de
 serviço local do CFEE.
 
@@ -122,7 +121,6 @@ serviço local do CFEE.
 
 Como qualquer outro serviço do {{site.data.keyword.Bluemix_notm}}, o acesso a um CFEE é controlado por meio
 do _Identity & Access Management_ (IAM). A designação de políticas de acesso de usuário
-(individualmente ou por meio de grupos de acesso) com funções específicas fornece a elas níveis específicos de acesso a um CFEE. 
-Além do acesso ao serviço do CFEE, o acesso às organizações e espaços do Cloud Foundry no CFEE é controlado por meio da
+(individualmente ou por meio de grupos de acesso) com funções específicas fornece a elas níveis específicos de acesso a um CFEE.  Além do acesso ao serviço do CFEE, o acesso às organizações e espaços do Cloud Foundry no CFEE é controlado por meio da
 associação e das funções do Cloud Foundry designadas aos usuários em organizações e espaços específicos.
 

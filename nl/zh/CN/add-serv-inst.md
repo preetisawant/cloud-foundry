@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -41,8 +41,9 @@ lastupdated: "2018-11-16"
 {: #adding-services-inspace}
 
 您可以将 {{site.data.keyword.Bluemix_notm}} 服务实例绑定到 CFEE 空间中部署的应用程序。要能够将 IBM Cloud 服务实例绑定到 CFEE 中部署的应用程序，必须先将该实例添加到部署了该应用程序的 CFEE 空间。要能够向 CFEE 空间添加 {{site.data.keyword.Bluemix_notm}} 服务实例，需要先满足以下条件：
+* 要添加其实例的服务不能是 Cloud Foundry 服务。只有支持资源组和 IAM 的 {{site.data.keyword.Bluemix_notm}} 服务可以添加（创建别名）到 CFEE。实例化到公共 Cloud Foundry 组织、空间和角色的服务无法添加（创建别名）到 CFEE。{{site.data.keyword.Bluemix_notm}} 服务正逐步转为使用资源组而受益。服务转为使用资源组而非 Cloud Foundry 组织和空间后，您可以将该服务先前存在的任何实例迁移到资源组，迁移时可将其添加到 CFEE。请参阅[将 Cloud Foundry 服务实例和应用程序迁移到资源组](https://console.cloud.ibm.com/docs/resources/instance_migration.html#migrate)。
 * {{site.data.keyword.Bluemix_notm}} 服务必须在 CFEE 实例所在的 {{site.data.keyword.Bluemix_notm}} 帐户中可用。
-* 您必须有权访问 {{site.data.keyword.Bluemix_notm}} 服务实例本身。有关更多信息，请查看 {{site.data.keyword.Bluemix_notm}} 标题中**管理 > 用户**菜单下的“身份和访问权”页面，以检查当前帐户访问策略。
+* 您必须对 {{site.data.keyword.Bluemix_notm}} 服务实例本身具有_操作员_平台角色（或更高级别角色）。有关更多信息，请查看 {{site.data.keyword.Bluemix_notm}} 标题中**管理 > 用户**菜单下的“身份和访问权”页面，以检查当前帐户访问策略。
 
 要向 CFEE 空间添加现有 {{site.data.keyword.Bluemix_notm}} 服务实例，请执行以下操作：
 1. 转至 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)。  
@@ -63,10 +64,11 @@ lastupdated: "2018-11-16"
    **注：**向 CFEE 空间添加 {{site.data.keyword.Bluemix_notm}} 服务时，会在该空间中创建该服务实例的别名。从 CFEE 空间中**除去**服务实例时（通过位于表中相应服务实例行最右侧的菜单），不会从公共帐户中删除该服务。该操作只会从特定的 CFEE 帐户中除去该服务，并且该服务不再可用于绑定到该 CFEE 空间中的应用程序。此外，从 {{site.data.keyword.Bluemix_notm}} 帐户中删除服务实例本身时，该服务将不再可用于任何 CFEE 空间。 
 
 ## 在 CFEE 空间的用户界面中创建 {{site.data.keyword.Bluemix_notm}} 服务实例
-{: #creating-services_inspace}
+{: #creating-services-inspace}
+
 您可以在 CFEE 空间内创建 {{site.data.keyword.Bluemix_notm}} 服务实例。创建 {{site.data.keyword.Bluemix_notm}} 服务实例会生成以下结果：
 * 在 IBM Cloud 中创建 {{site.data.keyword.Bluemix_notm}} 服务实例。这等同于在 {{site.data.keyword.Bluemix_notm}} [目录](https://console.bluemix.net/catalog)中创建服务实例。
-* 将 {{site.data.keyword.Bluemix_notm}} 服务实例的别名添加（创建别名）到启动创建操作的 CFEE 空间中。别名服务实例（CFEE 空间中）是对实际服务实例（IBM Cloud 帐户中）的引用。服务实例别名允许开发者通过自动处理所有凭证，从而与服务实例进行交互（例如，绑定到应用程序）。
+* 将 {{site.data.keyword.Bluemix_notm}} 服务实例的别名添加（创建别名）到启动创建操作的 CFEE 空间中。别名服务实例（CFEE 空间中）是对实际服务实例（IBM Cloud 帐户中）的引用。服务实例别名允许开发者通过自动处理所有凭证，从而与服务实例进行交互（例如，绑定到应用程序）。.
 
 要在 CFEE 空间内创建服务实例，请执行以下操作：
 1. 在目标空间页面中，转至**服务**选项卡，然后单击**创建服务**。这将打开 {{site.data.keyword.cfee_full_notm}} 的**市场**视图。该视图会列出两个源中的服务产品（请查看__源__列）：
@@ -152,7 +154,7 @@ lastupdated: "2018-11-16"
 ## 将服务绑定到应用程序
 {: #bind_services}
 
-具有针对 {{site.data.keyword.Bluemix_notm}} 服务实例的_编辑者_角色或更高角色的用户可以在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)或 CFEE 空间用户界面的“服务”选项卡中，将该实例绑定到 CFEE 空间中部署的应用程序。   
+对 {{site.data.keyword.Bluemix_notm}} 服务实例具有_操作员_平台角色（或更高级别角色）和_作者_服务角色（或更高级别角色）的用户可以在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)或 CFEE 空间用户界面的“服务”选项卡中，将该实例绑定到 CFEE 空间中部署的应用程序。   
 
 要在 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)中将服务实例绑定到应用程序，请执行以下操作：
 1. 转至 [Cloud Foundry 服务仪表板](https://console.bluemix.net/dashboard/cloudfoundry/services)，以查看 {{site.data.keyword.Bluemix_notm}} 帐户中可用的所有 {{site.data.keyword.Bluemix_notm}} 服务实例的统一视图。该视图还旨在显示哪些 {{site.data.keyword.Bluemix_notm}} 服务实例在哪些 CFEE 空间中可用（创建了别名）。可以展开服务实例以显示添加了该服务实例的 CFEE 空间。您可以进一步展开这些空间，以查看这些 CFEE 空间中所添加服务实例已绑定到的应用程序。 
@@ -198,7 +200,7 @@ IBM Cloud 帐户管理员（具有针对所有启用 IAM 的服务的_管理员_
   ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
   ```
 
-最简单的列入黑名单的形式是，通过发出以下命令，使服务产品（及其所有套餐）对当前帐户中的用户不可视：
+最简单的方式是，可以使用 `catalog backlist` 命令使服务产品（及其所有套餐）对当前帐户中的所有用户不可见：
 
   ```
   Ibmcloud catalog blacklist <thisService>

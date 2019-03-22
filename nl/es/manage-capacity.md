@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-15"
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,9 +15,9 @@ lastupdated: "2018-08-15"
 
 # Uso de recursos
 
-Los administradores y desarrolladores pueden ver cómo utilizan las aplicaciones y las células la capacidad de recursos (memoria y CPU) de un CFEE. Para supervisar el uso de recursos de un entorno CFEE:
+Los administradores y desarrolladores pueden ver cómo utilizan las aplicaciones y las células la capacidad de recursos (memoria y CPU) de un CFEE. Para supervisar el uso de recursos en una instancia de CFEE:
 
-1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Uso de recursos** en la parte izquierda del panel de navegación y abra la página _Uso de recursos_. En la página _Uso de recursos_ puede ir a _Aplicaciones_ o a las subentradas _Células_ para abrir las páginas correspondientes.  La información que se muestra en las páginas _Aplicaciones_ y _Células_ puede considerarse dos formas de desglosar el uso de recursos:
    * La página **Aplicaciones** analiza el uso de recursos según las aplicaciones agregadas entre instancias.
    * La página **Células** muestra el uso de recursos de las instancias de aplicación que se ejecutan en células específicas. El patrón de uso de recursos entre células puede proporcionar conocimientos en la distribución de carga y capacidad.  Por ejemplo, puede ayudar a identificar problemas con el equilibrio de carga de aplicaciones (p. ej., diferencias importantes en los recursos utilizados por una aplicación entre células) o el uso de recursos que se acerca a la capacidad total (p. ej., porcentajes altos del uso de recursos en todas las células).
@@ -36,11 +36,11 @@ La página Aplicaciones tiene dos secciones:
    
    **Nota:** Cuando las aplicaciones reservan más memoria de la que físicamente hay disponible, se muestra un esquema rojo punteado en el gráfico de barras de la memoria reservada para representar la representar la cantidad de memoria reservada por las aplicaciones seleccionadas.
 
-   Para mostrar el porcentaje de memoria y CPU utilizado por todas las apps o las apps seleccionadas en la tabla, pase el cursor por la parte correspondiente del gráfico.  Al pasar el cursor por la parte *todas las apps* del gráfico se muestra el porcentaje de memoria y CPU relativo al total disponible. Al pasar el cursor por la parte *apps seleccionadas* del gráfico se muestra el porcentaje de memoria y CPU relativo al total de memoria o CPU disponible.
+   Para mostrar el número que representa el porcentaje de memoria utilizada por todas las aplicaciones o las aplicaciones seleccionadas en la tabla, pase el cursor por la parte correspondiente del gráfico.  Al pasar el cursor por la parte *todas las apps* del gráfico, se muestra el porcentaje de memoria utilizada por todas las aplicaciones de CFEE en relación con el total disponible. Al pasar el cursor por la parte *apps seleccionadas* del gráfico, se muestra el porcentaje de memoria utilizada por todas las aplicaciones seleccionadas en la tabla, en relación con la memoria total disponible.
 
 2. Una tabla con todas las aplicaciones.  Cada fila de la tabla muestra información de recursos de la aplicación.  Al expandir una fila se muestra la información de uso de recursos de varias instancias de la aplicación.
 
-  La primera columna de la tabla es un recuadro de selección que determina si la aplicación correspondiente debe incluirse en el conjunto de *Apps seleccionadas* que debe incluirse en el gráfico de la parte superior de la página. Para incluir (o excluir) una aplicación en el conjunto seleccionado, haga clic en el recuadro de selección correspondiente.  Cuando se selecciona o se desmarca una aplicación para su incorporación en el conjunto, el gráfico se actualiza.  La descripción _Apps seleccionadas_ en la parte derecha del gráfico de barras indica (en paréntesis) el número de aplicaciones seleccionadas actualmente para su incorporación en el gráfico.
+  La primera columna de la tabla es un recuadro de selección que determina si la aplicación correspondiente debe incluirse en el conjunto de *Apps seleccionadas* que debe incluirse en el gráfico de la parte superior de la página. Para incluir (o excluir) una aplicación en el conjunto seleccionado, pulse el recuadro de selección correspondiente.  Cuando se selecciona o se desmarca una aplicación para su incorporación en el conjunto, el gráfico se actualiza.  La descripción _Apps seleccionadas_ en la parte derecha del gráfico de barras indica (en paréntesis) el número de aplicaciones seleccionadas actualmente para su incorporación en el gráfico.
 
   La información siguiente se muestra en forma de columnas en la tabla de aplicaciones:
    * **Nombre de aplicación**: el nombre de la aplicación o la instancia de aplicación. Si el usuario no tiene permiso para acceder a la aplicación, en su lugar, se mostrará el GUID de aplicación.
@@ -78,7 +78,7 @@ La página Células tiene dos secciones:
 
 2. Una tabla que lista todas las células y las instancias de aplicación que se ejecutan en las mismas.  Cada fila de la tabla muestra información de recursos para dicha célula e instancia de aplicación.
 
-  La primera columna de la tabla es un recuadro de selección que determina si la instancia aplicación correspondiente debe incluirse en el conjunto de *Instancias de la app seleccionadas* para incluirla en el gráfico de la parte superior de la página. Para incluir (o excluir) una instancia de aplicación en el conjunto seleccionado, haga clic en el recuadro de selección correspondiente.  Cuando se selecciona o se desmarca una instancia de aplicación para su incorporación en el conjunto, el gráfico se actualiza.
+  La primera columna de la tabla es un recuadro de selección que determina si la instancia aplicación correspondiente debe incluirse en el conjunto de *Instancias de la app seleccionadas* para incluirla en el gráfico de la parte superior de la página. Para incluir (o excluir) una instancia de una aplicación en el conjunto seleccionado, pulse el recuadro de selección correspondiente.  Cuando se selecciona o se desmarca una instancia de aplicación para su incorporación en el conjunto, el gráfico se actualiza.
 
   La información siguiente se muestra como columnas en la tabla:
    * **Nombre de célula**: El nombre de la célula.
@@ -86,7 +86,7 @@ La página Células tiene dos secciones:
    * **Instancias**: El número de instancias de aplicación que se ejecutan en la célula.
    * **Memoria física**: MB de la memoria física utilizados por la instancia de aplicación que se ejecuta en la célula.
    * **Memoria reservada**: MB de la memoria reservada por la instancia de aplicación que se ejecuta en la célula.
-   * **CPU (% )**: El porcentaje de CPU total disponible en el CFEE utilizado por la instancia de aplicación que se ejecuta en la célula.
+   * **CPU (% de célula)**: El porcentaje de CPU total disponible en el CFEE utilizado por la instancia de aplicación que se ejecuta en la célula.
 
 ### Filtración de células e instancias de app
 Puede filtrar el contenido de la tabla mediante el desplegable del filtro **Células** ubicado sobre la tabla y seleccionando las células que se deben mostrar en la tabla.
@@ -94,3 +94,17 @@ Puede filtrar el contenido de la tabla mediante el desplegable del filtro **Cél
 Asimismo, puede utilizar el campo de entrada de filtro sobre la tabla para mostrar únicamente las instancias de aplicación que coinciden con la serie que ha introducido en el campo de filtro.  El filtro se refleja en la tabla y en el gráfico sobre la misma.
 
 **Nota:** Los filtros funcionan de forma independiente a las filas de la tabla seleccionadas (mediante el recuadro de selección de la primera tabla de columnas) para la incorporación en el conjunto de _Instancias de la app seleccionadas_ incluidas en el gráfico anterior. Por ejemplo, si hay un total de diez instancias de aplicación en el entorno de CFEE y cinco de ellas se han seleccionado para su incorporación en el gráfico, cuando aplique el filtro que coincide únicamente con una instancia de aplicación, solo esta aparecerá en la tabla.  Además, el conjunto de _Instancias de la app seleccionadas_ ahora solo incluirá la instancia de la app, y el gráfico se actualizará en consecuencia.  Cuando elimine el filtro, las diez instancias de aplicación se mostrarán de nuevo en la tabla y el conjunto de _Instancias de la app seleccionadas_ se restablecerá para incluir todas las instancias de app.
+
+## Métricas de memoria
+{: #memory_metrics}
+
+Hay varias métricas de memoria disponibles en CFEE.  Esta diversidad de métricas de memoria responde a las diversas perspectivas desde las que se puede analizar la utilización de memoria. La utilización de memoria se puede medir en relación con la capacidad disponible en la célula o células de Cloud Foundry o en relación con la capacidad física total del nodo trabajador Kubernetes en el que se suministran las células (que puede incluir otra utilización de memoria no relacionada con Cloud Foundry). La capacidad de memoria también se puede ver desde la perspectiva de la memoria reservada (asignada) por las aplicaciones o desde la perspectiva de la memoria realmente utilizada por dichas aplicaciones.  
+
+Estas son las métricas de memoria disponibles para los usuarios de una instancia de CFEE:
+
+* Memoria total utilizada por los nodos trabajadores Kubernetes que dan soporte a las células de Cloud Foundry en relación con la capacidad total de memoria de dichos nodos.  Esto refleja la memoria de nodo trabajador utilizada no solo por las células de Cloud Foundry, sino también por el sistema o sobrecarga de memoria caché no relacionada con Cloud Foundry.  Esto se muestra en el indicador **Uso global** de la página **Visión general**.
+* Memoria asignada a aplicaciones en relación con la memoria de célula disponible, independientemente de que dicha memoria se utilice realmente o no. Esto se muestra en el indicador **Asignada** de la página **Visión general**.
+* Memoria física utilizada por las aplicaciones en relación con la memoria de célula disponible. La memoria de aplicación global utilizada se muestra en el indicador **Uso de app** de la página **Visión general**. La memoria utilizada por aplicaciones específicas se muestra en la página **Uso de recursos - Aplicaciones**.
+* Memoria utilizada por las células de Cloud Foundry en relación con la capacidad de memoria del nodo trabajador.  Esto se muestra en la página **Uso de recursos - Células**.
+* Memoria total utilizada por los nodos trabajadores (relacionada o no con Cloud Foundry). Esto se muestra en la página **Actualizaciones  y escalado**, tanto para los nodos que dan soporte a las células de CFEE como para los nodos que dan soporte  al plano de control de CFEE.
+* Se muestran métricas adicionales en los paneles de control de Grafana, que se pueden iniciar desde la página **Supervisión**.  Estas métricas muestran capacidad y uso de memoria detallados para las células de Cloud Foundry y el clúster y los nodos trabajadores de Kubernetes.

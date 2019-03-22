@@ -18,9 +18,9 @@ lastupdated: "2018-11-08"
 {: #domains}
 
 Há dois tipos de domínios do Cloud Foundry:
-* Domínios compartilhados disponíveis para qualquer aplicativo em qualquer espaço dentro do {{site.data.keyword.cfee_full_notm}}. Para acessar os domínios compartilhados, acesse a página **Domínios** na área de janela de
+* Domínios compartilhados disponíveis para qualquer aplicativo em qualquer espaço dentro do {{site.data.keyword.cfee_full_notm}}.  Para acessar os domínios compartilhados, acesse a página **Domínios** na área de janela de
 navegação esquerda da IU (em *Operações*).
-* Domínios privados disponíveis apenas para aplicativos e espaços dentro de uma organização específica. Para
+* Domínios privados disponíveis apenas para aplicativos e espaços dentro de uma organização específica.  Para
 acessar os domínios dentro de uma organização, acesse a página **Organizações** na área de
 janela de navegação esquerda da IU, abra a organização e acesse a guia **Domínios**.
 
@@ -36,8 +36,7 @@ navegação esquerda da IU, abra a organização e acesse a guia **Domínios**.
 Na página _Domínios_ (para domínios compartilhados) ou na guia _Domínios_ de
 uma organização específica (para domínios privados), clique em **Criar domínio** para criar um domínio e insira um nome exclusivo.
 
-**Nota:** os nomes de domínio devem ser exclusivos em todo o escopo do {{site.data.keyword.cfee_full_notm}}.  
-Ou seja, um domínio privado não pode tomar o nome de nenhum domínio compartilhado ou privado dentro de um determinado {{site.data.keyword.cfee_full_notm}}
+**Nota:** os nomes de domínio devem ser exclusivos em todo o escopo do {{site.data.keyword.cfee_full_notm}}.  Ou seja, um domínio privado não pode tomar o nome de nenhum domínio compartilhado ou privado dentro de um determinado {{site.data.keyword.cfee_full_notm}}
 
 Também é possível criar um domínio compartilhado por meio da CLI do Cloud Foundry emitindo o comando a
 seguir:

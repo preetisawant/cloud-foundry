@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -66,9 +66,9 @@ A continuación se muestran las geografías, ubicaciones y centros de datos dond
 |América del Norte | Washington DC (wdc04) | us-geo | us-east |
 |América del Norte | Washington DC (wdc06) | us-geo | us-east | 
 |América del Norte | Washington DC (wdc07) | us-geo | us-east |
-|América del Norte | Dallas (das10) | us-geo | us-south |
-|América del Norte | Dallas (das12) | us-geo | us-south |
-|América del Norte | Dallas (das13) | us-geo |us-south |
+|América del Norte | Dallas (dal10) | us-geo | us-south |
+|América del Norte | Dallas (dal12) | us-geo | us-south |
+|América del Norte | Dallas (dal13) | us-geo |us-south |
 |América del Norte | San José (sjc03) | us-geo | us-south |
 |América del Norte | San José (sjc04) | us-geo | us-south |
 |América del Sur &nbsp; &nbsp;| Sao Paolo (sao01) |  us-geo | us-south |
@@ -81,18 +81,20 @@ A continuación se muestran las geografías, ubicaciones y centros de datos dond
 |Europa | Frankfurt (fra02) | eu-geo | eu-de |
 |Europa | Frankfurt (fra04) | eu-geo | eu-de | 
 |Europa | Frankfurt (fra05) |  eu-geo | eu-de |
+|Europa | Milán (mil01) |  eu-geo | eu-de |
 |Asia Pacífico | Melbourne (mel01) | ap-geo | au-syd |
 |Asia Pacífico | Sídney (syd01) | ap-geo | au-syd |
 |Asia Pacífico | Sídney (syd04) | ap-geo | au-syd | 
 |Asia Pacífico | Hong Kong (hkg02) | ap-geo | au-syd |
 |Asia Pacífico | Hong Kong (seo01) | ap-geo | au-syd |
 |Asia Pacífico | Singapur (sng01) | ap-geo | au-syd |
-|Asia Pacífico | Tokio (gok02) | ap-geo | au-syd |
-|Asia Pacífico | Tokio (gok04) | ap-geo | au-syd |
-|Asia Pacífico | Tokio (gok05) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (tok02) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (tok04) | ap-geo | au-syd |
+|Asia Pacífico | Tokio (tok05) | ap-geo | au-syd |
+|Asia Pacífico | Chennai (che01) | ap-geo | au-syd |
 {: caption="Tabla 2. Destinos de suministro para los servicios de soporte y CFEE" caption-side="top"}
 
-Por **ejemplo**, el servicio CFEE puede suministrarse en tres centros de datos en Europa: Amsterdam (1 centro de datos), Frankfurt (3 centros de datos), Londres (3 centros de datos), Oslo (1 centro de datos) y París (1 centro de datos). Si se suministra CFEE en Frankfurt, la instancia de servicio de Cloud Object Store se desplegará en la región _ eu-geo _ y la instancia de servicio de Compose for PostgreSQL se desplegará en la región de Cloud Foundry pública de _eu-de_.
+Por **ejemplo**, el servicio CFEE puede suministrarse en tres centros de datos en Europa: Amsterdam (1 centro de datos), Frankfurt (3 centros de datos), Londres (3 centros de datos), Oslo (1 centro de datos) y París (1 centro de datos). Si se suministra CFEE en Frankfurt, la instancia de servicio de Cloud Object Store se desplegará en la región _eu-geo_ y la instancia de servicio de Compose for PostgreSQL se desplegará en la región de Cloud Foundry pública de _eu-de_.
 
 Encontrará vídeos con información detallada y demostraciones sobre cómo trabajar con los servicios de CFEE en la [lista de reproducciones de vídeos de CFEE](https://ibm.biz/CFEE_Playlist){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
 {:tip}

@@ -36,15 +36,15 @@ IBM Cloud 계정이 평가판 계정이면 CFEE 인스턴스를 작성하려고 
 ## IBM Cloud 계정을 업그레이드하는 대신 SoftLayer 계정 사용
 {: #account-linkswitching}
 
-IBM Cloud 계정의 관리자 역할이 있는 경우 IBM Cloud 계정을 업그레이드하지 않고 CFEE 인스턴스를 작성하는 데 SoftLayer 계정을 사용할 수 있습니다. 
+IBM Cloud 계정의 관리자 역할이 있는 경우 IBM Cloud 계정을 업그레이드하지 않고 CFEE 인스턴스를 작성하는 데 SoftLayer 계정을 사용할 수 있습니다.
 
 
-**경고:** 지금 SoftLayer 계정을 사용하고 나중에 IBM Cloud 계정을 업데이트하는 경우(종량과금제 또는 구독 계정으로), 업데이트된 IBM Cloud 계정은 나중에 인프라 리소스를 작성할 때 (지금 설정하는 신임 정보의) Softlayer 계정을 계속 사용할 수 있습니다. 또한 나중에 Cloud Foundry Enterprise Environment를 작성하기 위해 다른 SofLayer 계정을 사용하는 경우 IBM Cloud 계정의 사용자가 지금 신임 정보를 설정한 SoftLayer 계정으로 작성된 인프라 리소스에 액세스하지 못할 수도 있습니다. 대신 IBM Cloud 계정을 업그레이드하십시오.
+**경고:** 지금 SoftLayer 계정을 사용하고 나중에 IBM Cloud 계정을 업데이트하는 경우(종량과금제 또는 구독 계정으로), 업데이트된 IBM Cloud 계정은 나중에 인프라 리소스를 작성할 때 (지금 설정하는 인증 정보의) Softlayer 계정을 계속 사용할 수 있습니다. 또한 나중에 Cloud Foundry Enterprise Environment를 작성하기 위해 다른 SofLayer 계정을 사용하는 경우 IBM Cloud 계정의 사용자가 지금 인증 정보를 설정한 SoftLayer 계정으로 작성된 인프라 리소스에 액세스하지 못할 수도 있습니다. 대신 IBM Cloud 계정을 업그레이드하십시오.
 
 IBM Cloud 계정을 업그레이드하지 않고 SoftLayer 계정을 사용하려면 다음을 수행하십시오(예시는 아래 화면 참조).
 1. IBM Cloud 계정이 업그레이드되지 않은 경우 표시되는 화면에서 **SoftLayer 계정 사용**을 클릭하십시오.
 2. SoftLayer 계정의 **사용자 이름** 및 **API 키**를 입력하십시오. SoftLayer의 사용자 이름 및 API 키를 가져오려면 [SoftLayer 콘솔](https://control.softlayer.com)에 액세스하십시오. SoftLayer에 로그인한 후 {{site.data.keyword.Bluemix_notm}} 계정에 연결하려는 계정을 선택하십시오. 계정을 선택하면 해당 계정의 프로파일 페이지가 열립니다. 페이지의 끝까지 아래로 스크롤하여 계정의 사용자 이름 및 API 키를 찾으십시오. API 키가 없는 경우 계정 소유자이면 이를 생성할 수 있습니다. 계정 소유자가 아니면 계정 소유자에게 API 키를 생성하도록 요청하십시오.
-3. **신임 정보 설정**을 클릭하십시오.
+3. **인증 정보 설정**을 클릭하십시오.
 
 ![계정 확인](img/UpgradeAccountPage_2.png)
 

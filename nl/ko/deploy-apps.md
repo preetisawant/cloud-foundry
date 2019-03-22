@@ -22,7 +22,7 @@ lastupdated: "2018-09-27"
 ## Cloud Foundry 명령을 사용하여 애플리케이션 배치
 {: #dep_apps}
 
-[Cloud Foundry CLI를 다운로드하여 설치 ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")하십시오. 
+[Cloud Foundry CLI를 다운로드하여 설치 ](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")하십시오.
 
 명령행 인터페이스를 설치한 후 다음 단계를 따르십시오.
 

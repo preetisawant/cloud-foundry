@@ -6,7 +6,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-11-09"
+lastupdated: "2019-01-08"
 
 
 
@@ -57,7 +57,7 @@ Il servizio CFEE viene eseguito su contenitori Kubernetes, che consentono di rid
 ## Quali sono le mie opzioni di isolamento quando creo un CFEE?
 {: #isolation}
 
-Hai due opzioni hardware sul tipo di infrastruttura Kubernetes in cui viene distribuita l'istanza CFEE: hardware _Virtual shared_ o _Virtual dedicated_. Con l'hardware _Virtual shared_, i nodi di lavoro (in cui viene distribuito il contenitore della piattaforma Cloud Foundry) vengono distribuiti tra te e gli altri clienti IBM.  Con _Virtual dedicated_ i nodi di lavoro sono ospitati sull'hardware dedicato in modo esclusivo al tuo account.  Nota che in entrambi i casi (_Virtual shared_ e _Virtual dedicated_), ogni nodo di lavoro è a singolo tenant per il cliente.  Ciò significa che le celle Cloud Foundry su cui vengono eseguite le applicazioni non sono condivise con gli altri clienti.
+Hai due opzioni hardware sul tipo di infrastruttura Kubernetes in cui viene distribuita l'istanza CFEE: hardware _Virtual shared_ o _Virtual dedicated_. Con l'hardware _Virtual shared_, i nodi di lavoro (in cui viene distribuito il contenitore della piattaforma Cloud Foundry) vengono distribuiti tra te e gli altri clienti IBM.  Con _Virtual dedicated_ i nodi di lavoro sono ospitati sull'hardware dedicato in modo esclusivo al tuo account.  Nota che in entrambi i casi, _Virtual shared_ e _Virtual dedicated_, ogni nodo di lavoro è a singolo tenant per il cliente.  Ciò significa che le celle Cloud Foundry in cui vengono eseguite le applicazioni non sono condivise con altri clienti.
 
 ## Posso ridimensionare la capacità di un CFEE?
 {: #scaling}
@@ -81,7 +81,7 @@ Assolutamente!  Essendo integrati in {{site.data.keyword.Bluemix_notm}}, gli svi
 ## Posso disporre dei miei servizi nel mio CFEE?
 {: #Services-ibmcloud}
 
-Sì. Un amministratore può registrare un broker di servizi in CFEE e rendere i piani di servizi personalizzati disponibili agli utenti in tale CFEE.  Il marketplace MCFEE locale include i servizi dal catalogo {{site.data.keyword.Bluemix_notm}} più tutti i servizi del cliente gestiti dal broker di servizi locale di CFEE.
+Sì.  Un amministratore può registrare un broker di servizi in CFEE e rendere i piani di servizi personalizzati disponibili agli utenti in tale CFEE.  Il marketplace MCFEE locale include i servizi dal catalogo {{site.data.keyword.Bluemix_notm}} più tutti i servizi del cliente gestiti dal broker di servizi locale di CFEE.
 
 ## Come posso controllare l'accesso dell'utente a un CFEE?
 {: #Services}

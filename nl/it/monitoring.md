@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -98,7 +98,7 @@ Di seguito vengono riportate le istruzioni per l'installazione delle CLI richies
 
 ### Avvia le console di monitoraggio sul tuo proxy web locale
 
-5. Avvia la console Grafana per visualizzare le analisi sulle metriche selezionate.  Esistono dashboard Grafana predefiniti inclusi nell'istanza CFEE. Questi dashboard predefiniti sono interattivi e ti forniscono una vista dell'infrastruttura utilizzata per ospitare l'istanza CFEE. (Cluster Kubernetes). Una volta avviata la console Grafana, fai clic sul pulsante **Home** nella parte superiore della console Grafana per selezionare uno dei dashboard pre-distribuiti (consulta il seguente elenco), che rappresenterà graficamente le metriche corrispondenti:
+5. Avvia la console Grafana per visualizzare le analisi sulle metriche selezionate.  Ci sono dei dashboard Grafana predefiniti inclusi nell'istanza CFEE. Questi dashboard predefiniti sono interattivi e ti forniscono una vista dell'infrastruttura utilizzata per ospitare l'istanza CFEE (cluster Kubernetes). Una volta avviata la console Grafana, fai clic sul pulsante **Home** nella parte superiore della console Grafana per selezionare uno dei dashboard pre-distribuiti (consulta il seguente elenco), che rappresenterà graficamente le metriche corrispondenti:
 
    Esiste un utente `admin` predefinito in Grafana, la cui password predefinita è impostata su `admin`. Ti consigliamo di accedere con il nome utente e la password `admin/admin` e di modificarle in nuove credenziali:
 
@@ -106,31 +106,31 @@ Di seguito vengono riportate le istruzioni per l'installazione delle CLI richies
 
    I seguenti dashboard predefiniti sono forniti con l'istanza CFEE e sono disponibili dall'elenco a discesa _Home_.
 
-   I dashboard per l'infrastruttura Kubernetes che supporta l'ambiente CFEE:
-   - Dashboard _Kubernetes Capacity Planing_ 
-        - Mostra la capacità dell'infrastruttura Kubernetes.
-   - Dashboard _Kubernetes Cluster Health_
-        - Mostra l'integrità del cluster Kubernetes.
-   - Dashboard _Kubernetes Cluster Status_
-        - Mostra lo stato del cluster Kubernetes.
-   - Dashboard _Kubernetes Resource Requests_
-        - Mostra la CPU, la memoria e altri parametri utilizzati nel cluster Kubernetes.
-   - Dashboard _Nodes_
-        - Mostra i dettagli di ogni nodo di lavoro del cluster Kubernetes.
-   - Dashboard _Pods_
-        - Mostra i dettagli di ogni pod in esecuzione nel cluster Kubernetes.
-   - Dashboard _Replica Set_
-        - Mostra lo stato delle serie di repliche Kubernetes.
-   - Dashboard _Deployment_
-        - Mostra lo stato delle tue distribuzioni Kubernetes.
-
-   Dashboard Cloud Foundry:
-   - Dashboard _CF: Cells Capacity_
+    Dashboard Cloud Foundry:
+   - _CF: Cells Capacity_ 
         - Mostra lo stato generale delle celle Cloud Foundry in cui sono distribuite le applicazioni Cloud Foundry.
-   - Dashboard _CF: Router_
-        - Mostra lo stato del router Cloud Foundry in esecuzione sul tuo ambiente CFEE.
-   - Dashboard _CF: Diego_Cell_
+   - _CF: Diego Cell dashboard_ 
         - Mostra lo stato delle celle Cloud Foundry e dei componenti di Diego.
+   - _CF: Router_ 
+        - Mostra lo stato del router Cloud Foundry in esecuzione sul tuo ambiente CFEE.
+  
+   I dashboard per l'infrastruttura Kubernetes che supporta l'ambiente CFEE:
+   - _Deployment_ 
+        - Mostra lo stato delle tue distribuzioni Kubernetes.
+   - _Kubernetes Cluster Health_ 
+        - Mostra l'integrità del cluster Kubernetes.
+   - _Kubernetes Cluster Status_ 
+        - Mostra lo stato del cluster Kubernetes.
+   - _Kubernetes Resource Requests_ 
+        - Mostra la CPU, la memoria e altri parametri utilizzati nel cluster Kubernetes.
+   - _Pods_ 
+        - Mostra i dettagli di ogni pod in esecuzione nel cluster Kubernetes.
+   - _Replica Set_ 
+        - Mostra lo stato delle serie di repliche Kubernetes.       
+   - _Worker Nodes_ 
+        - Mostra i dettagli di ogni nodo di lavoro del cluster Kubernetes.
+   - _Worker Nodes Overview_ 
+        - Mostra l'utilizzo di CPU e memoria dell'infrastruttura Kubernetes, insieme al suo traffico di rete.
 
 6. Facoltativamente, puoi anche avviare la console Prometheus per visualizzare i dati non elaborati raccolti dai server Prometheus e Prometheus Alertmanager per gestire gli avvisi inviati dal server Prometheus:
 

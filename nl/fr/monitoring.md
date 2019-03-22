@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -43,7 +43,7 @@ Grafana est une plateforme d'analyse open source pour toutes les métriques que 
 ## Initiation à la surveillance
 {: #gettingStarted_monitor}
 
-Les composants Prometheus et Grafana qui contiennent la solution de surveillance sont préinstallés dans l'infrastructure Kubernetes qui prend en charge l'instance CFEE.  L'accès aux outils de surveillance nécessite de réacheminer les ports des serveurs Prometheus, Prometheus AlertManager et Grafana. Cette opération s'effectue à l'aide de l'interface de ligne de commande Kubernetes.
+Les composants Prometheus et Grafana qui contiennent la solution de surveillance sont préinstallés dans l'infrastructure Kubernetes qui prend en charge l'instance CFEE.  L'accès aux outils de surveillance nécessite de réacheminer les ports des serveurs Prometheus, Prometheus AlertManager et Grafana.  Cette opération s'effectue à l'aide de l'interface de ligne de commande Kubernetes.
 Les sections qui suivent vous guident dans les étapes d'installation de l'interface de ligne de commande requise, de réacheminement des ports des serveurs et de lancement des consoles.
 
 **Remarque :** les instructions suivantes sont également disponibles dans l'interface utilisateur {{site.data.keyword.cfee_full}}.  Ouvrez l'interface utilisateur de l'instance CFEE, puis cliquez sur **Surveillance** dans le volet de navigation de gauche pour afficher les instructions.
@@ -98,7 +98,7 @@ Les sections qui suivent vous guident dans les étapes d'installation de l'inter
 
 ### Lancement des consoles de surveillance sur votre proxy Web local
 
-5. Lancez la console Grafana pour visualiser l'analyse de métriques sélectionnées.  Des tableaux de bord Grafana par défaut sont inclus dans l'instance CFEE. Ces tableaux de bord par défaut sont interactifs et vous permettent de visualiser l'infrastructure utilisée pour héberger votre instance CFEE. (cluster Kubernetes). Une fois la console Grafana lancée, cliquez sur le bouton **Accueil** en haut de la console Grafana pour sélectionner l'un des tableaux de bord prédéployés (voir la liste ci-dessous), qui présentera sous forme graphique les métriques correspondantes :
+5. Lancez la console Grafana pour visualiser l'analyse de métriques sélectionnées.  Des tableaux de bord Grafana par défaut sont inclus dans l'instance CFEE. Ces tableaux de bord par défaut sont interactifs et vous permettent de visualiser l'infrastructure utilisée pour héberger votre instance CFEE (cluster Kubernetes). Une fois la console Grafana lancée, cliquez sur le bouton **Accueil** en haut de la console Grafana pour sélectionner l'un des tableaux de bord prédéployés (voir la liste ci-dessous), qui présentera sous forme graphique les métriques correspondantes :
 
    Dans Grafana, il existe un utilisateur `admin` par défaut dont le mot de passe par défaut est `admin`. Nous vous recommandons de vous connecter avec le nom d'utilisateur et le mot de passe `admin/admin`, puis de les remplacer par de nouvelles données d'identification :
 
@@ -106,31 +106,31 @@ Les sections qui suivent vous guident dans les étapes d'installation de l'inter
 
    Les tableaux de bord par défaut suivants sont fournis avec l'instance CFEE et sont disponibles à partir du menu déroulant _Accueil_.
 
-   Tableaux de bord pour l'infrastructure Kubernetes prenant en charge votre environnement CFEE :
-   - Tableau de bord _Kubernetes Capacity Planing_
-        - Affiche la capacité de l'infrastructure kubernetes.
-   - Tableau de bord _Kubernetes Cluster Health_
-        - Affiche l'état de santé du cluster Kubernetes.
-   - Tableau de bord _Kubernetes Cluster Status_
-        - Affiche le statut du cluster Kubernetes.
-   - Tableau de bord _Kubernetes Resource Requests_
-        - Affiche l'unité centrale et la mémoire utilisées ainsi que d'autres paramètres du cluster Kubernetes.
-   - Tableau de bord _Nodes_
-        - Affiche des détails concernant chaque noeud du cluster Kubernetes.
-   - Tableau de bord _Pods_
-        - Affiche des détails concernant chaque pod du cluster Kubernetes.
-   - Tableau de bord _Replica Set_
-        - Affiche le statut des ensembles de répliques Kubernetes.
-   - Tableau de bord _Deployment_
-        - Affiche le statut de vos déploiements Kubernetes.
-
-   Tableaux de bord Cloud Foundry :
-   - Tableau de bord _CF: Cells Capacity_
+    Tableaux de bord Cloud Foundry :
+   - _CF: Cells Capacity_ 
         - Affiche l'état général des cellules Cloud Foundry dans lesquelles les applications Cloud Foundry sont déployées.
-   - Tableau de bord _CF: Router_
-        - Affiche le statut du routeur Cloud Foundry qui s'exécute dans votre environnement CFEE.
-   - Tableau de bord _CF: Diego_Cell_
+   - _CF: Diego Cell_ 
         - Affiche le statut des cellules Cloud Foundry et des composants Diego.
+   - _CF: Router_ 
+        - Affiche le statut du routeur Cloud Foundry qui s'exécute dans votre environnement CFEE.
+  
+   Tableaux de bord pour l'infrastructure Kubernetes prenant en charge votre environnement CFEE :
+   - _Deployment_ 
+        - Affiche le statut de vos déploiements Kubernetes.
+   - _Kubernetes Cluster Health_ 
+        - Affiche l'état de santé du cluster Kubernetes.
+   - _Kubernetes Cluster Status_ 
+        - Affiche le statut du cluster Kubernetes.
+   - _Kubernetes Resource Requests_ 
+        - Affiche l'unité centrale et la mémoire utilisées ainsi que d'autres paramètres du cluster Kubernetes.
+   - _Pods_ 
+        - Affiche des détails concernant chaque pod du cluster Kubernetes.
+   - _Replica Set_ 
+        - Affiche le statut des ensembles de répliques Kubernetes.       
+   - _Worker Nodes_ 
+        - Affiche des détails concernant chaque noeud du cluster Kubernetes.
+   - _Worker Nodes Overview_ 
+        - Affiche l'utilisation de l'unité centrale et de la mémoire de l'infrastructure Kubernetes, ainsi que son trafic réseau.
 
 6. Si vous le souhaitez, vous pouvez également lancer la console Prometheus pour visualiser les données brutes collectées par le serveur Prometheus et Prometheus Alertmanager afin de gérer les alertes envoyées par le serveur Prometheus :
 

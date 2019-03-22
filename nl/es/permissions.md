@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-16"
+lastupdated: "2019-01-15"
 
 ---
 
@@ -18,7 +18,35 @@ lastupdated: "2018-11-16"
 # Permisos
 {: #permissions}
 
-Antes de que los usuarios empiecen a crear y trabajar con las instancias del servicio de {{site.data.keyword.cfee_full}}, el administrador de la cuenta donde se ha creado la instancia deberá establecer correctamente sus permisos. 
+Antes de que los usuarios empiecen a crear y trabajar con un servicio {{site.data.keyword.cfee_full}} (CFEE), el administrador de la cuenta donde se ha creado la instancia de CFEE deberá establecer correctamente sus permisos. 
+
+## Visión general de los permisos
+{: #perm-summary}
+
+A continuación encontrará un resumen de las [asignaciones de roles de Cloud Foundry](https://cloud.ibm.com/account/cloud-foundry) y de [IAM](https://cloud.ibm.com/iam#/users) mínimas necesarias para realizar diversas tareas en una instancia de CFEE. En el resto de la sección se describen estos permisos con más detalle.
+
+|  **Tarea** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **Roles de acceso de IAM** &nbsp; &nbsp; &nbsp; |**Roles de Cloud Foundry** &nbsp; &nbsp; &nbsp; |
+|----------------------------------------|-------------------|-------------------|
+|Crear un CFEE |  <ul><li>Rol de visor en el grupo de recursos en el que se va a crear CFEE.</li> <li>Rol de editor en el servicio CFEE.</li> <li>Rol de administrador en el servicio Kubernetes.</li> <li>Rol de editor en el servicio Cloud Object Storage.</li> </ul> | <ul><li>Rol de usuario en una organización pública.</li> <li>Rol de desarrollador en un espacio de dicha organización pública. </li></ul>|
+|Actualizar la versión de CFEE |  <ul><li>Rol de visor en el grupo de recursos de CFEE.</li> <li>Rol de editor en el servicio CFEE.</li></li> <li>Rol de operador en el servicio Kubernetes.</li> <li>Rol de editor en el servicio Cloud Object Storage.</li> </ul> | <ul><li>Rol de usuario en una organización pública.</li> <li>Rol de desarrollador en un espacio de dicha organización pública. </li></ul>|
+|Escalar la capacidad de CFEE (añadir/eliminar células)|  <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE.</li> <li>Rol de administrador en la instancia de CFEE.</li> <li>Rol de operador en el servicio Kubernetes.</li> <li>Rol de editor en el servicio Cloud Object Storage.</li> </ul> | |
+|Supervisar CFEE |  <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE</li> <li>Rol de editor en la instancia de CFEE.</li></ul> |  |
+|Ver el uso de recursos de CFEE |  <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE.</li> <li>Rol de visor en la instancia de CFEE.</li></ul> |  |
+|Habilitar la auditoría de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE.</li> <li>Rol de editor en la instancia de CFEE.</li></ul> | <ul><li>Rol de auditor en el espacio público de Cloud Foundry en el que se ha desplegado la instancia del servicio Activity Tracker.</li></ul>  |
+|Ver sucesos de auditoría de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE.</li> <li>Rol de editor en la instancia de CFEE.</li></ul> | <ul><li>Rol de auditor en el espacio público de Cloud Foundry en el que se ha desplegado la instancia del servicio Activity Tracker.</li></ul>  |
+|Habilitar la persistencia de registro de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE</li> <li>Rol de editor en la instancia de CFEE.</li></ul> |<ul><li>Rol de auditor en el espacio público de Cloud Foundry en el que se ha desplegado la instancia del servicio Log Analysis.</li></ul>  |
+|Ver registros permanentes de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE</li> <li>Rol de editor en la instancia de CFEE.</li></ul> | <ul><li>Rol de auditor en el espacio público de Cloud Foundry en el que se ha desplegado la instancia del servicio Log Analysis.</li></ul> |
+|Crear organizaciones de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE</li> <li>Rol de editor en la instancia de CFEE.</li></ul> |  |
+|Crear espacios de CFEE| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE</li> <li>Rol de visor en la instancia de CFEE.</li></ul> | <ul><li>Gestor en la organización en la que se va a crear el espacio.</li></ul> |
+|Gestionar dominios compartidos|<ul><li>Visor en el grupo de recursos de la instancia de CFEE. </li><li>Rol de editor en la instancia de CFEE. </li></ul>|  |
+|Ver dominios compartidos|<ul><li>Visor en el grupo de recursos de la instancia de CFEE. </li><li>Rol de visor en la instancia de CFEE. </li></ul>|  |
+|Gestionar dominios privados|<ul> <li>Visor en el grupo de recursos de la instancia de CFEE. </li><li>Rol de visor en la instancia de CFEE. </li></ul>| <ul><li>Rol de gestor en la organización propietaria del dominio. </li></ul>|
+|Ver dominios privados|<ul> <li>Visor en el grupo de recursos de la instancia de CFEE </li><li>Rol de visor en la instancia de CFEE. </li></ul>|<ul><li>Rol de visor en la organización propietaria del dominio. </li></ul>|
+|Crear/suprimir una instancia de servicio de IBM Cloud en un espacio de CFEE| <ul><li>Rol de visor en el grupo de recursos en el que se va a crear CFEE.</li> <li>Rol de visor en la instancia de CFEE.</li> <li>Editor en el grupo de recursos en el que se va a crear la instancia de servicio o en el servicio gestionado por IAM del que se va a crear una instancia.</li> </ul>| <ul><li>Rol de desarrollador en el espacio de CFEE desde donde se crea la instancia de servicio (y donde se añadirá/se creará alias automáticamente).</li></ul> |
+|Añadir/eliminar una instancia de servicio de IBM Cloud a/de un espacio de CFEE (es decir, crear/suprimir un alias para un servicio de IBM Cloud en un espacio CFEE)| <ul><li>Rol de visor en el grupo de recursos de la instancia de CFEE.</li><li>Rol de visor en la instancia de CFEE. </li><li>Rol de plataforma de operador y rol de servicio de lector en la instancia de servicio que se va a añadir. </li></ul>|<ul><li>Rol de desarrollador en el espacio CFEE en el que se va a añadir la instancia de servicio (alias).</li></ul> |
+|Enlazar o desenlazar una instancia de servicio de IBM Cloud en un espacio CFEE|<ul> <li>Editor en el grupo de recursos de la instancia de servicio que se va a enlazar o desenlazar.</li><li>Rol de visor en la instancia de CFEE. </li><li>Rol de plataforma de operador y rol de servicio de escritor en la instancia de servicio que se va a enlazar.</li></ul> | <ul><li>Rol de desarrollador en el espacio de CFEE donde se enlazan la instancia de servicio.</li></ul> |
+|Emitir mandatos de cli `cf`|<ul> <li>Rol de visor en el grupo de recursos de la instancia de CFEE. </li><li>Rol de visor en la instancia de CFEE.</li></ul> | <ul><li>Los roles de Cloud Foundry en la organización/espacio necesarios para ejecutar el mandato.</li></ul> |
+{: caption="Tabla 1. Permisos necesarios para realizar tareas en un CFEE" caption-side="top"}
 
 ## Permisos necesarios para crear un nuevo entorno
 {: #perm-creating}
@@ -27,7 +55,7 @@ Para crear nuevas instancias del servicio CFEE, es necesario que el administrado
 
 Las siguientes políticas de acceso de Identity & Access Management (IAM) son necesarias para que los usuarios puedan crear una instancia de {{site.data.keyword.cfee_full_notm}}:
 
-* Acceso de _Visor_ (o superior) al **Grupo de recursos** **_predeterminado_** en la cuenta de {{site.data.keyword.Bluemix}}. Los grupos de recursos permiten la organización de recursos en grupos personalizados para facilitar el control de acceso a dichos recursos. Cuando crea la nueva instancia del entorno, se le solicita un grupo de recursos. El acceso al grupo de recursos de _Valor predeterminado _ es necesario porque siempre es el grupo de recursos en el que se necesita el clúster de Kubernetes.  Los usuarios pueden suministrar la instancia CFEE en un grupo de recursos diferente, pero el clúster de Kubernetes se seguirá suministrando en el grupo de recursos de _Valor predeterminado_.  Si un usuario suministra el servicio CFEE en un grupo de usuarios diferente, los usuarios necesitarán el acceso de visor en dicho grupo de recursos.
+* Acceso de _Visor_ (o superior) al **Grupo de recursos** **_predeterminado_** en la cuenta de {{site.data.keyword.Bluemix}}. Los grupos de recursos permiten la organización de recursos en grupos personalizados para facilitar el control de acceso a dichos recursos. Cuando crea la nueva instancia del entorno, se le solicita un grupo de recursos. El acceso al grupo de recursos de _Valor predeterminado_ es necesario porque siempre es el grupo de recursos en el que se necesita el clúster de Kubernetes.  Los usuarios pueden suministrar la instancia CFEE en un grupo de recursos diferente, pero el clúster de Kubernetes se seguirá suministrando en el grupo de recursos de _Valor predeterminado_.  Si un usuario suministra el servicio CFEE en un grupo de usuarios diferente, los usuarios necesitarán el acceso de visor en dicho grupo de recursos.
 
 * Rol de _administrador_ o _editor_ sobre los recursos del **servicio {{site.data.keyword.cfee_full_notm}}**. En el grupo de recursos al que se asigna el entorno. Los usuarios con los roles de administrador o editor en el servicio de {{site.data.keyword.cfee_full_notm}} pueden crear y suprimir entornos. Pero únicamente los usuarios con un rol de administración pueden asignar usuarios a una instancia de {{site.data.keyword.cfee_full_notm}} o cambiar los roles que se asignan a los usuarios de dicha instancia.
    
@@ -53,7 +81,7 @@ Puede otorgar permisos de usuario utilizando la línea de mandatos de {{site.dat
 {:tip}
 
 Para confirmar que dispone de las políticas de acceso necesarias para crear una instancia de {{site.data.keyword.cfee_full_notm}}:
-1. Vaya al menú [**Gestionar > Cuenta > Usuarios**](https://console.bluemix.net/iam/#/users) en la cabecera de {{site.data.keyword.Bluemix_notm}} para abrir la página **Identidad y acceso**.
+1. Vaya al menú [**Gestionar > Acceso (IAM) > Usuarios**](https://console.bluemix.net/iam/#/users) en la cabecera de {{site.data.keyword.Bluemix_notm}} para abrir la página **Identidad y acceso**.
 2. En el separador Políticas de acceso, pulse el usuario que está creando el entorno para asignar y ver las políticas de acceso de ese usuario.
 
 Para obtener más información sobre la gestión de usuarios y de acceso en {{site.data.keyword.Bluemix}}, incluido cómo organizar un conjunto de usuarios e ID de servicio para facilitar la asignación de acceso a varios usuarios a la vez, consulte [Gestión de usuarios y de acceso](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
@@ -95,17 +123,58 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
 Para trabajar con una instancia de {{site.data.keyword.cfee_full_notm}}, los usuarios deben ser:
 1. Miembros de la cuenta de {{site.data.keyword.Bluemix_notm}} en la que se creó la instancia de {{site.data.keyword.cfee_full_notm}}.
-2. El administrador de la cuenta otorgó las siguientes _Políticas de acceso_ de IAM (consulte la página _Identidad y acceso_ en el menú [**Gestionar > Cuenta > Usuarios**](https://console.bluemix.net/iam/#/users) en la cabecera de {{site.data.keyword.Bluemix_notm}} para verificar las políticas de acceso de cuenta actuales):
+2. El administrador de la cuenta otorgó las siguientes _Políticas de acceso_ de IAM (consulte la página _Identidad y acceso_ en el menú [**Gestionar > Acceso (IAM) > Usuarios**](https://console.bluemix.net/iam/#/users) en la cabecera de {{site.data.keyword.Bluemix_notm}} para verificar las políticas de acceso de cuenta actuales):
 
-    Todos los usuarios necesitan acceso de _visor_ o superior sobre la instancia de {{site.data.keyword.cfee_full_notm}} en el grupo de recursos bajo el que se ha creado la instancia del entorno. El nivel de acceso y control que los usuarios tienen en una instancia de {{site.data.keyword.cfee_full_notm}} depende del rol que se ha otorgado en la política de acceso:
-  - Los usuarios con los roles de _administrador_ o de _editor_ pueden crear organizaciones, asignar gestores a organizaciones y espacios, tener permisos a todas las organizaciones y espacios del entorno y realizar acciones operativas mediante la API del controlador de nube. Estos usuarios automáticamente tienen el _ámbito cloud_controller.admin_ en el _ámbito Cuenta de usuario y autenticación_ de Cloud Foundry.
-  - Los usuarios con el rol de _visor_ sobre un CFEE pueden verlo en la lista del panel de control principal de {{site.data.keyword.Bluemix_notm}} y abrir su interfaz de usuario. El acceso de los usuarios a organizaciones y espacios específicos en un entorno lo controlan los roles de dichos espacios y organizaciones, que están asignados por los gestores de los mismos. Para obtener más información, consulte [Adición de usuarios a organizaciones](add-users.html).
+    Cualquier usuario que trabaje en una instancia de CFEE necesita un rol de plataforma de _visor_ (o superior) en:
+  - El grupo de recursos bajo el que se ha creado la instancia de CFEE.
+  - La propia instancia de CFEE. 
+  
+   El nivel de acceso y control que los usuarios tienen en una instancia de CFEE depende del rol que se otorgue en las políticas de acceso:
 
-     **Nota:** el acceso de _visor_ sobre el grupo de recursos bajo el que está agrupada una instancia de CFEE no es, de por sí, suficiente para que CFEE resulte visible para un usuario.  Los usuarios necesitan tener acceso explícito a la instancia CFEE (con rol de visor o superior) para tener visibilidad sobre dicha instancia.
+  - Los usuarios con el rol de _visor_ sobre una instancia de CFEE pueden verla en la lista del panel de control principal de {{site.data.keyword.Bluemix_notm}} y abrir su interfaz de usuario. El acceso de los usuarios a organizaciones y espacios específicos en un entorno lo controlan los roles de dichos espacios y organizaciones, que están asignados por los gestores de los mismos. Para obtener más información, consulte [Adición de usuarios a organizaciones](add-users.html).
+  
+  - Los usuarios con los roles de _administrador_ o de _editor_ sobre una instancia de CFEE pueden crear organizaciones, asignar gestores a organizaciones y espacios, tener permisos a todas las organizaciones y espacios del entorno y realizar acciones operativas mediante la API del controlador de nube. Estos usuarios automáticamente tienen el _ámbito cloud_controller.admin_ en el _ámbito Cuenta de usuario y autenticación_ de Cloud Foundry.
 
-  - Los usuarios necesitan un rol de _editor_ o superior sobre un servicio de {{site.data.keyword.Bluemix_notm}} para poder **enlazar** una instancia de dicho servicio a una aplicación desplegada en un espacio CFEE.
+  - Los usuarios necesitan el rol de plataforma de _editor_ o superior sobre una instancia CFEE y el rol de _operador_ o superior sobre el clúster Kubernetes en el que se aprovisiona el CFEE para poder **actualizar el CFEE a una nueva versión**.
 
-  - Los usuarios necesitan el rol de _editor_ o superior sobre una instancia CFEE y el rol de _operador_ o superior sobre el clúster Kubernetes en el que se aprovisiona el CFEE para poder **actualizar el CFEE a una nueva versión**.
+  - Los usuarios necesitan el rol de plataforma de _administrador_ sobre en una instancia CFEE y el rol de _operador_ o superior sobre el clúster de Kubernetes en el que se suministra CFEE para poder **cambiar la capacidad** de un cfee (añadir o eliminar células).
+ 
+  - Los usuarios necesitan el rol de plataforma de _operador_ (o superior) sobre una instancia de servicio de IBM Cloud para poder **añadir** dicha *instancia de servicio* a un espacio CFEE (es decir, para crear un alias de una instancia de servicio en un espacio de CFEE).
+ 
+  - Los usuarios necesitan el rol de plataforma de _operador_ (o superior) y el rol de servicio de _escritor_ (o superior) sobre una instancia de servicio de IBM Cloud para poder **enlazar** dicha instancia de servicio a una aplicación desplegada en un espacio de CFEE.
 
-  - Los usuarios necesitan el rol de _administrador_ sobre en una instancia CFEE y el rol de _operador_ o superior sobre el clúster de Kubernetes en el que se suministra CFEE para poder **cambiar la capacidad** de un cfee (añadir o eliminar células).
 
+## Prácticas recomendadas: grupos de acceso
+{: #access-groups}
+
+Supongamos que se utilizan grupos de acceso para gestionar y simplificar el control de acceso para su CFEE.  Los grupos de acceso le permiten definir grupos arbitrarios a los que puede asignar políticas de acceso.  A cualquier usuario que se añada a un grupo de acceso se le asigna automáticamente la política de acceso del grupo. 
+
+Puede crear y gestionar grupos de acceso desde la interfaz de usuario de IBM Cloud o desde la cli `ibmcloud`. 
+
+Desde la interfaz de usuario, vaya a la barra de menús, pulse **Gestionar > Acceso (IAM)** y seleccione [Grupos de acceso](https://cloud.ibm.com/iam#/groups).
+
+Como alternativa, puede utilizar la cli `ibmcloud`:
+
+1. Cree un grupo de acceso:
+
+  ```
+  ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
+```
+  {: pre}
+
+2. Cree una política de acceso para dicho grupo de acceso:
+
+  ```
+  ibmcloud iam access-group-policy-create GROUP_NAME
+  ```
+  {: pre}
+
+3. Añada usuarios al grupo de acceso:
+
+  ```
+  ibmcloud iam access-group-user-add <user-name> [<user-name2...]
+  ```
+  {: pre}
+
+<br>
+Para obtener más información, consulte [Configuración de grupos de acceso](https://cloud.ibm.com/docs/iam/groups.html#groups).

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-29-10"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-29-10"
 
 {{site.data.keyword.cfee_full}} サービスへようこそ。
 
-{{site.data.keyword.cfee_full}} (CFEE) では、エンタープライズ・クラスの独立した Cloud Foundry プラットフォームを、オンデマンドでいくつもインスタンス化できます。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise サービスのインスタンスは、{{site.data.keyword.Bluemix_notm}} の自分自身のアカウント内で実行されます。 環境は、分離したハードウェア (Kubernetes クラスター) 上にデプロイされます。 アクセス制御、キャパシティー、バージョンの更新、リソース使用量とモニターなど、環境を完全に制御できます。さらに、CFEE には {{site.data.keyword.Bluemix_notm}} が統合されているので、開発者は {{site.data.keyword.Bluemix_notm}} アカウントで使用可能なサービスを利用できます。ユーザーはそれらのサービスを CFEE に追加し、CFEE スペースにデプロイしたアプリケーションにバインドできます。
+{{site.data.keyword.cfee_full}} (CFEE) では、エンタープライズ・クラスの独立した Cloud Foundry プラットフォームを、オンデマンドでいくつもインスタンス化できます。 {{site.data.keyword.Bluemix_notm}} Foundry Enterprise サービスのインスタンスは、{{site.data.keyword.Bluemix_notm}} の自分自身のアカウント内で実行されます。 環境は、分離したハードウェア (Kubernetes クラスター) 上にデプロイされます。 アクセス制御、キャパシティー、バージョンの更新、リソース使用量とモニターなど、環境を完全に制御できます。 さらに、CFEE には {{site.data.keyword.Bluemix_notm}} が統合されているので、開発者は {{site.data.keyword.Bluemix_notm}} アカウントで使用可能なサービスを利用できます。  ユーザーはそれらのサービスを CFEE に追加し、CFEE スペースにデプロイしたアプリケーションにバインドできます。
 
 CFEE インスタンスの作成と使用を[**開始する**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)方法について説明します。
 
@@ -66,9 +66,9 @@ CFEE インスタンスの作成と使用を[**開始する**](https://console.b
 |北アメリカ | ワシントン DC (wdc04) | us-geo | us-east |
 |北アメリカ | ワシントン DC (wdc06) | us-geo | us-east | 
 |北アメリカ | ワシントン DC (wdc07) | us-geo | us-east |
-|北アメリカ | ダラス (das10) | us-geo | us-south |
-|北アメリカ | ダラス (das12) | us-geo | us-south |
-|北アメリカ | ダラス (das13) | us-geo |us-south |
+|北アメリカ | ダラス (dal10) | us-geo | us-south |
+|北アメリカ | ダラス (dal12) | us-geo | us-south |
+|北アメリカ | ダラス (dal13) | us-geo |us-south |
 |北アメリカ | サンノゼ (sjc03) | us-geo | us-south |
 |北アメリカ | サンノゼ (sjc04) | us-geo | us-south |
 |南アメリカ &nbsp; &nbsp;| サンパウロ (sao01) |  us-geo | us-south |
@@ -81,18 +81,20 @@ CFEE インスタンスの作成と使用を[**開始する**](https://console.b
 |ヨーロッパ | フランクフルト (fra02) | eu-geo | eu-de |
 |ヨーロッパ | フランクフルト (fra04) | eu-geo | eu-de | 
 |ヨーロッパ | フランクフルト (fra05) |  eu-geo | eu-de |
+|ヨーロッパ | ミラノ (mil01) |  eu-geo | eu-de |
 |アジア太平洋 | メルボルン (mel01) | ap-geo | au-syd |
 |アジア太平洋 | シドニー (syd01) | ap-geo | au-syd |
 |アジア太平洋 | シドニー (syd04) | ap-geo | au-syd | 
 |アジア太平洋 | 香港 (hkg02) | ap-geo | au-syd |
 |アジア太平洋 | 香港 (seo01) | ap-geo | au-syd |
 |アジア太平洋 | シンガポール (sng01) | ap-geo | au-syd |
-|アジア太平洋 | 東京 (gok02) | ap-geo | au-syd |
-|アジア太平洋 | 東京 (gok04) | ap-geo | au-syd |
-|アジア太平洋 | 東京 (gok05) | ap-geo | au-syd |
+|アジア太平洋 | 東京 (tok02) | ap-geo | au-syd |
+|アジア太平洋 | 東京 (tok04) | ap-geo | au-syd |
+|アジア太平洋 | 東京 (tok05) | ap-geo | au-syd |
+|アジア太平洋 | チェンナイ (che01) | ap-geo | au-syd |
 {: caption="表 2. CFEE およびサポートされるサービスのプロビジョン・ターゲット" caption-side="top"}
 
-**例えば**、CFEE サービスを、ヨーロッパのアムステルダム (1 データ・センター)、フランクフルト (3 つのデータ・センター)、ロンドン (3 つのデータ・センター)、オスロ (1 データ・センター)、およびパリ (1 データ・センター) のうち、3 つのデータ・センターにプロビジョンできます。CFEE がフランクフルトにプロビジョンされる場合、Cloud Object Store サービス・インスタンスは _eu-geo_ 地域にデプロイされ、Compose for PostgreSQL サービス・インスタンスは _eu-de_ パブリック Cloud Foundry 地域にデプロイされます。
+**例えば**、CFEE サービスを、ヨーロッパのアムステルダム (1 データ・センター)、フランクフルト (3 つのデータ・センター)、ロンドン (3 つのデータ・センター)、オスロ (1 データ・センター)、およびパリ (1 データ・センター) のうち、3 つのデータ・センターにプロビジョンできます。 CFEE がフランクフルトにプロビジョンされる場合、Cloud Object Store サービス・インスタンスは _eu-geo_ 地域にデプロイされ、Compose for PostgreSQL サービス・インスタンスは _eu-de_ パブリック Cloud Foundry 地域にデプロイされます。
 
 CFEE でサービスを使用する方法について詳しく説明し、実演しているビデオが、[CFEE ビデオの再生リスト](https://ibm.biz/CFEE_Playlist){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") にあります。
 {:tip}

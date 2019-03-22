@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-12-19"
 
 ---
 
@@ -18,8 +18,9 @@ lastupdated: "2018-11-14"
 {: #update-scale}
 
 Atualize a instância de serviço do {{site.data.keyword.cfee_full_notm}} para a versão mais recente
-para obter as funções e correções mais recentes do CFEE. As atualizações para o ICDEE podem incluir novas versões da
-plataforma Cloud Foundry e do cluster do Kubernetes que suportam a infraestrutura do CFEE.
+para obter as funções e correções mais recentes do CFEE. As atualizações do CFEE podem incluir novas versões dos
+serviços de suporte do Cloud Foundry e do CFEE (Kubernetes, Cloud Object Storage ou Compose for PostgreSQL). No entanto,
+nem todas as atualizações do CFEE incluirão uma nova versão dos serviços de suporte do Cloud Foundry e do CFEE.
 
 As atualizações de versão do CFEE são feitas no plano de controle que contém os componentes do CFEE e nas células. Também é possível escalar a capacidade da instância do CFEE incluindo ou excluindo células do aplicativo.
 
@@ -41,7 +42,7 @@ controle que hospeda os componentes do CFEE. Em seguida, atualize as células qu
 As regras e restrições a seguir se aplicam ao atualizar um CFEE para uma nova versão:
 * O plano de controle deve ser atualizado primeiro. Assim que o plano de controle tiver sido atualizado, as
 células poderão ser atualizadas.
-* As células do aplicativo podem ser atualizadas apenas para a versão do plano de controle. Ou seja, as células
+* As células do aplicativo podem ser atualizadas apenas para a versão do plano de controle.  Ou seja, as células
 do plano de controle podem estar em um nível de versão do CFEE mais alto do que as células do aplicativo, mas não
 vice-versa.
 
@@ -54,8 +55,8 @@ de janela de navegação para abrir a página de células.
 3. (opcional) Na tabela _Plano de controle_, é possível expandir a linha para ver os nós do
 trabalhador no plano de controle.
 4. Clique em **Atualizar**.
-5. No diálogo _Atualizar plano de controle_, selecione uma das versões do CFEE disponíveis e clique
-em **Atualizar**. A atualização leva cerca de 5 minutos. A descrição da versão detalha as versões dos
+5. No diálogo Atualizar _Plano de controle_, selecione uma das versões disponíveis do CFEE e clique em
+**Atualizar**. A atualização leva cerca de 45 minutos. A descrição da versão detalha as versões dos
 componentes incluídos no pacote de versão do CFEE selecionado, juntamente com um link para o documento _O que há
 de novo_ que descreve o conteúdo entregue nessa versão.
 6. A coluna _Status dos nós_ mostra o progresso da atualização. Após a conclusão da atualização, a coluna _Versão_ refletirá a nova versão do CFEE.
@@ -69,20 +70,21 @@ atualização de cada célula. Conforme as células são atualizadas, a nova ver
 ## Interrupções durante a atualização da versão
 {: #update-disruption}
 
-A atualização do plano de controle do Cloud Foundry não é interrompida. No entanto, a atualização das células do
-Cloud Foundry para uma nova versão do CFEE pode interromper a operação do ambiente do CFEE. A atualização é executada
+A atualização do plano de controle do Cloud Foundry não é interrompida.  No entanto, a atualização das células do
+Cloud Foundry para uma nova versão do CFEE pode interromper a operação do ambiente do CFEE.  A atualização é executada
 uma célula por vez, de modo que as instâncias do aplicativo em execução em uma célula são trazidas de volta assim que a atualização é concluída enquanto as outras células permanecem inativas durante a atualização. No entanto, alguns
 aplicativos e serviços em execução no CFEE podem ficar indisponíveis sob algumas circunstâncias. Por exemplo, se o CFEE
 tiver duas células do Cloud Foundry para capacidade total, um aplicativo com apenas uma instância ficará inativo
 enquanto a versão estiver sendo atualizada porque a instância do aplicativo não pode ser movida para outra célula durante
-a atualização da célula e, consequentemente, o aplicativo estará indisponível.  
+a atualização da célula e, consequentemente, o aplicativo estará indisponível.  Mesmo com três células e três instâncias
+por aplicativo, pode haver uma interrupção temporária na disponibilidade do aplicativo durante uma atualização de versão.
 
 Durante a atualização da versão, pode haver uma discrepância nas métricas da memória e da CPU relatadas nos
 medidores dos nós de célula mostradas na página _Visão geral_ do CFEE (que são geradas pelo cluster do Kubernetes) e as
 mesmas métricas mostradas no painel _Nós_ no Grafana (que são geradas no nível do sistema operacional).
 
 O status dos componentes do CFEE enquanto a atualização está em andamento será refletido na página Verificação de
-funcionamento. O reinício leva aproximadamente 45 minutos.
+funcionamento.  O reinício leva aproximadamente 45 minutos.
 
 ## Política de suporte e ciclo de versão
 {: #version-cycle}
@@ -91,7 +93,7 @@ O serviço do Cloud Foundry Enterprise Environment geralmente libera uma nova ve
 serviço segue o formato de versão semântica _**Major.Minor.Patch**_ (https://semver.org/)
 
 A versão _secundária_ é incrementada regularmente (em geral, mensalmente). A versão _principal_ também é incrementada, mas com menos frequência, geralmente quando há uma mudança
-significativa. A atualização para uma versão _principal_ pode resultar em alguma interrupção durante o
+significativa.  A atualização para uma versão _principal_ pode resultar em alguma interrupção durante o
 upgrade. As _correções_ entregam uma correção e são aplicadas à versão disponível mais recente. 
 
 Para evitar tempo de inatividade do sistema, as instâncias do CFEE têm permissão para atualizar somente até duas

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -18,7 +18,9 @@ lastupdated: "2018-08-07"
 
 O monitoramento de uma instância do {{site.data.keyword.cfee_full}} e de sua infraestrutura suportada é suportado por um conjunto de ferramentas de software livre consistindo no Prometheus e Grafana.  A solução permite que você analise, visualize e gerencie alertas para métricas no ambiente do Cloud Foundry.  Há três consoles da web nos quais ocorre o monitoramento: um console do Grafana, um console do Prometheus e um console do Prometheus Alert Manager.
 
-**Nota ** o acesso ao recurso de monitoramento em uma instância do {{site.data.keyword.cfee_full}} requer uma função de _Administrador_ ou _Editor_ nesse cluster do Kubernetes que suporte a instância do CFEE.  O nome padrão do cluster do Kubernetes que suporta uma instância do CFEE é _`<CFEEname>` -cluster _.
+**Nota:** o acesso ao recurso de monitoramento em uma instância do
+{{site.data.keyword.cfee_full}} requer uma função de _administrador_ ou _editor_ no
+cluster Kubernetes que suporta a instância do CFEE. O nome padrão do cluster do Kubernetes que suporta uma instância do CFEE é _`<CFEEname>` -cluster _.
 
 ## Prometheus.
 {: #prometheus}
@@ -33,7 +35,8 @@ O ecossistema Prometheus consiste em múltiplos componentes, muitos dos quais s�
 * Vários exportadores de propósito especial, como o exportador de nós, o exportador de caixa preta, etc.</li>
 * Um gateway de push para suportar tarefas de curta duração.</li>
 
-O Prometheus reúne métricas de tarefas instrumentadas, diretamente ou por meio de um gateway de push intermediário para tarefas de curta duração. Ele armazena todas as amostras reunidas localmente e executa regras sobre esses dados para agregar e registrar novas séries temporais de dados existentes ou para gerar alertas.
+O Prometheus reúne métricas de tarefas instrumentadas diretamente ou por meio de um gateway push intermediário para
+tarefas de vida útil de curta duração. Ele armazena todas as amostras reunidas localmente e executa regras sobre esses dados para agregar e registrar novas séries temporais de dados existentes ou para gerar alertas.
 
 ## Grafana
 {: #grafana}
@@ -43,10 +46,10 @@ Grafana é uma plataforma de análise de software livre para todas as métricas 
 ## Introdução ao Monitoramento
 {: #gettingStarted_monitor}
 
-Os componentes Prometheus e Grafana que compõem a solução de monitoramento são pré-instalados na infraestrutura do Kubernetes que suporta a instância do CFEE.  Para acessar as ferramentas de monitoramento, é necessário encaminhar as portas dos servidores Prometheus, Prometheus AlertManager e Grafana. Isso é feito por meio da CLI do Kubernetes.
+Os componentes Prometheus e Grafana que compõem a solução de monitoramento são pré-instalados na infraestrutura do Kubernetes que suporta a instância do CFEE.  Para acessar as ferramentas de monitoramento, é necessário encaminhar as portas dos servidores Prometheus, Prometheus AlertManager e Grafana.  Isso é feito por meio da CLI do Kubernetes.
 A seguir você é conduzido pelas etapas para instalar a CLI necessária, encaminhar as portas do servidor e ativar os consoles.
 
-**Nota:** as instruções a seguir também estão disponíveis na interface com o usuário do {{site.data.keyword.cfee_full}}.  Abra a interface com o usuário da instância do CFEE e clique em **Monitoramento** na área de janela de navegação esquerda para ver as instruções exibidas.
+**Nota:** as instruções a seguir também estão disponíveis na interface com o usuário do {{site.data.keyword.cfee_full}}. Abra a interface com o usuário da instância do CFEE e clique em **Monitoramento** na área de janela de navegação esquerda para ver as instruções exibidas.
 
 ### Pré-requisito
 
@@ -98,7 +101,9 @@ A seguir você é conduzido pelas etapas para instalar a CLI necessária, encami
 
 ### Ativar os consoles de monitoramento em seu proxy da web local
 
-5. Ative o console do Grafana para ver a analítica nas métricas selecionadas.  Há painéis padrão do Grafana incluídos na instância do CFEE. Esses painéis padrão são interativos e fornecem uma visualização da infraestrutura usada para hospedar sua instância do CFEE. (Cluster de Kubernetes). Depois de ativar o console do Grafana, clique no botão **Página inicial** na parte superior do console do Grafana para selecionar um dos painéis pré-implementados (veja a lista a seguir), que criará o gráfico das métricas correspondentes:
+5. Ative o console do Grafana para ver a analítica nas métricas selecionadas.  Há painéis padrão do Grafana incluídos na
+instância do CFEE. Esses painéis padrão são interativos e fornecem uma visualização da infraestrutura usada para
+hospedar a sua instância do CFEE (cluster Kubernetes). Depois de ativar o console do Grafana, clique no botão **Página inicial** na parte superior do console do Grafana para selecionar um dos painéis pré-implementados (veja a lista a seguir), que criará o gráfico das métricas correspondentes:
 
    Há um usuário padrão `admin` no Grafana, com a senha padrão configurada como `admin`. Recomendamos efetuar login com o ID do usuário/Senha `admin/admin` e mudá-los para novas credenciais:
 
@@ -106,31 +111,31 @@ A seguir você é conduzido pelas etapas para instalar a CLI necessária, encami
 
    Os painéis padrão a seguir são fornecidos com a instância do CFEE e estão disponíveis na lista suspensa _Página inicial_.
 
-   Painéis para a infraestrutura Kubernetes que suportam seu ambiente do CFEE:
-   - Painel _Planejamento de capacidade do Kubernetes_
-        - Mostra a capacidade da infraestrutura do kubernetes.
-   - Painel _ Funcionamento do Cluster do Kubernetes _
-        - Mostra o funcionamento do cluster do Kubernetes.
-   - Painel _ Status do Cluster do Kubernetes _
-        - Mostra o status do cluster do Kubernetes.
-   - Painel _ Solicitações de Recursos do Kubernetes _
-        - Mostra a CPU usada, a memória e outros parâmetros do cluster do Kubernetes.
-   - Painel _ Nós _
-        - Mostra detalhes para cada nó trabalhador do cluster do Kubernetes.
-   - Painel _ Pods _
-        - Mostra detalhes para cada pod em execução no cluster do Kubernetes.
-   - Painel _ Conjunto de réplicas _
-        - Mostra o status dos conjuntos de réplicas do Kubernetes.
-   - Painel _ Implementação _
-        - Mostra o status de suas implementações do Kubernetes.
-
-   Painéis do Cloud Foundry:
-   - Painel _ CF: Cells Capacity _
+    Painéis do Cloud Foundry:
+   - _CF: capacidade de células_ 
         - Mostra o status geral das células do Cloud Foundry em que os aplicativos Cloud Foundry estão implementados.
-   - Painel _CF: roteador_
-        - Mostra o status do roteador do Cloud Foundry em execução em seu ambiente do CFEE.
-   - Painel _ CF: Diego_Cell _
+   - _CF: painel Célula Diego_ 
         - Mostra o status das células do Cloud Foundry e dos componentes do Diego.
+   - _CF: roteador_ 
+        - Mostra o status do roteador do Cloud Foundry em execução em seu ambiente do CFEE.
+  
+   Painéis para a infraestrutura Kubernetes que suportam seu ambiente do CFEE:
+   - _Implementação_ 
+        - Mostra o status de suas implementações do Kubernetes.
+   - _Funcionamento do cluster Kubernetes_ 
+        - Mostra o funcionamento do cluster do Kubernetes.
+   - _Status do cluster Kubernetes_ 
+        - Mostra o status do cluster do Kubernetes.
+   - _Solicitações de recurso do Kubernetes_ 
+        - Mostra a CPU usada, a memória e outros parâmetros do cluster do Kubernetes.
+   - _Pods_ 
+        - Mostra detalhes para cada pod em execução no cluster do Kubernetes.
+   - _Conjunto de réplicas_ 
+        - Mostra o status dos conjuntos de réplicas do Kubernetes.       
+   - _Nós do trabalhador_ 
+        - Mostra detalhes para cada nó trabalhador do cluster do Kubernetes.
+   - _Visão geral dos nós do trabalhador_ 
+        - Mostra o uso de CPU e de memória da infraestrutura do Kubernetes, juntamente com seu tráfego de rede.
 
 6. Opcionalmente, também é possível ativar o console do Prometheus para ver os dados brutos coletados pelo servidor Prometheus e o Prometheus Alertmanager para gerenciar os alertas enviados pelo servidor Prometheus:
 

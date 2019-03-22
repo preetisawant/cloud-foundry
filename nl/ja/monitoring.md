@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -43,7 +43,7 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 ## モニターの使用開始
 {: #gettingStarted_monitor}
 
-モニター・ソリューションを構成する Prometheus および Grafana コンポーネントは、CFEE インスタンスをサポートする Kubernetes インフラストラクチャーにプリインストールされています。  モニター・ツールにアクセスするには、Prometheus、Prometheus AlertManager、および Grafana の各サーバーのポートを転送する必要があります。これは、Kubernetes CLI を使用して行います。
+モニター・ソリューションを構成する Prometheus および Grafana コンポーネントは、CFEE インスタンスをサポートする Kubernetes インフラストラクチャーにプリインストールされています。  モニター・ツールにアクセスするには、Prometheus、Prometheus AlertManager、および Grafana の各サーバーのポートを転送する必要があります。  これは、Kubernetes CLI を使用して行います。
 以下に、必要な CLI をインストールし、サーバーのポートを転送し、コンソールを起動するためのステップを順に示します。
 
 **注:** 以下の説明は、{{site.data.keyword.cfee_full}} ユーザー・インターフェースにもあります。  CFEE インスタンスのユーザー・インターフェースを開き、左ナビゲーション・ペインにある**「モニタリング」**をクリックすると、説明が表示されます。
@@ -98,7 +98,7 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 
 ### ローカル Web プロキシーでのモニター・コンソールの起動
 
-5. Grafana コンソールを起動して、選択したメトリックでの分析を表示します。  CFEE インスタンスには、デフォルトの Grafana ダッシュボードが含まれています。 このデフォルトのダッシュボードはインタラクティブであり、CFEE インスタンスをホストするために使用されているインフラストラクチャーのビューが示されます。 (Kubernetes クラスター)。 Grafana コンソールを起動したら、Grafana コンソールの上部にある**「Home」**ボタンをクリックして、事前にデプロイされているダッシュボード (下のリストを参照) のいずれかを選択します。これにより、対応するメトリックがグラフ化されます。
+5. Grafana コンソールを起動して、選択したメトリックでの分析を表示します。  CFEE インスタンスには、デフォルトの Grafana ダッシュボードが含まれています。 このデフォルトのダッシュボードはインタラクティブであり、CFEE インスタンス (Kubernetes クラスター) をホストするために使用されているインフラストラクチャーのビューを示します。 Grafana コンソールを起動したら、Grafana コンソールの上部にある**「Home」**ボタンをクリックして、事前にデプロイされているダッシュボード (下のリストを参照) のいずれかを選択します。これにより、対応するメトリックがグラフ化されます。
 
    Grafana にはデフォルトの `admin` ユーザーが用意されています。そのデフォルトのパスワードは `admin` に設定されています。 ユーザー/パスワード `admin/admin` を使用してログインし、新規資格情報に変更することをお勧めします。
 
@@ -106,31 +106,31 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 
    CFEE インスタンスでは以下のデフォルトのダッシュボードが用意されており、「_Home_」ドロップダウンから使用できます。
 
-   CFEE 環境をサポートする Kubernetes インフラストラクチャーのダッシュボード:
-   - _Kubernetes Capacity Planing_ ダッシュボード
-        - kubernetes インフラストラクチャーのキャパシティーを示します。
-   - _Kubernetes Cluster Health_ ダッシュボード
-        - Kubernetes クラスターの正常性を示します。
-   - _Kubernetes Cluster Status_ ダッシュボード
-        - Kubernetes クラスターの状況を示します。
-   - _Kubernetes Resource Requests_ ダッシュボード
-        - Kubernetes クラスターの使用されている CPU、メモリー、およびその他のパラメーターを示します。
-   - _Nodes_ ダッシュボード
-        - Kubernetes クラスターの各ワーカー・ノードの詳細を示します。
-   - _Pods_ ダッシュボード
-        - Kubernetes クラスターで実行されている各ポッドの詳細を示します。
-   - _Replica Set_ ダッシュボード
-        - Kubernetes レプリカ・セットの状況を示します。
-   - _Deployment_ ダッシュボード
-        - Kubernetes デプロイメントの状況を示します。
-
-   Cloud Foundry ダッシュボード:
-   - _CF: Cells Capacity_ ダッシュボード
+    Cloud Foundry ダッシュボード:
+   - _CF: Cells Capacity_ 
         - Cloud Foundry アプリケーションがデプロイされている Cloud Foundry セルの一般的な状況を示します。
-   - _CF: Router_ ダッシュボード
-        - CFEE 環境で実行されている Cloud Foundry ルーターの状況を示します。
-   - _CF: Diego_Cell_ ダッシュボード
+   - _CF: Diego Cell ダッシュボード_ 
         - Cloud Foundry セルおよび Diego コンポーネントの状況を示します。
+   - _CF: Router_ 
+        - CFEE 環境で実行されている Cloud Foundry ルーターの状況を示します。
+  
+   CFEE 環境をサポートする Kubernetes インフラストラクチャーのダッシュボード:
+   - _Deployment_ 
+        - Kubernetes デプロイメントの状況を示します。
+   - _Kubernetes Cluster Health_ 
+        - Kubernetes クラスターの正常性を示します。
+   - _Kubernetes Cluster Status_ 
+        - Kubernetes クラスターの状況を示します。
+   - _Kubernetes Resource Requests_ 
+        - Kubernetes クラスターの使用されている CPU、メモリー、およびその他のパラメーターを示します。
+   - _Pods_ 
+        - Kubernetes クラスターで実行されている各ポッドの詳細を示します。
+   - _Replica Set_ 
+        - Kubernetes レプリカ・セットの状況を示します。       
+   - _Worker Nodes_ 
+        - Kubernetes クラスターの各ワーカー・ノードの詳細を示します。
+   - _Worker Nodes Overview_ 
+        - kubernetes インフラストラクチャーの CPU およびメモリーの使用量と、そのネットワーク・トラフィックを示します。
 
 6. オプションとして、以下のように、Prometheus コンソールを起動して Prometheus サーバーによって収集された生データを表示したり、Prometheus Alertmanager を起動して Prometheus サーバーによって送信されたアラートを管理したりすることもできます。
 
