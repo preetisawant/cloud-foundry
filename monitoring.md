@@ -18,7 +18,7 @@ lastupdated: "2018-11-26"
 
 Monitoring an {{site.data.keyword.cfee_full}} instance and its supported infrastructure is supported by an open-source toolset consisting of Prometheus and Grafana.  The solution enables you to analyze, visualize and manage alerts for metrics in the Cloud Foundry environment.  There are three web consoles from which monitoring takes place: A Grafana console, a Prometheus console, and a Prometheus Alert Manager console.
 
-**Note:** Access to the monitoring capability in an {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in that Kubernetes cluster supporting the CFEE instance.  The default name of the Kubernetes cluster supporting a CFEE instance is _`<CFEEname>`-cluster_.
+**Note:** Access to the monitoring capability in an {{site.data.keyword.cfee_full}} instance requires an _Administrator_ or _Editor_ role in the CFEE, and _Operator_ role in the Kubernetes cluster supporting the CFEE instance (in additon to _Viewer_ role in the resource group under which the CFEE is grouped).  The default name of the Kubernetes cluster supporting a CFEE instance is _`<CFEEname>`-cluster_. 
 
 ## Prometheus
 {: #prometheus}
