@@ -144,10 +144,12 @@ metadata:
   
 In the above example, all HTTP and HTTPS calls (all TCP traffic on ports 443 and 80) coming from the CFEE cluster worker nodes (“worker_public”) are allowed outbound (“egress”) access to the public network.
 
-
 # Private access from the management control plane
 {: #priate-access}
 
-Management of a CFEE instance in an isolated network requires private access to the CFEE instance by the CFEE management control plane. In the CFEE user interface, a user with an _Administration_ role can enable private access by going to **Private Access** in the left-navigation pane (visible only to administrators) and press **Enable**.  Access to the isolated network takes place through an API key.  An API key is provided by default. A CFEE administrator can replace the default API key with a custom key.  
+Management of a CFEE instance in an isolated network requires private access to the CFEE instance by the CFEE management control plane. Private access to the CFEE instance by the CFEE management control plane is enabled by default. 
 
-**Note**: If private access is disabled, the CFEE control plane cannot manage the CFEE instance (neither through the user interface, the CLI nor the API).
+Users with an _Administration_ role can disable private access by the CFEE management control plane. Note that disabling private access will disable the CFEE control plane from retrieving data and from managing the CFEE instance (neither through the user interface, the CLI nor the API). CFEE administrators can disable private access in the **Private Access** page (visible only to administrators), located in the CFEE user interface. Once in the page press **Disable**.  
+
+Access to the isolated network takes place through an API key.  An API key is provided by default. A CFEE administrator can replace the default API key with a custom key. Enabling private access after it has been disable requires an API key that needs to be generated in the *_IBM Cloud API keys_* (In the IBM Cloud user interface header, go to _Manage > Acess (IAM) > IBM Cloud API keys_ ).
+
