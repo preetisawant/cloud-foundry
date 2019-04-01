@@ -17,7 +17,9 @@ lastupdated: "2019-04-01"
 {: #isolated-network}
 
 
-Starting with version 2.2.0, {{site.data.keyword.cfee_full}} (CFEE) instances can operate inside an isolated networks that protects and secures the environment from external threats. You create an isolated network through private VLANs and a set of control mechanisms to route, filter, and protect traffic into and out of the resources inside the network perimeter. Isolated networks are setup using technologies like Virtual Router Appliances ([VRAs](https://cloud.ibm.com/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started-with-ibm-virtual-router-appliance#vlans-and-the-gateway-appliance-s-role)).
+Starting with version 2.2.0, {{site.data.keyword.cfee_full}} (CFEE) instances can operate inside an isolated networks that protects and secures the environment from external threats. You create an isolated network through private VLANs and a set of control mechanisms to route, filter, and protect traffic into and out of the resources inside the network perimeter. Isolated networks are setup using technologies like Virtual Router Appliances ([VRAs](https://cloud.ibm.com/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started-with-ibm-virtual-router-appliance#vlans-and-the-gateway-appliance-s-role)). 
+
+**Note:** CFEE instances operating in an isolated network required that the CFEE kubernetes cluster be update to v1.13. Updating the Kubernetes cluster v1.13 is independent of the CFEE update.
 
 A CFEE instance is provisioned into a cluster from the IBM Kubernetes Service. The CFEE's Cloud Foundry cells (where applications are hosted) are provisioned into the Cluster's worker nodes. This means that access to the CFEE cells and applications implies accessing the cluster worker nodes. 
 
