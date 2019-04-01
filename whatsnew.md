@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-02-20"
+lastupdated: "2018-04-01"
 
 ---
 
@@ -26,7 +26,7 @@ _Release Date:_ 2019-04-01
 
 The following changes were released in version 2.2.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the **Updates and Scaling** page in the CFEE's user interface and click **Update**:
 
-* **Important:** It is recommended that you update the Kubernetes cluster to v1.13 before updating your CFEE instance to v2.2.0.
+**Important:** It is recommended that you update the Kubernetes cluster to v1.13 before updating your CFEE instance to v2.2.0.
 
 * New option to **create** a CFEE instance in a **multi-zone** Kubernetes cluster. CFEE instances created on a multi-zone cluster distribute application instances, not only across worker nodes within a data center, but also across data centers, making your applications more resilient against infrastructure outages. Furthermore, multi-zone CFEEs can be **scaled** by  adding additional cells, or by removing existing ones from the current zones.  Note that you cannot add or remove zones from a multi-zone CFEE once the CFEE instance is created.
 * CFEE v2.2.0 instances can now [operate within an **isolated network**](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network). Note that if the CFEE is instance is deployed in VLANs from an isolated network, some endpoints (IP addresses) [must be identified and routed properly](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#oppening-access-points) for the CFEE instance to become operational. A CFEE instance requires a Kubernetes cluster v1.13 to operate in an isolated network.
@@ -36,7 +36,10 @@ The following changes were released in version 2.2.0 of the {{site.data.keyword.
     * When you update an existing CFEE to version 2.2.0, the existing monitoring tools are deleted from the control plane. Any existing custom configuration of the monitoring tools will be lost. 
     *  New capability to replace the default [Alertmanager configuration](https://prometheus.io/docs/alerting/configuration/) with a custom configuration that allows you to customize the handling, grouping, and notification routing of alerts. In the _Monitoring_ page you will be able to _Download_ the default configuration file, and _Upload_ a configuration file from your local file system.  See for an [example](https://github.com/prometheus/alertmanager/blob/master/doc/examples/simple.yml) of a configuration file.
 * New capability to tag CFEE instances in the {{site.data.keyword.Bluemix_notm}} [_Resource List_](https://cloud.ibm.com/resources) and in the CFEE user interface.
-* General improvements to the user experience of the {{site.data.keyword.Bluemix_notm}} [**Cloud Foundry dashboard**](https://cloud.ibm.com/dashboard/cloudfoundry/overview). The _Cloud Foundry dashboard_ shows global views of CFEE instances, applications and public services aliased into CFEE spaces.   
+* General improvements to the user experience of the {{site.data.keyword.Bluemix_notm}} [**Cloud Foundry dashboard**](https://cloud.ibm.com/dashboard/cloudfoundry/overview). The _Cloud Foundry dashboard_ shows global views of CFEE instances, applications and public services aliased into CFEE spaces. 
+
+**Note:** A new **Eirini technical preview** plan is available when creating a new CFEE instance. The plan is independent  of the v2.2.0 described above, which applies only to the _Standard_ plan.  The The Eirini Technical Preview plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego). See the [Eirini technical preview plan](https://ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#eirini) documentation for more information.
+
 
 ## Version 2.1.1
 {: #v211}
