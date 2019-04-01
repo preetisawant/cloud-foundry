@@ -147,7 +147,7 @@ metadata:
 In the above example, all HTTP and HTTPS calls (all TCP traffic on ports 443 and 80) coming from the CFEE cluster worker nodes (“worker_public”) are allowed outbound (“egress”) access to the public network.
 
 ## Private access from the management control plane
-{: #priate-access}
+{: #private-access}
 
 Management of a CFEE instance in an isolated network requires private access to the CFEE instance by the CFEE management control plane. Private access to the CFEE instance by the CFEE management control plane is enabled by default. 
 
