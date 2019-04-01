@@ -49,14 +49,14 @@ Network access rules related to a network isolated CFEE can be of the following 
 <br>
 **Default** Calico rules for accessing the **Kubernetes cluster** worker nodes:
 
-    ```
-    allow-node-port-dnat            1500    ibm.role == 'worker_public'                        
-    allow-vrrp                      1600    ibm.role == 'worker_public'                        
-    allow-icmp                      1700    ibm.role in { 'worker_public', 'master_public' }
-    allow-bigfix-port               1900    ibm.role in { 'worker_public', 'master_public' }
-    allow-sys-mgmt                  1950    ibm.role in { 'worker_public', 'master_public' }
-    ```
-    {: codeblock}
+```
+allow-node-port-dnat            1500    ibm.role == 'worker_public'                        
+allow-vrrp                      1600    ibm.role == 'worker_public'                        
+allow-icmp                      1700    ibm.role in { 'worker_public', 'master_public' }
+allow-bigfix-port               1900    ibm.role in { 'worker_public', 'master_public' }
+allow-sys-mgmt                  1950    ibm.role in { 'worker_public', 'master_public' }
+```
+{: codeblock}
 <br />
 If you are using an alternative network perimeter implementation, you'll need to setup the same policies using the corresponding control mechanisms.
   
