@@ -8,6 +8,7 @@ Cloud Foundry Enterprise Environment
     index.md
     prepare-account.md
     permissions.md
+    create-environment.md
     getting-started.md
 
     {: .topicgroup}
