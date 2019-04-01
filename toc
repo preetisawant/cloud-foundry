@@ -10,6 +10,7 @@ Cloud Foundry Enterprise Environment
     permissions.md
     create-environment.md
     getting-started.md
+    getting-started-eirini.md
     network-isolation.md
 
     {: .topicgroup}
