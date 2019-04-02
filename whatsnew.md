@@ -24,12 +24,12 @@ This document describes what's new in each version released up to this date of t
 
 _Release Date:_ 2019-04-01
 
-The following changes were released in version 2.2.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the **Updates and Scaling** page in the CFEE's user interface and click **Update**:
-
 CFEE v2.2.0 includes the following versions of its constituent components:
 * Cloud Foundry: v2.7.1.15.5
 * CFEE Buildpacks: v0.1.5
 * IBM Kubernetes service: No version update provided.  **Important:** We recomment that you update the CFEE Kubernetes cluster to v1.13 before updating to CFEE v2.2.0 (required when the CFEE instance operates in an isolated network).
+
+The following changes were released in version 2.2.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the **Updates and Scaling** page in the CFEE's user interface and click **Update**:
 
 * New option to **create** a CFEE instance in a **multi-zone** Kubernetes cluster. CFEE instances created on a multi-zone cluster distribute application instances, not only across worker nodes within a data center, but also across data centers, making your applications more resilient against infrastructure outages. Furthermore, multi-zone CFEEs can be **scaled** by  adding additional cells, or by removing existing ones from the current zones.  Note that you cannot add or remove zones from a multi-zone CFEE once the CFEE instance is created.
 * CFEE v2.2.0 instances can now [operate within an **isolated network**](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network). Note that if the CFEE instance is deployed in VLANs from an isolated network, some endpoints (IP addresses) [must be identified and routed properly](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#oppening-access-points) for the CFEE instance to become operational. A CFEE instance requires a Kubernetes cluster v1.13 to operate in an isolated network.
