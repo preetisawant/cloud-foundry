@@ -38,7 +38,7 @@ The following changes were released in version 2.2.0 of the {{site.data.keyword.
 * New capability to tag CFEE instances in the {{site.data.keyword.Bluemix_notm}} [_Resource List_](https://cloud.ibm.com/resources) and in the CFEE user interface.
 * General improvements to the user experience of the {{site.data.keyword.Bluemix_notm}} [**Cloud Foundry dashboard**](https://cloud.ibm.com/dashboard/cloudfoundry/overview). The _Cloud Foundry dashboard_ shows global views of CFEE instances, applications and public services aliased into CFEE spaces. 
 
-**Note:** A new **Eirini technical preview** plan is available when creating a new CFEE instance. The plan is independent  of the v2.2.0 described above, which applies only to the _Standard_ plan.  The The Eirini Technical Preview plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego). See the [Eirini technical preview plan](https://ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#eirini) documentation for more information.
+**Note:** A new **Eirini technical preview** plan is available when creating a new CFEE instance. The plan is independent  of the v2.2.0 described above, which applies only to the _Standard_ plan.  The The Eirini Technical Preview plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego). See [Getting Started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini) for more information.
 
 
 ## Version 2.1.1
@@ -49,6 +49,7 @@ _Release Date:_ 2019-03-20
 The following changes were released in version 2.1.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
 
 * Resolved problems preventing successful provisioning. 
+
 
 ## Version 2.1.0
 {: #v210}
