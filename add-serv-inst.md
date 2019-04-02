@@ -117,16 +117,21 @@ To create service instances using the CLI follow the following steps:
   {: pre}
   
 5. Create the service:
-  Optionally service-specific configuration parameters can be provided in a valid JSON object in-line (e.g., the resource group ID under which the service instance will be created, and the target location where the service instance will be provisioned) :
+You can issue a `cf create-service` command to create a service instance from a CFEE.  Creating a service instance from a CFEE using this command has a double result:
+1. Creates a service instance in the public {{site.data.keyword.Bluemix}}, with a name provided by `SERVICE_INSTANCE`.
+2. Creates an alias of that public service instance inside the CFEE space from which the commmand was issued, with a name specified by the `instance_name` parameter.  If no `instance_name` is provided in the command, a name will be given by the {{site.data.keyword.Bluemix}} resource controler.  Note that this name will not be the same name as the name of the public instance. Thus, if you want to give the same name to both, the public instance and the instance in CFEE (alias of the public one), you need to provide both, a `SERVICE_INSTANCE` and an `instance_name` in the command(see below):
+
   ```
-  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"resource_group":"value","target":"value"}'
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"instance_name":"value", "resource_group":"value"}'
   ```
   {: pre}
 
-  **Note:** The "resource_group" above needs to be specified with the _resource group ID_, not with _resource group name_.  You can find the _ID_ of a specific resource group with the command `ibmcloud resource groups`.
+  The command can include optional configuration **parameters**, which can be provided in a valid JSON object in-linem:
 
-  Optionally, you can provide a file containing parameters in a valid JSON object required for creating a specific service.
-  The path to the parameters file can be an absolute or relative path to a file:
+  * Instance name (`instance_name`): Allows you to specify a custom name for the service instance created in the public {{site.data.keyword.Bluemix}}, different from the `SERVICE_INSTANCE`, which is the name of the instance in the CFEE.  
+  * Resource group (`resource_group`).  Allows you to specify a resource group under which to group the new instance.  The    "resource_group" above needs to be specified with the _resource group ID_, not with _resource group name_.  You can find the _ID_ of a specific resource group with the command `ibmcloud resource groups`.
+
+Optionally, you can provide a file containing the parameters in a valid JSON object required for creating a specific service. The path to the parameters file can be an absolute or relative path to a file:
   
   ```
   cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
