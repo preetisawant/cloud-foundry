@@ -44,6 +44,8 @@ The following changes were released in version 2.2.0 of the {{site.data.keyword.
 
 **Note:** A new **Eirini technical preview** plan is available when creating a new CFEE instance. The plan is independent  of the v2.2.0 described above, which applies only to the _Standard_ plan.  The The Eirini Technical Preview plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego). See [Getting Started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini) for more information.
 
+See a demonstration of what's new in CFEE v2.1.0 in this [brief video](https://ibm.biz/CFEE-V220){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+
 
 ## Version 2.1.1
 {: #v211}
