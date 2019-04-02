@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2019-04-01"
+lastupdated: "2019-04-02"
 
 ---
 
@@ -64,16 +64,15 @@ If you are using an alternative network perimeter implementation, you'll need to
 
 | Rule   | Description | Endpoint |
 |-----------|---------------|---------------|
-| cfee-egress-allow-adminserver | Enable the CFEE's Kubernetes cluster to access the CFEE management plane | 169.46.2.150/32, 169.47.104.126/32,     161.156.68.46/32, 130.198.90.238/32, 169.46.66.254/32, 169.46.186.113/32, 161.156.66.118/32, 130.198.90.238/32|
-| cfee-egress-allow-docker | Enable Docker registries access | `registry-1.docker.io`, `docker.io`, `production.cloudflare.docker.com`|
-| cfee-egress-allow-iks | Access the CFEE Kubernetes cluster management plane | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall)|
-| cfee-egress-allow-internal  | Enable outbound and routing to the CFEE's Kubernetes cluster portable IP addresses | You can find your cluster portable addresses using: `kubectl get cm -n kube-system ibm-cloud-provider-vlan-ip-config -o json` \`jq .data."reserved_public_ip"`, `kubectl get cm -n kube-system ibm-network-interfaces -o yaml`, `kubectl get svc --all-namespaces`|
-| cfee-egress-allow-postgres | Access the CFEE's Compose for PostgreSQL database | You can find the endpoint from the Compose instace `<cfee-name>-postgress`'s dashboard page and in the CFEE's _Private Access_ page. |
-| cfee-egress-allow-rc | Access the IBM Cloud platform to enable service syndication | `resource-controller.cloud.ibm.com` |
-| cfee-egress-allow-registry | Access the IBM Cloud Container Registry | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall) |
-| cfee-egress-allow-logging | (optional) Allow outgoing network traffic from the CFEE worker nodes to IBM Cloud Monitoring and IBM Cloud Log Analysis services | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall_outbound) |
-| cfee-egress-allow-helm-tiller | Allow outgoing network traffic from the CFEE worker nodes to the helm image retistry| [Learn more](https://github.ibm.com/Bluemix/cfee-network-isolation/blob/master/outbound/cfee-egress-allow-helm-tiller.md) |
-
+| cfee-egress-allow-adminserver | Allows outbound access to the CFEE management plane | 169.46.2.150/32, 169.47.104.126/32,     161.156.68.46/32, 130.198.90.238/32, 169.46.66.254/32, 169.46.186.113/32, 161.156.66.118/32, 130.198.90.238/32|
+| cfee-egress-allow-docker | Allows outbound access to the Docker registries | `registry-1.docker.io`, `docker.io`, `production.cloudflare.docker.com`|
+| cfee-egress-allow-iks | Allows outbound access to the CFEE Kubernetes cluster management plane | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall)|
+| cfee-egress-allow-internal  | Allows outbound access and routing to the CFEE's Kubernetes cluster portable IP addresses | You can find your cluster portable addresses using: `kubectl get cm -n kube-system ibm-cloud-provider-vlan-ip-config -o json` \`jq .data."reserved_public_ip"`, `kubectl get cm -n kube-system ibm-network-interfaces -o yaml`, `kubectl get svc --all-namespaces`|
+| cfee-egress-allow-postgres | Allows outbound access to the CFEE's Compose for PostgreSQL database | You can find the endpoint from the Compose instace `<cfee-name>-postgress`'s dashboard page and in the CFEE's _Private Access_ page. |
+| cfee-egress-allow-rc | Allows outbound access to the IBM Cloud platform to enable service syndication | `resource-controller.cloud.ibm.com` |
+| cfee-egress-allow-registry | Allows outbound access to the IBM Cloud Container Registry | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall) |
+| cfee-egress-allow-logging | (optional) Allows outbound network traffic from the CFEE worker nodes to IBM Cloud Monitoring and IBM Cloud Log Analysis services | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall_outbound) |
+| cfee-egress-allow-helm-tiller | Allows outbound network traffic from the CFEE worker nodes to the helm image retistry| This calico rule is for IPs of the Helm tiller, which needs access to the `mage:gcr.io` and `storage.googleapis.com` domains to pull the helm tiller image. |
 
 <br>  
 The final network security rule (the most **important** one) is the one that denies all access to network traffic that don't match the previous policies.
