@@ -38,7 +38,8 @@ lastupdated: "2019-04-01"
       * _Virtual-dedicated_: The worker nodes in the cluster are hosted on infrastructure that is devoted to your account.
     * Data in the cluster are encrypted by default. You have the option of turning off _Encrypt local disk_.
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
-    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  
+    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://console.bluemix.net/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
+    
     Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
     
     **Note: Provisioning on an isolated network:** You can target VLANs in an isolated network. When the CFEE instance is created in an isolated network, the policies in the isolated network (e.g., calico policies or VRA rules) must allow ALL outbound access from the CFEE instance for the CFEE to be provisioned successfully. Once the CFEE is created, the outbound access restrictions can be reinstated, except for outbound access to certain services and micro-services in the IBM Cloud.  See the [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more information.
