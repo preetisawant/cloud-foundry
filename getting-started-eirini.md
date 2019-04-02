@@ -13,7 +13,7 @@ lastupdated: "2019-04-01"
 {:screen: .screen}
 {:tip: .tip}
 
-# Getting started with the Eirini Technical preview
+# Getting started with the Eirini technical preview
 {: #getting-started-eirini}
 
 {{site.data.keyword.cfee_full}} (CFEE) is a cloud platform for hosting apps and services in the cloud. {{site.data.keyword.cfee_full_notm}} makes it easy to scale apps as consumption grows, simplifying the runtime, middleware, and infrastructure so that you can focus on developing apps.
