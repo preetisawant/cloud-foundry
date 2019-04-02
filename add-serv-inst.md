@@ -189,14 +189,14 @@ See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/ap
 
 There are use cases that require parameters when using the `cf bind-service` command to bind an app to a service:
 
-* When you are using the `cf bind-service` command to bind an app to a service instance that supports **[IBM Cloud Service Endpoints]**(https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about) that connect to IBM Cloud services over the IBM Cloud private network. To bind an application (deployed in a CFEE) to a service that supports both, external (public) and internal (private) endpoints, you need to specify which one to use for the bindings.  In the following example the commands binds the service using the "internal" endpoint
+* When you are using the `cf bind-service` command to bind an app to a service instance that supports [IBM Cloud Service Endpoints](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about) that connect to IBM Cloud services over the IBM Cloud private network. To bind an application (deployed in a CFEE) to a service that supports both, external (public) and internal (private) endpoints, you need to specify which one to use for the bindings.  In the following example the commands binds the service using the "internal" endpoint
 
 ```
 cf bind-service <Application Name> <Service Alias Name> -c '{"service-endpoints":"internal"}' 
 ```
 {: pre}
 
-* When the service has multiple **[service access roles]**(https://cloud.ibm.com/docs/iam?topic=iam-iamconcepts#am). Service access roles specify the allowable actions over the service instance that can be carried out through the binding.  You can specify a specific service access role through the `role` parameter. In the following example the binding specifies a "writer" service access role:
+* When the service has multiple [service access roles](https://cloud.ibm.com/docs/iam?topic=iam-iamconcepts#am). Service access roles specify the allowable actions over the service instance that can be carried out through the binding.  You can specify a specific service access role through the `role` parameter. In the following example the binding specifies a "writer" service access role:
 
 ```
 cf bind-service <Application Name> <Service Instance Name> -c '{"role": "Manager"}' 
