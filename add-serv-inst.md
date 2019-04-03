@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-02-01"
+lastupdated: "2019-04-02"
 
 ---
 
@@ -117,19 +117,20 @@ To create service instances using the CLI follow the following steps:
   {: pre}
   
 5. Create the service:
-You can issue a `cf create-service` command to create a service instance from a CFEE.  Creating a service instance from a CFEE using this command has a double result:
-    * Creates a service instance in the public {{site.data.keyword.Bluemix}}, with a name provided by `SERVICE_INSTANCE`.
-    * Creates an alias of that public service instance inside the CFEE space from which the commmand was issued, with a name specified by the `instance_name` parameter.  If no `instance_name` is provided in the command, a name will be given by the {{site.data.keyword.Bluemix}} resource controler.  Note that this name will not be the same name as the name of the public instance. Thus, if you want to give the same name to both, the public instance and the instance in CFEE (alias of the public one), you need to provide both, a `SERVICE_INSTANCE` and an `instance_name` in the command(see below):
+You can issue a `cf create-service` command to create a service instance in the CFEE space from which the command is issued.  Creating a service instance from a CFEE using this command has a double result:
+    * Creates a service instance in the public {{site.data.keyword.Bluemix}}, with a name provided by the `instance_name` parameter. If no `instance_name` is provided in the command, a name will be given by the {{site.data.keyword.Bluemix}} resource controler.  
+    * Creates an alias of that public service instance inside the CFEE space from which the commmand was issued, with a name specified by `SERVICE_INSTANCE`.  Note that name of the public service instance will not automatically be the same name as the service instance in the CFEE. Thus, if you want to give the same name to both, the public service instance and the service instance in the CFEE (alias of the public one), you need to specify both, an `instance_name` and a `SERVICE_INSTANCE` (with the same values) in the following command:
 
   ```
   cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"instance_name":"value", "resource_group":"value"}'
   ```
   {: pre}
 
-  The command can include optional configuration **parameters**, which can be provided in a valid JSON object in-line:
+  The command can includes optional configuration **parameters**, which can be provided in a valid JSON object in-line:
 
    * Instance name (`instance_name`): Allows you to specify a custom name for the service instance created in the public {{site.data.keyword.Bluemix}}, different from the `SERVICE_INSTANCE`, which is the name of the instance in the CFEE.  
    * Resource group (`resource_group`).  Allows you to specify a resource group under which to group the new instance.  The    "resource_group" above needs to be specified with the _resource group ID_, not with _resource group name_.  You can find the _ID_ of a specific resource group with the command `ibmcloud resource groups`.
+   * Target deployment region (`target`). The region where the service instance is to be provisioned. Note that some services do not require specification of a target.  However, the command will fail if no target is provided when the service being created does require it.
 
 Optionally, you can provide a file containing the parameters in a valid JSON object required for creating a specific service. The path to the parameters file can be an absolute or relative path to a file:
   
@@ -143,6 +144,7 @@ Optionally, you can provide a file containing the parameters in a valid JSON obj
   ```
    {
       "service_instance": {
+         "instance_name":"value
          "resource_group": b0daaf6c3ccd4392a266da916cce2e8c,
          "target": bluemix-us-south
       }
@@ -157,8 +159,8 @@ Optionally, you can provide a file containing the parameters in a valid JSON obj
   ```
   See [Managing Service Instances with the cf CLI](https://docs.cloudfoundry.org/devguide/services/managing-services.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information.
   
-## Binding services to applications
-{: #bind_services}
+## Binding services to applications from the CFEE's user interface
+{: #bind-services-ui}
 
 Users with _operator_ platform role (or higher) and _writer_ service role (or higher) to a {{site.data.keyword.Bluemix_notm}} service instance can bind that instance to an application deployed in a CFEE space,  either from the [Cloud Foundry services dashboard](https://console.bluemix.net/dashboard/cloudfoundry/services) or from the Services tab of a CFEE space's user interface.   
 
@@ -185,7 +187,10 @@ To unbind an application from a service instance:
 1. In the **Services** tab of the space, expand the target service instance to show the apps that are bound to it.
 2. Go the Actions menu in an application's row and select **Unbind service**.
 
-See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information about binding applications using the `cf bind-service` CLI command.
+## Binding services to applications using the CLI
+{: #bind-services-cli}
+
+See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for information about binding applications using the `cf bind-service` CLI command.
 
 There are use cases that require parameters when using the `cf bind-service` command to bind an app to a service:
 
