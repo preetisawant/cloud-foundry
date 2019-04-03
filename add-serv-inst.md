@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-03"
 
 ---
 
@@ -299,7 +299,7 @@ Consider the following when setting service visibility through the `cf` CLI:
 
 In accordance to the general behavior described above, we recommend to control organization access to services by issuing the following commands:
 
-* **Disable** access to a service plan for all orgs:
+  * **Disable** access to a service plan for all orgs:
   ```
   cf disable-service-access SERVICE [-p PLAN] [-o ORG]
   ```
@@ -312,7 +312,7 @@ In accordance to the general behavior described above, we recommend to control o
   {: pre}
 
   
-* **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
+  * **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
   ```
   cf enable-service-access SERVICE [-p PLAN] [-o ORG]
   ```
