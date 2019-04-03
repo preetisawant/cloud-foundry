@@ -78,7 +78,7 @@ To create a service instance from within a CFEE space:
    * If the selected service offering is an {{site.data.keyword.Bluemix_notm}} catalog offering, you will see a button to **Continue** to the IBM Cloud service offering creation page.  The is the same page available from the {{site.data.keyword.Bluemix_notm}} catalog.  In this page you provide the name of the new service instance, region, plan and other properties required to create the service in the IBM Cloud.  Once you create the service instance will be created in the IBM Cloud and automatically added to the current CFEE space.
    * If the the selected service offering comes from the local CFEE catalog,  you will see a button to **Create** the service instance. You will be prompted for an organization and space in the current CFEE where the service instance will be created.
 
-## Creating {{site.data.keyword.Bluemix_notm}} service instances from a CFEE space using the CLI
+## Creating {{site.data.keyword.Bluemix_notm}} service instances from a CFEE space using the Cloud Foundry CLI
 {: #creating-services_cli}
 
 You can create a service instance from the CLI from a space in a CFEE.  Creating a service from the CLI in a CFEE space is equivalent to creating it from the UI in that space. That is, creating a service has the following double result:
@@ -122,17 +122,17 @@ You can issue a `cf create-service` command to create a service instance in the 
     * Creates an alias of that public service instance inside the CFEE space from which the commmand was issued, with a name specified by `SERVICE_INSTANCE`.  Note that name of the public service instance will not automatically be the same name as the service instance in the CFEE. Thus, if you want to give the same name to both, the public service instance and the service instance in the CFEE (alias of the public one), you need to specify both, an `instance_name` and a `SERVICE_INSTANCE` (with the same values) in the following command:
 
   ```
-  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"instance_name":"value", "resource_group":"value"}'
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"instance_name":"value", "resource_group":"value", "target":"value"}'
   ```
   {: pre}
 
-  The command can includes optional configuration **parameters**, which can be provided in a valid JSON object in-line:
-
-   * Instance name (`instance_name`): Allows you to specify a custom name for the service instance created in the public {{site.data.keyword.Bluemix}}, different from the `SERVICE_INSTANCE`, which is the name of the instance in the CFEE.  
-   * Resource group (`resource_group`).  Allows you to specify a resource group under which to group the new instance.  The    "resource_group" above needs to be specified with the _resource group ID_, not with _resource group name_.  You can find the _ID_ of a specific resource group with the command `ibmcloud resource groups`.
+ The `create-service` command can be issued with optional parameters to handle specific use cases:
+ 
+   * Instance name (`instance_name`): Allows you to specify a custom name for the service instance created in the public {{site.data.keyword.Bluemix}}. If no `instance_name` value is provided, the default name of the public service instance in the public will be different from the `SERVICE_INSTANCE` (the name of the instance in the CFEE). We recommend that you use this parameter to control the name of the public service instance, or if you want to give it the same name as the service instance in the CFEE (alias to the public one).
+   * Resource group (`resource_group`).  Allows you to specify a resource group under which to place the new instance.  The    "resource_group" (`resource_group`). Note that the value of this parameter must be the resource group's ID (_resource group ID_), not the resource group's name (_resource group name_).  You can find the _resource group ID_ of a specific resource group with the command `ibmcloud resource groups`.
    * Target deployment region (`target`). The region where the service instance is to be provisioned. Note that some services do not require specification of a target.  However, the command will fail if no target is provided when the service being created does require it.
 
-Optionally, you can provide a file containing the parameters in a valid JSON object required for creating a specific service. The path to the parameters file can be an absolute or relative path to a file:
+Optionally, you can provide a file containing the command parameters in a valid JSON object. The path to the parameters file can be an absolute or relative path to a file:
   
   ```
   cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
@@ -144,7 +144,7 @@ Optionally, you can provide a file containing the parameters in a valid JSON obj
   ```
    {
       "service_instance": {
-         "instance_name":"value
+         "instance_name":"myInstance
          "resource_group": b0daaf6c3ccd4392a266da916cce2e8c,
          "target": bluemix-us-south
       }
@@ -169,7 +169,9 @@ To bind a service instance to an application from the [Cloud Foundry services da
 2. Locate the {{site.data.keyword.Bluemix_notm}} service instance you want to bind.
 3. Expand the corresponding view to see all the CFEE spaces where that service instance has been added. If that service instance has not been added to the CFEE space where the application is deployed, select **Add** from the menu at the row's far right to make the service instance available in the target CFEE space.
 4. Go to the menu located in the far right of the row corresponding to the CFEE/space where the service instance is available, and select **Bind application**.
-5. In the __Bind application__ dialog select the application you want to bind.
+5. In the __Bind application__ dialog select the application you want to bind. 
+
+   **Note:** If the to-be-bound service supports both, public (external) and private (internal) endpoints (see [IBM Cloud Service Endpoints](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about), and/or supports multiple [service access roles](https://cloud.ibm.com/docs/iam?topic=iam-iamconcepts#am) (which specify the allowable actions over the service instance that can be carried out through the binding), a multi-step dialog will prompt you to select an endpoint type (public or private) and/or a specific service role.
 6. The application is now bound to the service instance.  You can expand a service instance in the table to see the applications bound to it (in a specific CFEE space).
 
 
@@ -187,26 +189,26 @@ To unbind an application from a service instance:
 1. In the **Services** tab of the space, expand the target service instance to show the apps that are bound to it.
 2. Go the Actions menu in an application's row and select **Unbind service**.
 
-## Binding services to applications using the CLI
+## Binding services to applications using the Cloud Foundry CLI
 {: #bind-services-cli}
 
-See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for information about binding applications using the `cf bind-service` CLI command.
+You can use the `cf bind-service` command to bind a service instance to an application in a CFEE.  In the following cases the command requires special parameters:
 
-There are use cases that require parameters when using the `cf bind-service` command to bind an app to a service:
-
-* When you are using the `cf bind-service` command to bind an app to a service instance that supports [IBM Cloud Service Endpoints](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about) that connect to IBM Cloud services over the IBM Cloud private network. To bind an application (deployed in a CFEE) to a service that supports both, external (public) and internal (private) endpoints, you need to specify which one to use for the bindings.  In the following example the commands binds the service using the "internal" endpoint
+* When you are using the `cf bind-service` command to bind an app to a service instance that supports [IBM Cloud Service Endpoints](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about) that connect to IBM Cloud services over the IBM Cloud private network. To bind an application (deployed in a CFEE) to a service that supports both, public (external) and private (internal) endpoints, you need to specify which one to use for the bindings.  In the following example the commands binds the service using the "internal" endpoint
 
 ```
-cf bind-service <Application Name> <Service Alias Name> -c '{"service-endpoints":"internal"}' 
+cf bind-service myApplication myServiceInstance -c '{"service-endpoints":"internal"}' 
 ```
 {: pre}
 
 * When the service has multiple [service access roles](https://cloud.ibm.com/docs/iam?topic=iam-iamconcepts#am). Service access roles specify the allowable actions over the service instance that can be carried out through the binding.  You can specify a specific service access role through the `role` parameter. In the following example the binding specifies a "writer" service access role:
 
 ```
-cf bind-service <Application Name> <Service Instance Name> -c '{"role": "Manager"}' 
+cf bind-service myApplication myServiceInstance -c '{"role": "Manager"}' 
 ```
 {: pre}
+
+See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information about binding applications using the `cf bind-service` CLI command.
 
 ## Service visibility
 {: #service_visibility}
