@@ -17,14 +17,21 @@ lastupdated: "2019-04-02"
 {: #workingwith-services}
 
 Applications deployed in an {{site.data.keyword.cfee_full_notm}} can be bound to two types of service instances:
+
 1. Public service instances created from the {{site.data.keyword.Bluemix}} catalog and available in the {{site.data.keyword.Bluemix}} account.  
-Public service instances available in the {{site.data.keyword.Bluemix}} account cannot be available, by themselves, to CFEE environments.  In order for a public service instance (available in the {{site.data.keyword.Bluemix}} account) to become available to spaces in an CFEE environment, they have to be specifically added to the target CFEE space. Once the {{site.data.keyword.Bluemix}} service instance is added to the CFEE space, it can be bound to applications in that CFEE space.  This allows developers to leverage the vast catalog of {{site.data.keyword.Bluemix}} services in their applications deployed in CFEE environments, while allowing access control to those {{site.data.keyword.Bluemix}} services.
+Public service instances available in the {{site.data.keyword.Bluemix}} account are not automatically available, by themselves, to CFEE environments.  In order for a public service instance (available in the {{site.data.keyword.Bluemix}} account) to become available to spaces in an CFEE environment, they must be specifically added to the target CFEE space. When you _add_ a public service instance to a CFEE  through the CFEE's user interface, an alias of the public service instance is placed in the CFEE.  Once the {{site.data.keyword.Bluemix}} service instance is added (aliased) to the CFEE space, it can be bound to applications in that CFEE space.  This allows developers to leverage the vast catalog of {{site.data.keyword.Bluemix}} services in their applications deployed in CFEE environments, while allowing access control to those {{site.data.keyword.Bluemix}} services.
 
    In addition to adding existing {{site.data.keyword.Bluemix}} service instances to a CFEE space you can create a new {{site.data.keyword.Bluemix}} service instance from within a CFEE space, which also adds it automatically to that CFEE space.
   
 2. Service instances managed by a local Cloud Foundry service broker (local to the CFEE). These in turn can be of two types:
    *  2a. An instance of a service offering created from the Cloud Foundry marketplace of the current {{site.data.keyword.cfee_full_notm}} instance. This type of service instance requires a registered service broker available in the environment. A service broker shows a catalog of service offerings and plans, as well as enables the creation, removal, binding and unbinding of instances from those service offerings. See the [Managing Service Brokers](https://docs.cloudfoundry.org/services/managing-service-brokers.html) in the Cloud Foundry documentation for more information.
    * 2b. A user-provided service instance. Creation of this type is supported through the Command Line Interface (CLI), but not through the user interface. Nonetheless, user-provided service instances will be listed in the user interface.
+   
+You can also create a service instance from a CFEE space, either from the the CFEE's user interface or using the CLI (see sections below).  Creating a service instance from a CFEE using this command has a double result:
+    * Creates a service instance in the public {{site.data.keyword.Bluemix}}.
+    * Creates an alias of that public service instance inside the CFEE space from which the service instance was created.
+    
+The following sections describe how you can view, add, create, and bind service instances in the user interface and with the Cloud Foundry CLI.
    
 
 ## Viewing {{site.data.keyword.Bluemix_notm}} service instances across all CFEE environments
