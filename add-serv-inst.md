@@ -298,20 +298,21 @@ Consider the following when setting service visibility through the `cf` CLI:
 *  Before you add organizations to the "can see" list, you have to disable visibility for all the organizations.  You cannot disable access to a service plan if the plan is currently available to all organizations.
 
 In accordance to the general behavior described above, we recommend to control organization access to services by issuing the following commands:
-1. **Disable** access to a service plan for all orgs:
+
+* **Disable** access to a service plan for all orgs:
   ```
   cf disable-service-access SERVICE [-p PLAN] [-o ORG]
   ```
   {: pre}
   
-The following example disables access to the the standard plan of the Cloudant service to all memberes of MyOrg
+  The following example disables access to the the standard plan of the Cloudant service to all memberes of MyOrg:
   ```
   cf disable-service-access cloudant -p standard -o MyOrg
   ```
   {: pre}
 
   
-2. **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
+* **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
   ```
   cf enable-service-access SERVICE [-p PLAN] [-o ORG]
   ```
