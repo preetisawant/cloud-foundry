@@ -44,6 +44,10 @@ You can find and instantiate the {{site.data.keyword.cfee_full}} service in the 
 
 Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
+## Can a CFEE environment be provisioned across multiple data centers (multi-zone)?
+{: #multizone}
+Yes. Starting with CFEE v2.2.0 the CFEE infrastructure (Kubernetes cluster nodes) can be distriburted across multiple data centers (zones) within a given region. 
+
 ## Will I need to start at some minimum capacity?
 {: #minimum-capacity}
 
@@ -58,6 +62,11 @@ The CFEE service runs on Kuberneters containers, which allows for lower infrastr
 {: #isolation}
 
 You have two hardware options on the type of Kubernetes infrastructure into which the CFEE instance is deployed: _Virtual shared_ or _Virtual dedicated_ hardware. With _Virtual shared_ hardware, the worker nodes (into which the Cloud Foundry platform container is deployed) is distributed between you and other IBM customers.  With _Virtual dedicated_ the worker nodes are hosted on hardware that is dedicated exlusively to your account.  Note that in both cases, _Virtual shared_ and _Virtual dedicated_, each worker node is single-tenant to the customer.  This means that the Cloud Foundry cells in which applications run are not shared with other customers.
+
+## Can a CFEE operate within an isolated network?
+{: #isolation}
+
+Yes. Starting with version 2.2.0, IBM® Cloud Foundry Enterprise Environment (CFEE) instances can operate inside an isolated networks that protects and secures the environment from external threats. See [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more details.
 
 ## Can I scale the capacity of a CFEE?
 {: #scaling}
