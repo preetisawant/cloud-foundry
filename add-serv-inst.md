@@ -132,6 +132,13 @@ You can issue a `cf create-service` command to create a service instance in the 
   cf create-service SERVICE PLAN SERVICE_INSTANCE -c '{"instance_name":"value", "resource_group":"value", "target":"value"}'
   ```
   {: pre}
+  
+The following example creates an instance of the Cloudant service (standard plan) named "myCloudant" (with the same name in both, the public instance and the CFEE alias) in the "bluemix-us-south region", and group it in a specific resoure group":
+
+  ```
+  cf create-service cloudant standard myCloudant -c '{"instance_name":"myCloudant", "resource_group":"b0daaf6c3ccd4392a266da916cce2e8c", "target":"bluemix-us-south"}'
+  ```
+  {: pre}
 
  The `create-service` command can be issued with optional parameters to handle specific use cases:
  
@@ -139,32 +146,31 @@ You can issue a `cf create-service` command to create a service instance in the 
    * Resource group (`resource_group`).  Allows you to specify a resource group under which to place the new instance.  The    "resource_group" (`resource_group`). Note that the value of this parameter must be the resource group's ID (_resource group ID_), not the resource group's name (_resource group name_).  You can find the _resource group ID_ of a specific resource group with the command `ibmcloud resource groups`.
    * Target deployment region (`target`). The region where the service instance is to be provisioned. Note that some services do not require specification of a target.  However, the command will fail if no target is provided when the service being created does require it.
 
-Optionally, you can provide a file containing the command parameters in a valid JSON object. The path to the parameters file can be an absolute or relative path to a file:
-  
+Optionally, you can provide a JSON file containing those parameters. For example:
   ```
-  cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
-  ```
-  {: pre}
-  
-   Following is an example of a valid JSON object:
-   
-  ```
-   {
-      "service_instance": {
-         "instance_name":"myInstance
-         "resource_group": b0daaf6c3ccd4392a266da916cce2e8c,
-         "target": bluemix-us-south
-      }
+  {
+    "NewCloudant": 
+        {  
+        "instance_name":"myCloudant",
+        "resource_group": "b0daaf6c3ccd4392a266da916cce2e8c",
+        "target": "bluemix-us-south"
+        }
    }
   ```
   {: pre}
   
-   For help creating a service from the CLI, issue the following:
-  
+The JSON file can be then invoked as part of the `cf create-service` command. The path to the JSON file can be an absolute or relative:
   ```
-  cf cs -help
+  cf create-service SERVICE PLAN SERVICE_INSTANCE -c PATH_TO_FILE
   ```
-  See [Managing Service Instances with the cf CLI](https://docs.cloudfoundry.org/devguide/services/managing-services.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information.
+  {: pre}
+   
+You can get more details by issuing the following:
+  ```
+  cf create-service -help
+  ```
+<br>
+See [Managing Service Instances with the cf CLI](https://docs.cloudfoundry.org/devguide/services/managing-services.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information.
   
 ## Binding services to applications from the CFEE's user interface
 {: #bind-services-ui}
@@ -199,7 +205,14 @@ To unbind an application from a service instance:
 ## Binding services to applications using the Cloud Foundry CLI
 {: #bind-services-cli}
 
-You can use the `cf bind-service` command to bind a service instance to an application in a CFEE.  In the following cases the command requires special parameters:
+You can use the `cf bind-service` command to bind a service instance to an application in a CFEE:
+
+ ```
+  cf bind-service APP_NAME SERVICE_INSTANCE -c '{"parameter": "value"}' 
+  ```
+  {: pre}
+
+In the following cases the command requires special parameters:
 
 * When you are using the `cf bind-service` command to bind an app to a service instance that supports [IBM Cloud Service Endpoints](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-about#about) that connect to IBM Cloud services over the IBM Cloud private network. To bind an application (deployed in a CFEE) to a service that supports both, public (external) and private (internal) endpoints, you need to specify which one to use for the bindings.  In the following example the commands binds the service using the "internal" endpoint
 
@@ -211,7 +224,7 @@ You can use the `cf bind-service` command to bind a service instance to an appli
 * When the service has multiple [service access roles](https://cloud.ibm.com/docs/iam?topic=iam-iamconcepts#am). Service access roles specify the allowable actions over the service instance that can be carried out through the binding.  You can specify a specific service access role through the `role` parameter. In the following example the binding specifies a "writer" service access role:
 
   ```
-  cf bind-service myApplication myServiceInstance -c '{"role": "Manager"}' 
+  cf bind-service myApplication myServiceInstance -c '{"role": "writer"}' 
   ```
   {: pre}
 <br>
@@ -239,7 +252,8 @@ IBM Cloud account administrators (users with _Administrator_ role to all IAM ena
 In its simplest form, you can use the `catalog backlist` command to make a service offering (all its plans) invisibile to all users in the current account:
 
   ```
-  Ibmcloud catalog blacklist <thisService>
+  Ibmcloud catalog blacklist [--add service NAME or entry ID] [--remove service NAME or entry ID] [--service-list] [--output TYPE]
+
   ```
   {: pre}
 
@@ -286,15 +300,23 @@ Consider the following when setting service visibility through the `cf` CLI:
 In accordance to the general behavior described above, we recommend to control organization access to services by issuing the following commands:
 1. **Disable** access to a service plan for all orgs:
   ```
-  cf disable-service-access <service name> -p <plan name>
+  cf disable-service-access SERVICE [-p PLAN] [-o ORG]
   ```
   {: pre}
   
-2. **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
+The following example disables access to the the standard plan of the Cloudant service to all memberes of MyOrg
   ```
-  cf enable-service-access <service name> -p <plan name> -o <org name>
+  cf disable-service-access cloudant -p standard -o MyOrg
   ```
   {: pre}
+
+  
+2. **Enable** access to the service plan for specific CFEE organizations.  This will disable the service plan for all other organizations not specifically enabled in the command. 
+  ```
+  cf enable-service-access SERVICE [-p PLAN] [-o ORG]
+  ```
+  {: pre}
+
 <br>  
 **Note:** We recommend to execute the Cloud Foundry enable and disable service commands for the entire service, not for specific plans.
 
