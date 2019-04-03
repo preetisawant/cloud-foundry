@@ -31,7 +31,7 @@ You can also create a service instance from a CFEE space, either from the the CF
 * Creates a service instance in the public {{site.data.keyword.Bluemix}}.
 * Creates an alias of that public service instance inside the CFEE space from which the service instance was created.
     
-The following sections describe how you can view, add, create, and bind service instances in the user interface and with the Cloud Foundry CLI.
+The following sections describe how you can add, create, control access, and bind service instances in the user interface and with the Cloud Foundry CLI.
    
 
 ## Viewing {{site.data.keyword.Bluemix_notm}} service instances across all CFEE environments
@@ -214,7 +214,7 @@ You can use the `cf bind-service` command to bind a service instance to an appli
   cf bind-service myApplication myServiceInstance -c '{"role": "Manager"}' 
   ```
   {: pre}
-
+<br>
 See [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/application-binding.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") in the Cloud Foundry documentation for more information about binding applications using the `cf bind-service` CLI command.
 
 ## Service visibility
@@ -295,7 +295,7 @@ In accordance to the general behavior described above, we recommend to control o
   cf enable-service-access <service name> -p <plan name> -o <org name>
   ```
   {: pre}
-  
+<br>  
 **Note:** We recommend to execute the Cloud Foundry enable and disable service commands for the entire service, not for specific plans.
 
 
