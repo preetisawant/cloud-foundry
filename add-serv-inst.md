@@ -28,8 +28,8 @@ Public service instances available in the {{site.data.keyword.Bluemix}} account 
    * 2b. A user-provided service instance. Creation of this type is supported through the Command Line Interface (CLI), but not through the user interface. Nonetheless, user-provided service instances will be listed in the user interface.
    
 You can also create a service instance from a CFEE space, either from the the CFEE's user interface or using the CLI (see sections below).  Creating a service instance from a CFEE using this command has a double result:
-    * Creates a service instance in the public {{site.data.keyword.Bluemix}}.
-    * Creates an alias of that public service instance inside the CFEE space from which the service instance was created.
+* Creates a service instance in the public {{site.data.keyword.Bluemix}}.
+* Creates an alias of that public service instance inside the CFEE space from which the service instance was created.
     
 The following sections describe how you can view, add, create, and bind service instances in the user interface and with the Cloud Foundry CLI.
    
