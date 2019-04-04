@@ -39,7 +39,7 @@ The following table provides a summary of the key elements of the {{site.data.ke
 | CFEE instance | An instance of the IBM Cloud Foundry Enterprise Environment service created under an IBM Cloud account by a user in with an administrator or editor role in that account. |
 || There can be multiple CFEE instances in an IBM Cloud Account. |
 || Can have one or more organizations. |
-| Kubernetes cluster| CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster when the CFEE instance is created. |
+| Kubernetes cluster | CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster when the CFEE instance is created. |
 | Organization | Includes one or more spaces. |
 || Includes one or more org managers. |
 || Includes one or more team members. Each team member can be granted one or more roles. |
