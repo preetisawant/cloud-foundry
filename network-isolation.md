@@ -44,7 +44,7 @@ You can control inbound/outbound connectivity to/from an isolated network by con
 
 Network access rules related to a network isolated CFEE can be of the following types:
 
-* **Inbound traffic access:** When a Kubernetes cluster is installed, it automatically sets and configures a [default Calico policy](https://console.bluemix.net/docs/containers/cs_network_policy.html#default_policy) that allows management access to the worker nodes (hosting your CFEE instance in this case).
+* **Inbound traffic access:** When a Kubernetes cluster is installed, it automatically sets and configures a [default Calico policy](https://cloud.ibm.com/docs/containers/cs_network_policy.html#default_policy) that allows management access to the worker nodes (hosting your CFEE instance in this case).
 
 <br>
 **Default** Calico rules for accessing the **Kubernetes cluster** worker nodes:
