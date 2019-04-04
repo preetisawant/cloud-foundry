@@ -24,9 +24,11 @@ This document describes what's new in each version released up to this date of t
 
 _Release Date:_ 2019-04-04
 
-The following changes were released in version 2.2.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
+The following changes were released in version 2.2.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
 
 * Resolved a number of minor problems interfering with routine operations of a CFEE.
+
+To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. **Note** that this version does not pre-require version 2.2.0. You can update directly to version 2.2.1. 
  
 
 ## Version 2.2.0
