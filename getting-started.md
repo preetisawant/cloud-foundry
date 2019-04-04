@@ -42,7 +42,7 @@ When you create an organization you assign a quota to it.  The quota sets limits
 ## Step 3: Add users to organizations and spaces
 {: #add-users}
 
-[Add users](https://console.bluemix.net/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
+[Add users](https://cloud.ibm.com/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://cloud.ibm.com/docs/cloud-foundry/permissions.html).
 
 ## Step 4: Deploy and view applications
 {: #deploy-apps}
@@ -110,7 +110,7 @@ To start the Stratos console:
 ## Additional resources
 {: #additional-resources}
 
-You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
