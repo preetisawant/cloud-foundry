@@ -42,7 +42,7 @@ Logging of Cloud Foundry events is supported through integration with the Log An
 
 To enable logging for a CFEE instance:
 
-1. Make sure that you have an [IAM access policy](https://console.bluemix.net/iam/#/users) that assigns you editor, operator, or administrator role to the Log Analysis service instance into which you intend to persist the logging events.
+1. Make sure that you have an [IAM access policy](https://cloud.ibm.com/iam/#/users) that assigns you editor, operator, or administrator role to the Log Analysis service instance into which you intend to persist the logging events.
 2. Open a CFEE's user interface and to **Operations > Logging** entry in the left navigation pane to open the Logging page.
 3. Click **Enable persistence** and select one of the **Log Analysis instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
 4. Once logging persistence is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the Log Analysis service instance itself, where they user can go to see and manage logging events.
