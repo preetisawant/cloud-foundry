@@ -37,7 +37,7 @@ The following rules and constraints apply when updating a CFEE to a new version:
 * Application cells can be updated only to the version of the control plane.  That is, the control plane can be at a higher CFEE version level than application cells, but not viceversa.
 
 To update the CFEE version of your CFEE instance:
-1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} that you want to update.
+1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} that you want to update.
 2. Go to the **Updates and Scaling** page under the _Operations_ entry in the navigation pane.
 3. (optional) In the _Control Plane_ table you can expand the row to see the worker nodes in the control plane.
 4. Click **Update**.
@@ -77,7 +77,7 @@ Users need the following permissions to be able to add or remove Cloud Foundry c
 * _Operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned.
 
 To add application cells in your CFEE instance:
-1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
+1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
 2. Click **Change Cloud Foundry cell count** near the _Cells_ table, which opens the _Add Cloud Foundry Cells_ page.
 3. In the _Change Cloud Foundry cell count page_, select the total number of cells in the Target cell count field. The page also shows the Geography and Location of the CFEE instance where they cells will be added. It also shows the current number of cells in the _Current Cell count_ field and the capacity of the cells to be added (which is the same as the capacity of the current cells) in the Node size filed. The page's right pane shows the estimated cost of the added cells along with the new total estimated cost of the environment.
 4. Click **Add cells**.  In the _Add Cells_ dialog, click **Add**
