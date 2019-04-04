@@ -18,7 +18,7 @@ lastupdated: "2019-04-02"
 
 ## Prerequisites
 * Ensure that you are in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment.
-* Ensure that you have the correct [permissions](https://https://cloud.ibm.com/catalog/docs/cloud-foundry/permissions.html) before creating instances of the {{site.data.keyword.cfee_full_notm}}. 
+* Ensure that you have the correct [permissions](https://cloud.ibm.com/catalog/docs/cloud-foundry/permissions.html) before creating instances of the {{site.data.keyword.cfee_full_notm}}. 
 * [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance (CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service).  
 
 ## Creating a CFEE instance
@@ -30,7 +30,7 @@ lastupdated: "2019-04-02"
     * Select a plan. See the [Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment#eirini) section for a description of the limitations of tis plan.
     * Enter a **Name** for the CFEE instance.
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
-    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
+    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
     * Select the hardware isolation for the Kubernetes cluster:   
@@ -38,7 +38,7 @@ lastupdated: "2019-04-02"
       * _Virtual-dedicated_: The worker nodes in the cluster are hosted on infrastructure that is devoted to your account.
     * Data in the cluster are encrypted by default. You have the option of turning off _Encrypt local disk_.
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
-    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://console.bluemix.net/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
+    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
     
     Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
     
