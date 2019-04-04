@@ -37,7 +37,7 @@ With respect to the public multi-tenant the most noteworthy difference is certai
 ## Where can I find the CFEE service?
 {: #where}
 
-You can find and instantiate the {{site.data.keyword.cfee_full}} service in the {{site.data.keyword.Bluemix_notm}} [catalog](https://console.stage1.bluemix.net/catalog).
+You can find and instantiate the {{site.data.keyword.cfee_full}} service in the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
 
 ## Can I have more than one CFEE environment within a regional data center?
 {: #multiple-cfees}
