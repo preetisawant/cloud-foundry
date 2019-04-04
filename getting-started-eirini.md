@@ -103,19 +103,19 @@ When you create an organization you assign a quota to it.  The quota sets limits
 ## Step 5: Deploy and view applications
 {: #deploy-apps}
 
-When you're ready, you can [deploy the app](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
 ## Step 6: Create or add IBM Cloud service instances to CFEE spaces
 {: #service-instances}
 
-[Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+[Create services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
 ## Step 7: Bind applications to service instances
 {: #bind-apps}
 
-[Bind your app](https://console.bluemix.net/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
+[Bind your app](https://cloud.ibm.com/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
 
-In the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
 ## Step 8: Install the Stratos Console to manage applications (optional)
@@ -145,7 +145,7 @@ To start the Stratos console:
 ## Additional resources
 {: #additional-resources}
 
-You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://console.cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
