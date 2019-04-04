@@ -27,13 +27,13 @@ The _Eirini Technical Preview_ plan allows you to explore a CFEE using native Ku
 ## Step 1: Create your CFEE instance
 {: #create-environment}
 
-You can create an instance of the {{site.data.keyword.cfee_full_notm}} (CFEE) from the {{site.data.keyword.Bluemix_notm}} catalog. Before creating the CFEE instance visit the [Create environment](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment) documentation for guidance on preparing your {{site.data.keyword.Bluemix_notm}} account, ensuring the right permissions, and steps for creating the CFEE instance.
+You can create an instance of the {{site.data.keyword.cfee_full_notm}} (CFEE) from the {{site.data.keyword.Bluemix_notm}} catalog. Before creating the CFEE instance visit the [Create environment](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment) documentation for guidance on preparing your {{site.data.keyword.Bluemix_notm}} account, ensuring the right permissions, and steps for creating the CFEE instance.
 
 
 ## Step 2: Create organizations and spaces
 {: #create-orgsandspaces}
 
-After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://console.bluemix.net/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
+After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://cloud.ibm.com/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
 
 When you create an organization you assign a quota to it.  The quota sets limits on the resources (memory, cpu, etc.) available for that organization. You can assign a different quota at a later time. There is a set of pre-configured quotas available in every CFEE, but you can also create your own custom quotas in the **Quotas** page of the CFEE user interface.  You can make a custom quota the _Default_ quota by invoking the _Copy to default_ action from the quota's menu, which copies the values of the custom quota into the default quota.
 
@@ -47,25 +47,25 @@ When you create an organization you assign a quota to it.  The quota sets limits
 ## Step 4: Deploy and view applications
 {: #deploy-apps}
 
-When you're ready, you can [deploy the app](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
 ## Step 5: Create or add IBM Cloud service instances to CFEE spaces
 {: #service-instances}
 
-[Create services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+[Create services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
 ## Step 6: Bind applications to service instances
 {: #bind-apps}
 
-[Bind your app](https://console.bluemix.net/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
+[Bind your app](https://cloud.ibm.com/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
 
-In the [Cloud Foundry dashboard](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
 ## Step 7: Enable auditing and logging persistance (optional)
 {: #enable-auditingandlogging}
 
-Enable the environment for [auditing events](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) and [logging persistence](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#logging).
+Enable the environment for [auditing events](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) and [logging persistence](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#logging).
 
 ## Step 8: Enable Monitoring tools (optional)
 {: #enable-monitoring}
@@ -75,7 +75,7 @@ Monitoring tools are not automatically provisioned on CFEE instances v2.2.0 or l
 ## Step 9: Create and secure Cloud Foundry domains (optional)
 {: #create-domains}
 
-Create [domains](https://console.bluemix.net/docs/cloud-foundry/domains.html#domains) for all applications in the CFEE (shared domains) or for a specific organization (private domains), and secure them with SSL certificates.
+Create [domains](https://cloud.ibm.com/docs/cloud-foundry/domains.html#domains) for all applications in the CFEE (shared domains) or for a specific organization (private domains), and secure them with SSL certificates.
 
 ## Step 10: Configure the prioritization order of the Cloud Foundry buildbacks
 {: #create-buildpacks}
@@ -114,4 +114,4 @@ You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI co
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-Information on the CFEE API's in the CFEE [API documentation](https://console.bluemix.net/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Information on the CFEE API's in the CFEE [API documentation](https://cloud.ibm.com/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
