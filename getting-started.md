@@ -21,7 +21,7 @@ lastupdated: "2019-04-02"
 
 This getting started tutorial shows how to create an {{site.data.keyword.cfee_full_notm}}, add users, create an organization and spaces, deploy apps, and bind those apps to services.
 
-**Note:** The steps that follow are applicable to CFEEs created from the **Standard** plan.  If this CFEE was created from the **Eirini Technical Preview** plan, follow **only steps 1 through 6**, and step **11**. The capabilities described in steps 8 through 11 are not supported in the _Eirini Technical Preview_ plan.  See [Getting started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini).
+**Note:** The steps that follow are applicable to CFEEs created from the **Standard** plan.  If this CFEE was created from the **Eirini Technical Preview** plan, follow **only steps 1 through 6**, and step **11**. The capabilities described in steps 7 through 10 are not supported in the _Eirini Technical Preview_ plan.  See [Getting started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini).
 The _Eirini Technical Preview_ plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego).  The Kubernetes scheduler is used in the CFEE to deploy and run apps in the Cloud Foundry application runtime, add users, create an organization and spaces, deploy apps, and bind those apps to services. 
 
 ## Step 1: Create your CFEE instance
