@@ -26,9 +26,16 @@ _Release Date:_ 2019-04-04
 
 The following changes were released in version 2.2.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
 
-* Resolved a number of minor problems interfering with routine operations of a CFEE.
+* Resolved a number of minor problems interfering with routine operations of a CFEE:
+     * Misattributed error messages. 
+     * Incorrect buildpack upload timeout.
+     * Unintended events on doble click delete icon.
+     * Incorrect cluster version display.
+     * Incorrect getting started page display.
 
-To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. **Note** that this version does not pre-require version 2.2.0. You can update directly to version 2.2.1. 
+To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
+
+**Note** that this version does not pre-require version 2.2.0. You can update directly to version 2.2.1. However, if you bypass version 2.2.0, we still recommend that you update the CFEE Kubernetes cluster to v1.13 before the CFEE update (recommended also before a v2.2.0 update).
  
 
 ## Version 2.2.0
