@@ -48,7 +48,7 @@ lastupdated: "2019-04-10"
     Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/catalog/docs/containers/cs_why.html#cs_ov).
 
 5.  Configure the capacity of the CFEE:
-    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
+    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  Currently there is a maximum of 6 cells that can be provisioned on a CFEE instance.
     * Select the **Node size**, which determines the capacity of the Cloud Foundry cells (CPU and memory) .
     
     In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
