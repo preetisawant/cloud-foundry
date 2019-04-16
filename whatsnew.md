@@ -27,7 +27,8 @@ _Release Date:_ 2019-04-16
 The following changes were released in version 2.2.2 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
 
 * Resolved v2.2.1 update problems. Version 2.2.2 di facto replaces version 2.2.1. 
-* Resolved minor monitoring problems.
+* Resolved problem affecting specific use cases of `cf login`.
+* Resolved minor problem with deployment of monitoring tools.
      
 To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
 
