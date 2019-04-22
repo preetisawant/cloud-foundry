@@ -23,7 +23,7 @@ Starting with version 2.2.0, {{site.data.keyword.cfee_full}} (CFEE) instances ca
 
 A CFEE instance is provisioned into a cluster from the IBM Kubernetes Service. The CFEE's Cloud Foundry cells (where applications are hosted) are provisioned into the Cluster's worker nodes. This means that access to the CFEE cells and applications implies accessing the cluster worker nodes. 
 
-The worker nodes contain Application Loads Balancers (ALBs) that distribute the applications' workload among the worker nodes. CFEE v2.2.0 enables the Kubernetes ALBs in both, private and public networks.  This means that CFEE v2.2.0 can be accessed from both, public or private networks.
+The worker nodes contain Application Loads Balancers (ALBs) that distribute the applications' workload among the worker nodes. CFEE v2.2.0 enables the Kubernetes ALBs in both, private and public networks.  This means that CFEE v2.2.0 can be accessed from both, public and private networks.
 
 ## CFEE management in an isolated network
 {: #control-plan-access}
