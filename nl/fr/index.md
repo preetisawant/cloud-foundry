@@ -22,7 +22,7 @@ Bienvenue dans le service {{site.data.keyword.cfee_full}}.
 
 {{site.data.keyword.cfee_full}} (CFEE) vous permet d'instancier à la demande plusieurs plateformes Cloud Foundry d'entreprise isolées. Des instances du service {{site.data.keyword.Bluemix_notm}} Foundry Enterprise s'exécutent dans votre propre compte dans l'environnement {{site.data.keyword.Bluemix_notm}}. L'environnement est déployé sur du matériel isolé (clusters Kubernetes). Vous avez le contrôle complet de l'environnement, y compris le contrôle d'accès, la capacité, les mises à jour de version, l'utilisation et la surveillance des ressources. De plus, l'intégration CFEE à {{site.data.keyword.Bluemix_notm}} permet aux développeurs de tirer parti des services disponibles dans leur compte {{site.data.keyword.Bluemix_notm}}.  Les utilisateurs peuvent ajouter ces services à une instance CFEE et les lier aux applications déployées dans des espaces CFEE.
 
-Découvrez comment [**commencer**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) à créer et à utiliser une instance CFEE.
+Découvrez comment [**commencer**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started) à créer et à utiliser une instance CFEE.
 
 {:shortdesc}
 

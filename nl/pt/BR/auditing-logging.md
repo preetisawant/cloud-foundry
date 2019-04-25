@@ -33,7 +33,7 @@ ocorrendo em uma instância do CFEE.  Essas atividades incluem login, criação 
 usuário e designações de função, implementações de aplicativo, ligações de serviço e configuração de domínio. A
 auditoria é suportada por meio da integração com o serviço Activity Tracker no IBM Cloud. Uma instância do serviço
 Activity Tracker selecionada pelo administrador do CFEE é configurada automaticamente para receber eventos que
-representam ações executadas no Cloud Foundry e no plano de controle do CFEE. O usuário pode ver e
+representam ações executadas no Cloud Foundry e no plano de controle do CFEE.  O usuário pode ver e
 gerenciar esses eventos na interface com o usuário da instância de serviço do Activity Tracker.
 
 Para ativar a auditoria para uma instância do CFEE:
@@ -59,7 +59,7 @@ instância de serviço do Log Analysis.
 
 Para ativar a criação de log para uma instância do CFEE:
 
-1. Certifique-se de ter uma [política de acesso ao IAM](https://console.bluemix.net/iam/#/users)
+1. Certifique-se de ter uma [política de acesso ao IAM](https://cloud.ibm.com/iam/#/users)
 que designa a função de editor, de operador ou de administrador para a instância de serviço do Log Analysis na qual você
 pretende persistir os eventos de criação de log.
 2. Abra uma interface com o usuário do CFEE e a entrada **Operações > Criação de log** na área

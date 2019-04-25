@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2019-01-11"
+lastupdated: "2019-04-02"
 
 ---
 
@@ -21,102 +21,70 @@ CFEE ({{site.data.keyword.cfee_full}}) è una piattaforma cloud per ospitare app
 
 Questa esercitazione introduttiva mostra come creare un {{site.data.keyword.cfee_full_notm}}, aggiungere utenti, creare un'organizzazione e gli spazi, distribuire le applicazioni e associare queste applicazioni ai servizi.
 
-## Informazioni sulle autorizzazioni
-{: #permissions}
+**Nota:** la seguente procedura può essere applicata ai CFEE creati dal piano **Standard**.  Se questo CFEE è stato creato dal piano **Anteprima tecnica Eirini**, segui **solo i passi da 1 a 6** e il passo **11**. Le funzionalità descritte nei passi da 8 a 11 non sono supportate nel piano _Anteprima tecnica Eirini_.  Vedi [Introduzione all'anteprima tecnica Eirini](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini).
+Il piano _Anteprima tecnica Eirini_ ti consente di esplorare un CFEE utilizzando Kubernetes nativo come programma di pianificazione del contenitore (invece di Diego). Il programma di pianificazione Kubernetes viene utilizzato nel CFEE per distribuire ed eseguire le applicazioni nel runtime dell'applicazione Cloud Foundry, aggiungere gli utenti, creare un'organizzazione e gli spazi, distribuire le applicazioni e associare tali applicazioni ai servizi. 
 
-Hai bisogno delle politiche di accesso corrette prima di creare delle istanze dell'{{site.data.keyword.cfee_full_notm}}. Per ulteriori informazioni, consulta [Autorizzazioni](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
-
-## Passo 1: assicurati che l'account {{site.data.keyword.Bluemix_notm}} possa creare risorse dell'infrastruttura
-{: #accountprep-environment}
-
-Le istanze CFEE vengono distribuite nei nodi di lavoro Kubernetes dal servizio Kubernetes. [Prepara il tuo account IBM Cloud](https://console.bluemix.net/docs/cloud-foundry/prepare-account.html) per verificare di poter creare le risorse dell'infrastruttura necessarie per un'istanza CFEE.
-
-## Passo 2: crea la tua istanza CFEE 
+## Passo 1: crea la tua istanza CFEE
 {: #create-environment}
 
-Prima di creare il tuo CFEE, assicurati di essere nell'account {{site.data.keyword.Bluemix_notm}} in cui vuoi creare l'ambiente e di disporre delle politiche di accesso necessarie (passo 1 in alto).
+Puoi creare un'istanza di {{site.data.keyword.cfee_full_notm}} (CFEE) dal catalogo {{site.data.keyword.Bluemix_notm}}. Prima di creare l'istanza CFEE visita la documentazione [Crea l'ambiente](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment) per le istruzioni sulla preparazione del tuo account {{site.data.keyword.Bluemix_notm}}, la verifica delle autorizzazioni corrette e i passi per la creazione dell'istanza CFEE.
 
-1.  Apri il {{site.data.keyword.Bluemix_notm}}Catalogo [ ](https://console.bluemix.net/catalog).
 
-2.  Individua il servizio {{site.data.keyword.cfee_full_notm}} nel catalogo e fai clic su di esso per aprirne la pagina della panoramica.  Tale prima pagina fornisce una panoramica delle funzioni principali del servizio. Fai clic su **Continue**.
-
-3.  Configura l'istanza CFEE da creare:
-    * Seleziona uno dei piani disponibili.
-    * Immetti un **Nome** per l'istanza CFEE.
-    * Seleziona un **Gruppo di risorse** nel quale viene raggruppato l'ambiente. Solo i gruppi di risorse a cui hai accesso nell'account IBM Cloud corrente verranno elencati nell'elenco a discesa _Gruppi di risorse_, il che significa che devi disporre dell'autorizzazione per accedere ad almeno un gruppo di risorse nell'account per poter creare un CFEE.
-    * Seleziona l'**Area geografica** e l'**Ubicazione** in cui deve essere eseguito il provisioning dell'istanza del servizio. Vedi l'elenco di [data center e ubicazioni di provisioning disponibili](https://console.bluemix.net/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") in base all'area geografica per CFEE e i servizi di supporto. 
-
-4.  Nei campi **Compose for PostgreSQL**, seleziona una delle organizzazioni pubbliche e seleziona quindi uno degli spazi disponibili in tale organizzazione. Verrà eseguito il provisioning dell'istanza di Compose for PostgreSQL nello spazio selezionato. Il servizio Compose for PostgreSQL è una dipendenza obbligatoria del servizio CFEE.
-
-**Nota:** in _Compose for PostgreSQL_ solo le organizzazioni nell'ubicazione in cui intendi eseguire il provisioning dell'istanza CFEE (passo 4 in alto) e a cui hai accesso sono disponibili per la selezione. All'interno di una specifica organizzazione, sono disponibili per la selezione solo gli spazi a cui hai un accesso di _sviluppatore_. 
-
-5. Configura la capacità del CFEE:
-    * Seleziona il **Numero di celle** per il CFEE. 
-    * Seleziona la **Dimensione nodo*, che determina la dimensione delle celle Cloud Foundry (CPU e memoria).
-
-6.  Facoltativamente, apri la sezione **Infrastruttura** per visualizzare le proprietà del cluster Kubernetes che supporta l'istanza CFEE. Tieni presente che il **Numero di nodi di lavoro** è uguale al numero di celle più 2 (due dei nodi di lavoro Kubernetes di cui è stato eseguito il provisioning supportano il piano di controllo CFEE).
-Il cluster Kubernetes su cui è distribuito l'ambiente compare nel [dashboard](https://console.bluemix.net/dashboard/apps/) di {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi la [documentazione del servizio Kubernetes](https://console.bluemix.net/docs/containers/cs_why.html#cs_ov).
-
-**Nota:** consigliamo che lo spanning della VLAN sia abilitato se il provisioning dei nodi di lavoro nel cluster Kubernetes viene eseguito su sottoreti differenti.  I nodi di lavoro su sottoreti differenti potrebbero impedire l'interconnettività se lo spanning della VLAN è disabilitato.  Per ulteriori informazioni, vedi la documentazione dello [spanning della VLAN](https://console.bluemix.net/docs/containers/cs_subnets.html#vlan-spanning).
-
-7.  Il **Riepilogo ordine** sul lato destro della pagina riflette il costo dell'istanza CFEE e dei servizi ausiliari insieme al totale mensile stimato.
-
-8.  Fai clic su **Create**, che apre il dashboard dell'ambiente e indica lo stato e l'avanzamento della creazione.
-
-**Nota:** una volta avviato il processo di creazione, viene visualizzata una riga tabella per il CFEE nel dashboard {{site.data.keyword.Bluemix_notm}}. nell'_Elenco risorse_ e nel [dashboard Ambienti Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments).  Lo stato nella riga tabella indica quando è completata la creazione.
-
-Il processo automatizzato che crea l'ambiente distribuisce l'infrastruttura in un cluster Kubernetes e la configura per renderla pronta per l'uso. Il processo dura 90 - 120 minuti.
-
-Dopo che il CFEE è stato creato, riceverai diverse email che confermano il provisioning del CFEE e dei servizi di supporto, nonché delle email che ti informano dello stato degli ordini corrispondenti.
-
-Quando crei un'istanza CFEE, nello stesso account IBM Cloud vengono create tre istanze del servizio di supporto aggiuntive. Tali istanze del servizio di supporto prendono il nome da quello dell'istanza CFEE. Pertanto, la creazione di un CFEE determina la creazione di un totale di quattro istanze del servizio nell'account IBM Cloud:
-* Istanza CFEE ("_cfeename_").
-* Cluster Kubernetes ("_cfeename_-cluster"). Il cluster fornisce l'infrastruttura in cui viene eseguito il provisioning dell'istanza CFEE.
-* Istanza Cloud Object Storage ("_cfeename_-cos"). L'istanza viene utilizzata per archiviare i dati generati durante la creazione dei contenitori dell'applicazione CFEE (ad esempio, pacchetti di applicazioni caricati, pacchetti di build ed eseguibili compilati).
-* Istanza Compose for PostgreSQL ("_cfeename_-postgres"). L'istanza viene utilizzata per archiviare i dati Cloud Foundry nell'istanza CFEE (ad esempio controllo della distribuzione delle applicazioni e degli avvii e arresti degli eventi, conservazione dei record di connessioni di servizi, applicazioni, spazi, organizzazioni e appartenenze degli utenti CFEE). 
-
-## Passo 3: crea organizzazioni e spazi
+## Passo 2: crea organizzazioni e spazi
 {: #create-orgsandspaces}
 
-Dopo aver creato l'{{site.data.keyword.cfee_full_notm}}, consulta [Creazione di organizzazioni e spazi](https://console.bluemix.net/docs/cloud-foundry/orgs-spaces.html) per informazioni su come strutturare l'ambiente creando le organizzazioni e gli spazi. Le applicazioni in un {{site.data.keyword.cfee_full_notm}} vengono indirizzate all'interno di spazi specifici. A sua volta, uno spazio si trova all'interno di un'organizzazione specifica. I membri di un'organizzazione condividono un piano di quota, le applicazioni, le istanze dei servizi e i domini personalizzati.
+Dopo aver creato l'{{site.data.keyword.cfee_full_notm}}, consulta [Creazione di organizzazioni e spazi](https://cloud.ibm.com/docs/cloud-foundry/orgs-spaces.html) per informazioni su come strutturare l'ambiente creando le organizzazioni e gli spazi. Le applicazioni in un {{site.data.keyword.cfee_full_notm}} vengono indirizzate all'interno di spazi specifici. A sua volta, uno spazio si trova all'interno di un'organizzazione specifica. I membri di un'organizzazione condividono un piano di quota, le applicazioni, le istanze dei servizi e i domini personalizzati.
+
+Quando crei un'organizzazione assegni una quota ad essa.  La quota imposta i limiti sulle risorse (memoria, cpu, ecc.) disponibili per tale organizzazione. Puoi assegnare una quota differente in un momento successivo. Esiste una serie di quote preconfigurate disponibili in ogni CFEE, ma puoi anche creare le tue quote personalizzate nella pagina **Quote** dell'interfaccia utente CFEE.  Puoi rendere una quota personalizzata la quota _Predefinita_ richiamando l'azione _Copia come predefinita_ dal menu delle quote, che copia i valori della quota personalizzata in quella predefinita.
 
 **Nota:** la pagina _Organizzazioni Cloud Foundry_ disponibile dal menu **_Gestisci > Account > Organizzazioni Cloud Foundry_** situata nella parte superiore dell'intestazione di IBM Cloud è destinata esclusivamente alle organizzazioni pubbliche di IBM Cloud, **non alle organizzazioni CFEE**. Le organizzazioni CFEE vengono gestite all'interno della pagina _Organizzazioni_ di un'istanza CFEE.  Apri l'interfaccia utente CFEE e fai clic sulla pagina **_Organizzazioni_** per creare e gestire le organizzazioni per tale CFEE.
 
-## Passo 4: aggiungi utenti a organizzazioni e spazi
+## Passo 3: aggiungi utenti a organizzazioni e spazi
 {: #add-users}
 
 [Aggiungi gli utenti](https://console.bluemix.net/docs/cloud-foundry/add-users.html) a tali organizzazioni e spazi in specifiche assegnazioni di ruoli che controllano il loro livello di accesso.  Prima che gli utenti possano essere aggiunti come membri di organizzazioni e spazi in un CFEE, è necessario che tali utenti abbiano un accesso precedente all'istanza CFEE. Consulta [Autorizzazioni](https://console.bluemix.net/docs/cloud-foundry/permissions.html).
 
-## Passo 5: distribuisci e visualizza applicazioni
+## Passo 4: distribuisci e visualizza applicazioni
 {: #deploy-apps}
 
-Quando sei pronto, puoi [distribuire l'applicazione](https://console.bluemix.net/docs/cloud-foundry/deploy-apps.html) con l'interfaccia riga di comando (CLI) {{site.data.keyword.Bluemix_notm}}.  Visualizza l'elenco delle applicazioni distribuite nell'interfaccia utente, nel contesto di uno spazio CFEE specifico o globalmente in tutte le istanze CFEE.  Puoi anche avviare, arrestare o eliminare le applicazioni da quelle viste.
+Quando sei pronto, puoi [distribuire l'applicazione](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) con l'interfaccia riga di comando (CLI) {{site.data.keyword.Bluemix_notm}}.  Visualizza l'elenco delle applicazioni distribuite nell'interfaccia utente, nel contesto di uno spazio CFEE specifico o globalmente in tutte le istanze CFEE.  Puoi anche avviare, arrestare o eliminare le applicazioni da quelle viste.
 
-## Passo 6: crea o aggiungi istanze del servizio IBM Cloud a spazi CFEE
+## Passo 5: crea o aggiungi istanze del servizio IBM Cloud a spazi CFEE
 {: #service-instances}
 
-[Crea i servizi](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) oppure [Aggiungi dei servizi esistenti](https://console.bluemix.net/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) disponibili nell'account IBM Cloud.  Una volta che un'istanza del servizio è disponibile in uno spazio CFEE, puoi eseguirne il bind (associazione) alle applicazioni CFEE distribuite in tale spazio.
+[Crea i servizi](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) oppure [Aggiungi dei servizi esistenti](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) disponibili nell'account IBM Cloud.  Una volta che un'istanza del servizio è disponibile in uno spazio CFEE, puoi eseguirne il bind (associazione) alle applicazioni CFEE distribuite in tale spazio.
 
-## Passo 7: associa mediante bind applicazioni a istanze del servizio
+## Passo 6: associa mediante bind applicazioni a istanze del servizio
 {: #bind-apps}
 
-[Associa la tua applicazione](https://console.bluemix.net/docs/cloud-foundry/binding.html) a un alias dell'istanza del servizio per poter utilizzare le funzioni del servizio.
+[Associa la tua applicazione](https://cloud.ibm.com/docs/cloud-foundry/binding.html) a un alias dell'istanza del servizio per poter utilizzare le funzioni del servizio.
 
-Nel [dashboard Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") puoi vedere una vista consolidata di tutte le applicazioni e tutti i servizi, sia quelli *pubblici* che quelli *aziendali*.  Una volta all'interno del dashboard Cloud Foundry, fai clic su *Pubblico* nel riquadro di navigazione a sinistra per visualizzare le applicazioni e i servizi pubblici disponibili nell'account IBM Cloud.  Fai clic su *Enterprise* per visualizzare tutti gli ambienti CFEE, le applicazioni distribuite negli spazi CFEE e i servizi disponibili agli spazi CFEE.
+Nel [dashboard Cloud Foundry](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") puoi vedere una vista consolidata di tutte le applicazioni e tutti i servizi, sia quelli *pubblici* che quelli *aziendali*.  Una volta all'interno del dashboard Cloud Foundry, fai clic su *Pubblico* nel riquadro di navigazione a sinistra per visualizzare le applicazioni e i servizi pubblici disponibili nell'account IBM Cloud.  Fai clic su *Azienda* per visualizzare tutti gli ambienti CFEE, le applicazioni distribuite negli spazi CFEE e i servizi disponibili agli spazi CFEE.
 {:tip}
 
-## Passo 8: abilita controllo e persistenza della registrazione (facoltativo)
+## Passo 7: abilita controllo e persistenza della registrazione (facoltativo)
 {: #enable-auditingandlogging}
 
-Abilita l'ambiente per [eventi di controllo](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) e [persistenza della registrazione](https://console.bluemix.net/docs/cloud-foundry/auditing-logging.html#logging).
+Abilita l'ambiente per [eventi di controllo](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) e [persistenza della registrazione](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#logging).
+
+## Passo 8: Abilita gli strumenti di monitoraggio (facoltativo)
+{: #enable-monitoring}
+
+Il provisioning degli strumenti di monitoraggio non viene eseguito automaticamente sulle istanze CFEE v2.2.0 o successiva. Gli amministratori CFEE possono [abilitare gli strumenti di monitoraggio](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-monitoring) dopo che è stata creata l'istanza CFEE. Il set di strumenti di monitoraggio include Prometheus, Grafana e Alertmanager.
 
 ## Passo 9: crea e proteggi domini Cloud Foundry (facoltativo)
 {: #create-domains}
 
-Crea [domini](https://console.bluemix.net/docs/cloud-foundry/domains.html#domains) per tutte le applicazioni nel CFEE (domini condivisi) o per una specifica organizzazione (domini privati) e proteggili con certificati SSL.
+Crea [domini](https://cloud.ibm.com/docs/cloud-foundry/domains.html#domains) per tutte le applicazioni nel CFEE (domini condivisi) o per una specifica organizzazione (domini privati) e proteggili con certificati SSL.
 
+## Passo 10: configura l'ordine di priorità dei pacchetti di build Cloud Foundry
+{: #create-buildpacks}
 
-## Passo 10: installa la console Stratos per gestire le applicazioni (facoltativo)
+I pacchetti di build forniscono il supporto di runtime per le applicazioni distribuite in un ambiente Cloud Foundry, configurando automaticamente il runtime per un'applicazione e gestendone le dipendenze.  Cloud Foundry include una serie di pacchetti di build per i linguaggi e i framework comuni.  [Ulteriori informazioni](https://docs.cloudfoundry.org/buildpacks/) sui pacchetti di build Cloud Foundry.  
+
+Puoi creare e caricare dei pacchetti di build personalizzati nella pagina **Pacchetti di build** dell'interfaccia utente CFEE. I pacchetti di build hanno una posizione ordinale nell'elenco di priorità.  Durante la preparazione di un'applicazione, Cloud Foundry verifica la compatibilità dell'applicazione con la serie di pacchetti di build a partire dalla posizione 1. I controlli di compatibilità procedono verso il basso nell'elenco di priorità finché non viene trovato un pacchetto di build compatibile. Assicurati che la sequenza di priorità della serie di pacchetti di build soddisfi le esigenze dei tuoi team di sviluppo.  Puoi modificare la posizione di un pacchetto di build nella sequenza di priorità trascinando e rilasciando il nome del pacchetto di build in una posizione diversa.  Puoi inoltre gestire i pacchetti di build tramite la [CLI Cloud Foundry](https://docs.cloudfoundry.org/adminguide/buildpacks.html).
+
+## Passo 11: installa la console Stratos per gestire le applicazioni (facoltativo)
 {: #install-stratos}
 
 La console Stratos è uno strumento open source basato sul web per lavorare con Cloud Foundry. L'applicazione della console Stratos può essere facoltativamente installata e utilizzata in un ambiente CFEE specifico per gestirne le organizzazioni, gli spazi e le applicazioni.
@@ -139,7 +107,6 @@ Per avviare la console Stratos:
 3. La console Stratos viene aperta in una scheda del browser separata. Quando apri la console per la prima volta, ti viene richiesto di accettare due avvertenze consecutive per via dei certificati autofirmati.
 4. Fai clic su **Login** per aprire la console. Non è richiesta alcuna credenziale poiché l'applicazione utilizza le tue credenziali {{site.data.keyword.Bluemix_notm}}.
 
-
 ## Risorse aggiuntive
 {: #additional-resources}
 
@@ -147,4 +114,4 @@ Puoi eseguire alcune attività di gestione in un CFEE utilizzando i comandi CLI 
 
 Puoi trovare i video su discussioni e dimostrazioni approfondite su vari argomenti CFEE in [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
-Le informazioni sull'API CFEE sono disponibili nella [documentazione dell'API](https://console.bluemix.net/apidocs/cfaas){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+Le informazioni sull'API CFEE sono disponibili nella [documentazione dell'API](https://cloud.ibm.com/apidocs/cfaas){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").

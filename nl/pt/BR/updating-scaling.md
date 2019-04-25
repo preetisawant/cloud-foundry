@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-12-19"
 
 Atualize a instância de serviço do {{site.data.keyword.cfee_full_notm}} para a versão mais recente
 para obter as funções e correções mais recentes do CFEE. As atualizações do CFEE podem incluir novas versões dos
-serviços de suporte do Cloud Foundry e do CFEE (Kubernetes, Cloud Object Storage ou Compose for PostgreSQL). No entanto,
+serviços de suporte do Cloud Foundry e do CFEE (Kubernetes, Cloud Object Storage ou Compose for PostgreSQL).  No entanto,
 nem todas as atualizações do CFEE incluirão uma nova versão dos serviços de suporte do Cloud Foundry e do CFEE.
 
 As atualizações de versão do CFEE são feitas no plano de controle que contém os componentes do CFEE e nas células. Também é possível escalar a capacidade da instância do CFEE incluindo ou excluindo células do aplicativo.
@@ -42,21 +42,16 @@ controle que hospeda os componentes do CFEE. Em seguida, atualize as células qu
 As regras e restrições a seguir se aplicam ao atualizar um CFEE para uma nova versão:
 * O plano de controle deve ser atualizado primeiro. Assim que o plano de controle tiver sido atualizado, as
 células poderão ser atualizadas.
-* As células do aplicativo podem ser atualizadas apenas para a versão do plano de controle.  Ou seja, as células
-do plano de controle podem estar em um nível de versão do CFEE mais alto do que as células do aplicativo, mas não
-vice-versa.
+* As células do aplicativo podem ser atualizadas apenas para a versão do plano de controle.  Ou seja, o plano de controle pode estar em um nível de versão do CFEE mais alto do que as células do aplicativo, mas não vice-versa.
 
 Para atualizar a versão do CFEE da instância do CFEE:
-1. Acesse o painel do
-[{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) e abra o
-{{site.data.keyword.cfee_full_notm}} que deseja atualizar.
-2. No {{site.data.keyword.cfee_full_notm}}, acesse a entrada **Células** na área
-de janela de navegação para abrir a página de células.
+1. Acesse o [painel do {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) e abra o {{site.data.keyword.cfee_full_notm}} que você deseja atualizar.
+2. Acesse a página **Atualizações e ajuste de escala** sob a entrada _Operações_ na área de janela de navegação.
 3. (opcional) Na tabela _Plano de controle_, é possível expandir a linha para ver os nós do
 trabalhador no plano de controle.
 4. Clique em **Atualizar**.
 5. No diálogo Atualizar _Plano de controle_, selecione uma das versões disponíveis do CFEE e clique em
-**Atualizar**. A atualização leva cerca de 45 minutos. A descrição da versão detalha as versões dos
+**Atualizar**. A atualização leva cerca de 45 minutos.  A descrição da versão detalha as versões dos
 componentes incluídos no pacote de versão do CFEE selecionado, juntamente com um link para o documento _O que há
 de novo_ que descreve o conteúdo entregue nessa versão.
 6. A coluna _Status dos nós_ mostra o progresso da atualização. Após a conclusão da atualização, a coluna _Versão_ refletirá a nova versão do CFEE.
@@ -124,17 +119,10 @@ para uma instância do CFEE:
 fornecido.
 
 Para incluir as células do aplicativo na instância do CFEE:
-1. Acesse o painel do
-[{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) e abra o
-{{site.data.keyword.cfee_full_notm}} no qual deseja incluir as células.
-2. Clique em **Incluir célula** ao lado da tabela _Células_, que
-abre a página _Incluir células do Cloud Foundry_.
-3. Na página _Incluir células do Cloud Foundry_, selecione o número de células a incluir. A página
-também mostra a geografia e a localização da instância do CFEE na qual as células serão incluídas. Ela também mostra o
-número atual de células e a capacidade das células a serem incluídas (que é a mesma capacidade das células atuais). A
+1. Acesse o [{{site.data.keyword.Bluemix_notm}}painel](https://cloud.ibm.com/dashboard/apps/)e abra o {{site.data.keyword.cfee_full_notm}}onde você deseja incluir células.
+2. Clique em **Mudar a contagem de células do Cloud Foundry** próximo à tabela _Células_, que abre a página _Incluir células do Cloud Foundry_.
+3. Na _página Mudar contagem de células do Cloud Foundry_, selecione o número total de células no campo de Contagem de células de destino. A página também mostra a Geografia e o Local da instância do CFEE no qual as células serão incluídas. Ela também mostra o número atual de células no campo _Contagem de células atuais_ e a capacidade das células a serem incluídas (que é a mesma que a capacidade das células atuais) no Tamanho do nó arquivado. A
 área de janela direita da página mostra o custo estimado das células incluídas juntamente com o novo custo
 total estimado do ambiente.
-4. Clique em **Incluir célula**.  
-5. Acesse a página _Nós_. Uma nova linha é incluída na tabela _Células_ para cada
-novo nó. A coluna _Status do nó_ indica o progresso de inclusão e implementação da célula no ambiente
-do CFEE.
+4. Clique em **Incluir células**. No diálogo _Incluir células_, clique em **Incluir**
+5. Volte para a página _Atualizações e ajuste de escala_. Uma nova linha é incluída na tabela _Nós de célula_ para cada novo Nó de célula. A coluna Status do nó indica o progresso da inclusão e implementação da célula em seu ambiente do CFEE.

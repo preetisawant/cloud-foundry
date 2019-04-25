@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,25 +27,25 @@ Voici un récapitulatif des affectations de rôle [IAM](https://cloud.ibm.com/ia
 
 |  **Tâches** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **Rôles d'accès IAM** &nbsp; &nbsp; &nbsp; |**Rôles Cloud Foundry** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Créer un CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources où le CFEE doit être créé.</li> <li>Rôle d'éditeur dans le service CFEE.</li> <li>Rôle administrateur dans le service Kubernetes.</li> <li>Rôle d'éditeur dans le service Cloud Object Storage.</li> </ul> | <ul><li>Rôle utilisateur dans une organisation publique.</li> <li>Rôle de développeur dans un espace de cette organisation publique. </li></ul>|
-|Mettre à jour la version CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources CFEE.</li> <li>Rôle d'éditeur dans le service CFEE.</li></li> <li>Rôle d'opérateur dans le service Kubernetes.</li> <li>Rôle d'éditeur dans le service Cloud Object Storage.</li> </ul> | <ul><li>Rôle utilisateur dans une organisation publique.</li> <li>Rôle de développeur dans un espace de cette organisation publique. </li></ul>|
+|Créer un CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources où le CFEE doit être créé.</li> <li>Rôle d'éditeur dans le service CFEE.</li> <li>Rôle administrateur dans le service Kubernetes.</li> <li>Rôle de plateforme d'éditeur et rôle d'accès au service de responsable dans le service IBM Cloud Object Storage.</li> </ul> | <ul><li>Rôle utilisateur dans une organisation publique.</li> <li>Rôle de développeur dans un espace de cette organisation publique. </li></ul>|
+|Mettre à jour la version CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources CFEE.</li> <li>Rôle de plateforme d'éditeur dans le service CFEE.</li></li> <li>Rôle d'opérateur dans le service Kubernetes.</li> <li>Rôle d'éditeur dans le service Cloud Object Storage.</li> </ul> | <ul><li>Rôle utilisateur dans une organisation publique.</li> <li>Rôle de développeur dans un espace de cette organisation publique. </li></ul>|
 |Mettre à l'échelle la capacité du CFEE (ajouter/supprimer des cellules)|  <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'administrateur dans l'instance CFEE.</li> <li>Rôle d'opérateur dans le service Kubernetes.</li> <li>Rôle d'éditeur dans le service Cloud Object Storage.</li> </ul> | |
-|Surveiller le CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> |  |
+|Surveiller le CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li> <li>Rôle d'opérateur dans le cluster Kubernetes de CFEE.</li></ul> |  |
 |Afficher l'utilisation des ressources CFEE |  <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'afficheur dans l'instance CFEE.</li></ul> |  |
-|Activer un audit de CFEE | <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> | <ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Activity Tracker.</li></ul>  |
-|Afficher les événements d'audit de CFEE | <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> | <ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Activity Tracker.</li></ul>  |
+|Activer un audit de CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> | <ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Activity Tracker.</li></ul>  |
+|Afficher les événements d'audit de CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> | <ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Activity Tracker.</li></ul>  |
 |Activer la persistance de journalisation CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> |<ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Log Analysis.</li></ul>  |
 |Afficher les journaux persistants CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> | <ul><li>Rôle d'auditeur dans l'espace Cloud Foundry public où est déployée l'instance de service Log Analysis.</li></ul> |
 |Créer des organisations CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'éditeur dans l'instance CFEE.</li></ul> |  |
 |Créer des espaces CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li> <li>Rôle d'afficheur dans l'instance CFEE.</li></ul> | <ul><li>Rôle de responsable dans l'organisation où l'espace doit être créé.</li></ul> |
-|Gérer des domaines partagés|<ul><li>Afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'éditeur dans l'instance CFEE.</li></ul>|  |
-|Afficher des domaines partagés|<ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE.</li></ul>|  |
-|Gérer des domaines privés|<ul> <li>Afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE.</li></ul>| <ul><li>Rôle de responsable dans l'organisation propriétaire du domaine. </li></ul>|
-|Afficher des domaines privés|<ul> <li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE.</li></ul>|<ul><li>Rôle d'afficheur dans l'organisation propriétaire du domaine. </li></ul>|
+|Gérer des domaines partagés|<ul><li>Afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'éditeur dans l'instance CFEE. </li></ul>|  |
+|Afficher des domaines partagés|<ul><li>Afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE. </li></ul>|  |
+|Gérer des domaines privés|<ul> <li>Afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE. </li></ul>| <ul><li>Rôle de responsable dans l'organisation propriétaire du domaine. </li></ul>|
+|Afficher des domaines privés|<ul> <li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE. </li></ul>|<ul><li>Rôle d'afficheur dans l'organisation propriétaire du domaine. </li></ul>|
 |Créer/Supprimer une instance de service IBM Cloud dans un espace CFEE| <ul><li>Rôle d'afficheur dans le groupe de ressources où le CFEE doit être créé.</li> <li>Rôle d'afficheur dans l'instance CFEE.</li> <li>Éditeur dans le groupe de ressources dans lequel l'instance de service doit être créée ou sur le service géré IAM à instancier.</li> </ul>| <ul><li>Rôle de développeur dans l'espace CFEE à partir duquel l'instance de service est créée (et où elle sera automatiquement ajoutée ou associée à un alias).</li></ul> |
-|Ajouter/Supprimer une instance de service IBM Cloud dans/depuis un espace CFEE (par exemple, créer/supprimer un alias d'un service IBM Cloud dans un espace CFEE)| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li><li>Rôle d'afficheur dans l'instance CFEE.</li><li>Rôle de plateforme Opérateur et de service Lecteur pour l'instance de service à ajouter. </li></ul>|<ul><li>Rôle de développeur dans l'espace CFEE où l'instance de service doit être ajoutée (associée à un alias).</li></ul> |
-|Lier ou dissocier une instance de service IBM Cloud dans un espace CFEE|<ul> <li>Rôle d'éditeur dans le groupe de ressources de l'instance de service à lier ou dissocier.</li><li>Rôle d'afficheur dans l'instance CFEE.</li><li>Rôle de plateforme Opérateur et de service Auteur pour l'instance de service à lier.</li></ul> | <ul><li>Rôle de développeur dans l'espace CFEE où l'instance de service doit être liée.</li></ul> |
-|Emission de commandes d'interface de ligne de commande `cf`|<ul> <li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li><li>Rôle d'afficheur dans l'instance CFEE.</li></ul> | <ul><li>Rôles Cloud Foundry dans l'organisation/espace requis pour effectuer la commande.</li></ul> |
+|Ajouter/Supprimer une instance de service IBM Cloud dans/depuis un espace CFEE (par exemple, créer/supprimer un alias d'un service IBM Cloud dans un espace CFEE)| <ul><li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE.</li><li>Rôle d'afficheur dans l'instance CFEE. </li><li>Rôle de plateforme Opérateur et de service Lecteur pour l'instance de service à ajouter. </li></ul>|<ul><li>Rôle de développeur dans l'espace CFEE où l'instance de service doit être ajoutée (associée à un alias).</li></ul> |
+|Lier ou dissocier une instance de service IBM Cloud dans un espace CFEE|<ul> <li>Rôle d'éditeur dans le groupe de ressources de l'instance de service à lier ou dissocier.</li><li>Rôle d'afficheur dans l'instance CFEE. </li><li>Rôle de plateforme Opérateur et de service Auteur pour l'instance de service à lier.</li></ul> | <ul><li>Rôle de développeur dans l'espace CFEE où l'instance de service doit être liée.</li></ul> |
+|Emission de commandes d'interface de ligne de commande `cf`|<ul> <li>Rôle d'afficheur dans le groupe de ressources de l'instance CFEE. </li><li>Rôle d'afficheur dans l'instance CFEE.</li></ul> | <ul><li>Rôles Cloud Foundry dans l'organisation/espace requis pour effectuer la commande.</li></ul> |
 {: caption="Tableau 1. Droits requis pour effectuer des tâches dans un CFEE" caption-side="top"}
 
 ## Droits requis pour créer un nouvel environnement
@@ -135,9 +135,9 @@ Pour utiliser une instance {{site.data.keyword.cfee_full_notm}}, les utilisateur
   
   - Les utilisateurs dotés du rôle _Administrateur_ ou _Editeur_ sur une instance CFEE peuvent créer des organisations, affecter des responsables à des organisations et des espaces, disposer de droits complets sur toutes les organisations et tous les espaces de l'environnement et effectuer des actions opérationnelles à l'aide de l'API du contrôleur de cloud. La _portée cloud_controller.admin_ est automatiquement accordée à ces utilisateurs dans la _portée Compte utilisateur et authentification_ de Cloud Foundry.
 
-  - Les utilisateurs doivent posséder le rôle de plateforme _Editeur_ ou un rôle de niveau supérieur sur une instance CFEE et le rôle _Opérateur_ ou un rôle de niveau supérieur sur le cluster Kubernetes dans lequel l'instance CFEE est mise à disposition pour pouvoir **mettre à jour l'instance CFEE vers une nouvelle version**. 
+  - Les utilisateurs doivent posséder le rôle de plateforme _Editeur_ ou un rôle de niveau supérieur sur une instance CFEE et le rôle _Opérateur_ ou un rôle de niveau supérieur sur le cluster Kubernetes dans lequel l'instance CFEE est mise à disposition pour pouvoir **mettre à jour l'instance CFEE vers une nouvelle version**.
 
-  - Les utilisateurs doivent posséder le rôle de plateforme _Administrateur_ sur une instance CFEE et le rôle _Opérateur_ ou un rôle de niveau supérieur sur le cluster Kubernetes dans lequel l'instance CFEE est mise à disposition pour pouvoir **modifier la capacité** d'une instance CFEE (ajout ou retrait de cellules). 
+  - Les utilisateurs doivent posséder le rôle de plateforme _Administrateur_ sur une instance CFEE et le rôle _Opérateur_ ou un rôle de niveau supérieur sur le cluster Kubernetes dans lequel l'instance CFEE est mise à disposition pour pouvoir **modifier la capacité** d'une instance CFEE (ajout ou retrait de cellules).
  
   - Les utilisateurs doivent posséder le rôle de plateforme _Opérateur_ (ou un rôle de niveau supérieur) sur une instance de service IBM Cloud pour pouvoir **ajouter** cette *instance de service* à un espace CFEE (par exemple, associer un alias à une instance de service dans un espace CFEE).
  
@@ -147,7 +147,7 @@ Pour utiliser une instance {{site.data.keyword.cfee_full_notm}}, les utilisateur
 ## Pratiques recommandées : Groupes d'accès
 {: #access-groups}
 
-Envisagez l'utilisation de groupes d'accès pour gérer et simplifier le contrôle d'accès de votre CFEE. Les groupes d'accès permettent de définir des groupes arbitraires auxquels vous affectez des règles d'accès. A tout utilisateur ajouté à un groupe d'accès est automatiquement affecté la règle d'accès du groupe. 
+Envisagez l'utilisation de groupes d'accès pour gérer et simplifier le contrôle d'accès de votre CFEE.  Les groupes d'accès permettent de définir des groupes arbitraires auxquels vous affectez des règles d'accès.  A tout utilisateur ajouté à un groupe d'accès est automatiquement affecté la règle d'accès du groupe. 
 
 Vous pouvez créer et gérer des groupes d'accès à partir de l'interface utilisateur IBM Cloud ou via l'interface de ligne de commande `ibmcloud`. 
 

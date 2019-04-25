@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -34,11 +34,11 @@ La actualización de la versión CFEE de la instancia de CFEE es un proceso de d
 
 Se aplican las siguientes reglas y restricciones cuando se actualiza un CFEE a una nueva versión:
 * El panel de control debe actualizarse primero. Una vez que actualizado el panel de control, se pueden actualizar las células.
-* Las células de aplicación solo se pueden actualizar a la versión del panel de control.  Es decir, las células del panel de control pueden tener un nivel de versión de CFEE superior al de las células de aplicación, pero no viceversa.
+* Las células de aplicación solo se pueden actualizar a la versión del panel de control.  Es decir, el panel de control puede tener un nivel de versión de CFEE superior al de las células de aplicación, pero no viceversa.
 
 Para actualizar la versión de CFEE de la instancia CFEE:
-1. Vaya al panel de control de [{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} que desea actualizar.
-2. En {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Células** del panel de navegación para abrir la página de células.
+1. Vaya al panel de control de [{{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} que desea actualizar.
+2. Vaya a la página **Actualizaciones y escalado** bajo la entrada _Operaciones_ en el panel de navegación.
 3. (opcional) En la tabla _Panel de control_, puede expandir la fila para ver los nodos trabajadores del panel de control.
 4. Pulse **Actualizar**.
 5. En el diálogo Actualizar del _Panel de control_, seleccione una de las versiones de CFEE disponibles y pulse **Actualizar**. La actualización tarda unos 45 minutos.  La descripción de la versión detalla las versiones de los componentes incluidos en el paquete de la versión de CFEE seleccionada, junto con un enlace al documento _Novedades_ en el que se describe el contenido suministrado en dicha versión.
@@ -77,8 +77,8 @@ Los usuarios necesitan los siguientes permisos para poder añadir o eliminar cé
 * Rol de _operador_ o superior sobre el clúster de Kubernetes en el que se suministra el CFEE.
 
 Para añadir células de aplicación a la instancia de CFEE:
-1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} al que desea añadir células.
-2. Pulse **Añadir célula** junto a la tabla _Células_, lo que abre la página _Añadir células de Cloud Foundry_.
-3. En la página _Añadir células de Cloud Foundry_, seleccione el número de células que desea añadir. La página también muestra la geografía y la ubicación de la instancia de CFEE en la que se añadirán las células. También muestra el número actual de células y la capacidad de las células que se van a añadir (lo que equivale a la capacidad de las células actuales). El panel derecho de la página muestra el coste estimado de las células añadidas junto con el nuevo coste total estimado del entorno.
-4. Pulse **Añadir célula**.  
-5. Vaya a la página _Nodos_. Se añade una nueva fila a la tabla _Células_ para cada nodo nuevo. La columna _Estado de nodo_ indica el progreso de la adición y el despliegue de la célula en el entorno CFEE.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} al que desea añadir células.
+2. Pulse **Cambiar número de células de Cloud Foundry** junto a la tabla _Células_, lo que abre la página _Añadir células de Cloud Foundry_.
+3. En la _página Cambiar número de células de Cloud Foundry_, seleccione el número total de células en el campo Número de células de destino. La página también muestra la geografía y la ubicación de la instancia de CFEE en la que se añadirán las células. También muestra el número actual de células en el campo _Número de células actuales_ y la capacidad de las células que se van a añadir (que es la misma que la capacidad de las células actuales) en el tamaño de nodo archivado. El panel derecho de la página muestra el coste estimado de las células añadidas junto con el nuevo coste total estimado del entorno.
+4. Pulse **Añadir células**.  En el diálogo _Añadir celdas_, pulse **Añadir**
+5. Vuelva a la página _Actualizaciones y escalado_. Se añade una nueva fila a la tabla _Nodos de célula_ para cada nuevo nodo de célula. La columna Estado de nodo indica el progreso de la adición y el despliegue de la célula en el entorno CFEE.

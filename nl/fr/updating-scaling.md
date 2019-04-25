@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-12-19"
 # Mise à jour et mise à l'échelle
 {: #update-scale}
 
-Mettez à jour l'instance de service {{site.data.keyword.cfee_full_notm}} vers la dernière version afin d'obtenir les fonctions et les correctifs les plus récents pour CFEE. Les mises à jour de CFEE peuvent inclure de nouvelles versions de Cloud Foundry et des services de prise en charge CFEE (Kubernetes, Cloud Object Storage ou Compose for PostgreSQL). Toutefois, les mises à jour de CFEE n'incluent pas toutes une nouvelle version de Cloud Foundry et des services de prise en charge CFEE.
+Mettez à jour l'instance de service {{site.data.keyword.cfee_full_notm}} vers la dernière version afin d'obtenir les fonctions et les correctifs les plus récents pour CFEE. Les mises à jour de CFEE peuvent inclure de nouvelles versions de Cloud Foundry et des services de prise en charge CFEE (Kubernetes, Cloud Object Storage ou Compose for PostgreSQL).  Toutefois, les mises à jour de CFEE n'incluent pas toutes une nouvelle version de Cloud Foundry et des services de prise en charge CFEE.
 
 Les mises à jour de version CFEE se déroulent sur le plan de contrôle contenant les composants CFEE et sur les cellules. Vous pouvez également mettre à l'échelle la capacité de votre instance CFEE en ajoutant ou en supprimant des cellules d'application.
 
@@ -34,14 +34,14 @@ La mise à jour de la version CFEE de votre instance CFEE est un processus en de
 
 Les règles et contraintes suivantes s'appliquent lors de la mise à jour d'une instance CFEE vers une nouvelle version :
 * Le plan de contrôle doit être mis à jour en premier. Une fois le plan de contrôle mis à jour, les cellules peuvent être mises à jour.
-* Les cellules d'application ne peuvent être mises à jour que vers la version du plan de contrôle.  Autrement dit, les cellules du plan de contrôle peuvent être à un niveau de version CFEE supérieur à celui des cellules d'application, mais l'inverse n'est pas possible.
+* Les cellules d'application ne peuvent être mises à jour que vers la version du plan de contrôle. Autrement dit, le plan de contrôle peut être à un niveau de version CFEE supérieur à celui des cellules d'application, mais l'inverse n'est pas possible.
 
 Pour mettre à jour la version CFEE de votre instance CFEE :
-1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}} ](https://console.bluemix.net/dashboard/apps/) et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} que vous souhaitez mettre à jour.
-2. Dans l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Cellules** dans le panneau de navigation pour ouvrir la page des cellules.
+1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} que vous voulez mettre à jour.
+2. Accédez à la page **Mises à jour et mise à l'échelle** sous l'entrée _Opérations_ du panneau de navigation.
 3. (Facultatif) Dans le tableau _Plan de contrôle_, vous pouvez développer la ligne pour voir les noeuds worker dans le plan de contrôle.
 4. Cliquez sur **Mettre à jour**.
-5. Dans la boîte de dialogue de mise à jour de _plan de contrôle_, sélectionnez l'une des versions CFEE disponibles et cliquez sur **Mettre à jour**. La mise à jour dure environ 45 minutes. La description de la version mentionne les versions des composants inclus dans le package de version CFEE sélectionné, et contient un lien vers le document _Nouveautés_ qui décrit le contenu fourni dans cette version.
+5. Dans la boîte de dialogue de mise à jour de _plan de contrôle_, sélectionnez l'une des versions CFEE disponibles et cliquez sur **Mettre à jour**. La mise à jour dure environ 45 minutes.  La description de la version mentionne les versions des composants inclus dans le package de version CFEE sélectionné, et contient un lien vers le document _Nouveautés_ qui décrit le contenu fourni dans cette version.
 6. La colonne _Statut de noeud_ affiche la progression de la mise à jour. Une fois la mise à jour terminée, la colonne _Version_ reflète la nouvelle version CFEE.
 7. Une fois la mise à jour des cellules de plan de contrôle terminée, localisez le tableau _Cellules_ et cliquez sur **Mettre à jour**.
 8. Dans la boîte de dialogue de _mise à jour de plan de contrôle_, sélectionnez la version CFEE et cliquez sur *Mettre à jour*. Seule la version des cellules est disponible pour mise à jour car les cellules ne peuvent être mises à jour que vers la version du plan de contrôle. Une seule action de mise à jour met à jour toutes les cellules.
@@ -77,8 +77,8 @@ Les utilisateurs doivent disposer des droits suivants pour pouvoir ajouter ou re
 * Rôle _Opérateur_ ou rôle de niveau supérieur sur le cluster Kubernetes dans lequel l'instance CFEE est mise à disposition
 
 Pour ajouter des cellules d'application dans votre instance CFEE :
-1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) et ouvrez l'instance {{site.data.keyword.cfee_full_notm}} dans laquelle vous souhaitez ajouter des cellules.
-2. Cliquez sur **Ajouter une cellule** en regard du tableau _Cellules_, et la page _Ajouter des cellules Cloud Foundry_ s'ouvre.
-3. Sur la page _Ajouter des cellules Cloud Foundry_, sélectionnez le nombre de cellules à ajouter. La page affiche également la géographie et l'emplacement de l'instance CFEE dans laquelle les cellules seront ajoutées. Elle affiche également le nombre en cours de cellules et la capacité des cellules qui seront ajoutées (qui est identique à la capacité des cellules en cours). Sur le panneau de droite de la page sont indiqués le coût estimé des cellules ajoutées ainsi que le nouveau coût total estimé de l'environnement.
-4. Cliquez sur **Ajouter une cellule**.  
-5. Accédez à la page _Noeuds_. Une nouvelle ligne est ajoutée dans le tableau _Cellules_ pour chaque nouveau noeud. La colonne _Statut de noeud_ indique la progression de l'ajout et du déploiement de la cellule sur votre environnement CFEE.
+1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} dans lequel vous voulez ajouter des cellules.
+2. Cliquez sur **Modifier le nombre de cellules Cloud Foundry** en regard du tableau _Cellules_. La page _Ajouter des cellules Cloud Foundry_ s'ouvre.
+3. Dans la _page Modifier le nombre de cellules Cloud Foundry_, sélectionnez le nombre total de cellules dans la zone Nombre de cellules cible. La page affiche également la zone géographique et l'emplacement de l'instance CFEE dans laquelle les cellules seront ajoutées. Elle affiche également le nombre actuel de cellules dans _Nombre actuel de cellules_ et la capacité des cellules qui seront ajoutées (qui est identique à la capacité des cellules en cours) dans la zone Taille de noeud. Sur le panneau de droite de la page sont indiqués le coût estimé des cellules ajoutées ainsi que le nouveau coût total estimé de l'environnement.
+4. Cliquez sur **Ajouter des cellules**. Dans la boîte de dialogue _Ajouter des cellules_, cliquez sur **Ajouter**
+5. Revenez sur la page _Mises à jour et mise à l'échelle_. Une nouvelle ligne est ajoutée dans le tableau _Noeuds de cellule_ pour chaque nouveau noeud de cellule. La colonne Statut de noeud indique la progression de l'ajout et du déploiement de la cellule dans votre environnement CFEE.

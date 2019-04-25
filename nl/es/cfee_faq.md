@@ -37,12 +37,16 @@ Con respecto al multiarrendatario público, la diferencia más destacada es, sin
 ## ¿Dónde puedo encontrar el servicio CFEE?
 {: #where}
 
-Puede encontrar y crear una instancia del servicio {{site.data.keyword.cfee_full}} en el [catálogo de {{site.data.keyword.Bluemix_notm}}](https://console.stage1.bluemix.net/catalog).
+Puede localizar y crear una instancia del servicio {{site.data.keyword.cfee_full}} en el [catálogo](https://cloud.ibm.com/catalog) de {{site.data.keyword.Bluemix_notm}}.
 
 ## ¿Puedo tener más de un entorno de CFEE dentro de un centro de datos regional?
 {: #multiple-cfees}
 
 Sí, puede crear instancias de CFEE a petición, tantas como desee, en [estas regiones](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
+
+## ¿Se puede suministrar un entorno CFEE a través de varios centros de datos (multizona)?
+{: #multizone}
+Sí. A partir de CFEE v2.2.0, la infraestructura CFEE (nodos de clúster de Kubernetes) se puede distribuir entre varios centros de datos (zonas) dentro de una determinada región. 
 
 ## ¿Tengo que empezar con alguna capacidad mínima?
 {: #minimum-capacity}
@@ -58,6 +62,11 @@ El servicio CFEE se ejecuta en contenedores de Kubernetes, lo que permite un men
 {: #isolation}
 
 Tiene dos opciones de hardware sobre el tipo de infraestructura de Kubernetes en la que se despliega la instancia de CFEE: hardware _virtual compartido_ o _virtual dedicado_. Con el hardware _virtual compartido_, los nodos trabajadores (en los que se despliega el contenedor de la plataforma Cloud Foundry) se distribuyen entre usted y otros clientes de IBM.  Con el hardware _virtual dedicado_, los nodos trabajadores están alojados en hardware que está dedicado de forma exclusiva a su cuenta.  Tenga en cuenta que en ambos casos, _virtual compartido_ y _virtual dedicado_, cada nodo trabajador es de un solo arrendatario para el cliente.  Esto significa que las células de Cloud Foundry en las que se ejecutan las aplicaciones no se comparten con otros clientes.
+
+## ¿Puede un CFEE operar dentro de una red aislada?
+{: #isolation}
+
+Sí. A partir de la versión 2.2.0, las instancias de IBM® Cloud Foundry Enterprise Environment (CFEE) pueden operar dentro de una red aislada que protege el entorno frente a amenazas externas. Consulte la documentación sobre [Funcionamiento en una red aislada](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) para obtener más información.
 
 ## ¿Puedo escalar la capacidad de un CFEE?
 {: #scaling}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # Gestion des domaines
 {: #domains}
+
+[En savoir plus sur les domaines](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") et sur leur fonctionnement dans Cloud Foundry.
 
 Il existe deux types de domaines Cloud Foundry :
 * Les domaines partagés, disponibles pour n'importe quelle application dans n'importe quel espace au sein d'{{site.data.keyword.cfee_full_notm}}.  Pour accéder aux domaines partagés, accédez à la page **Domaines** dans le panneau de navigation de gauche de l'interface utilisateur (sous *Opérations*).

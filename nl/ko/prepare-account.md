@@ -16,7 +16,7 @@ lastupdated: "2018-07-17"
 # 계정 준비
 {: #prepare}
 
-CFEE 인스턴스는 IBM Cloud 계정에 청구되는 인프라 리소스(IBM Container 서비스의 Kubernetes 작업자 노드)에 배치됩니다. 즉, CFEE 인스턴스가 작성된 IBM Cloud 계정이 유료 계정(구독 계정 또는 구독 계정)이어야 합니다.  CFEE 인스턴스를 작성하려는 IBM Cloud 계정이 평가판 계정이면 CFEE 인스턴스를 작성하려고 시도할 때 계정을 업그레이드하도록 요청됩니다.  IBM Cloud 계정이 평가판 계정에서 종량과금제 또는 구독 계정으로 업그레이드되면 IBM Cloud 계정이 SoftLayer 계정(이를 통해 인프라 리소스를 작성할 수 있음)에 연결됩니다. 자세한 정보는 [계정 유형](https://console.bluemix.net/docs/account/index.html#accounts)을 참조하십시오. 해당 인프라 리소스의 비용은 IBM Cloud 송장에 표시됩니다.
+CFEE 인스턴스는 IBM Cloud 계정에 청구되는 인프라 리소스(IBM Container 서비스의 Kubernetes 작업자 노드)에 배치됩니다. 즉, CFEE 인스턴스가 작성된 IBM Cloud 계정이 유료 계정(구독 계정 또는 구독 계정)이어야 합니다.  CFEE 인스턴스를 작성하려는 IBM Cloud 계정이 평가판 계정이면 CFEE 인스턴스를 작성하려고 시도할 때 계정을 업그레이드하도록 요청됩니다.  IBM Cloud 계정이 평가판 계정에서 종량과금제 또는 구독 계정으로 업그레이드되면 IBM Cloud 계정이 SoftLayer 계정(이를 통해 인프라 리소스를 작성할 수 있음)에 연결됩니다. 자세한 정보는 [계정 유형](https://cloud.ibm.com/docs/account/index.html#accounts)을 참조하십시오. 해당 인프라 리소스의 비용은 IBM Cloud 송장에 표시됩니다.
 
 ## IBM Cloud 계정이 CFEE 인스턴스를 작성할 수 있는지 여부를 확인하는 방법
 {: #account-check}

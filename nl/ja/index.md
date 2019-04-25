@@ -22,7 +22,7 @@ lastupdated: "2018-12-07"
 
 {{site.data.keyword.cfee_full}} (CFEE) では、エンタープライズ・クラスの独立した Cloud Foundry プラットフォームを、オンデマンドでいくつもインスタンス化できます。 {{site.data.keyword.Bluemix_notm}} Foundry Enterprise サービスのインスタンスは、{{site.data.keyword.Bluemix_notm}} の自分自身のアカウント内で実行されます。 環境は、分離したハードウェア (Kubernetes クラスター) 上にデプロイされます。 アクセス制御、キャパシティー、バージョンの更新、リソース使用量とモニターなど、環境を完全に制御できます。 さらに、CFEE には {{site.data.keyword.Bluemix_notm}} が統合されているので、開発者は {{site.data.keyword.Bluemix_notm}} アカウントで使用可能なサービスを利用できます。  ユーザーはそれらのサービスを CFEE に追加し、CFEE スペースにデプロイしたアプリケーションにバインドできます。
 
-CFEE インスタンスの作成と使用を[**開始する**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)方法について説明します。
+CFEE インスタンスの作成と使用を[**開始する**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started)方法について説明します。
 
 {:shortdesc}
 

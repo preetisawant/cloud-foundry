@@ -22,7 +22,7 @@ lastupdated: "2018-12-07"
 
 使用 {{site.data.keyword.cfee_full}} (CFEE)，您可以依需求將多個隔離的企業級 Cloud Foundry 平台實例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服務實例會以您自己的帳戶在 {{site.data.keyword.Bluemix_notm}} 中執行。環境部署至隔離的硬體（Kubernetes 叢集）。您可以完全控制環境，包括存取控制、容量、版本更新、資源用量及監視。此外，{{site.data.keyword.Bluemix_notm}} 中的 CFEE 整合可讓開發人員運用其 {{site.data.keyword.Bluemix_notm}} 帳戶中可用的服務。使用者可以將這些服務新增至 CFEE，並將它們連結至部署到 CFEE 空間的應用程式。
 
-找出如何[**開始**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)建立及使用 CFEE 實例。
+找出如何[**開始**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started)建立及使用 CFEE 實例。
 
 {:shortdesc}
 

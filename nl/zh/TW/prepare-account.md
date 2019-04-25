@@ -16,7 +16,7 @@ lastupdated: "2018-07-17"
 # 準備帳戶
 {: #prepare}
 
-CFEE 實例部署在基礎架構資源（IBM Container 服務中的 Kubernetes 工作者節點）上，這些資源的費用將計入 IBM Cloud 帳戶。這表示用來建立 CFEE 實例的 IBM Cloud 帳戶必須是付費帳戶（「隨收隨付制」或「訂閱」帳戶）。如果您打算用來建立 CFEE 實例的 IBM Cloud 帳戶是試用帳戶，則在您嘗試建立 CFEE 實例時，系統會要求您升級帳戶。升級 IBM Cloud 帳戶（從試用帳戶升級至「隨收隨付制」或「訂閱」帳戶）時，IBM Cloud 帳戶會鏈結至 SoftLayer 帳戶（藉此可以用來建立基礎架構資源）。如需相關資訊，請參閱[帳戶類型](https://console.bluemix.net/docs/account/index.html#accounts)。這些基礎架構資源的成本會顯示在 IBM Cloud 發票中。
+CFEE 實例部署在基礎架構資源（IBM Container 服務中的 Kubernetes 工作者節點）上，這些資源的費用將計入 IBM Cloud 帳戶。這表示用來建立 CFEE 實例的 IBM Cloud 帳戶必須是付費帳戶（「隨收隨付制」或「訂閱」帳戶）。如果您打算用來建立 CFEE 實例的 IBM Cloud 帳戶是試用帳戶，則在您嘗試建立 CFEE 實例時，系統會要求您升級帳戶。升級 IBM Cloud 帳戶（從試用帳戶升級至「隨收隨付制」或「訂閱」帳戶）時，IBM Cloud 帳戶會鏈結至 SoftLayer 帳戶（藉此可以用來建立基礎架構資源）。如需相關資訊，請參閱[帳戶類型](https://cloud.ibm.com/docs/account/index.html#accounts)。這些基礎架構資源的成本會顯示在 IBM Cloud 發票中。
 
 ## 如何判定 IBM Cloud 帳戶是否可以建立 CFEE 實例
 {: #account-check}

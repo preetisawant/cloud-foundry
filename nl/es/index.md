@@ -22,7 +22,7 @@ Bienvenido al servicio {{site.data.keyword.cfee_full}}.
 
 Con {{site.data.keyword.cfee_full}} (CFEE), puede crear instancias de varias plataformas de Cloud Foundry aisladas y de nivel empresarial a petición. Instancias de la ejecución de servicio de {{site.data.keyword.Bluemix_notm}} Foundry Enterprise en su cuenta de {{site.data.keyword.Bluemix_notm}}. El entorno se despliega en hardware aislado (clústeres de Kubernetes). Tiene un control completo sobre el entorno, que incluye el control de accesos, la capacidad, las actualizaciones de versiones, el uso de recursos y la supervisión. Además, la integración de CFEE en {{site.data.keyword.Bluemix_notm}} permite a los desarrolladores aprovechar los servicios disponibles en su cuenta de {{site.data.keyword.Bluemix_notm}}.  Los usuarios pueden añadir estos servicios a un CFEE y enlazarlos a las aplicaciones desplegadas en espacios de CFEE.
 
-Descubra cómo puede [**comenzar**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) a crear y a utilizar una instancia de CFEE.
+Descubra cómo puede [**comenzar**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started) a crear y a utilizar una instancia de CFEE.
 
 {:shortdesc}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # 도메인 관리
 {: #domains}
+
+Cloud Foundry에서 도메인이 작동하는 방식과 [도메인에 관해 알아보기](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")를 수행하십시오.
 
 Cloud Foundry 도메인의 두 가지 유형이 있습니다.
 * {{site.data.keyword.cfee_full_notm}} 내의 영역에서 애플리케이션이 사용할 수 있는 공유 도메인.  공유 도메인에 액세스하려면, UI의 왼쪽 탐색 분할창에 있는 **도메인** 페이지로 이동하십시오(*오퍼레이션* 아래).

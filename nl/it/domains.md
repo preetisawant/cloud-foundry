@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # Gestione dei domini
 {: #domains}
+
+[Ulteriori informazioni sui domini](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") e come funzionano in Cloud Foundry.
 
 Ci sono due tipi di domini Cloud Foundry:
 * Domini condivisi disponibili per qualsiasi applicazione in qualsiasi spazio all'interno di {{site.data.keyword.cfee_full_notm}}.  Per accedere ai domini condivisi vai alla pagina **Domains** nel pannello di navigazione a sinistra dell'IU (sotto *Operations*).

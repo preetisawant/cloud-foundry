@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # 管理網域
 {: #domains}
+
+[瞭解網域](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 及其在 Cloud Foundry 中的運作方式。
 
 有兩種類型的 Cloud Foundry 網域：
 * {{site.data.keyword.cfee_full_notm}} 之任何空間中任何應用程式可用的共用網域。若要存取共用網域，請移至使用者介面之左導覽窗格中的**網域**頁面（在*作業* 下）。

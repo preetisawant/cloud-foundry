@@ -17,12 +17,12 @@ lastupdated: "2019-01-15"
 
 Los administradores y desarrolladores pueden ver cómo utilizan las aplicaciones y las células la capacidad de recursos (memoria y CPU) de un CFEE. Para supervisar el uso de recursos en una instancia de CFEE:
 
-1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
+1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}} Cloud Foundry](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea gestionar la utilización de recursos.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Uso de recursos** en la parte izquierda del panel de navegación y abra la página _Uso de recursos_. En la página _Uso de recursos_ puede ir a _Aplicaciones_ o a las subentradas _Células_ para abrir las páginas correspondientes.  La información que se muestra en las páginas _Aplicaciones_ y _Células_ puede considerarse dos formas de desglosar el uso de recursos:
    * La página **Aplicaciones** analiza el uso de recursos según las aplicaciones agregadas entre instancias.
    * La página **Células** muestra el uso de recursos de las instancias de aplicación que se ejecutan en células específicas. El patrón de uso de recursos entre células puede proporcionar conocimientos en la distribución de carga y capacidad.  Por ejemplo, puede ayudar a identificar problemas con el equilibrio de carga de aplicaciones (p. ej., diferencias importantes en los recursos utilizados por una aplicación entre células) o el uso de recursos que se acerca a la capacidad total (p. ej., porcentajes altos del uso de recursos en todas las células).
 
-**Nota:** Los datos de uso del recurso representan el uso de los recursos durante el ciclo de recopilación de los últimos 5 minutos. Los datos de uso del recurso pueden actualizarse haciendo clic en **Actualizar datos** en la parte superior de la página.
+**Nota:** Los datos de uso del recurso representan el uso de los recursos durante el ciclo de recopilación de los últimos 5 minutos. Los datos de uso del recurso pueden actualizarse pulsando **Actualizar datos** en la parte superior de la página.
 
 ## Aplicaciones
 {: #usage_apps}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # 管理域
 {: #domains}
+
+[了解域](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 以及域在 Cloud Foundry 中的工作原理。
 
 有两种类型的 Cloud Foundry 域：
 * 可供 {{site.data.keyword.cfee_full_notm}} 内任何空间中的任何应用程序使用的共享域。要访问共享域，请转至 UI 左侧导航窗格中的**域**页面（在*操作*下）。

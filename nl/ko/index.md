@@ -22,7 +22,7 @@ lastupdated: "2018-12-07"
 
 {{site.data.keyword.cfee_full}}(CFEE)를 사용하면 요청 시 격리된 여러 엔터프라이즈급 Cloud Foundry 플랫폼을 인스턴스화할 수 있습니다. {{site.data.keyword.Bluemix_notm}} Foundry Enterprise 서비스의 인스턴스는 {{site.data.keyword.Bluemix_notm}}의 고유 계정 내에서 실행됩니다. 환경이 격리된 하드웨어(Kubernetes 클러스터)에 배치됩니다. 액세스 제어, 용량, 버전 업데이트, 리소스 사용 및 모니터링을 포함하여 환경을 완전히 제어할 수 있습니다. 뿐만 아니라, {{site.data.keyword.Bluemix_notm}}로의 CFEE 통합을 통해 개발자들은 {{site.data.keyword.Bluemix_notm}} 계정에서 사용 가능한 서비스를 활용할 수 있습니다.  사용자는 이러한 서비스를 CFEE에 추가하고, CFEE 영역으로 배치된 애플리케이션에 서비스를 바인드할 수 있습니다.
 
-CFEE 인스턴스의 작성 및 사용을 [**시작하는**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started) 방법에 대해 알아보십시오.
+CFEE 인스턴스의 작성 및 사용을 [**시작하는**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started) 방법에 대해 알아보십시오.
 
 {:shortdesc}
 

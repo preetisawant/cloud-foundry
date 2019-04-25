@@ -37,12 +37,16 @@ lastupdated: "2019-01-08"
 ## CFEE サービスはどこにありますか?
 {: #where}
 
-{{site.data.keyword.cfee_full}} サービスは、{{site.data.keyword.Bluemix_notm}} [カタログ](https://console.stage1.bluemix.net/catalog)で検索してインスタンス化できます。
+{{site.data.keyword.cfee_full}} サービスは、{{site.data.keyword.Bluemix_notm}} [カタログ](https://cloud.ibm.com/catalog)で検索してインスタンス化できます。
 
 ## 1 つの地域データ・センター内に複数の CFEE 環境を持つことはできますか?
 {: #multiple-cfees}
 
 はい。[これらの地域](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") で、必要な数の CFEE インスタンスをオンデマンドで作成できます。
+
+## 複数のデータ・センターをまたいで (マルチゾーンで) CFEE 環境をプロビジョンできますか?
+{: #multizone}
+はい。 CFEE v2.2.0 以降、CFEE インフラストラクチャー (Kubernetes クラスター・ノード) を、所定の地域の複数のデータ・センター (ゾーン) 間で分散できるようになりました。 
 
 ## 開始時に必要な最小容量は決まっていますか?
 {: #minimum-capacity}
@@ -58,6 +62,11 @@ CFEE サービスは Kuberneters コンテナーで実行されます。Kubernet
 {: #isolation}
 
 CFEE インスタンスがデプロイされる Kubernetes インフラストラクチャーのタイプには、_仮想共有_ハードウェアと_仮想専用_ハードウェアという 2 つのハードウェア・オプションがあります。 _仮想共有_ハードウェアの場合、ワーカー・ノード (Cloud Foundry プラットフォーム・コンテナーがデプロイされるところ) がお客様と他の IBM のお客様の間で分配されます。  _仮想専用_の場合、ワーカー・ノードは、お客様のアカウントに専用のハードウェア上でホストされます。  _仮想共有_ と_仮想専用_ のどちらの場合も、各ワーカー・ノードはお客様の単一テナントであることに注意してください。  つまり、アプリケーションが実行されている Cloud Foundry セルが他のお客様と共有されることはありません。
+
+## 分離されたネットワーク内で CFEE を操作できますか?
+{: #isolation}
+
+はい。 バージョン 2.2.0 以降、IBM® Cloud Foundry Enterprise Environment (CFEE) インスタンスは、外部の脅威から環境を防御して保護する分離ネットワーク内で操作できるようになりました。詳しくは、[分離ネットワークでの操作](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network)の資料を参照してください。
 
 ## CFEE の容量をスケーリングできますか?
 {: #scaling}

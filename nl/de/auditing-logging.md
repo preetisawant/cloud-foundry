@@ -25,7 +25,7 @@ Audit und Protokollierung werden in einer CFEE-Instanz durch die Integration der
 ## Audit
 {: #auditing}
 
-Mit einem Audit können CFEE-Administratoren überprüfbare Cloud Foundry-Aktivitäten verfolgen, die in einer CFEE-Instanz auftreten.  Zu diesen Aktivitäten gehören Anmeldung, Erstellung von Organisationen und Bereichen, Benutzerzugehörigkeit und Rollenzuweisungen, Anwendungsbereitstellungen, Servicebindungen und Domänenkonfiguration. Das Audit wird durch die Integration mit dem Service Activity Tracker in der IBM Cloud unterstützt. Eine Instanz des Service Activity Tracker, die vom CFEE-Administrator ausgewählt wurde, wird automatisch für das Empfangen von Ereignissen konfiguriert, die für Aktionen stehen, die in Cloud Foundry und auf der CFEE-Steuerebene ausgeführt werden. Der Benutzer kann diese Ereignisse in der Benutzerschnittstelle der Activity Tracker-Serviceinstanz anzeigen und verwalten.
+Mit einem Audit können CFEE-Administratoren überprüfbare Cloud Foundry-Aktivitäten verfolgen, die in einer CFEE-Instanz auftreten.  Zu diesen Aktivitäten gehören Anmeldung, Erstellung von Organisationen und Bereichen, Benutzerzugehörigkeit und Rollenzuweisungen, Anwendungsbereitstellungen, Servicebindungen und Domänenkonfiguration. Das Audit wird durch die Integration mit dem Service Activity Tracker in der IBM Cloud unterstützt. Eine Instanz des Service Activity Tracker, die vom CFEE-Administrator ausgewählt wurde, wird automatisch für das Empfangen von Ereignissen konfiguriert, die für Aktionen stehen, die in Cloud Foundry und auf der CFEE-Steuerebene ausgeführt werden.  Der Benutzer kann diese Ereignisse in der Benutzerschnittstelle der Activity Tracker-Serviceinstanz anzeigen und verwalten.
 
 Gehen Sie wie folgt vor, um das Audit für eine CFEE-Instanz zu aktivieren:
 
@@ -42,7 +42,7 @@ Die Protokollierung von Cloud Foundry-Ereignissen wird durch die Integration mit
 
 Gehen Sie wie folgt vor, um die Protokollierung für eine CFEE-Instanz zu aktivieren:
 
-1. Stellen Sie sicher, dass Sie über eine [IAM-Zugriffsrichtlinie](https://console.bluemix.net/iam/#/users) verfügen, von der Ihnen die Rolle eines Editors, Operators oder Administrators für die Log Analysis-Serviceinstanz zugeordnet wird, in der die Protokollierungsereignisse gespeichert werden sollen.
+1. Stellen Sie sicher, dass Sie über eine [IAM-Zugriffsrichtlinie](https://cloud.ibm.com/iam/#/users) verfügen, von der Ihnen die Rolle eines Editors, Operators oder Administrators für die Log Analysis-Serviceinstanz zugeordnet wird, in der die Protokollierungsereignisse gespeichert werden sollen.
 2. Öffnen Sie die Benutzerschnittstelle der CFEE-Instanz und wechseln Sie im linken Navigationsbereich zu **Operationen > Protokollierung**, um die Seite 'Protokollierung' zu öffnen.
 3. Klicken Sie auf **Protokollierungspersistenz aktivieren** und wählen Sie eine der **Log Analysis-Instanzen** aus, die im IBM Cloud-Konto verfügbar sind.  Wenn keine Instanzen verfügbar sind, wird dem Benutzer eine Option zum Erstellen einer Instanz im IBM Cloud-Katalog angezeigt.
 4. Sobald die Protokollierungspersistenz aktiviert ist, werden die Konfigurationsdetails auf der Seite angezeigt. Die Details umfassen die Konfiguration und einen Link zur Log Analysis-Serviceinstanz selbst, zu der der Benutzer wechseln kann, um Auditereignisse anzuzeigen und zu verwalten.

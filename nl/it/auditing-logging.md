@@ -42,7 +42,7 @@ La registrazione degli eventi Cloud Foundry è supportata tramite l'integrazione
 
 Per abilitare la registrazione di un'istanza CFEE:
 
-1. Assicurati di disporre di una [politica di accesso IAM](https://console.bluemix.net/iam/#/users) che ti assegna il ruolo di editor, operatore o amministratore per l'istanza del servizio Log Analysis in cui vuoi conservare gli eventi di registrazione.
+1. Assicurati di disporre di una [politica di accesso IAM](https://cloud.ibm.com/iam/#/users) che ti assegna il ruolo di editor, operatore o amministratore per l'istanza del servizio Log Analysis in cui vuoi conservare gli eventi di registrazione.
 2. Apri un'interfaccia utente CFEE e nella voce **Operations > Logging** nel pannello di navigazione a sinistra apri la pagina Logging.
 3. Fai clic su **Enable persistence** e seleziona una delle **Log Analysis instances** disponibili nell'account IBM Cloud.  Se non sono disponibili istanze, l'utente visualizzerà un'opzione per creare un'istanza nel catalogo IBM Cloud.
 4. Dopo che la persistenza della registrazione è stata abilitata, i dettagli della configurazione vengono visualizzati nella pagina. I dettagli includono lo stato della configurazione e un link all'istanza del servizio Log Analysis stessa, dove è possibile visualizzare e gestire gli eventi di registrazione.

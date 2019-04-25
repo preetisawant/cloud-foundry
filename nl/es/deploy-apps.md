@@ -72,7 +72,7 @@ Para visualizar aplicaciones desplegadas en un espacio específico de una instan
 1. Vaya al [panel de control de {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) y abra el {{site.data.keyword.cfee_full_notm}} en el que desea crear organizaciones.
 2. En la interfaz de usuario de {{site.data.keyword.cfee_full_notm}}, vaya a la entrada **Organizaciones** en el panel de navegación para abrir la página _Organizaciones_.
 3. Vaya al separador **Espacios** en la parte superior de la página.
-4. En el separador __Espacios__, haga clic en un espacio de la tabla para abrir la página del espacio.
+4. En el separador __Espacios__, pulse un espacio de la tabla para abrir la página del espacio.
 5. En la página __Espacio__, vaya al separador **Aplicaciones**.
 6. El separador __Aplicaciones_)_ muestra todas las aplicaciones desplegadas en el espacio.
 De forma opcional, puede Iniciar, Reiniciar, Detener o Suprimir una aplicación accediendo al menú del extremo derecho de la fila que representa la aplicación.
@@ -83,8 +83,8 @@ También puede expandir la fila de una aplicación para visualizar las instancia
 {: #view_global}
 
 Para visualizar todas las aplicaciones desplegadas en todas las instancias de CFEE:
-1. Haga clic en el icono Menú ![Comprobación de cuenta](img/HamburgerMenu.png "Captura de pantalla que muestra el icono de menú") > **Cloud Foundry** para abrir el panel de control de Cloud Foundry.
-2. Haga clic en **Empresa > Aplicaciones** en el panel de navegación izquierdo.
+1. Pulse el icono Menú ![Comprobación de cuenta](img/HamburgerMenu.png "Captura de pantalla que muestra el icono de menú") > **Cloud Foundry** para abrir el panel de control de Cloud Foundry.
+2. Pulse **Empresa > Aplicaciones** en el panel de navegación izquierdo.
 La tabla de la vista muestra la información siguiente:
 
 | Elemento   | Descripción |
@@ -111,7 +111,7 @@ Puede realizar las acciones siguientes en esta vista:
 * Enlazar aplicaciones a un alias específico accediendo al menú de desbordamiento de alias del alias ubicado en el extremo derecho de la fila.
 * Expandir un alias (fila) para ver todas las aplicaciones enlazadas al mismo.
 * Iniciar o detener aplicaciones accediendo al menú de desbordamiento de aplicación del alias ubicado en el extremo derecho de la fila.
-* Ir a un CFEE, una organización de CFEE o a un espacio de CFEE haciendo clic en el enlace con el espacio, organización o CFEE correspondiente.
+* Ir a un CFEE, una organización de CFEE o a un espacio de CFEE pulsando el enlace con el espacio, organización o CFEE correspondiente.
 
 ## Manifiesto de aplicación
 {: #appmanifest}

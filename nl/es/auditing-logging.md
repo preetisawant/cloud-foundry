@@ -42,7 +42,7 @@ El registro de los sucesos de Cloud Foundry recibe soporte a través de la integ
 
 Para habilitar el registro para una instancia de CFEE:
 
-1. Asegúrese de que tiene una [política de acceso de IAM](https://console.bluemix.net/iam/#/users) que le asigna el rol de editor, operador o administrador sobre la instancia de servicio de Log Analysis en la que tiene previsto guardar de forma permanente los sucesos de registro.
+1. Asegúrese de que tiene una [política de acceso de IAM](https://cloud.ibm.com/iam/#/users) que le asigna el rol de editor, operador o administrador sobre la instancia de servicio de Log Analysis en la que tiene previsto guardar de forma permanente los sucesos de registro.
 2. Abra una interfaz de usuario de CFEE y vaya a la entrada **Operaciones > Registro** en el panel de navegación de la izquierda para abrir la página Registro.
 3. Pulse **Habilitar persistencia** y seleccione una de las **instancias de Log Analysis** disponibles en la cuenta de IBM Cloud.  Si no hay ninguna instancia disponible, el usuario verá una opción para crear una instancia en el catálogo de IBM Cloud.
 4. Una vez que se ha habilitado la persistencia de registro, los detalles de la configuración se visualizan en la página. Los detalles incluyen el estado de la configuración y un enlace con la propia instancia de servicio de Log Analysis, donde el usuario puede acudir para ver y gestionar sucesos de registro.

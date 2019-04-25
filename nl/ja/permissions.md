@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,10 +27,10 @@ lastupdated: "2019-01-15"
 
 |  **タスク** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM アクセスの役割** &nbsp; &nbsp; &nbsp; |**Cloud Foundry の役割** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|CFEE の作成 |  <ul><li>CFEE が作成されるリソース・グループのビューアーの役割。</li> <li>CFEE サービスのエディター役割。</li> <li>Kubernetes サービスの管理者役割。</li> <li>Cloud Object Storage サービスのエディター役割。</li> </ul> | <ul><li>パブリック組織のユーザー役割。</li> <li>そのパブリック組織のスペースの開発者役割。 </li></ul>|
-|CFEE バージョンの更新 |  <ul><li>CFEE リソース・グループのビューアー役割。</li> <li>CFEE サービスのエディター役割。</li></li> <li>Kubernetes サービスのオペレーター役割。</li> <li>Cloud Object Storage サービスのエディター役割。</li> </ul> | <ul><li>パブリック組織のユーザー役割。</li> <li>そのパブリック組織のスペースの開発者役割。 </li></ul>|
+|CFEE の作成 |  <ul><li>CFEE が作成されるリソース・グループのビューアーの役割。</li> <li>CFEE サービスのエディター役割。</li> <li>Kubernetes サービスの管理者役割。</li> <li>IBM Cloud Object Storage サービスでのエディターのプラットフォーム役割および管理者のサービス・アクセス役割。</li> </ul> | <ul><li>パブリック組織のユーザー役割。</li> <li>そのパブリック組織のスペースの開発者役割。 </li></ul>|
+|CFEE バージョンの更新 |  <ul><li>CFEE リソース・グループのビューアー役割。</li> <li>CFEE サービスにおけるエディターのプラットフォーム役割。</li></li> <li>Kubernetes サービスのオペレーター役割。</li> <li>Cloud Object Storage サービスのエディター役割。</li> </ul> | <ul><li>パブリック組織のユーザー役割。</li> <li>そのパブリック組織のスペースの開発者役割。 </li></ul>|
 |CFEE 容量のスケーリング (セルの追加/削除)|  <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスの管理者役割。</li> <li>Kubernetes サービスのオペレーター役割。</li> <li>Cloud Object Storage サービスのエディター役割。</li> </ul> | |
-|CFEE のモニター |  <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスのエディター役割。</li></ul> |  |
+|CFEE のモニター |  <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスのエディター役割。</li> <li>CFEE の Kubernetes クラスターにおけるオペレーター役割。</li></ul> |  |
 |CFEE リソース使用量の表示 |  <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスのビューアー役割。</li></ul> |  |
 |CFEE 監査の有効化| <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスのエディター役割。</li></ul> | <ul><li>Activity Tracker サービス・インスタンスがデプロイされるパブリック Cloud Foundry スペースの監査員役割。</li></ul>  |
 |CFEE 監査イベントの表示| <ul><li>CFEE インスタンス・リソース・グループのビューアー役割。</li> <li>CFEE インスタンスのエディター役割。</li></ul> | <ul><li>Activity Tracker サービス・インスタンスがデプロイされるパブリック Cloud Foundry スペースの監査員役割。</li></ul>  |

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -18,34 +18,34 @@ lastupdated: "2019-01-15"
 # Berechtigungen
 {: #permissions}
 
-Bevor Benutzer Instanzen des {{site.data.keyword.cfee_full}}-Service (CFEE-Service) erstellen und mit diesen arbeiten können, müssen die entsprechenden Berechtigungen von einem Administrator des Kontos, in dem die CFEE-Instanz erstellt werden soll, korrekt festgelegt werden.  
+Bevor Benutzer Instanzen des {{site.data.keyword.cfee_full}}-Service (CFEE-Service) erstellen und mit diesen arbeiten können, müssen die entsprechenden Berechtigungen von einem Administrator des Kontos, in dem die CFEE-Instanz erstellt werden soll, korrekt festgelegt werden. 
 
 ## Übersicht über die Berechtigungen
 {: #perm-summary}
 
-Im Folgenden sind die für die Ausführung verschiedener Tasks in einer CFEE-Instanz mindestens erforderlichen [IAM](https://cloud.ibm.com/iam#/users)- und [Cloud Foundry-Rollenzuweisungen](https://cloud.ibm.com/account/cloud-foundry) zusammengefasst. Der übrige Abschnitt enthält eine detailliertere Beschreibung dieser Berechtigungen. 
+Im Folgenden sind die für die Ausführung verschiedener Tasks in einer CFEE-Instanz mindestens erforderlichen [IAM](https://cloud.ibm.com/iam#/users)- und [Cloud Foundry-Rollenzuweisungen](https://cloud.ibm.com/account/cloud-foundry) zusammengefasst. Der übrige Abschnitt enthält eine detailliertere Beschreibung dieser Berechtigungen.
 
 |  **Task** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM-Zugriffsrollen** &nbsp; &nbsp; &nbsp; |**Cloud Foundry-Rollen** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|CFEE erstellen|  <ul><li>Rolle eines Anzeigeberechtigten in der Ressourcengruppe, in der CFEE erstellt werden soll. </li> <li>Rolle eines Bearbeiters im CFEE-Service. </li> <li>Administratorrolle im Kubernetes-Service. </li> <li>Rolle eines Bearbeiters im Cloud Object Storage-Service. </li> </ul> | <ul><li>Benutzerrolle in einer öffentlichen Organisation. </li> <li>Entwicklerrolle in einem Bereich in dieser öffentlichen Organisation. </li></ul>|
-|CFEE-Version aktualisieren|  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Ressourcengruppe. </li> <li>Rolle eines Bearbeiters im CFEE-Service. </li></li> <li>Operatorrolle im Kubernetes-Service. </li> <li>Rolle eines Bearbeiters im Cloud Object Storage-Service. </li> </ul> | <ul><li>Benutzerrolle in einer öffentlichen Organisation. </li> <li>Entwicklerrolle in einem Bereich in dieser öffentlichen Organisation. </li></ul>|
-|CFEE-Kapazität skalieren (Zellen hinzufügen/entfernen)|  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Administratorrolle in der CFEE-Instanz. </li> <li>Operatorrolle im Kubernetes-Service. </li> <li>Rolle eines Bearbeiters im Cloud Object Storage-Service. </li> </ul> | |
-|CFEE überwachen |  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> |  |
-|CFEE-Ressourcennutzung anzeigen |  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul> |  |
-|CFEE-Audit aktivieren| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Activity Tracker-Serviceinstanz bereitgestellt ist. </li></ul>  |
-|CFEE-Auditereignisse anzeigen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Activity Tracker-Serviceinstanz bereitgestellt ist. </li></ul>  |
-|CFEE-Protokollierungspersistenz aktivieren| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> |<ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Log Analysis-Serviceinstanz bereitgestellt ist. </li></ul>  |
-|Persistent gespeicherte CFEE-Protokolle anzeigen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Log Analysis-Serviceinstanz bereitgestellt ist. </li></ul> |
-|CFEE-Organisationen erstellen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul> |  |
-|CFEE-Bereiche erstellen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul> | <ul><li>Managerrolle in der Organisation, in der der Bereich erstellt werden soll. </li></ul> |
+|CFEE erstellen |  <ul><li>Rolle eines Anzeigeberechtigten in der Ressourcengruppe, in der CFEE erstellt werden soll.</li> <li>Rolle eines Bearbeiters im CFEE-Service.</li> <li>Administratorrolle im Kubernetes-Service.</li> <li>Plattformrolle eines Editors und Managerrolle für Servicezugriff auf den IBM Cloud Object Storage-Service. </li> </ul> | <ul><li>Benutzerrolle in einer öffentlichen Organisation.</li> <li>Entwicklerrolle in einem Bereich in dieser öffentlichen Organisation. </li></ul>|
+|CFEE-Version aktualisieren |  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Ressourcengruppe.</li> <li>Plattformrolle eines Editors im CFEE-Service. </li></li> <li>Operatorrolle im Kubernetes-Service.</li> <li>Rolle eines Bearbeiters im Cloud Object Storage-Service.</li> </ul> | <ul><li>Benutzerrolle in einer öffentlichen Organisation.</li> <li>Entwicklerrolle in einem Bereich in dieser öffentlichen Organisation. </li></ul>|
+|CFEE-Kapazität skalieren (Zellen hinzufügen/entfernen)|  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Administratorrolle in der CFEE-Instanz.</li> <li>Operatorrolle im Kubernetes-Service.</li> <li>Rolle eines Bearbeiters im Cloud Object Storage-Service.</li> </ul> | |
+|CFEE überwachen |  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li> <li>Operatorrolle im Kubernetes-Cluster von CFEE. </li></ul> |  |
+|CFEE-Ressourcennutzung anzeigen |  <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz.</li></ul> |  |
+|CFEE-Audit aktivieren| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Activity Tracker-Serviceinstanz bereitgestellt ist.</li></ul>  |
+|CFEE-Auditereignisse anzeigen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Activity Tracker-Serviceinstanz bereitgestellt ist.</li></ul>  |
+|CFEE-Protokollierungspersistenz aktivieren| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li></ul> |<ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Log Analysis-Serviceinstanz bereitgestellt ist.</li></ul>  |
+|Persistent gespeicherte CFEE-Protokolle anzeigen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li></ul> | <ul><li>Auditorrolle im öffentlichen Cloud Foundry-Bereich, in dem die Log Analysis-Serviceinstanz bereitgestellt ist.</li></ul> |
+|CFEE-Organisationen erstellen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Bearbeiters in der CFEE-Instanz.</li></ul> |  |
+|CFEE-Bereiche erstellen| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz.</li></ul> | <ul><li>Managerrolle in der Organisation, in der der Bereich erstellt werden soll.</li></ul> |
 |Gemeinsam genutzte Domänen verwalten|<ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Bearbeiters in der CFEE-Instanz. </li></ul>|  |
 |Gemeinsam genutzte Domänen anzeigen|<ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul>|  |
 |Private Domänen verwalten|<ul> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul>| <ul><li>Managerrolle in der Organisation, die Eigner der Domäne ist. </li></ul>|
 |Private Domänen anzeigen|<ul> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul>|<ul><li>Rolle eines Anzeigeberechtigten in der Organisation, die Eigner der Domäne ist. </li></ul>|
-|IBM Cloud-Serviceinstanz in einem CFEE-Bereich erstellen/löschen| <ul><li>Rolle eines Anzeigeberechtigten in der Ressourcengruppe, in der CFEE erstellt werden soll. </li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li> <li>Rolle eines Bearbeiters in der Ressourcengruppe, in der die Serviceinstanz erstellt werden soll, oder für den mit IAM verwalteten Service, der instanziiert werden soll. </li> </ul>| <ul><li>Entwicklerrolle im CFEE-Bereich, von dem aus die Serviceinstanz erstellt wird (und zu dem sie automatisch (über einen Alias) hinzugefügt wird. </li></ul> |
-|IBM Cloud-Serviceinstanz zu einem CFEE-Bereich hinzufügen bzw. aus diesem entfernen (d. h. Alias für einen IBM Cloud-Service in einem CFEE-Bereich erstellen/löschen)| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li><li>Plattformrolle eines Operators und Servicerolle eines Leseberechtigten für die hinzuzufügende Serviceinstanz. </li></ul>|<ul><li>Entwicklerrolle im CFEE-Bereich, zu dem die Serviceinstanz (über einen Alias) hinzugefügt werden soll. </li></ul> |
-|Bindung für eine IBM Cloud-Serviceinstanz in einem CFEE-Bereich erstellen oder aufheben|<ul> <li>Rolle eines Bearbeiters in der Ressourcengruppe der Serviceinstanz, für die die Bindung erstellt oder aufgehoben werden soll. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li><li>Plattformrolle eines Operators und Servicerolle eines Schreibberechtigten für die Serviceinstanz, für die die Bindung erstellt werden soll. </li></ul> | <ul><li>Entwicklerrolle in dem CFEE-Bereich, in dem sich die Serviceinstanz befindet, für die die Bindung erstellt werden soll. </li></ul> |
-|`cf` cli-Befehle absetzen|<ul> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li></ul> | <ul><li>Cloud Foundry-Rollen in der Organisation/in dem Bereich, die bzw. der für die Ausführung des Befehls erforderlich ist. </li></ul> |
+|IBM Cloud-Serviceinstanz in einem CFEE-Bereich erstellen/löschen| <ul><li>Rolle eines Anzeigeberechtigten in der Ressourcengruppe, in der CFEE erstellt werden soll.</li> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz.</li> <li>Rolle eines Bearbeiters in der Ressourcengruppe, in der die Serviceinstanz erstellt werden soll, oder für den mit IAM verwalteten Service, der instanziiert werden soll.</li> </ul>| <ul><li>Entwicklerrolle im CFEE-Bereich, von dem aus die Serviceinstanz erstellt wird (und zu dem sie automatisch (über einen Alias) hinzugefügt wird.</li></ul> |
+|IBM Cloud-Serviceinstanz zu einem CFEE-Bereich hinzufügen bzw. aus diesem entfernen (d. h. Alias für einen IBM Cloud-Service in einem CFEE-Bereich erstellen/löschen)| <ul><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe.</li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li><li>Plattformrolle eines Operators und Servicerolle eines Leseberechtigten für die hinzuzufügende Serviceinstanz. </li></ul>|<ul><li>Entwicklerrolle im CFEE-Bereich, zu dem die Serviceinstanz (über einen Alias) hinzugefügt werden soll.</li></ul> |
+|Bindung für eine IBM Cloud-Serviceinstanz in einem CFEE-Bereich erstellen oder aufheben|<ul> <li>Rolle eines Bearbeiters in der Ressourcengruppe der Serviceinstanz, für die die Bindung erstellt oder aufgehoben werden soll.</li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz. </li><li>Plattformrolle eines Operators und Servicerolle eines Schreibberechtigten für die Serviceinstanz, für die die Bindung erstellt werden soll.</li></ul> | <ul><li>Entwicklerrolle in dem CFEE-Bereich, in dem sich die Serviceinstanz befindet, für die die Bindung erstellt werden soll.</li></ul> |
+|`cf` cli-Befehle absetzen|<ul> <li>Rolle eines Anzeigeberechtigten in der CFEE-Instanzressourcengruppe. </li><li>Rolle eines Anzeigeberechtigten in der CFEE-Instanz.</li></ul> | <ul><li>Cloud Foundry-Rollen in der Organisation/in dem Bereich, die bzw. der für die Ausführung des Befehls erforderlich ist.</li></ul> |
 {: caption="Tabelle 1. Für die Ausführung von Tasks in CFEE erforderliche Berechtigungen" caption-side="top"}
 
 ## Zum Erstellen einer neuen Umgebung erforderliche Berechtigungen
@@ -81,7 +81,7 @@ Benutzerberechtigungen können Sie in der {{site.data.keyword.Bluemix}}-Befehlsz
 {:tip}
 
 Gehen Sie wie folgt vor, um sicherzustellen, dass Sie über die erforderlichen Zugriffsrichtlinien zum Erstellen einer {{site.data.keyword.cfee_full_notm}}-Instanz verfügen:
-1. Wechseln Sie zum Menü [**Verwalten > Zugriff (IAM) > Benutzer**](https://console.bluemix.net/iam/#/users) im {{site.data.keyword.Bluemix_notm}}-Header, um die Seite **Identität & Zugriff** zu öffnen. 
+1. Wechseln Sie zum Menü [**Verwalten > Zugriff (IAM) > Benutzer**](https://console.bluemix.net/iam/#/users) im {{site.data.keyword.Bluemix_notm}}-Header, um die Seite **Identität & Zugriff** zu öffnen.
 2. Klicken Sie auf der Registerkarte 'Zugriffsrichtlinien' auf den Benutzer, der die Umgebung erstellt, um die Zugriffsrichtlinien für diesen Benutzer zuzuweisen und anzuzeigen.
 
 Weitere Informationen zum Verwalten der Benutzer und des Zugriffs in {{site.data.keyword.Bluemix}} sowie der Organisation von Benutzergruppen und Service-IDs zur Erleichterung der gleichzeitigen Zuweisung des Zugriffs für mehrere Benutzer finden Sie unter [Benutzer und Zugriff verwalten](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
@@ -129,33 +129,33 @@ Damit ein Benutzer mit einer Instanz von {{site.data.keyword.cfee_full_notm}} ar
   - Die Ressourcengruppe, unter der die CFEE-Instanz erstellt wurde.
   - Die CFEE-Instanz selbst. 
   
-   Die Zugriffs- und Steuerungsebene, über die Benutzer in einer CFEE-Instanz verfügen, ist abhängig von der Rolle, die ihnen in ihren Zugriffsrichtlinien erteilt wird: 
+   Die Zugriffs- und Steuerungsebene, über die Benutzer in einer CFEE-Instanz verfügen, ist abhängig von der Rolle, die ihnen in ihren Zugriffsrichtlinien erteilt wird:
 
   - Benutzer mit der Rolle eines _Anzeigeberechtigten_ für eine CFEE-Instanz können diese im {{site.data.keyword.Bluemix_notm}}-Hauptdashboard in der Liste anzeigen und die zugehörige Benutzerschnittstelle öffnen. Der Zugriff der Benutzer auf bestimmte Organisationen und Bereiche innerhalb einer Umgebung hängt von den Rollen für die Organisation und Bereiche ab, die ihnen von den Managern dieser Organisationen und Bereiche zugeordnet wurden. Weitere Informationen finden Sie unter [Benutzer zu Organisationen hinzufügen](add-users.html).
   
   - Benutzer, denen die Rolle eines _Administrators_ oder _Bearbeiters_ für eine CFEE-Instanz zugeordnet ist, können Organisationen erstellen und Manager zu Organisationen und Bereichen zuordnen; außerdem verfügen Sie über die vollständigen Berechtigungen für alle Organisationen und Bereiche innerhalb der Umgebung und für die Ausführung von operativen Aktionen mithilfe der Cloud-Controller-API. Den Benutzern wird automatisch die Berechtigung für den Bereich _cloud_controller.admin_ im Bereich _Benutzerkonto und Authentifizierung_ von Cloud Foundry erteilt.
 
-  - Benutzer benötigen die Plattformrolle eines _Bearbeiters_ oder eine höhere Rolle für eine CFEE-Instanz und die Rolle eines _Operators_ oder eine höhere Rolle für den Kubernetes-Cluster, in dem die CFEE-Instanz bereitgestellt wird, um **die CFEE-Instanz auf eine neue Version zu aktualisieren**. 
+  - Benutzer benötigen die Plattformrolle eines _Bearbeiters_ oder eine höhere Rolle für eine CFEE-Instanz und die Rolle eines _Operators_ oder eine höhere Rolle für den Kubernetes-Cluster, in dem die CFEE-Instanz bereitgestellt wird, um **die CFEE-Instanz auf eine neue Version zu aktualisieren**.
 
-  - Benutzer benötigen die Plattformrolle eines _Administrators_ für eine CFEE-Instanz und die Rolle eines _Operators_ oder eine höhere Rolle für den Kubernetes-Cluster, in dem die CFEE-Instanz bereitgestellt wird, um für eine CFEE-Instanz **die Kapazität zu ändern** (Zellen hinzufügen oder entfernen). 
+  - Benutzer benötigen die Plattformrolle eines _Administrators_ für eine CFEE-Instanz und die Rolle eines _Operators_ oder eine höhere Rolle für den Kubernetes-Cluster, in dem die CFEE-Instanz bereitgestellt wird, um für eine CFEE-Instanz **die Kapazität zu ändern** (Zellen hinzufügen oder entfernen).
  
-  - Benutzer benötigen die Plattformrolle eines _Operators_ oder eine höhere Rolle für eine IBM Cloud-Serviceinstanz, um diese *Serviceinstanz* zu einem CFEE-Bereich **hinzuzufügen** (d. h., um einen Alias für eine Serviceinstanz in einem CFEE-Bereich zu erstellen). 
+  - Benutzer benötigen die Plattformrolle eines _Operators_ oder eine höhere Rolle für eine IBM Cloud-Serviceinstanz, um diese *Serviceinstanz* zu einem CFEE-Bereich **hinzuzufügen** (d. h., um einen Alias für eine Serviceinstanz in einem CFEE-Bereich zu erstellen).
  
-  - Benutzer benötigen die Plattformrolle eines _Operators_ oder eine höhere Rolle und die Servicerolle eines _Schreibberechtigten_ oder eine höhere Rolle für eine IBM Cloud-Serviceinstanz, um diese Serviceinstanz an eine Anwendung zu **binden**, die in einem CFEE-Bereich bereitgestellt ist. 
+  - Benutzer benötigen die Plattformrolle eines _Operators_ oder eine höhere Rolle und die Servicerolle eines _Schreibberechtigten_ oder eine höhere Rolle für eine IBM Cloud-Serviceinstanz, um diese Serviceinstanz an eine Anwendung zu **binden**, die in einem CFEE-Bereich bereitgestellt ist.
 
 
 ## Bewährte Verfahren: Zugriffsgruppen
 {: #access-groups}
 
-Mithilfe von Zugriffsgruppen können Sie die Zugriffssteuerung für CFEE verwalten und vereinfachen. Die Verwendung von Zugriffsgruppen ermöglicht es Ihnen, beliebige Gruppen zu definieren, denen Sie Zugriffsrichtlinien zuweisen können. Jedem Benutzer, der zu einer Zugriffsgruppe hinzugefügt wird, wird automatisch die Zugriffsrichtlinie der Gruppe zugewiesen.  
+Mithilfe von Zugriffsgruppen können Sie die Zugriffssteuerung für CFEE verwalten und vereinfachen.  Die Verwendung von Zugriffsgruppen ermöglicht es Ihnen, beliebige Gruppen zu definieren, denen Sie Zugriffsrichtlinien zuweisen können.  Jedem Benutzer, der zu einer Zugriffsgruppe hinzugefügt wird, wird automatisch die Zugriffsrichtlinie der Gruppe zugewiesen. 
 
-Sie können Zugriffsgruppen entweder über die IBM Cloud-Benutzerschnittstelle oder über die `ibmcloud`-Befehlszeilenschnittstelle erstellen und verwalten.  
+Sie können Zugriffsgruppen entweder über die IBM Cloud-Benutzerschnittstelle oder über die `ibmcloud`-Befehlszeilenschnittstelle erstellen und verwalten. 
 
-Rufen Sie in der Benutzerschnittstelle die Menüleiste auf, klicken Sie auf **Verwalten > Zugriff (IAM)** und wählen Sie [Zugriffsgruppen](https://cloud.ibm.com/iam#/groups) aus. 
+Rufen Sie in der Benutzerschnittstelle die Menüleiste auf, klicken Sie auf **Verwalten > Zugriff (IAM)** und wählen Sie [Zugriffsgruppen](https://cloud.ibm.com/iam#/groups) aus.
 
-Alternativ dazu können Sie die `ibmcloud`-Befehlszeilenschnittstelle verwenden: 
+Alternativ dazu können Sie die `ibmcloud`-Befehlszeilenschnittstelle verwenden:
 
-1. Zugriffsgruppe erstellen: 
+1. Zugriffsgruppe erstellen:
 
   ```
   ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]

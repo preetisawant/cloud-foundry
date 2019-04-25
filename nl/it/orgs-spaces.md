@@ -24,7 +24,7 @@ Le applicazioni in un {{site.data.keyword.cfee_full}} vengono indirizzate all'in
 
 Per creare le organizzazioni in {{site.data.keyword.cfee_full_notm}}:
 
-1. Vai al [dashboard Ambienti Cloud Foundry {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} e apri l'{{site.data.keyword.cfee_full_notm}} in cui vuoi creare le organizzazioni.
+1. Vai al [dashboard Ambienti Cloud Foundry {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} e apri l'{{site.data.keyword.cfee_full_notm}} in cui vuoi creare le organizzazioni.
 2. Nell'interfaccia utente di {{site.data.keyword.cfee_full_notm}}, vai alla voce **Organizzazioni** nel riquadro di navigazione per aprire la pagina _organizzazioni_.
 3. Fai clic su **Aggiungi nuovo**.
 4. Immetti un **Nome** per la nuova organizzazione.
@@ -33,6 +33,6 @@ Per creare le organizzazioni in {{site.data.keyword.cfee_full_notm}}:
 
 Oltre alla gestione dell'appartenenza all'organizzazione, i gestori dell'organizzazione possono creare, visualizzare, modificare o eliminare gli spazi all'interno dell'organizzazione. I gestori dell'organizzazione possono anche visualizzare l'utilizzo e la quota dell'organizzazione, invitare gli utenti all'organizzazione, gestire l'appartenenza e i ruoli nell'organizzazione e gestire i domini personalizzati dell'organizzazione.
 
-Per creare spazi all'interno di un'organizzazione, nella pagina _Organizzazioni_, vai alla scheda **Spazi** e fai clic su **Aggiungi nuovo**. I membri di un'organizzazione possono anche creare e gestire i propri spazi all'interno di un'organizzazione. Per ulteriori informazioni sui ruoli Cloud Foundry, vedi [Accesso Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}.
+Per creare spazi all'interno di un'organizzazione, nella pagina _Organizzazioni_, vai alla scheda **Spazi** e fai clic su **Aggiungi nuovo**. I membri di un'organizzazione possono anche creare e gestire i propri spazi all'interno di un'organizzazione. Per ulteriori informazioni sui ruoli Cloud Foundry, vedi [Accesso Cloud Foundry](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}.
 
 **Nota**: l'accesso alle organizzazioni e agli spazi all'interno di un {{site.data.keyword.cfee_full_notm}} richiede che gli utenti abbiano l'autorizzazione ad accedere all'ambiente stesso. Senza l'autorizzazione per accedere a {{site.data.keyword.cfee_full_notm}}, gli utenti non possono accedere alle organizzazioni e agli spazi all'interno dell'ambiente, indipendentemente dalla loro appartenenza e ruolo in tali organizzazioni e spazi.

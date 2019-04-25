@@ -37,12 +37,16 @@ Concernant l'offre à service partagé publique, la différence la plus notable 
 ## Où puis-je trouver le service CFEE ?
 {: #where}
 
-Vous pouvez trouver et instancier le service {{site.data.keyword.cfee_full}} dans le [catalogue](https://console.stage1.bluemix.net/catalog) {{site.data.keyword.Bluemix_notm}}.
+Vous pouvez trouver et instancier le service {{site.data.keyword.cfee_full}} dans le [catalogue](https://cloud.ibm.com/catalog) {{site.data.keyword.Bluemix_notm}}.
 
 ## Puis-je avoir plus d'un environnement CFEE dans un centre de données régional ?
 {: #multiple-cfees}
 
 Oui, vous pouvez créer des instances CFEE à la demande, autant que vous le souhaitez, dans [ces régions](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+
+## Un environnement CFEE peut-il mis à disposition dans plusieurs centres de données (multizone) ?
+{: #multizone}
+Oui. A compter de CFEE version 2.2.0, l'infrastructure CFEE (noeuds de cluster Kubernetes) peut être distribuée à plusieurs centres de données (zones) au sein d'une région donnée. 
 
 ## Ai-je besoin d'une certaine capacité minimale pour commencer ?
 {: #minimum-capacity}
@@ -57,7 +61,12 @@ Le service CFEE s'exécute sur des conteneurs Kubernetes, ce qui permet de rédu
 ## Quelles sont les options d'isolement dont je dispose lors de la création d'un CFEE ?
 {: #isolation}
 
-Vous avez deux options matérielles selon le type d'infrastructure Kubernetes dans laquelle l'instance CFEE est déployée. Il s'agit de l'option de matériel _partagé virtuel_ ou de l'option de matériel _dédié virtuel_. Dans le cadre de l'option de matériel _partagé virtuel_, les noeuds worker (dans lesquels le conteneur de plateforme Cloud Foundry est déployé) sont répartis entre vous et d'autres clients IBM.  Avec l'option de matériel _dédié virtuel_, les noeuds worker sont hébergés sur le matériel qui est dédié exclusivement à votre compte.  Notez que dans les deux cas, matériel _partagé virtuel_ et matériel _dédié virtuel_, chaque noeud worker est à service exclusif pour le client. Cela signifie que les cellules Cloud Foundry dans lesquelles les applications s'exécutent ne sont pas partagées avec d'autres clients. 
+Vous avez deux options matérielles selon le type d'infrastructure Kubernetes dans laquelle l'instance CFEE est déployée. Il s'agit de l'option de matériel _partagé virtuel_ ou de l'option de matériel _dédié virtuel_. Dans le cadre de l'option de matériel _partagé virtuel_, les noeuds worker (dans lesquels le conteneur de plateforme Cloud Foundry est déployé) sont répartis entre vous et d'autres clients IBM.  Avec l'option de matériel _dédié virtuel_, les noeuds worker sont hébergés sur le matériel qui est dédié exclusivement à votre compte.  Notez que dans les deux cas, matériel _partagé virtuel_ et matériel _dédié virtuel_, chaque noeud worker est à service exclusif pour le client.  Cela signifie que les cellules Cloud Foundry dans lesquelles les applications s'exécutent ne sont pas partagées avec d'autres clients.
+
+## Un environnement CFEE peut-il fonctionner dans un réseau isolé ?
+{: #isolation}
+
+Oui. A compter de la version 2.2.0, les instances d'environnement IBM® Cloud Foundry Enterprise Environment (CFEE) peuvent fonctionner dans un réseau isolé qui protège et sécurise l'environnement des menaces externes. Pour plus d'informations, voir la documentation relative au [fonctionnement dans un réseau isolé](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network).
 
 ## Puis-je mettre à l'échelle la capacité d'un CFEE ?
 {: #scaling}

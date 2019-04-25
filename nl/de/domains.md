@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # Domänen verwalten
 {: #domains}
+
+[Informieren Sie sich über Domänen](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") und ihre Funktionsweise in Cloud Foundry. 
 
 Es gibt zwei Typen an Cloud-Foundry-Domänen:
 * Gemeinsam genutzte Domänen, die für jede beliebige Anwendung in einem Bereich in einer {{site.data.keyword.cfee_full_notm}}-Instanz verfügbar sind.  Um auf die gemeinsam genutzten Domänen zuzugreifen, rufen Sie die Seite **Domänen** im linken Navigationsfenster der Benutzerschnittstelle auf (unter *Operationen*).

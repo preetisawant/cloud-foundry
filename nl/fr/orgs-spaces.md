@@ -24,8 +24,8 @@ Dans un environnement {{site.data.keyword.cfee_full}}, les applications sont lim
 
 Pour créer des organisations dans un environnement {{site.data.keyword.cfee_full_notm}} :
 
-1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}} des environnement Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} dans lequel vous voulez créer des organisations.
-2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Organisations** dans le volet de navigation pour ouvrir la page _Organisations_.
+1. Accédez au [tableau de bord des environnements Cloud Foundry d'{{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} dans lequel vous voulez créer des organisations.
+2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Organisations** dans le panneau de navigation pour ouvrir la page _Organisations_.
 3. Cliquez sur **Ajouter**.
 4. Entrez un **Nom** pour la nouvelle organisation.
 5. Sous **Responsables**, identifiez au moins un utilisateur. Seuls les utilisateurs ayant un rôle de responsable peuvent ajouter des membres à cette organisation.
@@ -33,6 +33,6 @@ Pour créer des organisations dans un environnement {{site.data.keyword.cfee_ful
 
 Outre la gestion de l'appartenance à une organisation, les responsables de l'organisation peuvent créer, afficher, éditer ou supprimer des espaces au sein de l'organisation. Les responsables de l'organisation peuvent également afficher le quota et l'utilisation de l'organisation, inviter des utilisateurs dans l'organisation, gérer les appartenances et les rôles dans l'organisation et gérer des domaines personnalisés pour l'organisation.
 
-Pour créer des espaces au sein d'une organisation, dans la page _Organisations_, accédez à l'onglet **Espaces**, puis cliquez sur **Ajouter**. Les membres d'une organisation peuvent également créer et gérer leurs propres espaces au sein d'une organisation. Pour plus d'informations sur les rôles Cloud Foundry, voir [Accès Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}.
+Pour créer des espaces au sein d'une organisation, dans la page _Organisations_, accédez à l'onglet **Espaces**, puis cliquez sur **Ajouter**. Les membres d'une organisation peuvent également créer et gérer leurs propres espaces au sein d'une organisation. Pour plus d'informations sur les rôles Cloud Foundry, voir [Accès Cloud Foundry](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}.
 
 **Remarque** : pour accéder à des organisations et des espaces au sein d'un environnement {{site.data.keyword.cfee_full_notm}}, les utilisateurs doit détenir le droit d'accès à l'environnement lui-même. Sans droit d'accès à l'environnement {{site.data.keyword.cfee_full_notm}}, les utilisateurs ne peuvent pas accéder aux organisations et aux espaces de cet environnement, quels que soient leur appartenance et rôle dans ces organisations et espaces.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-08"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-11-08"
 
 # ドメインの管理
 {: #domains}
+
+[ドメインについて](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")、およびドメインが Cloud Foundry でどのように機能するのかについて説明します。
 
 Cloud Foundry ドメインには、以下の 2 つのタイプがあります。
 * {{site.data.keyword.cfee_full_notm}} 内の任意のスペースで任意のアプリケーションが使用できる共有ドメイン。  共有ドメインにアクセスするには、UI の左側のナビゲーション・ペインにある**「ドメイン」**ページ (*「操作」*の下) に移動します。

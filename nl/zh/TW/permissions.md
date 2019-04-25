@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,10 +27,10 @@ lastupdated: "2019-01-15"
 
 |  **作業** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM 存取角色** &nbsp; &nbsp; &nbsp; |**Cloud Foundry 角色** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|建立 CFEE |  <ul><li>要建立 CFEE 之資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者角色。</li> <li>Kubernetes 服務中的管理者角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
-|更新 CFEE 版本|  <ul><li>CFEE 資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者角色。</li></li> <li>Kubernetes 服務中的操作員角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
+|建立 CFEE |  <ul><li>要建立 CFEE 之資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者角色。</li> <li>Kubernetes 服務中的管理者角色。</li> <li>編輯者平台角色，以及 IBM Cloud Object Storage 服務中的管理者服務存取角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
+|更新 CFEE 版本|  <ul><li>CFEE 資源群組中的檢視者角色。</li> <li>CFEE 服務中的編輯者平台角色。</li></li> <li>Kubernetes 服務中的操作員角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | <ul><li>公用組織中的使用者角色。</li> <li>該公用組織中之空間的開發人員角色。</li></ul>|
 |調整 CFEE 容量（新增/移除 Cell）|  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的管理者角色。</li> <li>Kubernetes 服務中的操作員角色。</li> <li>Cloud Object Storage 服務中的編輯者角色。</li> </ul> | |
-|監視 CFEE |  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> |  |
+|監視 CFEE |  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li> <li>CFEE 的 Kubernetes 叢集中的操作員角色。</li></ul> |  |
 |檢視 CFEE 資源用量|  <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的檢視者角色。</li></ul> |  |
 |啟用 CFEE 審核| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> | <ul><li>部署 Activity Tracker 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul>  |
 |檢視 CFEE 審核事件| <ul><li>CFEE 實例資源群組中的檢視者角色。</li> <li>CFEE 實例中的編輯者角色。</li></ul> | <ul><li>部署 Activity Tracker 服務實例之公用 Cloud Foundry 空間中的審核員角色。</li></ul>  |

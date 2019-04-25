@@ -22,7 +22,7 @@ lastupdated: "2018-12-07"
 
 通过 {{site.data.keyword.cfee_full}} (CFEE)，您可以根据需要将多个隔离的企业级 Cloud Foundry 平台实例化。{{site.data.keyword.Bluemix_notm}} Foundry Enterprise 服务的实例会在 {{site.data.keyword.Bluemix_notm}} 中您自己的帐户中运行。该环境部署在隔离的硬件（Kubernetes 集群）上。您对环境具有完全控制权，包括访问控制、容量、版本更新、资源使用情况和监视。此外，通过将 CFEE 集成到 {{site.data.keyword.Bluemix_notm}} 中，开发者能够利用其 {{site.data.keyword.Bluemix_notm}} 帐户中可用的服务。用户可以将这些服务添加到 CFEE 中，并将其绑定到部署在 CFEE 空间中的应用程序。
 
-了解如何[**开始**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)创建和使用 CFEE 实例。
+了解如何[**开始**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started)创建和使用 CFEE 实例。
 
 {:shortdesc}
 
@@ -34,7 +34,7 @@ lastupdated: "2018-12-07"
 |元素| 描述 |
 |-----------|---------------|
 |IBM Cloud 帐户|CFEE 实例在特定 IBM Cloud 帐户下创建，可根据为该帐户中的用户定义的角色和访问策略，供这些用户使用。|
-||在其中创建 CFEE 实例的帐户必须是现买现付或预订帐户类型（而不是试用帐户）。|
+||在其中创建 CFEE 实例的帐户必须是现收现付或预订帐户类型（而不是试用帐户）。|
 |CFEE|用于托管应用程序的 IBM Cloud Foundry Enterprise Environment 服务。|
 ||在 IBM Cloud“目录”中提供。|
 |CFEE 实例|由在 IBM Cloud 帐户中具有“管理员”或“编辑者”角色的用户在该帐户下创建的 IBM Cloud Foundry Enterprise Environment 服务的实例。|

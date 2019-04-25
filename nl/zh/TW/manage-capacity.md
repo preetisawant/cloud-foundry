@@ -17,7 +17,7 @@ lastupdated: "2019-01-15"
 
 管理者及開發人員可以查看應用程式及 Cell 使用 CFEE 資源容量（記憶體及 CPU）的情況。若要監視 CFEE 實例中的資源用量，請執行下列動作：
 
-1. 移至 [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 儀表板](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments)，並開啟您要管理資源用量的 {{site.data.keyword.cfee_full_notm}}。
+1. 移至 [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 儀表板](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments)，並開啟您要管理資源用量的 {{site.data.keyword.cfee_full_notm}}。
 2. 在 {{site.data.keyword.cfee_full_notm}} 使用者介面中，移至左導覽窗格中的**資源用量**項目，以開啟_資源用量_ 頁面。在_資源用量_ 頁面下，您可以移至_應用程式_ 或 _Cell_ 子項目來開啟對應的頁面。_應用程式_ 及 _Cell_ 頁面中顯示的資訊可以視為細分資源用量的兩種方式：
    * **應用程式**頁面會依跨實例聚集的應用程式來分析資源用量。
    * **Cell** 頁面顯示特定 Cell 上執行之應用程式實例的資源用量。跨 Cell 的資源用量模式可讓您深入瞭解容量及負載分佈。例如，它可能有助於找出應用程式負載平衡的問題（例如，應用程式在各 Cell 之間使用的資源有大量差異），或是資源用量接近整體容量的問題（亦即在所有 Cell 中有很大的資源用量百分比）。

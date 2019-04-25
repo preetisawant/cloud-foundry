@@ -37,12 +37,16 @@ In Bezug auf öffentliche Multi-Tenant-Lösungen besteht der größte Unterschie
 ## Wo finde ich den CFEE-Service?
 {: #where}
 
-Den {{site.data.keyword.cfee_full}}-Service können Sie im {{site.data.keyword.Bluemix_notm}}-[Katalog](https://console.stage1.bluemix.net/catalog) finden und instanziieren.
+Den {{site.data.keyword.cfee_full}}-Service können Sie im {{site.data.keyword.Bluemix_notm}}-[Katalog](https://cloud.ibm.com/catalog) finden und instanziieren. 
 
 ## Sind in einem regionalen Rechenzentrum mehrere CFEE-Umgebungen möglich?
 {: #multiple-cfees}
 
 Ja, Sie können in [diesen Regionen](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") bei Bedarf so viele CFEE-Instanzen erstellen, wie Sie benötigen.
+
+## Kann eine CFEE-Umgebung über mehrere Rechenzentren hinweg (in mehreren Zonen) bereitgestellt werden? 
+{: #multizone}
+Ja. Ab CFEE V2.2.0 kann die CFEE-Infrastruktur (Kubernetes-Clusterknoten) über mehrere Rechenzentren (Zonen) innerhalb einer Region verteilt werden.  
 
 ## Muss ich mit einer Mindestkapazität beginnen?
 {: #minimum-capacity}
@@ -57,7 +61,12 @@ Der CFEE-Service wird in Kubernetes-Containern ausgeführt, was niedrigere Infra
 ## Welche Isolationsoptionen habe ich beim Erstellen einer CFEE-Instanz?
 {: #isolation}
 
-Sie verfügen über zwei Hardwareoptionen für den Typ der Kubernetes-Infrastruktur, in der die CFEE-Instanz bereitgestellt wird: _Virtuell gemeinsam genutzte_ oder _virtuell dedizierte_ Hardware. Bei der _virtuell gemeinsam genutzten_ Hardware werden die Workerknoten (in denen der Cloud Foundry-Plattformcontainer bereitgestellt wird) von Ihnen und anderen IBM Kunden gemeinsam verwendet.  Bei Verwendung _virtuell dedizierter_ Hardware werden die Workerknoten auf der Hardware gehostet, die exklusiv für Ihr Konto dediziert ist.  Beachten Sie, dass in beiden Fällen - _Virtuell gemeinsam genutzt_ und _Virtuell dediziert_ - jeder Workerknoten für den Kunden eine Single-Tenant-Lösung ist. Dies bedeutet, dass die Cloud Foundry-Zellen, in denen die Anwendungen ausgeführt werden, nicht mit anderen Kunden gemeinsam genutzt werden.
+Sie verfügen über zwei Hardwareoptionen für den Typ der Kubernetes-Infrastruktur, in der die CFEE-Instanz bereitgestellt wird: _Virtuell gemeinsam genutzte_ oder _virtuell dedizierte_ Hardware. Bei der _virtuell gemeinsam genutzten_ Hardware werden die Workerknoten (in denen der Cloud Foundry-Plattformcontainer bereitgestellt wird) von Ihnen und anderen IBM Kunden gemeinsam verwendet.  Bei Verwendung _virtuell dedizierter_ Hardware werden die Workerknoten auf der Hardware gehostet, die exklusiv für Ihr Konto dediziert ist.  Beachten Sie, dass in beiden Fällen - _Virtuell gemeinsam genutzt_ und _Virtuell dediziert_ - jeder Workerknoten für den Kunden eine Single-Tenant-Lösung ist.  Dies bedeutet, dass die Cloud Foundry-Zellen, in denen die Anwendungen ausgeführt werden, nicht mit anderen Kunden gemeinsam genutzt werden.
+
+## Kann eine CFEE-Instanz in einem isolierten Netz betrieben werden? 
+{: #isolation}
+
+Ja. Ab Version 2.2.0 können Instanzen von IBM® Cloud Foundry Enterprise Environment (CFEE) in einem isolierten Netz betrieben werden, das die Umgebung vor externen Bedrohungen schützt und sichert. Weitere Informationen finden Sie in der Dokumentation [Betrieb in einem isolierten Netz](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network). 
 
 ## Kann ich die Kapazität einer CFEE-Instanz skalieren?
 {: #scaling}

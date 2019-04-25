@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-12-19"
 # Aktualisierung und Skalierung
 {: #update-scale}
 
-Aktualisieren Sie die {{site.data.keyword.cfee_full_notm}}-Serviceinstanz auf die neuste Version, um die neuesten CFEE-Funktionen und -Korrekturen zu erhalten. CFEE-Aktualisierungen können neue Versionen für unterstützende Services von Cloud Foundry und CFEE enthalten (Kubernetes, Cloud Object Storage oder Compose for PostgreSQL).  Nicht jede CFEE-Aktualisierung enthält jedoch eine neue Version unterstützender Services von Cloud Foundry und CFEE. 
+Aktualisieren Sie die {{site.data.keyword.cfee_full_notm}}-Serviceinstanz auf die neuste Version, um die neuesten CFEE-Funktionen und -Korrekturen zu erhalten. CFEE-Aktualisierungen können neue Versionen für unterstützende Services von Cloud Foundry und CFEE enthalten (Kubernetes, Cloud Object Storage oder Compose for PostgreSQL).  Nicht jede CFEE-Aktualisierung enthält jedoch eine neue Version unterstützender Services von Cloud Foundry und CFEE.
 
 Die Aktualisierungen der CFEE-Version werden auf der Steuerebene durchgeführt, in der die CFEE-Komponenten und Zellen enthalten sind. Sie können die Kapazität der CFEE-Instanz auch durch das Hinzufügen oder Entfernen von Anwendungszellen skalieren.
 
@@ -34,14 +34,14 @@ Die Aktualisierung der CFEE-Version einer CFEE-Instanz ist ein zweistufiger Proz
 
 Beim Aktualisieren einer CFEE-Instanz auf eine neue Version gelten die folgenden Regeln und Einschränkungen:
 * Die Steuerebene muss zuerst aktualisiert werden. Sobald die Steuerebene aktualisiert wurde, können die Zellen aktualisiert werden.
-* Anwendungszellen können nur auf die Version der Steuerebene aktualisiert werden.  Somit können die Zellen der Steuerebene eine höhere CFEE-Version als die Anwendungszellen aufweisen, umgekehrt ist dies jedoch nicht möglich.
+* Anwendungszellen können nur auf die Version der Steuerebene aktualisiert werden.  Somit kann die Steuerebene eine höhere CFEE-Version als die Anwendungszellen aufweisen; umgekehrt ist dies jedoch nicht möglich. 
 
 Gehen Sie wie folgt vor, um die CFEE-Version der CFEE-Instanz zu aktualisieren:
-1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}}-Dashboard](https://console.bluemix.net/dashboard/apps/) und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Instanz, die Sie aktualisieren möchten.
-2. Wechseln Sie in der {{site.data.keyword.cfee_full_notm}}-Instanz im Navigationsbereich zum Eintrag **Zellen**, um die Seite 'Zellen' zu öffnen.
+1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}}-Dashboard](https://cloud.ibm.com/dashboard/apps/) und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Instanz, die Sie aktualisieren möchten.
+2. Rufen Sie die Seite **Aktualisierungen und Skalierung** unter dem Eintrag _Operationen_ im Navigationsfenster auf. 
 3. (Optional) In der Tabelle _Steuerebene_ können Sie die Zeile erweitern, um die Workerknoten in der Steuerebene anzuzeigen.
 4. Klicken Sie auf **Aktualisieren**.
-5. Wählen Sie im Dialog _Steuerebene aktualisieren_ eine der verfügbaren CFEE-Versionen aus und klicken Sie auf **Aktualisieren**. Die Aktualisierung dauert etwa 45 Minuten. In der Versionsbeschreibung werden die Details zu den Versionen der Komponenten angegeben, die im ausgewählten CFEE-Versionspaket enthalten sind; zusätzlich wird ein Link zum Dokument _Neuerungen_ bereitgestellt, in dem der Inhalt beschrieben wird, der in dieser Version bereitgestellt wird.
+5. Wählen Sie im Dialog _Steuerebene aktualisieren_ eine der verfügbaren CFEE-Versionen aus und klicken Sie auf **Aktualisieren**. Die Aktualisierung dauert etwa 45 Minuten.  In der Versionsbeschreibung werden die Details zu den Versionen der Komponenten angegeben, die im ausgewählten CFEE-Versionspaket enthalten sind; zusätzlich wird ein Link zum Dokument _Neuerungen_ bereitgestellt, in dem der Inhalt beschrieben wird, der in dieser Version bereitgestellt wird.
 6. In der Spalte _Knotenstatus_ wird der Fortschritt der Aktualisierung angezeigt. Sobald die Aktualisierung abgeschlossen ist, wird in der Spalte _Version_ die neue CFEE-Version angegeben.
 7. Sobald die Aktualisierung der Zellen der Steuerebene abgeschlossen ist, suchen Sie die Tabelle _Zellen_ und klicken Sie auf **Aktualisieren**.
 8. Wählen Sie im Dialog _Steuerebene aktualisieren_ die CFEE-Version aus und klicken Sie auf *Aktualisieren*. Es ist nur eine Version für die Zellen verfügbar, weil die Anwendungszellen nur auf die Version der Steuerebene aktualisiert werden können. In einer einzigen Aktualisierungsaktion werden alle Zelle aktualisiert.
@@ -50,7 +50,7 @@ Gehen Sie wie folgt vor, um die CFEE-Version der CFEE-Instanz zu aktualisieren:
 ## Unterbrechungen während der Versionsaktualisierung
 {: #update-disruption}
 
-Die Aktualisierung der Cloud Foundry-Steuerebene verläuft ohne Unterbrechungen.  Die Aktualisierung der Cloud Foundry-Zellen auf eine neue CFEE-Version kann jedoch zu Unterbrechungen beim Betrieb der CFEE-Umgebung führen.  Da eine Zelle nach der anderen aktualisiert wird, werden Anwendungsinstanzen, die in einer Zelle ausgeführt werden, wieder aktiv, sobald die Aktualisierung abgeschlossen ist, während andere Zellen während ihrer Aktualisierung noch inaktiv sind. Dennoch können einige Anwendungen und Services, die in der CFEE ausgeführt werden, unter bestimmten Umständen nicht mehr verfügbar sein. Wenn eine CFEE-Instanz beispielsweise über zwei Cloud Foundry-Zellen mit voller Kapazität verfügt, ist eine Anwendung mit nur einer Instanz während der Versionsaktualisierung inaktiv, da die Anwendungsinstanz während der Aktualisierung der Zelle nicht in eine andere Zelle verschoben werden kann; aus diesem Grund ist die Anwendung nicht verfügbar.  Selbst bei der Verwendung von drei Zellen und drei Instanzen pro Anwendung kann es während einer Versionsaktualisierung zu temporären Unterbrechungen bei der Anwendungsverfügbarkeit kommen. 
+Die Aktualisierung der Cloud Foundry-Steuerebene verläuft ohne Unterbrechungen.  Die Aktualisierung der Cloud Foundry-Zellen auf eine neue CFEE-Version kann jedoch zu Unterbrechungen beim Betrieb der CFEE-Umgebung führen.  Da eine Zelle nach der anderen aktualisiert wird, werden Anwendungsinstanzen, die in einer Zelle ausgeführt werden, wieder aktiv, sobald die Aktualisierung abgeschlossen ist, während andere Zellen während ihrer Aktualisierung noch inaktiv sind. Dennoch können einige Anwendungen und Services, die in der CFEE ausgeführt werden, unter bestimmten Umständen nicht mehr verfügbar sein. Wenn eine CFEE-Instanz beispielsweise über zwei Cloud Foundry-Zellen mit voller Kapazität verfügt, ist eine Anwendung mit nur einer Instanz während der Versionsaktualisierung inaktiv, da die Anwendungsinstanz während der Aktualisierung der Zelle nicht in eine andere Zelle verschoben werden kann; aus diesem Grund ist die Anwendung nicht verfügbar.  Selbst bei der Verwendung von drei Zellen und drei Instanzen pro Anwendung kann es während einer Versionsaktualisierung zu temporären Unterbrechungen bei der Anwendungsverfügbarkeit kommen.
 
 Während der Versionsaktualisierung können Abweichungen zwischen den Metriken für Hauptspeicher und CPU auftreten, die in den Messanzeigen der Zellenknoten auf der CFEE-Seite _Übersicht_ angezeigt werden (vom Kubernetes-Cluster generiert) und denselben Metriken, die im Dashboard _Nodes_ in Grafana angezeigt werden (auf der Betriebssystemebene generiert).
 
@@ -77,8 +77,8 @@ Die Benutzer benötigen die folgenden Berechtigungen, um Cloud Foundry-Zellen zu
 * Die Rolle _Operator_ oder eine höhere Rolle für den Kubernetes-Cluster, in dem die CFEE-Instanz bereitgestellt wird.
 
 Gehen Sie wie folgt vor, um Anwendungszellen in der CFEE-Instanz hinzuzufügen
-1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}}-Dashboard](https://console.bluemix.net/dashboard/apps/) und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Umgebung, in der Sie Zellen hinzufügen möchten.
-2. Klicken Sie neben der Tabelle _Zellen_ auf **Zelle hinzufügen**; daraufhin wird die Seite _Cloud-Foundry-Zellen hinzufügen_ geöffnet.
-3. Wählen Sie auf der Seite _Cloud Foundry-Zellen hinzufügen_ die Anzahl der Zellen aus, die hinzugefügt werden sollen. Auf der Seite werden auch die Geografie und der Standort der CFEE-Instanz angezeigt, an dem die Zellen hinzugefügt werden. Außerdem werden die aktuelle Anzahl der Zellen und die Kapazität der Zellen angezeigt, die hinzugefügt werden sollen (diese Angabe ist mit der Kapazität der aktuellen Zellen identisch). Im rechten Teilfenster der Seite werden die geschätzten Kosten für die hinzugefügten Zellen zusammen mit den neuen geschätzten Gesamtkosten für die Umgebung angezeigt.
-4. Klicken Sie auf **Hinzufügen**.  
-5. Rufen Sie die Seite _Knoten_ auf. In der Tabelle _Zellen_ wird für jeden neuen Knoten eine neue Zeile hinzugefügt. In der Spalte _Knotenstatus_ wird der Fortschritt beim Hinzufügen der Zellen zur CFEE-Umgebung und Bereitstellen der Zelle in der CFEE-Umgebung angezeigt.
+1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}}-Dashboard](https://cloud.ibm.com/dashboard/apps/) und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Umgebung, in der Sie Zellen hinzufügen möchten.
+2. Klicken Sie auf **Cloud Foundry-Zellenanzahl ändern** neben der Tabelle _Zellen_. Daraufhin wird die Seite _Cloud Foundry-Zellen hinzufügen_ geöffnet. 
+3. Auf der Seite _Cloud Foundry-Zellenanzahl ändern_ wählen Sie die Gesamtzahl der Zellen im Feld für die Zielzellenanzahl aus. Auf der Seite werden auch die Geografie und der Standort der CFEE-Instanz angezeigt, in der/an dem die Zellen hinzugefügt werden. Außerdem werden im Feld _Aktuelle Zellenanzahl_ die aktuelle Anzahl der Zellen und im Feld für die Knotengröße die Kapazität der hinzuzufügenden Zellen (entspricht der Kapazität der aktuellen Zellen) angezeigt. Im rechten Teilfenster der Seite werden die geschätzten Kosten für die hinzugefügten Zellen zusammen mit den neuen geschätzten Gesamtkosten für die Umgebung angezeigt.
+4. Klicken Sie auf **Zellen hinzufügen**. Klicken Sie im Dialog _Zellen hinzufügen_ auf **Hinzufügen**. 
+5. Kehren Sie zu der Seite _Aktualisierungen und Skalierung_ zurück. In der Tabelle _Zellenknoten_ wurde für jeden neuen Zellenknoten eine neue Zeile hinzugefügt. In der Spalte für den Knotenstatus wird der Fortschritt beim Hinzufügen und Bereitstellen der Zellen in Ihrer CFEE-Umgebung angezeigt. 

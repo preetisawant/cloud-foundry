@@ -24,7 +24,7 @@ Anwendungen in einer {{site.data.keyword.cfee_full}}-Umgebung können in bestimm
 
 Gehen Sie wie folgt vor, um Organisationen in einer {{site.data.keyword.cfee_full_notm}}-Umgebung zu erstellen:
 
-1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}} Foundry-Umgebungsdashboard](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window} und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Umgebung, in der Sie die Organisationen erstellen möchten.
+1. Wechseln Sie zum [{{site.data.keyword.Bluemix_notm}} Foundry-Umgebungsdashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} und öffnen Sie die {{site.data.keyword.cfee_full_notm}}-Umgebung, in der Sie die Organisationen erstellen möchten.
 2. Wechseln Sie in der {{site.data.keyword.cfee_full_notm}}-Benutzerschnittstelle im Navigationsbereich zum Eintrag **Organisationen**, um die Seite _Organisationen_ zu öffnen.
 3. Klicken Sie auf **Neues hinzufügen**.
 4. Geben Sie einen **Namen** für die neue Organisation ein.
@@ -33,6 +33,6 @@ Gehen Sie wie folgt vor, um Organisationen in einer {{site.data.keyword.cfee_ful
 
 Zusätzlich zum Verwalten der Organisationsmitgliedschaft können Organisationsmanager innerhalb der Organisation Bereiche erstellen, anzeigen, bearbeiten oder löschen. Organisationsmanager können auch die Nutzung und das Kontingent der Organisation anzeigen, Benutzer in die Organisation einladen, die Mitgliedschaft und die Rollen in der Organisation verwalten und angepasste Domänen für die Organisation verwalten.
 
-Wenn Sie innerhalb einer Organisation Bereiche erstellen möchten, wechseln Sie auf der Seite _Organisationen_ zur Registerkarte **Bereiche** und klicken auf **Neues hinzufügen**. Mitglieder einer Organisation können auch ihre eigenen Bereiche innerhalb einer Organisation erstellen und verwalten. Weitere Informationen zu Cloud Foundry-Rollen finden Sie unter [Cloud Foundry-Zugriff](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}.
+Wenn Sie innerhalb einer Organisation Bereiche erstellen möchten, wechseln Sie auf der Seite _Organisationen_ zur Registerkarte **Bereiche** und klicken auf **Neues hinzufügen**. Mitglieder einer Organisation können auch ihre eigenen Bereiche innerhalb einer Organisation erstellen und verwalten. Weitere Informationen zu Cloud Foundry-Rollen finden Sie unter [Cloud Foundry-Zugriff](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}.
 
 **Hinweis:** Für den Zugriff auf Organisationen und Bereiche innerhalb einer {{site.data.keyword.cfee_full_notm}}-Umgebung müssen diese Benutzer über die Berechtigung auf die Umgebung selbst verfügen. Ohne die Berechtigung für den Zugriff auf die {{site.data.keyword.cfee_full_notm}}-Umgebung können Benutzer unabhängig von ihrer Mitgliedschaft und Rolle in diesen Organisationen und Bereichen nicht auf Organisationen und Bereiche in der Umgebung zugreifen.

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,10 +27,10 @@ lastupdated: "2019-01-15"
 
 |  **태스크** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM 액세스 역할** &nbsp; &nbsp; &nbsp; |**Cloud Foundry 역할** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|CFEE 작성 |  <ul><li>CFEE를 작성할 리소스 그룹의 뷰어 역할.</li> <li>CFEE 서비스의 편집자 역할.</li> <li>Kubernetes 서비스의 관리자 역할.</li> <li>Cloud Object Storage 서비스의 편집자 역할.</li> </ul> | <ul><li>공용 조직의 사용자 역할.</li> <li>공용 조직의 영역에 있는 개발자 역할. </li></ul>|
-|CFEE 버전 업데이트 |  <ul><li>CFEE 리소스 그룹의 뷰어 역할.</li> <li>CFEE 서비스의 편집자 역할.</li></li> <li>Kubernetes 서비스의 운영자 역할.</li> <li>Cloud Object Storage 서비스의 편집자 역할.</li> </ul> | <ul><li>공용 조직의 사용자 역할.</li> <li>공용 조직의 영역에 있는 개발자 역할. </li></ul>|
+|CFEE 작성 |  <ul><li>CFEE를 작성할 리소스 그룹의 뷰어 역할.</li> <li>CFEE 서비스의 편집자 역할.</li> <li>Kubernetes 서비스의 관리자 역할.</li> <li>IBM Cloud Object Storage 서비스의 편집자 플랫폼 역할 및 관리자 서비스 액세스 역할.</li> </ul> | <ul><li>공용 조직의 사용자 역할.</li> <li>공용 조직의 영역에 있는 개발자 역할. </li></ul>|
+|CFEE 버전 업데이트 |  <ul><li>CFEE 리소스 그룹의 뷰어 역할.</li> <li>CFEE 서비스의 편집자 플랫폼 역할.</li></li> <li>Kubernetes 서비스의 운영자 역할.</li> <li>Cloud Object Storage 서비스의 편집자 역할.</li> </ul> | <ul><li>공용 조직의 사용자 역할.</li> <li>공용 조직의 영역에 있는 개발자 역할. </li></ul>|
 |CFEE 용량 스케일링(셀 추가/제거)|  <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 관리자 역할.</li> <li>Kubernetes 서비스의 운영자 역할.</li> <li>Cloud Object Storage 서비스의 편집자 역할.</li> </ul> | |
-|CFEE 모니터 |  <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 편집자 역할.</li></ul> |  |
+|CFEE 모니터 |  <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 편집자 역할.</li> <li>CFEE의 Kubernetes 클러스터의 오퍼레이터 역할.</li></ul> |  |
 |CFEE 리소스 사용량 보기 |  <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 뷰어 역할.</li></ul> |  |
 |CFEE 감사 사용| <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 편집자 역할.</li></ul> | <ul><li>활동 트래커 서비스 인스턴스가 배치된 공용 Cloud Foundry 영역의 감사자 역할.</li></ul>  |
 |CFEE 감사 이벤트 보기| <ul><li>CFEE 인스턴스 리소스 그룹의 뷰어 역할.</li> <li>CFEE 인스턴스의 편집자 역할.</li></ul> | <ul><li>활동 트래커 서비스 인스턴스가 배치된 공용 Cloud Foundry 영역의 감사자 역할.</li></ul>  |

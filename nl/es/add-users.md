@@ -16,12 +16,12 @@ lastupdated: "2018-04-18"
 # Adición de usuarios a organizaciones y espacios
 {: #adding_users}
 
-Los miembros de una organización con el rol de gestor pueden añadir miembros a dicha organización. Para poder añadir usuarios a una organización, deben tener el rol de visor en el servicio de {{site.data.keyword.cfee_full}} y en el grupo de recursos al que pertenece la instancia de {{site.data.keyword.cfee_full_notm}}. Estos permisos se establecen en la página _Identidad y acceso_ en **Gestionar > Usuarios** en la cabecera de {{site.data.keyword.Bluemix}}.
+Los miembros de una organización con el rol de gestor pueden añadir miembros a dicha organización. Para poder añadir usuarios a una organización, deben tener el rol de visor en el servicio {{site.data.keyword.cfee_full}} y en el grupo de recursos al que pertenece la instancia de {{site.data.keyword.cfee_full_notm}}. Estos permisos se establecen en la página _Identidad y acceso_ en **Gestionar > Usuarios** en la cabecera de {{site.data.keyword.Bluemix}}.
 
 Para añadir usuarios como miembros de una organización en una instancia de {{site.data.keyword.cfee_full_notm}}:
 
 1. Vaya a la entrada **Organizaciones** en el panel de navegación. Localice la organización en la que desea añadir un miembro. Vaya al menú _Acciones_ en la fila de tabla y seleccione **Añadir miembro**. De forma alternativa, puede pulsar en la organización para abrir la página de la organización, ir al separador **Miembros** y pulsar en **Añadir miembro**.
-2. En la ventana _Añadir miembro_, busque el usuario, seleccione un **Rol de organización** y haga clic en **Añadir**.
+2. En la ventana _Añadir miembro_, busque el usuario, seleccione un **Rol de organización** y pulse **Añadir**.
 
 **Nota:** Si desea añadir un usuario al que se ha invitado a la cuenta de {{site.data.keyword.Bluemix_notm}} recientemente, es posible que el proceso de reconocimiento del usuario en la ventana en la que añade usuarios a una organización o espacio tarde varios minutos. Si el usuario no se reconoce cuando introduce el nombre de usuario, especifique la dirección de correo electrónico del mismo y pulse el icono más (+) para añadirlo.
 

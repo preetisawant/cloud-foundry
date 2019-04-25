@@ -19,7 +19,7 @@ lastupdated: "2018-04-18"
 Pour lier une application à une instance de service :
 
 1. Dans votre tableau de bord {{site.data.keyword.Bluemix}}, recherchez l'environnement CFEE qui héberge votre application.
-2. Accédez à **Organisations** dans le volet de navigation et ouvrez l'organisation et l'espace où se trouve l'application.
+2. Accédez à **Organisations** dans le panneau de navigation et ouvrez l'organisation et l'espace où se trouve l'application.
 3. Accédez à l'onglet **Espaces** et recherchez l'espace qui contient l'application.
 4. Dans l'espace cible, accédez à l'onglet **Services**.
 5. Dans le tableau **Instances de service**, accédez au menu Actions tout à fait à droite de la ligne correspondant à l'instance de service à lier, puis sélectionnez **Lier**.

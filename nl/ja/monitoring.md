@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-26"
+lastupdated: "2019-04-01"
 
 ---
 
@@ -13,12 +13,14 @@ lastupdated: "2018-11-26"
 {:screen: .screen}
 {:tip: .tip}
 
-# モニター
+# モニター 
 {: #monitoring}
 
 {{site.data.keyword.cfee_full}} インスタンスとそのサポートされるインフラストラクチャーのモニターは、Prometheus と Grafana から成るオープン・ソースのツール・セットによってサポートされます。  このソリューションを使用すると、Cloud Foundry 環境でメトリックのアラートの分析、視覚化、および管理を行うことができます。  モニターが行われる 3 つの Web コンソールがあります。Grafana コンソール、Prometheus コンソール、および Prometheus Alert Manager コンソールです。
 
-**注:** {{site.data.keyword.cfee_full}} インスタンスのモニター機能にアクセスするには、CFEE インスタンスをサポートする Kubernetes クラスターで_管理者_ または_エディター_ の役割が必要です。  CFEE インスタンスをサポートする Kubernetes クラスターのデフォルト名は、_`<CFEEname>`-cluster_ です。
+CFEE v2.2.0 以降、環境作成時にモニタリング・ツールはデフォルトで有効になるわけではありません。管理者は、環境の作成後にモニタリングを有効にすることができます。CFEE ユーザー・インターフェースの左ナビゲーション・ペインの_「モニタリング」_ページに移動し、**「有効化」**をクリックします。モニタリングを有効にすると、追加の Kubernetes ワーカー・ノードが (同じ IBM Cloud アカウントで) 自動的にプロビジョンされ、モニタリング・ツールがそれらのワーカー・ノードにインストールされます。
+
+**注:** {{site.data.keyword.cfee_full}} インスタンスのモニター機能にアクセスするには、CFEE における_管理者_ または_エディター_ の役割、および CFEE インスタンスをサポートする Kubernetes クラスターにおける_オペレーター_ の役割が必要です (それに加え、CFEE がグループ化されているリソース・グループにおける_ビューアー_ の役割も必要です)。CFEE インスタンスをサポートする Kubernetes クラスターのデフォルト名は、_`<CFEEname>`-cluster_ です。 
 
 ## Prometheus
 {: #prometheus}
@@ -33,7 +35,7 @@ Prometheus エコシステムは、以下の複数のコンポーネントで構
 * ノード・エクスポーター、ブラック・ボックス・エクスポーターなど、さまざまな特殊目的のエクスポーター。</li>
 * 短期存続ジョブをサポートするためのプッシュ・ゲートウェイ。</li>
 
-Prometheus は、直接、または短期存続ジョブ用の仲介プッシュ・ゲートウェイを介して、インスツルメントされたジョブからメトリックを収集します。 収集されたすべてのサンプルをローカルに保管し、そのデータに対してルールを実行して、既存のデータから新規時系列を集約および記録するか、アラートを生成します。
+Prometheus は、直接、または短期存続ジョブ用の仲介プッシュ・ゲートウェイを介して、インスツルメントされたジョブからメトリックを収集します。収集されたすべてのサンプルをローカルに保管し、そのデータに対してルールを実行して、既存のデータから新規時系列を集約および記録するか、アラートを生成します。 
 
 ## Grafana
 {: #grafana}
@@ -43,10 +45,10 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 ## モニターの使用開始
 {: #gettingStarted_monitor}
 
-モニター・ソリューションを構成する Prometheus および Grafana コンポーネントは、CFEE インスタンスをサポートする Kubernetes インフラストラクチャーにプリインストールされています。  モニター・ツールにアクセスするには、Prometheus、Prometheus AlertManager、および Grafana の各サーバーのポートを転送する必要があります。  これは、Kubernetes CLI を使用して行います。
+モニター・ソリューションを構成する Prometheus および Grafana コンポーネントは、CFEE インスタンスをサポートする Kubernetes インフラストラクチャーにプリインストールされています。  モニター・ツールにアクセスするには、Prometheus、Prometheus AlertManager、および Grafana の各サーバーのポートを転送する必要があります。これは、Kubernetes CLI を使用して行います。
 以下に、必要な CLI をインストールし、サーバーのポートを転送し、コンソールを起動するためのステップを順に示します。
 
-**注:** 以下の説明は、{{site.data.keyword.cfee_full}} ユーザー・インターフェースにもあります。  CFEE インスタンスのユーザー・インターフェースを開き、左ナビゲーション・ペインにある**「モニタリング」**をクリックすると、説明が表示されます。
+**注:** 以下の説明は、{{site.data.keyword.cfee_full}} ユーザー・インターフェースにもあります。CFEE インスタンスのユーザー・インターフェースを開き、左ナビゲーション・ペインにある**「モニタリング」**をクリックし、**「アクセス」**タブに移動して表示される手順を確認します。
 
 ### 前提条件
 
@@ -57,7 +59,11 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 ```
     ibmcloud plugin install container-service -r Bluemix
 ```
+ 
+### Alertmanager 構成のカスタマイズ
 
+Alertmanager には、Alertmanager アラートを処理、グループ化、および通知ルーティングするためのポリシーを定義する、デフォルトの [Alertmanager 構成](https://prometheus.io/docs/alerting/configuration/)ファイルが用意されています。このデフォルト構成ファイルをダウンロードし、_「モニタリング」_ページの**「構成」**タブでカスタム構成をアップロードできます。
+ 
 ### Kubernetes クラスターへのアクセス
 
 1. 以下のように、IBM Cloud アカウントにログインします。
@@ -66,7 +72,7 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
   ibmcloud login -a https://api.ng.bluemix.net
   ```
   {: pre}
-
+  
   フェデレーテッド ID がある場合は、__ibmcloud login -sso__ を使用して IBM Cloud CLI にログインします。
 
 2. 以下のように、作業する IBM Cloud Container Service 地域 (例えば、us-south) をターゲット化します。
@@ -75,8 +81,8 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
   ibmcloud cs region-set us-south
   ```
   {: pre}
-
-3. 以下のように、CLI でクラスターのコンテキストを設定します。
+    
+3. 以下のように、CLI でクラスターのコンテキストを設定します。 
 
   a. 以下のように、環境変数を設定し、Kubernetes 構成ファイルをダウンロードするコマンドを取得します。
 
@@ -84,7 +90,7 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
   ibmcloud cs cluster-config <CFEE_instance_name>-cluster
   ```
   {: pre}
-
+    
   b. KUBECONFIG 環境変数を設定します。 前のコマンドからの出力をコピーし、端末に貼り付けます。 コマンド出力は、以下のようなものです。
   __export KUBECONFIG=/Users/$USER/.bluemix/plugins/container-service/clusters/cf-admin-0703-cluster/kube-config-dal10-cf-admin-0703-cluster.yml__
 
@@ -92,15 +98,15 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
 4. Prometheus、AlertManager、および Grafana が実行されているポッド用に Kubernetes クラスターでポート転送をセットアップします。 これにより、ローカル・マシン (localhost) で代わりにモニター・メトリックをホストできるようになります。
 
   ```
-  sh -c 'kubectl -n monitoring port-forward deployment/prometheus-server 9090 & kubectl -n monitoring port-forward deployment/prometheus-alertmanager 9093 & kubectl -n monitoring port-forward deployment/grafana 3000'
+  sh -c 'kubectl -n monitoring port-forward deployment/prometheus-server 9090 & kubectl -n monitoring port-forward deployment/prometheus-alertmanager 9093 & kubectl -n monitoring port-forward deployment/grafana 3000 &''
   ```
   {: pre}
-
+  
 ### ローカル Web プロキシーでのモニター・コンソールの起動
 
-5. Grafana コンソールを起動して、選択したメトリックでの分析を表示します。  CFEE インスタンスには、デフォルトの Grafana ダッシュボードが含まれています。 このデフォルトのダッシュボードはインタラクティブであり、CFEE インスタンス (Kubernetes クラスター) をホストするために使用されているインフラストラクチャーのビューを示します。 Grafana コンソールを起動したら、Grafana コンソールの上部にある**「Home」**ボタンをクリックして、事前にデプロイされているダッシュボード (下のリストを参照) のいずれかを選択します。これにより、対応するメトリックがグラフ化されます。
+5. Grafana コンソールを起動して、選択したメトリックでの分析を表示します。  CFEE インスタンスには、デフォルトの Grafana ダッシュボードが含まれています。このデフォルトのダッシュボードはインタラクティブであり、CFEE インスタンス (Kubernetes クラスター) をホストするために使用されているインフラストラクチャーのビューを示します。Grafana コンソールを起動したら、Grafana コンソールの上部にある**「Home」**ボタンをクリックして、事前にデプロイされているダッシュボード (下のリストを参照) のいずれかを選択します。これにより、対応するメトリックがグラフ化されます。
 
-   Grafana にはデフォルトの `admin` ユーザーが用意されています。そのデフォルトのパスワードは `admin` に設定されています。 ユーザー/パスワード `admin/admin` を使用してログインし、新規資格情報に変更することをお勧めします。
+   CFEE v2.1.0 以前では、Grafana にはデフォルトの `admin` ユーザーが用意されています。そのデフォルトのパスワードは `admin` に設定されています。ユーザー/パスワード `admin/admin` を使用してログインし、新規資格情報に変更することをお勧めします。CFEE v2.2.0 以降の場合、ユーザーは IBM ID 資格情報を使用して自動的に認証されます。
 
      [Grafana コンソールの起動](https://localhost:3000)
 
@@ -131,9 +137,10 @@ Grafana は、Prometheus によって収集されたすべてのメトリック�
         - Kubernetes クラスターの各ワーカー・ノードの詳細を示します。
    - _Worker Nodes Overview_ 
         - kubernetes インフラストラクチャーの CPU およびメモリーの使用量と、そのネットワーク・トラフィックを示します。
-
+        
 6. オプションとして、以下のように、Prometheus コンソールを起動して Prometheus サーバーによって収集された生データを表示したり、Prometheus Alertmanager を起動して Prometheus サーバーによって送信されたアラートを管理したりすることもできます。
 
      [Prometheus サーバーの起動 (Launch Prometheus server)](https://localhost:9090)
 
      [Prometheus Alertmanager サーバーの起動 (Launch Prometheus Alertmanager server)](https://localhost:9093)
+

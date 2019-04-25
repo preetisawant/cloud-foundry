@@ -8,7 +8,10 @@ Cloud Foundry Enterprise Environment
     index.md
     prepare-account.md
     permissions.md
+    create-environment.md
     getting-started.md
+    getting-started-eirini.md
+    network-isolation.md
 
     {: .topicgroup}
     Structuration de votre environnement IBM Cloud
@@ -31,10 +34,15 @@ Cloud Foundry Enterprise Environment
     add-serv-inst.md
     domains.md
     updating-scaling.md
+    autoscaling.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     whatsnew.md
     cfee_faq.md
+    
+    {: .topicgroup}
+    Traitement des incidents
+        cf_stager_is_unavailable.md
     known-issues.md
     {: .navgroup-end}

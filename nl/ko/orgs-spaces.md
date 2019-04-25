@@ -24,7 +24,7 @@ lastupdated: "2018-04-18"
 
 {{site.data.keyword.cfee_full_notm}}에서 조직을 작성하려면 다음을 수행하십시오.
 
-1. [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 환경 대시보드](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window}로 이동하여 조직을 작성할 {{site.data.keyword.cfee_full_notm}}를 여십시오.
+1. [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 환경 대시보드](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window}로 이동하여 조직을 작성할 {{site.data.keyword.cfee_full_notm}}를 여십시오.
 2. {{site.data.keyword.cfee_full_notm}} 사용자 인터페이스에서 탐색 분할창에 있는 **조직** 항목으로 이동하여 _조직_ 페이지를 여십시오.
 3. **새로 추가**를 클릭하십시오.
 4. 새 조직의 **이름**을 입력하십시오.
@@ -33,6 +33,6 @@ lastupdated: "2018-04-18"
 
 조직 관리자는 조직 멤버십 관리 이외에 조직 내에서 영역을 작성, 보기, 편집 또는 삭제할 수 있습니다. 조직 관리자는 조직의 사용량 및 할당량을 보고, 사용자를 조직에 초대하고, 조직의 멤버십 및 역할을 관리하고, 조직에 대한 사용자 정의 도메인을 관리할 수 있습니다.
 
-조직 내에 영역을 작성하려면 _조직_ 페이지에서 **영역** 탭으로 이동하여 **새로 추가**를 클릭하십시오. 조직의 구성원은 조직 내에 자체 영역을 작성하고 관리할 수도 있습니다. Cloud Foundry 역할에 대한 자세한 정보는 [Cloud Foundry 액세스](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}를 참조하십시오.
+조직 내에 영역을 작성하려면 _조직_ 페이지에서 **영역** 탭으로 이동하여 **새로 추가**를 클릭하십시오. 조직의 구성원은 조직 내에 자체 영역을 작성하고 관리할 수도 있습니다. Cloud Foundry 역할에 대한 자세한 정보는 [Cloud Foundry 액세스](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}를 참조하십시오.
 
 **참고**: {{site.data.keyword.cfee_full_notm}} 내의 조직 및 영역에 액세스하려면 사용자에게 환경 자체에 액세스할 수 있는 권한이 있어야 합니다. {{site.data.keyword.cfee_full_notm}}에 액세스할 수 있는 권한이 없으면 해당 조직 및 영역의 멤버십과 역할에 관계없이 사용자 환경 내의 조직 및 영역에 액세스할 수 없습니다.

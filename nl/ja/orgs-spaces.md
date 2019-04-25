@@ -24,7 +24,7 @@ lastupdated: "2018-04-18"
 
 {{site.data.keyword.cfee_full_notm}} で組織を作成するには、以下のようにします。
 
-1. [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 環境ダッシュボード](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window}に移動し、組織を作成する {{site.data.keyword.cfee_full_notm}} を開きます。
+1. [{{site.data.keyword.Bluemix_notm}} Cloud Foundry 環境ダッシュボード](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window}に移動し、組織を作成する {{site.data.keyword.cfee_full_notm}} を開きます。
 2. {{site.data.keyword.cfee_full_notm}} ユーザー・インターフェースで、ナビゲーション・ペインの**「組織」**項目に移動し、_組織_ ページを開きます。
 3. **「新規追加」**をクリックします。
 4. 新しい組織の**「名前」**を入力します。
@@ -33,6 +33,6 @@ lastupdated: "2018-04-18"
 
 組織の管理者は、組織のメンバーシップを管理することに加え、組織内のスペースを作成、表示、編集、または削除できます。 また、組織の管理者は組織の使用量と割り当て量を表示し、ユーザーを組織に招待し、組織内のメンバーシップと役割を管理し、組織のカスタム・ドメインを管理できます。
 
-組織内にスペースを作成するには、_「組織」_ページで**「スペース」**タブに移動し、**「新規追加」**をクリックします。 組織のメンバーも、組織内の独自のスペースを作成および管理することができます。 Cloud Foundry の役割について詳しくは、[Cloud Foundry アクセス権限](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}を参照してください。
+組織内にスペースを作成するには、_「組織」_ページで**「スペース」**タブに移動し、**「新規追加」**をクリックします。 組織のメンバーも、組織内の独自のスペースを作成および管理することができます。 Cloud Foundry の役割について詳しくは、[Cloud Foundry アクセス権限](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}を参照してください。
 
 **注**: {{site.data.keyword.cfee_full_notm}} 内の組織およびスペースへのアクセスでは、ユーザーはその環境自体へのアクセス権限を持っている必要があります。 {{site.data.keyword.cfee_full_notm}} へのアクセス権限がなければ、ユーザーは、その環境内の組織およびスペースでのメンバーシップおよび役割に関係なく、それらの組織およびスペースにアクセスすることはできません。

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,21 +27,21 @@ Il seguente è un riepilogo delle assegnazioni di ruoli [IAM](https://cloud.ibm.
 
 |  **Attività** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **Ruoli di accesso IAM** &nbsp; &nbsp; &nbsp; |**Ruolo Cloud Foundry** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Crea un CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dove deve essere creato il CFEE.</li> <li>Ruolo di editor nel servizio CFEE.</li> <li>Ruolo di amministratore nel servizio Kubernetes.</li> <li>Ruolo di editor nel servizio Cloud Object Storage.</li> </ul> | <ul><li>Ruolo di utente in un'organizzazione pubblica.</li> <li>Ruolo di sviluppatore in uno spazio in tale organizzazione pubblica. </li></ul>|
-|Aggiorna versione CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse CFEE.</li> <li>Ruolo di editor nel servizio CFEE.</li></li> <li>Ruolo di operatore nel servizio Kubernetes.</li> <li>Ruolo di editor nel servizio Cloud Object Storage.</li> </ul> | <ul><li>Ruolo di utente in un'organizzazione pubblica.</li> <li>Ruolo di sviluppatore in uno spazio in tale organizzazione pubblica. </li></ul>|
+|Crea un CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dove deve essere creato il CFEE.</li> <li>Ruolo di editor nel servizio CFEE.</li> <li>Ruolo di amministratore nel servizio Kubernetes.</li> <li>Ruolo della piattaforma editor e il ruolo di accesso al servizio gestore nel servizio IBM Cloud Object Storage.</li> </ul> | <ul><li>Ruolo di utente in un'organizzazione pubblica.</li> <li>Ruolo di sviluppatore in uno spazio in tale organizzazione pubblica. </li></ul>|
+|Aggiorna versione CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse CFEE.</li> <li>Ruolo della piattaforma di editor nel servizio CFEE.</li></li> <li>Ruolo di operatore nel servizio Kubernetes.</li> <li>Ruolo di editor nel servizio Cloud Object Storage.</li> </ul> | <ul><li>Ruolo di utente in un'organizzazione pubblica.</li> <li>Ruolo di sviluppatore in uno spazio in tale organizzazione pubblica. </li></ul>|
 |Scala capacità CFEE (aggiungi/rimuovi celle)|  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li> <li>Ruolo di amministratore nell'istanza CFEE.</li> <li>Ruolo di operatore nel servizio Kubernetes.</li> <li>Ruolo di editor nel servizio Cloud Object Storage.</li> </ul> | |
-|Monitora CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> |  |
-|Visualizza utilizzo risorse CFEE.|  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li> <li>Ruolo di visualizzatore nell'istanza CFEE.</li></ul> |  |
+|Monitora CFEE |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di editor nell'istanza CFEE.</li> <li>Ruolo di operatore nel cluster Kubernetes di CFEE.</li></ul> |  |
+|Visualizza utilizzo risorse CFEE. |  <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li> <li>Ruolo di visualizzatore nell'istanza CFEE.</li></ul> |  |
 |Abilita controllo CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> | <ul><li>Ruolo di revisore nello spazio Cloud Foundry pubblico dove è distribuita l'istanza del servizio Programma di traccia dell'attività.</li></ul>  |
 |Visualizza eventi di controllo CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> | <ul><li>Ruolo di revisore nello spazio Cloud Foundry pubblico dove è distribuita l'istanza del servizio Programma di traccia dell'attività.</li></ul>  |
 |Abilita persistenza log CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> |<ul><li>Ruolo di revisore nello spazio Cloud Foundry pubblico dove è distribuita l'istanza del servizio Analisi log dell'attività.</li></ul>  |
 |Visualizza log indicati come persistenti CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> | <ul><li>Ruolo di revisore nello spazio Cloud Foundry pubblico dove è distribuita l'istanza del servizio Analisi log dell'attività.</li></ul> |
 |Crea organizzazioni CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di editor nell'istanza CFEE.</li></ul> |  |
 |Crea spazi CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE</li> <li>Ruolo di visualizzatore nell'istanza CFEE.</li></ul> | <ul><li>Gestore nell'organizzazione dove deve essere creato lo spazio.</li></ul> |
-|Gestisci domini condivisi|<ul><li>Visualizzatore nel gruppo di risorse dell'istanza CFEE.</li><li>Ruolo di editor nell'istanza CFEE.</li></ul>|  |
-|Visualizza domini condivisi|<ul><li>Visualizzatore nel gruppo di risorse dell'istanza CFEE.</li><li>Ruolo di visualizzatore nell'istanza CFEE.</li></ul>|  |
-|Gestisci domini privati|<ul> <li>Visualizzatore nel gruppo di risorse dell'istanza CFEE.</li><li>Ruolo di visualizzatore nell'istanza CFEE. </li></ul>| <ul><li>Ruolo di gestore nell'organizzazione proprietaria del dominio. </li></ul>|
-|Visualizza domini privati|<ul> <li>Visualizzatore nel gruppo di risorse dell'istanza CFEE</li><li>Ruolo di visualizzatore nell'istanza CFEE. </li></ul>|<ul><li>Ruolo di visualizzatore nell'organizzazione proprietaria del dominio. </li></ul>|
+|Gestisci domini condivisi|<ul><li>Visualizzatore nel gruppo di risorse dell'istanza CFEE. </li><li>Ruolo di editor nell'istanza CFEE. </li></ul>|  |
+|Visualizza domini condivisi|<ul><li>Visualizzatore nel gruppo di risorse dell'istanza CFEE. </li><li>Ruolo di visualizzatore nell'istanza CFEE. </li></ul>|  |
+|Gestisci domini privati|<ul> <li>Visualizzatore nel gruppo di risorse dell'istanza CFEE. </li><li>Ruolo di visualizzatore nell'istanza CFEE. </li></ul>| <ul><li>Ruolo di gestore nell'organizzazione proprietaria del dominio. </li></ul>|
+|Visualizza domini privati|<ul> <li>Visualizzatore nel gruppo di risorse dell'istanza CFEE </li><li>Ruolo di visualizzatore nell'istanza CFEE. </li></ul>|<ul><li>Ruolo di visualizzatore nell'organizzazione proprietaria del dominio. </li></ul>|
 |Crea/elimina un'istanza del servizio IBM Cloud in uno spazio CFEE| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dove deve essere creato il CFEE.</li> <li>Ruolo di visualizzatore nell'istanza CFEE.</li> <li>Editor nel gruppo di risorse in cui deve essere creata l'istanza del servizio o per il servizio gestito da IAM da istanziare.</li> </ul>| <ul><li>Ruolo di sviluppatore nello spazio CFEE da dove viene creata l'istanza del servizio (e dove verrà aggiunta/aggiunta con alias automaticamente).</li></ul> |
 |Aggiungi/rimuovi un'istanza del servizio IBM Cloud a/da uno spazio CFEE (ossia, crea/elimina un alias a un servizio IBM Cloud in uno spazio CFEE)| <ul><li>Ruolo di visualizzatore nel gruppo di risorse dell'istanza CFEE.</li><li>Ruolo di visualizzatore nell'istanza CFEE. </li><li>Ruolo della piattaforma di operatore e ruolo del servizio di lettore per l'istanza del servizio da aggiungere. </li></ul>|<ul><li>Ruolo di sviluppatore nello spazio CFEE in cui deve essere aggiunta l'istanza del servizio (aggiunta con alias).</li></ul> |
 |Associa mediante bind o annulla l'associazione mediante bind di un'istanza del servizio IBM Cloud in uno spazio CFEE|<ul> <li>Editor nel gruppo di risorse dell'istanza del servizio da associare mediante bind o di cui annullare l'associazione mediante bind.</li><li>Ruolo di visualizzatore nell'istanza CFEE. </li><li>Ruolo della piattaforma di operatore e ruolo del servizio di scrittore per l'istanza del servizio da associare mediante bind.</li></ul> | <ul><li>Ruolo di sviluppatore nello spazio CFEE in cui associare mediante bind l'istanza del servizio.</li></ul> |
@@ -147,7 +147,7 @@ Per utilizzare un'istanza di {{site.data.keyword.cfee_full_notm}}, gli utenti de
 ## Prassi ottimali: gruppi di accesso
 {: #access-groups}
 
-Prendi in considerazione l'utilizzo dei gruppi di accesso per gestire e semplificare il controllo dell'accesso per il tuo CFEE. I gruppi di accesso ti consentono di definire dei gruppi arbitrari a cui puoi assegnare politiche di accesso. A qualsiasi utente aggiunto a un gruppo di accesso viene automaticamente assegnata la politica di accesso del gruppo. 
+Prendi in considerazione l'utilizzo dei gruppi di accesso per gestire e semplificare il controllo dell'accesso per il tuo CFEE.  I gruppi di accesso ti consentono di definire dei gruppi arbitrari a cui puoi assegnare politiche di accesso.  A qualsiasi utente aggiunto a un gruppo di accesso viene automaticamente assegnata la politica di accesso del gruppo. 
 
 Puoi creare e gestire i gruppi di accesso dall'interfaccia utente IBM Cloud oppure tramite la cli `ibmcloud`. 
 

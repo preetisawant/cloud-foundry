@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -27,10 +27,10 @@ lastupdated: "2019-01-15"
 
 |**任务**&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|**IAM 访问角色**&nbsp; &nbsp; &nbsp; |**Cloud Foundry 角色**&nbsp; &nbsp; &nbsp;|
 |----------------------------------------|-------------------|-------------------|
-|创建 CFEE|  <ul><li>要在其中创建 CFEE 的资源组中的“查看者”角色。</li> <li>CFEE 服务中的“编辑者”角色。</li> <li>Kubernetes 服务中的“管理员”角色。</li> <li>Cloud Object Storage 服务中的“编辑者”角色。</li> </ul> | <ul><li>公共组织中的“用户”角色。</li> <li>该公共组织的空间中的“开发者”角色。</li></ul>|
-|更新 CFEE 版本|  <ul><li>CFEE 资源组中的“查看者”角色。</li> <li>CFEE 服务中的“编辑者”角色。</li></li> <li>Kubernetes 服务中的“操作员”角色。</li> <li>Cloud Object Storage 服务中的“编辑者”角色。</li> </ul> | <ul><li>公共组织中的“用户”角色。</li> <li>该公共组织的空间中的“开发者”角色。</li></ul>|
+|创建 CFEE|  <ul><li>要在其中创建 CFEE 的资源组中的“查看者”角色。</li> <li>CFEE 服务中的“编辑者”角色。</li> <li>Kubernetes 服务中的“管理员”角色。</li> <li>IBM Cloud Object Storage 服务中的编辑者平台角色和管理者服务访问角色。</li> </ul> | <ul><li>公共组织中的“用户”角色。</li> <li>该公共组织的空间中的“开发者”角色。</li></ul>|
+|更新 CFEE 版本|  <ul><li>CFEE 资源组中的“查看者”角色。</li> <li>CFEE 服务中的“编辑者”平台角色。</li></li> <li>Kubernetes 服务中的“操作员”角色。</li> <li>Cloud Object Storage 服务中的“编辑者”角色。</li> </ul> | <ul><li>公共组织中的“用户”角色。</li> <li>该公共组织的空间中的“开发者”角色。</li></ul>|
 |扩展 CFEE 容量（添加/除去单元）|  <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“管理员”角色。</li> <li>Kubernetes 服务中的“操作员”角色。</li> <li>Cloud Object Storage 服务中的“编辑者”角色。</li> </ul> | |
-|监视 CFEE|  <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“编辑者”角色。</li></ul> |  |
+|监视 CFEE|  <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“编辑者”角色。</li> <li>CFEE 的 Kubernetes 集群中的“操作员”角色。</li></ul> |  |
 |查看 CFEE 资源使用情况|  <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“查看者”角色。</li></ul> |  |
 |启用 CFEE 审计| <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“编辑者”角色。</li></ul> | <ul><li>部署 Activity Tracker 服务实例的公共 Cloud Foundry 空间中的“审计员”角色。</li></ul>  |
 |查看 CFEE 审计事件| <ul><li>CFEE 实例资源组中的“查看者”角色。</li> <li>CFEE 实例中的“编辑者”角色。</li></ul> | <ul><li>部署 Activity Tracker 服务实例的公共 Cloud Foundry 空间中的“审计员”角色。</li></ul>  |
@@ -43,8 +43,8 @@ lastupdated: "2019-01-15"
 |管理专用域|<ul> <li>CFEE 实例资源组中的“查看者”角色。</li><li>CFEE 实例中的“查看者”角色。</li></ul>| <ul><li>拥有域的组织中的“管理者”角色。</li></ul>|
 |查看专用域|<ul> <li>CFEE 实例资源组中的“查看者”角色。</li><li>CFEE 实例中的“查看者”角色。</li></ul>|<ul><li>拥有域的组织中的“查看者”角色。</li></ul>|
 |在 CFEE 空间中创建/删除 IBM Cloud 服务实例| <ul><li>要在其中创建 CFEE 的资源组中的“查看者”角色。</li> <li>CFEE 实例中的“查看者”角色。</li> <li>要在其中创建服务实例的资源组中的“编辑者”角色，或针对要实例化的受 IAM 管理的服务的“编辑者”角色。</li> </ul>| <ul><li>在其中创建服务实例（以及将自动添加服务实例/创建服务实例别名）的 CFEE 空间中的“开发者”角色。</li></ul> |
-|在 CFEE 空间中添加/除去 IBM Cloud 服务实例（即，在 CFEE 空间中创建/删除 IBM Cloud 服务的别名）| <ul><li>CFEE 实例资源组中的“查看者”角色。</li><li>CFEE 实例中的“查看者”角色。</li><li>针对要添加的服务实例的“操作员”平台角色和“读者”服务角色。</li></ul>|<ul><li>要添加（创建别名）服务实例的 CFEE 空间中的“开发者”角色。</li></ul> |
-|在 CFEE 空间中绑定或取消绑定 IBM Cloud 服务实例|<ul> <li>要绑定或取消绑定的服务实例的资源组中的“编辑者”角色。</li><li>CFEE 实例中的“查看者”角色。</li><li>针对要绑定的服务实例的“操作员”平台角色和“作者”服务角色。</li></ul> | <ul><li>要绑定服务实例的 CFEE 空间中的“开发者”角色。</li></ul> |
+|在 CFEE 空间中添加/除去 IBM Cloud 服务实例（即，在 CFEE 空间中创建/删除 IBM Cloud 服务的别名）| <ul><li>CFEE 实例资源组中的“查看者”角色。</li><li>CFEE 实例中的“查看者”角色。</li><li>针对要添加的服务实例的“操作员”平台角色和“读取者”服务角色。</li></ul>|<ul><li>要添加（创建别名）服务实例的 CFEE 空间中的“开发者”角色。</li></ul> |
+|在 CFEE 空间中绑定或取消绑定 IBM Cloud 服务实例|<ul> <li>要绑定或取消绑定的服务实例的资源组中的“编辑者”角色。</li><li>CFEE 实例中的“查看者”角色。</li><li>针对要绑定的服务实例的“操作员”平台角色和“写入者”服务角色。</li></ul> | <ul><li>要绑定服务实例的 CFEE 空间中的“开发者”角色。</li></ul> |
 |发出 `cf` CLI 命令|<ul> <li>CFEE 实例资源组中的“查看者”角色。</li><li>CFEE 实例中的“查看者”角色。</li></ul> | <ul><li>执行命令所需的组织/空间中的 Cloud Foundry 角色。</li></ul> |
 {: caption="表 1. 在 CFEE 中执行任务所需的许可权" caption-side="top"}
 
@@ -61,7 +61,7 @@ lastupdated: "2019-01-15"
    
 * 针对 **Kubernetes 服务**资源的_管理员_角色。{{site.data.keyword.cfee_full_notm}} 实例会部署在 Kubernetes 服务提供的容器集群基础架构上。当您创建 {{site.data.keyword.cfee_full_notm}} 服务的实例时，该服务会自动创建 Kubernetes 集群。要创建该集群基础架构，需要拥有对 Kubernetes 服务的访问权。您可以将 Kubernetes 服务策略的访问权范围限定为您要在其中供应 CFEE 实例的特定区域，或者限定为所有区域。
 
-* 针对 **IBM Cloud Object Storage 服务**的_管理员_或_编辑者_平台角色以及管理者服务访问角色。此服务是 CFEE 服务必需的依赖项。IBM Cloud Object Storage 服务的实例用于存储在创建 ICFEE 应用程序容器期间生成的数据（例如，上传的应用程序包、buildpack 和已编译的可执行文件）。
+* 针对 **IBM Cloud Object Storage 服务**的_管理者_或_编辑者_平台角色以及管理者服务访问角色。此服务是 CFEE 服务必需的依赖项。IBM Cloud Object Storage 服务的实例用于存储在创建 ICFEE 应用程序容器期间生成的数据（例如，上传的应用程序包、buildpack 和已编译的可执行文件）。
 
 * Compose for PostgreSQL 服务的实例是 CFEE 服务必需的依赖项。Compose for PostgreSQL 用于在 CFEE 实例上存储 Cloud Foundry 数据（例如，审计应用程序部署，启动和停止事件；保留 CFEE 用户成员资格、组织、空间、应用程序和服务连接的记录）。**Compose for PostgreSQL 服务**的实例会部署在您在创建 {{site.data.keyword.cfee_full_notm}} 实例时所选的公共 Cloud Foundry 组织（与 CFEE 组织无关）内的空间中。这意味着在创建 {{site.data.keyword.cfee_full_notm}} 实例时，您需要对打算在其中供应 CFEE 实例的位置中的至少一个组织具有_管理者_访问权。此外，还需要对该组织中的至少一个空间具有_开发者_访问权。 
 
@@ -133,7 +133,7 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
   - 具有针对 CFEE 实例的_查看者_角色的用户可以在主 {{site.data.keyword.Bluemix_notm}}“仪表板”中看到列出了该 CFEE 实例，并可打开其用户界面。用户对环境中特定组织和空间的访问权由这些组织和空间的管理者所分配的特定组织和空间角色进行管理。有关更多信息，请参阅[向组织添加用户](add-users.html)。
   
-  - 分配有针对 CFEE 实例的_管理员_或_编辑者_角色的用户可以创建组织，为组织和空间分配管理者，对环境中的所有组织和空间具有完全许可权，并可通过云控制器 API 执行业务操作。在 Cloud Foundry _用户帐户和认证作用域_中，会自动授予这些用户 _cloud_controller.admin 作用域_。
+  - 分配有针对 CFEE 实例的_管理者_或_编辑者_角色的用户可以创建组织，为组织和空间分配管理者，对环境中的所有组织和空间具有完全许可权，并可通过云控制器 API 执行业务操作。在 Cloud Foundry _用户帐户和认证作用域_中，会自动授予这些用户 _cloud_controller.admin 作用域_。
 
   - 用户需要针对 CFEE 实例的_编辑者_平台角色或更高角色以及针对在其中供应 CFEE 的 Kubernetes 集群的_操作员_角色或更高角色，才能**将 CFEE 更新为新版本**。
 
@@ -141,7 +141,7 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
  
   - 用户需要针对 IBM Cloud 服务实例的_操作员_平台角色（或更高角色），才能向 CFEE 空间**添加**该*服务实例*（即，在 CFEE 空间中创建服务实例别名）。
  
-  - 用户需要针对 IBM Cloud 服务实例的_操作员_平台角色（或更高角色）和_作者_服务角色（或更高角色），才能将该服务实例**绑定**到部署在 CFEE 空间中的应用程序。
+  - 用户需要针对 IBM Cloud 服务实例的_操作员_平台角色（或更高角色）和_写入者_服务角色（或更高角色），才能将该服务实例**绑定**到部署在 CFEE 空间中的应用程序。
 
 
 ## 最佳实践：访问组

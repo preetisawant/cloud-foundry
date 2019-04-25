@@ -37,12 +37,16 @@ Cloud Foundry 퍼블릭을 사용하는 것처럼 엔터프라이즈 전용 Clou
 ## CFEE 서비스를 어디에서 찾을 수 있습니까?
 {: #where}
 
-{{site.data.keyword.Bluemix_notm}} [카탈로그](https://console.stage1.bluemix.net/catalog)에서 {{site.data.keyword.cfee_full}} 서비스를 찾고 인스턴스화할 수 있습니다.
+{{site.data.keyword.Bluemix_notm}} [카탈로그](https://cloud.ibm.com/catalog)에서 {{site.data.keyword.cfee_full}} 서비스를 찾고 인스턴스화할 수 있습니다.
 
 ## 지역 데이터 센터 내에 두 개 이상의 CFEE 환경을 포함할 수 있습니까?
 {: #multiple-cfees}
 
 예, 요청 시 CFEE 인스턴스를 원하는 만큼 [이러한 지역](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")에 작성할 수 있습니다.
+
+## CFEE 환경이 여러 데이터 센터(다중 구역)에 프로비저닝될 수 있습니까?
+{: #multizone}
+예. CFEE v2.2.0부터 CFEE 인프라(Kubernetes 클러스터 노드)는 지정된 지역의 여러 데이터 센터(구역) 간에 분배될 수 있습니다. 
 
 ## 일부 최소 용량에서 시작해야 합니까?
 {: #minimum-capacity}
@@ -58,6 +62,11 @@ CFEE 서비스는 Kubernetes 컨테이너에서 실행되며 Kubernetes는 여�
 {: #isolation}
 
 CFEE가 배치되는 Kubernetes 인프라의 유형에 대해 _가상 공유_ 또는 _가상 전용_ 하드웨어라는 두 가지 하드웨어 옵션을 갖습니다. _가상 공유_ 하드웨어를 사용하면, (Cloud Foundry 플랫폼 컨테이너가 배치되는) 작업자 노드가 사용자와 다른 IBM 고객 간에 분배됩니다.  _가상 전용_을 사용하면, 사용자 계정 전용인 하드웨어에 작업자 노드가 호스팅됩니다.  _가상 공유_ 및 _가상 전용_의 두 경우 모두 각 작업자 노드는 고객에 대한 단일 테넌트입니다.  즉, 애플리케이션이 실행되는 Cloud Foundry 셀은 다른 고객과 공유되지 않습니다.
+
+## 격리된 네트워크에서 CFEE가 작동할 수 있습니까?
+{: #isolation}
+
+예. 버전 2.2.0부터 IBM® CFEE(Cloud Foundry Enterprise Environment) 인스턴스는 외부 위협으로부터 환경을 보호하는 격리된 네트워크에서 작동할 수 있습니다. 자세한 정보는 [격리된 네트워크에서 작동](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) 문서를 참조하십시오.
 
 ## CFEE의 용량을 스케일링할 수 있습니까?
 {: #scaling}

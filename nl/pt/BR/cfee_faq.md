@@ -43,9 +43,7 @@ modelo de integração de serviço em tal ambiente de único locatário.
 ## Onde posso localizar o serviço do CFEE?
 {: #where}
 
-É possível localizar e instanciar o serviço do {{site.data.keyword.cfee_full}} no
-{{site.data.keyword.Bluemix_notm}} catálogo do
-[](https://console.stage1.bluemix.net/catalog).
+É possível localizar e instanciar o serviço do {{site.data.keyword.cfee_full}} no [catálogo](https://cloud.ibm.com/catalog) do {{site.data.keyword.Bluemix_notm}}.
 
 ## Posso ter mais de um ambiente do CFEE dentro de um data center regional?
 {: #multiple-cfees}
@@ -54,6 +52,10 @@ Sim, é possível criar quantas instâncias do CFEE on demand você desejar
 [nessas
 regiões](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![Ícone
 de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+
+## Um ambiente do CFEE pode ser provisionado entre múltiplos data centers (múltiplas zonas)?
+{: #multizone}
+Sim. Iniciando com o CFEE v2.2.0 a infraestrutura do CFEE (nós do cluster Kubernetes) pode ser distribuída em múltiplos data centers (zonas) dentro de uma determinada região. 
 
 ## Terei que começar com alguma capacidade mínima?
 {: #minimum-capacity}
@@ -77,6 +79,11 @@ distribuídos entre você e outros clientes IBM.  Com o _Virtual dedicado_, os n
 hospedados no hardware que é dedicado exclusivamente à sua conta.  Observe que, em ambos os casos, _Virtual
 compartilhado_ e _Virtual dedicado_, cada nó do trabalhador é um único locatário para o cliente.  Isso significa que as células do Cloud Foundry, nas quais os aplicativos são executados, não são compartilhadas com
 outros clientes.
+
+## Um CFEE pode operar dentro de uma rede isolada?
+{: #isolation}
+
+Sim. Iniciando com a versão 2.2.0, as instâncias do IBM® Cloud Foundry Enterprise Environment (CFEE) podem operar dentro de redes isoladas que protegem o ambiente de ameaças externas. Consulte a documentação [Operando em uma rede isolada](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) para obter mais detalhes.
 
 ## Posso escalar a capacidade de um CFEE?
 {: #scaling}

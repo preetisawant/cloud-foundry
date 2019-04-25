@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -34,11 +34,11 @@ L'aggiornamento della versione di CFEE della tua istanza CFEE è un processo a d
 
 I seguenti vincoli e regole vengono applicati durante l'aggiornamento di un CFEE a una nuova versione:
 * Il piano di controllo deve essere aggiornato per primo. Una volta che il piano di controllo è stato aggiornato possono essere aggiornate le celle.
-* Le celle dell'applicazione possono essere aggiornate solo alla versione del piano di controllo.  Cioè, le celle del piano di controllo possono essere ad un livello di versione CFEE superiore rispetto alle celle dell'applicazione, ma non viceversa.
+* Le celle dell'applicazione possono essere aggiornate solo alla versione del piano di controllo.  Cioè, il piano di controllo può essere ad un livello di versione CFEE superiore rispetto alle celle dell'applicazione, ma non viceversa.
 
 Per aggiornare la versione di CFEE della tua istanza CFEE:
-1. Vai al [Dashboard {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) e apri il {{site.data.keyword.cfee_full_notm}} che vuoi aggiornare.
-2. In {{site.data.keyword.cfee_full_notm}}, vai alla voce **Celle** nel pannello di navigazione per aprire la pagina delle celle.
+1. Vai al [Dashboard {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) e apri il {{site.data.keyword.cfee_full_notm}} che vuoi aggiornare.
+2. Vai alla pagina **Aggiornamenti e ridimensionamento** sotto la voce _Operazioni_ nel pannello di navigazione.
 3. (Facoltativo) Nella tabella _Piano di controllo_ puoi espandere la riga per visualizzare i nodi di lavoro nel piano di controllo.
 4. Fai clic su **Aggiorna**.
 5. Nella finestra di dialogo Aggiorna il _Piano di controllo_, seleziona una delle versioni CFEE disponibili e fai clic su **Aggiorna**. L'aggiornamento impiega circa 45 minuti.  La descrizione della versione illustra le versioni dei componenti inclusi nel pacchetto di versione CFEE selezionato, insieme a un link al documento _Novità_ che descrive il contenuto fornito in tale versione.
@@ -77,8 +77,8 @@ Gli utenti hanno bisogno delle seguenti autorizzazioni per poter aggiungere o ri
 * Ruolo di _Operatore_ o superiore al cluster Kubernetes in cui viene eseguito il provisioning del CFEE.
 
 Per aggiungere le celle dell'applicazione nella tua istanza CFEE:
-1. Passa al [Dashboard {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) e apri il {{site.data.keyword.cfee_full_notm}} in cui vuoi aggiungere le celle.
-2. Fai clic su **Aggiungi cella** vicino alla tabella _Celle_, che apre la pagina _Aggiungi celle di Foundry Foundry_.
-3. Nella pagina _Aggiungi celle di Foundry Foundry_, seleziona il numero di celle da aggiungere. La pagina mostra anche la geografia e l'ubicazione dell'istanza CFEE in cui le celle saranno aggiunte. Mostra inoltre il numero corrente di celle e la capacità delle celle da aggiungere (che è la stessa capacità delle celle correnti). Il pannello destro della pagina mostra il costo stimato delle celle aggiunte insieme al nuovo costo totale stimato dell'ambiente.
-4. Fai clic su **Aggiungi cella**.  
-5. Vai alla pagina _Nodi_. Una nuova riga viene aggiunta nella tabella _Celle_ per ogni nuovo nodo. La colonna _Stato nodo_ indica l'avanzamento dell'aggiunta e della distribuzione della cella al tuo ambiente CFEE.
+1. Passa al [Dashboard {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/dashboard/apps/) e apri il {{site.data.keyword.cfee_full_notm}} in cui vuoi aggiungere le celle.
+2. Fai clic su **Modifica il numero delle celle Cloud Foundry** vicino alla tabella _Celle_, che apre la pagina _Aggiungi celle di Cloud Foundry_.
+3. Nella _pagina Modifica il numero delle celle Cloud Foundry_, seleziona il numero totale di celle nel campo Seleziona numero celle. La pagina mostra anche l'area geografica e l'ubicazione dell'istanza CFEE in cui le celle saranno aggiunte. Mostra inoltre il numero corrente di celle nel campo _Numero celle corrente_ e la capacità delle celle da aggiungere (che è la stessa capacità delle celle correnti) nel campo Dimensione nodo. Il pannello destro della pagina mostra il costo stimato delle celle aggiunte insieme al nuovo costo totale stimato dell'ambiente.
+4. Fai clic su **Aggiungi celle**. Nella finestra di dialogo _Aggiungi celle_, fai clic su **Aggiungi**
+5. Torna alla pagina _Aggiornamenti e ridimensionamento_. Una nuova riga viene aggiunta nella tabella _Nodi cella_ per ogni nuovo nodo cella. La colonna Stato nodo indica l'avanzamento dell'aggiunta e della distribuzione della cella al tuo ambiente CFEE.

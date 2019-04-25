@@ -25,7 +25,7 @@ aproveitem os serviços disponíveis na conta do {{site.data.keyword.Bluemix_not
 esses serviços em um CFEE e ligá-los aos aplicativos implementados nos espaços do CFEE.
 
 Descubra como é possível
-[**iniciar**](https://console.bluemix.net/docs/cloud-foundry/getting-started.html#getting-started)
+[**iniciar**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started)
 criando e usando uma instância do CFEE.
 
 {:shortdesc}

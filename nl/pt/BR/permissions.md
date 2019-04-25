@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -25,28 +25,23 @@ Antes de os usuários começarem a criar e trabalhar com um serviço do {{site.d
 
 A seguir há um resumo das [designações de função do Cloud Foundry](https://cloud.ibm.com/account/cloud-foundry) e do [IAM](https://cloud.ibm.com/iam#/users) mínimas necessárias para executar várias tarefas em uma instância do CFEE. A seção restante descreve essas permissões mais detalhadamente.
 
-|  **Tarefa** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|
-**Funções de acesso do IAM** &nbsp; &nbsp; &nbsp; |**Funções do Cloud Foundry**
+|  **Tarefa** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **Funções de acesso do IAM** &nbsp; &nbsp; &nbsp; |**Funções do Cloud Foundry**
 &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Criar um CFEE |  <ul><li>Função de visualizador no grupo de recursos em que o CFEE deve ser criado.</li> <li>Função do editor no serviço do CFEE.</li> <li>Função de administrador no serviço Kubernetes.</li> <li>Função do editor no serviço Cloud Object Storage.</li> </ul> | <ul><li>Função de usuário em uma organização pública.</li> <li>Função de desenvolvedor em um espaço nessa organização pública. </li></ul>|
-|Atualizar versão do CFEE |  <ul><li>Função de visualizador no grupo de recursos do CFEE.</li> <li>Função do editor no serviço do CFEE.</li></li> <li>Função de operador no serviço Kubernetes.</li> <li>Função do editor no serviço Cloud Object Storage.</li> </ul> | <ul><li>Função de usuário em uma organização pública.</li> <li>Função de desenvolvedor em um espaço nessa organização pública. </li></ul>|
+|Criar um CFEE |  <ul><li>Função de visualizador no grupo de recursos em que o CFEE deve ser criado.</li> <li>Função do editor no serviço do CFEE.</li> <li>Função de administrador no serviço Kubernetes.</li> <li>Função da plataforma do editor e função de acesso ao serviço de gerenciador no serviço do IBM Cloud Object Storage.</li> </ul> | <ul><li>Função de usuário em uma organização pública.</li> <li>Função de desenvolvedor em um espaço nessa organização pública. </li></ul>|
+|Atualizar versão do CFEE |  <ul><li>Função de visualizador no grupo de recursos do CFEE.</li> <li>Função da plataforma do editor no serviço do CFEE.</li></li> <li>Função de operador no serviço Kubernetes.</li> <li>Função do editor no serviço Cloud Object Storage.</li> </ul> | <ul><li>Função de usuário em uma organização pública.</li> <li>Função de desenvolvedor em um espaço nessa organização pública. </li></ul>|
 |Escalar capacidade do CFEE (incluir/remover células)|  <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função
 de administrador na instância do CFEE.</li> <li>Função de operador no serviço Kubernetes.</li> <li>Função do editor no serviço Cloud Object Storage.</li> </ul> | |
-|Monitorar o CFEE |  <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na instância do CFEE.</li></ul> |  |
+|Monitorar o CFEE |  <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na instância do CFEE.</li> <li>Função de operador no cluster Kubernetes do CFEE.</li></ul> |  |
 |Visualizar o uso de recurso do CFEE |  <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função de visualizador na instância do CFEE.</li></ul> |  |
-|Ativar auditoria do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função de editor na instância
-do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do Activity Tracker está
-implementada.</li></ul>  |
-|Visualizar eventos de auditoria do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função de
-editor na instância do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do
+|Ativar auditoria do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função de editor na
+instância do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do
 Activity Tracker está implementada.</li></ul>  |
-|Ativar a persistência de log do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na
-instância do CFEE.</li></ul> |<ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do Log Analysis está implementada.</li></ul>  |
-|Visualizar os logs persistidos do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de
-editor na instância do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do Log Analysis está implementada.</li></ul> |
-|Criar organizações do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na
-instância do CFEE.</li></ul> |  |
+|Visualizar eventos de auditoria do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE.</li> <li>Função de editor na instância do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do
+Activity Tracker está implementada.</li></ul>  |
+|Ativar a persistência de log do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na instância do CFEE.</li></ul> |<ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do Log Analysis está implementada.</li></ul>  |
+|Visualizar os logs persistidos do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na instância do CFEE.</li></ul> | <ul><li>Função de auditoria no espaço público do Cloud Foundry no qual a instância de serviço do Log Analysis está implementada.</li></ul> |
+|Criar organizações do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de editor na instância do CFEE.</li></ul> |  |
 |Criar espaços do CFEE| <ul><li>Função de visualizador no grupo de recursos da instância do CFEE</li> <li>Função de visualizador na instância do CFEE.</li></ul> | <ul><li>Gerenciador na organização em que o espaço deve ser criado.</li></ul> |
 |Gerenciar domínios compartilhados|<ul><li>Visualizador no grupo de recursos da instância do CFEE. </li><li>Função de editor na
 instância do CFEE. </li></ul>|  |
@@ -178,7 +173,7 @@ Para trabalhar com uma instância do {{site.data.keyword.cfee_full_notm}}, os us
 ## Melhores práticas: grupos de acesso
 {: #access-groups}
 
-Considere o uso de grupos de acesso para gerenciar e simplificar o controle de acesso para o seu CFEE. Os grupos de acesso permitem que você defina grupos arbitrários para os quais é possível designar políticas de acesso. Qualquer usuário
+Considere o uso de grupos de acesso para gerenciar e simplificar o controle de acesso para o seu CFEE.  Os grupos de acesso permitem que você defina grupos arbitrários para os quais é possível designar políticas de acesso.  Qualquer usuário
 incluído em um grupo de acesso é automaticamente designado à política de acesso do grupo. 
 
 É possível criar e gerenciar grupos de acesso por meio da interface com o usuário do IBM Cloud ou por meio da CLI `ibmcloud`. 
@@ -195,12 +190,14 @@ Como alternativa, é possível usar a CLI `ibmcloud`:
   {: pre}
 
 2. Crie uma política de acesso para esse grupo de acesso:
+
   ```
   ibmcloud iam access-group-policy-create GROUP_NAME
   ```
   {: pre}
 
 3. Inclua usuários no grupo de acesso:
+
   ```
   ibmcloud iam access-group-user-add <user-name> [<user-name2...]
   ```

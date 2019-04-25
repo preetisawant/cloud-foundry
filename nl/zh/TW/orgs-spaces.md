@@ -24,7 +24,7 @@ lastupdated: "2018-04-18"
 
 若要在 {{site.data.keyword.cfee_full_notm}} 中建立組織，請執行下列動作：
 
-1. 移至 [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environment 儀表板](https://console.bluemix.net/dashboard/cloudfoundry?filter=cf_environments){: new_window}，並開啟您要在其中建立組織的 {{site.data.keyword.cfee_full_notm}}。
+1. 移至 [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environment 儀表板](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window}，並開啟您要在其中建立組織的 {{site.data.keyword.cfee_full_notm}}。
 2. 在 {{site.data.keyword.cfee_full_notm}} 使用者介面中，移至導覽窗格中的**組織**項目，以開啟_組織_ 頁面。
 3. 按一下**新增**。
 4. 輸入新組織的**名稱**。
@@ -33,6 +33,6 @@ lastupdated: "2018-04-18"
 
 除了管理組織成員資格之外，組織管理員還可以建立、檢視、編輯或刪除組織內的空間。組織管理員也可以檢視組織的用量及配額、邀請使用者加入組織、管理組織中的成員資格及角色，以及管理組織的自訂網域。
 
-若要在組織內建立空間，請在_組織_ 頁面中，移至**空間**標籤，然後按一下**新增**。組織的成員也可以在組織內建立及管理他們自己的空間。如需 Cloud Foundry 角色的相關資訊，請參閱 [Cloud Foundry 存取](https://console.bluemix.net/docs/iam/cfaccess.html#cfroles){: new_window}。
+若要在組織內建立空間，請在_組織_ 頁面中，移至**空間**標籤，然後按一下**新增**。組織的成員也可以在組織內建立及管理他們自己的空間。如需 Cloud Foundry 角色的相關資訊，請參閱 [Cloud Foundry 存取](https://cloud.ibm.com/docs/iam/cfaccess.html#cfroles){: new_window}。
 
 **附註**：存取 {{site.data.keyword.cfee_full_notm}} 內的組織及空間，需要使用者有權存取環境本身。使用者無權存取 {{site.data.keyword.cfee_full_notm}}，就無法存取環境內的組織及空間，而不論他們在這些組織及空間中的成員資格及角色為何。

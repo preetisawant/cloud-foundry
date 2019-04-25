@@ -37,12 +37,16 @@ lastupdated: "2019-01-08"
 ## 我可以在哪裡找到 CFEE 服務？
 {: #where}
 
-您可以在 {{site.data.keyword.Bluemix_notm}} [型錄](https://console.stage1.bluemix.net/catalog)中找到並實例化 {{site.data.keyword.cfee_full}} 服務。
+您可以在 {{site.data.keyword.Bluemix_notm}} [型錄](https://cloud.ibm.com/catalog)中找到並實例化 {{site.data.keyword.cfee_full}} 服務。
 
 ## 可以在地區資料中心內有多個 CFEE 環境嗎？
 {: #multiple-cfees}
 
 是，您可以依需求在[這些地區](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 建立所需數目的 CFEE 實例。
+
+## CFEE 環境是否可以佈建至多個資料中心（多區域）？
+{: #multizone}
+是。從 CFEE 2.2.0 版開始，可以將 CFEE 基礎架構（Kubernetes 叢集節點）配送至給定地區內的多個資料中心（區域）。 
 
 ## 我需要以某個最小容量啟動嗎？
 {: #minimum-capacity}
@@ -58,6 +62,11 @@ CFEE 服務可在 Kubernetes 容器上執行，容許較低的基礎架構成本
 {: #isolation}
 
 您在已部署 CFEE 實例的 Kubernetes 基礎架構類型上有兩個硬體選項：_虛擬共用_ 或_虛擬專用_ 硬體。使用_虛擬共用_ 硬體，您與其他 IBM 客戶之間會分佈工作者節點（其中已部署 Cloud Foundry 平台容器）。使用_虛擬專用_，會在您帳戶專用的硬體上管理工作者節點。請注意，在這兩種情況（_虛擬共用_ 及_虛擬專用_）下，每個工作者節點都是客戶的單一承租戶。這表示，執行應用程式的 Cloud Foundry Cell 未與其他客戶共用。
+
+## CFEE 是否可以在隔離網路內運作？
+{: #isolation}
+
+是。從 2.2.0 版開始，IBM® Cloud Foundry Enterprise Environment (CFEE) 實例可以在隔離網路內運作，用於保護環境免於發生外部威脅。如需詳細資料，請參閱[在隔離網路中運作](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network)文件。
 
 ## 我可以調整 CFEE 容量嗎？
 {: #scaling}

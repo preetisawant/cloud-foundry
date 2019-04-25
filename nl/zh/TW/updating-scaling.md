@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018
-lastupdated: "2018-12-19"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -34,11 +34,11 @@ CFEE 版本更新會在包含 CFEE 元件的控制平面上以及 Cell 上進行
 
 將 CFEE 更新至新版本時，適用下列規則及限制：
 * 必須先更新控制平面。更新控制平面之後，即可更新 Cell。
-* 應用程式 Cell 只能更新至控制平面的版本。亦即，控制平面 Cell 的 CFEE 版本層次可以高於應用程式 Cell，但並非反之亦然。
+* 應用程式 Cell 只能更新至控制平面的版本。亦即，控制平面的 CFEE 版本層次可以高於應用程式 Cell，但並非反之亦然。
 
 若要更新 CFEE 實例的 CFEE 版本，請執行下列動作：
-1. 移至 [{{site.data.keyword.Bluemix_notm}} 儀表板](https://console.bluemix.net/dashboard/apps/)，然後開啟您要更新的 {{site.data.keyword.cfee_full_notm}}。
-2. 在 {{site.data.keyword.cfee_full_notm}} 中，移至導覽窗格中的 **Cell** 項目，以開啟 Cell 頁面。
+1. 移至 [{{site.data.keyword.Bluemix_notm}} 儀表板](https://cloud.ibm.com/dashboard/apps/)，然後開啟您要更新的 {{site.data.keyword.cfee_full_notm}}。
+2. 在導覽窗格中，移至_作業_ 項目下的**更新與擴充**頁面。
 3. （選用）在_控制平面_ 表格中，您可以展開該列，以查看控制平面中的工作者節點。
 4. 按一下**更新**。
 5. 在「更新_控制平面_」對話框中，選取其中一個可用的 CFEE 版本，然後按一下**更新**。更新大約需要 45 分鐘。版本說明會詳述所選取 CFEE 版本套件中內含的元件版本，以及指向說明該版本中所遞送內容的_新增功能_ 文件鏈結。
@@ -77,8 +77,8 @@ _次要_ 版本會定期遞增（通常是每月）。_主要_ 版本也會遞�
 * CFEE 佈建所在 Kubernetes 叢集的_操作員_ 角色或更高角色。
 
 若要在 CFEE 實例中新增應用程式 Cell，請執行下列動作：
-1. 移至 [{{site.data.keyword.Bluemix_notm}} 儀表板](https://console.bluemix.net/dashboard/apps/)，然後開啟您要在其中新增 Cell 的 {{site.data.keyword.cfee_full_notm}}。
-2. 按一下 _Cell_ 表格附近的**新增 Cell**，以開啟_新增 Cloud Foundry Cell_ 頁面。
-3. 在_新增 Cloud Foundry Cell_ 頁面中，選取要新增的 Cell 數目。此頁面也會顯示將在其中新增 Cell 之 CFEE 實例的地理位置及位置。它也會顯示要新增的現行 Cell 數目及 Cell 容量（與現行 Cell 的容量相同）。此頁面的右窗格會顯示已新增 Cell 的預估成本，以及環境的新預估成本總計。
-4. 按一下**新增 Cell**。  
-5. 移至_節點_ 頁面。針對每個新的節點，都會在 _Cell_ 表格中新增一列。_節點狀態_ 直欄指出在 CFEE 環境中新增及部署 Cell 的進度。
+1. 移至 [{{site.data.keyword.Bluemix_notm}} 儀表板](https://cloud.ibm.com/dashboard/apps/)，然後開啟您要在其中新增 Cell 的 {{site.data.keyword.cfee_full_notm}}。
+2. 按一下 _Cell_ 表格附近的**變更 Cloud Foundry Cell 計數**，以開啟_新增 Cloud Foundry Cell_ 頁面。
+3. 在_變更 Cloud Foundry Cell 計數_ 頁面中，選取「目標 Cell 計數」欄位中的 Cell 總數。此頁面也會顯示將在其中新增 Cell 之 CFEE 實例的「地理位置」及「位置」。它也會顯示_現行 Cell 計數_ 欄位中的現行 Cell 數目以及「節點大小」欄位中要新增的 Cell 容量（與現行 Cell 的容量相同）。此頁面的右窗格會顯示已新增 Cell 的預估成本，以及環境的新預估成本總計。
+4. 按一下**新增 Cell**。在_新增 Cell_ 對話框中，按一下**新增**。
+5. 回到_更新與擴充_ 頁面。針對每個新的 Cell 節點，都會在 _Cell 節點_ 表格中新增一列。「節點狀態」直欄指出在 CFEE 環境中新增及部署 Cell 的進度。

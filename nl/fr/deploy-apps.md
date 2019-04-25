@@ -70,7 +70,7 @@ Vous pouvez afficher les applications CFEE déployées dans le contexte d'un esp
 
 Pour afficher les applications déployées dans un espace spécifique d'une instance de CFEE spécifique :
 1. Accédez au [tableau de bord {{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/dashboard/apps/) et ouvrez l'environnement {{site.data.keyword.cfee_full_notm}} dans lequel vous voulez créer des organisations.
-2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Organisations** dans le volet de navigation pour ouvrir la page _Organisations_.
+2. Dans l'interface utilisateur de l'environnement {{site.data.keyword.cfee_full_notm}}, accédez à l'entrée **Organisations** dans le panneau de navigation pour ouvrir la page _Organisations_.
 3. Accédez à l'onglet **Espaces** en haut de la page.
 4. Dans l'onglet __Espaces__, cliquez sur l'espace dans le tableau pour ouvrir la page de l'espace.
 5. Dans la page __Espace__, accédez à l'onglet **Applications**.
@@ -84,7 +84,7 @@ Vous pouvez également développer la ligne d'une application pour afficher les 
 
 Pour afficher les applications déployées dans toutes les instances CFEE :
 1. Cliquez sur l'icône de menu ![Vérification du compte](img/HamburgerMenu.png "Capture d'écran de l'icône de menu") > **Cloud Foundry** pour ouvrir le tableau de bord Cloud Foundry.
-2. Cliquez sur **Enterprise > Applications** dans le volet de navigation de gauche.
+2. Cliquez sur **Enterprise > Applications** dans le panneau de navigation de gauche.
 Le tableau de la vue affiche les informations suivantes :
 
 | Elément   | Description |
