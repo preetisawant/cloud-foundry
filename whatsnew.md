@@ -76,7 +76,7 @@ _Release Date:_ 2019-04-01
 CFEE v2.2.0 includes the following versions of its constituent components:
 * Cloud Foundry: v2.7.1.15.5
 * Cloud Foundry API: v2.115.0
-* CFEE Buildpacks: v0.1.5
+* CFEE Buildpacks: [v0.1.5](https://github.com/cloudfoundry/apt-buildpack/releases/tag/v0.1.5)
 * IBM Kubernetes service: No version update provided.  **Important:** We recomment that you update the CFEE Kubernetes cluster to v1.13 before updating to CFEE v2.2.0 (required when the CFEE instance operates in an isolated network).
 
 The following changes were released in version 2.2.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the **Updates and Scaling** page in the CFEE's user interface and click **Update**:
