@@ -51,7 +51,7 @@ After you install the command line interface, follow these steps:
 
   **Note**: You must add single or double quotation marks around `username`, `org_name`, and  `space_name` if the value includes a space, for example, `-o "my org"`.
 
-5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the `bluemix app push` command. For more information about the `cf app push` command, see [Uploading your application](/docs/starters/upload_app.html).
+5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the `ibmcloud app push` command. For more information about the `cf app push` command, see [Uploading your application](/docs/starters/upload_app.html).
 
   ```
   cf push <app_name>
@@ -69,7 +69,7 @@ You can view CFEE deployed applications either in the context of a specific spac
 {: #view_specific}
 
 To view applications deployed in a specific space of a specific CFEE instance:
-1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://console.bluemix.net/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want to create organizations.
+1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want to create organizations.
 2. In the {{site.data.keyword.cfee_full_notm}} user interface, go to the **Organizations** entry in the navigation pane to open the _organizations_ page.
 3. Go to the **Spaces** tab at the top of the page.
 4. In the __Spaces__ tab, click on a space in the table to open the space's page.
@@ -132,7 +132,7 @@ cf push -f appManifest.yml
 |:----------|:--------------|:---------------|
 | **buildpack** | The URL or name of the custom buildpack. | `buildpack:` *buildpack_URL* |
 | **disk_quota** | The disk quota that is allocated for an application. The default value is 1 G. | `disk_quota: 500M` |
-| **domain** | The domain name of the application in {{site.data.keyword.Bluemix_notm}}. | `domain:` ng.bluemix.net |
+| **domain** | The domain name of the application in {{site.data.keyword.Bluemix_notm}}. | `domain:` ng.cloud.ibm.com |
 | **host** | The host name of the application in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment. | `host:` *host_name* |
 | **name** | The application name in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment. | `name:` *appname* |
 | **path** | The location of your application. This value can be a relative path or absolute path. | `path:` *path_to_application* |
@@ -159,7 +159,7 @@ The following example shows a manifest file for a Node.js application that uses 
   path: /dev/myNodejsApp
   buildpack: nodejs_buildpack
   host: nodejs001
-  domain: mybluemix.net
+  domain: mycloud.com
   command: node app.js
   timeout: 80
   services:
