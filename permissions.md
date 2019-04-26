@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-26"
 
 ---
 
@@ -55,9 +55,7 @@ In order to create new instances of the CFEE service, users must be granted acce
 
 The following Identity & Access Management (IAM) access policies are required for users to be able to create an {{site.data.keyword.cfee_full_notm}} instance:
 
-* _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
-
-* _Administrator_ or _editor_ role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
+* _Administrator_ or _editor_ role to the **resource group** under which the CFEE instance is grouped. Resource groups allow allocating resources to customized groups to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance.  Users with either administrator or editor roles in the resource  {{site.data.keyword.cfee_full_notm}} instance (or its resource group) can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
    
 * _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions. Additionally, make sure that you have the right [infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a Kubernetes cluster.
 
