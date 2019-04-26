@@ -19,6 +19,15 @@ lastupdated: "2018-04-01"
 
 This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
 
+
+## Version 2.2.4
+{: #v224}
+
+_Release Date:_ 2019-04-25
+
+Version 2.2.4 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves a problem that prevented users from creating a CFEE instance of the Eirini Technical Preview plan.  Existing CFEE instances do **not need to be updated** to this version.
+
+
 ## Version 2.2.3
 {: #v223}
 
@@ -31,7 +40,6 @@ The following changes were released in version 2.2.3 of the {{site.data.keyword.
 To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. This version pre-requires v2.1.0. 
 
 **Note** that this version does not pre-require version 2.2.0. You can update directly to version 2.2.3. However, if you bypass version 2.2.0, we still recommend that you update the CFEE Kubernetes cluster to v1.13 before the CFEE update (recommended also before a v2.2.0 update). 
-
 
 
 ## Version 2.2.2
@@ -48,6 +56,7 @@ The following changes were released in version 2.2.2 of the {{site.data.keyword.
 To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
 
 **Note** that this version does not pre-require version 2.2.0. You can update directly to version 2.2.2. However, if you bypass version 2.2.0, we still recommend that you update the CFEE Kubernetes cluster to v1.13 before the CFEE update (recommended also before a v2.2.0 update). 
+
 
 ## Version 2.2.1
 {: #v221}
