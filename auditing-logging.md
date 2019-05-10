@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-11-09"
+lastupdated: "2019-05-10"
 
 ---
 
@@ -39,6 +39,8 @@ You can disable Auditing by clicking **Disable auditing**, which will remove the
 {: #logging}
 
 Logging of Cloud Foundry events is supported through integration with the Log Analysis service in the IBM Cloud. An instance of the Log Analysis service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry logging events generated from the CFEE instance.  The user can see and manage those logging events in the user interface of the Log Analysis service instance.
+
+**Important:** The Log Analysis service has been **deprecated** in the IBM Cloud. Consequently, new instances of the Log Analysis service cannot be created to enable logging persistence in CFEE. However, CFEE logging persistence enabled with existing instances of the Log Analysis service will continue to work. 
 
 To enable logging for a CFEE instance:
 
