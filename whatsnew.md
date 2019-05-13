@@ -17,7 +17,47 @@ lastupdated: "2018-04-01"
 
 # What's New in IBM Cloud Foundry Enterprise Environment
 
-This document describes what's new in each version released up to this date of the {{site.data.keyword.cfee_full_notm}} service.
+This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
+
+## Version 3.0.0
+{: #v300}
+
+_Release Date:_ 2019-05-06
+
+Existing {{site.data.keyword.cfee_short}} instances from version 2.x or earlier cannot migrate to version 3.0.0. CFEE version 3.0.0 is only available in new CFEE instances. This is due to a change in the database service used by CFEE to store Cloud Foundry data. CFEE v3.0.0 no longer uses Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}.  
+{: important} 
+
+Note that new CFEE instances (v3.0.0) cannot be created at present in the Chennai region (Asia Pacific). Deployments in the Chennai region will be enabled at a later time.
+
+CFEE v3.0.0 includes the following versions of its constituent components:
+* Cloud Foundry: [3.6.0](https://github.com/cloudfoundry/cf-deployment/releases/tag/v3.6.0)
+* Cloud Foundry API: [2.120.0](http://apidocs.cloudfoundry.org/3.6.0/)
+* IBM Kubernetes service: No version update provided.  **Important:** We recomment that you update the CFEE Kubernetes cluster to v1.13 before updating to CFEE v2.2.0 (required when the CFEE instance operates in an isolated network).
+* CFEE Buildpacks: CFEE v3.0.0 introduces support for the **_CFLinuxFS3_** Stack. The default stack for IBM buildpacks is cflinuxfs3 since they do not specify a stack. Community buildpacks have new version based on the _cflinuxfs3_ cloud foundry stack.
+   The following buildpacks and their versions are including in CFEE v3.0.0:
+    * Liberty for Java: jv3.30-20190325-1301
+    * SDK for Nod.js: v3.26-20190313-1440
+    * .Net Core: v2.2-20190327-1013
+    * Swift: v2.1.0-20190404-1206
+    * Xpages: v1.2.2
+    * Staticfile: v1.4.35
+    * Java: v4.16.1
+    * Ruby: v1.7.27
+    * Node.js: v1.6.34
+    * Go: v1.8.29
+    * Python: v1.6.23
+    * PHP: v4.3.64
+    * Binary: v1.0.27
+
+The following changes were released in version 3.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). 
+
+* The database used by CFEE to store Cloud Foundry data is no longer Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}. Resulting from this database change:
+    * Existing CFEE instance with versions previous to 3.0.0 (CFEE v2.x or v1.x) cannot be updated to version 3.0.0.
+    * Creating a new CFEE instance no longer requires developer access to a Cloud Coundry organization and space inthe public {{site.data.keyword.Bluemix_notm}}.
+* More secured communication between the CFEE instance and the supporting services (_Kubernetes cluster_, _Cloud Object Storage_ and _Databases for PostgreSQL_). Communication with the _Kubernetes cluster_ takes place by default through the cluster master (instead of through the ingres router). Communication with the _Cloud Object Storage_ service instance always takes place through a private access endpoint. Communication with the _Databases for PostgreSQL_ instance takes place through a private endpoint if the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://test.cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). Otherwise, communication with  _Databases for PostgreSQL_ instance takes place through a public endpoint.   
+* Synchronizing the local CFEE catalog with the IBM Cloud catalog takes place automatically every 24 hours. Synchornization can be done manually within the UI of a CFEE space page.  In CFEE 3.0.0 that manual synchronization can also be done more easily in the overflow menu of the _Overview_ page (in the CFEE user interface, click **Synchronize catalog** in the overflow menu located in the upper right corner of the _Overview_ page).
+* **Auditing** and **Logging** capabilities in a CFEE are supported through the _Activity Tracker_ and the _Log Analysis_ services respectively.  Those two services are being deprecated from the {{site.data.keyword.Bluemix}} catalog.  Although you will still be able to use existing instances of those two services for auditing and logging in a CFEE, you will not able to create new instances of those services.
+* New documentation is available with [managing](https://test.cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-management-enablement) and [troubleshooting](https://test.cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-debug_overview) guidance.
 
 
 ## Version 2.2.4
