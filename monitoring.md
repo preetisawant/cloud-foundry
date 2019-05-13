@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-04-01"
+  years: 2018, 2019
+lastupdated: "2019-04-29"
 
 ---
 
@@ -42,6 +42,8 @@ Prometheus gatheres metrics from instrumented jobs, either directly or via an in
 
 Grafana is an open-source analytics platform for all metrics collected by Prometheus. The deployed Grafana version on your cluster is already configured to use the underlying Prometheus database. It also contains some valuable Grafana dashboards.  See the [Grafana documentation](http://docs.grafana.org/guides/getting_started/) for more information.
 
+Data from individual panels can be exported from Grafana in CSV format. See the [Grafana Export Panel Data documentation](https://grafana.com/docs/reference/sharing/#export-panel-data) for more information.
+
 ## Getting Started with Monitoring
 {: #gettingStarted_monitor}
 
@@ -52,24 +54,26 @@ The following guides you through the steps for installing the required CLI's, fo
 
 ### Prerequisites
 
-1. Check your [Access Policies](https://console.bluemix.net/iam/#/users) to ensure that you have at least a Viewer role on the Kubernetes cluster supporting the environment.
-2. Install the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
+1. Check your [Access Policies](https://cloud.ibm.com/iam/#/users) to ensure that you have at least a Viewer role on the Kubernetes cluster supporting the environment.
+2. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud/download_cli.html#install_use).
 3. Install the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  If you have an existing Kubernetes CLI, we recommend that you install the latest version.
 4. Install the container service plug-in:
 ```
-    ibmcloud plugin install container-service -r Bluemix
+    ibmcloud plugin install container-service
 ```
  
 ### Customizing the Alertmanager configuration
 
-Alertmanager has a default [Alertmanager configuration](https://prometheus.io/docs/alerting/configuration/) file that defines the policies for handling, grouping, and notification routing of Alertmanager alerts. You can download the default configuration file and upload a custom configuration in the **Configuration** tab of the _Monitoring_ page.
+Alertmanager has a default configuration file that defines the policies for handling, grouping, and notification routing of Alertmanager alerts. You can download the default configuration file and upload a custom configuration in the **Configuration** tab of the _Monitoring_ page.
+
+You can refer to the [Alertmanager configuration](https://prometheus.io/docs/alerting/configuration/) documentation for details on how to configure notification for email, Slack, PagerDuty, etc.
  
 ### Access the Kubernetes cluster
 
 1. Log into your IBM Cloud account:
 
   ```
-  ibmcloud login -a https://api.ng.bluemix.net
+  ibmcloud login -a https://cloud.ibm.com
   ```
   {: pre}
   
