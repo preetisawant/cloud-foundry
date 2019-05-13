@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2019-04-10"
+lastupdated: "2019-05-13"
 
 ---
 
@@ -23,9 +23,9 @@ lastupdated: "2019-04-10"
 * [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance (CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service).  
 
 ## Creating a CFEE instance
-1.  Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
+1.  Go to the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
 
-2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.  That first page provides an overview of the main features of the service. Click **Continue**.
+2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click on it to open the overview page for the service.  That first page provides an overview of the main features. Click **Continue**.
 
 3.  Configure the CFEE instance to be created:
     * Select a plan. See the [Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment#eirini) section for a description of the limitations of tis plan.
@@ -34,10 +34,6 @@ lastupdated: "2019-04-10"
     * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
-    * Select the hardware isolation for the Kubernetes cluster:   
-      * _Virtual-shared_: Infrastructure resources in the cluster, such as the hypervisor and physical hardware, are distributed between you and other IBM customers, but each worker node is single-tenant to you.
-      * _Virtual-dedicated_: The worker nodes in the cluster are hosted on infrastructure that is devoted to your account.
-    * Data in the cluster are encrypted by default. You have the option of turning off _Encrypt local disk_.
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
     * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
     
@@ -47,17 +43,20 @@ lastupdated: "2019-04-10"
     
     Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/catalog/docs/containers/cs_why.html#cs_ov).
 
-5.  Configure the capacity of the CFEE:
-    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  Currently there is a maximum of 6 cells that can be provisioned on a CFEE instance.
+5. Configure the security of the CFEE:
+    * Select the **hardware isolation** for the Kubernetes cluster:   
+      * _Virtual-shared_: Infrastructure resources in the cluster, such as the hypervisor and physical hardware, are distributed between you and other IBM customers, but each worker node is single-tenant to you.
+      * _Virtual-dedicated_: The worker nodes in the cluster are hosted on infrastructure that is devoted to your account.
+    * Data in the cluster are **encrypted** by default. You have the option of turning off _Encrypt local disk_.
+    * **Service access endpoints used for management:** If the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://test.cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started), management access by the CFEE control plane to the new CFEE and its supporting services (Kubernetes cluster, Databases for PostgreSQL and Cloud Object Storage) will take place through the IBM private network.  One the CFEE instance is created, administrators can see information about the endpoints used for management access in the **Management access** page (located in the upper right corner of the _Overview_ page in the CFEE user interface). [Learn more](https://test.cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#private-access)
+
+6.  Configure the capacity of the CFEE:
+    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
     * Select the **Node size**, which determines the capacity of the Cloud Foundry cells (CPU and memory) .
     
     In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
 
     **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/catalog/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
-
-6.  In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service.
-
-    **Note:** Under _Compose for PostgreSQL_ only organizations in the location where you intend to provision the CFEE instance (step 4 above) and to which you have access, are available for selection.  Within a specific organization, only spaces to which you have _developer_ access are available for selection. 
 
 7.  The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
 
@@ -86,5 +85,3 @@ When you create a CFEE instance, there are three additional supporting service i
 * `cf push` of Docker images is not supported.
 * Kubernetes native Eirini staging is not supported. CFEE instances created from the Eirini technical preview plan use Eirini for running apps, but not for staging them. Diego cells are still used for staging apps.
 * Restart of specific app instances (`cf restart-app-instance`) is not supported.
-
- 
