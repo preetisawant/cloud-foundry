@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry" audience="compute" arm="4095474" href="/docs/cloud-foundry/index.html" path="cloud-foundry"}
+{: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cloud-foundry/index.html" path="cloud-foundry"}
 Cloud Foundry Enterprise Environment
 
     {: .navgroup id="learn"}
@@ -20,12 +20,13 @@ Cloud Foundry Enterprise Environment
         spaces.md
         quota.md
         assigning-roles.md
-    
+
     manage-capacity.md
     monitoring.md
     auditing-logging.md
     compliance.md
     {: .navgroup-end}
+
 
     {: .navgroup id="howto"}
     orgs-spaces.md
@@ -35,14 +36,28 @@ Cloud Foundry Enterprise Environment
     domains.md
     updating-scaling.md
     autoscaling.md
+
+    {: .topicgroup}
+    Managing operations
+        msp_enablement.md
+        management-services.md
+        raci_change_management.md
+        raci_account_audits.md
+        raci_customer_provided_service.md
     {: .navgroup-end}
+
 
     {: .navgroup id="help"}
     whatsnew.md
     cfee_faq.md
-    
+
     {: .topicgroup}
     Troubleshooting
-        cf_stager_is_unavailable.md
+        cfee_troubleshoot_overview.md
+        cfee_troubleshoot_cf.md
+        cfee_troubleshoot_kube.md
+        cfee_troubleshoot_ops.md
+
+
     known-issues.md
     {: .navgroup-end}
