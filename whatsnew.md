@@ -49,8 +49,7 @@ CFEE v3.0.0 includes the following versions of its constituent components:
     * PHP: v4.3.64
     * Binary: v1.0.27
 
-The following changes were released in version 3.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). 
-
+The following changes were released in version 3.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
 * The database used by CFEE to store Cloud Foundry data is no longer Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}. Resulting from this database change:
     * Existing CFEE instance with versions previous to 3.0.0 (CFEE v2.x or v1.x) cannot be updated to version 3.0.0.
     * Creating a new CFEE instance no longer requires developer access to a Cloud Coundry organization and space inthe public {{site.data.keyword.Bluemix_notm}}.
