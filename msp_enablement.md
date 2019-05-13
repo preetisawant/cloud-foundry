@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-13"
 
 ---
 
@@ -87,18 +87,18 @@ The following picture is a visual representation of the roles and responsibiliti
 
 ![{{site.data.keyword.cfee_full_notm}}](img/ICFEE_HighLevelRoles.png  "High level roles in an {{site.data.keyword.cfee_full_notm}}")
 
-
+<!--
 ## Use Cases and Responsibilities Table
 {: #usecases-and-responsibilities-table}
 
 The table below describes responsibilities in a {{site.data.keyword.cfee_short}} instance.
 
 ( **R** ) Responsible - who does the work to achieve the use case.
-<!--
+
 ( **A** ) Accountable (also Approver or final approving authority) - The one ultimately answerable for the correct and thorough completion of the deliverable or task, and the one who delegates the work to those responsible. In other words, an accountable must sign off (approve) work that responsible provides. There must be only one accountable specified for each task or deliverable.
 ( **C** ) Consulted - Those whose opinions are sought, typically subject matter experts; and with whom there is two-way communication.
 ( **I** ) Informed - Those who are kept up-to-date on progress, often only on completion of the task or deliverable; and with whom there is just one-way communication.
--->
+
 
 | **Use Case**                                                                                                                                                                                                                 | Customer | IBM Cloud |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-----------|
@@ -152,7 +152,7 @@ The table below describes responsibilities in a {{site.data.keyword.cfee_short}}
 | [Users defined in {{site.data.keyword.cfee_short}}](https://cloud.ibm.com/iam#/users)                                                                                                                                        | R        |           |
 | [Open/Closed incidents visibility and reports](https://cloud.ibm.com/unifiedsupport/cases/manage)                                                                                                                            | R        |           |
 | [Request for specific feature (e.g. services)](http://ibm.biz/cloudideas)                                                                                                                                                   | R        |           |
-
+-->
 
 ## Customer MSP Engagement
 {: #management-msp-engagement}
