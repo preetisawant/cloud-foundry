@@ -55,8 +55,6 @@ Cloud Foundry Enterprise Environment
     Troubleshooting
         cfee_troubleshoot_overview.md
         cfee_troubleshoot_cf.md
-        cfee_troubleshoot_kube.md
-        cfee_troubleshoot_ops.md
 
 
     known-issues.md
