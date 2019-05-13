@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2019-04-26"
+lastupdated: "2019-05-13"
 
 ---
 
@@ -27,9 +27,9 @@ Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam#/users) an
 
 |  **Task** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM Access Roles** &nbsp; &nbsp; &nbsp; |**Cloud Foundry Roles** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>[Infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a cluster.</li> <li>Editor platform role, and manager service access role in the IBM Cloud Object Storage service.</li> </ul> | <ul><li>User role in a public organization.</li> <li>Developer role in a space in that pubic organization. </li></ul>|
-|Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor platform role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | <ul><li>User role in a public organization.</li> <li>Developer role in a space in that pubic organization. </li></ul>|
-|Scale CFEE capacity (add/remove cells)|  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Administrator role in the CFEE instance.</li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | |
+|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Administrator role in Databases for PostgreSQL service.</li> <li>[Infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a cluster.</li> <li>Editor platform role, and manager service access role in the IBM Cloud Object Storage service.</li> </ul> | |
+|Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor platform role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | |
+|Scale CFEE capacity (add/remove cells)|  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Administrator role in the CFEE instance.</li> <li>Operator role in Kubernetes service.</li> |
 |Monitor CFEE |  <ul><li>Viewer role in the CFEE instance Resource Group</li> <li>Editor role in the CFEE instance.</li> <li>Operator role in the CFEE's Kubernetes cluster.</li></ul> |  |
 |View CFEE resource usage |  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Viewer role in the CFEE instance.</li></ul> |  |
 |Enable CFEE auditing| <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Editor role in the CFEE instance.</li></ul> | <ul><li>Auditor role in the public Cloud Foundry space where the Activity Tracker service instance is deployed.</li></ul>  |
@@ -55,34 +55,28 @@ In order to create new instances of the CFEE service, users must be granted acce
 
 The following Identity & Access Management (IAM) access policies are required for users to be able to create an {{site.data.keyword.cfee_full_notm}} instance:
 
-* _Administrator_ or _editor_ role to the **resource group** under which the CFEE instance is grouped. Resource groups allow allocation of resources to custom groups in order to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance.  Users with either administrator or editor roles in the resource  {{site.data.keyword.cfee_full_notm}} instance (or its resource group) can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
+* _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
+
+* _Administrator_ or _editor_ role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
    
 * _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions. Additionally, make sure that you have the right [infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a Kubernetes cluster.
 
 * _Administrator_ or _editor_ platform role, and manager service access role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 
-* An instance of the Compose for PostgreSQL service is a required dependency of the CFEE service.  Compose for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  That instance of the **Compose for PostgreSQL service** is deployed in a space within a public Cloud Foundry organization (unrelated to CFEE organizations) that you select when creating a {{site.data.keyword.cfee_full_notm}} instance.  This means that when you create a {{site.data.keyword.cfee_full_notm}} instance you need to have _manager_ access to at least an organization in the location where you intend to provision the CFEE instance.  You also need _developer_ access to at least one space in that organization. 
-
-  If you are not a member of at least one public organization in the location where you intend to create a CFEE instance, ask an IBM Cloud administrator to invite you to one. If you have administrator role in the account you can add users to public organizations and spaces in the account by performing the following:
-
-     * Go to [**Manage > Account > Cloud Foundry Orgs**](https://cloud.ibm.com/account/organizations) and either click on **Add an organization** or select an existing organization.
-     * Go to the **Users** tab at the top of the organization's page.
-     * Find the user who needs to create CFEE instances. If the user you want to be able to create CFEE instances is not in the list, click **Add or invite user** above the table to add or invite users to the organization.
-     * Go to the **Spaces** tab at the top of organization's page.
-     * Find the space where the instance of Compose for PostgreSQL service would be provisioned and check the **Developer** role checkbox.
+* An instance of the Databases for PostgreSQL service is a required dependency of the CFEE service.  Databases for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  
 
 The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.Bluemix_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
 
 ![Access policies](img/AccessPolicies_Creator.png)
 
-You can grant user permissions using the {{site.data.keyword.Bluemix}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](https://cloud.ibm.com/docs/services/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud/download_cli.html#install_use).
+You can grant user permissions using the {{site.data.keyword.Bluemix}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](https://console.bluemix.net/docs/services/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
 {:tip}
 
 To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+1. Go to the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
 2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
-For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://cloud.ibm.com/docs/iam/iamusermanage.html#iamusermanage).
+For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
 
 ### Expediting the setting of permissions to create an environment using the CLI
 {: #permcli-creating}
@@ -96,11 +90,11 @@ ibmcloud cfee create-permission-set USER_NAME [-ag, --access-group GROUP_NAME] [
 ```
 {: pre}
 
-The command sets the following access policies for the target user:
+The command sets the following access policies for the target user in the current IBM Cloud account:
 
-*  Editor roles to the Cloud Object Storage and CFEE services in the current IBM Cloud account.
-*  Administrator role to the Kubernetes Service in the current IBM Cloud account.
-*  Developer role to the current space in the current org for provisioning of the Compose for PostgreSQL.
+*  Editor roles in the CFEE and Cloud Object Storage services.
+*  Administrator role in the Kubernetes service.
+*  Administrator role in the Databases for PostgreSQL service.
 
 For more details on the command issue the following:
 
@@ -121,7 +115,7 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
 To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must be:
 1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
-2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
+2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
 
     Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
   - The resource group under which the CFEE instance was created.
