@@ -14,6 +14,8 @@ lastupdated: "2018-04-01"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:important: .important}    
+
 
 # What's New in IBM Cloud Foundry Enterprise Environment
 
