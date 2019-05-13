@@ -22,7 +22,7 @@ This document describes what's new in each released version of the {{site.data.k
 ## Version 3.0.0
 {: #v300}
 
-_Release Date:_ 2019-05-06
+_Release Date:_ 2019-05-13
 
 Existing {{site.data.keyword.cfee_short}} instances from version 2.x or earlier cannot migrate to version 3.0.0. CFEE version 3.0.0 is only available in new CFEE instances. This is due to a change in the database service used by CFEE to store Cloud Foundry data. CFEE v3.0.0 no longer uses Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}.  
 {: important} 
