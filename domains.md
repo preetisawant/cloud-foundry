@@ -66,4 +66,15 @@ You can also delete a shared domain from the CLoud Foundry CLI by issuing the fo
  {: #upload-certificates}
  
 You can upload an SSL certificate for a domain (shared or private). Click **Upload** in the table row corresponding to the domain to which the certificate is being added, select the file containing the certificate and the file containing the private key.
+
+
+ ## Setting up a custom domain for app routes
+ {: #custom-domains}
   
+Perform the following to setup a custom domain for the app routes in a CFEE:
+
+1. Configure DNS for the custom domain to point to the CFEE default domain (see the _Domains_ page in CFEE user interface).
+2. In the CFEE _Domains_ page, register the custom domain's URL.
+3. Optionally, add SSL certificate.
+3. Add a route to the app through either the _Stratos console_ or the `cf` CLI.
+
