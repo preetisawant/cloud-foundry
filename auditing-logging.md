@@ -23,6 +23,9 @@ The auditing and logging capabilities in {{site.data.keyword.cfee_full}} (CFEE) 
 
 Auditing and logging in CFEE are suppoted through integration with the Log Analysis and Activity Tracker IBM Cloud services.
 
+The Activity Tracker and Log Analysis services have been **deprecated** in the IBM Cloud. Consequently,  new instances of the Activity Tracker service cannot be created to enable auditing in a CFEE. Similarly, new instances of the Log Analysis service cannot be created to enable logging persistence in CFEE. However, CFEE auditing and logging persistence enabled with existing instances of the Activity Tracker and Log Analysis services, respectively, will continue to work. 
+{: important}
+
 ## Auditing
 {: #auditing}
 
@@ -31,18 +34,16 @@ Auditing allows CFEE administrators to track Cloud Foundry auditable activities 
 To enable auditing for a CFEE instance:
 
 1. Open a CFEE's user interface and to **Operations > Auditing** entry in the left navigation pane to open the Logging page.
-2. Click **Enable auditing** and select one of the **Activity Tracker instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create a new Activity Tracker instance in the IBM Cloud atalog.
+2. Click **Enable auditing** and select one of the **Activity Tracker instances** available in the IBM Cloud account.  
 3.  Once auditing is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the Activity Tracker service instance itself, where the user can go to see and manage auditing events.
 
 You can disable Auditing by clicking **Disable auditing**, which will remove the Activity tracker service instance previously added and configured. This action does not delete the Activity Tracker service instance.
+
 
 ## Logging persistence
 {: #logging}
 
 Logging of Cloud Foundry events is supported through integration with the Log Analysis service in the IBM Cloud. An instance of the Log Analysis service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry logging events generated from the CFEE instance.  The user can see and manage those logging events in the user interface of the Log Analysis service instance.
-
-The Log Analysis service has been **deprecated** in the IBM Cloud. Consequently, new instances of the Log Analysis service cannot be created to enable logging persistence in CFEE. However, CFEE logging persistence enabled with existing instances of the Log Analysis service will continue to work. 
-{: important}
 
 To enable logging for a CFEE instance:
 
