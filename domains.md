@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-04-14"
+lastupdated: "2019-05-14"
 
 ---
 
@@ -77,4 +77,3 @@ Perform the following to setup a custom domain for the app routes in a CFEE:
 2. In the CFEE _Domains_ page, register the custom domain's URL.
 3. Optionally, add SSL certificate.
 3. Add a route to the app through either the _Stratos console_ or the `cf` CLI.
-
