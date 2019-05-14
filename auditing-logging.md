@@ -21,9 +21,9 @@ lastupdated: "2019-05-10"
 
 The auditing and logging capabilities in {{site.data.keyword.cfee_full}} (CFEE) allow administrators to audit events taking place in a CFEE instance, and developers to track log events generated from their Cloud Foundry applications.
 
-Auditing and logging in CFEE are suppoted through integration with the Log Analysis and Activity Tracker IBM Cloud services.
+Auditing and logging in CFEE are suppoted through integration with the Log Analysis and Activity Tracker services in the IBM Cloud.
 
-The Activity Tracker and Log Analysis services have been **deprecated** in the IBM Cloud. Consequently,  new instances of the Activity Tracker service cannot be created to enable auditing in a CFEE. Similarly, new instances of the Log Analysis service cannot be created to enable logging persistence in CFEE. However, CFEE auditing and logging persistence enabled with existing instances of the Activity Tracker and Log Analysis services, respectively, will continue to work. 
+The Activity Tracker and Log Analysis services have been **deprecated** in the IBM Cloud. Consequently,  new instances of the Activity Tracker service cannot be created to enable auditing in a CFEE. Similarly, new instances of the Log Analysis service cannot be created to enable logging persistence. However, CFEE auditing and logging persistence will continue to work with existing instances of the Activity Tracker and Log Analysis services.
 {: important}
 
 ## Auditing
