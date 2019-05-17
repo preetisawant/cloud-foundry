@@ -72,7 +72,7 @@ If you are using an alternative network perimeter implementation, you'll need to
 | cfee-egress-allow-rc | Allows outbound access to the IBM Cloud platform to enable service syndication | `resource-controller.cloud.ibm.com` |
 | cfee-egress-allow-registry | Allows outbound access to the IBM Cloud Container Registry | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall) |
 | cfee-egress-allow-logging | (optional) Allows outbound network traffic from the CFEE worker nodes to IBM Cloud Monitoring and IBM Cloud Log Analysis services | [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-firewall#firewall_outbound) |
-| cfee-egress-allow-helm-tiller | Allows outbound network traffic from the CFEE worker nodes to the helm image retistry| This calico rule is for IPs of the Helm tiller, which needs access to the `mage:gcr.io` and `storage.googleapis.com` domains to pull the helm tiller image. |
+| cfee-egress-allow-helm-tiller | Allows outbound network traffic from the CFEE worker nodes to the helm image retistry| This calico rule is for IPs of the Helm tiller, which needs access to the `gcr.io` and `storage.googleapis.com` domains to pull the helm tiller image. |
 
 <br>  
 The final network security rule (the most **important** one) is the one that denies all access to network traffic that don't match the previous policies.
