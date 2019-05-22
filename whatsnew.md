@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2018-04-01"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -20,6 +20,21 @@ lastupdated: "2018-04-01"
 # What's New in IBM Cloud Foundry Enterprise Environment
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
+
+
+## Version 3.0.1
+{: #v301}
+
+_Release Date:_ 2019-05-22
+
+Version 3.0.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves the following:
+* Problem resolving DNS hostnames correctly after enabling communication between CFEE and its Kubernetes cluster through the cluster master.
+* Problem provisioning CFEE instances in the London region.
+
+To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
+
+**Note:** Update to v3.0.1 is only available to CFEE v3.0.0 instances, See [Version 3.0.0](#v300) below.
+
 
 ## Version 3.0.0
 {: #v300}
