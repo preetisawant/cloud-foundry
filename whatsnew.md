@@ -22,6 +22,20 @@ lastupdated: "2018-05-22"
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
 
 
+## Version 3.0.2
+{: #v302}
+
+_Release Date:_ 2019-05-30
+
+Version 3.0.2 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves the following:
+* Problem provisioning CFEE instances of the Eirini Techncal Preview plan.
+* No security group was defined in the private network connecting CFEE components, which prevented communication between applications deployed in a CFEE instance. This is resolved for new provisions of 3.0.2.  Updating from 3.0.1 will be addressed in a future release.
+
+To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
+
+**Note:** Update to v3.0.2 is available only to CFEE v3.0.x instances, See [Version 3.0.0](#v300) below.
+
+
 ## Version 3.0.1
 {: #v301}
 
