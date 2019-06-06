@@ -108,7 +108,7 @@ You can refer to the [Alertmanager configuration](https://prometheus.io/docs/ale
   
 ### Launch the monitoring consoles on your local web proxy
 
-5. Launch the Grafana console to see analytics on selected metrics.  The are default Grafana dashboards included in the CFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your CFEE instance. (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
+5. There is a default set of Grafana dashboards included in the CFEE instance. Those default dashboards are interactive and give you a view of the infrastructure used to host your CFEE instance. (Kubernetes cluster). Once you launch the Grafana console, click the **Home** button at the top of the Grafana console to select one of the pre-deployed dashboards (see list below), which will graph the corresponding metrics:
 
    For CFEE v2.1.0 or earlier there is a default `admin` user in Grafana, with the default password set to `admin`. We recommend to login with Userd/Password `admin/admin`, and change them to new credentials.  For CFEE v2.2.0 or later users are authenticated autmatically with their IBM ID credentials.
 
