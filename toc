@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry" audience="compute" href="/docs/cloud-foundry/index.html" path="cloud-foundry"}
+{: .toc subcollection="cloud-foundry" category="compute" audience="compute" href="/docs/cloud-foundry/index.html" path="cloud-foundry"}
 Cloud Foundry Enterprise Environment
 
     {: .navgroup id="learn"}
