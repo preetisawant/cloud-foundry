@@ -22,6 +22,22 @@ lastupdated: "2018-05-22"
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
 
 
+## Version 3.1.0
+{: #v310}
+
+_Release Date:_ 2019-06-21
+
+To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
+The following changes were released in version 3.1.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
+* CFEE instances can work on private-only access endpoints (i.e., preventing use the public service endpoints).  Use of private-only access endpoints requires enabling CFEE access to the Kubernetes access through the Kuberenetes cluster master. Go to the _Overview_ page of the CFEE user interface, invoke **Management access** from the menu in the top right, and click **Enable**. 
+Note that use of access endpoints in CFEE requires that the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://test.cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started).
+* Log persistence in CFEE instances is enabled through integration with the LogDNA service, replacing the deprecated Log Analysis service.
+* Client certificates can be whitelisted along with the Cerficated Authority (CA) certificates required to authenticate them. This provides customers a convenient way to create mutual Transport Layer Security (TLS) authentication, scoping the authentication to specific custom domains. This enables customers more granular control over client access to their Cloud Foundry applications. See [Managing domains](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-domains#upload-certificates) for more information.
+* Updating to a new CFEE version is disabled while an administration operation is in-progress (e.g., scaling, auditing or logging enablement).
+
+**Note:** Update to v3.1.0 is available only to CFEE v3.0.x instances, See [Version 3.0.0](#v300) below.
+
+
 ## Version 3.0.2
 {: #v302}
 
