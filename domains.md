@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-05-14"
+lastupdated: "2019-06-21"
 
 ---
 
@@ -12,6 +12,7 @@ lastupdated: "2019-05-14"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:important: .important}    
 
 
 # Managing domains
@@ -67,6 +68,9 @@ You can also delete a shared domain from the CLoud Foundry CLI by issuing the fo
  
 You can upload an SSL certificate for a domain (shared or private). Click **Upload** in the table row corresponding to the domain to which the certificate is being added, select the file containing the certificate and the file containing the private key.
 
+Starting in CFEE v3.1.0, you can whitelist a bundle of client certificates along with the Certificate Authority (CA) certificates required to authenticate those client certificates.  This provides customers a convenient way to create mutual Transport Layer Security (TLS) authentication, scoping the authentication to specific custom domains. This enables customers more granular control over client access to their Cloud Foundry applications.
+In the _Upload certificate_ dialog, click **Load leaf certificates**" to upload a file containing one or more client certificates. Click **Load certificate signing tree** to upload a file containing one or more CA certificates used to authenticate the client certificates. The list of whitelisted users will be shown below.
+{: important}
 
  ## Setting up a custom domain for app routes
  {: #custom-domains}
