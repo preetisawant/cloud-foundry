@@ -1,8 +1,8 @@
----
+----
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-16"
+  years: 2018, 2019
+lastupdated: "2019-06-18"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-11-16"
 
 CFEE environments include a Prometheus Firehose exporter for collecting Cloud Foundry metrics on http and https _start_ and _stop_ requests . A CFEE environment with a high number of http requests may cause the Prometheus firehose exporter to use a large amount of CPU. This can lead to some instability in the environment since the firehouse exporter pod runs on one of the Cloud Foundry control plane worker nodes.
 
-You can determine if the firehose exporter pod is using high CPU, and potentially causing instability in the CFEE environment, by one of the following methods: 
+You can determine if the firehose exporter pod is using high CPU, and potentially causing instability in the CFEE environment, by one of the following methods:
 1.  Check the overall CPU usage of the CF control plane via the CFEE Overview page for that CFEE environment. See an illustrative example of high-cpu usage below:
 ![High CPU in Overview page](img/FirehoseExporterIssue_OverviewMetrics.png)
 
@@ -36,20 +36,19 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
 1. Create the `config.yaml`:
 
    ```
-   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml
+   kubectl -n cf-monitoring get deployment firehose-exporter -f yaml > config.yaml.
    ```
    {: pre}
-  
+
 2. Edit the `config.yaml` and add the following line in `spec.template.spec.containers.args` array:
 
    ```
    - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
    ```
-   {: pre}
 
 ### Example
 
-Modified `config.yam`:
+Original `config.yaml`:
 
 ```
   ...
@@ -68,9 +67,94 @@ Modified `config.yam`:
 The following command would reconfigure and restart the worker node pod:
 
 ```
-kubectl -n cf-monitoring apply -f config.yaml
+kubectl -n cf-monitoring apply -f config.yaml.
 
 ```
-{: pre}
 
 For more information on the Firehose Prometheus exporter see [Cloud Foundry Firehose Prometheus exporter](https://github.com/bosh-prometheus/firehose_exporter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+
+## Intermittent error accessing cell metrics
+{: #cellmetrics-issue}
+
+When accessing Cloud Foundry cell metrics in the _Overview_ or _Resource Usage_ pages there is an intermittent error preventing the collection of those metrics from the Kubernetes worker nodes in which the cells are depoloyed.  Retry at a later time by refresing the page.
+
+## Worker keeps hanging in reboot
+{: #prometheus-worker-reboot}
+
+It has been observed that due to a race condition it may happen that a worker
+hosting a `prometheus-server` pod may keep hanging in reboot after a
+`ibmcloud ks worker reboot` operation.
+
+This situation can be detected if the `ibmcloud ks workers <cluster-name>`
+command shows the respective worker in state `critical` and status `error*` for
+more than 10 minutes:
+```
+ID                                                 Public IP         Private IP      Machine Type         State      Status   Zone    Version   
+kube-fra04-cr25e2765963834256813f44c2e42f48b2-w1   U.V.W.116         10.X.Y.Z        b2c.4x16.encrypted   critical   error*   fra04   1.12.7_1549   
+```
+Also, the `ibmcloud ks worker-get --worker <worker-ID> --cluster <cluster-name> --json`
+shows that a reboot is pending, but the worker fails to connect to the
+cloud infrastructure:
+```
+...
+    "state": "critical",
+    "status": "Unknown",
+    "statusDate": "",
+    "statusDetails": "Rebooting: Attempting to reboot worker (attempt 3)",
+    "errorMessage": "Connection to IBM Cloud infrastructure has failed",
+...
+```
+
+Should that be the case, first try to hard reboot the worker. In most
+cases, this clears the situation.
+```
+ibmcloud ks worker-reboot --cluster <cluster-name> --workers <worker-ID> --hard
+```
+
+Should that command fail also, the last resort is to reload the
+worker node. This is done by first reloading the operating system, and then
+reloading the Kubernetes node.
+
+To have the operating system reloaded, point your browser to the
+[Classic Infrastructure Device List](https://cloud.ibm.com/classic/devices),
+and locate the respective worker in the table shown. Click on the worker name
+link to see its details and select the `OS reload` action from the Actions menu.
+**Note:** This activity can take more than an hour to complete.
+
+Once the operating system has been brought back to its initial state, the
+Kubernetes node can be reloaded:
+```
+ibmcloud ks worker-reload --cluster <cluster-name> --workers <worker-ID>
+```
+
+### Move Prometheus server to another worker before reboot
+
+If you move the `prometheus-server` pod to the second worker which is reserved
+for the monitoring components in your CFEE environment, you can prevent the
+situation entirely.
+
+First, check if the Prometheus server is actually running on the worker you
+intend to reboot. Start with identifying the workers in your cluster:
+```
+ibmcloud ks workers --cluster <cluster-name>
+```
+The output shows you the workers in your cluster together with their IP addresses.
+
+Then use
+```
+kubectl -n monitoring get pod -l app=prometheus,component=server -o wide
+```
+to check if the Prometheus server pod is running on the worker you want to
+reboot by comparing the NODE IP address in the later command with the Private IP
+addresses in the first command.
+
+If you need to move the `prometheus-server` to the seconde monitoring worker,
+cordon the current node, and delete the `prometheus-server` pod. Kubernetes
+will then recreate the pod on the other worker. Don't forget to uncordon the
+former node before rebooting it finally:
+```
+kubectl cordon <node-with-prometheus-server-pod>
+kubectl -n monitoring delete pod/<prometheus-server-pod>
+kubectl uncordon <node-with-prometheus-server-pod>
+ibmcloud ks worker-reboot <node-with-previous-prometheus-server-pod>
+```
