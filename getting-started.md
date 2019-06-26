@@ -57,7 +57,7 @@ When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-fou
 ## Step 6: Bind applications to service instances
 {: #bind-apps}
 
-[Bind your app](https://cloud.ibm.com/docs/cloud-foundry/binding.html) to a service instance alias in order to use the service's functions.
+[Bind your app](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#bind-services-ui) to a service instance alias in order to use the service's functions.
 
 In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
