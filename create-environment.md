@@ -41,7 +41,7 @@ lastupdated: "2019-05-13"
     
     **Note: Provisioning on an isolated network:** You can target VLANs in an isolated network. When the CFEE instance is created in an isolated network, the policies in the isolated network (e.g., calico policies or VRA rules) must allow ALL outbound access from the CFEE instance for the CFEE to be provisioned successfully. Once the CFEE is created, the outbound access restrictions can be reinstated, except for outbound access to certain services and micro-services in the IBM Cloud.  See the [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more information.
     
-    Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/catalog/docs/containers/cs_why.html#cs_ov).
+    Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [Resource List](https://cloud.ibm.com/resources). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/docs/containers?topic=containers-cs_ov).
 
 5. Configure the security of the CFEE:
     * Select the **hardware isolation** for the Kubernetes cluster:   
