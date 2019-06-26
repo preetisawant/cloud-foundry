@@ -31,7 +31,7 @@ lastupdated: "2019-05-13"
     * Select a plan. See the [Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment#eirini) section for a description of the limitations of tis plan.
     * Enter a **Name** for the CFEE instance.
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
-    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
+    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-about#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
@@ -56,7 +56,7 @@ lastupdated: "2019-05-13"
     
     In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
 
-    **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/catalog/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
+    **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning) documentation for more information.
 
 7.  The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
 
