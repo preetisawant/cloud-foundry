@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2019-04-01"
+  years: 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -32,7 +32,7 @@ You need the correct access policies before creating instances of the {{site.dat
 
 CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance.
 
-## Step 2: Create your CFEE instance
+## Step 2: Create your instance
 {: #create-environment}
 
 Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment, and that you have the required access policies (step 1 above).
@@ -105,7 +105,7 @@ When you create an organization you assign a quota to it.  The quota sets limits
 
 When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
-## Step 6: Create or add IBM Cloud service instances to CFEE spaces
+## Step 6: Create or add IBM Cloud service instances to spaces
 {: #service-instances}
 
 [Create services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.

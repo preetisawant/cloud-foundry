@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2018
-lastupdated: "2018-04-13"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-04-13"
 {:screen: .screen}
 {:tip: .tip}
 
-# Determine your organization architecture
+# Determining your organization architecture
 {: #orgstructure}
 
-To design an environment that uses {{site.data.keyword.Bluemix_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}}, {{site.data.keyword.Bluemix_local_notm}}, or any combination, you can use the following organization architectures:
+To design an environment that uses {{site.data.keyword.Bluemix_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} or any combination, you can use the following organization architectures:
 
 * Single-organization: Consider this architecture if you require the same set of users to access resources that are available anywhere in the organization.
 * Multi-organization: Consider this architecture if you require isolation between different environments.
@@ -42,11 +42,6 @@ To implement a multi-organization architecture you can define organizations that
 {: #orgconsiderations}
 
 When you implement a single-organization architecture, the organization includes all of the cloud resources, services, and apps that you use to develop, manage, and deploy cloud apps. In {{site.data.keyword.Bluemix_notm}} Public, the organization provides segregation between accounts and is available across all regions.
-
- ![Figure that shows the single-organization architecture](img/singleorg_example.svg "Figure that shows the single-organization architecture in {{site.data.keyword.Bluemix_notm}}")
-
- Figure 1. Example of a single-organization architecture.
-{: #bpfigure1}
 
 When you implement a multi-organization architecture, organizations provide the first level of boundary enforcement and abstraction that you can use to control and define what can be done and by whom. Design each organization around the different LOBs, the delivery phases, the roles of the users, specific projects, or a combination of these components.  
 
@@ -73,8 +68,8 @@ The following scenarios show different approaches that you can adopt when you de
 
   ![Figure that shows segregation of users by business application delivery](img/bank_example.svg "Figure that shows segregation of users by business application delivery")
 
-  Figure 2. Example of a multi-organization architecture that is aligned to LOB delivery
-{: #bpfigure2}
+  Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery
+{: #bpfigure1}
 
 ### Scenario 2: Segregation based on type of users (internal users, external users)
 
@@ -96,8 +91,8 @@ The following scenarios show different approaches that you can adopt when you de
 
   ![Figure that shows isolation of users by delivery phase](img/user_groups_example.svg "Figure that shows isolation of users by delivery phase")
 
-   Figure 3. Example of a single-organization architecture that is aligned by delivery phase
-{: #bpfigure3}
+   Figure 2. Example of a single-organization architecture that is aligned by delivery phase
+{: #bpfigure2}
 
 ## Organization naming, restrictions, and management
 {: #orgadmin}   

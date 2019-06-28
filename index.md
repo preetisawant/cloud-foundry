@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2015, 2017, 2018
+  years: 2018, 2019
 
-lastupdated: "2018-12-07"
+lastupdated: "2019-06-28"
 
 ---
 
@@ -15,17 +15,15 @@ lastupdated: "2018-12-07"
 {:screen: .screen}
 {:tip: .tip}
 
-# About {{site.data.keyword.cfee_full_notm}}
+# About Cloud Foundry Enterprise Environment
 {: #about}
 
-Welcome to the {{site.data.keyword.cfee_full}} service.
+{{site.data.keyword.cfee_full}} (CFEE) is a cloud platform for hosting apps and services in the cloud. {{site.data.keyword.cfee_full_notm}} makes it easy to scale apps as consumption grows, simplifying the runtime, middleware, and infrastructure so that you can focus on developing apps.
+{: shortdesc}
 
 With {{site.data.keyword.cfee_full}} (CFEE) you can instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on-demand. Instances of the {{site.data.keyword.Bluemix_notm}} Foundry Enterprise service run within your own account in the {{site.data.keyword.Bluemix_notm}}. The environment is deployed on isolated hardware (Kubernetes clusters). You have full control over the environment, including access control, capacity, version updates, resource usage and monitoring. Furthermore, CFEE integration into the {{site.data.keyword.Bluemix_notm}} allows developers to leverage services available in their {{site.data.keyword.Bluemix_notm}} account.  Users can add those services to a CFEE and bind them to applications deployed into CFEE spaces.
 
-Find out how you can [**get started**](https://cloud.ibm.com/docs/cloud-foundry/getting-started.html#getting-started) creating and using a CFEE instance.
-
-
-## Key elements of CFEE
+## Key elements
 {: #key-elements}
 
 The following table provides a summary of the key elements of the {{site.data.keyword.cfee_full}} service:
@@ -36,7 +34,7 @@ The following table provides a summary of the key elements of the {{site.data.ke
 || The account under which CFEE instances are created must be Pay-As-You-Go or a Subscription account type (not a Trial account).  |
 | CFEE | IBM Cloud Foundry Enterprise Environment service for hosting applications. |
 || Is available in the IBM Cloud catalog. |
-| CFEE instance | An instance of the IBM Cloud Foundry Enterprise Environment service created under an IBM Cloud account by a user in with an administrator or editor role in that account. |
+| Instance | An instance of the IBM Cloud Foundry Enterprise Environment service created under an IBM Cloud account by a user in with an administrator or editor role in that account. |
 || There can be multiple CFEE instances in an IBM Cloud Account. |
 || Can have one or more organizations. |
 | Kubernetes cluster | CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster when the CFEE instance is created. |
@@ -54,7 +52,7 @@ The following table provides a summary of the key elements of the {{site.data.ke
 || Allows developers to bind existing service instances available in their IBM Cloud account to their applications deployed in a space within a CFEE.|
 {:caption="Table 1. Description of key elements" caption-side="top"}
 
-## Provisioning targets for CFEE and supporting services
+## Provisioning targets and supporting services
 {: #provisioning-targets}
 
 Following are the geographies, locations and data centers where the CFEE service and the dependent services (Kubernetes service, Compose for PostgreSQL and Cloud Object Storage services) are available for provisioning:
@@ -98,3 +96,4 @@ As an **example**, the CFEE service can provisioned in three data centers in Eur
 
 You can find videos with detailed information and demonstrations for working with services in CFEE in the [CFEE video playlist](https://ibm.biz/CFEE_Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 {:tip}
+

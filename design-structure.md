@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2018
-lastupdated: "2018-10-26"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-10-26"
 {:screen: .screen}
 {:tip: .tip}
 
-# Design the structure of your IBM Cloud Foundry Enterprise Environment
+# Design the structure of your environment
 {: #bpimplementation}
 
 Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your {{site.data.keyword.cfee_full}} (CFEE) from the space level up.

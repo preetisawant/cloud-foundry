@@ -4,9 +4,9 @@
 
 copyright:
 
-  years: 2018
+  years: 2018, 2019
 
-lastupdated: "2019-01-08"
+lastupdated: "2019-06-28"
 
 
 
@@ -21,7 +21,7 @@ lastupdated: "2019-01-08"
 # FAQs
 {: #cfeefaq}
 
-## What is the difference between IBM Cloud Foundry Enterprise Environment (CFEE) and public Cloud Foundry?
+## What is the difference between {{site.data.keyword.cfee_full_notm}} (CFEE) and public Cloud Foundry?
 {: #cfee_diff}
 
 You can use {{site.data.keyword.cloud}} Foundry public to run cloud-native applications that are using Cloud Foundry for simple setup, powerful scaling, and traffic management. You also have easy access to all {{site.data.keyword.cloud}} services.
@@ -29,7 +29,7 @@ You can use {{site.data.keyword.cloud}} Foundry public to run cloud-native appli
 You can use {{site.data.keyword.cfee_full}} for everything as you would with Cloud Foundry Public, but also to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
 
 
-## How is the new offering different from previous IBM Cloud Foundry offerings?
+## How is this offering different from previous {{site.data.keyword.cloud_notm}} Foundry offerings?
 {: #cfOfferings_diff}
 
 With respect to the public multi-tenant the most noteworthy difference is certainly the isolation properties. With respect to the existing single-tenant offering on IBM Cloud infrastructure, the main two differences are the reduced infrastructure footprint (and therefore the cost) as well as the service integration model into such a single-tenant environment.
@@ -42,11 +42,7 @@ You can find and instantiate the {{site.data.keyword.cfee_full}} service in the 
 ## Can I have more than one CFEE environment within a regional data center?
 {: #multiple-cfees}
 
-Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://dev.console.test.cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-
-## Can a CFEE environment be provisioned across multiple data centers (multi-zone)?
-{: #multizone}
-Yes. Starting with CFEE v2.2.0 the CFEE infrastructure (Kubernetes cluster nodes) can be distriburted across multiple data centers (zones) within a given region. 
+Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Will I need to start at some minimum capacity?
 {: #minimum-capacity}
@@ -62,11 +58,6 @@ The CFEE service runs on Kuberneters containers, which allows for lower infrastr
 {: #isolation}
 
 You have two hardware options on the type of Kubernetes infrastructure into which the CFEE instance is deployed: _Virtual shared_ or _Virtual dedicated_ hardware. With _Virtual shared_ hardware, the worker nodes (into which the Cloud Foundry platform container is deployed) is distributed between you and other IBM customers.  With _Virtual dedicated_ the worker nodes are hosted on hardware that is dedicated exlusively to your account.  Note that in both cases, _Virtual shared_ and _Virtual dedicated_, each worker node is single-tenant to the customer.  This means that the Cloud Foundry cells in which applications run are not shared with other customers.
-
-## Can a CFEE operate within an isolated network?
-{: #isolation}
-
-Yes. Starting with version 2.2.0, IBM® Cloud Foundry Enterprise Environment (CFEE) instances can operate inside an isolated networks that protects and secures the environment from external threats. See [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more details.
 
 ## Can I scale the capacity of a CFEE?
 {: #scaling}

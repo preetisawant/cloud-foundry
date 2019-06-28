@@ -1,10 +1,8 @@
 ---
 
 copyright:
-
-  years: 2015, 2017, 2018
-
-lastupdated: "2019-06-19"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -40,6 +38,12 @@ To enable auditing for a CFEE instance:
 
 You can disable Auditing by clicking **Disable auditing**, which will remove the Activity tracker service instance previously added and configured. This action does not delete the Activity Tracker service instance.
 
+See the Activity Tracker [documentation](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started) for event fields, types of audit events, configuration and event retrieval. Events can be downloaded using the Activity Tracker [API](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events_api#downloading_events_api) and [CLI](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events#downloading_events).  
+These events can also be viewed through [user interfaces](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-view_acc_events#view_acc_events).
+
+## Alerting on audit events
+{: #alerting-on-audit-events}
+If customers desire to receive alerts for audit events, they can use external tools like QRadar to extract audit events from Activity Tracker and configure to receive alerts accordingly.
 
 ## Logging persistence
 {: #logging}

@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2015, 2017, 2018
+  years: 2018, 2019
 
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-28"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2019-05-13"
 {:screen: .screen}
 {:tip: .tip}
 
-# Permissions
+# Assigning permissions
 {: #permissions}
 
 Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created. 
@@ -69,14 +69,14 @@ The following screen illustrates access policies as they would appear in the Ide
 
 ![Access policies](img/AccessPolicies_Creator.png)
 
-You can grant user permissions using the {{site.data.keyword.Bluemix}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](https://console.bluemix.net/docs/services/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use).
+You can grant user permissions using the {{site.data.keyword.Bluemix}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](https://cloud.ibm.com/docs/services/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud/download_cli.html#install_use).
 {:tip}
 
 To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+1. Go to the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
 2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
-For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://console.bluemix.net/docs/iam/iamusermanage.html#iamusermanage).
+For more information about managing users and access in the {{site.data.keyword.Bluemix}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://cloud.ibm.com/docs/iam/iamusermanage.html#iamusermanage).
 
 ### Expediting the setting of permissions to create an environment using the CLI
 {: #permcli-creating}
@@ -115,7 +115,7 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 
 To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must be:
 1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
-2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://console.bluemix.net/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
+2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
 
     Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
   - The resource group under which the CFEE instance was created.
@@ -123,7 +123,7 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
   
    The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
 
-  - Users with _viewer_ role to a CFEE instance can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-adding_users).
+  - Users with _viewer_ role to a CFEE instance can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](/docs/cloud-foundry?topic=cloud-foundry-adding_users).
   
   - Users assigned _administrator_ or _editor_ roles to a CFEE instance can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
 

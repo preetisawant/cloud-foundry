@@ -1,4 +1,4 @@
-----
+---
 
 copyright:
   years: 2018, 2019
@@ -13,7 +13,7 @@ lastupdated: "2019-06-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Known issues (limitations)
+# Known issues and limitations
 {: #known-issues}
 
 ## Instability due to high cpu usage by the Firehose Prometheus exporter

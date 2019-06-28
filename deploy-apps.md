@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-27"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-09-27"
 # Deploying and viewing apps
 {: #deploy_apps}
 
-You can deploy applications to {{site.data.keyword.d}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
+You can deploy applications to {{site.data.keyword.cfee_short}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 ## Deploying applications with the Cloud Foundry command
@@ -31,7 +31,7 @@ After you install the command line interface, follow these steps:
 3. In the command line interface, set the API endpoint to your environment's endpoint:
 
   ```
-  cf api <api_enpoint>
+  cf api <api_endpoint>
   ```
   {: pre}
 
@@ -65,7 +65,7 @@ After you install the command line interface, follow these steps:
 
 You can view CFEE deployed applications either in the context of a specific space, or gobally across all CFEE instances.
 
-### Viewing applications deployed in a specific CFEE space
+### Viewing applications deployed in a specific space
 {: #view_specific}
 
 To view applications deployed in a specific space of a specific CFEE instance:
@@ -79,7 +79,7 @@ Optionally, you can Start, Restart, Stop or Delete an application by accessing t
 
 You can also expand the row for an application to view the service instances to which the application is bound.
 
-### Viewing applications deployed across all CFEE instances
+### Viewing applications deployed across all instances
 {: #view_global}
 
 To view all applications deployed across all CFEE instances:

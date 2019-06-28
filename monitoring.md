@@ -1,4 +1,4 @@
-----
+---
 
 copyright:
   years: 2018, 2019
@@ -143,9 +143,7 @@ Data from individual panels can be exported from Grafana in CSV format. See the 
 The Prometheus and Grafana components comprising the monitoring solution are pre-installed in the Kubernetes infrastructure supporting the CFEE instance.  Accessing the monitoring tools requires to **forward the ports** of the Prometheus, Prometheus AlertManager, and Grafana serverers.  This is done through the Kubernetes CLI.
 The following guides you through the steps for installing the required CLI's, forwarding the server ports, and launching the consoles.
 
-**Note:** The following instrutions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface, click **Monitoring** in the left navigation pane, and go to the **Access** tab to see the instructions displayed.
-
-1. Prequistes
+**Note:** The following instructions are also available in the {{site.data.keyword.cfee_full}} user interface.  Open the CFEE instance user interface, click **Monitoring** in the left navigation pane, and go to the **Access** tab to see the instructions.
 
 * Check your [Access Policies](https://cloud.ibm.com/iam/#/users) to ensure that you have at least a Viewer role on the Kubernetes cluster supporting the environment.
 *  Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud/download_cli.html#install_use).
