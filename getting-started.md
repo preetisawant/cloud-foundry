@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-06-12"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 keywords: getting started tutorial, IBM Cloud, Cloud Foundry Enterprise Environment
 
