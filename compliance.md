@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-06-06"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2019-06-06"
 {:tip: .tip}
 
 
-# Protecting senstive data
+# Protecting sensitive data
 {: #compliance}
 
 The {{site.data.keyword.cfee_full}} (CFEE) is a platform-as-a-service. As such, the client is free to use the service instance for anything it is capable of supporting. The CFEE and dependent services have access to the least amount of personal data as possible.
