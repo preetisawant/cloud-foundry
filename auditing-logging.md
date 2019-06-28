@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017, 2019
-lastupdated: "2019-06-19"
+  years: 2018, 2019
+lastupdated: "2019-06-28"
 
 ---
 
@@ -42,7 +42,7 @@ See the Activity Tracker [documentation](/docs/services/cloud-activity-tracker?t
 These events can also be viewed through [user interfaces](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-view_acc_events#view_acc_events).
 
 ## Alerting on audit events
-{: #altering-on-audit-events}
+{: #alerting-on-audit-events}
 If customers desire to receive alerts for audit events, they can use external tools like QRadar to extract audit events from Activity Tracker and configure to receive alerts accordingly.
 
 ## Logging persistence
