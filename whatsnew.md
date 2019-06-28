@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2018, 2019
+  years: 2015, 2017, 2018
 
-lastupdated: "2019-06-28"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -14,38 +14,28 @@ lastupdated: "2019-06-28"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
-{:important: .important}  
-{:deprecated: .deprecated}  
+{:important: .important}    
 
-# What's new
+
+# What's New in IBM Cloud Foundry Enterprise Environment
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
-
-## Version 3.1.1
-{: #v311}
-
-_Release Date:_ 2019-07-01 
-
-Version 3.1.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves the following:
-* Problem preventing access to the Stratos Console when installed on Kubernetes.
-
-To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
 
 
 ## Version 3.1.0
 {: #v310}
 
-_Release Date:_ 2019-06-21 
+_Release Date:_ 2019-06-21
 
 To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
 The following changes were released in version 3.1.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
-* CFEE instances can work on private-only access endpoints (i.e., preventing the use of the public service endpoints).  Use of private-only access endpoints requires enabling CFEE access to the Kubernetes access through the Kuberenetes cluster master. Go to the _Overview_ page of the CFEE user interface, invoke **Management access** from the menu in the top right, and click **Enable**. 
-Note that use of access endpoints in CFEE requires that the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started).
+* CFEE instances can now work on private-only access endpoints to communicate with its supporting services (i.e., without using any public service endpoints).  Use of private-only access endpoints requires enabling CFEE access to the Kubernetes access through the Kuberenetes cluster master. To enable CFEE access of the Kubernetes cluster through its cluster master, go to the _Overview_ page of the CFEE user interface, invoke **Management access** from the menu in the top right, and click **Enable**. Note that use of access endpoints in CFEE requires that the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://test.cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). See [CFEE communication with supporting services](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#private-access) for more information.
 * Log persistence in CFEE instances is enabled through integration with the LogDNA service, replacing the deprecated Log Analysis service.
-* Client certificates can be whitelisted along with the Cerficated Authority (CA) certificates required to authenticate them. This provides customers a convenient way to create mutual Transport Layer Security (TLS) authentication, scoping the authentication to specific custom domains. This enables customers more granular control over client access to their Cloud Foundry applications. See [Managing domains](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-domains#upload-certificates) for more information.
+* Client certificates can be whitelisted along with the Certicate Authority (CA) certificates required to authenticate them. This provides customers a convenient way to create mutual Transport Layer Security (TLS) authentication, scoping the authentication to specific custom domains. This enables customers more granular control over client access to their Cloud Foundry applications. See [Managing domains](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-domains#upload-certificates) for more information.
 * Updating to a new CFEE version is disabled while an administration operation is in-progress (e.g., scaling, auditing or logging enablement).
 
 **Note:** Update to v3.1.0 is available only to CFEE v3.0.x instances, See [Version 3.0.0](#v300) below.
+
 
 ## Version 3.0.2
 {: #v302}
@@ -64,7 +54,7 @@ To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE'
 ## Version 3.0.1
 {: #v301}
 
-_Release Date:_ 2019-05-21
+_Release Date:_ 2019-05-22
 
 Version 3.0.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves the following:
 * Problem resolving DNS hostnames correctly after enabling communication between CFEE and its Kubernetes cluster through the cluster master.
@@ -72,7 +62,8 @@ Version 3.0.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolve
 
 To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface. 
 
-**Note:** Update to v3.0.1 is available only to CFEE v3.0.0 instances, See [Version 3.0.0](#v300) below.
+**Note:** Update to v3.0.1 is only available to CFEE v3.0.0 instances, See [Version 3.0.0](#v300) below.
+
 
 ## Version 3.0.0
 {: #v300}
@@ -105,8 +96,7 @@ CFEE v3.0.0 includes the following versions of its constituent components:
     * PHP: v4.3.64
     * Binary: v1.0.27
 
-The following changes were released in version 3.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). 
-
+The following changes were released in version 3.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
 * The database used by CFEE to store Cloud Foundry data is no longer Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}. Resulting from this database change:
     * Existing CFEE instance with versions previous to 3.0.0 (CFEE v2.x or v1.x) cannot be updated to version 3.0.0.
     * Creating a new CFEE instance no longer requires developer access to a Cloud Coundry organization and space inthe public {{site.data.keyword.Bluemix_notm}}.
@@ -222,12 +212,13 @@ The following changes were released in version 2.1.0 of the {{site.data.keyword.
 
 * New autoscaling capability that automatically scales Cloud Foundry application instances based on custom rules. Autoscaling is accessible from the CLI and from the Stratos console. The Stratos console can be optionally installed and launched from the _Overview_ page in the CFEE user interface. In the _Applications_ page of the Stratos console, select an  application and look for the **Auto Scaling** tab. Click *Create Policy* to launch the autoscaling editor to define the scaling policy for the target application.
   See the [autoscaling documentation](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps) for more information.
-* New capability to manage buildpacks from the user interface, including drag-and-drop positioning of a buildpack in the priority list. The capability is available in a new **Buildpacks** page of the CFEE user interface. In the release, only buildpack zip files 1 MB in size (or smaller) can be added or updated through the user interface. You can upload buildpack zip files larger than 1 MB using the `cf create-buildpack` and `cf update-buildpack` commands.
-* New capability to manage organization quotas from the user interface, including visualizing which organizations are using a specific quota. The capability is available in a new **Quotas** page in the CFEE user interface. You can create new quotas and edit existing ones. You can also update the values of the default quota with the values from any existing quota by invoking the **Copy to Default** from the quota's menu.
+* New capability to manage buildapcks from the CFEE user interface, including drag-and-drop positioning of a buildpack in the priority list. The capability is available in the new **Buildpacks** page of the CFEE user interface (not the Stratos console). In the release, only buildpack zip files 1 MB in size (or smaller) can be added or updated through the user interface. You can upload buildpack zip files larger than 1 MB using the `cf create-buildpack` and `cf update-buildpack` commands. 
+* New capability to manage organization quotas from the user interface, including visualizing which organizations are using a specific quota. The capability is available in the new **Quotas** page of the CFEE user interface (not the Stratos console). You can create new quotas and edit existing ones. You can also update the values of the default quota with the values from any existing quota by invoking the **Copy to Default** from the quota's menu.
 * A new **Getting Started** page in the user interface guides users to the most important tasks to setup and use the environment.
 * **Tags** can be added to a CFEE instance in the IBM Cloud resource list.  Tags added in the resource list will also appear in the header of the CFEE overview page.
 * **Cloud Foundry** version 2.7.21.
 * **Stratos** console version 2.3.0, which includes a security patch. Note that simply updating the CFEE version will not update the Stratos console version. You need to delete and re-install the Stratos console (in the CFEE Overview page), which automatically picks the latest Stratos console version.
+* Users can navigate to the CFEE's Kubernetes **cluster** page from the overflow menu in the CFEE's overview page.
 
 **Note:** If you update to CFEE v2.1.0 from a v2.0.x version, the update takes place with a single _Update_ action that automatically updates both, the control plane and the cells in sequence. If you update from a v1.x.x version, the update requires two separate _Update_ actions, one for updating the control plane (first), and one for updatting the cells.
 
@@ -241,7 +232,8 @@ _Release Date:_ 2019-02-08
 
 The following changes were released in version 2.0.2 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
 
-* Resolved problems preventing successful version updates. This version is a pre-req for updating to version **2.1.0**
+* Resolved problems preventing successful version updates. This version is a pre-req for updating to version **2.1.0**.
+
 
 ## Version 2.0.1
 {: #v201}
@@ -257,7 +249,7 @@ The following changes were released in version 2.0.1 of the {{site.data.keyword.
 ## Version 2.0.0
 {: #v200}
 
-_Release Date:_ 2018-12-12
+_Release Date:_ 2018-12-13
 
 The following changes were released in version 2.0.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE). To update your CFEE's version, go to the _Updates and Scaling_ page in the CFEE's user interface:
 
@@ -273,7 +265,7 @@ The following changes were released in version 2.0.0 of the {{site.data.keyword.
     
       Update the ibmcloud CLI (`ibmcloud update`) to access these command enhancements, and issue `ibmcloud cfee -help` for more details.
       
-**Note**: Updating a CFEE instance to version 2.0.0 only requires a single "update" action that updates both, the control plane and the cells. No separate updates are required for the CFEE control plane and cells.
+**Note**: Updating a CFEE instance to version 2.0.0 only requires a single _update_ action that updates both, the control plane and the cells. No separate updates are required for the CFEE control plane and cells.
 
 
 ## Version 1.1.2
@@ -291,10 +283,10 @@ The following changes were released in version 1.1.2 of the {{site.data.keyword.
 _Release Date:_ 2018-11-28
 
 The following changes were released in version 1.1.1 of the {{site.data.keyword.cfee_full_notm}} service:
-* Resolved potential exposure to sensitive information in internal update logs.
- 
+* Security patch.
+   
 ## Version 1.1.0
-{: #v101}
+{: #v110}
 
 _Release Date:_ 2018-11-16
 
@@ -310,12 +302,10 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
    * Health Check view that indicates the operational status of CFEE components.
    * New commands to perform CFEE related actions on the command line interface (CLI):
      * `ibmcloud cfee create`, `ibmcloud cfee create-locations`, and `ibmcloud cfee create-status` commands to create CFEE instances from the command line interface, get a list of available data centers where a CFEE can be provisioned, and check the provisioning status of a CFEE being created.
-     * `ibmcloud cfee create-permission-get` and`ibmcloud cfee create-permission-set`  [commands](https://cloud.ibm.com/docs/cloud-foundry/permissions.html#permissions#permcli-creating) to retrieve and set the permissions required to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
+     * `ibmcloud cfee create-permission-get` and `ibmcloud cfee create-permission-set`  [commands](https://cloud.ibm.com/docs/cloud-foundry/permissions.html#permissions#permcli-creating) to retrieve and set the permissions required to create CFEE instances. The commands aggregate and simplify the setting of permissions for the CFEE service and for the required supporting services.
      * `ibmcloud catalog blacklist` command to simplify [visibility control](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#service_visibility) of IBM Cloud services for users in an IBM Cloud account.
 
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
-   
-See a demonstration of what's new in CFEE v1.1.0 in this [brief video](https://ibm.biz/CFEE-V110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-
-You can find other videos on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+<br/>   
+See a demonstration of what's new in CFEE v1.1.0 in this [brief video](https://ibm.biz/CFEE-V110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").  You can also find other videos on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
