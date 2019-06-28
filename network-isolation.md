@@ -17,15 +17,15 @@ lastupdated: "2019-04-23"
 {: #isolated-network}
 
 
-Starting with version 2.2.0, {{site.data.keyword.cfee_full}} (CFEE) instances can operate inside an isolated network that protects and secures the environment from external threats. You create an isolated network through private VLANs and a set of control mechanisms to route, filter, and protect traffic into and out of the resources inside the network perimeter. Isolated networks are setup using technologies like Virtual Router Appliances ([VRAs](https://cloud.ibm.com/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra).
+Starting with version 2.2.0, {{site.data.keyword.cfee_full}} (CFEE) instances can operate inside an isolated network that protects and secures the environment from external threats. You create an isolated network through private VLANs and a set of control mechanisms to route, filter, and protect traffic into and out of the resources inside the network perimeter. Isolated networks are setup using technologies like Virtual Router Appliances ([VRAs](https://cloud.ibm.com/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started-with-ibm-virtual-router-appliance#vlans-and-the-gateway-appliance-s-role)).
 
-**Note:** CFEE instances operating in an isolated network required that the CFEE kubernetes cluster be update to v1.13. Updating the Kubernetes cluster v1.13 is independent of the CFEE update.
+**Note:** CFEE instances operating in an isolated network require that the CFEE Kubernetes cluster be updated to v1.13. Updating the Kubernetes cluster to v1.13 is independent of the CFEE update.
 
 A CFEE instance is provisioned into a cluster from the IBM Kubernetes Service. The CFEE's Cloud Foundry cells (where applications are hosted) are provisioned into the Cluster's worker nodes. This means that access to the CFEE cells and applications implies accessing the cluster worker nodes. 
 
 The worker nodes contain Application Loads Balancers (ALBs) that distribute the applications' workload among the worker nodes. CFEE v2.2.0 enables the Kubernetes ALBs in both, private and public networks.  This means that CFEE v2.2.0 can be accessed from both, public and private networks.
 
-## CFEE management in an isolated network
+## Management in an isolated network
 {: #control-plan-access}
 
 In v2.2.0 the CFEE management plane (the sub-system used for provisioning, updates and other lifecycle activities) does not rely on the ALBs or worker nodes directly to manage a CFEE instance. Instead, the CFEE management plane uses the _VPN connection between the Kubernetes master and worker nodes_ to access the CFEE instance and its resources. This enables the management plane to control the CFEE instance.
@@ -35,7 +35,7 @@ After you create your CFEE instance, the management plane creates an [IAM servic
 The diagram below depicts a CFEE installed behind a VRA network perimeter.   
 ![Network isolation](img/CFEE_IsolatedNetwork.png  "Diagram describing how a CFEE works in an isolated network.")
 
-## Controlling access to CFEE instances in an isolated network
+## Controlling access to instances in an isolated network
 {: #oppening-access-points}
 
 CF apps running in a CFEE instance frequently need to reach outside the isolated network for various reasons. For example, an application may need to access a public RESTful service, or download packages from public registries, like a Docker image, NPM packages, Python modules, etc. Hence, you need to configure your firewall rules to enable your specific network access needs.
@@ -44,7 +44,7 @@ You can control inbound/outbound connectivity to/from an isolated network by con
 
 Network access rules related to a network isolated CFEE can be of the following types:
 
-* **Inbound traffic access:** When a Kubernetes cluster is installed, it automatically sets and configures a [default Calico policy](https://console.bluemix.net/docs/containers/cs_network_policy.html#default_policy) that allows management access to the worker nodes (hosting your CFEE instance in this case).
+* **Inbound traffic access:** When a Kubernetes cluster is installed, it automatically sets and configures a [default Calico policy](https://cloud.ibm.com/docs/containers/cs_network_policy.html#default_policy) that allows management access to the worker nodes (hosting your CFEE instance in this case).
 
 <br>
 **Default** Calico rules for accessing the **Kubernetes cluster** worker nodes:
@@ -145,7 +145,7 @@ metadata:
   
 In the above example, all HTTP and HTTPS calls (all TCP traffic on ports 443 and 80) coming from the CFEE cluster worker nodes (“worker_public”) are allowed outbound (“egress”) access to the public network.
 
-## CFEE communication with supporting services
+## Communication with supporting services
 {: #private-access}
 
 A CFEE instance continuously communicates with its supporting services instances: _Kubernetes cluster_, _Cloud Object Storage_ and _Databases for PostgreSQL_.  Users with _administrator_ role in the CFEE instance can see information about the endpoints used by the CFEE to access those supporting services. Go to the **Management access** in the overflow menu located in the upper right corner of the _Overview_ page in the CFEE user interface. The _Management access_ dialog shows the type of access (private or private) and the actual service endpoints use to access the supporting service instances.  The endpoints are not intended for development tasks, but only for troubleshooting purposes (e.g., to verify how CFEE accesses those service instances). 
@@ -154,7 +154,7 @@ By default, the CFEE management control plane accesses its _Kubernetes cluster_ 
 
 A CFEE administrator can also **disable** accessing the cluster via the master.  When access to the cluster via the master is disabled, access to the cluster takes place through the ingress router.  **Note** that when access to the cluster via the master is disabled, re-enabling it requires generating a new API key (see above).
 
-In addition to communication to the _Kubernetes cluster_, the CFEE instance needs to communicate with the _Cloud Object Storage_ and _Databases for PostgreSQL_ instances to perform routine operations.  Communication with the _Cloud Object Storage_ service instance always takes place through a private access endpoint. Communication with the _Databases for PostgreSQL_ instance takes place through a private endpoint if the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://test.cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). Otherwise, communication with  _Databases for PostgreSQL_ instance takes place through a public endpoint.  
+In addition to communication to the _Kubernetes cluster_, the CFEE instance needs to communicate with the _Cloud Object Storage_ and _Databases for PostgreSQL_ instances to perform routine operations.  Communication with the _Cloud Object Storage_ service instance always takes place through a private access endpoint. Communication with the _Databases for PostgreSQL_ instance takes place through a private endpoint if the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). Otherwise, communication with  _Databases for PostgreSQL_ instance takes place through a public endpoint.  
 
 **Note:** Changing the service endpoints of the _Cloud Object Storage_ and _Databases for PostgreSQL_ service instances used by CFEE would disrupt the normal operations of the CFEE.
 

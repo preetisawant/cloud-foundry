@@ -1,4 +1,4 @@
-----
+---
 
 copyright:
   years: 2018, 2019
@@ -13,7 +13,7 @@ lastupdated: "2019-06-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Known issues (limitations)
+# Known issues and limitations
 {: #known-issues}
 
 ## Instability due to high cpu usage by the Firehose Prometheus exporter
@@ -118,7 +118,8 @@ reloading the Kubernetes node.
 To have the operating system reloaded, point your browser to the
 [Classic Infrastructure Device List](https://cloud.ibm.com/classic/devices),
 and locate the respective worker in the table shown. Click on the worker name
-link to see its details and select the `OS reload` action from the Actions menu.
+link to see its details and select the `OS reload` action from the Actions menu:
+![Worker node actions](img/SL_Device_Actions.png)
 **Note:** This activity can take more than an hour to complete.
 
 Once the operating system has been brought back to its initial state, the

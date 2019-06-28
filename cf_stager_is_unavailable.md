@@ -21,8 +21,8 @@ This tutorial shows how to debug an unavailable stager on your {{site.data.keywo
 ## Understanding components
 {: #stager_components}
 
-The  {{site.data.keyword.Bluemix_notm}} Bulletin Board System (BBS) runs in active or passive mode, and it maintains a lock in Locket to ensure that only one BBS is active. Sometimes, if Locket loses connection with back-end database, BSS may run into an unresponsive state. In this case, no active BBS is elected,  BBS API is not accessible, and operations like `cf push` will fail since the Cloud Controller cannot communicate with BBS API.
-In CFEE v2.0 and above, Diego BBS and Locket run in the diego-api-x pod, so users need to restart all diego-api-x pods to bring the environment back.
+Bulletin Board System (BBS) run in active/passive mode and it maintains a lock in Locket to ensure that only one BBS is active. Sometimes if Locket loses connection with back-end database, it may run into an unresponsive status. In this case, no active BBS is elected and then BBS API is not accessible, and operations like cf push app will fail as Cloud Controller cannot communicate with BBS API.
+In CFEE 2.0 and above, Diego BBS and Locket run in diego-api-x pod, so users need to restart all diego-api-x pods to bring the environment back.
 
 ## Impact
 {: #stager_impact}

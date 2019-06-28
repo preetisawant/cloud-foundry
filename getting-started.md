@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2019-04-02"
+  years: 2017, 2019
+lastupdated: "2019-06-12"
+
+keywords: getting started tutorial, IBM Cloud, Cloud Foundry Enterprise Environment
+
+subcollection: cloud-foundry
 
 ---
 
@@ -13,105 +17,126 @@ lastupdated: "2019-04-02"
 {:screen: .screen}
 {:tip: .tip}
 
+
 # Getting started tutorial
 {: #getting-started}
 
-{{site.data.keyword.cfee_full}} (CFEE) is a cloud platform for hosting apps and services in the cloud. {{site.data.keyword.cfee_full_notm}} makes it easy to scale apps as consumption grows, simplifying the runtime, middleware, and infrastructure so that you can focus on developing apps.
+In this {{site.data.keyword.cfee_full}} (CFEE) getting started tutorial, we add users to an instance, create an organization and spaces, deploy apps, and bind those apps to services.
 {: shortdesc}
 
-This getting started tutorial shows how to create an {{site.data.keyword.cfee_full_notm}}, add users, create an organization and spaces, deploy apps, and bind those apps to services.
+## Before you begin
+{: #prereqs}
 
-**Note:** The steps that follow are applicable to CFEEs created from the **Standard** plan.  If this CFEE was created from the **Eirini Technical Preview** plan, follow **only steps 1 through 6**, and step **11**. The capabilities described in steps 7 through 10 are not supported in the _Eirini Technical Preview_ plan.  See [Getting started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini).
-The _Eirini Technical Preview_ plan allows you to explore a CFEE using native Kubernetes as the container scheduler (instead of Diego).  The Kubernetes scheduler is used in the CFEE to deploy and run apps in the Cloud Foundry application runtime, add users, create an organization and spaces, deploy apps, and bind those apps to services. 
-
-## Step 1: Create your CFEE instance
-{: #create-environment}
-
-You can create an instance of the {{site.data.keyword.cfee_full_notm}} (CFEE) from the {{site.data.keyword.Bluemix_notm}} catalog. Before creating the CFEE instance visit the [Create environment](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment) documentation for guidance on preparing your {{site.data.keyword.Bluemix_notm}} account, ensuring the right permissions, and steps for creating the CFEE instance.
+* Ensure that you're in the {{site.data.keyword.Bluemix_notm}} account where you want to create the instance.
+* Ensure that you have the correct [permissions](/docs/cloud-foundry?topic=cloud-foundry-permissions). 
+* [Prepare your IBM Cloud account](/docs/cloud-foundry?topic=cloud-foundry-prepare) to ensure that it can create the infrastructure resources required for an instance.
+* Create a CFEE instance from the [CFEE page in the {{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/cfadmin/create). For more information, see [Creating a CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-create-environment).
 
 
-## Step 2: Create organizations and spaces
+## Step 1: Create organizations and spaces
 {: #create-orgsandspaces}
 
-After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://cloud.ibm.com/docs/cloud-foundry/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
+After your instance is created, structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} instance are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains. For more information, see [Determining your organization architecture](/docs/cloud-foundry?topic=cloud-foundry-orgstructure).
 
-When you create an organization you assign a quota to it.  The quota sets limits on the resources (memory, cpu, etc.) available for that organization. You can assign a different quota at a later time. There is a set of pre-configured quotas available in every CFEE, but you can also create your own custom quotas in the **Quotas** page of the CFEE user interface.  You can make a custom quota the _Default_ quota by invoking the _Copy to default_ action from the quota's menu, which copies the values of the custom quota into the default quota.
+1. In the CFEE user interface, click **Organizations** in the navigation pane.
 
-**Note:** The _Cloud Foundry organizations_ page available from the **_Manage > Account > Cloud Foundry orgs_** menu located in the top IBM Cloud header is intended exclusively for public IBM Cloud organizations, **not for CFEE organizations**. CFEE organizations are managed within the _Organizations_ page of an CFEE instance.  Open the CFEE user interface and click  the **_Organizations_** page to create and manage organizations for that CFEE.
+    To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
+    {:tip}
 
-## Step 3: Add users to organizations and spaces
+3. Click **Create Organization**.
+4. Enter a **Name** for the new organization.
+5. Under **Managers**, identify at least one user. Users with a Manager role can add members to that organization.
+6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes.
+  
+    You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
+    {:tip}
+
+1. Click **Add** to create the organization.
+1. On the Organizations page, click the name of the organization you created.
+1. Click the **Spaces** tab and click **Create Space**. 
+1. Enter a name for the space, select at least one manager, and click **Add**.
+
+## Step 2: Add users to organizations and spaces
 {: #add-users}
 
-[Add users](https://cloud.ibm.com/docs/cloud-foundry/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://cloud.ibm.com/docs/cloud-foundry/permissions.html).
+[Add users](/docs/cloud-foundry?topic=cloud-foundry-adding_users) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in a CFEE, those users must have access to the CFEE instance. See [Permissions](/docs/cloud-foundry?topic=cloud-foundry-permissions).
 
-## Step 4: Deploy and view applications
+1. On the Spaces tab, click the name of the space you created.
+1. On the Members tab, click **Add members**.
+
+## Step 3: Deploy and view applications
 {: #deploy-apps}
 
-When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+You can [deploy apps](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps) to your CFEE instance with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
-## Step 5: Create or add IBM Cloud service instances to CFEE spaces
-{: #service-instances}
+1. [Download and install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+1. Change to the directory where your code is located. `cd <your_directory>`
+2. In the CFEE user interface, go to the Overview page and copy the environment's API endpoint.
+3. In the command line interface, set the API endpoint for your environment:
 
-[Create services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://cloud.ibm.com/docs/cloud-foundry/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+  ```
+  cf api <api_endpoint>
+  ```
+  {: pre}
 
-## Step 6: Bind applications to service instances
+4. Log in to the environment.
+
+  ```
+  cf login -u <username> -o <org_name> -s <space_name>
+  ```
+  {: pre}
+
+  If you're using a federated ID, use the `-sso` option.
+
+  ```
+  cf login -o <org_name> -s <space_name> -sso
+  ```
+  {: pre}
+
+  **Note**: You must add single or double quotation marks around `username`, `org_name`, and  `space_name` if the value includes a space, for example, `-o "my org"`.
+
+5.  Deploy your app to {{site.data.keyword.Bluemix_notm}} by using the `ibmcloud cf push` command. For more information about the `cf app push` command, see [Deploying apps](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps).
+
+  ```
+  ibmcloud cf push <app_name>
+  ```
+  {: pre}
+
+6.  Access your app by browsing to `https://<app_url>.<AppDomainName>`.
+
+
+## Step 4: Bind applications to service instances 
 {: #bind-apps}
 
-[Bind your app](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#bind-services-ui) to a service instance alias in order to use the service's functions.
+[Create services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#workingwith-services#creating-services-inspace) or [Add existing services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#workingwith-services#adding-services-inspace) from your IBM Cloud account to the CFEE space so you can bind the services to the applications you deployed.
 
-In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
+1. In the CFEE user interface, navigate to the **Organizations > *your-org* > Spaces > *your-space*** page and go to the Services tab.
+1. Click **Create service** to provision a new service or click **Add service** to add an existing service from your IBM Cloud account.
+1. On the Services tab, locate the service instance you want to bind and select **Bind to application** from the service's overflow menu.
+6. Select the application that you want to bind to the service instance.
+
+In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all applications and services, both *public* and *enterprise*. Click *Public* in the left navigation pane to see the public applications and services available in your IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
 
-## Step 7: Enable auditing and logging persistance (optional)
-{: #enable-auditingandlogging}
+## Next steps
+{: #next-steps}
 
-Enable the environment for [auditing events](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#auditing-logging#auditing) and [logging persistence](https://cloud.ibm.com/docs/cloud-foundry/auditing-logging.html#logging).
+You can do the following tasks to manage your environment if it was created from the **Standard** plan:
 
-## Step 8: Enable Monitoring tools (optional)
-{: #enable-monitoring}
+ * Enable the environment for [auditing events](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging#auditing) and [logging persistence](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#logging).
 
-Monitoring tools are not automatically provisioned on CFEE instances v2.2.0 or later. CFEE administrators can [enable monitoring tools](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-monitoring) once the CFEE instance is created. The monitoring toolset includes Prometheus, Grafana and Alertmanager.
+ * [Enable monitoring tools](/docs/cloud-foundry?topic=cloud-foundry-monitoring) after the CFEE instance is created. The monitoring toolset includes Prometheus, Grafana, and Alertmanager. Monitoring tools are not automatically provisioned on CFEE instances v2.2.0 or later. 
 
-## Step 9: Create and secure Cloud Foundry domains (optional)
-{: #create-domains}
+ * [Create  Cloud Foundry domains](/docs/cloud-foundry?topic=cloud-foundry-domains) for all applications in an environment  (shared domains) or for a specific organization (private domains), and secure them with SSL certificates.
 
-Create [domains](https://cloud.ibm.com/docs/cloud-foundry/domains.html#domains) for all applications in the CFEE (shared domains) or for a specific organization (private domains), and secure them with SSL certificates.
+ * Configure the prioritization order of the Cloud Foundry buildbacks. [Buildpacks](https://docs.cloudfoundry.org/buildpacks/) provide the runtime support for applications deployed in a Cloud Foundry environment, automatically configuring the runtime for an application and handling its dependencies. Cloud Foundry includes a set of buildpacks for common languages and frameworks. You can create and upload custom buildpacks in the **Buildpacks** page of the CFEE user interface. 
+ 
+   Buildpacks have an ordinal position in the priority list.  During the staging of an application, Cloud Foundry checks the compatibility of the application against the set of buildpacks starting with position 1. The compatibility checks proceeds down the priority list until it finds a compatible buildpack. Ensure that the priority sequence of the buildpack set meets the needs of your development teams.  You can change the position of a buildpack in the priority sequence by dragging and dropping the buildpack name into a different position.  You can also manage buildpacks through the [Cloud Foundry CLI](https://docs.cloudfoundry.org/adminguide/buildpacks.html).
 
-## Step 10: Configure the prioritization order of the Cloud Foundry buildbacks
-{: #create-buildpacks}
+Regardlesss of whether your CFEE instance was created from the **Standard** plan or the **Eirini Technical Preview** plan,  you can [install the Stratos Console](/docs/cloud-foundry?topic=cloud-foundry-stratos) to manage your environment's organizations, spaces, and applications. 
 
-Buildpacks provide the runtime support for applications deployed in a Cloud Foundry environment, automatically configuring the runtime for an application and handling its dependencies.  Cloud Foundry includes a set of buildpacks for common languages and frameworks.  [Learn more](https://docs.cloudfoundry.org/buildpacks/) about Cloud Foundry buildpacks.  
-
-You can create and upload custom buildpacks in the **Buildpacks** page of the CFEE user interface. Buildpacks have an ordipnal position in the priority list.  During the staging of an application, Cloud Foundry checks the compatibility of the application against the set of buildpacks, starting with position 1. The compatibility checks proceeds down the priority list until it finds a compatible buildpack. Ensure that the priority sequence of the buildpack set meets the needs of your development teams.  You can change the position of a buildpack in the priority sequence by dragging and dropping the buildpack name into a different position.  You can also manage buildpacks through the [Cloud Foundry CLI](https://docs.cloudfoundry.org/adminguide/buildpacks.html).
-
-## Step 11: Install the Stratos Console to manage applications (optional)
-{: #install-stratos}
-
-The Stratos Console is an open source web-based tool for working with Cloud Foundry. The Stratos Console application can be optionally installed and used in a specific CFEE environment to manage its organizations, spaces, and applications.
-
-Users with IBM Cloud administrator or editor roles in the CFEE instance can install the Stratos Console application in that CFEE instance.
-
-To install the Stratos Console application:
-
-1. Open the CFEE instance where you want to install the Stratos console.
-2. Click **Install Stratos Console** on the overview page. The button is visible only to users with administrator or editor permissions to that CFEE instance.
-3. In the Install Stratos Console dialog, select an installation option. You can install the Stratos application either in a Cloud Foundry cell or in the Kubernetes cluster. Select a version of the Stratos console and the number of instances of the application to install. If you install the Stratos console app in a Cloud Foundry cell, you are prompted for the organization and space where to deploy the application.
-4. Click **Install**.
-
-The application takes about 5 minutes to install. Once installation is complete, a **Stratos Console** button appears in place of the _Install Stratos Console_ button on the overview page. The _Stratos Console_ button launches the console and is available to all users with access to the CFEE instance. Organization and space membership assignments may limit what a user can see and manage in the Stratos console.
-
-To start the Stratos console:
-
-1. Open the CFEE instance where the Stratos console was installed.
-2. Click **Stratos Console** on the overview page.
-3. The Stratos console is opened in a separate browser tab. When you open the console for the first time, you're prompted to accept two consecutive warnings because of self-signed certificates.
-4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.Bluemix_notm}} credentials.
-
-## Additional resources
-{: #additional-resources}
-
-You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-Information on the CFEE API's in the CFEE [API documentation](https://cloud.ibm.com/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+For information about the CFEE APIs, see the [CF Admin API documentation](https://cloud.ibm.com/apidocs/cfaas){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").

@@ -18,12 +18,12 @@ lastupdated: "2019-04-23"
 
 ## Auditing events
 {: #auditing-events}
-Customers can retrieve audit events for the various activities that occurr within their individual {{site.data.keyword.cfee_full_notm}} ({{site.data.keyword.cfee_short}}) instances.  
+Customers can retrieve audit events for the various activities that occur within their individual {{site.data.keyword.cfee_full_notm}} ({{site.data.keyword.cfee_short}}) instances.  
 These events can be retrieved from Activity Tracker.
 
 First set up your Activity Tracker instance, following the [detailed documented steps](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla). 
 
-Then [enable auditing](https://test.cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging) of the specific {{site.data.keyword.cfee_short}} instance.
+Then [enable auditing](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging) of the specific {{site.data.keyword.cfee_short}} instance.
 
 Reference the Activity Tracker [documentation](https://cloud.ibm.com/docs/services/cloud-activity-tracker/index.html) for event fields, types of audit events, configuration and event retrieval. 
 Events can be downloaded using the Activity Tracker [API](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events_api#downloading_events_api) and [CLI](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events#downloading_events).  
