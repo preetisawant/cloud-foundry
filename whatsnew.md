@@ -21,6 +21,16 @@ lastupdated: "2018-05-22"
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
 
+## Version 3.1.1
+{: #v311}
+
+_Release Date:_ 2019-07-01
+
+Version 3.1.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolves the following:
+
+* Problem accessing the Stratos Console when installed on the CFEE Kubernetes cluster.
+
+To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
 
 ## Version 3.1.0
 {: #v310}
