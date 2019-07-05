@@ -29,8 +29,8 @@ You can take these general steps to ensure that your CFEE instances are up-to-da
 
 ### What's happening
 
-Bulletin Board System (BBS) run in active/passive mode and it maintains a lock in Locket to ensure that only one BBS is active. Sometimes if Locket loses connection with back-end database, it may run into an unresponsive status. In this case, no active BBS is elected and then BBS API is not accessible, and operations like cf push app will fail as Cloud Controller cannot communicate with BBS API.
-In CFEE 2.x, Diego BBS and Locket run in diego-api-x pod, so users need to restart all diego-api-x pods to bring the environment back.
+Bulletin Board System (BBS) runs in active/passive mode and it maintains a lock in Locket to ensure that only one BBS is active. Sometimes if Locket loses connection with back-end database, it may run into an unresponsive status. In this case, no active BBS is elected and then BBS API is not accessible, and operations like cf push app will fail as Cloud Controller cannot communicate with BBS API.
+Since CFEE 2.x, Diego BBS and Locket run in diego-api-x pod, so users need to restart all diego-api-x pods to bring the environment back.
 
 ### Impact
 
@@ -55,50 +55,50 @@ Diego BBS API is not accessible. Users are not able to do `cf push app` and CF a
 The error message `Stager is unavailable` usually means that Cloud Controller has troubles to communicate with Diego BBS API.
 Please follow these steps to confirm whether the issue reported is the same with this case.
 If yes, please continue to recover the environment.
-1. Make sure Cloud Controller is available by checking api-x pod status.
+1. Make sure Cloud Controller is available by checking api-group-x pod status.
     ```
-    kubectl get pod -n cf
+    kubectl get pods --namespace cf
     ```
     {: pre}
-2. For example, the output indicates that 2 api-x pods are running.
+2. For example, the output indicates that 2 api-group-x pods are running.
     ```
     NAME                            READY   STATUS      RESTARTS   AGE
-    api-0                           2/2     Running     0          1d
-    api-1                           2/2     Running     0          1d
+    api-group-0                           2/2     Running     0          1d
+    api-group-1                           2/2     Running     0          1d
     ```
     {: screen}
-3. Go into api-0 pod.
+3. Go into api-group-0 pod.
     ```
-    kubectl exec -ti api-0 bash -n cf
+    kubectl exec --stdin --tty --namespace cf api-group-0 --container api-group /bin/bash
     ```
     {: pre}
-4. In api-0 pod, if you get an error like below, it indicates that Cloud Controller cannot access BBS.
+4. In api-group-0 pod, if you get an error like below, it indicates that Cloud Controller cannot access BBS.
     ```
-    nc -zv diego-api.cf.svc.cluster.local 8889
+    nc -zv -w 5 diego-api-set.cf.svc.cluster.local 8889
 
     ```
     {: pre}
     - For example, the output indicates that connection failed:
     ```
-    nc: connect to diego-api.cf.svc.cluster.local port 8889 (tcp) failed: Connection timed out
+    nc: connect to diego-api-set.cf.svc.cluster.local port 8889 (tcp) failed: Connection timed out
     ```
     {: screen}
-5. Exit api-0 and then delete all diego-api-x pods as below. Kubernetes will recreate all of them automatically.
+5. Exit api-group-0 and then delete all diego-api-x pods as below. Kubernetes will recreate all of them automatically.
     ```
-    kubectl delete pod diego-api-0 -n cf
+    kubectl delete pod --namespace cf diego-api-0
     ```
     {: pre}
     Before CFEE 2.0, Diego Lockets are located in separate pods named diego-locket-x. If this is the case, please restart all diego-locket-x pods like step 5.
 
 6. Wait until all diego-api-x pods are `running` and `2/2` ready. Make sure one of diego-api-x pods is labeled as active.
     ```
-    kubectl get pod  -n cf -L skiff-role-active
+    kubectl get pods --namespace cf -L skiff-role-active
     ```
     {: pre}
 7. Check if Cloud Controller can access BBS API like step 3 & step 4. You should get a similar output as below.
     ```
-    api/0:/$ nc -zv diego-api.cf.svc.cluster.local 8889
-    Connection to diego-api.cf.svc.cluster.local 8889 port [tcp/*] succeeded!
+    api/0:/$ nc -zv -w 5 diego-api-set.cf.svc.cluster.local 8889
+    Connection to diego-api-set.cf.svc.cluster.local 8889 port [tcp/*] succeeded!
     ```
     {: screen}
 8. Environment should be ready for CF app staging.
@@ -115,14 +115,14 @@ The App-Autoscaler provides the capability to adjust the computation resources f
 
 ### Impact
 
-Apps failed to be monitored and scaled by autoscaler service.
+Apps will no longer be monitored and scaled by autoscaler service.
 
 ### How to Fix
 
 The error means that some of autoscaler pods are down.
 1. Make sure autoscaler is available by checking autoscaler-x pod status. You should get a similar output as below.
   ```
-  kubectl get pod -n cf
+  kubectl get pods --namespace cf
   ```
   {: pre}
 2. As example you should see that 6 autoscaler pods are running.
@@ -136,10 +136,9 @@ The error means that some of autoscaler pods are down.
   autoscaler-metrics-1   1/1       Running   0          25d
   ```
   {: screen}
-3. If one of the pods in the output above is not running, try to recreate it. Use the command below but replace the pod name with
-the name of unresponsive pods:
+3. If one of the pods in the output above is not running, try to recreate it. Use the command below but replace the pod name with the name of unresponsive pods:
   ```
-  kubectl delete pod autoscaler-<pod> -n cf
+  kubectl delete pod autoscaler-<pod> --namespace cf
   ```
   {: screen}
 4. Wait at least 1 minute and verify the alert disappears from Prometheus.
@@ -165,9 +164,25 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
   curl https://api.<your domain>/v2/info
   ```
   {: pre}
-4. When you get a meaningful result like below and the alert is still there, this means a private network problem. Please go to [Enable alb](#Enable-alb) and check if private alb is disabled.
+4. When you get a similar result below and the alert is still there, it could be a private network problem. Please go to [Enable alb](#Enable-alb) and check if private alb is disabled.
   ```
-  {"name":"IBM Cloud Foundry Enterprise Environment","build":"2.7.1-rc.15","support":"http://ibm.biz/bluemix-supportinfo","version":2,"description":"Kubernetes based Cloud Foundry","authorization_endpoint":"https://iam.cloud.ibm.com/cloudfoundry/login/62f5xxx","token_endpoint":"https://uaa.cfee-cluster.us-south.containers.appdomain.cloud:2793","min_cli_version":null,"min_recommended_cli_version":null,"api_version":"2.115.0","app_ssh_endpoint":"ssh.cfee-cluster.us-south.containers.appdomain.cloud:2222","app_ssh_host_key_fingerprint":"27:96:a6:79:5e:c4:30:49:60:1d:f5:fa:7e:53:91:0f","app_ssh_oauth_client":"ssh-proxy","doppler_logging_endpoint":"wss://doppler.cfee-cluster.us-south.containers.appdomain.cloud:4443"}
+  {
+  "name": "IBM Cloud Foundry Enterprise Environment",
+  "build": "2.7.1-rc.15",
+  "support": "http://ibm.biz/bluemix-supportinfo",
+  "version": 2,
+  "description": "Kubernetes based Cloud Foundry",
+  "authorization_endpoint": "https://iam.cloud.ibm.com/cloudfoundry/login/62f5xxx",
+  "token_endpoint": "https://uaa.cfee-cluster.us-south.containers.appdomain.cloud:2793",
+  "min_cli_version": null,
+  "min_recommended_cli_version": null,
+  "api_version": "2.115.0",
+  "app_ssh_endpoint": "ssh.cfee-cluster.us-south.containers.appdomain.cloud:2222",
+  "app_ssh_host_key_fingerprint": "27:96:a6:79:5e:c4:30:49:60:1d:f5:fa:7e:53:91:0f",
+  "app_ssh_oauth_client": "ssh-proxy",
+  "doppler_logging_endpoint": "wss://doppler.cfee-cluster.us-south.containers.appdomain.cloud:4443"
+}
+
   ```
   {: screen}
 5. When the result is
@@ -175,7 +190,7 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
   Could not resolve host: api.<your domain>
   ```
   {: screen}
-  go to [Enable ALB](#Enable-alb) and check if the ALBs are disabled. If you are using private IP, please also check your DNS     configuration.
+  go to [Enable ALB](#Enable-alb) and check if the ALBs are disabled. If you are using private IP, please also check your DNS configuration.
 6. When the result is
   ```
   curl: (7) Failed to connect to api.<your domain> port 443: Operation timed out
@@ -187,12 +202,12 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
 ### Enable ALB
 {: #Enable-alb}
 
-1. Run command below to check if all ALBs are enabled.
+1. Run the command below to check if all ALBs are enabled:
   ```
   ibmcloud ks albs --cluster <cluster_name>
   ```
   {: pre}
-2. You should get a similar output as below.
+2. You should get a similar output as below:
   ```
   OK
   ALB ID                                            Enabled   Status     Type       
@@ -200,17 +215,17 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
   public-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1    false     disabled   public      
   ```
   {: screen}
-3. Run command below to enable the disabled ALBs.
+3. Run the command below to enable the disabled ALBs:
   ```
   ibmcloud ks alb-configure --albID <ALB ID> --enable
   ```
   {: pre}
-4. Wait several minutes and run
+4. Wait several minutes and run the following command to make sure all IKS load balance pods started:
   ```
-  kubectl -n kube-system get pod | grep alb
+  kubectl --namespace kube-system get pods | grep alb
   ```
   {: pre}
-  to make sure all IKS load balance pods started. 
+
 5. This is an example that shows all pods started
   ```
   private-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1-857d87ffbbhrm2k   4/4       Running   0          4h
@@ -219,23 +234,23 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
   public-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1-7fc8ccc698-t8wlz   4/4       Running   0          7m
   ```
   {: screen}
-6. Run
+6. Run the following to verify the API recovery:
   ```
   curl https://api.<your domain>/v2/info
   ```
   {: pre}
-  to verify the API recovery.
-7. Wait at least 1 minute and verify the alert disappears from Prometheus. If the alert still there please go to [Restart IKS load balance pods](#Restart-IKS-load-balance-pods).
+7. Wait at least 1 minute and verify the alert disappears from Prometheus. If the alert still there, please go to [Restart IKS load balance pods](#Restart-IKS-load-balance-pods).
 
 ### Restart IKS load balance pods
 {: #Restart-IKS-load-balance-pods}
 
-1. Run
+1. Run the following to get all the IKS load balance pods.
   ```
-  kubectl get pod -n kube-system grep alb
+  kubectl get pod --namespace kube-system grep alb
   ```
   {: pre}
-  to get all the IKS load balance pods. Here is an example output:
+
+  Here is an example output:
   ```
   private-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1-857d87ffbbhrm2k   4/4       Running   0          4h
   private-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1-857d87ffbblqwjx   4/4       Running   0          4h
@@ -243,12 +258,12 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
   public-cr8dcd643f01d34ab4a8d5b427a620ada6-alb1-7fc8ccc698-t8wlz   4/4       Running   0          7m
   ```
   {: screen}
-2. Run the next command to delete all the IKS load balance pods. Kubernetes will recreate all of them automatically.
+2. Run the following command to delete all the IKS load balance pods. Kubernetes will recreate them automatically.
   ```
-  kubectl -n kube-system delete pod <pod name>
+  kubectl --namespace kube-system delete pod <pod name>
   ```
   {: pre}
-3. Run `kubectl get pod -n kube-system grep alb` again to check all the IKS load balance pods started.
+3. Run `kubectl get pod --namespace kube-system | grep alb` again to check all the IKS load balance pods started.
 4. Run `curl https://api.<your domain>/v2/info` to verify the API recovery.
 5. Wait at least 1 minute and verify the alert disappears from Prometheus. If the alert still there please submit a ticket at https://cloud.ibm.com/unifiedsupport/supportcenter to IKS team and let them check the network of your cluster. Your cluster name can be found in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 
@@ -257,21 +272,21 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
 
 1. Run following command to check if Cloud Controller is unavailable.
   ```
-  kubectl get pod -n cf
+  kubectl get pod --namespace cf
   ```
   {: pre}
   You should get a similar output as below.
   ```
-  # kubectl get pod -n cf
+  # kubectl get pod --namespace cf
   NAME                            READY   STATUS      RESTARTS   AGE
   api-group-0                     0/1     Running     0          1d
   api-group-1                    0/1     Running     0          1d
   ```
   {: screen}
-2. Run command `kubectl delete pod api-group-x -n cf` to delete all `api-group-x` pods . Kubernetes will recreate all of them automatically.
+2. Run command `kubectl delete pod api-group-x --namespace cf` to delete all `api-group-x` pods . Kubernetes will recreate all of them automatically.
 3. Wait until all `api-group-x` pods are running and 1/1 ready.
   ```
-  # kubectl get pod -n cf
+  # kubectl get pod --namespace cf
   NAME                            READY   STATUS      RESTARTS   AGE
   api-group-0                     1/1     Running     0          1m
   api-group-1                     1/1     Running     0          1m
@@ -281,7 +296,7 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
 5. Wait at least 1 minute and verify the alert disappears from Prometheus.
 6. If after 3-5 minutes the result of step 3 still looks like below, please go to [Check DB](#Check-DB)
   ```
-  # kubectl get pod -n cf
+  # kubectl get pod --namespace cf
   NAME                            READY   STATUS      RESTARTS   AGE
   api-group-0                     0/1     Running     0          5m
   api-group-1                     0/1     Running     0          5m
@@ -293,7 +308,7 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
 
 1. If pod `api-group-x` still can't started, there might be a DB problem. Run following command to investigate.
   ```
-  kubectl -n cf exec -it api-group-0 bash
+  kubectl --namespace cf exec -it api-group-0 bash
   ```
   {: pre}
 2. Check the logs for cloud_controller component.
@@ -313,12 +328,12 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
 
 1. Run following command to check if Cloud Controller are running.
   ```
-  kubectl get pod -n cf
+  kubectl get pod --namespace cf
   ```
   {: pre}
 2. You should get a similar output as below.
   ```
-  # kubectl get pod -n cf
+  # kubectl get pod --namespace cf
   NAME                            READY   STATUS      RESTARTS   AGE
   api-group-0                     0/1     Running     0          1d
   api-group-1                    0/1     Running     0          1d
@@ -326,7 +341,7 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
   {: screen}
 3. If the status for the pods `api-group-x` is not Running, there might be a DB problem. Run following commands to investigate:
   ```
-  kubectl -n cf exec -it api-group-0 bash
+  kubectl --namespace cf exec -it api-group-0 bash
   ```
   {: pre}
   ```
@@ -334,7 +349,7 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
   ```
   {: pre}
 
-If you find some DB error like `Encountered error: PG::ConnectionBad: could not connect to server`, this means your CFEE instance has problem to connect to PostgresDB. Please submit a ticket at https://cloud.ibm.com/unifiedsupport/supportcenter to ask support checking the PostgresDB. Your DB name can be found in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
+If you find any DB errors like `Encountered error: PG::ConnectionBad: could not connect to server`, this indicates that your CFEE instance have problems connecting to PostgresDB. Before opening a support ticket to report that, please check the [IBM Cloud Status](https://cloud.ibm.com/status) page if there is any ongoing issues in IBM Cloud Databases service (ICD). Otherwise, please submit a ticket at https://cloud.ibm.com/unifiedsupport/supportcenter to report the issue. Please add all necessary information to the ticket including your DB name which can be found in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
 
 ## High resource usage for cells
 {: #cellusage_debug}
@@ -343,14 +358,14 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
 
 ### What's happening
 
-The resource usage on the cell is high. You need to take action to reduce the resource usage or scale up your {{site.data.keyword.cfee_full}}. Otherwise the apps in this cell might be impacted. If there's not enough resources in all cells you may not be able to push new applications and the running applications could be also impacted.
+The resource usage on the cell is high. You need to take action to reduce the resource usage or scale up your {{site.data.keyword.cfee_full}}. Otherwise, running apps or provisioning new apps might be impacted if there is no free resources left.
 
 ### How to fix it
 
-1. Check the usage of resouces for your CFEE instance using existing documentation: [Resource usage](https://cloud.ibm.com/docs/cloud-foundry/manage-capacity.html)
+1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](https://cloud.ibm.com/docs/cloud-foundry/manage-capacity.html)
 2. You can also check the resource usage by commands `cf apps` and `cf app <APP_NAME>`.
-3. When there are applications no longer used, you can remove them using `cf delete <APP_NAME>` command.
-4. You can also use `cf scale` command to reduce the memory usage of your apps.
+3. When there are applications that are no longer in use, you can clean them up by deleting them `cf delete <APP_NAME>` command.
+4. You can also use `cf scale` command to scale down apps, and therefore, reduce the occupied memory by your apps.
 5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](https://cloud.ibm.com/docs/cloud-foundry/updating-scaling.html#scale)
 
 ## High number of bad gateways
@@ -360,14 +375,18 @@ The resource usage on the cell is high. You need to take action to reduce the re
 
 ### What's happening
 
-This alert means that gorouter gets to requests of bad gateway. If the per-second rate of HTTP bad requests as measured over the last 5 minutes is bigger than 1, you will get a warning alert and when it is bigger than 5 you will get an error alert. This means the routing table in gorouter is not correct. You see the alerts often due to the cell does not send the correct routing information to gorouter. You need to investigate the log of the gorouter to find out the error record and fix it.
+This alert means that gorouter gets to requests of bad gateway. If the per-second rate of HTTP bad requests as measured over the last 5 minutes is bigger than 1, you will get a warning alert and when it is bigger than 5 you will get an error alert. The reasons for the alerts are: 
+1. the cell does not send the correct routing information to gorouter
+2. there are some issues with your app
+3. the gorouter is out of sync of routing table. 
+You need to investigate the log of the gorouter to find out the error record and fix it.
 
 ### How to fix it
 
 1. From **Alerts** tab on Prometheus, expand the alert, from the label `bosh_job_id`, you can get the information of which gorouter is reporting the problem. You can connect to the gorouter and analyze the log to find the problem and take proper action to fix it as described in the next steps..
 2. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 3. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
-4. Run command `kubectl -n cf exec -it <router> bash` to connect to the gorouter pod. For this command use the identified router name from Step 1.
+4. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. For this command use the identified router name from Step 1.
 5. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will see output like:
   ```
   ...
@@ -380,13 +399,13 @@ This alert means that gorouter gets to requests of bad gateway. If the per-secon
   {: screen}
 6. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 bad gate error in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. So this message means a routing record for app `rubytest` is not correct in the routing table. 
 7. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too. 
-8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  -n cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod. 
+8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  --namespace cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod. 
 *Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.* 
 Here is the full example:
   ```
-  #kubectl get pod  -n cf -o wide | grep 172.30.190.203
+  #kubectl get pod  --namespace cf -o wide | grep 172.30.190.203
   diego-cell-0                    1/1     Running     0          72m     172.30.190.203   10.74.47.98    <none>           <none>
-  #kubectl -n cf delete pod diego-cell-0 
+  #kubectl --namespace cf delete pod diego-cell-0 
   pod "diego-cell-0" deleted
   ```
   {: screen}
@@ -408,7 +427,7 @@ From `Alerts` tab of Prometheus, expand the alert, from the label `bosh_job_id`,
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`. 
 2. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
-3. Run command `kubectl -n cf exec -it <router> bash` to connect to the gorouter pod. Replace the router with the content of label `bosh_job_id` from Prometheus alert you have received.
+3. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. Replace the router with the content of label `bosh_job_id` from Prometheus alert you have received.
 4. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will get an output like:
   ```
   ...

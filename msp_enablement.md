@@ -16,7 +16,7 @@ lastupdated: "2019-06-12"
 # Management enablement
 {: #management-enablement}
 
-This document is an introduction to administrative and operational aspects of an {{site.data.keyword.cfee_full_notm}} ({{site.data.keyword.cfee_short}}).
+This document is an introduction to administrative and operational aspects of {{site.data.keyword.cfee_full_notm}} ({{site.data.keyword.cfee_short}}).
 
 ## Overview of Management
 {: #management-overview}
