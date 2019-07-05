@@ -32,6 +32,7 @@ Version 3.1.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolve
 
 To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
 
+
 ## Version 3.1.0
 {: #v310}
 

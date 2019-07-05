@@ -18,7 +18,7 @@ subcollection: cloud-foundry
 {:tip: .tip}
 
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.cfee_full}}
 {: #getting-started}
 
 In this {{site.data.keyword.cfee_full}} (CFEE) getting started tutorial, we add users to an instance, create an organization and spaces, deploy apps, and bind those apps to services.

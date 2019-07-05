@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-19"
 
 ---
 
@@ -18,7 +18,16 @@ lastupdated: "2019-05-02"
 
 The tutorials referenced below show how to troubleshoot components in your {{site.data.keyword.cfee_full}} ({{site.data.keyword.cfee_short}}):
 
-- [Debugging Cloud Foundry components](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-cf_debug)
+- [Debugging Cloud Foundry components](/docs/cloud-foundry?topic=cloud-foundry-cf_debug)
+- [Debugging Kubernetes cluster](/docs/cloud-foundry?topic=cloud-foundry-debug_cluster)
+- [Debugging monitoring components](/docs/cloud-foundry?topic=cloud-foundry-monitoring_debug)
+
+Check the support site for known issues:
+- [Known issues (limitations)](/docs/cloud-foundry?topic=cloud-foundry-known-issues)
+
+You can take the general steps to ensure that your CFEE instances are up-to-date:
+- Check on regular basis for available updates - [What's New in IBM Cloud Foundry Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment).
+- [Update your CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-update-scale)
 
 ## Getting help and support
 {: #ts_getting_help}
