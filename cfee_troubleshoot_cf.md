@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-27"
+lastupdated: "2019-07-10"
 
 ---
 
@@ -20,19 +20,22 @@ This tutorial shows how to troubleshoot Cloud Foundry components in your {{site.
 
 You can take these general steps to ensure that your CFEE instances are up-to-date:
 - Check on regular basis for available updates - [What's New in IBM Cloud Foundry Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment).
-- [Update your CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-update-scale) 
+- [Update your CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-update-scale)
 
 ## Debugging unavailable stager
 {: #stager_debug}
 ### Monitoring Alert
+{: #stager_debug_mon}
 - N/A
 
 ### What's happening
+{: #stager_debug_hap}
 
 Bulletin Board System (BBS) runs in active/passive mode and it maintains a lock in Locket to ensure that only one BBS is active. Sometimes if Locket loses connection with back-end database, it may run into an unresponsive status. In this case, no active BBS is elected and then BBS API is not accessible, and operations like cf push app will fail as Cloud Controller cannot communicate with BBS API.
 Since CFEE 2.x, Diego BBS and Locket run in diego-api-x pod, so users need to restart all diego-api-x pods to bring the environment back.
 
 ### Impact
+{: #stager_debug_imp}
 
 Diego BBS API is not accessible. Users are not able to do `cf push app` and CF application staging fails with an error `Stager is unavailable` as below:
 
@@ -51,6 +54,7 @@ Diego BBS API is not accessible. Users are not able to do `cf push app` and CF a
   {: screen}
 
 ### How to fix it
+{: #stager_debug_fix}
 
 The error message `Stager is unavailable` usually means that Cloud Controller has troubles to communicate with Diego BBS API.
 Please follow these steps to confirm whether the issue reported is the same with this case.
@@ -107,17 +111,21 @@ If yes, please continue to recover the environment.
 ## CF AutoScaler pods down
 {: #autoscaler_debug}
 ### Monitoring Alert
+{: #autoscaler_debug_mon}
 - CFAutoScaler: autoscaler pods down
 
 ### What's happening
+{: #autoscaler_debug_hap}
 
 The App-Autoscaler provides the capability to adjust the computation resources for Cloud Foundry applications. Sometimes if one or more autoscaler pods run into an unresponsive status, will resulting apps failed to be monitored and scaled by autoscaler service. Users need to restart failed pods to bring the environment back.
 
 ### Impact
+{: #autoscaler_debug_imp}
 
 Apps will no longer be monitored and scaled by autoscaler service.
 
 ### How to Fix
+{: #autoscaler_debug_fix}
 
 The error means that some of autoscaler pods are down.
 1. Make sure autoscaler is available by checking autoscaler-x pod status. You should get a similar output as below.
@@ -149,13 +157,16 @@ The error means that some of autoscaler pods are down.
 ## CF API down
 {: #cfapi_debug}
 ### Monitoring Alert
+{: #cfapi_debug_mon}
 - CF:API-target down
 
 ### Impact
+{: #cfapi_debug_imp}
 
 The API endpoint of the CFEE is down and user is not able to connect to the CFEE environment.
 
 ### How to Fix
+{: #cfapi_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -322,16 +333,51 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
 ## Database not responding
 {: #database_debug}
 ### Monitoring Alert
+{: #database_debug_mon}
 - CF:External-DatabaseNotResponding
 
-### How to fix
+### What's happening
+{: #database_debug_hap}
 
-1. Run following command to check if Cloud Controller are running.
+Since version 3.0 CFEE databases (uaa, ccdb, locked_db) are provisioned on {{site.data.keyword.databases-for-postgresql_full_notm}}.
+You can find more details about this service here:
+- [About IBM Cloud Databases for PostgreSQL](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-about)
+There might be a connection issue between monitoring components and DB instance, or a general issue with your CFEE DB instance.
+
+### Impact
+{: #database_debug_imp}
+
+If it is a connection problem between CFEE monitoring components and DB instance, there should be no impact for running CFEE services.
+A general issue with your CFEE DB instance can cause serious problems for different CFEE components.
+
+### How to fix
+{: #database_debug_fix}
+
+1. Check the [IBM Cloud Status](https://cloud.ibm.com/status) page if there is any ongoing issues in IBM Cloud Databases service (ICD).
+You can also find DB name on https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
+
+2. Run following commands to check if the CFEE monitoring components are running properly:
+  ```
+  kubectl get pods --namespace monitoring
+  ```
+  {: pre}
+  The component that is reponsible for DB monitoring is the pod `prometheus-postgres-exporter-<id>`. Check the logs from this pod:
+  ```
+  kubectl logs <prometheus-postgres-exporter-<id> --namespace monitoring
+  ```
+  {: screen}
+  Try to restart this pod if you see any undefined errors:
+  ```
+  kubectl delete pod <prometheus-postgres-exporter-<id> --namespace monitoring
+  ```
+  {: screen}
+
+3. To see if other CFEE components are affected by the issue run following command to check if Cloud Controller are running.
   ```
   kubectl get pod --namespace cf
   ```
   {: pre}
-2. You should get a similar output as below.
+4. You should get a similar output as below.
   ```
   # kubectl get pod --namespace cf
   NAME                            READY   STATUS      RESTARTS   AGE
@@ -339,7 +385,7 @@ If you find some DB error like `Encountered error: PG::ConnectionBad: could not 
   api-group-1                    0/1     Running     0          1d
   ```
   {: screen}
-3. If the status for the pods `api-group-x` is not Running, there might be a DB problem. Run following commands to investigate:
+5. If the status for the pods `api-group-x` is not Running, there might be a DB problem. Run following commands to investigate:
   ```
   kubectl --namespace cf exec -it api-group-0 bash
   ```
@@ -354,13 +400,16 @@ If you find any DB errors like `Encountered error: PG::ConnectionBad: could not 
 ## High resource usage for cells
 {: #cellusage_debug}
 ### Monitoring Alert
+{: #cellusage_debug_mon}
 - CF:HighDiskUsageForCells / CF:HighMemoryUsageForCells / CF:HighContainersUsageForCells
 
 ### What's happening
+{: #cellusage_debug_hap}
 
 The resource usage on the cell is high. You need to take action to reduce the resource usage or scale up your {{site.data.keyword.cfee_full}}. Otherwise, running apps or provisioning new apps might be impacted if there is no free resources left.
 
 ### How to fix it
+{: #cellusage_debug_fix}
 
 1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](https://cloud.ibm.com/docs/cloud-foundry/manage-capacity.html)
 2. You can also check the resource usage by commands `cf apps` and `cf app <APP_NAME>`.
@@ -371,17 +420,20 @@ The resource usage on the cell is high. You need to take action to reduce the re
 ## High number of bad gateways
 {: #badgw_debug}
 ### Monitoring Alert
+{: #badgw_debug_mon}
 - CF:HighNumberOfBadGateways
 
 ### What's happening
+{: #badgw_debug_hap}
 
-This alert means that gorouter gets to requests of bad gateway. If the per-second rate of HTTP bad requests as measured over the last 5 minutes is bigger than 1, you will get a warning alert and when it is bigger than 5 you will get an error alert. The reasons for the alerts are: 
+This alert means that gorouter gets to requests of bad gateway. If the per-second rate of HTTP bad requests as measured over the last 5 minutes is bigger than 1, you will get a warning alert and when it is bigger than 5 you will get an error alert. The reasons for the alerts are:
 1. the cell does not send the correct routing information to gorouter
 2. there are some issues with your app
-3. the gorouter is out of sync of routing table. 
+3. the gorouter is out of sync of routing table.
 You need to investigate the log of the gorouter to find out the error record and fix it.
 
 ### How to fix it
+{: #badgw_debug_fix}
 
 1. From **Alerts** tab on Prometheus, expand the alert, from the label `bosh_job_id`, you can get the information of which gorouter is reporting the problem. You can connect to the gorouter and analyze the log to find the problem and take proper action to fix it as described in the next steps..
 2. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
@@ -390,22 +442,22 @@ You need to investigate the log of the gorouter to find out the error record and
 5. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will see output like:
   ```
   ...
-  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T07:43:59.862+0000] "GET / HTTP/1.1" 502 0 67 
+  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T07:43:59.862+0000] "GET / HTTP/1.1" 502 0 67
   "-"    "curl/7.54.0" "172.30.190.193:46693" "172.30.190.202:61003" x_forwarded_for:"10.74.47.98, 172.30.190.193"
-  x_forwarded_proto:"http"  vcap_request_id:"94cfa737-25aa-4f9f-744e-1f815117be52" response_time:0.00297709 
+  x_forwarded_proto:"http"  vcap_request_id:"94cfa737-25aa-4f9f-744e-1f815117be52" response_time:0.00297709
   app_id:"02fea509-b27e-4a42-b81d-25fbc8125189"   app_index:"0" x_b3_traceid:"31f58cd910f71f62" x_b3_spanid:"31f58cd910f71f62" x_b3_parentspanid:"-"
   ...
   ```
   {: screen}
-6. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 bad gate error in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. So this message means a routing record for app `rubytest` is not correct in the routing table. 
-7. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too. 
-8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  --namespace cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod. 
-*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.* 
+6. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 bad gate error in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. So this message means a routing record for app `rubytest` is not correct in the routing table.
+7. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too.
+8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  --namespace cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod.
+*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.*
 Here is the full example:
   ```
   #kubectl get pod  --namespace cf -o wide | grep 172.30.190.203
   diego-cell-0                    1/1     Running     0          72m     172.30.190.203   10.74.47.98    <none>           <none>
-  #kubectl --namespace cf delete pod diego-cell-0 
+  #kubectl --namespace cf delete pod diego-cell-0
   pod "diego-cell-0" deleted
   ```
   {: screen}
@@ -415,31 +467,34 @@ Here is the full example:
 ## High number of rejected requests
 {: #rejectedreq_debug}
 ### Monitoring Alert
+{: #rejectedreq_debug_mon}
 - CF:HighNumberOfRejectedRequests
 
 ### What's happening
+{: #rejectedreq_debug_hap}
 
 This alert means that gorouter gets to many bad requests. If the per-second rate of HTTP bad requests as measured over the last 5 minutes is bigger than 1, you will get a warning alert and when it is bigger than 5 you will get an error alert. This often means your app is not working  properly. You need to take a look into the log of the gorouter and find out which app causes the error and fix it.
 
 ### How to fix it
+{: #rejectedreq_debug_fix}
 
 From `Alerts` tab of Prometheus, expand the alert, from the label `bosh_job_id`, you can get the information of which gorouter is reporting the problem. You can connect to the gorouter and analyze the log to find the problem and take proper action to fix it. Here's an example for fixing 404 error.
 
-1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`. 
+1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
 3. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. Replace the router with the content of label `bosh_job_id` from Prometheus alert you have received.
 4. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will get an output like:
   ```
   ...
-  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T06:13:48.372+0000] "GET /test HTTP/1.1" 404 0 121 
+  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T06:13:48.372+0000] "GET /test HTTP/1.1" 404 0 121
   "-" "curl/7.54.0" "172.30.190.193:33299" "-" x_forwarded_for:"10.74.47.98" x_forwarded_proto:"http"
   vcap_request_id:"673f62e8-2069-4ae6-5ffa-beeb79c31f72" response_time:0.000201752 app_id:"-" app_index:"-"
   x_b3_traceid:"e7e752a1899acdb9" x_b3_spanid:"e7e752a1899acdb9" x_b3_parentspanid:"-"
   ...
   ```
   {: screen}
-Here  `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem and the error code is `404`(the error code is after `"GET /test HTTP/1.1"`). For this message, it means  your app `rubytest` is not in the routing table. This is mostly caused by app down issue. Please find the app in your CFEE instance and restart the app. 
-5. After you fix all apps in error messages you get from previous step, the alert should disappear in about 5 minutes. 
+Here  `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem and the error code is `404`(the error code is after `"GET /test HTTP/1.1"`). For this message, it means  your app `rubytest` is not in the routing table. This is mostly caused by app down issue. Please find the app in your CFEE instance and restart the app.
+5. After you fix all apps in error messages you get from previous step, the alert should disappear in about 5 minutes.
 
 ## Getting help and support
 {: #ts_getting_help}
