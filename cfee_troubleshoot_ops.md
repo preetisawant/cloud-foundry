@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-02"
+lastupdated: "2019-07-10"
 
 ---
 
@@ -25,17 +25,21 @@ More details about monitoring components are available: [CFEE Monitoring](/docs/
 ## Alertmanager reload failed
 {: #alertmanager_debug}
 ### Monitoring Alert
+{: #alertmanager_debug_mon}
 OPS:AlertmanagerFailedReload
 
 ### What's happening
+{: #alertmanager_debug_hap}
 
 Alertmanager has a default configuration file that defines the policies for handling, grouping, and notification routing of Alertmanager alerts. A reload of configuration file can be done at runtime. If this file is not well-formed, the changes will not be loaded and an error will be logged.
 
 ### Impact
+{: #alertmanager_debug_imp}
 
 The configuration file that has to be reloaded can not be activated. But the actual running configuration for Alertmanager should be still active without any impact.
 
 ### How to Fix
+{: #alertmanager_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -76,17 +80,21 @@ The configuration file that has to be reloaded can not be activated. But the act
 ## Prometheus config reload failed
 {: #prometheus_config_debug}
 ### Monitoring Alert
+{: #prometheus_config_debug_mon}
 OPS:PrometheusConfigReloadFailed
 
 ### What's happening
+{: #prometheus_config_debug_hap}
 
 Reloading Prometheus’ configuration has failed for a given namespace `monitoring`.
 
 ### Impact
+{: #prometheus_config_debug_imp}
 
 Prometheus can reload its configuration at runtime. If the new configuration is not well-formed, the changes will not be applied. The previous configuration should be still active and have no impact to the running services.
 
 ### How to Fix
+{: #prometheus_config_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -123,17 +131,21 @@ Check if the PVC status is `Bound`:
 ## Prometheus error sending alerts / Prometheus not connected to Alertmanager
 {: #prometheus_alertm_error_debug}
 ### Monitoring Alert
+{: #prometheus_alertm_error_debug_mon}
 OPS:PrometheusErrorSendingAlerts / OPS:PrometheusNotConnectedToAlertmanagers
 
 ### What's happening
+{: #prometheus_alertm_error_debug_hap}
 
 Errors while sending alerts from Prometheus server to Alertmanager / Prometheus is not connected to any Alertmanagers.
 
 ### Impact
+{: #prometheus_alertm_error_debug_imp}
 
 The defined rules to process alerts from Prometheus server can not be executed on Alertmanager (e.g. deduplication, grouping, send alerts to the appropriate receiver via e-mail, PagerDuty, Slack).
 
 ### How to Fix
+{: #prometheus_alertm_error_debug_fix}
 
 1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry?topic=cloud-foundry-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of Prometheus server and Alertmanager (after port forwarding activated - `curl localhost:9090` and `curl localhost:9093`).
 2. Make sure that the appropriated pods are up and running:
@@ -158,17 +170,21 @@ The defined rules to process alerts from Prometheus server can not be executed o
 ## Prometheus notification queue running full
 {: #promqueue_full}
 ### Monitoring Alert
+{: #promqueue_full_mon}
 OPS:PrometheusNotificationQueueRunningFull
 
 ### What's happening
+{: #promqueue_full_hap}
 
 Prometheus' alert notification queue is running full. Prometheus is generating more alerts than it can send to Alertmanagers in time. The default capacity for the notification queue is 10000.
 
 ### Impact
+{: #promqueue_full_imp}
 
 If the Prometheus notification queue is full, the alerts could be dropped and not forwarded to the Alertmanager.
 
 ### How to Fix
+{: #promqueue_full_fix}
 
 1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry?topic=cloud-foundry-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of your Prometheus server
 2. As next step of debugging you can check how the metrics listed below developed over time on the problematic Prometheus instance (Go to `Alerts` tab on Prometheus console, copy the metric below into the metrics field and click on `Execute`button):
@@ -192,9 +208,11 @@ If the Prometheus notification queue is full, the alerts could be dropped and no
 ## Prometheus TSDB issues
 {: #tsdb_debug}
 ### Monitoring Alert
+{: #tsdb_debug_mon}
 OPS:PrometheusTSDBCompactionsFailing / OPS:PrometheusTSDBReloadsFailing / OPS:PrometheusTSDBWALCorruptions
 
 ### What's happening
+{: #tsdb_debug_hap}
 
 Prometheus includes a on-disk time series database. This database stores time series data und actually located at /data directory (mount from storage volume - PersistentVolume) on Prometheus server. See [Prometheus  storage](https://prometheus.io/docs/prometheus/latest/storage/).
 The alerts mean that there is an issue with this database:
@@ -203,10 +221,12 @@ b. Prometheus has issues reloading data blocks from disk
 c. Prometheus write-ahead log is corrupted
 
 ### Impact
+{: #tsdb_debug_imp}
 
 If the Prometheus database becomes corrupted, you might lose monitoring data.
 
 ### How to Fix
+{: #tsdb_debug_fix}
 
 If you see any issues with storage volume you can also follow [Troubleshooting cluster storage](/docs/containers?topic=containers-cs_troubleshoot_storage) for debugging.
 

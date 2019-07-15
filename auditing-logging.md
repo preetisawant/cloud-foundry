@@ -48,20 +48,27 @@ If customers desire to receive alerts for audit events, they can use external to
 ## Logging persistence
 {: #logging}
 
-The Log Analysis service has been **deprecated** in the IBM Cloud. Logging persistence in CFEE will be supported through integration with the LogDNA service starting in CFEE v3.1.0 (replacing the deprecated Log Analysis service). Logging persistence enabled through integration with pre-existing Log Analysis instances will continue to work even after the CFEEE instance is updated to v3.1.0.  However, once logging persistence enabled though a pre-existing Log Analysis service instance is **disabled**, re-enablement can take place only through a LogDNA instance.
+The Log Analysis service has been **deprecated** in the IBM Cloud. Logging persistence in CFEE will be supported through integration with the LogDNA service starting in CFEE v3.1.0 (replacing the deprecated Log Analysis service). Logging persistence enabled through integration with pre-existing Log Analysis instances will continue to work even after the CFEE instance is updated to v3.1.0.  However, once logging persistence enabled though a pre-existing Log Analysis service instance is **disabled**, re-enablement can take place only through a LogDNA instance.
 {: important}
 
-Logging of Cloud Foundry events is supported through integration with the LogDNA service in the IBM Cloud. An instance of the LogDNA service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry logging events generated from the CFEE instance.  The user can see and manage those logging events in the user interface of the LogDNA service instance.
+Logging of Cloud Foundry logs is supported through integration with the [IBM Log Analysis with LogDNA](/docs/services/Log-Analysis-with-LogDNA) service in the IBM Cloud. An instance of the LogDNA service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry application logs generated from the CFEE instance.  The user can see and manage those logs in the user interface of the LogDNA service instance.
 
 To enable logging for a CFEE instance:
 
-1. Make sure that you have an [IAM access policy](https://cloud.ibm.com/iam/#/users) that assigns you either administrator platform role, or viewer platform role with reader role in the LogDNA service instance into which you intend to persist the logging events.
+1. Make sure that you have an [IAM access policy](https://cloud.ibm.com/iam/#/users) that assigns you either administrator platform role, or viewer platform role with reader role in the LogDNA service instance into which you intend to persist the logs.
 2. Open a CFEE's user interface and to **Operations > Logging** entry in the left navigation pane to open the Logging page.
 3. Click **Enable persistence** and select one of the **LogDNA instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
-4. Once logging persistence is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where they user can go to see and manage logging events.
+4. Once logging persistence is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where they user can go to see and manage logs.
+5. Both IKS and CFEE should be configured to use a common LogDNA instance.
 
 **Note:** Enabling logging persistence does not disrupt CFEE operations, nor triggers a restart of the CFEE control plane or cells.
 
 You can disable Log persistence by clicking **Disable log persistence**, which will remove the service instance previously added and configured. This action will not delete the LogDNA service instance.
 
 **Note:** When you disable log persistence, the Cloud Foundry logging events are still being generated, they are just not persisted outside the CFEE instance.
+
+
+### Exporting logs from IBM Log Analysis with LogDNA (optional)
+
+You can refer to the [Export IBM Log Analysis with LogDNA logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export) documentation for details on how to export logs to local files.
+

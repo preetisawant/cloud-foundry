@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-07-10"
 
 ---
 
@@ -24,14 +24,17 @@ You can also use the debugging documentation for {{site.data.keyword.containerlo
 ## API server down / high number of errors / high latency
 {: #apiserver_debug}
 ### Monitoring Alerts
+{: #apiserver_debug_mon}
 KUBE:K8SApiserverDown / KUBE:APIServerErrorsHigh / KUBE:APIServerLatencyHigh
 
 ### What's happening
+{: #apiserver_debug_hap}
 
 The [Kubernetes master](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#architecture) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The Kubernetes API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources. These alerts mean that there is an issue with your API server and some cluster tasks could be not possible. The alerts are in place to notify you about possible limitations for cluster
 related tasks during the issues on API server.
 
 ### Impact
+{: #apiserver_debug_imp}
 
 If the Kubernetes API Server is down or crashing it will be not possible to stop, update, or start new pods and services. Existing pods and services should continue to work.  
 
@@ -39,6 +42,7 @@ Do not restart or reboot a worker node during a master outage. This action remov
 {: important}
 
 ### How to Fix
+{: #apiserver_debug_fix}
 
 1. Your IBM Cloud Kubernetes Service includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud ks cluster-get --cluster <cluster_name_or_ID>`.
 
@@ -47,17 +51,21 @@ Do not restart or reboot a worker node during a master outage. This action remov
 ## Issues with DaemonSets
 {: #daemonset_debug}
 ### Monitoring Alert
+{: #daemonset_debug_mon}
 KUBE:DaemonSetRolloutStuck / KUBE:DaemonSetsMissScheduled / KUBE:K8SDaemonSetsNotScheduled
 
 ### What's happening
+{: #daemonset_debug_hap}
 
 A DaemonSet make sure that all or some Kubernetes nodes run a copy of a pod. The default update strategy for DaemonSets is RollingUpdate - that means, if you update a DaemonSet template, old DaemonSet pods will be killed, and new pods will be created automatically. The alerts mean that one of operations is not successful for DaemonSet pods.
 
 ### Impact
+{: #daemonset_debug_imp}
 
 The impact from these alerts is depend on the pods affected by the issue. E.g. if a `prometheus-node-exporter` pod can not be created on one of the node, you will not be able to receive monitoring metrics for this node during the issue.
 
 ### How to Fix
+{: #daemonset_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -71,18 +79,22 @@ The impact from these alerts is depend on the pods affected by the issue. E.g. i
 ## File descriptors issue
 {: #fdlimit_debug}
 ### Monitoring Alert
+{: #fdlimit_debug_mon}
 KUBE:FdExhaustionClose
 
 ### What's happening
+{: #fdlimit_debug_hap}
 
 The operating system uses file descriptors to handle file-system files as well as pseudo files, such as connections and listener sockets.
 The alert means that the number of allocated file descriptors is near to the limit for the system.
 
 ### Impact
+{: #fdlimit_debug_imp}
 
 If the system will reach the limit, that could be a serious problem because the system will be not able to open any more files.
 
 ### How to Fix
+{: #fdlimit_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -102,17 +114,21 @@ If the system will reach the limit, that could be a serious problem because the 
 ## K8S nodes not ready
 {: #nodes_debug}
 ### Monitoring Alert
+{: #nodes_debug_mon}
 KUBE:K8SNodeNotReady / KUBE:K8SManyNodesNotReady
 
 ### What's happening
+{: #nodes_debug_hap}
 
 When this alert comes in, it means that one or more Kubernetes cluster worker nodes are not in a healthy state. Validation is required to not only validate the state but know what follow up actions are required to run a manual fix.
 
 ### Impact
+{: #nodes_debug_imp}
 
 It depends on the number of unhealthy worker nodes and which worked nodes are affected.
 
 ### How to Fix
+{: #nodes_debug_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
@@ -136,17 +152,21 @@ ibmcloud cs worker-rm --cluster <cluster_name> --workers worker_name,<worker_nam
 ## Certificate expires
 {: #certexpires}
 ### Monitoring Alert
+{: #certexpires_mon}
 KUBE:K8sCertificateExpirationNotice
 
 ### What's happening
+{: #certexpires_hap}
 
 Kubernetes API Certificate is expiring soon (less than 7 days)
 
 ### Impact
+{: #certexpires_imp}
 
 If the Kubernetes cluster certificate expires on the Kubernetes master, then the kubelet service will fail. Issuing a kubectl command, such as `kubectl get pods` or `kubectl exec -it <container_name> bash`, will result in a message similar to **unable to connect to the server: x509: certificate has expired or is not yet valid**. Pods on the respective worker nodes can no longer be managed.
 
 ### How to Fix
+{: #certexpires_fix}
 
 Kubernetes master is IBM-managed. You need to contact IBM Support by opening a case - see [Getting Help and Support](/docs/cloud-foundry?topic=cloud-foundry-debug_cluster#ts_getting_help).
 
@@ -154,17 +174,21 @@ Kubernetes master is IBM-managed. You need to contact IBM Support by opening a c
 ## Issue with frequently restarted pods
 {: #podsrestarting}
 ### Monitoring Alert
+{: #podsrestarting_mon}
 KUBE:PodFrequentlyRestarting
 
 ### What's happening
+{: #podsrestarting_hap}
 
 Every pod has a restartPolicy setting. If the pod has an issue, Kubernetes will automatically perform a restart of this pod according to the pod's restart policy. If a pod is restarting frequently, this shows a potential issue on the pod.
 
 ### Impact
+{: #podsrestarting_imp}
 
 The services running on the affected pod are not available during restarts.
 
 ### How to Fix
+{: #podsrestarting_fix}
 
 1. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 2. Select the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
