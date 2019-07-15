@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-09"
 
 ---
 
@@ -48,7 +48,7 @@ If customers desire to receive alerts for audit events, they can use external to
 ## Logging persistence
 {: #logging}
 
-The Log Analysis service has been **deprecated** in the IBM Cloud. Logging persistence in CFEE will be supported through integration with the LogDNA service starting in CFEE v3.1.0 (replacing the deprecated Log Analysis service). Logging persistence enabled through integration with pre-existing Log Analysis instances will continue to work even after the CFEE instance is updated to v3.1.0.  However, once logging persistence enabled though a pre-existing Log Analysis service instance is **disabled**, re-enablement can take place only through a LogDNA instance.
+The [IBM Cloud Log Analysis](https://www.ibm.com/blogs/cloud-archive/2019/03/deprecating-ibm-cloud-log-analysis/) service has been **deprecated** in the IBM Cloud. Logging persistence in CFEE will be supported through integration with the new [IBM Log Analysis with LogDNA](/docs/services/Log-Analysis-with-LogDNA) service starting in CFEE v3.1.0 (replacing the deprecated IBM Cloud Log Analysis service). Logging persistence enabled through integration with pre-existing Log Analysis instances will continue to work even after the CFEE instance is updated to v3.1.0.  However, once logging persistence enabled though a pre-existing Log Analysis service instance is **disabled**, re-enablement can only be done with an instance of the IBM Log Analysis with LogDNA service.
 {: important}
 
 Logging of Cloud Foundry logs is supported through integration with the [IBM Log Analysis with LogDNA](/docs/services/Log-Analysis-with-LogDNA) service in the IBM Cloud. An instance of the LogDNA service selected by the CFEE administrator is configured automatically to receive and persist Cloud Foundry application logs generated from the CFEE instance.  The user can see and manage those logs in the user interface of the LogDNA service instance.
