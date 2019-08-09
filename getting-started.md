@@ -18,7 +18,7 @@ subcollection: cloud-foundry
 {:tip: .tip}
 
 
-# Getting started with {{site.data.keyword.cfee_full}}
+# Getting started with {{site.data.keyword.cfee_full_notm}}
 {: #getting-started}
 
 In this {{site.data.keyword.cfee_full}} (CFEE) getting started tutorial, we add users to an instance, create an organization and spaces, deploy apps, and bind those apps to services.
@@ -41,7 +41,7 @@ After your instance is created, structure the environment by creating organizati
 1. In the CFEE user interface, click **Organizations** in the navigation pane.
 
     To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
-    {:tip}
+    {: tip}
 
 3. Click **Create Organization**.
 4. Enter a **Name** for the new organization.
@@ -49,7 +49,7 @@ After your instance is created, structure the environment by creating organizati
 6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes.
   
     You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
-    {:tip}
+    {: tip}
 
 1. Click **Add** to create the organization.
 1. On the Organizations page, click the name of the organization you created.
@@ -116,7 +116,7 @@ You can [deploy apps](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps) to yo
 6. Select the application that you want to bind to the service instance.
 
 In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all applications and services, both *public* and *enterprise*. Click *Public* in the left navigation pane to see the public applications and services available in your IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
-{:tip}
+{: tip}
 
 ## Next steps
 {: #next-steps}
