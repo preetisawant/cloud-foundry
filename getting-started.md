@@ -40,16 +40,16 @@ After your instance is created, structure the environment by creating organizati
 
 1. In the CFEE user interface, click **Organizations** in the navigation pane.
 
-    To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
-    {: tip}
+   To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
+   {: tip}
 
 3. Click **Create Organization**.
 4. Enter a **Name** for the new organization.
 5. Under **Managers**, identify at least one user. Users with a Manager role can add members to that organization.
 6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes.
   
-    You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
-    {: tip}
+   You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
+   {: tip}
 
 1. Click **Add** to create the organization.
 1. On the Organizations page, click the name of the organization you created.
