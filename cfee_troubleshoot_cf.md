@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-10"
+lastupdated: "2019-08-08"
 
 ---
 
@@ -26,7 +26,7 @@ You can take these general steps to ensure that your CFEE instances are up-to-da
 {: #stager_debug}
 ### Monitoring Alert
 {: #stager_debug_mon}
-- N/A
+- CF:DiegoApiActivePassiveWrong
 
 ### What's happening
 {: #stager_debug_hap}
@@ -330,6 +330,123 @@ The API endpoint of the CFEE is down and user is not able to connect to the CFEE
 
 If you find some DB error like `Encountered error: PG::ConnectionBad: could not connect to server`, this means your CFEE instance has problem to connect to PostgresDB. Please submit a ticket at https://cloud.ibm.com/unifiedsupport/supportcenter to ask support checking the PostgresDB. Your DB name can be found in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
 
+## Unhealthy Cell detected
+{: #unh_cell_debug}
+### Monitoring Alert
+{: #unh_cell_mon}
+- CF:CellUnhealthy
+
+### What's happening
+{: #unh_cell_hap}
+
+One of Diego cells becomes unhealthy and the Diego health check failures can be found in the cell logs.
+
+### Impact
+{: #unh_cell_imp}
+
+If you receive this alert, the total capacity of the cluster will be reduced, since the unhealthy cell's capacity cannot be used.
+Potential performance or availability problems are possible.
+You may have a problem using `cf push <app>` or `cf restage <app>` commands due to insufficient resources error.
+You can also see `504 Gateway time-out` when visiting deployed apps on this unhealthy cell.
+This issue will not be auto-recovered, and need manual intervention to recover.
+
+### How to fix it
+{: #unh_cell_fix}
+
+1. Find out which diego cell is failed using https://cloud.ibm.com/resources. Click on your CFEE instance to see the actual status.  
+  The name of unhealthy cell can be also found in the alert under `bosh_job_id`.
+2. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
+3. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
+4. Check the cell's logs to see a possible reason for the alert and check the actual status of the running jobs:
+  ```
+  # kubectl exec -it <diego-cell-x> --namespace cf /bin/bash
+  diego-cell-x:/# tail -f /var/vcap/sys/log/rep/rep.stdout.log
+  diego-cell-x:/# monit summary
+  ```
+  {:screen}
+5. Before you try to recreate the unhealthy cell please make sure other cells have enough resources to accept the instances from the rebooting cell.
+  Otherwise instances in this cell will be not available for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE environment.
+6. Recreate the pod:
+  ```
+  # kubectl --namespace cf delete pod <diego-cell-x>
+  ```
+  {: screen}
+  Wait few minutes and check the status again.
+7. If the problem still exists, try to recreate the appropriated worker node:
+  ```
+  # kubectl get pod --namespace cf -o wide | grep <diego-cell-x>
+  ```
+  {: screen}
+  The last column of the output from above is the worker node IP.
+8. Prepare the node for maintenance:
+  ```
+  # kubectl drain <worker node IP> --delete-local-data=true --ignore-daemonsets
+  ```
+  {: screen}  
+9. Reload the worker node (to get your cluster name, run `ibmcloud ks clusters`):
+  ```
+  # bx cs worker-reload --cluster <cluster name> --workers <worker node ID>
+  ```
+  {: screen}
+10. Check the environment status again. The issue should be fixed.
+11. If you scaled up the cells on step 5 above, then now you need to scale down the cluster from UI, to let it have the same cell number as before.
+
+## Gorouter - high number of 4xx/5xx HTTP responses 
+{: #router_returncode_debug}
+### Monitoring Alert
+{: #router_returncode_mon}
+- CF:GorouterHighNumber4xx / CF:GorouterHighNumber5xx 
+
+### What's happening
+{: #router_returncode_hap}
+
+A high number of 4xx/5xx HTTP responses on Gorouters 
+
+A spike in Gorouter-side 5xx/4xx errors can indicate a range of problems, including applications crashing or diego cells 
+that don’t have the resources to handle the volume of incoming requests, incorrect routes and possible mis-configurations that 
+are blocking incoming traffic. 
+
+### Impact
+{: #router_returncode_imp}
+
+Depends on the reason for the issue one or more CF apps could be not reachable.
+
+### How to fix it
+{: #router_returncode_fix}
+
+1. Check the actual status of your environment using https://cloud.ibm.com/resources for any general issues.
+2. If you see any alerts about unhealthy cells try to resolve the [issue on the unhealthy cell](/docs/cloud-foundry?topic=cloud-foundry-cf_debug#unh_cell_fix) first.
+3. Follow the next steps 4-8 to analyze the gorouter logs. The information about problematic gorouter can be found in the alert.
+4. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
+5. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
+6. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. For this command use the identified router name from Step 1.
+7. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will see output like:
+  ```
+  ...
+  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T07:43:59.862+0000] "GET / HTTP/1.1" 502 0 67
+  "-"    "curl/7.54.0" "172.30.190.193:46693" "172.30.190.202:61003" x_forwarded_for:"10.74.47.98, 172.30.190.193"
+  x_forwarded_proto:"http"  vcap_request_id:"94cfa737-25aa-4f9f-744e-1f815117be52" response_time:0.00297709
+  app_id:"02fea509-b27e-4a42-b81d-25fbc8125189"   app_index:"0" x_b3_traceid:"31f58cd910f71f62" x_b3_spanid:"31f58cd910f71f62" x_b3_parentspanid:"-"
+  ...
+  ```
+  {: screen}
+8. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 HTTP response in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. 
+9. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too.
+10. For deeper investigation on the app side list app instances and analyze the app log for the affected application:
+  ```
+  cf app <appname>
+  cf logs <appname>
+  ```
+  {: screen}
+ 11. If you see an issue with one of the app instanses you can try to reboot the cell where this instance is running:
+  ```
+  cf app <appname> --guid
+  cf curl /v2/apps/<guid>/stats
+  kubectl delete pod <diego cell pod> --namespace cf
+  ```
+  {: screen}
+
+
 ## Database not responding
 {: #database_debug}
 ### Monitoring Alert
@@ -354,7 +471,7 @@ A general issue with your CFEE DB instance can cause serious problems for differ
 {: #database_debug_fix}
 
 1. Check the [IBM Cloud Status](https://cloud.ibm.com/status) page if there is any ongoing issues in IBM Cloud Databases service (ICD).
-You can also find DB name on https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
+  You can also find DB name on https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
 
 2. Run following commands to check if the CFEE monitoring components are running properly:
   ```
@@ -397,6 +514,72 @@ You can also find DB name on https://cloud.ibm.com/resources. It usually looks l
 
 If you find any DB errors like `Encountered error: PG::ConnectionBad: could not connect to server`, this indicates that your CFEE instance have problems connecting to PostgresDB. Before opening a support ticket to report that, please check the [IBM Cloud Status](https://cloud.ibm.com/status) page if there is any ongoing issues in IBM Cloud Databases service (ICD). Otherwise, please submit a ticket at https://cloud.ibm.com/unifiedsupport/supportcenter to report the issue. Please add all necessary information to the ticket including your DB name which can be found in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-postgres`.
 
+## Database High Active Connections
+{: #db_con_debug}
+
+### Monitoring Alert
+{: #db_con_debug_mon}
+
+- CF:External-Database-HighConnectionCount > 90%
+
+### What's happening
+{: #db_con_debug_hap}
+
+Monitor CCDB and UAADB and DIEGO_LOCKET database connections used by different exploiters and raise alert of threshold is exceeded in order to avoid overall cluster connections are exhausted.
+
+### Impact
+{: #db_con_debug_imp}
+
+If CCDB or UAADB or DIEGO_LOCKET will exhaust their max allowed connections exploiters [CC,UAA,BBS,...] won't be able to process requests.
+
+### How to fix it
+{: #db_con_debug_fix}
+
+1. Login in postgres database with `admin` user credentials. To get the password for `admin` user follow [Set the admin password](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-user-management&locale=de#the-admin-user)
+
+  ```
+  SELECT COUNT(*),datname,state,client_addr FROM pg_stat_activity GROUP BY datname,state,client_addr ORDER BY count DESC;
+  ```
+  {: pre}
+
+  This is a sample output for UAADB
+
+  ```
+  count |   datname    |        state        |  client_addr
+ -------+--------------+---------------------+--------------
+     19 | ccdb         | idle                | 172.30.13.215
+     14 | ccdb         | idle                | 172.30.59.141
+      8 | autoscaler   | idle                | 172.30.59.141
+      6 | autoscaler   | idle                | 172.30.13.215
+      5 |              |                     |
+      4 | diego_locket | idle                | 172.30.59.141
+      2 |  postgres    | idle                | 172.30.59.141
+      2 | uaadb        | idle                | 172.30.13.215
+    196 | diego        | idle                | 172.30.59.141
+      2 | diego_locket | idle                | 172.30.13.215
+     20 | diego        | idle in transaction | 172.30.13.215
+      2 | postgres     | idle in transaction | 127.0.0.1
+      1 | ibmclouddb   | active              | 172.30.13.215
+      1 | postgres     | idle                | 127.0.0.1
+      1 |              | active              | 172.30.2.189
+  ```
+  {: screen}
+
+In this case the exploiter consuming a lot of connections is the BBS server with IP 172.30.59.141. It has 216 connections opened against Diego DB and 196 of these are not performing any activity idle.
+
+Fixing this issue is not straightforward there could be multiple reasons why the exploiter is having so many connections open:
+
+2.  You can workaround the problem [killing the connections](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections&locale=de#terminating-connections) assigned to a specific IP via SQL:
+
+  ```
+  SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE client_addr = '__CLIENT IP__'
+  ```
+  {: screen}
+
+3. Depending on root cause it may happen that eventually client will [exceed threshold](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections&locale=de#raising-the-connection-limit).
+
+NOTE: If external database is unreachable open [Support Ticket](/unifiedsupport/cases/add)
+
 ## High resource usage for cells
 {: #cellusage_debug}
 ### Monitoring Alert
@@ -411,11 +594,11 @@ The resource usage on the cell is high. You need to take action to reduce the re
 ### How to fix it
 {: #cellusage_debug_fix}
 
-1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](https://cloud.ibm.com/docs/cloud-foundry/manage-capacity.html)
+1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](/docs/cloud-foundry/manage-capacity.html)
 2. You can also check the resource usage by commands `cf apps` and `cf app <APP_NAME>`.
 3. When there are applications that are no longer in use, you can clean them up by deleting them `cf delete <APP_NAME>` command.
 4. You can also use `cf scale` command to scale down apps, and therefore, reduce the occupied memory by your apps.
-5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](https://cloud.ibm.com/docs/cloud-foundry/updating-scaling.html#scale)
+5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](/docs/cloud-foundry/updating-scaling.html#scale)
 
 ## High number of bad gateways
 {: #badgw_debug}
@@ -435,7 +618,7 @@ You need to investigate the log of the gorouter to find out the error record and
 ### How to fix it
 {: #badgw_debug_fix}
 
-1. From **Alerts** tab on Prometheus, expand the alert, from the label `bosh_job_id`, you can get the information of which gorouter is reporting the problem. You can connect to the gorouter and analyze the log to find the problem and take proper action to fix it as described in the next steps..
+1. From **Alerts** tab on Prometheus, expand the alert, from the label `bosh_job_id`, you can get the information of which gorouter is reporting the problem. You can connect to the gorouter and analyze the log to find the problem and take proper action to fix it as described in the next steps.
 2. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 3. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
 4. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. For this command use the identified router name from Step 1.
@@ -452,7 +635,7 @@ You need to investigate the log of the gorouter to find out the error record and
 6. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 bad gate error in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. So this message means a routing record for app `rubytest` is not correct in the routing table.
 7. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too.
 8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  --namespace cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod.
-*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.*
+*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.*
 Here is the full example:
   ```
   #kubectl get pod  --namespace cf -o wide | grep 172.30.190.203
