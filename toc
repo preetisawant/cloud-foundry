@@ -1,64 +1,90 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry" category="compute" audience="compute" href="/docs/cloud-foundry/index.html" path="cloud-foundry"}
+{: .toc subcollection="cloud-foundry" category="compute" audience="runtime" href="/docs/cloud-foundry/getting-started.html" path="cloud-foundry"}
 Cloud Foundry Enterprise Environment
 
     {: .navgroup id="learn"}
     getting-started.md
-    index.md
+    about-cf.md
+    cf.md
     cfee-responsibilities.md
-    {: .navgroup-end}
 
+    {: .topicgroup}
+    Best practices
+        goodapp.md
+        production_considerations.md
+
+    whatsnew.md
+    {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Structuring your environment
+    Setting up your IBM Cloud environment
         design-structure.md
         org-structure.md
         spaces.md
-        quota.md
-        assigning-roles.md
-    
-    {: .topicgroup}
-    Setting up your environment
-        prepare-account.md
-        permissions.md
-        create-environment.md
-        network-isolation.md
         orgs-spaces.md
         add-users.md
+        assign-roles.md
+        permissions.md
+
+    {: .topicgroup}
+    Working with apps and services
+        create-environment.md
+        network-isolation.md
         deploy-apps.md
         add-serv-inst.md
         getting-started-eirini.md
-    
+        deploy_eclipsetools.md
+        deploy_vs.md
+        install_cli.md
+        Node-RED/nodered.md
+        Node-RED/start_nodered.md
+
+    {: .topicgroup}
+    Developing with buildpacks
+        /runtimes-common/runtimes-common-available_buildpacks
+        /runtimes-common/runtimes-common-using_buildpacks
+        getting-started-dotnet.md
+        getting-started-go.md
+        getting-started-liberty.md
+        getting-started-php.md
+        getting-started-python.md
+        getting-started-ruby.md
+        getting-started-node.md
+        getting-started-swift.md
+        getting-started-tomcat.md
+        /runtimes-common/runtimes-common-working_with_proxy
 
     {: .topicgroup}
     Managing operations
         msp_enablement.md
+        stratos.md
         manage-capacity.md
         monitoring.md
         auditing-logging.md
         domains.md
         updating-scaling.md
         autoscaling.md
-        stratos.md
         compliance.md
         raci_customer_provided_service.md
     {: .navgroup-end}
 
+    {: .navgroup id="reference"}
+    /runtimes-common/runtimes-common-app_management
+    {: .navgroup-end}
 
     {: .navgroup id="help"}
-    whatsnew.md
     cfee_faq.md
 
     {: .topicgroup}
     Troubleshooting
-        cfee_troubleshoot_overview.md
         cfee_troubleshoot_cf.md
         cfee_troubleshoot_kube.md
         cfee_troubleshoot_ops.md
+        /runtimes-common/runtimes-common-runtimes
 
-
+    /runtimes-common/runtimes-common-buildpack_support_statement
     known-issues.md
     {: .navgroup-end}

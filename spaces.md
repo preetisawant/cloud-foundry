@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2018
-lastupdated: "2018-04-13"
+  years: 2018, 2019
+lastupdated: "2018-08-13"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2018-04-13"
 
 # Determine your spaces
 {: #determinespaces}
+
+<!-- This file is reused in the CF Public subcollection. -->
 
 Within an organization, spaces provide an extra level of boundary enforcement and abstraction.
 

@@ -6,7 +6,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-06-28"
+lastupdated: "2019-08-12"
 
 
 
@@ -18,7 +18,7 @@ lastupdated: "2019-06-28"
 {:new_window: target="_blank"}
 {:tip: .tip}
 
-# FAQs
+# FAQs for {{site.data.keyword.cfee_full_notm}}
 {: #cfeefaq}
 
 ## What is the difference between {{site.data.keyword.cfee_full_notm}} (CFEE) and public Cloud Foundry?

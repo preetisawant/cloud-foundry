@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-08-13"
 
 ---
 
@@ -16,6 +16,8 @@ lastupdated: "2019-06-28"
 
 # Determining your organization architecture
 {: #orgstructure}
+
+<!-- This file is reused in the CF Public subcollection. -->
 
 To design an environment that uses {{site.data.keyword.Bluemix_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} or any combination, you can use the following organization architectures:
 
@@ -66,7 +68,7 @@ The following scenarios show different approaches that you can adopt when you de
 
   Solution: You can create an organization for each business application delivery process. For example, one organization for retail banking, and one for investment banking.
 
-  ![Figure that shows segregation of users by business application delivery](img/bank_example.svg "Figure that shows segregation of users by business application delivery")
+  ![Figure that shows segregation of users by business application delivery](images/bank_example.svg "Figure that shows segregation of users by business application delivery")
 
   Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery
 {: #bpfigure1}
@@ -89,7 +91,7 @@ The following scenarios show different approaches that you can adopt when you de
 
   Solution: You can create a single-organization and define a space for each delivery phase. Then, depending on the user role and job experience, grant the read and write access that they require to complete their work and also collaborate within the organization.
 
-  ![Figure that shows isolation of users by delivery phase](img/user_groups_example.svg "Figure that shows isolation of users by delivery phase")
+  ![Figure that shows isolation of users by delivery phase](images/user_groups_example.svg "Figure that shows isolation of users by delivery phase")
 
    Figure 2. Example of a single-organization architecture that is aligned by delivery phase
 {: #bpfigure2}

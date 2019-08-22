@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-08-12"
 
 ---
 
@@ -29,7 +29,7 @@ To create organizations in an {{site.data.keyword.cfee_full_notm}}:
 3. Click **Create Organization**.
 4. Enter a **Name** for the new organization.
 5. Under **Managers**, identify at least one user. Only users with a Manager role can add members to that organization.
-6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes.
+6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes. The quota that is allocated to an organization represents the resources that are available within the organization.
 
 In addition to managing organization membership, organization managers can create, view, edit, or delete spaces within the organization. Organization managers can also view the organization's usage and quota, invite users to the organization, manage membership and roles in the organization, and manage custom domains for the organization.
 

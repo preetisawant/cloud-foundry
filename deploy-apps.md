@@ -83,7 +83,7 @@ You can also expand the row for an application to view the service instances to 
 {: #view_global}
 
 To view all applications deployed across all CFEE instances:
-1. Click the Menu icon ![Account Checking](img/HamburgerMenu.png  "Screen cap that shows the menu icon") > **Cloud Foundry** to open the Cloud Foundry dashboard.  
+1. Click the Menu icon ![Account Checking](images/HamburgerMenu.png  "Screen cap that shows the menu icon") > **Cloud Foundry** to open the Cloud Foundry dashboard.  
 2. Click **Enterprise > Applications** in the left navigation pane.
 The table in the view shows the following information: 
 

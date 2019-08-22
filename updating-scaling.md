@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-08-12"
 
 ---
 
@@ -14,16 +14,14 @@ lastupdated: "2019-06-28"
 {:screen: .screen}
 {:tip: .tip}
 
-# Updating and scaling
+# Updating and scaling your {{site.data.keyword.cfee_full_notm}} instances
 {: #update-scale}
 
 Update the {{site.data.keyword.cfee_full_notm}} service instance to the latest version to get the latest CFEE functions and fixes. Updates of CFEE can include new versions of Cloud Foundry and CFEE supporting services (Kubernetes, Cloud Object Storage or Compose for PostgreSQL).  However, not every CFEE update will include a new version of Cloud Foundry and CFEE supporting services.
 
-The CFEE version update will upgrade components on the control plane, cell, and monitoring nodes. When an update includes an Kubernetes version change, the nodes are updated individually. The components are updated after the nodes complete.
+The CFEE version updates take place on the control plane containing the CFEE components and on the cells. You can also scale the capacity of your CFEE instance by adding or deleting application cells.
 
-In addition to updating your CFEE instance, you can also scale its capacity by adding or deleting application cells.
-
-**Note:** During a version update or while cells are being added or deleted, some metrics (e.g., Memory and CPU) shown in the _Overview_, _Resource Usage_ and _Update and Scaling_ pages may not be available. For status during a Kubernetes update refer to the Kubernetes dashboard.
+**Note:** During a version update or while cells are being added or deleted, some metrics (e.g., Memory and CPU) shown in the _Overview_, _Resource Usage_ and _Update and Scaling_ pages may not be available.
 
 ## Updating the version
 {: #update}
@@ -32,20 +30,22 @@ Users need the following permissions to be able to update a CFEE instance to a n
    * _Editor_ role or higher to a CFEE instance.
    * _Operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned.
 
-Updating the CFEE version of your CFEE instance is a one-step process.
+Updating the CFEE version of your CFEE instance is a two-step process. First, update the control plane that hosts the CFEE componentry. Then, update the cells that host your applications.
 
 The following rules and constraints apply when updating a CFEE to a new version:
-* Control plane, cell, and monitoring nodes are only updated if their current Kubernetes version is less then the major.minor version specified in the new CFEE version.
+* The control plane must be updated first. Once the control plane has been updated the cells can be updated.
+* Application cells can be updated only to the version of the control plane.  That is, the control plane can be at a higher CFEE version level than application cells, but not viceversa.
 
 To update the CFEE version of your CFEE instance:
-
 1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} that you want to update.
 2. Go to the **Updates and Scaling** page under the _Operations_ entry in the left navigation pane.
-3. (optional) In the _Control Plane_ and _Cell Nodes_ tables you can expand the row to see the worker nodes.
+3. (optional) In the _Control Plane_ table you can expand the row to see the worker nodes in the control plane.
 4. Click **Update**.
-5. In the _Update CFEE Version_ dialog, select one of the available CFEE versions and click **Update**. Updates take 45 minutes or more. When an update includes a Kubernetes version change, updates take 1 hour or more per node. The version description details the versions of the components included in the selected CFEE version package, along with a link to the _What's New_ document describing the content delivered in that version.
+5. In the Update _Control Plane_ dialog, select one of the available CFEE versions and click **Update**.The update takes about 45 minutes.  The version description details the versions of the components included in the selected CFEE version package, along with a link to the _What's New_ document describing the content delivered in that version.
 6. The _Nodes Status_ column shows the progress of the update. Once the update is complete, the _Version_ column reflects the new CFEE version.
-7. The control Plane, Cells, and Monitoring nodes are updated sequentially. The _Nodes Status_ column indicates the progress of the update for each node. As nodes are updated, their new version is reflected in the Version column.
+7. Once the update of the control plane cells is complete, find the _Cells_ table and click **Update**.
+8. In the _Update Control Plane_ dialog select the CFEE version and click *Update*. There is only available version for the cells to update because cells can be updated only to the version of the control plane. A single update action updates all cells.
+9. Cells are updated sequentially. The _Nodes Status_ column indicates the progress of the update for each cell. As cells are updated, their new version is reflected in the _Version_ column.
 
 ## Disruptions during version update
 {: #update-disruption}

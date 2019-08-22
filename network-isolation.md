@@ -33,7 +33,7 @@ In v2.2.0 the CFEE management plane (the sub-system used for provisioning, updat
 After you create your CFEE instance, the management plane creates an [IAM service ID](https://cloud.ibm.com/docs/overview/whats-new?topic=overview-whatsnew#identity-and-access-management-application-authentication-feature) in your account that it gives to the IKS master node. The CFEE management plane uses this service ID to access the CFEE host workers through the master node and its VPN access for subsequent provisioning and management operations, including deploying the main Cloud Foundry component of CFEE.
 
 The diagram below depicts a CFEE installed behind a VRA network perimeter.   
-![Network isolation](img/CFEE_IsolatedNetwork.png  "Diagram describing how a CFEE works in an isolated network.")
+![Network isolation](images/CFEE_IsolatedNetwork.png  "Diagram describing how a CFEE works in an isolated network.")
 
 ## Controlling access to instances in an isolated network
 {: #oppening-access-points}
