@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-07-25"
 
 ---
 
@@ -26,7 +26,7 @@ You can take these general steps to ensure that your CFEE instances are up-to-da
 {: #stager_debug}
 ### Monitoring Alert
 {: #stager_debug_mon}
-- CF:DiegoApiActivePassiveWrong
+- N/A
 
 ### What's happening
 {: #stager_debug_hap}
@@ -390,62 +390,6 @@ This issue will not be auto-recovered, and need manual intervention to recover.
   {: screen}
 10. Check the environment status again. The issue should be fixed.
 11. If you scaled up the cells on step 5 above, then now you need to scale down the cluster from UI, to let it have the same cell number as before.
-
-## Gorouter - high number of 4xx/5xx HTTP responses 
-{: #router_returncode_debug}
-### Monitoring Alert
-{: #router_returncode_mon}
-- CF:GorouterHighNumber4xx / CF:GorouterHighNumber5xx 
-
-### What's happening
-{: #router_returncode_hap}
-
-A high number of 4xx/5xx HTTP responses on Gorouters 
-
-A spike in Gorouter-side 5xx/4xx errors can indicate a range of problems, including applications crashing or diego cells 
-that don’t have the resources to handle the volume of incoming requests, incorrect routes and possible mis-configurations that 
-are blocking incoming traffic. 
-
-### Impact
-{: #router_returncode_imp}
-
-Depends on the reason for the issue one or more CF apps could be not reachable.
-
-### How to fix it
-{: #router_returncode_fix}
-
-1. Check the actual status of your environment using https://cloud.ibm.com/resources for any general issues.
-2. If you see any alerts about unhealthy cells try to resolve the [issue on the unhealthy cell](/docs/cloud-foundry?topic=cloud-foundry-cf_debug#unh_cell_fix) first.
-3. Follow the next steps 4-8 to analyze the gorouter logs. The information about problematic gorouter can be found in the alert.
-4. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
-5. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
-6. Run command `kubectl --namespace cf exec -it <router> bash` to connect to the gorouter pod. For this command use the identified router name from Step 1.
-7. Run command `tail /var/vcap/sys/log/gorouter/access.log` and you will see output like:
-  ```
-  ...
-  rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud - [2019-05-09T07:43:59.862+0000] "GET / HTTP/1.1" 502 0 67
-  "-"    "curl/7.54.0" "172.30.190.193:46693" "172.30.190.202:61003" x_forwarded_for:"10.74.47.98, 172.30.190.193"
-  x_forwarded_proto:"http"  vcap_request_id:"94cfa737-25aa-4f9f-744e-1f815117be52" response_time:0.00297709
-  app_id:"02fea509-b27e-4a42-b81d-25fbc8125189"   app_index:"0" x_b3_traceid:"31f58cd910f71f62" x_b3_spanid:"31f58cd910f71f62" x_b3_parentspanid:"-"
-  ...
-  ```
-  {: screen}
-8. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 HTTP response in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. 
-9. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too.
-10. For deeper investigation on the app side list app instances and analyze the app log for the affected application:
-  ```
-  cf app <appname>
-  cf logs <appname>
-  ```
-  {: screen}
- 11. If you see an issue with one of the app instanses you can try to reboot the cell where this instance is running:
-  ```
-  cf app <appname> --guid
-  cf curl /v2/apps/<guid>/stats
-  kubectl delete pod <diego cell pod> --namespace cf
-  ```
-  {: screen}
-
 
 ## Database not responding
 {: #database_debug}

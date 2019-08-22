@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2015, 2017, 2018, 2019
+  years: 2015, 2017, 2018
 
-lastupdated: "2019-08-15"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -17,20 +17,11 @@ lastupdated: "2019-08-15"
 {:important: .important}    
 
 
-# What's New in IBM Cloud Foundry Enterprise Environment
+# What's new in {{site.data.keyword.cfee_full_notm}}
+
+<!-- Update topic to follow the [release notes guidance and template](https://test.cloud.ibm.com/docs/developing/writing/markdown?topic=writing-releasenotes). -->
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full_notm}} service.
-
-## Version 3.2
-{: #v320}
-
-_Release Date:_ 2019-08-19
-
-To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
-The following changes were released in version 3.1.0 of the {{site.data.keyword.cfee_full_notm}} service (CFEE):
-* Multiple control plane node sizes are now available.  As of 3.2 you can now provision a CFEE instance with larger machine type of size 8x32 for the control plane.  All cell nodes will remain at the previous size of 4x16.
-* Enhancements have been made to the monitoring toolset. [Access](/docs/cloud-foundry?topic=cloud-foundry-monitoring#access-the-kubernetes-cluster) to Prometheus, Prometheus AlertManager and Grafana no longer require Kubernetes port forwarding. [Federation of the Prometheus server](/docs/cloud-foundry?topic=cloud-foundry-monitoring#federation) is enabled. Additional Prometheus alerts have been added for situations including [unhealthy Diego cells](/docs/cloud-foundry?topic=cloud-foundry-cf_debug#unh_cell_debug) and [excessive database connections](/docs/cloud-foundry?topic=cloud-foundry-cf_debug#db_con_debug).
-* CFEE updates will now include updating of the IBM Kubernetes service component. No prerequisite Kubernetes cluster update will be required for CFEE updates.
 
 ## Version 3.1.1
 {: #v311}
@@ -42,7 +33,6 @@ Version 3.1.1 of the {{site.data.keyword.cfee_full_notm}} service (CFEE) resolve
 * Problem accessing the Stratos Console when installed on the CFEE Kubernetes cluster.
 
 To update your CFEE instance to this version, go to the _Updates and Scaling_ page in the CFEE's user interface and click **Update**.
-
 
 
 ## Version 3.1.0

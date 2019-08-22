@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-08-13"
 
 keywords: getting started tutorial, IBM Cloud, Cloud Foundry Enterprise Environment
 
@@ -16,12 +16,15 @@ subcollection: cloud-foundry
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 
 
 # Getting started with {{site.data.keyword.cfee_full_notm}}
 {: #getting-started}
 
-In this {{site.data.keyword.cfee_full}} (CFEE) getting started tutorial, we add users to an instance, create an organization and spaces, deploy apps, and bind those apps to services.
+<!-- Revamp the getting started to guide the user from the CF overview page in the console, starting with selecting Enterprise Environment. One of the prereqs should be setting up the IBM Cloud environment and point to the Determining your organization architecture topic. Also, CFEE is not an approved acronym. Replace all instances with the Enterprise Environment short name conref. -->
+
+In this {{site.data.keyword.cfee_full}} getting started tutorial, we add users to an instance, create an organization and spaces, deploy apps, and bind those apps to services.
 {: shortdesc}
 
 ## Before you begin
@@ -33,23 +36,23 @@ In this {{site.data.keyword.cfee_full}} (CFEE) getting started tutorial, we add 
 * Create a CFEE instance from the [CFEE page in the {{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/cfadmin/create). For more information, see [Creating a CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-create-environment).
 
 
-## Step 1: Create organizations and spaces
+## Step 1. Create organizations and spaces
 {: #create-orgsandspaces}
 
 After your instance is created, structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} instance are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains. For more information, see [Determining your organization architecture](/docs/cloud-foundry?topic=cloud-foundry-orgstructure).
 
 1. In the CFEE user interface, click **Organizations** in the navigation pane.
 
-   To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
-   {: tip}
+    To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
+    {: tip}
 
 3. Click **Create Organization**.
 4. Enter a **Name** for the new organization.
 5. Under **Managers**, identify at least one user. Users with a Manager role can add members to that organization.
 6. Under **Quota plan**, select an available plan. A quota plan limits the memory available for apps in the organization, the maximum number of apps instances hosted, and the maximum number of routes.
   
-   You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
-   {: tip}
+    You can select a different quota at a later time. You can also create your own custom quotas in the **Quotas** page of the CFEE user interface. You can make a custom quota the _Default_ quota by clicking the _Copy to default_ action from the quota's overflow menu, which copies the values of the custom quota into the default quota.
+    {: tip}
 
 1. Click **Add** to create the organization.
 1. On the Organizations page, click the name of the organization you created.

@@ -34,9 +34,6 @@ lastupdated: "2019-06-06"
     * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
-    * Cell sizes are currently fixed to be machine types of size 4x16. (4 cores with 16gb ram per core)
-    * Control plane nodes offer both 4x16 and 8x32 machine types to allow you to customize the compute/memory capacity of your control plane
-      * Increasing your control plane node size will allow for an increase in throughput against your cells.
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
     * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
     
@@ -54,12 +51,12 @@ lastupdated: "2019-06-06"
     * **Service access endpoints used for management:** If the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started), management access by the CFEE control plane to the new CFEE and its supporting services (Kubernetes cluster, Databases for PostgreSQL and Cloud Object Storage) will take place through the IBM private network.  One the CFEE instance is created, administrators can see information about the endpoints used for management access in the **Management access** page (located in the upper right corner of the _Overview_ page in the CFEE user interface). [Learn more](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#private-access)
 
 6.  Configure the capacity of the CFEE:
-    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  There is a cell limit of 16 cell nodes to every 1 control plane node that is provisioned in the cluster.  (EX. A 3 zone cfee instance can have a total of 48 cells associated with it while a 2 zone or single zone instance can have a total of 32 cells associated with it.)
+    * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
     * Select the **Node size**, which determines the capacity of the Cloud Foundry cells (CPU and memory) .
     
     In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
 
-    **Note:** We require that VLAN spanning is enabled or your account be VRF enabled in order to provision. Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/catalog/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
+    **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/catalog/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
 
 7.  The **Order Summary** in the right-hand side of the page reflects the cost of the CFEE instance and the ancillary services along with the estimated monthly total.
 
