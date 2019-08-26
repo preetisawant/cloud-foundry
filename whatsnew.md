@@ -24,6 +24,17 @@ lastupdated: "2018-08-22"
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
 
+## Version 3.2.1
+{: #v321}
+
+_Release Date:_ 2019-08-26
+
+Version 3.2.1 of the {{site.data.keyword.cfee_full_notm}} service resolves the following:
+
+* Errors encountered when upgrading to version 3.2 from earlier versions of {{site.data.keyword.cfee_full_notm}}.
+
+To update your {{site.data.keyword.cfee_full_notm}} instance to this version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface and click **Update**.
+
 ## Version 3.2
 {: #v320}
 
