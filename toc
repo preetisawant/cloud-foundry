@@ -44,8 +44,8 @@ Cloud Foundry Enterprise Environment
 
     {: .topicgroup}
     Developing with buildpacks
-        /runtimes-common/runtimes-common-available_buildpacks
-        /runtimes-common/runtimes-common-using_buildpacks
+        buildpacks.md
+        byob.md
         getting-started-dotnet.md
         getting-started-go.md
         getting-started-liberty.md
@@ -55,7 +55,7 @@ Cloud Foundry Enterprise Environment
         getting-started-node.md
         getting-started-swift.md
         getting-started-tomcat.md
-        /runtimes-common/runtimes-common-working_with_proxy
+        workingWithProxy.md
 
     {: .topicgroup}
     Managing operations
@@ -72,7 +72,7 @@ Cloud Foundry Enterprise Environment
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    /runtimes-common/runtimes-common-app_management
+    app_mng.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
@@ -83,8 +83,8 @@ Cloud Foundry Enterprise Environment
         cfee_troubleshoot_cf.md
         cfee_troubleshoot_kube.md
         cfee_troubleshoot_ops.md
-        /runtimes-common/runtimes-common-runtimes
+        ts_runtimes.md
 
-    /runtimes-common/runtimes-common-buildpack_support_statement
+    buildpackSupport.md
     known-issues.md
     {: .navgroup-end}
