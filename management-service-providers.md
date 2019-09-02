@@ -1,26 +1,24 @@
 ---
-
 copyright:
-
-  years: 2015, 2017, 2018
-
-lastupdated: "2019-03-13"
-
+  years: 2019
+lastupdated: '2019-09-02'
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
+{:shortdesc: .shortdesc}<br>
+{:new_window: target="_blank"}<br>
+{:codeblock: .codeblock}<br>
+{:pre: .pre}<br>
+{:screen: .screen}<br>
 {:tip: .tip}
 
-# Managed Service Provider offerings
-{: #management-services}
+# Management Service Providers
 
-A _Managed Service Provider_ role is required to manage the proper operations of an {{site.data.keyword.cfee_full_notm}} (CFEE) instance.  The customer owning the CFEE instance can fulfill this role.  Alternatively, you can engage a third party to fulfill this role in your behalf. The following _Managed Service Provider_ offerings from IBM and IBM business partners are available: 
+{: #management-service-providers}
 
-| Offering   | Company | Description | Contact | 
-|-----------|---------------|---------------|---------------|
-| [IBM Integrated Management Infrastructure (IMI)](ibm.com) | IBM |  Manages virtual infrastructure comprising of compute, network, and storage virtualization.| [Request a consultation](ibm.com) |
-| [ACME services](ibm.com) | ACME |  Manages CFEE infrastructure and Cloud Foundry operations]  | [Request a consultation](ibm.com) |
+An _Environment Administrator_ role is required to manage the proper operations of an {{site.data.keyword.cfee_full_notm}} (CFEE) instance. As a customer owning the CFEE instance you can fulfill this role. Alternatively, you can engage a third party to fulfill this role on your behalf. The following _Management Service Providers_ are available:
+
+Offering                                                                  | Company  | Description                                                                                                            | Contact
+------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------
+IBM Services for Container Platform                                       | IBM      | The service includes the Build and Manage of the container platform and, optionally, the workloads, in a DevOps model. | [Request a consultation](https://w3.ibm.com/services/integrated-managed-infrastructure-services/overview/containers)
+IBM Cloud Foundry Managed Services                                        | Altoros  | Leverage the benefits of enterprise-grade IBM Cloud Foundry without the operational burden.                            | [Request a consultation](https://www.altoros.com/ibm-cloud-foundry-managed-services)
+Managed Services for your IBM Cloud Foundry Enterprise Environment (CFEE) | Anynines | Outsource your platform's management to our team of experts so you can focus on what matters -- your code.             | [Request a consultation](https://www.anynines.com/operations/cfee)
