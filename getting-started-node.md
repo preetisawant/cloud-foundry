@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-27"
+lastupdated: "2019-09-03"
 subcollection: cloud-foundry
 ---
 
@@ -63,7 +63,7 @@ cd get-started-node
   ```
   {: codeblock}
 
-1. Install the dependencies listed in the [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json) file to run the app locally.  
+1. Install the dependencies listed in the [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json){: new_window} file to run the app locally.  
   ```
 npm install
   ```
@@ -77,7 +77,7 @@ npm start
 
 1. View your app at the following URL: http://localhost:3000
 
-Use [nodemon](https://nodemon.io/) for automatic restarting of application on file changes.
+Use [nodemon ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodemon.io/){: new_window} for automatic restarting of application on file changes.
 {: tip}
 
 ## Step 3: Prepare the app for deployment
@@ -195,7 +195,7 @@ npm start
 
   View your local app at http://localhost:3000. Any names you enter into the app will now get added to the database.
 
-**Avoid trouble**: {{site.data.keyword.Bluemix_notm}} defines the PORT environment variable when your app runs on the cloud. When you run your app locally, the PORT variable is not defined, so 3000 is used as the port number. See [Run your app locally](runningLocally.html#hints) for more information.
+**Avoid trouble**: {{site.data.keyword.Bluemix_notm}} defines the PORT environment variable when your app runs on the cloud. When you run your app locally, the PORT variable is not defined, so 3000 is used as the port number. See [Run your app locally](/docs/runtimes/nodejs?topic=Nodejs-hints) for more information.
 
   Your local app and the {{site.data.keyword.Bluemix_notm}} app are sharing the database. Names you add from either app will appear in both when you refresh the browsers.
 

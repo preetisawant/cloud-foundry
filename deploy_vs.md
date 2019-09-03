@@ -6,7 +6,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-07-03"
+lastupdated: "2019-09-03"
 
 
 
@@ -31,4 +31,4 @@ lastupdated: "2019-07-03"
       + If using Visual Studio 2015, open the `.sln` file by going to **File > Open > Project/Solution**.
       + If using Visual Studio Code, open the folder which contains the `.sln` by going to **File > Open**.
 
-  1. After you modify your code you can redeploy it by using the command-line interface (CLI). See [Deploying apps with the Cloud Foundry CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/starters/?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}.
+  1. After you modify your code you can redeploy it by using the command-line interface (CLI). See [Deploying apps with the Cloud Foundry CLI](/docs/cloud-foundry?topic=cloud-foundry-cf-deploy-cli).

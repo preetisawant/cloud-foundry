@@ -2,15 +2,16 @@
 
 copyright:
 
-  years: 2015, 2018
+  years: 2015, 2019
 
-lastupdated: "2018-06-28"
+lastupdated: "2019-09-03"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:tip: .tip}
+{:hide-in-docs: .hide-in-docs}
 
 # Uploading your application
 
@@ -23,7 +24,7 @@ Ensure you have completed the following steps before you begin:
 
   1. Install the {{site.data.keyword.Bluemix}} command line interface.
 
-  <a class="xref" href="http://clis.stage1.ng.bluemix.net/ui/home.html" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_bx_commandline.svg" alt="Download {{site.data.keyword.Bluemix}} command line interface" /> </a>
+  <a class="xref" href="http://clis.stage1.ng.bluemix.net/ui/home.html" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_bx_commandline.svg" alt="Download {{site.data.keyword.Bluemix}} command line interface" /> </a>{: hide-in-docs}
 
   2. Connect to {{site.data.keyword.Bluemix_notm}}.
 
@@ -57,4 +58,4 @@ When a **ibmcloud app push** command is issued, the command line interface provi
 
   2. If you change your application, you can upload those changes by entering the `ibmcloud app push` command again. The command uses your previous options and your responses to the prompts to update any running instances of your application with the new bits of code.
 
-{{site.data.keyword.Bluemix}} CLI bundled a cf cli in its installation. `ibmcloud app push` command actually invokes `cf push` to upload and deploy your application to {{site.data.keyword.Bluemix_notm}}. See [cf commands](/docs/cli/reference/cfcommands/index.html) for more information about cf push.
+{{site.data.keyword.Bluemix}} CLI bundled a cf cli in its installation. `ibmcloud app push` command actually invokes `cf push` to upload and deploy your application to {{site.data.keyword.Bluemix_notm}}. See [cf commands](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin) for more information about cf push.

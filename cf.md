@@ -13,9 +13,9 @@ lastupdated: "2018-08-12"
 # How Cloud Foundry works with {{site.data.keyword.cloud_notm}}
 {: #howwork}
 
-<!-- This file is reused in the CF Public subcollection. And it needs a short desc, and replace instances of "bluemix" in Figure 3 and the command names with IBM Cloud. -->
+<!-- This file is reused in the CF Public subcollection. And it needs a short desc, and replace instances of "bluemix" in Figure 3 and the command names with "IBM Cloud." -->
 
-When you deploy an app to Cloud Foundry, you must configure {{site.data.keyword.cloud_notm}} with enough information to support the app.
+When you deploy an app to Cloud Foundry, you must configure {{site.data.keyword.cloud}} with enough information to support the app.
 
 * For a mobile app, {{site.data.keyword.cloud_notm}} contains an artifact that represents the mobile app's back end, such as the services that the mobile app uses to communicate with a server.
 * For a web app, you must ensure that information about the runtime and framework is communicated to {{site.data.keyword.cloud_notm}}, so that {{site.data.keyword.cloud_notm}} can set up the appropriate execution environment to run the app.
@@ -55,7 +55,7 @@ Each app can have one or more URLs associated with it, but they must all point t
 
 In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.cloud_notm}} in Cloud Foundry. Layers such as root filesystems and middleware components are abstracted so that you can focus on your application code. However, you can learn more about these layers if you need specifics on where your app is running.
 
-See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](cf.html#infralayers) for details.
+See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](/docs/cloud-foundry?topic=cloud-foundry-howwork#viewinfra) for details.
 
 As a developer, you can interact with the {{site.data.keyword.cloud_notm}} infrastructure by using a browser-based user interface. You can also use a Cloud Foundry command line interface, called cf, to deploy web apps.
 
