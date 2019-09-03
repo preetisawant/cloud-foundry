@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-09-03"
 
 ---
 
@@ -51,7 +51,7 @@ After you install the command line interface, follow these steps:
 
   **Note**: You must add single or double quotation marks around `username`, `org_name`, and  `space_name` if the value includes a space, for example, `-o "my org"`.
 
-5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the `ibmcloud app push` command. For more information about the `cf app push` command, see [Uploading your application](/docs/starters/upload_app.html).
+5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the `ibmcloud app push` command. For more information, see [`cf push`](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
 
   ```
   cf push <app_name>

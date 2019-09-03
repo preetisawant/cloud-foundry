@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2018
-lastupdated: "2018-04-13"
+  years: 2018, 2019
+lastupdated: "2019-09-03"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-04-13"
 {: #roles}
 
 You can grant multiple roles to team members in an {{site.data.keyword.Bluemix_notm}} account. These roles define the permissions of the user to manage account and organization resources:
-You can grant [user roles](/docs/iam/users_roles.html#userroles) to members of an organization. These roles define the level of access within the organization, and restrict who can access a space and its resources. For example, you can grant users different permissions to different spaces.
+You can grant [user roles](/docs/iam?topic=iam-userroles) to members of an organization. These roles define the level of access within the organization, and restrict who can access a space and its resources. For example, you can grant users different permissions to different spaces.
 
 ## Account owner
 {: #accountowner}

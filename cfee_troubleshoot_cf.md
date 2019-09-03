@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-09-03"
 
 ---
 
@@ -402,7 +402,7 @@ This issue will not be auto-recovered, and need manual intervention to recover.
 
 Since version 3.0 CFEE databases (uaa, ccdb, locked_db) are provisioned on {{site.data.keyword.databases-for-postgresql_full_notm}}.
 You can find more details about this service here:
-- [About IBM Cloud Databases for PostgreSQL](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-about)
+- [About IBM Cloud Databases for PostgreSQL](/docs/services/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-overview)
 There might be a connection issue between monitoring components and DB instance, or a general issue with your CFEE DB instance.
 
 ### Impact
@@ -479,7 +479,7 @@ If CCDB or UAADB or DIEGO_LOCKET will exhaust their max allowed connections expl
 ### How to fix it
 {: #db_con_debug_fix}
 
-1. Login in postgres database with `admin` user credentials. To get the password for `admin` user follow [Set the admin password](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-user-management&locale=de#the-admin-user)
+1. Login in postgres database with `admin` user credentials. To get the password for `admin` user follow [Set the admin password](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-user-management#the-admin-user)
 
   ```
   SELECT COUNT(*),datname,state,client_addr FROM pg_stat_activity GROUP BY datname,state,client_addr ORDER BY count DESC;
@@ -513,14 +513,14 @@ In this case the exploiter consuming a lot of connections is the BBS server with
 
 Fixing this issue is not straightforward there could be multiple reasons why the exploiter is having so many connections open:
 
-2.  You can workaround the problem [killing the connections](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections&locale=de#terminating-connections) assigned to a specific IP via SQL:
+2.  You can workaround the problem [killing the connections](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections#terminating-connections) assigned to a specific IP via SQL:
 
   ```
   SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE client_addr = '__CLIENT IP__'
   ```
   {: screen}
 
-3. Depending on root cause it may happen that eventually client will [exceed threshold](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections&locale=de#raising-the-connection-limit).
+3. Depending on root cause it may happen that eventually client will [exceed threshold](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections#raising-the-connection-limit).
 
 NOTE: If external database is unreachable open [Support Ticket](/unifiedsupport/cases/add)
 
@@ -538,11 +538,11 @@ The resource usage on the cell is high. You need to take action to reduce the re
 ### How to fix it
 {: #cellusage_debug_fix}
 
-1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](/docs/cloud-foundry/manage-capacity.html)
+1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](/docs/cloud-foundry?topic=cloud-foundry-reviewing-resource-usage)
 2. You can also check the resource usage by commands `cf apps` and `cf app <APP_NAME>`.
 3. When there are applications that are no longer in use, you can clean them up by deleting them `cf delete <APP_NAME>` command.
 4. You can also use `cf scale` command to scale down apps, and therefore, reduce the occupied memory by your apps.
-5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](/docs/cloud-foundry/updating-scaling.html#scale)
+5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](/docs/cloud-foundry?topic=cloud-foundry-update-scale)
 
 ## High number of bad gateways
 {: #badgw_debug}

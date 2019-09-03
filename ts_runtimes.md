@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-26"
+lastupdated: "2019-09-03"
 subcollection: "cloud-foundry"
 
 ---
@@ -191,7 +191,7 @@ A Liberty application fails to start with a "_Failed to start accepting connecti
 ```
 {: codeblock}
 
-{{site.data.keyword.Bluemix_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring/newRelic.html) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
+{{site.data.keyword.Bluemix_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
 {: tsCauses}
 
 First, examine the logs for any obvious errors that might cause the Liberty application to fail. If no obvious errors are found, then try the following solutions:
@@ -347,7 +347,8 @@ Node.js does not know how much memory is available to the application, so the ga
 ```
 {: codeblock}
 
-A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku](https://github.com/nodejs/node/issues/3370) for a more in-depth discussion of this topic.
+A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/nodejs/node/issues/3370){: new_window} for a more in-depth discussion of this topic.
+
 ```
   "scripts": {
     "start": "node --max_old_space_size=800 server.js"
@@ -367,7 +368,7 @@ If you receive a similar message when you push your ASP.net application, it is m
 The application fails to deploy with the message: `Failed to compress droplet: signal: broken pipe` or `No space left on device`.  How can I fix this?
 {: tsSymptoms}
 
-Projects pushed from source code that contains a large number of NuGet package dependencies can sometimes cause this error when the NuGet package cache is enabled.  Set the `CACHE_NUGET_PACKAGES` environment variable to `false` to disable the cache. See the instructions about how to [Disable the NuGet package](/docs/runtimes/dotnet/disablingNuGet.md) for more information.
+Projects pushed from source code that contains a large number of NuGet package dependencies can sometimes cause this error when the NuGet package cache is enabled.  Set the `CACHE_NUGET_PACKAGES` environment variable to `false` to disable the cache. 
 {: tsCauses}
 
 ### Helpful links

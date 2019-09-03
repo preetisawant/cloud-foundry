@@ -59,7 +59,7 @@ After your instance is created, structure the environment by creating organizati
 1. Click the **Spaces** tab and click **Create Space**. 
 1. Enter a name for the space, select at least one manager, and click **Add**.
 
-## Step 2: Add users to organizations and spaces
+## Step 2. Add users to organizations and spaces
 {: #add-users}
 
 [Add users](/docs/cloud-foundry?topic=cloud-foundry-adding_users) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in a CFEE, those users must have access to the CFEE instance. See [Permissions](/docs/cloud-foundry?topic=cloud-foundry-permissions).
@@ -67,7 +67,7 @@ After your instance is created, structure the environment by creating organizati
 1. On the Spaces tab, click the name of the space you created.
 1. On the Members tab, click **Add members**.
 
-## Step 3: Deploy and view applications
+## Step 3. Deploy and view applications
 {: #deploy-apps}
 
 You can [deploy apps](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps) to your CFEE instance with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
@@ -108,10 +108,10 @@ You can [deploy apps](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps) to yo
 6.  Access your app by browsing to `https://<app_url>.<AppDomainName>`.
 
 
-## Step 4: Bind applications to service instances 
+## Step 4. Bind applications to service instances 
 {: #bind-apps}
 
-[Create services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#workingwith-services#creating-services-inspace) or [Add existing services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#workingwith-services#adding-services-inspace) from your IBM Cloud account to the CFEE space so you can bind the services to the applications you deployed.
+[Create services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#creating-services-inspace) or [Add existing services](/docs/cloud-foundry?topic=cloud-foundry-workingwith-services#adding-services-inspace) from your IBM Cloud account to the CFEE space so you can bind the services to the applications you deployed.
 
 1. In the CFEE user interface, navigate to the **Organizations > *your-org* > Spaces > *your-space*** page and go to the Services tab.
 1. Click **Create service** to provision a new service or click **Add service** to add an existing service from your IBM Cloud account.
@@ -126,7 +126,7 @@ In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/ov
 
 You can do the following tasks to manage your environment if it was created from the **Standard** plan:
 
- * Enable the environment for [auditing events](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging#auditing) and [logging persistence](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#logging).
+ * Enable the environment for [auditing events](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing) and [logging persistence](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#logging).
 
  * [Enable monitoring tools](/docs/cloud-foundry?topic=cloud-foundry-monitoring) after the CFEE instance is created. The monitoring toolset includes Prometheus, Grafana, and Alertmanager. Monitoring tools are not automatically provisioned on CFEE instances v2.2.0 or later. 
 

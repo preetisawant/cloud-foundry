@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2018-08-13"
+lastupdated: "2018-09-03"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-08-13"
 
 Within an organization, spaces provide an extra level of boundary enforcement and abstraction.
 
-A space is a reserved area in the organization where users can develop and run apps and services. You can create any number of spaces in an organization, and you can control the users that have access to a space. See [Spaces](/docs/account/orgs_spaces.html#orgsspacesusers) for more details.
+A space is a reserved area in the organization where users can develop and run apps and services. You can create any number of spaces in an organization, and you can control the users that have access to a space. See [Spaces](/docs/account?topic=account-orgsspacesusers) for more details.
 
 If you plan to define many spaces, you might want to create an application to help manage the spaces. When the number of spaces exceeds sixty, you might want to consider defining another organization.
 
