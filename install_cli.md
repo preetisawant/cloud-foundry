@@ -52,7 +52,8 @@ After you install the CLI, you can get started:
     
     <p> 
     <a class="xref" href="https://cloud.ibm.com" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_starter-code.svg" alt="Download application code" /> </a>
-    </p>{: hide-in-docs}
+    </p>
+    {: hide-in-docs}
 
   2. Change to the directory where your code is located.
 
