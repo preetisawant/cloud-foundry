@@ -11,9 +11,9 @@ lastupdated: '2019-09-02'
 {:screen: .screen}<br>
 {:tip: .tip}
 
-# Management Service Providers
+# Management Offering Providers
 
-{: #management-service-providers}
+{: #management-offering-providers}
 
 An _Environment Administrator_ role is required to manage the proper operations of an {{site.data.keyword.cfee_full_notm}} (CFEE) instance. As a customer owning the CFEE instance you can fulfill this role. Alternatively, you can engage a third party to fulfill this role on your behalf. The following _Management Service Providers_ are available:
 
