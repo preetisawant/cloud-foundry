@@ -4,7 +4,7 @@ copyright:
 
   years: 2015，2019
 
-lastupdated: "2019-08-13"
+lastupdated: "2019-09-03"
 
 ---
 
@@ -39,7 +39,8 @@ Before you begin, download and install the {{site.data.keyword.Bluemix_notm}} CL
 
 <p>
 <a class="xref" href="https://clis.ng.bluemix.net" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_bx_commandline.svg" alt="Download {{site.data.keyword.Bluemix_notm}} CLI" /> </a>
-</p>{: hide-in-docs}
+</p>
+{: hide-in-docs}
 
 The CLI is not supported by Cygwin. Use the tool in a command-line window other than the Cygwin command-line window.
 {: important}
