@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2018-08-22"
+lastupdated: "2019-09-04"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-08-22"
 {:screen: .screen}
 {:tip: .tip}
 {:note: .note}
-{:important: .important}    
+{:important: .important}
 
 
 # What's new in {{site.data.keyword.cfee_full_notm}}
@@ -23,6 +23,18 @@ lastupdated: "2018-08-22"
 <!-- Update topic to follow the [release notes guidance and template](https://test.cloud.ibm.com/docs/developing/writing/markdown?topic=writing-releasenotes). -->
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
+
+## Version 3.2.2
+{: #v322}
+
+_Release Date:_ 2019-09-04
+
+Version 3.2.2 of the {{site.data.keyword.cfee_full_notm}} service resolves the following:
+
+* Issue where UAA wasn't reporting proper version information.
+* Issue with UAA and the redirect endpoint.
+
+To update your {{site.data.keyword.cfee_full_notm}} instance to this version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface and click **Update**.
 
 ## Version 3.2.1
 {: #v321}
@@ -90,7 +102,7 @@ Version 3.0.2 of the {{site.data.keyword.cfee_full_notm}} service resolves the f
 * Problem provisioning {{site.data.keyword.cfee_full_notm}} instances of the Eirini Techncal Preview plan.
 * No security group was defined in the private network connecting {{site.data.keyword.cfee_full_notm}} components, which prevented communication between applications deployed in an {{site.data.keyword.cfee_full_notm}} instance. This is resolved for new provisions of 3.0.2.  Updating from 3.0.1 will be addressed in a future release.
 
-To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. 
+To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface.
 
 Update to v3.0.2 is available only to {{site.data.keyword.cfee_full_notm}} v3.0.x instances, See [Version 3.0.0](#v300).
 {: note}
@@ -105,7 +117,7 @@ Version 3.0.1 of the {{site.data.keyword.cfee_full_notm}} service resolves the f
 * Problem resolving DNS hostnames correctly after enabling communication between {{site.data.keyword.cfee_full_notm}} and its Kubernetes cluster through the cluster master.
 * Problem provisioning {{site.data.keyword.cfee_full_notm}} instances in the London region.
 
-To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. 
+To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface.
 
 Update to v3.0.1 is only available to {{site.data.keyword.cfee_full_notm}} v3.0.0 instances, See [Version 3.0.0](#v300).
 {: note}
@@ -117,8 +129,8 @@ Update to v3.0.1 is only available to {{site.data.keyword.cfee_full_notm}} v3.0.
 _Release Date:_ 2019-05-13
 
 Existing {{site.data.keyword.cfee_full_notm}} instances from version 2.x or earlier cannot migrate to version 3.0.0.
-{{site.data.keyword.cfee_full_notm}} version 3.0.0 is only available in new {{site.data.keyword.cfee_full_notm}} instances. This is due to a change in the database service used by {{site.data.keyword.cfee_full_notm}} to store Cloud Foundry data. {{site.data.keyword.cfee_full_notm}} v3.0.0 uses {{site.data.keyword.databases-for-postgresql_full}}, instead of the deprecated Compose for PostgreSQL service used in previous versions.  
-{: important} 
+{{site.data.keyword.cfee_full_notm}} version 3.0.0 is only available in new {{site.data.keyword.cfee_full_notm}} instances. This is due to a change in the database service used by {{site.data.keyword.cfee_full_notm}} to store Cloud Foundry data. {{site.data.keyword.cfee_full_notm}} v3.0.0 uses {{site.data.keyword.databases-for-postgresql_full}}, instead of the deprecated Compose for PostgreSQL service used in previous versions.
+{: important}
 
 Note that new {{site.data.keyword.cfee_full_notm}} instances (v3.0.0) cannot be created at present in the Chennai region (Asia Pacific). Deployments in the Chennai region will be enabled at a later time.
 
@@ -146,7 +158,7 @@ The following changes were released in version 3.0.0 of the {{site.data.keyword.
 * The database used by {{site.data.keyword.cfee_full_notm}} to store Cloud Foundry data is no longer Compose for PosgreSQL, but {{site.data.keyword.databases-for-postgresql_full}}. Resulting from this database change:
     * Existing {{site.data.keyword.cfee_full_notm}} instances with versions previous to 3.0.0 (v2.x or v1.x) cannot be updated to version 3.0.0.
     * Creating a new {{site.data.keyword.cfee_full_notm}} instance no longer requires developer access to a Cloud Coundry organization and space in the public {{site.data.keyword.Bluemix_notm}}.
-* More secured communication between the {{site.data.keyword.cfee_full_notm}} instance and the supporting services (_Kubernetes cluster_, _Cloud Object Storage_ and _Databases for PostgreSQL_). Communication with the _Kubernetes cluster_ takes place by default through the cluster master (instead of through the ingres router). Communication with the _Cloud Object Storage_ service instance always takes place through a private access endpoint. Communication with the _Databases for PostgreSQL_ instance takes place through a private endpoint if the {{site.data.keyword.cloud_notm}} account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). Otherwise, communication with  _Databases for PostgreSQL_ instance takes place through a public endpoint.   
+* More secured communication between the {{site.data.keyword.cfee_full_notm}} instance and the supporting services (_Kubernetes cluster_, _Cloud Object Storage_ and _Databases for PostgreSQL_). Communication with the _Kubernetes cluster_ takes place by default through the cluster master (instead of through the ingres router). Communication with the _Cloud Object Storage_ service instance always takes place through a private access endpoint. Communication with the _Databases for PostgreSQL_ instance takes place through a private endpoint if the {{site.data.keyword.cloud_notm}} account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/services/service-endpoint?topic=service-endpoint-getting-started#getting-started). Otherwise, communication with  _Databases for PostgreSQL_ instance takes place through a public endpoint.
 * Synchronizing the local {{site.data.keyword.cfee_full_notm}} catalog with the {{site.data.keyword.cloud_notm}} catalog takes place automatically every 24 hours. Synchornization can be done manually within the UI of an {{site.data.keyword.cfee_full_notm}} space page.  In version 3.0.0 that manual synchronization can also be done more easily in the overflow menu of the _Overview_ page (in the {{site.data.keyword.cfee_full_notm}} user interface, click **Synchronize catalog** in the overflow menu located in the upper right corner of the _Overview_ page).
 * **Auditing** and **Logging** capabilities in an {{site.data.keyword.cfee_full_notm}} are supported through the _Activity Tracker_ and the _Log Analysis_ services respectively.  Those two services are being deprecated from the {{site.data.keyword.Bluemix}} catalog.  Although you will still be able to use existing instances of those two services for auditing and logging in an {{site.data.keyword.cfee_full_notm}}, you will not able to create new instances of those services.
 * New documentation is available with [managing](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-management-enablement) and [troubleshooting](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-debug_overview) guidance.
@@ -168,10 +180,10 @@ _Release Date:_ 2019-04-23
 The following changes were released in version 2.2.3 of the {{site.data.keyword.cfee_full_notm}} service:
 
 * Resolved problem in the user interface that made metrics unretrievable on environments without monitoring enabled.
-     
-To update your {{site.data.keyword.cfee_full_notm}} version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. This version pre-requires v2.1.0. 
 
-This version does not pre-require version 2.2.0. You can update directly to version 2.2.3. However, if you bypass version 2.2.0, we still recommend that you update the {{site.data.keyword.cfee_full_notm}} Kubernetes cluster to v1.13 before the update (recommended also before a v2.2.0 update). 
+To update your {{site.data.keyword.cfee_full_notm}} version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. This version pre-requires v2.1.0.
+
+This version does not pre-require version 2.2.0. You can update directly to version 2.2.3. However, if you bypass version 2.2.0, we still recommend that you update the {{site.data.keyword.cfee_full_notm}} Kubernetes cluster to v1.13 before the update (recommended also before a v2.2.0 update).
 {: note}
 
 
@@ -182,13 +194,13 @@ _Release Date:_ 2019-04-16
 
 The following changes were released in version 2.2.2 of the {{site.data.keyword.cfee_full_notm}} service:
 
-* Resolved v2.2.1 update problems. Version 2.2.2 di facto replaces version 2.2.1. 
+* Resolved v2.2.1 update problems. Version 2.2.2 di facto replaces version 2.2.1.
 * Resolved problem affecting specific use cases of `cf login`.
 * Resolved minor problem with deployment of monitoring tools.
-     
-To update your {{site.data.keyword.cfee_full_notm}} version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. 
 
-This version does not pre-require version 2.2.0. You can update directly to version 2.2.2. However, if you bypass version 2.2.0, we still recommend that you update the {{site.data.keyword.cfee_full_notm}} Kubernetes cluster to v1.13 before the update (recommended also before a v2.2.0 update). 
+To update your {{site.data.keyword.cfee_full_notm}} version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface.
+
+This version does not pre-require version 2.2.0. You can update directly to version 2.2.2. However, if you bypass version 2.2.0, we still recommend that you update the {{site.data.keyword.cfee_full_notm}} Kubernetes cluster to v1.13 before the update (recommended also before a v2.2.0 update).
 {: note}
 
 
@@ -200,17 +212,17 @@ _Release Date:_ 2019-04-04
 The following changes were released in version 2.2.1 of the {{site.data.keyword.cfee_full_notm}} service:
 
 * Resolved a number of minor problems interfering with routine operations of an {{site.data.keyword.cfee_full_notm}} instance:
-     * Misattributed error messages. 
+     * Misattributed error messages.
      * Incorrect buildpack upload timeout.
      * Unintended events on doble click delete icon.
      * Incorrect cluster version display.
      * Incorrect getting started page display.
 
-To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface. 
+To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface.
 
 This version does not pre-require version 2.2.0. You can update directly to version 2.2.1. However, if you bypass version 2.2.0, we still recommend that you update the {{site.data.keyword.cfee_full_notm}} Kubernetes cluster to v1.13 before the update (recommended also before a v2.2.0 update).
 {: note}
- 
+
 
 ## Version 2.2.0
 {: #v220}
@@ -229,11 +241,11 @@ The following changes were released in version 2.2.0 of the {{site.data.keyword.
 * {{site.data.keyword.cfee_full_notm}} v2.2.0 instances can now [operate within an **isolated network**](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network). Note that if the instance is deployed in VLANs from an isolated network, some endpoints (IP addresses) [must be identified and routed properly](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#oppening-access-points) for the instance to become operational. An instance requires a Kubernetes cluster v1.13 to operate in an isolated network.
 * New capability to bind applications (deployed to an {{site.data.keyword.cfee_full_notm}} space) to service instances through the internal IBM network. The capability allows services supporting the IBM Cloud Service Endpoint to be consumed without accessing the public internet.
 * **Monitoring** tools:
-    * The monitoring tools (Prometheus, Grafana and Alertmanager) are no longer provisioned by default when you create an {{site.data.keyword.cfee_full_notm}}.  In v2.2.0 monitoring tools are provisioned only when explictely enabled by {{site.data.keyword.cfee_full_notm}} administrators.  Furthermore, when enabled, the monitoring tools are no longer provisioned into the {{site.data.keyword.cfee_full_notm}} control plane worker nodes. They are provisioned on their own worker nodes, outside the control plane. To enable and provision monitoring tools, go to the {{site.data.keyword.cfee_full_notm}} _Monitoring_ page (in the left-nav pane) and click **Enable monitoring**. 
-    * When you update an existing {{site.data.keyword.cfee_full_notm}} to version 2.2.0, the existing monitoring tools are deleted from the control plane. Any existing custom configuration of the monitoring tools will be lost. 
+    * The monitoring tools (Prometheus, Grafana and Alertmanager) are no longer provisioned by default when you create an {{site.data.keyword.cfee_full_notm}}.  In v2.2.0 monitoring tools are provisioned only when explictely enabled by {{site.data.keyword.cfee_full_notm}} administrators.  Furthermore, when enabled, the monitoring tools are no longer provisioned into the {{site.data.keyword.cfee_full_notm}} control plane worker nodes. They are provisioned on their own worker nodes, outside the control plane. To enable and provision monitoring tools, go to the {{site.data.keyword.cfee_full_notm}} _Monitoring_ page (in the left-nav pane) and click **Enable monitoring**.
+    * When you update an existing {{site.data.keyword.cfee_full_notm}} to version 2.2.0, the existing monitoring tools are deleted from the control plane. Any existing custom configuration of the monitoring tools will be lost.
     *  New capability to replace the default [Alertmanager configuration](https://prometheus.io/docs/alerting/configuration/) with a custom configuration that allows you to customize the handling, grouping, and notification routing of alerts. In the _Monitoring_ page you will be able to _Download_ the default configuration file, and _Upload_ a configuration file from your local file system.  See for an [example](https://github.com/prometheus/alertmanager/blob/master/doc/examples/simple.yml) of a configuration file.
 * New capability to tag {{site.data.keyword.cfee_full_notm}} instances in the {{site.data.keyword.Bluemix_notm}} [resource list](https://cloud.ibm.com/resources) and in the {{site.data.keyword.cfee_full_notm}} user interface.
-* General improvements to the user experience of the {{site.data.keyword.Bluemix_notm}} [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview). The Cloud Foundry dashboard shows global views of {{site.data.keyword.cfee_full_notm}} instances, applications and public services aliased into {{site.data.keyword.cfee_full_notm}} spaces. 
+* General improvements to the user experience of the {{site.data.keyword.Bluemix_notm}} [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview). The Cloud Foundry dashboard shows global views of {{site.data.keyword.cfee_full_notm}} instances, applications and public services aliased into {{site.data.keyword.cfee_full_notm}} spaces.
 
 A new **Eirini technical preview** plan is available when creating a new {{site.data.keyword.cfee_full_notm}} instance. The plan is independent  of the v2.2.0 previously described, which applies only to the _Standard_ plan.  The Eirini Technical Preview plan allows you to explore an {{site.data.keyword.cfee_full_notm}} using native Kubernetes as the container scheduler (instead of Diego). See [Getting Started with the Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-eirini#getting-started-eirini) for more information.
 {: note}
@@ -248,7 +260,7 @@ _Release Date:_ 2019-03-20
 
 The following changes were released in version 2.1.1 of the {{site.data.keyword.cfee_full_notm}} service. To update your version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface:
 
-* Resolved problems preventing successful provisioning. 
+* Resolved problems preventing successful provisioning.
 
 
 ## Version 2.1.0
@@ -263,7 +275,7 @@ The following changes were released in version 2.1.0 of the {{site.data.keyword.
 
 * New autoscaling capability that automatically scales Cloud Foundry application instances based on custom rules. Autoscaling is accessible from the CLI and from the Stratos console. The Stratos console can be optionally installed and launched from the _Overview_ page in the {{site.data.keyword.cfee_full_notm}} user interface. In the _Applications_ page of the Stratos console, select an  application and look for the **Auto Scaling** tab. Click *Create Policy* to launch the autoscaling editor to define the scaling policy for the target application.
   See the [autoscaling documentation](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps) for more information.
-* New capability to manage buildapcks from the {{site.data.keyword.cfee_full_notm}} user interface, including drag-and-drop positioning of a buildpack in the priority list. The capability is available in the new **Buildpacks** page of the {{site.data.keyword.cfee_full_notm}} user interface (not the Stratos console). In the release, only buildpack zip files 1 MB in size (or smaller) can be added or updated through the user interface. You can upload buildpack zip files larger than 1 MB using the `cf create-buildpack` and `cf update-buildpack` commands. 
+* New capability to manage buildapcks from the {{site.data.keyword.cfee_full_notm}} user interface, including drag-and-drop positioning of a buildpack in the priority list. The capability is available in the new **Buildpacks** page of the {{site.data.keyword.cfee_full_notm}} user interface (not the Stratos console). In the release, only buildpack zip files 1 MB in size (or smaller) can be added or updated through the user interface. You can upload buildpack zip files larger than 1 MB using the `cf create-buildpack` and `cf update-buildpack` commands.
 * New capability to manage organization quotas from the user interface, including visualizing which organizations are using a specific quota. The capability is available in the new **Quotas** page of the {{site.data.keyword.cfee_full_notm}} user interface (not the Stratos console). You can create new quotas and edit existing ones. You can also update the values of the default quota with the values from any existing quota by invoking the **Copy to Default** from the quota's menu.
 * A new **Getting Started** page in the user interface guides users to the most important tasks to setup and use the environment.
 * **Tags** can be added to an {{site.data.keyword.cfee_full_notm}} instance in the {{site.data.keyword.cloud_notm}} resource list.  Tags added in the resource list will also appear in the header of the {{site.data.keyword.cfee_full_notm}} Overview page.
@@ -314,9 +326,9 @@ The following changes were released in version 2.0.0 of the {{site.data.keyword.
     * New commands for creating an {{site.data.keyword.cloud_notm}} service instance from an {{site.data.keyword.cfee_full_notm}} space and adding it to that space (`ibmcloud cfee service-create`, `ibmcloud cfee service-alias-create`).
     * New commands for scaling the capacity of an {{site.data.keyword.cfee_full_notm}} (`ibmcloud cfee scale-up`, `ibmcloud cfee scale-down`).
     * Improvements to the command for managing {{site.data.keyword.cfee_full_notm}} instances (`ibmcloud cfee environments`).
-    
+
       Update the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud update`) to access these command enhancements, and issue `ibmcloud cfee -help` for more details.
-      
+
 Updating an {{site.data.keyword.cfee_full_notm}} instance to version 2.0.0 only requires a single _update_ action that updates both, the control plane and the cells. No separate updates are required for the {{site.data.keyword.cfee_full_notm}} control plane and cells.
 {: note}
 
@@ -337,7 +349,7 @@ _Release Date:_ 2018-11-28
 
 The following changes were released in version 1.1.1 of the {{site.data.keyword.cfee_full_notm}} service:
 * Security patch.
-   
+
 ## Version 1.1.0
 {: #v110}
 
@@ -360,5 +372,5 @@ The following changes were released in version 1.1.0 of the {{site.data.keyword.
 
 * Resolved problems:
    *  Resolved Problem: Intermittent error accessing cell metrics
-<br/>   
+<br/>
 See a demonstration of what's new in v1.1.0 in this [brief video](https://ibm.biz/CFEE-V110){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").  You can also find other videos on various topics in the [{{site.data.keyword.cfee_full_notm}} video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
