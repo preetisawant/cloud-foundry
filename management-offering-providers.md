@@ -4,7 +4,13 @@ copyright:
 lastupdated: '2019-09-02'
 ---
 
-{:shortdesc: .shortdesc} {:new_window: target="_blank"} {:codeblock: .codeblock} {:pre: .pre} {:screen: .screen} {:tip: .tip} {:note: .note}
+{:shortdesc: .shortdesc}  
+{:new_window: target="_blank"}  
+{:codeblock: .codeblock}  
+{:pre: .pre}  
+{:screen: .screen}  
+{:tip: .tip}  
+{:note: .note}  
 
 # Management Offering Providers
 
