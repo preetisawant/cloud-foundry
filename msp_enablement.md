@@ -1,10 +1,15 @@
 ---
 copyright:
   years: 2019
-lastupdated: '2019-06-12'
+lastupdated: '2019-08-12'
 ---
 
-{:shortdesc: .shortdesc} {:new_window: target="_blank"} {:codeblock: .codeblock} {:pre: .pre} {:screen: .screen} {:tip: .tip}
+{:shortdesc: .shortdesc}  
+{:new_window: target="_blank"} 
+{:codeblock: .codeblock}  
+{:pre: .pre} 
+{:screen: .screen} 
+{:tip: .tip}
 
 # Management enablement
 
@@ -39,7 +44,7 @@ IBM Cloud                          | IBM            | Provide means for deployme
 
 The following picture is a visual representation of the roles and responsibilities:
 
-![{{site.data.keyword.cfee_full_notm}}](img/ICFEE_HighLevelRoles.png "High level roles in an {{site.data.keyword.cfee_full_notm}}")
+![{{site.data.keyword.cfee_full_notm}}](images/ICFEE_HighLevelRoles.png "High level roles in an {{site.data.keyword.cfee_full_notm}}")
 
 ## Customer Management
 
@@ -90,7 +95,7 @@ If the customer decides to not manage this role themselves, but instead engage a
 
 The below gives an opinionated overview on how to setup CFEE for production workload and how to configure secondary tools and services to operate one or multiple CFEE instances. A few simple steps allow the automation of each step of the management process.
 
-![{{site.data.keyword.cfee_full_notm}}](img/OpsModel.png "Operational Model for {{site.data.keyword.cfee_full_notm}}")
+![{{site.data.keyword.cfee_full_notm}}](images/OpsModel.png "Operational Model for {{site.data.keyword.cfee_full_notm}}")
 
 From an end-to-end operation flow, the three steps below are best practices for operations on CFEE.
 
