@@ -60,6 +60,7 @@ Cloud Foundry Enterprise Environment
     {: .topicgroup}
     Managing operations
         msp_enablement.md
+        management-offering-providers.md
         stratos.md
         manage-capacity.md
         monitoring.md
