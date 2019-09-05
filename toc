@@ -69,7 +69,6 @@ Cloud Foundry Enterprise Environment
         autoscaling.md
         compliance.md
         raci_customer_provided_service.md
-        management-offering-providers.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
