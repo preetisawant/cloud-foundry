@@ -35,12 +35,7 @@ lastupdated: "2019-09-03"
 Use the {{site.data.keyword.Bluemix}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
 {:shortdesc}
 
-Before you begin, download and install the {{site.data.keyword.Bluemix_notm}} CLI.
-
-<p>
-<a class="xref" href="https://clis.ng.bluemix.net" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_bx_commandline.svg" alt="Download {{site.data.keyword.Bluemix_notm}} CLI" /> </a>
-</p>
-{: hide-in-docs}
+Before you begin, [download and install the {{site.data.keyword.Bluemix_notm}} CLI](https://clis.ng.bluemix.net).
 
 The CLI is not supported by Cygwin. Use the tool in a command-line window other than the Cygwin command-line window.
 {: important}
@@ -48,12 +43,7 @@ The CLI is not supported by Cygwin. Use the tool in a command-line window other 
 
 After you install the CLI, you can get started:
 
-  1. {: hide-in-docs}Download the code for your app to a new directory to set up your development environment.
-    
-    <p> 
-    <a class="xref" href="https://cloud.ibm.com" target="_blank" title="(Opens in a new tab or window)"><img class="image" src="images/btn_starter-code.svg" alt="Download application code" /> </a>
-    </p>
-    {: hide-in-docs}
+  1. {: hide-in-docs}[Download the code for your app](https://bluemix.net) to a new directory to set up your development environment.
 
   2. Change to the directory where your code is located.
 
