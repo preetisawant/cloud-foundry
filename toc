@@ -39,8 +39,8 @@ Cloud Foundry Enterprise Environment
         deploy_eclipsetools.md
         deploy_vs.md
         install_cli.md
-        Node-RED/nodered.md
         Node-RED/start_nodered.md
+        Node-RED/nodered.md
 
     {: .topicgroup}
     Developing with buildpacks
