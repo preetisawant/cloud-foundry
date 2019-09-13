@@ -27,6 +27,7 @@ Cloud Foundry Enterprise Environment
         orgs-spaces.md
         add-users.md
         assign-roles.md
+        prepare-account.md
         permissions.md
 
     {: .topicgroup}
