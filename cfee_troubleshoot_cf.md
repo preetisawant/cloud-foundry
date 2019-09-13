@@ -625,11 +625,17 @@ Here  `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate
 
 ## Issues with deployment of Cloud Foundry applications
 {: #cmlt_push_fail}
-{: #cmlt_push_mul_fail}
-{: #cmlt_actn_time_inc}
+
 ### Monitoring Alerts
 {: #cmlt_push_fail_mon}
-- CF:CamelotActionDurationIncrease / CF:CamelotAppPushFail / CF:MutipleCamelotAppPushFail
+
+CF:CamelotActionDurationIncrease
+{: #cmlt_actn_time_inc}
+
+CF:CamelotAppPushFail
+
+CF:MutipleCamelotAppPushFail
+{: #cmlt_push_mul_fail}
 
 ### What's happening
 {: #cmlt_push_fail_hap}
