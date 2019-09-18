@@ -190,6 +190,14 @@ The following guides you through the steps for installing the required CLI's, fo
   {: pre}
 
 
+## Camelot
+{: #camelot}
+
+Camelot allows to analyze [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
+The tool works as [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace. 
+Result are detailed metrics which could be used for problem determination, alerting and visualization.
+
+
 ## Launching the monitoring consoles
 {: #launching-consoles}
 
@@ -231,3 +239,13 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
    - _Worker Nodes Overview_
         - Shows the CPU and memory usage of the kubernetes infrastructure, along with its network traffic.
 
+#### Camelot Dashboards
+
+   - _Camelot - Runtimes_
+        - Provides a general status about Camelots Cloud Foundry application provisioning tests. It allows to the get the duration and test result of `cf push <app>` commands related to the used buildpack and gives an overview about the command duration and the duration of the most important sub steps of the command.
+   - _Camelot - cf CLI - Commands and Rest Calls - Details_ 
+        - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Camelot
+   - _Camelot - Internal Metrics and Node Performance_
+        - Gives an overview about Camelots Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html). 
+
+		
