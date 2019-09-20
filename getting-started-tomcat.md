@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-09-20"
 subcollection: cloud-foundry
 
 ---
@@ -23,7 +23,7 @@ subcollection: cloud-foundry
 
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.{: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/get-started-tomcat" target="_blank" title="(Download sample code)"><img class="w3-image" src="docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code" /></a>{: hide-in-docs}
+<a class="xref" href="https://github.com/IBM-Cloud/get-started-tomcat" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code" /></a>{: hide-in-docs}
 
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate a database service in your app.
@@ -35,6 +35,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 {: #prereqs-tomcat}
 
 You'll need the following:
+
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
 * [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
