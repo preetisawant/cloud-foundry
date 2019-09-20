@@ -22,12 +22,13 @@ subcollection: cloud-foundry
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.{: hide-in-docs}
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
+{: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/get-started-php" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code" /></a>{: hide-in-docs}
+<a class="xref" href="https://github.com/IBM-Cloud/get-started-php" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
 
 
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate a database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate a database service in your app.
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.Bluemix_notm}} CLI! The {{site.data.keyword.Bluemix_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.Bluemix_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.Bluemix_notm}} CLI in this tutorial.
 {: tip}
