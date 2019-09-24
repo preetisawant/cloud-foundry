@@ -47,6 +47,13 @@ timeouts when pushing very large applications.
 * Cloud Foundry has been updated to cf-deployment 6.10.  Please see the [Cloud Foundry Release Notes](https://github.com/cloudfoundry/cf-deployment/releases?after=v7.0.0) for information on changes in Cloud Foundry.  As CFEE vendors Cloud Foundry from SUSE SCF, see also the relevant [SCF Release Notes](https://github.com/SUSE/scf/releases?after=2.17.0).
 
 To update your {{site.data.keyword.cfee_full_notm}} instance to this version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface and click **Update**.
+
+The update to 4.0.0 can be disruptive to Cloud Foundry management operations - this means that, during the update, `cf login` and other
+cf commands may fail.  _As with all {{site.data.keyword.cfee_full_notm}} updates, however, your running applications are not
+impacted as long as there is sufficient whitespace to allow them to be rebalanced during the update._  Following the update, operations
+can be performed via the CF CLI.
+{: note}
+
 * **Important** After applying this update to your {{site.data.keyword.cfee_full_notm}} instance, you may find that,
 for a period of time (some number of hours), the UI healthchecks fail, instance metrics may be unavailable, and some UI management actions may fail.
 _Your instance is still functional and your applications will continue to run._  In addition, you can perform actions
