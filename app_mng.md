@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-26"
+lastupdated: "2019-09-20"
 subcollection: "cloud-foundry"
 
 ---
@@ -20,6 +20,9 @@ subcollection: "cloud-foundry"
 App Management is a set of development and debugging utilities that can be enabled for your Liberty applications on {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
+App Management utilities are deprecated for Node.js applications, and are no longer supported as of Version 4.0. Some utilities that were available for both Node.JS and Liberty applications are now only available for Liberty applications. These utilities are deprecated for Node.js applications.
+{: deprecated}
+
 ## App Management utilities
 {: #Utilities}
 
@@ -34,9 +37,6 @@ App Management is a set of development and debugging utilities that can be enabl
 * [localjmx](/docs/cloud-foundry?topic=cloud-foundry-app_management#localjmx)
 
 ### Node.js utilities
-
-App Management utilities are deprecated for Node.js applications. Some utilities that were available for both Node.JS and Liberty applications are now only available for Liberty applications. These utilities are deprecated for Node.js applications.
-{: deprecated}
 
 * [proxy](/docs/cloud-foundry?topic=cloud-foundry-app_management#proxy)
 * [noproxy](/docs/cloud-foundry?topic=cloud-foundry-app_management#noproxy)

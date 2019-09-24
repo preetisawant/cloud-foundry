@@ -24,6 +24,58 @@ lastupdated: "2019-09-04"
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
 
+## Version 4.0.0
+{: #v400}
+
+_Release Date:_ 2019-09-24
+
+The following changes were released in version 4.0.0 of the {{site.data.keyword.cfee_full_notm}} service:
+* {{site.data.keyword.cfee_full_notm}} instances can now be created using 8x32 cells (8 vCPUs, 32 GB RAM).  Note that cell sizes cannot be mixed
+within a {{site.data.keyword.cfee_full_notm}} instance - all cells must be the same size.  Once an instance has been created using a given cell
+size, this cannot be changed later.  To change cell size, you must create a new CFEE instance with the desired cell size and move your applications
+over.
+* {{site.data.keyword.cfee_full_notm}} can now contain up to 16 cells per zone.  In a multi-zone region containing three zones, this means that
+a {{site.data.keyword.cfee_full_notm}} instance can contain as many as 48 cells distributed evenly across the three zones.
+**Important** There is a known issue when scaling a {{site.data.keyword.cfee_full_notm}} instance down.  If you scale down the instance by a sufficiently large quantity of cells, you _may_ encounter a condition wherein some of the cells become unusable (and metrics
+  cannot be reported for these cells).  To avoid this,
+_please scale your instance down in smaller increments of no greater than 3 cells/zone_.  If you need to scale down by more than three cells,
+perform this as multiple separate scale-down actions to avoid this condition.  Should you nonetheless encounter this condition, please contact
+support for assistance.  A fix for this is being worked on and will be released as soon as possible.
+* The per-application disk quota has been raised from 2 GB to 4 GB.
+* The CF cloud controller timeout has been increased from 180 seconds (three minutes) to 600 seconds (ten minutes).  This limit was raised to avoid
+timeouts when pushing very large applications.
+* Cloud Foundry has been updated to cf-deployment 6.10.  Please see the [Cloud Foundry Release Notes](https://github.com/cloudfoundry/cf-deployment/releases?after=v7.0.0) for information on changes in Cloud Foundry.  As CFEE vendors Cloud Foundry from SUSE SCF, see also the relevant [SCF Release Notes](https://github.com/SUSE/scf/releases?after=2.17.0).
+
+To update your {{site.data.keyword.cfee_full_notm}} instance to this version, go to the _Updates and Scaling_ page in the {{site.data.keyword.cfee_full_notm}} user interface and click **Update**.
+
+The update to 4.0.0 can be disruptive to Cloud Foundry management operations - this means that, during the update, `cf login` and other
+cf commands may fail.  _As with all {{site.data.keyword.cfee_full_notm}} updates, however, your running applications are not
+impacted as long as there is sufficient whitespace to allow them to be rebalanced during the update._  Following the update, operations
+can be performed via the CF CLI.
+{: note}
+
+* **Important** After applying this update to your {{site.data.keyword.cfee_full_notm}} instance, you may find that,
+for a period of time (some number of hours), the UI healthchecks fail, instance metrics may be unavailable, and some UI management actions may fail.
+_Your instance is still functional and your applications will continue to run._  In addition, you can perform actions
+(e.g. creating orgs, pushing apps) via the CF CLI during this time.  After a period of time the metrics and healthchecks will return
+to a normal healthy state without intervention.
+* **Important** If you want, you can run a command via the `kubectl` CLI to restart one of the {{site.data.keyword.cfee_full_notm}}
+components and fix the metrics/healthchecks manually.  You can do this at any time after the update to restore normal UI capabilities.
+The specific command you run depends on whether or not you have enabled monitoring for your instance.  To begin, first login via the
+IBM Cloud CLI and retrieve the kubernetes cluster configuration (the name of your cluster is `$INSTANCE_NAME-cluster`):
+```
+$ ibmcloud login
+$ $(ibmcloud ks cluster config --cluster <YOUR_CLUSTER_NAME> --export)
+```
+What command you run next depends on whether or not your have enabled monitoring for your {{site.data.keyword.cfee_full_notm}} instance.
+* If you have _not_ enabled monitoring: `kubectl -n cf-admin-agent set env deploy/cf-admin-exporters RESTART_TIME="$(date)"`
+* If you _have_ enabled monitoring: `kubectl -n monitoring set env deploy/cf-exporter RESTART_TIME="$(date)"`
+
+
+The update to v4.0.0 is available only to {{site.data.keyword.cfee_full_notm}} v3.2.2 and v3.1.1 instances, See [Version 3.2.2](#v322) and
+[Version 3.1.1](#v311).
+{: note}
+
 ## Version 3.2.2
 {: #v322}
 

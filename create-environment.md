@@ -52,9 +52,12 @@ lastupdated: "2019-09-03"
 
 6.  Configure the capacity of the CFEE:
     * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
-    * Select the **Node size**, which determines the capacity of the Cloud Foundry cells (CPU and memory) .
-    
-    In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
+    * Select the **Cell node size**, which determines the capacity of the Cloud Foundry cells (CPU and memory).
+    * Select the **Control plane node size**, which determines the capacity (CPU and memory) of additional nodes which are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. In order to fully utilize Cloud Foundry cell capacity, your Control plane nodes must have a capacity greater than or equal your Cell node capacity.
+
+    **Number of Control Plane nodes:** In a single-zone CFEE, 2 Control plane nodes are created. In a multi-zone CFEE, a single Control plane node is created in each zone.
+
+    **Customer-available memory:** A CFEE's available memory is equal to the memory available to its cell nodes minus system memory. System memory is consumed by Cloud Foundry services which run on each individual cell.
 
     **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](/docs/containers?topic=containers-subnets#vlan-spanning) documentation for more information.
 
