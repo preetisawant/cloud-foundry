@@ -21,7 +21,7 @@ Cloud Foundry Enterprise Environment
     {: .navgroup id="howto"}
     {: .topicgroup}
     Setting up your IBM Cloud environment
-        /* how-to/setting-up-your-ibm-cloud-environment/provisioning-in-a-vpc.md */
+        how-to/setting-up-your-ibm-cloud-environment/provisioning-in-a-vpc.md
         design-structure.md
         org-structure.md
         spaces.md
