@@ -8,23 +8,22 @@ lastupdated: "2019-09-01"
 # Cloud Foundry Enterprise Environment on Virtual Private Cloud
 {: #cfee-on-vpc}
 
-You can provision a Cloud Foundry Enterprise environment into your Virtual Private Cloud (VPC).
-
-Follow the instructions here to create your VPC. https://cloud.ibm.com/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console
-
-## IAM Permission Prerequisites
-{: #iam-prereq}
-1. You must have Admin Platform permission on the VPC that you want to use.
-1. You must have the same permissions as for provisioning on classic infrastructure. https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions&locale=en-us
+You can provision an IBM Cloud Foundry Enterprise environment into your IBM Virtual Private Cloud (VPC).
 
 ## VPC Prerequisites
 {: #vpc-prereq}
-To provision your CFEE in a VPC, you must have the following:
-1. You must have Admin Platform permission on the VPC that you want to use.
+Before creating or configuring your VPC, ensure that your VPC meets the following criteria:
 1. VPCs with access to classic resources are currently not supported.
 1. For each subnet that is provided for the CFEE, you must enable the public gateway.
 1. You must have at least one subnet in your VPC.
-1. You must have the same permissions as for provisioning on classic infrastructure. https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions&locale=en-us
+
+Follow the instructions [here to create your VPC](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
+
+## IAM Permission Prerequisites
+{: #iam-prereq}
+Before provisioning CFEE into your VPC, ensure that you have the following IBM Cloud IAM access policies:
+1. You must have [https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources](Administrator platform role for VPC Infrastructure).
+1. You must have the same permissions as for [provisioning on classic infrastructure](cloud-foundry-permissions), excluding the Softlayer permissions.
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
@@ -32,7 +31,7 @@ To provision your CFEE in a VPC, you must have the following:
 1. Select VPC infrastructure.
 1. Choose your VPC.
 1. Choose your Worker Zones and Subnets you want to use.
-1. From there, you can follow the instructions for creating a regular CFEE here https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment&locale=en-us
+1. From there, you can follow the instructions for creating a regular CFEE [here](cloud-foundry-create-environment).
 
 ## Limitations
 {: #limitations}
