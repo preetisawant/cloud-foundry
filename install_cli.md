@@ -4,7 +4,7 @@ copyright:
 
   years: 2015，2019
 
-lastupdated: "2019-09-06"
+lastupdated: "2019-10-01"
 
 ---
 
@@ -35,15 +35,12 @@ lastupdated: "2019-09-06"
 Use the {{site.data.keyword.Bluemix}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
 {:shortdesc}
 
-Before you begin, [download and install the {{site.data.keyword.Bluemix_notm}} CLI](https://clis.ng.bluemix.net).
-
-The CLI is not supported by Cygwin. Use the tool in a command-line window other than the Cygwin command-line window.
-{: important}
+Before you begin, [download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
 
 
 After you install the CLI, you can get started:
 
-  1. {: hide-in-docs}[Download the code for your app](https://bluemix.net) to a new directory to set up your development environment.
+  1. {: hide-in-docs}[Download the code for your app](https://cloud.ibm.com) to a new directory to set up your development environment.
 
   2. Change to the directory where your code is located.
 
@@ -57,21 +54,27 @@ After you install the CLI, you can get started:
 
     Note: If your application is a Liberty app, you must build it before redeploying.
 
-  4. Connect and log in to {{site.data.keyword.Bluemix_notm}}.
+  4. Log in to {{site.data.keyword.cloud_notm}} with your IBMid. If you have multiple accounts, you are prompted to select which account to use. If you do not specify a region with the `-r` flag, you must also select a region.
+  ```
+  ibmcloud login
+  ```
+  {: codeblock}
+  
+  If your credentials are rejected, you might be using a federated ID. To log in with a federated ID, use the `--sso` flag. See [Logging in with a federated ID](/docs/iam/federated_id?topic=iam-federated_id#federated_id) for more details.
+  {: tip}
 
-  <pre class="pre"><code class="hljs">bluemix api https://api.<span class="keyword" data-hd-keyref="DomainName">DomainName</span></code></pre>
+  5. To access Cloud Foundry services, you must specify a Cloud Foundry org and space. You can run the following command to interactively identify the org and space:
+  ```
+  ibmcloud target --cf
+  ```
+  {: codeblock}
 
-  <pre class="pre"><code class="hljs">bluemix login -u <var class="keyword varname" data-hd-keyref="user_ID">username</var> -o <var class="keyword varname" data-hd-keyref="org_name">org_name</var> -s <var class="keyword varname" data-hd-keyref="space_name">space_name</var></code></pre>
+  Or, if you know which org and space that the service belongs to, you can use the following command:
+  ```
+  ibmcloud target -o <value> -s <value>
+  ```
+  {: codeblock}
 
-  If you are using a federated ID, use the `-sso` option.
+   6. From `your_new_directory`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the **`ibmcloud cf push`** command. For more information, see [**`ibmcloud cf push`**](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
-  <pre class="pre"><code class="hljs">bluemix login  -o <var class="keyword varname" data-hd-keyref="org_name">org_name</var> -s <var class="keyword varname" data-hd-keyref="space_name">space_name</var> -sso</code></pre>
-
-  You must add single or double quotes around `username`, `org_name`, and  `space_name` if the value contains a space, for example, `-o "my org"`.
-  {: note}
-
-  5. From <var class="keyword varname">your_new_directory</var>, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the **`ibmcloud app push`** command. For more information, see [**`ibmcloud app push`**](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
-
-  <pre class="pre"><code class="hljs">bluemix app push <var class="keyword varname" data-hd-keyref="app_name">app_name</var></code></pre>
-
-  6. Access your app by browsing to https://<var class="keyword varname" data-hd-keyref="app_url">app_url</var>.<span class="keyword" data-hd-keyref="APPDomain">AppDomainName</span>.
+  7. Access your app by browsing to the app URL.
