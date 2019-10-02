@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2016, 2018
-lastupdated: "2018-08-12"
+  years: 2016, 2019
+lastupdated: "2019-10-1"
 
 ---
 
@@ -84,14 +84,14 @@ Figure 5. Multi-region application deployment
 ### Viewing {{site.data.keyword.Bluemix_notm}} infrastructure layers
 {: #viewinfra}
 
-You can run the **bluemix app stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **bluemix app push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem, such as `lucid64` or `cflinuxfs2`:
+You can run the **ibmcloud cf stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **ibmcloud cf push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem. IBM Cloud Foundry Public only supports `cflinuxfs3` currently:
 
 ```
-bluemix app push appName -s stack_name
+ibmcloud cf push <APP_NAME> -s STACK
 ```
 
-You can use the `cf buildpacks` command to show the middleware components, such as WebSphere Liberty profile and SDK for Node.js, that are available as runtimes for your app to run in. And you can specify the runtime environment for your app by using the following command:
+You can use the `ibmcloud cf buildpacks` command to show the available buildpacks, such as Liberty for Java and SDK for Node.js, that are available as runtimes for your app to run in. And you can specify the runtime environment for your app by using the following command:
 
 ```
-bluemix app push appName -b buildpackname
+ibmcloud cf push <APP_NAME> -b BUILDPACK_NAME
 ```
