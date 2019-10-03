@@ -10,9 +10,12 @@ lastupdated: "2019-09-01"
 
 You can provision IBM Cloud Foundry Enterprise Environment into your IBM Virtual Private Cloud (VPC).
 
+VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully exploits this capability, and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
+
+
 ## VPC Prerequisites
 {: #vpc-prereq}
-Before creating or configuring your VPC, ensure that your VPC meets the following criteria:
+Before creating or configuring your VPC, ensure that the network planning meets the following criteria:
 1. You cannot enable access to classic resources in your VPC.
 1. For each subnet that is provided for the CFEE, you must enable the public gateway.
 1. You must have at least one subnet in your VPC.
@@ -27,14 +30,13 @@ Before provisioning CFEE into your VPC, ensure that you have the following IBM C
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
-1. Go to the CFEE creation page.
-1. Select VPC infrastructure.
+1. Create your VPC as [detailed here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started). 
+1. Go to the CFEE [creation page](https://dev.console.cloud.ibm.com/cfadmin/create).
+1. Select VPC infrastructure you just created.
 1. Choose your VPC.
 1. Choose your Worker Zones and Subnets you want to use.
 1. From there, you can follow the instructions for creating a regular CFEE [here](cloud-foundry-create-environment).
 
 ## Limitations
 {: #limitations}
-1. Update is currently not supported.
-1. Scaling is currently not supported.
-1. Monitoring is currently not supported.
+There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
