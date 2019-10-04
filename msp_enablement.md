@@ -153,11 +153,11 @@ ibmcloud iam access-group-create prdAccGrpDepl -d "access group that allows CFEE
 Assign the following permissions to the access group in order to allow members of the access group to deploy CFEE instances. More about [CFEE permissions](/docs/cloud-foundry?topic=cloud-foundry-permissions#permissions) :
 
 ```
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Viewer --resource-group-name MSP  
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor --resource-group-name MSP --service-name cfaas  
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator, Manager --resource-group-name MSP --service-name containers-kubernetes   
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator --resource-group-name MSP --service-name databases-for-postgresql  
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor, Manager --resource-group-name MSP --service-name cloud-object-storage
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Viewer --resource-group-name myProdResGroup  
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor --resource-group-name myProdResGroup --service-name cfaas  
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator, Manager --resource-group-name myProdResGroup --service-name containers-kubernetes   
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator --resource-group-name myProdResGroup --service-name databases-for-postgresql  
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor, Manager --resource-group-name myProdResGroup --service-name cloud-object-storage
 ```
 
 {: pre}
