@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-09-04"
+lastupdated: "2019-10-08"
 
 ---
 
@@ -23,6 +23,28 @@ lastupdated: "2019-09-04"
 <!-- Update topic to follow the [release notes guidance and template](https://test.cloud.ibm.com/docs/developing/writing/markdown?topic=writing-releasenotes). -->
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
+
+
+## Version 5.0.0
+{: #v500}
+
+_Release Date:_ 2019-10-25
+
+### New Capabilities
+
+The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v5.0.0:
+* Support for provisioning instances into [VPC on classic](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
+* Integration with [IBM Cloud Activity Tracker with LogDNA](https://cloud.ibm.com/catalog/services/ibm-cloud-activity-tracker-with-logdna)
+
+You can now provision your {{site.data.keyword.cfee_full_notm}} in a Virtual Private Cloud (VPC).
+
+The following limitations exist for a {{site.data.keyword.cfee_full}} in VPC:
+* Scaling in CFEE v5.0 is currently not supported. The ability to scale your CFEE will be available at a later date.
+* Monitoring in CFEE v5.0 is currently not supported. The ability to enable and disable monitoring will be available at a later date.
+
+The update to v5.0.0 is available only to {{site.data.keyword.cfee_full_notm}} v4.0.0 and v3.2.2 instances, See [Version 4.0.0](#v400) and
+[Version 3.2.2](#v322).
+{: note}
 
 ## Version 4.0.0
 {: #v400}

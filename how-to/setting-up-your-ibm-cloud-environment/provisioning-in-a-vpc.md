@@ -10,7 +10,11 @@ lastupdated: "2019-10-28"
 
 You can provision an IBM Cloud Foundry Enterprise Environment into an existing IBM Virtual Private Cloud (VPC).
 
+<<<<<<< HEAD
 If you are not familiar with IBM's Virtual Private Cloud offerings, you can more about them [here](https://www.ibm.com/cloud/vpc) and [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about).
+=======
+VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability, and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation.](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
+>>>>>>> Whats New v5
 
 VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
 
