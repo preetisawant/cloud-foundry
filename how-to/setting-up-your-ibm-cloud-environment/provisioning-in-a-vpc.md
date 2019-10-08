@@ -12,14 +12,6 @@ You can provision IBM Cloud Foundry Enterprise Environment into your IBM Virtual
 
 VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully exploits this capability, and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
 
-
-## VPC Prerequisites
-{: #vpc-prereq}
-Before creating or configuring your VPC, ensure that the network planning meets the following criteria:
-1. You cannot enable access to classic resources in your VPC.
-1. For each subnet that is provided for the CFEE, you must enable the public gateway.
-1. You must have at least one subnet in your VPC.
-
 Follow the instructions [here to create your VPC](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
 
 ## IAM Permission Prerequisites
@@ -30,7 +22,7 @@ Before provisioning CFEE into your VPC, ensure that you have the following IBM C
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
-1. Create your VPC as [detailed here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started). 
+1. Create your VPC as [detailed here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
 1. Go to the CFEE [creation page](https://dev.console.cloud.ibm.com/cfadmin/create).
 1. Select VPC infrastructure you just created.
 1. Choose your VPC.
