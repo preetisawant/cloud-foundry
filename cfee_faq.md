@@ -52,7 +52,7 @@ Yes. Creating a CFEE instance requires a minimum of two Cloud Foundry cells, eac
 ## What is the underlying IaaS into which CFEE is deployed?
 {: #why-kubs}
 
-The CFEE service runs on Kuberneters containers, which allows for lower infrastructure cost and more efficient operations, since Kubernetes is a very smart IaaS that automates many operational activities. 
+The CFEE service runs on Kuberneters containers, which allows for lower infrastructure cost and more efficient operations, since Kubernetes is a very smart IaaS that automates many operational activities.
 
 ## What are my isolation options when creating a CFEE?
 {: #isolation}
@@ -88,3 +88,21 @@ Yes.  An administrator can register a services broker in the CFEE and make custo
 
 Like any other {{site.data.keyword.Bluemix_notm}} service, access to a CFEE is controlled through _Identity & Access Management_ (IAM). Assigning user access policies (either individually or through access groups) with specific roles gives them specific levels of access to a CFEE.  Beyond access to the CFEE service, access to Cloud Foundry organizations and spaces in the CFEE is controlled through Cloud Foundry membership and roles assigned to users in specific organizations and spaces.
 
+# Security and Compliance
+{: #seccomp}
+Delivering a Cloud Foundry environment to our customers that meets the growing demands of enterprise security is key.  In support of this, the CF Enterprise product uses several compliance and regulatory standards to ensure the service meets the baselines that an enterprise will need.  This effort ensures that all central components managed by the service team are secured, and that the customer's environment instance can be managed to the same standards - dependant on your actual controls and processes.
+
+## What standards does the service comply to?
+{: #standards}
+IBM Cloud Foundry Enterprise Environment implements controls commensurate with the following standards:
+* EU-US Privacy Shield and Swiss-US Privacy Shield Framework
+* Health Insurance Portability and Accountability Act (HIPAA)
+* General Data Protection Regulation (GDPR)
+* Service Organization Control standards (SOC 1, SOC 2 Type 1)
+* International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
+
+More information is available on the [IBM Cloud Compliance](https://www.ibm.com/cloud/compliance) page.
+
+## What options do I have to secure my CFEE instance?
+{: #secure}
+As part of managing your CFEE instance, it is necessary to take precausions to monitor and secure the Kubernetes cluster that the CFEE is deployed on.  More information about how to secure your Kubernetes cluster is available in the IBM Cloud Kubernetes Service [FAQ](https://cloud.ibm.com/docs/containers?topic=containers-faqs&locale=en-us#secure_cluster) and [documentation](https://cloud.ibm.com/docs/containers?topic=containers-security&locale=en-us#security).
