@@ -18,7 +18,9 @@ lastupdated: "2019-06-28"
 # Assigning permissions
 {: #permissions}
 
-Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created. 
+Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created.
+
+If provisioning in a VPC cluster, users will also need [VPC permissions](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
 ## Permissions overview
 {: #perm-summary}
@@ -58,12 +60,12 @@ The following Identity & Access Management (IAM) access policies are required fo
 * _Viewer_ (or higher) accesss to the **_Default_** **resource group** in the {{site.data.keyword.Bluemix}} account. Resource groups allow organizing resources into customized groupings to facilitate access control to those resources. You are prompted for a resource group when you create a new environment instance. Access to the _Default_ resource group is required because this is always the resource group where the Kubernetes cluster is required.  Users can provision the CFEE instance in a diferent resource group, but the Kuberetes cluster will still be provisioned to the _Default_ resource group.  If a user provisions the CFEE in different user group, that users will required viewer access in that resource group.
 
 * _Administrator_ or _editor_ role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
-   
+
 * _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions. Additionally, make sure that you have the right [infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a Kubernetes cluster.
 
 * _Administrator_ or _editor_ platform role, and manager service access role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 
-* An instance of the Databases for PostgreSQL service is a required dependency of the CFEE service.  Databases for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).  
+* An instance of the Databases for PostgreSQL service is a required dependency of the CFEE service.  Databases for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).
 
 The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.Bluemix_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
 
@@ -81,7 +83,7 @@ For more information about managing users and access in the {{site.data.keyword.
 ### Expediting the setting of permissions to create an environment using the CLI
 {: #permcli-creating}
 
-You can expedite the setting of permissions for creating CFEE instances through the `ibmcloud cfee create-permission-set`.  The command allows a CFEE administrator to setup in a single command the required access policies for creating a CFEE instance and all its ancillary services. 
+You can expedite the setting of permissions for creating CFEE instances through the `ibmcloud cfee create-permission-set`.  The command allows a CFEE administrator to setup in a single command the required access policies for creating a CFEE instance and all its ancillary services.
 
 The command sets the permissions to an IAM _Access Group_ and adds a user to that _Access Group_.  The administrator issuing the command can include in the command an existing _Access Group_.  If no _Access Group_ is provided, a default _cfee-provision-access-group_ is created automatically.
 
@@ -119,29 +121,29 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 
     Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
   - The resource group under which the CFEE instance was created.
-  - The CFEE instance itself. 
-  
+  - The CFEE instance itself.
+
    The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
 
   - Users with _viewer_ role to a CFEE instance can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](/docs/cloud-foundry?topic=cloud-foundry-adding_users).
-  
+
   - Users assigned _administrator_ or _editor_ roles to a CFEE instance can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
 
   - Users need _editor_ platform role or higher to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **update the CFEE to a new version**.
 
   - Users need _administrator_ platform role to a CFEE instance and _operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned to be able to **change the capacity** of a cfee (adding or removing cells).
- 
+
   - Users need _operator_ platform role (or higher) to an IBM Cloud service instance to be able to **add** that *service instance* to a CFEE space (i.e., to alias a service instance into a CFEE space).
- 
+
   - Users need _operator_ platform role (or higher) and _writer_ service role (or higher) to an IBM Cloud service instance to be able to **bind** that service instance to an application deployed in a CFEE space.
 
 
 ## Best practices: Access Groups
 {: #access-groups}
 
-Consider using access groups to manage and simplify access control for your CFEE.  Access groups allow you to define arbitrary groups to which you can assign access policies.  Any user added to an access group is automatically assigned the group's access policy. 
+Consider using access groups to manage and simplify access control for your CFEE.  Access groups allow you to define arbitrary groups to which you can assign access policies.  Any user added to an access group is automatically assigned the group's access policy.
 
-You can create and manage access groups from either the IBM Cloud user interface or through the `ibmcloud` cli. 
+You can create and manage access groups from either the IBM Cloud user interface or through the `ibmcloud` cli.
 
 From the user interface, go the menu bar, click **Manage > Access (IAM)**, and select [Access Groups](https://cloud.ibm.com/iam#/groups).
 
