@@ -20,7 +20,7 @@ lastupdated: "2019-06-28"
 
 Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created.
 
-[Assigning VPC Permissions](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources)
+If provisioning in a VPC cluster, users will also need [VPC permissions](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
 ## Permissions overview
 {: #perm-summary}
