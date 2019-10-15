@@ -14,11 +14,12 @@ VPC allows you to create your own space in the IBM Cloud, to run an isolated env
 
 Follow the instructions [here to create your VPC](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
 
-## IAM Permission Prerequisites
-{: #iam-prereq}
-Before provisioning CFEE into your VPC, ensure that you have the following IBM Cloud IAM access policies:
+## Prerequisites
+{: #prereq}
+Before provisioning CFEE into your VPC, ensure that you have the following IBM:
 1. You must have [Administrator platform role for VPC Infrastructure](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resource).
 1. You must have the same permissions as for [provisioning on classic infrastructure](cloud-foundry-permissions).
+1. You must enable the [private service endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
@@ -32,3 +33,25 @@ Before provisioning CFEE into your VPC, ensure that you have the following IBM C
 ## Limitations
 {: #limitations}
 There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
+
+## Managing VPC CFEE Worker Nodes
+{: #worker-nodes}
+In the VPC Kubernetes cluster hosting your CFEE, managing the worker nodes is different from classic CFEE. [See VPC cluster limitations.](https://cloud.ibm.com/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#vpc_ks_limits). In the event that one of the worker nodes goes down, you must replace the worker node:
+1. Log into the IBM Cloud CLI.
+1. Find the cluster associated with your CFEE. The name of the cluster is `<CFEE name>-cluster`. 
+```
+ibmcloud ks clusters
+```
+1. Identify the worker node that is failing:
+```
+ibmcloud ks workers --cluster <cluster name>
+```
+1. Execute a worker replace on the failing worker node:
+```
+ibmcloud ks worker replace --cluster <cluster name> --worker <worker IP>
+```
+When the worker node is finished provisioning, the pods running the Cloud Foundry components will use the new worker node.
+```
+ibmcloud ks cluster config <cluster name>
+kubectl -n cf get pods
+```
