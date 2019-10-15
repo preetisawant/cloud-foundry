@@ -155,9 +155,9 @@ Assign the following permissions to the access group in order to allow members o
 ```
 ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Viewer --resource-group-name myProdResGroup  
 ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor --resource-group-name myProdResGroup --service-name cfaas  
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator, Manager --resource-group-name myProdResGroup --service-name containers-kubernetes   
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator,Manager --resource-group-name myProdResGroup --service-name containers-kubernetes   
 ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Administrator --resource-group-name myProdResGroup --service-name databases-for-postgresql  
-ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor, Manager --resource-group-name myProdResGroup --service-name cloud-object-storage
+ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Editor,Manager --resource-group-name myProdResGroup --service-name cloud-object-storage
 ```
 
 {: pre}
