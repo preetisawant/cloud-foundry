@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-10-18"
 
 ---
 
@@ -194,7 +194,79 @@ The following guides you through the steps for installing the required CLI's, fo
 
 Camelot allows to analyze [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
 The tool works as [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
-Result are detailed metrics which could be used for problem determination, alerting and visualization.
+Results are detailed metrics which could be used for problem determination, alerting and visualization.
+
+### Changing default configuration for Camelot
+
+Camelot will be enabled in CFEE when you enable monitoring. It will be deployed with a specific default configuration. Some of these defaults can be modified later.
+
+Following two configuration environment variables can be used to adapt your camelot buildpacks testing:
+
+  - CAP_TEST_DELAY
+  This environment variable allows to disable/enable camelot testing and to set the test interval. When it is set to `0` Camelot testing will be disabled. When it is set to a value > 0 it will calculate the interval used for camelot test cycles. Input is in seconds.
+
+  - CAP_TEST_FILTER
+  This environment variable allows to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only these buildpacks will be tested.
+
+Following buildpack tests are available:
+  - `ruby_buildpack, dotnet-core, binary_buildpack, go_buildpack,nodejs_buildpack, php_buildpack, python_buildpack, ruby_buildpack, swift_buildpack, java_buildpack, liberty-for-java,xpages_buildpack, sdk-for-nodejs, staticfile_buildpack`
+  For more details about buildpacks - see [Developing with buildpacks]{/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks}.
+
+To change the default test configuration you can modify the two variables listed above:
+1. Before you begin please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
+2. You also need to install one useful Helm plugin:
+
+  ```
+  helm plugin install https://github.com/bluebosh/helm-update-config
+  ```
+  {: pre}
+
+3. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
+4. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
+5. As tiller is deployed in a secured way, create a temporary directory and cd into this directory.
+6. Then execute the following command which will create the necessary environment variable for the secured tiller access:
+
+  ```
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.cert"' | base64 --decode > helm.cert.pem && \
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.key"' | base64 --decode > helm.key.pem && \
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."ca.cert"' | base64 --decode > ca.cert.pem && \
+  helm_cert_path="helm.cert.pem" && \
+  helm_key_path="helm.key.pem" && \
+  ca_cert_path="ca.cert.pem" && \
+  export tls_params="--tls --tls-ca-cert ${ca_cert_path} --tls-cert ${helm_cert_path} --tls-key ${helm_key_path}"
+  ```
+  {: pre}
+
+7. Check the actual values for camelot:
+
+  ```
+  helm ${tls_params} get values camelot
+  ```
+  {: pre}
+
+  You see the values under `env` section. As example:
+
+  ```
+  env:
+  cap_test_delay: 300
+  cap_test_filter: binary_buildpack,staticfile_buildpack
+  ```
+  {: screen}
+
+8. To change the values use following command:
+
+  ```
+  helm ${tls_params} update-config camelot --set-value env.cap_test_delay="<fill in your value>",env.cap_test_filter="<fill in your value>"
+  ```
+  {: screen}
+  If you want to change `cap_test_filter` to a list of buildpacks use following format in the command above. As example:
+  ```
+  env.cap_test_filter="binary_buildpack\,staticfile_buildpack"
+  ```
+  {: screen}
+
+9. Wait few minutes till the camelot pod has been recreated with new values.
+
 
 ## Launching the monitoring consoles
 {: #launching-consoles}
