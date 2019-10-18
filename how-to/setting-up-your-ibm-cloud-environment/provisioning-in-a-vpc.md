@@ -50,6 +50,8 @@ ibmcloud ks workers --cluster <cluster name>
 ```
 ibmcloud ks worker replace --cluster <cluster name> --worker <worker IP>
 ```
+> Please note down the worker ID (attribute "id"). You will need provide this to CFEE support so they can accurately update your cluster metadata in the management plane
+
 When the worker node is finished provisioning, the pods running the Cloud Foundry components will use the new worker node.
 ```
 ibmcloud ks cluster config <cluster name>
