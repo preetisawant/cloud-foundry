@@ -17,8 +17,7 @@ Follow the instructions [here to create your VPC](https://cloud.ibm.com/docs/vpc
 ## Prerequisites
 {: #prereq}
 Before provisioning CFEE into your VPC, ensure that you have the following IBM:
-1. You must have [Administrator platform role for VPC Infrastructure](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resource).
-1. You must have the same permissions as for [provisioning on classic infrastructure](cloud-foundry-permissions).
+1. You must have the same permissions as for [provisioning on classic infrastructure](cloud-foundry-permissions) except that you do not need permissions for any VLANS or datacenters. The IKS resource group and region must also be associated with a user that has Kube Admin and VPC viewer. The user is set using `ic is api-key reset`.
 1. You must enable the [private service endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
 
 ## Creating a VPC CFEE
