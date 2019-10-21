@@ -189,21 +189,21 @@ The following guides you through the steps for installing the required CLI's, fo
   ```
   {: pre}
 
-## Camelot
-{: #camelot}
+## Application Deployment Validation
+{: #appDepVal}
 
-Camelot allows to analyze [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
+Application Deployment Validation (appDepVal) is a part of the monitoring solution which allows to analyze [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
 The tool works as [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
 Results are detailed metrics which could be used for problem determination, alerting and visualization.
 
-### Changing default configuration for Camelot
+### Changing default configuration for Application Deployment Validation
 
-Camelot will be enabled in CFEE when you enable monitoring. It will be deployed with a specific default configuration. Some of these defaults can be modified later.
+Application Deployment Validation (appDepVal) will be enabled in CFEE when you enable monitoring. It will be deployed with a specific default configuration. Some of these defaults can be modified later.
 
-Following two configuration environment variables can be used to adapt your camelot buildpacks testing:
+Following two configuration environment variables can be used to adapt your buildpacks testing:
 
   - CAP_TEST_DELAY
-  This environment variable allows to disable/enable camelot testing and to set the test interval. When it is set to `0` Camelot testing will be disabled. When it is set to a value > 0 it will calculate the interval used for camelot test cycles. Input is in seconds.
+  This environment variable allows to disable/enable buildpack testing and to set the test interval. When it is set to `0` buildpacks testing will be disabled. When it is set to a value > 0 it will calculate the interval used for buildpacks test cycles. Input is in seconds.
 
   - CAP_TEST_FILTER
   This environment variable allows to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only these buildpacks will be tested.
@@ -237,7 +237,7 @@ To change the default test configuration you can modify the two variables listed
   ```
   {: pre}
 
-7. Check the actual values for camelot:
+7. Check the actual values for Application Deployment Validation:
 
   ```
   helm ${tls_params} get values camelot
@@ -265,7 +265,7 @@ To change the default test configuration you can modify the two variables listed
   ```
   {: screen}
 
-9. Wait few minutes till the camelot pod has been recreated with new values.
+9. Wait few minutes till the appropriate pod in namespace `monitoring` has been recreated with new values.
 
 
 ## Launching the monitoring consoles
@@ -309,11 +309,11 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
    - _Worker Nodes Overview_
         - Shows the CPU and memory usage of the kubernetes infrastructure, along with its network traffic.
 
-#### Camelot Dashboards
+#### Application Deployment Validation Dashboards
 
-   - _Camelot - Runtimes_
-        - Provides a general status about Camelots Cloud Foundry application provisioning tests. It allows to the get the duration and test result of `cf push <app>` commands related to the used buildpack and gives an overview about the command duration and the duration of the most important sub steps of the command.
-   - _Camelot - cf CLI - Commands and Rest Calls - Details_
-        - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Camelot
-   - _Camelot - Internal Metrics and Node Performance_
-        - Gives an overview about Camelots Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
+   - _AppDepVal - Runtimes_
+        - Provides a general status about Cloud Foundry application provisioning tests. It allows to the get the duration and test result of `cf push <app>` commands related to the used buildpack and gives an overview about the command duration and the duration of the most important sub steps of the command.
+   - _AppDepVal - cf CLI - Commands and Rest Calls - Details_
+        - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Application Deployment Validation
+   - _AppDepVal - Internal Metrics and Node Performance_
+        - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
