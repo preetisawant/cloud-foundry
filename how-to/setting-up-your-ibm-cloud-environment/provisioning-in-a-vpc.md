@@ -21,6 +21,14 @@ Before provisioning CFEE into your VPC, ensure that you have the following IBM:
 1. You must have the same permissions as for [provisioning on classic infrastructure](cloud-foundry-permissions).
 1. You must enable the [private service endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
 
+## Limitations
+{: #limitations}
+Before provisioning CFEE into your VPC, Please be aware of the following limitations:
+1. Known Limitations for VPC (https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
+1. Quota Availability for a VPC (https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas).
+1. Available Load balancer Quota Limitation for a VPC (20 per region ) (https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
+1. You must have the correct number of IP's available in a VPC before to provision a CFEE . AvailableIPV4AddressCount for a subnet should be greater than [(AvailableIPV4AddressCount - ((Number of cells per zone + controlplane nodes ) + (10))].
+
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
 1. Create your VPC as [detailed here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
