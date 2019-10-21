@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 lastupdated: "2019-09-20"
-subcollection: cloud-foundry
+subcollection: "Dotnet"
 
 ---
 
@@ -14,33 +14,30 @@ subcollection: cloud-foundry
 {:screen: .screen}
 {:tip: .tip}
 {:hide-in-docs: .hide-in-docs}
-{:hide-dashboard: .hide-dashboard}
 {:app_name: data-hd-keyref="app_name"}
 
-# Getting started with ASP.NET core
-{: #getting-started-dotnet}
-
-<!-- This file is reused in the CF Public subcollection. -->
+# Getting started tutorial
+{: #getting_started}
 
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
 {: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/go-cloudant" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
+<a class="xref" href="https://github.com/IBM-Cloud/get-started-aspnet-core" target="_blank" title="(Download sample code)"><img class="w3-image" src="docs/runtimes/images/btn_starter-code.svg" alt="Download application code" /></a>
+{: hide-in-docs}
 
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix}} database service in your app.
 
 ## Before you begin
-{: #prereqs-dotnet}
+{: #prereqs}
 
 You'll need the following:
-
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud/download_cli.html)
 * [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
-* Install .NET Core 2.2.5 SDK 2.2.204 from the [.NET Core downloads website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.microsoft.com/net/download/core).
+* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.microsoft.com/net/download/core).
 
 ## Step 1: Clone the sample app
-{: #clone-dotnet}
+{: #clone}
 
 First, clone the sample app GitHub repo.
   ```
@@ -50,7 +47,7 @@ git clone https://github.com/IBM-Cloud/get-started-aspnet-core
 
 
 ## Step 2: Run the app locally
-{: #run_locally-dotnet}
+{: #run_locally}
 
 1. On the command line, change the directory to where the sample app is located.
 
@@ -74,7 +71,7 @@ dotnet run
 1. View your app at: http://localhost:5000/.
 
 ## Step 3: Prepare the app for deployment
-{: #prepare-dotnet}
+{: #prepare}
 
 To deploy to {{site.data.keyword.Bluemix_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-dotnet` directory.
 
@@ -93,7 +90,7 @@ In this manifest.yml file, **`random-route: true`** generates a random route for
 {: tip}
 
 ## Step 4: Deploy the app
-{: #deploy-dotnet}
+{: #deploy}
 
 You can use the {{site.data.keyword.Bluemix_notm}} CLI to deploy apps.
 
@@ -103,7 +100,7 @@ ibmcloud login
   ```
   {: codeblock}
 
-  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id) to learn more.
+  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/cli/login_federated_id.html) to learn more.
  ```
 ibmcloud login --sso
   ```
@@ -115,7 +112,7 @@ ibmcloud target --cf
   ```
   {: codeblock}
 
-  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account/orgs_spaces.html).
   {: tip}
 
 1. **Be sure you are in the main directory, `get-started-aspnet-core`, for your application**  then push your application to {{site.data.keyword.Bluemix_notm}}:
@@ -132,10 +129,10 @@ ibmcloud cf apps
   ```
   {: codeblock}
 
-You can also go to the {{site.data.keyword.Bluemix_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
+You can also go to the {{site.data.keyword.Bluemix_notm}} [Resource List](https://cloud.ibm.com/resources) to view your app.
 
 ## Step 5: Add a database
-{: #add_database-dotnet}
+{: #add_database}
 
 Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this application and set up the application so that it can run locally and on {{site.data.keyword.Bluemix_notm}}.
 
@@ -151,7 +148,7 @@ Environment variables enable you to separate deployment settings from your sourc
 {: tip}
 
 ## Step 6: Use the database locally
-{: #use_database-dotnet}
+{: #use_database}
 
 We're now going to update your local code to point to this database. We'll store the credentials for the services in a JSON file. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.Bluemix_notm}}, the credentials will be read from the `VCAP_SERVICES` environment variable.
 
@@ -175,7 +172,7 @@ We're now going to update your local code to point to this database. We'll store
    ```
    {: codeblock}
 
-1. Find your app in the {{site.data.keyword.Bluemix_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+1. Find your app in the {{site.data.keyword.Bluemix_notm}} [Resource List](https://cloud.ibm.com/resources). On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 1. Copy and paste just the `url` value from the credentials to the `url` field of the `vcap-local.json` file, replacing `CLOUDANT_DATABASE_URL`.
 
@@ -193,15 +190,8 @@ Your local app and the {{site.data.keyword.Bluemix_notm}} app share the database
 Remember, if you don't need your app live, stop it so you don't incur any unexpected charges.
 {: tip}
 
-## Next steps
-{: #nextsteps-dotnet}
+## Next Steps
 
-[Manage your app](/docs/runtimes/dotnet?topic=Dotnet-dotnet_core). Some example tasks include disabling caching and using custom native libraries.
-{: hide-dashboard}
-
-Check out the following resources:
-{: hide-dashboard}
-
-* [Tutorials](/docs/tutorials?topic=solution-tutorials-tutorials)
+* [Tutorials](/docs/tutorials/index.html)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
 * [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
