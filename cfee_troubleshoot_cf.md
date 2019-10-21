@@ -630,18 +630,18 @@ Here  `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate
 ### Monitoring Alerts
 {: #cmlt_push_fail_mon}
 
-CF:CamelotActionDurationIncrease
+CF:ActionDurationIncrease
 {: #cmlt_actn_time_inc}
 
-CF:CamelotAppPushFail
+CF:AppPushFail
 
-CF:MutipleCamelotAppPushFail
+CF:MutipleAppPushFail
 {: #cmlt_push_mul_fail}
 
 ### What's happening
 {: #cmlt_push_fail_hap}
 
-One of the active monitoring components for your {{site.data.keyword.cfee_full}} is intended to run a periodical test of CF app deployment. This Camelot tool uses `cf` command line interface from `<camelot-x>` pod to run the checks and push different sample apps to the environment. If there is an issue during the push test with one of sample apps for defined time frame, an Prometheus alert will be created. The alert contains the details about affected app (e.g. dotnet_core, liberty, nodejssdk, etc) and a description if the `cf` completely failed or the time for this command is increasing compared to the earlier tests.
+One of the active monitoring components for your {{site.data.keyword.cfee_full}} is intended to run a periodical test of CF app deployment. This tool uses `cf` command line interface from a pod in the `monitoring` namespace to run the checks and push different sample apps to the environment. If there is an issue during the push test with one of sample apps for defined time frame, an Prometheus alert will be created. The alert contains the details about affected app (e.g. dotnet_core, liberty, nodejssdk, etc) and a description if the `cf` completely failed or the time for this command is increasing compared to the earlier tests.
 
 ### How to fix it
 {: #cmlt_push_fail_fix}
@@ -667,7 +667,7 @@ One of the active monitoring components for your {{site.data.keyword.cfee_full}}
   kubectl delete pod <pod-name> --monitoring cf
   ```
   {: screen}
-4. As next you can try to get more details about failed app. Login to the camelot pod:
+4. As next you can try to get more details about failed app. Login to the pod in namespace `monitoring` where the pod name starts with `camelot`:
   ```
   kubectl get pods --namespace monitoring
   kubectl exec -it --namespace monitoring <camelot-pod-name> -- /bin/bash
@@ -677,8 +677,8 @@ One of the active monitoring components for your {{site.data.keyword.cfee_full}}
   ```
   cf target
   user:           prometheus-cf
-  org:            system
-  space:          dev
+  org:            camelot
+  space:          test
   ```
   {: screen}
   Run follow command to see a possible reason for the issue (the APP_NAME is available in the Prometheus alert):
