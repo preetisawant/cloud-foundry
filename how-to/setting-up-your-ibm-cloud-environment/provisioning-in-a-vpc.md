@@ -23,11 +23,11 @@ Before provisioning CFEE into your VPC, ensure that you have the following IBM:
 
 ## Limitations
 {: #limitations}
-Before provisioning CFEE into your VPC, Please be aware of the following limitations:
-1. Known Limitations for VPC (https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
-1. Quota Availability for a VPC (https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas).
-1. Available Load balancer Quota Limitation for a VPC (20 per region ) (https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
-1. You must have the correct number of IP's available in a VPC before to provision a CFEE . AvailableIPV4AddressCount for a subnet should be greater than [(AvailableIPV4AddressCount - ((Number of cells per zone + controlplane nodes ) + (10))].
+Before provisioning a CFEE into your VPC:
+1. Please be aware of the following VPC limitations [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
+1. You must have sufficient [quota available for VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas).
+1. You must have sufficient [load balancer resource quotas available for VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
+1. You must have enough unallocated IPs in a VPC subnet before you provision a CFEE. The minimum number required is the number of cells per zone plus control plane nodes plus 10. E.g., **2 cells per zone + 2 control plane nodes + 10 = 14 IPs**.
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
