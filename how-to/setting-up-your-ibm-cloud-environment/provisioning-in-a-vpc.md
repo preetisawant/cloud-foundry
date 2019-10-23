@@ -29,7 +29,7 @@ Before provisioning a CFEE into your VPC:
 1. You must have sufficient [load balancer resource quotas available for VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
 1. You must have enough unallocated IPs in a VPC subnet before you provision a CFEE. The minimum number required is the number of cells per zone plus control plane nodes plus 10. E.g., **2 cells per zone + 2 control plane nodes + 10 = 14 IPs**.
    
-   Note: A vpc subnet typically will have a small number of IPs allocated prior to any use. Check the available number of IPs in the subnet to be sure it is greater than the number of IPs required for a VPC cfee.
+   **Note:** A vpc subnet typically will have a small number of IPs allocated prior to any use. Check the available number of IPs in the subnet to be sure it is greater than the number of IPs required for a VPC cfee.
 1. If a worker node deployment fails due to an IBM Kubernetes Service issue, you must redeploy the CFEE instance. This cannot be fixed without redeploying because CFEE instances are dependant on the IBM Kubernetes Service. 
 
 ## Creating a VPC CFEE
