@@ -79,7 +79,7 @@ When the worker node is finished provisioning, the pods running the Cloud Foundr
 
 3. Disable kubernetes public-service-endpoint:
  
-          ibmcloud ks feature disable public-service-endpoint --cluster <CFEE name>-cluster
+          ibmcloud ks cluster feature disable public-service-endpoint --cluster <CFEE name>-cluster
 
 4. Identify all worker node in the CFEE:
 
