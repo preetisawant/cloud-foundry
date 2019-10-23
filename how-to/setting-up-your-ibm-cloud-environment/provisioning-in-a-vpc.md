@@ -17,9 +17,9 @@ Follow the instructions [here to create your VPC](https://cloud.ibm.com/docs/vpc
 ## Prerequisites
 {: #prereq}
 Before provisioning CFEE into your VPC, ensure that you have the following IBM:
-1. You must have the same permissions as for [provisioning on classic infrastructure,](cloud-foundry-permissions) excluding permissions for VLANS or datacenters.
-1. The IKS resource group and region must be associated with a user that has Kube Admin and VPC viewerx, using `ic is api-key reset`. [See documentation here.](https://cloud.ibm.com/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#api_key-commands)
-1. You must enable the [private service endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
+1. You must have the same permissions as for [provisioning on classic infrastructure](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions) excluding permissions for VLANS or datacenters.
+1. The IKS resource group and region must be associated with a user that has Kubernetes Administrator and VPC viewer access. The access can be reset using the command `ibmcloud ks api-key reset`. [See documentation here.](https://cloud.ibm.com/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#api_key-commands)
+1. To provision a CFEE in an isolated environment you must enable the [private service endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
 
 ## Limitations
 {: #limitations}
@@ -28,6 +28,7 @@ Before provisioning a CFEE into your VPC:
 1. You must have sufficient [quota available for VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas).
 1. You must have sufficient [load balancer resource quotas available for VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
 1. You must have enough unallocated IPs in a VPC subnet before you provision a CFEE. The minimum number required is the number of cells per zone plus control plane nodes plus 10. E.g., **2 cells per zone + 2 control plane nodes + 10 = 14 IPs**.
+   Note: A vpc subnet typically will have a small number of IPs allocated prior to any use. Check the available number of IPs in the subnet to be sure it is greater than the number of IPs required for a VPC cfee.
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
