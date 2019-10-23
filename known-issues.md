@@ -158,3 +158,7 @@ kubectl -n monitoring delete pod/<prometheus-server-pod>
 kubectl uncordon <node-with-prometheus-server-pod>
 ibmcloud ks worker-reboot <node-with-previous-prometheus-server-pod>
 ```
+
+## Known Errors
+
+1. If a worker node deployment fails due to an IBM Kubernetes Service issue, you must redeploy the CFEE instance. This cannot be fixed without redeploying because CFEE instances are dependant on the IBM Kubernetes Service. 
