@@ -68,3 +68,34 @@ When the worker node is finished provisioning, the pods running the Cloud Foundr
 ibmcloud ks cluster config <cluster name>
 kubectl -n cf get pods
 ```
+
+## Disabling Kubernetes public-service-endpoint on a VPC CFEE
+
+1. Log into the IBM Cloud CLI.
+1. Find the cluster associated with your VPC CFEE. The name of the cluster is `<CFEE name>-cluster`. 
+```
+ibmcloud ks clusters
+```
+1. Disable kubernetes public-service-endpoint
+```
+ibmcloud ks --cluster <CFEE name>-cluster feature disable public-service-endpoint
+```
+1. Identify all worker node in the CFEE:
+```
+ibmcloud ks workers --cluster <cluster name>
+```
+1. Execute a worker replace on the all worker nodes:
+```
+ibmcloud ks worker replace --cluster <cluster name> --worker <worker IP>
+```
+
+Please note down the worker ID (attribute "id") for each worker.
+
+1. After all the workers are replaced. You will need provide this to CFEE support so they can accurately update your cluster metadata in the management plane 
+  
+When the worker nodes are finished provisioning, the pods running the Cloud Foundry components will use the new worker node.
+
+```
+ibmcloud ks cluster config <cluster name>
+kubectl -n cf get pods
+```
