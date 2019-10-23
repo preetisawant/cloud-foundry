@@ -192,28 +192,28 @@ The following guides you through the steps for installing the required CLI's, fo
 ## Application Deployment Validation
 {: #appDepVal}
 
-Application Deployment Validation (appDepVal) is a part of the monitoring solution which allows to analyze [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
-The tool works as [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
+Application Deployment Validation (appDepVal) is a part of the monitoring solution which allows the analysis of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
+The tool works as a [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
 Results are detailed metrics which could be used for problem determination, alerting and visualization.
 
 ### Changing default configuration for Application Deployment Validation
 
-Application Deployment Validation (appDepVal) will be enabled in CFEE when you enable monitoring. It will be deployed with a specific default configuration. Some of these defaults can be modified later.
+Application Deployment Validation (appDepVal) will be enabled in CFEE when you enable monitoring. It will be deployed with a default configuration that can be modified post enablement.
 
-Following two configuration environment variables can be used to adapt your buildpacks testing:
+The following two configuration environment variables can be used to adapt your buildpacks which are used:
 
   - CAP_TEST_DELAY
-  This environment variable allows to disable/enable buildpack testing and to set the test interval. When it is set to `0` buildpacks testing will be disabled. When it is set to a value > 0 it will calculate the interval used for buildpacks test cycles. Input is in seconds.
+  This environment variable allows you to disable/enable buildpack testing and to set the interval in which tests are executed. When it is set to `0` buildpacks testing will be disabled. When it is set to a value > 0 it will calculate the interval used for buildpack test cycles in seconds.
 
   - CAP_TEST_FILTER
-  This environment variable allows to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only these buildpacks will be tested.
+  This environment variable allows you to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only those buildpacks will be used.
 
-Following buildpack tests are available:
+The following buildpack tests are available:
   - `ruby_buildpack, dotnet-core, binary_buildpack, go_buildpack,nodejs_buildpack, php_buildpack, python_buildpack, ruby_buildpack, swift_buildpack, java_buildpack, liberty-for-java,xpages_buildpack, sdk-for-nodejs, staticfile_buildpack`
   For more details about buildpacks - see [Developing with buildpacks]{/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks}.
 
 To change the default test configuration you can modify the two variables listed above:
-1. Before you begin please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
+1. Before you begin, please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
 2. You also need to install one useful Helm plugin:
 
   ```
