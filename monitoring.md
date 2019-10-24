@@ -214,12 +214,18 @@ The following buildpack tests are available:
 
 To change the default test configuration you can modify the two variables listed above:
 1. Before you begin, please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
-2. You also need to install one useful Helm plugin:
+2. You also need to install one useful Helm plugin `update-config`. If the `update-config` plugin is already installed, make sure that the installed plugin version is >= 0.5.3. Otherwise remove the old plugin version first using the following command:
 
+  ```
+  helm plugin remove update-config
+  ```
+  {: pre}  
+And install the plugin again:
   ```
   helm plugin install https://github.com/bluebosh/helm-update-config
   ```
   {: pre}
+
 
 3. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
 4. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
