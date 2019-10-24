@@ -25,21 +25,21 @@ Auditing and logging in CFEE are suppoted through integration with the Activity 
 ## Auditing
 {: #auditing}
 
-The Activity Tracker service has been **deprecated** in the IBM Cloud. Consequently, new instances of the Activity Tracker service cannot be created to enable auditing in a CFEE. Auditing enabled in a CFEE through pre-existing Activity Tracker instances will continue to work. 
+**Activity Tracker with LogDNA** has replaced the original Activity Tracker service, which was fully deprecated on October 9, 2019. Configuring a new **Activity Tracker with LogDNA** instance requires CFEE version 5.0.0 or later. If you have an exisiting auditing configuration using the original Activity Tracker, you will need to disable it before enabling **Activity Tracker with LogDNA**.
 {: important}
 
-Auditing allows CFEE administrators to track Cloud Foundry auditable activities taking place in a CFEE instance.  Those activities include login, creation of organizations and spaces, user membership and role assignments, application deployments, service bindings, and domain configuration. Auditing is supported through integration with the Activity Tracker service in the IBM Cloud. An instance of the Activity Tracker service selected by the CFEE administrator is configured automatically to receive events representing actions performed within Cloud Foundry and on the CFEE control plane.  The user can see and manage those events in the user interface of the Activity Tracker service instance.
+Auditing allows CFEE administrators to track Cloud Foundry auditable activities which take place in a CFEE instance. Those activities include login, creation of organizations and spaces, user membership and role assignments, application deployments, service bindings, updates and scaling, and domain configuration. Auditing is supported through integration with the *Activity Tracker with LogDNA* service in the IBM Cloud. An instance of the Activity Tracker service selected by the CFEE administrator is configured automatically to receive events representing actions performed within Cloud Foundry and on the CFEE control plane.  The user can see and manage those events in the user interface of the Activity Tracker service instance.
 
 To enable auditing for a CFEE instance:
 
-1. Open a CFEE's user interface and to **Operations > Auditing** entry in the left navigation pane to open the Logging page.
-2. Click **Enable auditing** and select one of the **Activity Tracker instances** available in the IBM Cloud account.  
-3.  Once auditing is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the Activity Tracker service instance itself, where the user can go to see and manage auditing events.
+1. Open a CFEE's user interface and navigate to **Operations > Auditing** in the left navigation pane.
+2. Click **Enable auditing** and select one of the **Activity Tracker with LogDNA** instances available in the IBM Cloud account.
+3. Communication between CFEE / Cloud Foundry and an Activity Tracker instance requires a LogDNA ingestion key. You can find your instance's ingestion key by opening the instance dashboard (from the [Observability](/observe/activitytracker) list) and navigating to Settings > Organization > API Keys.
+4. Once auditing is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the *Activity Tracker with LogDNA* service instance, where a user can view and manage auditing events.
 
-You can disable Auditing by clicking **Disable auditing**, which will remove the Activity tracker service instance previously added and configured. This action does not delete the Activity Tracker service instance.
+You can disable Auditing by clicking **Disable auditing**, which will remove the currently configured service instance. This action does not delete the Activity Tracker service instance.
 
-See the Activity Tracker [documentation](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started) for event fields, types of audit events, configuration and event retrieval. Events can be downloaded using the Activity Tracker [API](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events_api#downloading_events_api) and [CLI](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-downloading_events#downloading_events).  
-These events can also be viewed through [user interfaces](https://cloud.ibm.com/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-view_acc_events#view_acc_events).
+See the *Activity Tracker with LogDNA* [documentation](/docs/services/Activity-Tracker-with-LogDNA) for event fields, types of audit events, and other information. Events can be viewed from the *Activity Tracker with LogDNA* instance dashboard or exported using the [LogDNA API](https://docs.logdna.com/reference#v1export-1).
 
 ## Alerting on audit events
 {: #alerting-on-audit-events}
