@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-24"
 
 ---
 
@@ -210,7 +210,7 @@ The following two configuration environment variables can be used to adapt your 
 
 The following buildpack tests are available:
   - `ruby_buildpack, dotnet-core, binary_buildpack, go_buildpack,nodejs_buildpack, php_buildpack, python_buildpack, ruby_buildpack, swift_buildpack, java_buildpack, liberty-for-java,xpages_buildpack, sdk-for-nodejs, staticfile_buildpack`
-  For more details about buildpacks - see [Developing with buildpacks]{/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks}.
+  The test for `ruby_buildpack` also contains the Dora app for cf acceptance tests - see [Dora app details ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cf-acceptance-tests/tree/master/assets/dora). For more details about buildpacks - see [Developing with buildpacks]{/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks}.
 
 To change the default test configuration you can modify the two variables listed above:
 1. Before you begin, please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
@@ -240,7 +240,7 @@ To change the default test configuration you can modify the two variables listed
 7. Check the actual values for Application Deployment Validation:
 
   ```
-  helm ${tls_params} get values camelot
+  helm get values ${tls_params} camelot
   ```
   {: pre}
 
@@ -256,7 +256,7 @@ To change the default test configuration you can modify the two variables listed
 8. To change the values use following command:
 
   ```
-  helm ${tls_params} update-config camelot --set-value env.cap_test_delay="<fill in your value>",env.cap_test_filter="<fill in your value>"
+  helm update-config ${tls_params} camelot --set-value env.cap_test_delay="<fill in your value>",env.cap_test_filter="<fill in your value>"
   ```
   {: screen}
   If you want to change `cap_test_filter` to a list of buildpacks use following format in the command above. As example:
