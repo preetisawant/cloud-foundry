@@ -93,7 +93,7 @@ When the worker node is finished provisioning, the pods running the Cloud Foundr
 
 6. After all workers have been replaced and have finished provisioning, you will need to provide the worker IDs and IPs to CFEE support so they can accurately update your cluster metadata in the management plane. 
 
-    Give the output of this command to CFEE support: 
+    Give the output of this command and your CFEE environment ID to CFEE support: 
     
         ic ks worker ls --cluster <cfee cluster name>
   
