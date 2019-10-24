@@ -27,6 +27,7 @@ Before provisioning a CFEE into your VPC, please keep in mind:
 1. The VPC limitations listed [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
 1. You must have sufficient [quota available for your VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas).
 1. You must have sufficient [load balancer resource quotas available for your VPC](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
+1. If the subnets do not have a public gateway attached, you must configure your VPC in a way that [allows outbound access to certain ip addresses for your CFEE.](cloud-foundry-isolated-network)
 1. You must have enough unallocated IPs in a VPC subnet before you provision a CFEE. The minimum number required is the number of cells per zone plus control plane nodes plus 10. E.g., **2 cells per zone + 2 control plane nodes + 10 = 14 IPs**.
    
    **Note:** A VPC subnet will typically have a small number of IPs allocated prior to any use. Check the available number of IPs in the subnet to be sure there are more than the number of IPs required for a VPC CFEE.
