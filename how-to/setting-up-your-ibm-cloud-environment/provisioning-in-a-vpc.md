@@ -88,13 +88,17 @@ When the worker node is finished provisioning, the pods running the Cloud Foundr
 
 5. Execute a worker replace on the all worker nodes:
 
-        ibmcloud ks worker replace --cluster <cluster name> --worker <worker IP>
+        ibmcloud ks worker replace --cluster <cluster name> --worker <worker ID>
 
     Please note the worker ID (attribute "id") for each worker.
 
-6. After all workers have been replaced. You will need to provide the worker IDs to CFEE support so they can accurately update your cluster metadata in the management plane.
+6. After all workers have been replaced and have finished provisioning, you will need to provide the worker IDs and IPs to CFEE support so they can accurately update your cluster metadata in the management plane. 
+
+    Give the output of this command and your CFEE environment ID to CFEE support: 
+    
+        ic ks worker ls --cluster <cfee cluster name>
   
-    When the worker nodes are finished provisioning, the pods running the Cloud Foundry components will use the new worker nodes.
+    Once the metadata has been updated, the pods running the Cloud Foundry components will use the new worker nodes.
 
         ibmcloud ks cluster config <cluster name>
         kubectl -n cf get pods
