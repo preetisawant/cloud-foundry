@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-01"
+lastupdated: "2019-10-27"
 ---
 
 # CFEE on IBM Virtual Private Cloud (VPC)
@@ -97,7 +97,13 @@ load balancer hostname for the private alb, which you will need later.
 
     **Note:** Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.
 
-3. Setup your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
+3. Reconfigure the `cf-admin-agent` component of CFEE to use the private ALB correctly.
+
+        kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
+
+        **Note:** If you have more than one private ALB, separate the ids with semicolons in the above command.
+
+4. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
 the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.
 
 ## Managing VPC CFEE Worker Nodes
