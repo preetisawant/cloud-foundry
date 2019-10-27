@@ -101,9 +101,9 @@ load balancer hostname for the private alb, which you will need later.
 
         kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
 
-        **Note:** If you have more than one private ALB, separate the ids by semicolons in the above command.
+        **Note:** If you have more than one private ALB, separate the ids with semicolons in the above command.
 
-4. Setup your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
+4. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
 the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.
 
 ## Managing VPC CFEE Worker Nodes
