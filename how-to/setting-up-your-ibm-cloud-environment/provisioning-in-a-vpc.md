@@ -59,12 +59,15 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Select VPC environment.
 1. Choose your recently created VPC from the dropdown.
 1. Choose the Worker Zones and Subnets you plan to use.
-1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry-create-environment).
+1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-create-environment).
 1. Apply a patch to the `cf-admin-agent` ingress to allow the {{site.data.keyword.cfee_full_notm}} management console to work correctly.  Every CFEE is provisioned in an IBM Kubernetes Service cluster with both a public and a private Application Load Balancer (ALB/alb).  You will need to enable the `cf-admin-agent` ingress to route traffic via the private ALB for all VPC CFEE instances:
   1. Retrieve the ID of your private ALB by running `ibmcloud ks alb ls --cluster <cluster name>`, where the cluster name is `<CFEE name>-cluster`.  For example, if your CFEE instance is called `my-vpc-cfee`, then your cluster will be called `my-vpc-cfee-cluster`.
   1. Update the `cf-admin-agent` ingress so that traffic is handled by the private ALB.  If you have multiple private ALBs, separate the IDs in the command with semicolons:
 
-      kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
+        kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
+
+Until you patch the ingress per the above directions, the healthcheck page for your {{site.data.keyword.cfee_full_notm}} instance will appear broken.  This is normal and expected until you patch the `cf-admin-agent` ingress.
+{: note}
 
 ## Limitations
 {: #limitations}
@@ -83,6 +86,8 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 
 ## Disabling the IKS public CSE on a VPC CFEE
 {: #disable-iks-public-cse}
+Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
+{: note}
 1. Log into the IBM Cloud CLI.
 2. Find the cluster associated with your VPC CFEE. The format of the name of the cluster is `<CFEE name>-cluster`.
 
@@ -91,9 +96,6 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 3. Disable the public CSE for the cluster.  You can run the following command with the `-y -f` flags appended to squelch any prompts.  If you are prompted to refresh the kubernetes API server, you should respond with `y`.  The command may output a message indicating a need to reload or reboot the cluster worker nodes.  _This is not required when running your CFEE instance in a VPC_:
 
         ibmcloud ks cluster feature disable public-service-endpoint --cluster <CFEE name>-cluster
-
-Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
-{: note}
 
 4. Check that the public CSE has been fully disabled.  This is an asynchronous operation and can take as long as twenty minutes.  Do not worry if it seems to be taking longer than normal.  You can check that it has been disabled by running `ibmcloud ks cluster get --cluster <cluster name>`.  You will know it has been fully disabled when the output shows something like (note the absence of a valid URL for the `Public Service Endpoint URL`):
 
@@ -106,17 +108,13 @@ To disable the public CSE for the IBM Cloud Databases (ICD) for PostgreSQL insta
 
 ## Disabling Cloud Foundry and Application via the public ALB
 {: #disable-public-alb}
+Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
+{: note}
 There are two steps to disabling the public ALB.  First, disable the ALB itself.
 1. Retrieve the ID of your public alb by running `ibmcloud ks alb ls --cluster <cluster name>`.  From the same command ouput, be sure to note the
 load balancer hostname for the private alb, which you will need later.
 2. Disable the public alb: `ibmcloud ks alb configure vpc-classic --alb-id <alb id> --disable-deployment`.
-
-Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
-{: note}
-
-3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file like this:
-
-    * IN CNAME <private lb hostname>
+3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file to alias any host under your cluster ingress domain to the private load balancer hostname.
 
 Other methods (such as distributing host files and the like) can also be made to work, depending on how your organization handles DNS.
 
