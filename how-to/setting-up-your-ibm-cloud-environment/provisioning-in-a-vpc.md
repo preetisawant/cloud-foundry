@@ -69,7 +69,7 @@ There are several limitations detailed in the [release notes for v5.0.0](https:/
 ## Network Isolation for CFEE on VPC
 {: #network-isolation}
 
-Implementing network isolation for a {{site.data.keyword.cfee_full_notm}} instance will remove all access from the public Internet.  This will apply to both the IBM Kubernetes Service cluster (e.g. running `kubectl` commands) and to Cloud Foundry (both CF APIs and hosted applications).  Do _not_ perform these steps unless you have **both** control over DNS to allow you to take over resolution for your cluster ingress domain **and** network connectivity to the private network(s) within your VPC.  Proceeding without these prerequisites in place can render your CFEE inaccessible.
+Implementing network isolation for a {{site.data.keyword.cfee_full_notm}} instance will remove all access from the public Internet.  This will apply to both the IBM Kubernetes Service cluster (e.g., running `kubectl` commands) and to Cloud Foundry (both CF APIs and hosted applications).  Do _not_ perform these steps unless you have **both** control over DNS to allow you to take over resolution for your cluster ingress domain **and** network connectivity to the private network(s) within your VPC.  Proceeding without these prerequisites in place can render your CFEE inaccessible.
 {: note}
 
 To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, users must make several changes after provisioning the instance.  These steps are:
@@ -91,7 +91,7 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
 {: note}
 
-4. Check that the public CSE has been fully disabled.  This is an asynchronous operation and can take as long as twenty minutes.  Do not worry if it seems to be taking longer than normal.  You can check that it has been disabled by running `ibmcloud ks cluster-get --cluster <cluster name>`.  You will know it has been fully disabled when the output shows something like (note the absence of a valid URL for the `Public Service Endpoint URL`):
+4. Check that the public CSE has been fully disabled.  This is an asynchronous operation and can take as long as twenty minutes.  Do not worry if it seems to be taking longer than normal.  You can check that it has been disabled by running `ibmcloud ks cluster get --cluster <cluster name>`.  You will know it has been fully disabled when the output shows something like (note the absence of a valid URL for the `Public Service Endpoint URL`):
 
         Public Service Endpoint URL:    -
         Private Service Endpoint URL:   https://host:port
@@ -110,8 +110,7 @@ load balancer hostname for the private alb, which you will need later.
 Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
 {: note}
 
-3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
-the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster-get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file like this:
+3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file like this:
 
     * IN CNAME <private lb hostname>
 
