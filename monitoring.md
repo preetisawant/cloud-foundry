@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-10-24"
 
 ---
 
@@ -123,7 +123,7 @@ $ kubectl apply -f ingress.yaml
 ```
 {: pre}
 
-**Note:** These configuration files provide a very basic example. You 
+**Note:** These configuration files provide a very basic example. You
 may want to add TLS configuration to the Ingress to support the `https` scheme.
 Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/)
 for detailed information on Kubernetes objects, and how to manage them.
@@ -189,6 +189,90 @@ The following guides you through the steps for installing the required CLI's, fo
   ```
   {: pre}
 
+## Application Deployment Validation
+{: #appDepVal}
+
+Application Deployment Validation (appDepVal) is a part of the monitoring solution which allows the analysis of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
+The tool works as a [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
+Results are detailed metrics which could be used for problem determination, alerting and visualization.
+
+### Changing default configuration for Application Deployment Validation
+
+Application Deployment Validation (appDepVal) will be enabled in CFEE when you enable monitoring. It will be deployed with a default configuration that can be modified post enablement.
+
+The following two configuration environment variables can be used to adapt your buildpacks which are used:
+
+  - CAP_TEST_DELAY
+  This environment variable allows you to disable/enable buildpack testing and to set the interval in which tests are executed. When it is set to `0` buildpacks testing will be disabled. When it is set to a value > 0 it will calculate the interval used for buildpack test cycles in seconds.
+
+  - CAP_TEST_FILTER
+  This environment variable allows you to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only those buildpacks will be used.
+
+The following buildpack tests are available:
+  - `ruby_buildpack, dotnet-core, binary_buildpack, go_buildpack,nodejs_buildpack, php_buildpack, python_buildpack, ruby_buildpack, swift_buildpack, java_buildpack, liberty-for-java,xpages_buildpack, sdk-for-nodejs, staticfile_buildpack`
+  The test for `ruby_buildpack` also contains the Dora app for cf acceptance tests - see [Dora app details ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cf-acceptance-tests/tree/master/assets/dora). For more details about buildpacks - see [Developing with buildpacks]{/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks}.
+
+To change the default test configuration you can modify the two variables listed above:
+1. Before you begin, please make sure that you have installed [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) on your local machine. See [Installing Helm]{/docs/containers?topic=containers-helm} for more details about this tool.
+2. You also need to install one useful Helm plugin `update-config`. If the `update-config` plugin is already installed, make sure that the installed plugin version is >= 0.5.3. Otherwise remove the old plugin version first using the following command:
+
+  ```
+  helm plugin remove update-config
+  ```
+  {: pre}  
+And install the plugin again:
+  ```
+  helm plugin install https://github.com/bluebosh/helm-update-config
+  ```
+  {: pre}
+
+
+3. Find your cluster in https://cloud.ibm.com/resources. It usually looks like `<your CFEE name>-cluster`.
+4. Click the cluster and follow the instruction in `Access` tab to setup the connection to your cluster.
+5. As tiller is deployed in a secured way, create a temporary directory and cd into this directory.
+6. Then execute the following command which will create the necessary environment variable for the secured tiller access:
+
+  ```
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.cert"' | base64 --decode > helm.cert.pem && \
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.key"' | base64 --decode > helm.key.pem && \
+  kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."ca.cert"' | base64 --decode > ca.cert.pem && \
+  helm_cert_path="helm.cert.pem" && \
+  helm_key_path="helm.key.pem" && \
+  ca_cert_path="ca.cert.pem" && \
+  export tls_params="--tls --tls-ca-cert ${ca_cert_path} --tls-cert ${helm_cert_path} --tls-key ${helm_key_path}"
+  ```
+  {: pre}
+
+7. Check the actual values for Application Deployment Validation:
+
+  ```
+  helm get values ${tls_params} camelot
+  ```
+  {: pre}
+
+  You see the values under `env` section. As example:
+
+  ```
+  env:
+  cap_test_delay: 300
+  cap_test_filter: binary_buildpack,staticfile_buildpack
+  ```
+  {: screen}
+
+8. To change the values use following command:
+
+  ```
+  helm update-config ${tls_params} camelot --set-value env.cap_test_delay="<fill in your value>",env.cap_test_filter="<fill in your value>"
+  ```
+  {: screen}
+  If you want to change `cap_test_filter` to a list of buildpacks use following format in the command above. As example:
+  ```
+  env.cap_test_filter="binary_buildpack\,staticfile_buildpack"
+  ```
+  {: screen}
+
+9. Wait few minutes till the appropriate pod in namespace `monitoring` has been recreated with new values.
+
 
 ## Launching the monitoring consoles
 {: #launching-consoles}
@@ -231,3 +315,11 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
    - _Worker Nodes Overview_
         - Shows the CPU and memory usage of the kubernetes infrastructure, along with its network traffic.
 
+#### Application Deployment Validation Dashboards
+
+   - _AppDepVal - Runtimes_
+        - Provides a general status about Cloud Foundry application provisioning tests. It allows to the get the duration and test result of `cf push <app>` commands related to the used buildpack and gives an overview about the command duration and the duration of the most important sub steps of the command.
+   - _AppDepVal - cf CLI - Commands and Rest Calls - Details_
+        - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Application Deployment Validation
+   - _AppDepVal - Internal Metrics and Node Performance_
+        - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).

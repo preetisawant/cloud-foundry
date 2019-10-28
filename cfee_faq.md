@@ -88,12 +88,10 @@ Yes.  An administrator can register a services broker in the CFEE and make custo
 
 Like any other {{site.data.keyword.Bluemix_notm}} service, access to a CFEE is controlled through _Identity & Access Management_ (IAM). Assigning user access policies (either individually or through access groups) with specific roles gives them specific levels of access to a CFEE.  Beyond access to the CFEE service, access to Cloud Foundry organizations and spaces in the CFEE is controlled through Cloud Foundry membership and roles assigned to users in specific organizations and spaces.
 
-# Security and Compliance
-{: #seccomp}
-Delivering a Cloud Foundry environment to our customers that meets the growing demands of enterprise security is key.  In support of this, the CF Enterprise product uses several compliance and regulatory standards to ensure the service meets the baselines that an enterprise will need.  This effort ensures that all central components managed by the service team are secured, and that the customer's environment instance can be managed to the same standards - dependant on your actual controls and processes.
-
 ## What standards does the service comply to?
 {: #standards}
+Delivering a Cloud Foundry environment that meets the growing demands of enterprise security is critical. In support of this, the Cloud Foundry Enterprise product has earned several compliance and regulatory standards to ensure the service meets these critical requirements. This effort ensures that all central components managed by the service team are secured, and that the customer's environment instance can be managed to the same standards - dependent on your actual controls and processes.
+
 IBM Cloud Foundry Enterprise Environment implements controls commensurate with the following standards:
 * EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 * Health Insurance Portability and Accountability Act (HIPAA)

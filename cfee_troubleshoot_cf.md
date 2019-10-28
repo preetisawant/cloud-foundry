@@ -624,6 +624,72 @@ Here  `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate
 5. After you fix all apps in error messages you get from previous step, the alert should disappear in about 5 minutes.
 
 
+## Issues with deployment of Cloud Foundry applications
+{: #cmlt_push_fail}
+
+### Monitoring Alerts
+{: #cmlt_push_fail_mon}
+
+CF:ActionDurationIncrease
+{: #cmlt_actn_time_inc}
+
+CF:AppPushFail
+
+CF:MutipleAppPushFail
+{: #cmlt_push_mul_fail}
+
+### What's happening
+{: #cmlt_push_fail_hap}
+
+One of the active monitoring components for your {{site.data.keyword.cfee_full}} is intended to run a periodical test of CF app deployment. This tool uses `cf` command line interface from a pod in the `monitoring` namespace to run the checks and push different sample apps to the environment. If there is an issue during the push test with one of sample apps for defined time frame, an Prometheus alert will be created. The alert contains the details about affected app (e.g. dotnet_core, liberty, nodejssdk, etc) and a description if the `cf` completely failed or the time for this command is increasing compared to the earlier tests.
+
+### How to fix it
+{: #cmlt_push_fail_fix}
+
+1. In the Grafana instance for your {{site.data.keyword.cfee_full}} you can find dashboards which you can use to troubleshoot app failures and latency issues. See [Grafana documentation](/docs/cloud-foundry?topic=cloud-foundry-monitoring#grafana) and [Grafana dashboards](/docs/cloud-foundry?topic=cloud-foundry-monitoring#grafana-dashboards) for more information.
+2. Check the status of Cloud Foundry components for your CFEE instance using follow command:
+  ```
+  kubectl get pods --namespace cf
+  ```
+  {: pre}
+  If you see any components are not in `Running` or `Completed` status try to recreate it using:
+  ```
+  kubectl delete pod <pod-name> --namespace cf
+  ```
+  {: screen}
+3. Check the status of monitoring components usind follow commands:
+  ```
+  kubectl get pods --namespace monitoring
+  ```
+  {: pre}
+  If you see any components are not in `Running` or `Completed` status try to recreate it using:
+  ```
+  kubectl delete pod <pod-name> --monitoring cf
+  ```
+  {: screen}
+4. As next you can try to get more details about failed app. Login to the pod in namespace `monitoring` where the pod name starts with `camelot`:
+  ```
+  kubectl get pods --namespace monitoring
+  kubectl exec -it --namespace monitoring <camelot-pod-name> -- /bin/bash
+  ```
+  {: screen}
+  Check if `cf target` targeting the correct org and space:
+  ```
+  cf target
+  user:           prometheus-cf
+  org:            camelot
+  space:          test
+  ```
+  {: screen}
+  Run follow command to see a possible reason for the issue (the APP_NAME is available in the Prometheus alert):
+  ```
+  cf logs <APP-NAME> --recent
+  ```
+  {: screen}
+5. See the document [Viewing applications deployed in a specific space](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps#view_specific) for more information.
+6. For more tips about troubleshooting of app deployment, see [Tips for CF apps troubleshooting](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html){: new_window}
+
+
 ## Getting help and support
 {: #ts_getting_help}
 
