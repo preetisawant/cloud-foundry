@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-27"
+lastupdated: "2019-10-28"
 ---
 
 # CFEE on IBM Virtual Private Cloud (VPC)
@@ -56,6 +56,11 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Choose your recently created VPC from the dropdown.
 1. Choose the Worker Zones and Subnets you plan to use.
 1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry-create-environment).
+1. Apply a patch to the `cf-admin-agent` ingress to allow the {{site.data.keyword.cfee_full_notm}} management console to work correctly.  Every CFEE is provisioned in an IBM Kubernetes Service cluster with both a public and a private Application Load Balancer (ALB/alb).  You will need to enable the `cf-admin-agent` ingress to route traffic via the private ALB for all VPC CFEE instances:
+  1. Retrieve the ID of your private ALB by running `ibmcloud ks alb ls --cluster <cluster name>`, where the cluster name is `<CFEE name>-cluster`.  For example, if your CFEE instance is called `my-vpc-cfee`, then your cluster will be called `my-vpc-cfee-cluster`.
+  1. Update the `cf-admin-agent` ingress so that traffic is handled by the private ALB.  If you have multiple private ALBs, separate the IDs in the command with semicolons:
+
+      kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
 
 ## Limitations
 {: #limitations}
@@ -63,6 +68,10 @@ There are several limitations detailed in the [release notes for v5.0.0](https:/
 
 ## Network Isolation for CFEE on VPC
 {: #network-isolation}
+
+Implementing network isolation for a {{site.data.keyword.cfee_full_notm}} instance will remove all access from the public Internet.  This will apply to both the IBM Kubernetes Service cluster (e.g., running `kubectl` commands) and to Cloud Foundry (both CF APIs and hosted applications).  Do _not_ perform these steps unless you have **both** control over DNS to allow you to take over resolution for your cluster ingress domain **and** network connectivity to the private network(s) within your VPC.  Proceeding without these prerequisites in place can render your CFEE inaccessible.
+{: note}
+
 To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, users must make several changes after provisioning the instance.  These steps are:
 1. Disable the public Cloud Service Endpoint [for the IBM Kubernetes Service (IKS) cluster](#disable-iks-public-cse).
 1. Disable the public Cloud Service Endpoint [for the IBM Cloud Databases for PostgreSQL instance](#disable-icd-postgres-public-cse).
@@ -75,11 +84,14 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 
         ibmcloud ks clusters
 
-3. Disable the public CSE for the cluster:
+3. Disable the public CSE for the cluster.  You can run the following command with the `-y -f` flags appended to squelch any prompts.  If you are prompted to refresh the kubernetes API server, you should respond with `y`.  The command may output a message indicating a need to reload or reboot the cluster worker nodes.  _This is not required when running your CFEE instance in a VPC_:
 
         ibmcloud ks cluster feature disable public-service-endpoint --cluster <CFEE name>-cluster
 
-4. Check that the public CSE has been fully disabled.  This is an asynchronous operation and can take as long as twenty minutes.  Do not worry if it seems to be taking longer than normal.  You can check that it has been disabled by running `bmcloud ks cluster-get --cluster <cluster name>`.  You will know it has been fully disabled when the output shows something like (note the absence of a valid URL for the `Public Service Endpoint URL`):
+Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
+{: note}
+
+4. Check that the public CSE has been fully disabled.  This is an asynchronous operation and can take as long as twenty minutes.  Do not worry if it seems to be taking longer than normal.  You can check that it has been disabled by running `ibmcloud ks cluster get --cluster <cluster name>`.  You will know it has been fully disabled when the output shows something like (note the absence of a valid URL for the `Public Service Endpoint URL`):
 
         Public Service Endpoint URL:    -
         Private Service Endpoint URL:   https://host:port
@@ -95,16 +107,14 @@ There are two steps to disabling the public ALB.  First, disable the ALB itself.
 load balancer hostname for the private alb, which you will need later.
 2. Disable the public alb: `ibmcloud ks alb configure vpc-classic --alb-id <alb id> --disable-deployment`.
 
-    **Note:** Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.
+Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
+{: note}
 
-3. Reconfigure the `cf-admin-agent` component of CFEE to use the private ALB correctly.
+3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file like this:
 
-        kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
+    * IN CNAME <private lb hostname>
 
-        **Note:** If you have more than one private ALB, separate the ids with semicolons in the above command.
-
-4. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to
-the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.
+Other methods (such as distributing host files and the like) can also be made to work, depending on how your organization handles DNS.
 
 ## Managing VPC CFEE Worker Nodes
 {: #worker-nodes}
