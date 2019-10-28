@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-09-04"
+lastupdated: "2019-10-08"
 
 ---
 
@@ -23,6 +23,54 @@ lastupdated: "2019-09-04"
 <!-- Update topic to follow the [release notes guidance and template](https://test.cloud.ibm.com/docs/developing/writing/markdown?topic=writing-releasenotes). -->
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
+
+
+## Version 5.0.0
+{: #v500}
+
+_Release Date:_ 2019-10-25
+
+### New Capabilities
+
+The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v5.0.0:
+* Support for provisioning instances into [VPC on classic](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
+* Integration with [IBM Cloud Activity Tracker with LogDNA](https://cloud.ibm.com/catalog/services/ibm-cloud-activity-tracker-with-logdna)
+
+You can now provision your {{site.data.keyword.cfee_full_notm}} in a Virtual Private Cloud (VPC).  Instructions can be found [here](cloud-foundry?topic=cloud-foundry-cfee-on-vpc)
+
+### Limitations
+
+The following limitations exist for a {{site.data.keyword.cfee_full_notm}} instance in VPC:
+* Scaling in CFEE v5.0 is currently not supported. The ability to scale your CFEE will be available at a later date.
+* Monitoring in CFEE v5.0 is currently not supported. The ability to enable and disable monitoring will be available at a later date.
+
+The following limitations exist for integration with IBM Cloud Activity Tracker with LogDNA:
+* Activity Tracker integration is currently only available in the Dallas, London, Frankfurt, and Sydney regions.  This integration will be available in the remaining regions (Tokyo and Washington, D.C.) at a later date.
+
+
+The update to v5.0.0 is available only to {{site.data.keyword.cfee_full_notm}} v4.0.0 and v3.2.2 instances, See [Version 4.0.0](#v400) and
+[Version 3.2.2](#v322).
+{: note}
+
+### Packaged Software Versions and Corequisites
+
+* {{site.data.keyword.cfee_full_notm}} v5.0.0 updates Cloud Foundry to cf-deployment v7.11.0.  Please see the [Cloud Foundry Release Notes](https://github.com/cloudfoundry/cf-deployment/releases?after=v8.0.0) for information on changes in Cloud Foundry.  As CFEE vendors Cloud Foundry from SUSE SCF, see also the relevant [SCF Release Notes](https://github.com/SUSE/scf/releases?after=2.18.0)
+* {{site.data.keyword.cfee_full_notm}} v5.0.0 includes the following Cloud Foundry buildpacks:
+  * liberty-for-java: `buildpack_liberty-for-java_v3.36-20190905-1704.zip`
+  * sdk-for-nodejs: `buildpack_sdk-for-nodejs_v4.0.1-20190930-1425.zip`
+  * dotnet-core: `buildpack_dotnet-core_v2.4-20190912-1554.zip`
+  * swift_buildpack: `buildpack_swift_buildpack_cflinuxfs3_v2.1.0-20190404-1206.zip`
+  * xpages_buildpack: `buildpack_xpages_buildpack_v1.2.2.zip`
+  * staticfile_buildpack: `staticfile-buildpack-cflinuxfs3-v1.4.35.zip`
+  * java_buildpack: `java-buildpack-cflinuxfs3-v4.16.1.zip`
+  * ruby_buildpack: `ruby_buildpack-cflinuxfs3-v1.7.42.zip`
+  * nodejs_buildpack: `nodejs-buildpack-cflinuxfs3-v1.6.34.zip`
+  * go_buildpack: `go-buildpack-cflinuxfs3-v1.8.29.zip`
+  * python_buildpack: `python-buildpack-cflinuxfs3-v1.6.23.zip`
+  * php_buildpack: `php-buildpack-cflinuxfs3-v4.3.64.zip`
+  * binary_buildpack: `binary-buildpack-cflinuxfs3-v1.0.27.zip`
+* {{site.data.keyword.cfee_full_notm}} v5.0.0 has been tested using [version 6.46.1](https://github.com/cloudfoundry/cli/releases/tag/v6.46.1) of the Cloud Foundry CLI.
+
 
 ## Version 4.0.0
 {: #v400}
