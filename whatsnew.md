@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-10-08"
+lastupdated: "2019-10-29"
 
 ---
 
@@ -22,13 +22,13 @@ lastupdated: "2019-10-08"
 
 <!-- Update topic to follow the [release notes guidance and template](https://test.cloud.ibm.com/docs/developing/writing/markdown?topic=writing-releasenotes). -->
 
-This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} service.
+This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} (CFEE) service.
 
 
 ## Version 5.0.0
 {: #v500}
 
-_Release Date:_ 2019-10-25
+_Release Date:_ 2019-10-28
 
 ### New Capabilities
 
