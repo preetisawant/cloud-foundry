@@ -10,13 +10,10 @@ lastupdated: "2019-10-28"
 
 You can provision an IBM Cloud Foundry Enterprise Environment into an existing IBM Virtual Private Cloud (VPC).
 
-<<<<<<< HEAD
-If you are not familiar with IBM's Virtual Private Cloud offerings, you can more about them [here](https://www.ibm.com/cloud/vpc) and [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about).
-=======
-VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability, and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation.](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
->>>>>>> Whats New v5
 
-VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability and allows you to host your applications with the highest level of network security and isolation possible. Full information about VPC, how this technology works, and how it is enabled, can be found in the [VPC documentation](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about)
+VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability and allows you to host your applications with the highest level of network security and isolation possible.
+
+If you are not familiar with IBM's Virtual Private Cloud offerings, you can learn more about them [here](https://www.ibm.com/cloud/vpc) and [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about).
 
 Follow the instructions [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started) to create your VPC.
 
@@ -62,9 +59,7 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-create-environment).
 1. Apply a patch to the `cf-admin-agent` ingress to allow the {{site.data.keyword.cfee_full_notm}} management console to work correctly.  Every CFEE is provisioned in an IBM Kubernetes Service cluster with both a public and a private Application Load Balancer (ALB/alb).  You will need to enable the `cf-admin-agent` ingress to route traffic via the private ALB for all VPC CFEE instances:
   1. Retrieve the ID of your private ALB by running `ibmcloud ks alb ls --cluster <cluster name>`, where the cluster name is `<CFEE name>-cluster`.  For example, if your CFEE instance is called `my-vpc-cfee`, then your cluster will be called `my-vpc-cfee-cluster`.
-  1. Update the `cf-admin-agent` ingress so that traffic is handled by the private ALB.  If you have multiple private ALBs, separate the IDs in the command with semicolons:
-
-        kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'
+  1. Update the `cf-admin-agent` ingress so that traffic is handled by the private ALB:`kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'`  If you have multiple private ALBs, separate the IDs in the command with semicolons: `kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id 1>;<private alb id 2>"}}}'`
 
 Until you patch the ingress per the above directions, the healthcheck page for your {{site.data.keyword.cfee_full_notm}} instance will appear broken.  This is normal and expected until you patch the `cf-admin-agent` ingress.
 {: note}
@@ -75,8 +70,10 @@ There are several limitations detailed in the [release notes for v5.0.0](https:/
 
 ## Network Isolation for CFEE on VPC
 {: #network-isolation}
+The following steps describe the process for configuring a provisioned instance of {{site.data.keyword.cfee_full_notm}}
+Implementing network isolation for a {{site.data.keyword.cfee_full_notm}} instance will remove all access from the public Internet.  This will apply to both the IBM Kubernetes Service cluster (e.g., running `kubectl` commands) and to Cloud Foundry (both CF APIs and hosted applications).
 
-Implementing network isolation for a {{site.data.keyword.cfee_full_notm}} instance will remove all access from the public Internet.  This will apply to both the IBM Kubernetes Service cluster (e.g., running `kubectl` commands) and to Cloud Foundry (both CF APIs and hosted applications).  Do _not_ perform these steps unless you have **both** control over DNS to allow you to take over resolution for your cluster ingress domain **and** network connectivity to the private network(s) within your VPC.  Proceeding without these prerequisites in place can render your CFEE inaccessible.
+**Important:** Do _not_ perform these steps unless you have **both** control over DNS to allow you to take over resolution for your cluster ingress domain **and** network connectivity to the private network(s) within your VPC.  Proceeding without these prerequisites in place can render your CFEE inaccessible.
 {: note}
 
 To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, users must make several changes after provisioning the instance.  These steps are:
@@ -86,8 +83,10 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 
 ## Disabling the IKS public CSE on a VPC CFEE
 {: #disable-iks-public-cse}
-Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
+
+**Important:** Disabling the public CSE will remove the access needed to run `kubectl` commands or otherwise access your kubernetes API server from the public Internet.  Do not do this unless you have the required network connectivity in place to allow access to the private subnets in your VPC.
 {: note}
+
 1. Log into the IBM Cloud CLI.
 2. Find the cluster associated with your VPC CFEE. The format of the name of the cluster is `<CFEE name>-cluster`.
 
@@ -108,8 +107,10 @@ To disable the public CSE for the IBM Cloud Databases (ICD) for PostgreSQL insta
 
 ## Disabling Cloud Foundry and Application via the public ALB
 {: #disable-public-alb}
-Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
+
+**Important:** Public access to both Cloud Foundry APIs and applications is disabled upon disabling the public ALB.  You will not be able to restore access without both network connectivity to the private VPC subnets and the DNS updates described below.
 {: note}
+
 There are two steps to disabling the public ALB.  First, disable the ALB itself.
 1. Retrieve the ID of your public alb by running `ibmcloud ks alb ls --cluster <cluster name>`.  From the same command ouput, be sure to note the
 load balancer hostname for the private alb, which you will need later.
