@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-10-30"
 subcollection: cloud-foundry
 ---
 
@@ -25,7 +25,7 @@ subcollection: cloud-foundry
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
 {: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/go-cloudant" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
+<a class="xref" href="https://github.com/IBM-Cloud/get-started-node" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
 
 
 By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
