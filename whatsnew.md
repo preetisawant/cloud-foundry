@@ -35,6 +35,7 @@ _Release Date:_ 2019-10-28
 The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v5.0.0:
 * Support for provisioning instances into [VPC on classic](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
 * Integration with [IBM Cloud Activity Tracker with LogDNA](https://cloud.ibm.com/catalog/services/ibm-cloud-activity-tracker-with-logdna)
+* [Additional tooling](/docs/cloud-foundry?topic=cloud-foundry-monitoring) within the monitoring toolset enables continuous testing of important CF APIs.
 
 You can now provision your {{site.data.keyword.cfee_full_notm}} in a Virtual Private Cloud (VPC).  Instructions can be found [here](cloud-foundry?topic=cloud-foundry-cfee-on-vpc)
 
