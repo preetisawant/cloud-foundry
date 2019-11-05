@@ -22,7 +22,7 @@ subcollection: cloud-foundry
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java) and explore on your own.
 {: hide-in-docs}
 
 
