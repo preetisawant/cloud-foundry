@@ -5,6 +5,8 @@ copyright:
 lastupdated: "2019-10-28"
 ---
 
+{:note: .note}
+
 # CFEE on IBM Virtual Private Cloud (VPC)
 {: #cfee-on-vpc}
 
