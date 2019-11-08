@@ -24,6 +24,27 @@ lastupdated: "2019-10-29"
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} (CFEE) service.
 
+## Version 5.1.0
+{: #v510}
+
+_Release Date:_ 2019-11-13
+
+### New capabilities
+
+The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v5.1.0:
+* Support for updating instances provisioned into VPC on Classic
+
+### Issues resolved
+
+The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v5.1.0:
+* Enabling monitoring was broken for all versions of {{site.data.keyword.cfee_full_notm}} prior to v5.1.0 because of a change in the underlying infrastructure layer.  Users wishing to enable monitoring _must_ update to v5.1.0
+* Using a custom UAA identity provider did not work unless only a single UAA pod was running
+* Some options for log forwarding were being handled incorrectly
+* Updating either a classic or VPC instance could result in the deletion of the IBM Cloud Activity Tracker with LogDNA event forwarder pods, thereby breaking the flow of events to the Activity Tracker instance
+
+The update to v5.0.0 is available only to {{site.data.keyword.cfee_full_notm}} v.5.0.0, v4.0.0, and v3.2.2 instances, See [Version 5.0.0](#v500),[Version 4.0.0](#v400), and
+[Version 3.2.2](#v322).
+{: note}
 
 ## Version 5.0.0
 {: #v500}
