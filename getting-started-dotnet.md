@@ -2,13 +2,13 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-11-08"
 subcollection: "Dotnet"
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -19,13 +19,10 @@ subcollection: "Dotnet"
 # Getting started tutorial
 {: #getting_started-dotnet}
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
 {: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/get-started-aspnet-core" target="_blank" title="(Download sample code)"><img class="w3-image" src="docs/runtimes/images/btn_starter-code.svg" alt="Download application code" /></a>
-{: hide-in-docs}
-
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix}} database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
 
 ## Before you begin
 {: #prereqs}
@@ -33,8 +30,8 @@ By following this getting started tutorial, you'll set up a development environm
 You'll need the following:
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud/download_cli.html)
-* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
-* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.microsoft.com/net/download/core).
+* [Git](https://git-scm.com/downloads){: external}
+* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}
 
 ## Step 1: Clone the sample app
 {: #clone}

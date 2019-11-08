@@ -2,13 +2,13 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-11-08"
 subcollection: cloud-foundry
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -21,12 +21,10 @@ subcollection: cloud-foundry
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/go-cloudant) and explore on your own.
 {: hide-in-docs}
 
-<a class="xref" href="https://github.com/IBM-Cloud/go-cloudant" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
-
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm_notm}} database service in your app.
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.Bluemix_notm}} CLI! The {{site.data.keyword.Bluemix_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.Bluemix_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.Bluemix_notm}} CLI in this tutorial.
 {: tip}
@@ -38,8 +36,8 @@ You'll need the following:
 
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
-* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
-* [Go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://golang.org/dl/){: new_window}
+* [Git](https://git-scm.com/downloads){: external}
+* [Go](https://golang.org/dl/){: external}
 
 ## Step 1: Clone the sample app
 {: #clone-go}

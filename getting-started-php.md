@@ -9,7 +9,7 @@ subcollection: cloud-foundry
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
@@ -22,11 +22,8 @@ subcollection: cloud-foundry
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, download the sample code and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-php) and explore on your own.
 {: hide-in-docs}
-
-<a class="xref" href="https://github.com/IBM-Cloud/get-started-php" target="_blank" title="(Download sample code)"><img class="w3-image" src="/docs/cloud-foundry/images/btn_starter-code.svg" alt="Download application code"/></a>{: hide-in-docs}
-
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.Bluemix}}, and integrate a database service in your app.
 
@@ -40,9 +37,9 @@ You'll need the following:
 
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
-* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
-* [PHP ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://php.net/downloads.php){: new_window}
-* [Composer ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://getcomposer.org/download/){: new_window}
+* [Git](https://git-scm.com/downloads){: external}
+* [PHP ](http://php.net/downloads.php){: external}
+* [Composer](https://getcomposer.org/download/){: external}
 
 ## Step 1: Clone the sample app
 {: #clone-php}
