@@ -17,7 +17,7 @@ subcollection: "Dotnet"
 {:app_name: data-hd-keyref="app_name"}
 
 # Getting started tutorial
-{: #getting_started}
+{: #getting_started-dotnet}
 
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
 {: hide-in-docs}

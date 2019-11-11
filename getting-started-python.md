@@ -5,7 +5,6 @@ copyright:
 lastupdated: "2019-11-07"
 subcollection: cloud-foundry
 
-
 ---
 
 {:shortdesc: .shortdesc}
