@@ -2,8 +2,10 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-28"
+lastupdated: "2019-11-11"
 ---
+
+{:note: .note}
 
 # CFEE on IBM Virtual Private Cloud (VPC)
 {: #cfee-on-vpc}
@@ -57,12 +59,6 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Choose your recently created VPC from the dropdown.
 1. Choose the Worker Zones and Subnets you plan to use.
 1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-create-environment).
-1. Apply a patch to the `cf-admin-agent` ingress to allow the {{site.data.keyword.cfee_full_notm}} management console to work correctly.  Every CFEE is provisioned in an IBM Kubernetes Service cluster with both a public and a private Application Load Balancer (ALB/alb).  You will need to enable the `cf-admin-agent` ingress to route traffic via the private ALB for all VPC CFEE instances:
-  1. Retrieve the ID of your private ALB by running `ibmcloud ks alb ls --cluster <cluster name>`, where the cluster name is `<CFEE name>-cluster`.  For example, if your CFEE instance is called `my-vpc-cfee`, then your cluster will be called `my-vpc-cfee-cluster`.
-  1. Update the `cf-admin-agent` ingress so that traffic is handled by the private ALB:`kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id>"}}}'`  If you have multiple private ALBs, separate the IDs in the command with semicolons: `kubectl -n cf-admin-agent patch ingress cf-admin-agent -p '{"metadata":{"annotations":{"ingress.bluemix.net/ALB-ID":"<private alb id 1>;<private alb id 2>"}}}'`
-
-Until you patch the ingress per the above directions, the healthcheck page for your {{site.data.keyword.cfee_full_notm}} instance will appear broken.  This is normal and expected until you patch the `cf-admin-agent` ingress.
-{: note}
 
 ## Limitations
 {: #limitations}

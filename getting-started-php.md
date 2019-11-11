@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-11-07"
 subcollection: cloud-foundry
 
 
@@ -38,7 +38,7 @@ You'll need the following:
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
-* [PHP ](http://php.net/downloads.php){: external}
+* [PHP](http://php.net/downloads.php){: external}
 * [Composer](https://getcomposer.org/download/){: external}
 
 ## Step 1: Clone the sample app

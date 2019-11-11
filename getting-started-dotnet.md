@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-07"
 subcollection: "Dotnet"
 
 ---
@@ -22,7 +22,7 @@ subcollection: "Dotnet"
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
 {: hide-in-docs}
 
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix}} database service in your app.
 
 ## Before you begin
 {: #prereqs}
@@ -31,7 +31,7 @@ You'll need the following:
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
 * [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud/download_cli.html)
 * [Git](https://git-scm.com/downloads){: external}
-* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}
+* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}.
 
 ## Step 1: Clone the sample app
 {: #clone}
