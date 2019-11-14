@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-13"
 subcollection: "Dotnet"
 
 ---
@@ -16,7 +16,7 @@ subcollection: "Dotnet"
 {:hide-in-docs: .hide-in-docs}
 {:app_name: data-hd-keyref="app_name"}
 
-# Getting started tutorial
+# Getting started with ASP.NET Core
 {: #getting_started-dotnet}
 
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
