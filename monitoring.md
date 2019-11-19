@@ -323,3 +323,11 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
         - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Application Deployment Validation
    - _AppDepVal - Internal Metrics and Node Performance_
         - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
+
+## CFEE Monitoring on IBM Virtual Cloud Private (VPC)
+{: #MonitoringVPC}
+
+Monitoring on VPC does not support persistence for Prometheus and Grafana:
+1. Reload of the Prometheus pod/container will lose collected time series data history. If you need historical data you can federate Prometheus as described [here](cloud-foundry?topic=cloud-foundry-monitoring#federation).
+
+2. Reload of the Grafana pod/container will lose any customized Grafana dashboards. It is recommended to backup all customized Grafana dashboards to enable restore after pod/container reload.
