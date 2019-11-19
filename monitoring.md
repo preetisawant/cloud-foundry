@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-11-19"
 
 ---
 
@@ -127,6 +127,28 @@ $ kubectl apply -f ingress.yaml
 may want to add TLS configuration to the Ingress to support the `https` scheme.
 Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/)
 for detailed information on Kubernetes objects, and how to manage them.
+
+## Monitoring with Sysdig (optional)
+{: #sysdig}
+
+IBM Cloud Monitoring with Sysdig is an offering to provide fully managed enterprise-grade monitoring service on IBM Cloud.
+
+After you enable monitoring on a {{site.data.keyword.cfee_full}}, you have the choice to use Sysdig or Prometheus or both.
+
+If you want to use Sysdig, you need to do some additional steps to connect your Sysdig instance with your CFEE.
+These steps are:
+
+* Create your own Sysdig instance if it is not already existing. You can refer to the [Sysdig about] (https://test.cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about) documentation for details.
+* Deploy the sysdig agent on the CFEE environment. You will get the complete command on your sysdig instance or refer to the [Sysdig Agent configuration] (https://test.cloud.ibm.com/docs/services/https://test.cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-config_agent) documentation for details.
+ 
+After your CFEE cluster is connected to your Sysdig instance, you will find kubernetes common specific metrics available as well as Cloud Foundry related metrics in your Sysdig instance.
+Cloud Foundry related metrics are identified by the following prefixes:
+
+* firehose: metrics provided by the firehose_exporter component
+* cf : metrics provided by the cf_exporter component
+* cmlt : metrics provided by the Application Deployment Validation tool 
+
+With this enablement you can now create your own Sysdig alerts and Sysdig dashboards based on the available metrics for all Cloud Foundry components.
 
 ## Grafana
 {: #grafana}
