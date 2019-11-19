@@ -60,6 +60,14 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Choose the Worker Zones and Subnets you plan to use.
 1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-create-environment).
 
+## Enabling Monitoring
+{: #enable-monitoring}
+
+With CFEE 5.2 release enable monitoring in VPC CFEE cluster is available.
+
+Monitoring is same as we have in CFEE classic but with few limitation. To know more [CFEE Monitoring](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-monitoring#MonitoringVPC)
+
+
 ## Limitations
 {: #limitations}
 There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
