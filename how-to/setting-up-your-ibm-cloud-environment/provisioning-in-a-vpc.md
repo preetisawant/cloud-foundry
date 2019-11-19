@@ -63,10 +63,8 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 ## Enabling Monitoring
 {: #enable-monitoring}
 
-With CFEE 5.2 release enable monitoring in VPC CFEE cluster is available.
-
-Monitoring is same as we have in CFEE classic but with few limitation. To know more [CFEE Monitoring](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-monitoring#MonitoringVPC)
-
+With the CFEE 5.2 release, enabling monitoring on a VPC infrastructure is supported.
+Monitoring on VPC has some limitations compared to monitoring on classic infrastructure as detailed in [Monitoring](cloud-foundry?topic=cloud-foundry-monitoring#MonitoringVPC).
 
 ## Limitations
 {: #limitations}
