@@ -324,11 +324,12 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
    - _AppDepVal - Internal Metrics and Node Performance_
         - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
 
-#### CFEE Monitoring on IBM Virtual Cloud Private(PVC)
+## CFEE Monitoring on IBM Virtual Cloud Private(PVC)
 {: #MonitoringVPC}
-What's New:
-1. Non-Persistence: With the current release we are not offering Persistence Volume for Prometheus and Grafana.
 
-   1. Reload of the Prom pod/container will destroy all the collected time series data.
-   2. Reload of Grafana pod/container will destroy the local grafana database
+What's different:
+1. Non-Persistence Volume: With the current release persistence volume for Prometheus and Grafana is not supported.
+
+   1. Reload of the Prom pod/container will loose collected time series data history.
+   2. Reload of Grafana pod/container will destroy the local grafana dashboards
    3. Its recommended to have backup for all customized local dashboards to retain data after restart of Grafana pod.
