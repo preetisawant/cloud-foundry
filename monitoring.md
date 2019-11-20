@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-20"
 
 ---
 
@@ -133,20 +133,20 @@ for detailed information on Kubernetes objects, and how to manage them.
 
 IBM Cloud Monitoring with Sysdig is an offering which provides a fully-managed, enterprise-grade monitoring service on IBM Cloud.
 
-After you enable monitoring on a {{site.data.keyword.cfee_full}}, you have the choice to use Sysdig or Prometheus or both.
+After you enable monitoring on an {{site.data.keyword.cfee_full}}, you have the choice to use Sysdig or Prometheus or both.
 
 If you want to use Sysdig, you need to do some additional steps to connect your Sysdig instance with your CFEE.
 These steps are:
 
-* Create your own Sysdig instance if it does not already exist. You can refer to the [Sysdig about] (https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about) documentation for details.
-* Deploy the Sysdig agent on the CFEE environment. You can get the complete command on your Sysdig instance or refer to the [Sysdig Agent configuration] (https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-config_agent) documentation for details.
+* Create your own Sysdig instance if it does not already exist. You can refer to the [Sysdig](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about) documentation for details.
+* Deploy the Sysdig agent on the CFEE environment. You can get the complete command on your Sysdig instance or refer to the [Sysdig agent configuration](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-config_agent) documentation for details.
  
 After your CFEE cluster is connected to your Sysdig instance, you will find common Kubernetes-specific metrics as well as Cloud Foundry related metrics in your Sysdig instance.
 Cloud Foundry related metrics are identified by the following prefixes:
 
-* `firehose`: metrics provided by the firehose_exporter component
-* `cf` : metrics provided by the cf_exporter component
-* `cmlt` : metrics provided by the Application Deployment Validation tool 
+* `firehose_`: metrics provided by the firehose_exporter component
+* `cf_` : metrics provided by the cf_exporter component
+* `cmlt_` : metrics provided by the Application Deployment Validation tool 
 
 With this enablement you can now create your own Sysdig alerts and Sysdig dashboards based on the available metrics for all Cloud Foundry components.
 
