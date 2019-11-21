@@ -59,3 +59,10 @@ The update policy works similarly.  If the current release is _6.2_, and the lat
 
 For this reason, it is _critical_ that users update their instances to stay within the _N-2_ support window.  We cannot commit to supporting attempts to update older releases, unfortunately, and users electing not to update do so at their own risk.
 {: important}
+
+### {{site.data.keyword.cfee_short}} Dependencies
+{: #dependencies}
+{{site.data.keyworld.cfee_full_notm}} releases include specific versions of vendored dependencies, notably the IBM Kubernetes Service.  This means that your CFEE instance is provisioned using a specific kubernetes version, and CFEE updates will, from time to time, result in an update to the kubernetes version of the underlying cluster as well.
+
+Performing manual kubernetes updates on the underlying kubernetes cluster is specifically not supported and may result in the CFEE instance being rendered non-functional due to incompatibilities with kubernetes versions not supported by CFEE.  As there is no way to revert a kubernetes update, users are warned in the strongest possible terms _not to update the kubernetes cluster directly unless specifically advised to do so by CFEE product support_.  We cannot provide support for instances on which the customer has performed a manual kubernetes update.
+{: important}
