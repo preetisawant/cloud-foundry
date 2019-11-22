@@ -8,8 +8,11 @@ Cloud Foundry Enterprise Environment
     getting-started.md
     about-cf.md
     cf.md
-    cfee-responsibilities.md
-    version-support.md
+
+    {: .topicgroup}
+    Terms and Conditions
+        terms-and-conditions/cfee-responsibilities.md
+        terms-and-conditions/version-support.md
 
     {: .topicgroup}
     Best practices
