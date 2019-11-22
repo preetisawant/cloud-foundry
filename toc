@@ -11,8 +11,8 @@ Cloud Foundry Enterprise Environment
 
     {: .topicgroup}
     Terms and Conditions
-        cfee-responsibilities.md
-        version-support.md
+        terms-and-conditions/cfee-responsibilities.md
+        terms-and-conditions/version-support.md
 
     {: .topicgroup}
     Best practices
