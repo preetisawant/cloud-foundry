@@ -114,12 +114,23 @@ To disable the public CSE for the IBM Cloud Databases (ICD) for PostgreSQL insta
 {: note}
 
 There are two steps to disabling the public ALB.  First, disable the ALB itself.
-1. Retrieve the ID of your public alb by running `ibmcloud ks alb ls --cluster <cluster name>`.  From the same command ouput, be sure to note the
-load balancer hostname for the private alb, which you will need later.
+1. Retrieve the ID of your public alb by running `ibmcloud ks alb ls --cluster <cluster name>`.  From the same command output, be sure to note the load balancer hostname for the private alb, which you will need later.
 2. Disable the public alb: `ibmcloud ks alb configure vpc-classic --alb-id <alb id> --disable-deployment`.
-3. Set up your internal DNS to redirect the cluster ingress domain (which will cover both the Cloud Foundry APIs and hosted applications) to the private alb load balancer hostname, which you should have retrieved in step 1.  You can rerun the same command if you did not note it down.  If you have administrative control over your enterprise's DNS servers, then either configure or have configured the nameserver delegation for your cluster ingress domain (which you can retrieve with `ibmcloud ks cluster get --cluster <cluster name>`) so that a nameserver you control is authoritative for the domain.  Then you can simply add a wildcard CNAME record in the domain file to alias any host under your cluster ingress domain to the private load balancer hostname.
 
-Other methods (such as distributing host files and the like) can also be made to work, depending on how your organization handles DNS.
+Finally update the default DNS resolution for cluster's subdomain to point the private load balancer for your cluster: 
+
+1. Find the subdomain for your cluster:
+
+        ibmcloud ks nlb-dns ls --cluster <cluster name>
+2. Find the private load balancer hostname for your clsuter:
+
+        ibmcloud ks alb ls --cluster <cluster name>
+
+3. Update the DNS resolution:
+
+        ibmcloud ks nlb-dns replace --cluster <cluster name> --nlb-subdomain <cluster subdomain> --lb-host <cluster private load balancer hostname>
+
+The above DNS update takes the form of a CNAME from your `<cluster subdomain>` to the `<cluster private load balancer hostname>`. This change can take up to 30 mins to be completely.  Use `dig <cluster subdomain>` to identify when the change is live.      
 
 ## Managing VPC CFEE Worker Nodes
 {: #worker-nodes}
