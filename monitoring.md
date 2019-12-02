@@ -349,6 +349,8 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
 ## CFEE Monitoring on IBM Virtual Cloud Private (VPC)
 {: #MonitoringVPC}
 
+For a VPC {{site.data.keyword.cfee_short}}, there must be two (2) unallocated IPs in each of the VPC subnets in the {{site.data.keyword.cfee_short}}.
+
 Monitoring on VPC does not support persistence for Prometheus and Grafana:
 1. Reload of the Prometheus pod/container will lose collected time series data history. If you need historical data you can federate Prometheus as described [here](cloud-foundry?topic=cloud-foundry-monitoring#federation).
 
