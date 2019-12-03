@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-11-20"
 
 ---
 
@@ -127,6 +127,28 @@ $ kubectl apply -f ingress.yaml
 may want to add TLS configuration to the Ingress to support the `https` scheme.
 Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/)
 for detailed information on Kubernetes objects, and how to manage them.
+
+## Monitoring with Sysdig (optional)
+{: #sysdig}
+
+IBM Cloud Monitoring with Sysdig is an offering which provides a fully-managed, enterprise-grade monitoring service on IBM Cloud.
+
+After you enable monitoring on an {{site.data.keyword.cfee_full}}, you have the choice to use Sysdig or Prometheus or both.
+
+If you want to use Sysdig, you need to do some additional steps to connect your Sysdig instance with your CFEE.
+These steps are:
+
+* Create your own Sysdig instance if it does not already exist. You can refer to the [Sysdig](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about) documentation for details.
+* Deploy the Sysdig agent on the CFEE environment. You can get the complete command on your Sysdig instance or refer to the [Sysdig agent configuration](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig?topic=Sysdig-config_agent) documentation for details.
+ 
+After your CFEE cluster is connected to your Sysdig instance, you will find common Kubernetes-specific metrics as well as Cloud Foundry related metrics in your Sysdig instance.
+Cloud Foundry related metrics are identified by the following prefixes:
+
+* `firehose_`: metrics provided by the firehose_exporter component
+* `cf_` : metrics provided by the cf_exporter component
+* `cmlt_` : metrics provided by the Application Deployment Validation tool 
+
+With this enablement you can now create your own Sysdig alerts and Sysdig dashboards based on the available metrics for all Cloud Foundry components.
 
 ## Grafana
 {: #grafana}
@@ -323,3 +345,13 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
         - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Application Deployment Validation
    - _AppDepVal - Internal Metrics and Node Performance_
         - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
+
+## CFEE Monitoring on IBM Virtual Cloud Private (VPC)
+{: #MonitoringVPC}
+
+For a VPC {{site.data.keyword.cfee_short}}, there must be two (2) unallocated IPs in each of the VPC subnets in the {{site.data.keyword.cfee_short}}.
+
+Monitoring on VPC does not support persistence for Prometheus and Grafana:
+1. Reload of the Prometheus pod/container will lose collected time series data history. If you need historical data you can federate Prometheus as described [here](cloud-foundry?topic=cloud-foundry-monitoring#federation).
+
+2. Reload of the Grafana pod/container will lose any customized Grafana dashboards. It is recommended to backup all customized Grafana dashboards to enable restore after pod/container reload.
