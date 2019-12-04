@@ -62,13 +62,16 @@ To enable platform and application logging for a CFEE instance:
 
 You can disable Log persistence by clicking **Disable logging persistance**, which will remove the service instance previously added and configured. This action will not delete the LogDNA service instance.
 
-When enabling platform logging, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive, as only a single instance of each component is restarted at one time.
+When enabling or disabling logging, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive, as only a single instance of each component is restarted at one time.
 {: important}
 
 **Note:** When you disable log persistence, the Cloud Foundry logging events are still being generated, only they are not persisted outside the CFEE instance.
 
 ### Configuring platform logs in CFEE v5.2.0
 Platform logging persistance was added in CFEE version 5.2.0. *If a CFEE was configured to support logging persistance before updating to v5.2.0, an administrator will need to disable and renable logging in order to begin receiving both application and platform logs.*
+
+In CFEE v5.2.0, if you've manually disabled platform logging, or if you updated to version 5.2 with logging enabled, you will receive an error while disabling your logging configuration from the Operations > Logging page. In most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
+{: important}
 
 To stop the flow of platform AND application logs, click **Disable logging persistance**. 
 
@@ -98,9 +101,6 @@ Instructions for updating a Kubernetes configmap to stop platform logging
 4. Edit the configmap in the cf-admin-agent namespace using `kubectl -n cf-admin-agent edit configmap`
 5. To remove the configuration for platform logs, delete the key/value pair under `data` for the key `logdna_platform_config`
 6. Write the file and close the editor
-
-In CFEE v5.2.0, if you've manually disabled platform logging, you will receive an error while disabling your configuration from the Operations > Logging page. This error is the result of the manual configuration update, and in most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
-{: important}
 
 ### Exporting logs from IBM Log Analysis with LogDNA (optional)
 
