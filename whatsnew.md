@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-10-29"
+lastupdated: "2019-12-20"
 
 ---
 
@@ -38,6 +38,9 @@ The following new capabilities were introduced in {{site.data.keyword.cfee_full_
 * Support for enabling monitoring in instances provisioned into VPC on Classic
 * Support for enabling Sysdig in instances with monitoring enabled (both VPC and non-VPC instances).  Once a user has enabled monitoring, they can refer to the [{{site.data.keyword.cfee_short}} Monitoring documentation](/docs/cloud-foundry?topic=cloud-foundry-monitoring#sysdig) to deploy Sysdig into the {{site.data.keyword.cfee_short}} instance.  At this point the user can choose to use either Prometheus or Sysdig.
 * Support for sending Cloud Foundry platform logs to LogDNA
+
+Prior to any scale-up operation on a 5.2 classic cfee, remove the bcf.type label from the 5.2 classic cell worker pool via the Kubenetes UI.
+{: note}
 
 The update to v5.2.0 is available only to {{site.data.keyword.cfee_full_notm}} v.5.1.0, v.5.0.0, v4.0.0, and v3.2.2 instances, See [Version 5.1.0](#v510),[Version 5.0.0](#v500),[Version 4.0.0](#v400), and
 [Version 3.2.2](#v322).
