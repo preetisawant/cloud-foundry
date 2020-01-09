@@ -90,7 +90,7 @@ Instructions for updating a Helm release to stop platform logging (Mac OS or Ubu
     - `kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."ca.cert"' | base64 --decode > ca.pem`
 8. Install the `helm-update-config` plugin using `helm plugin install https://github.com/bluebosh/helm-update-config`
 9. Run `helm list --tls-ca-cert=ca.pem --tls-cert=cert.pem --tls-key=key.pem --tls` to list Helm releases, and note the **CF release name** which looks like "cf.00000000.000000"
-10. _To end the flow of platform logs_, run `helm update-config "<cf-release-name>" --set-value env.FLUENTD_LOGDNA_INGESTER_DOMAIN="" --set-value env.FLUENTD_LOGDNA_API_KEY="" --tls-ca-cert=ca.pem --tls-cert=cert.pem --tls-key=key.pem --tls`, replacing the text within brackets <> based on previous instructions
+10. _To end the flow of platform logs_, run `helm update-config "<cf-release-name>" --set-value env.FLUENTD_LOGDNA_INGESTER_DOMAIN="" --set-value env.FLUENTD_LOGDNA_API_KEY="this-is-a-faked-logdna-api-key" --tls-ca-cert=ca.pem --tls-cert=cert.pem --tls-key=key.pem --tls`, replacing the text within brackets <> based on previous instructions. Do not replace `this-is-a-faked-logdna-api-key` with another string, this is required to properly stop the flow of logs.
     - You may receive a "broken pipe" error while running this command. However, if you still see the `Info: update successfully` message, your configuration has been updated without error.
 11. Please note that it takes up to 15 minutes for all CF components to restart and reflect the configured changes.
 
