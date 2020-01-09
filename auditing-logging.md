@@ -79,7 +79,7 @@ To stop the flow of ONLY platform logs, a manual configuration update is require
 
 Instructions for updating a Helm release to stop platform logging (Mac OS or Ubuntu)
 1. Choose a single directory to work in for the following commands.
-2. Ensure that [jq](https://stedolan.github.io/jq/) and [helm](https://helm.sh/docs/using_helm/#installing-helm) (**Version 2**) are installed 
+2. Ensure that [jq](https://stedolan.github.io/jq/) and [helm](https://helm.sh/docs/using_helm/#installing-helm) (**Version 2.10**) are installed.
 3. Login to the IBM Cloud CLI
 4. Run `ibmcloud cs cluster-config <name-of-your-cfee-cluster>` to establish a connection with your cluster
 5. Export the Kubernetes environment variable as directed in the CLI output.
