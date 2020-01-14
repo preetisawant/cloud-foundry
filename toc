@@ -25,23 +25,23 @@ Cloud Foundry Enterprise Environment
     {: .navgroup id="howto"}
     {: .topicgroup}
     Setting up your IBM Cloud environment
+        how-to/setting-up-your-ibm-cloud-environment/create-environment.md
+        how-to/setting-up-your-ibm-cloud-environment/network-isolation.md
         how-to/setting-up-your-ibm-cloud-environment/provisioning-in-a-vpc.md
-        design-structure.md
-        org-structure.md
-        spaces.md
-        orgs-spaces.md
-        add-users.md
-        assign-roles.md
-        prepare-account.md
-        permissions.md
+        how-to/setting-up-your-ibm-cloud-environment/getting-started-eirini.md
+        how-to/setting-up-your-ibm-cloud-environment/design-structure.md
+        how-to/setting-up-your-ibm-cloud-environment/org-structure.md
+        how-to/setting-up-your-ibm-cloud-environment/spaces.md
+        how-to/setting-up-your-ibm-cloud-environment/orgs-spaces.md
+        how-to/setting-up-your-ibm-cloud-environment/add-users.md
+        how-to/setting-up-your-ibm-cloud-environment/assigning-roles.md
+        how-to/setting-up-your-ibm-cloud-environment/prepare-account.md
+        how-to/setting-up-your-ibm-cloud-environment/permissions.md
 
     {: .topicgroup}
     Working with apps and services
-        create-environment.md
-        network-isolation.md
         deploy-apps.md
         add-serv-inst.md
-        getting-started-eirini.md
         deploy_eclipsetools.md
         deploy_vs.md
         install_cli.md
