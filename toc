@@ -37,6 +37,7 @@ Cloud Foundry Enterprise Environment
         how-to/setting-up-your-ibm-cloud-environment/assigning-roles.md
         how-to/setting-up-your-ibm-cloud-environment/prepare-account.md
         how-to/setting-up-your-ibm-cloud-environment/permissions.md
+        how-to/setting-up-your-ibm-cloud-environment/securing.md
 
     {: .topicgroup}
     Working with apps and services
