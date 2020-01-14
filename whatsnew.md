@@ -26,6 +26,21 @@ This document describes what's new in each released version of the {{site.data.k
 
 The {{site.data.keyword.cfee_full_notm}} service packages specific versions of Cloud Foundry and buildpacks, and it is tested for function using specific versions of the Cloud Foundry CLI.  Where these versions do not change between releases, we typically do not list them explicitly.  Users can assume that the most recently listed versions for a given release are still valid for subsequent {{site.data.keyword.cfee_full_notm}} releases unless otherwise specified.
 
+## Version 5.2.1
+{: #v521}
+
+_Release Date:_ 2020-01-10
+
+### New Capabilities
+
+The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v5.2.1:
+* Bug fixes to address the disablement of monitoring and the inability to scale an newly created environment
+
+
+The update to v5.2.1 is available only to {{site.data.keyword.cfee_full_notm}} v.5.2.0, v.5.1.0, v.5.0.0, v4.0.0, and v3.2.2 instances, See [Version 5.2.0](#v520),[Version 5.1.0](#v510),[Version 5.0.0](#v500),[Version 4.0.0](#v400), and
+[Version 3.2.2](#v322).
+{: note}
+
 ## Version 5.2.0
 {: #v520}
 
