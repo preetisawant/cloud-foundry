@@ -21,6 +21,11 @@ IBM provides several configuration options you can use in order to secure your {
 
 Since CFEE is deployed on top of instances of other IBM Cloud services, most of these options are actually accessed by configuring those underlying instances.
 
+## Encryption in Cloud Foundry
+{: #cloud-foundry}
+
+Cloud Foundry encrypts key fields stored in its databases (Cloud Controller DB, Diego DB, UAA DB).  {{site.data.keyword.cfee_full_notm}} generates a unique key for each instance which is used for this encryption.  Data stored within these databases is further encrypted by the underlying IBM Cloud Databases for PostgreSQL instance, see [below](#database) for more information.
+
 ## Securing your IBM Kubernetes Service cluster
 {: #kubernetes-cluster}
 
