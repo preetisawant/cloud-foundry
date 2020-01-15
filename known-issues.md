@@ -43,7 +43,7 @@ If the firehouse exporter is using betwen 0.5 and 0.7 (50-70%) CPU, and the over
 2. Edit the `config.yaml` and add the following line in `spec.template.spec.containers.args` array:
 
    ```
-   - --filter.events=ContainerMetric,CounterEvent,ValueMetric          
+   - --filter.events=ContainerMetric,CounterEvent,ValueMetric
    ```
 
 ### Example
@@ -62,7 +62,7 @@ Original `config.yaml`:
         - --metrics.environment=IBM-Cloud-Foundry-Enterprise-Environment
         - --filter.events=ContainerMetric,CounterEvent,ValueMetric
         image: boshprometheus/firehose-exporter
-```  
+```
 
 The following command would reconfigure and restart the worker node pod:
 
@@ -89,8 +89,8 @@ This situation can be detected if the `ibmcloud ks workers <cluster-name>`
 command shows the respective worker in state `critical` and status `error*` for
 more than 10 minutes:
 ```
-ID                                                 Public IP         Private IP      Machine Type         State      Status   Zone    Version   
-kube-fra04-cr25e2765963834256813f44c2e42f48b2-w1   U.V.W.116         10.X.Y.Z        b2c.4x16.encrypted   critical   error*   fra04   1.12.7_1549   
+ID                                                 Public IP         Private IP      Machine Type         State      Status   Zone    Version
+kube-fra04-cr25e2765963834256813f44c2e42f48b2-w1   U.V.W.116         10.X.Y.Z        b2c.4x16.encrypted   critical   error*   fra04   1.12.7_1549
 ```
 Also, the `ibmcloud ks worker-get --worker <worker-ID> --cluster <cluster-name> --json`
 shows that a reboot is pending, but the worker fails to connect to the
@@ -161,4 +161,31 @@ ibmcloud ks worker-reboot <node-with-previous-prometheus-server-pod>
 
 ## Known Errors
 
-1. If a worker node deployment fails due to an IBM Kubernetes Service issue, you must redeploy the CFEE instance. This cannot be fixed without redeploying because CFEE instances are dependant on the IBM Kubernetes Service. 
+1. If a worker node deployment fails due to an IBM Kubernetes Service issue, you must redeploy the CFEE instance. This cannot be fixed without redeploying because CFEE instances are dependant on the IBM Kubernetes Service.
+
+### Issues creating service instances
+
+If you encounter this specific error when creating services in your CFEE instance
+
+```
+$ cf create-service cloudantnosqldb  alias service-alias -c '{"instance":"88cef195-85fe-4ca3-90a7-bd01447405f0"}'
+Creating service instance service-alias in org org / space dev as user@ibm.com...
+The service broker rejected the request to https://resource-controller.bluemix.net/ibmcloud-platform/907f6518-65cb-4500-8ac8-c07ec36db942/v2/service_instances/229e94e3-d16c-40f7-b050-7384cfbbe8cf?accepts_incomplete=true. Status Code: 400 Bad Request, Body: {"error_code":"RC-IamErrorResponse","message":"Account owner not found in user registry cfaas","status_code":400}
+
+FAILED
+```
+
+The IAM Service ID used to create the service alias lacks the permission necessary to create the service. You can give the permission with the following steps:
+
+1. Find the name of the service ID for your CFEE.
+```
+$ ibmcloud iam service-ids | grep "Auto generated serviceId for broker cfee-my-cfee-name"
+ServiceId-34fc56fb-c2ab-484c-9608-de483cb285ca   cfee-my-cfee-name                                                   2019-11-14T00:50+0000   2019-11-14T00:50+0000   Auto generated serviceId for broker cfee-my-cfee-name
+```
+
+2. Create a service policy with the Viewer role for that service ID.
+```
+$ ibmcloud iam service-policy-create ServiceId-34fc56fb-c2ab-484c-9608-de483cb285ca --roles Viewer --service-name cfaas
+```
+
+3. After the service ID tokens expire (usually after 30 minutes), try to create the service instance again.
