@@ -145,7 +145,7 @@ After your CFEE cluster is connected to your Sysdig instance, you will find comm
 Cloud Foundry related metrics are identified by the following prefixes:
 
 * `firehose_`: metrics provided by the firehose_exporter component
-* `cfapitester_` : metrics provided by the Application Deployment Validation tool
+* `cfapitester_` : metrics provided by the Cloud Foundry API Tester tool
 
 With this enablement you can now create your own Sysdig alerts and Sysdig dashboards based on the available metrics for all Cloud Foundry components.
 
@@ -264,7 +264,7 @@ And install the plugin again:
   ```
   {: pre}
 
-7. Check the actual values for Application Deployment Validation:
+7. Check the actual values for Cloud Foundry API Tester:
 
   ```
   helm get values ${tls_params} cf-api-tester
