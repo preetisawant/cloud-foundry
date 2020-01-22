@@ -145,8 +145,7 @@ After your CFEE cluster is connected to your Sysdig instance, you will find comm
 Cloud Foundry related metrics are identified by the following prefixes:
 
 * `firehose_`: metrics provided by the firehose_exporter component
-* `cf_` : metrics provided by the cf_exporter component
-* `cmlt_` : metrics provided by the Application Deployment Validation tool 
+* `cfapitester_` : metrics provided by the Application Deployment Validation tool
 
 With this enablement you can now create your own Sysdig alerts and Sysdig dashboards based on the available metrics for all Cloud Foundry components.
 
@@ -211,23 +210,23 @@ The following guides you through the steps for installing the required CLI's, fo
   ```
   {: pre}
 
-## Application Deployment Validation
-{: #appDepVal}
+## Cloud Foundry API Tester
+{: #cfapitester}
 
-Application Deployment Validation (appDepVal) is a part of the monitoring solution which allows the analysis of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
+Cloud Foundry API Tester (cfapitester) is a part of the monitoring solution which allows the analysis of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) calls. The goal is to have a detailed timing analysis of all process steps and rest calls which are executed during a single [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) command such as `cf push ..`, `cf buildpacks` etc.
 The tool works as a [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) wrapper and examines the resulting trace.
 Results are detailed metrics which could be used for problem determination, alerting and visualization.
 
-### Changing default configuration for Application Deployment Validation
+### Changing default configuration for Cloud Foundry API Tester
 
-Application Deployment Validation (appDepVal) will be enabled in CFEE when you enable monitoring. It will be deployed with a default configuration that can be modified post enablement.
+Cloud Foundry API Tester (cfapitester) will be enabled in CFEE when you enable monitoring. It will be deployed with a default configuration that can be modified post enablement.
 
 The following two configuration environment variables can be used to adapt your buildpacks which are used:
 
-  - CAP_TEST_DELAY
+  - CAT_TEST_DELAY
   This environment variable allows you to disable/enable buildpack testing and to set the interval in which tests are executed. When it is set to `0` buildpacks testing will be disabled. When it is set to a value > 0 it will calculate the interval used for buildpack test cycles in seconds.
 
-  - CAP_TEST_FILTER
+  - CAT_TEST_FILTER
   This environment variable allows you to specify the amount of buildpacks to be tested. When this value is set to `all` or is not set, all buildpacks will be tested. When this value is set to specific buildpacks then only those buildpacks will be used.
 
 The following buildpack tests are available:
@@ -268,7 +267,7 @@ And install the plugin again:
 7. Check the actual values for Application Deployment Validation:
 
   ```
-  helm get values ${tls_params} camelot
+  helm get values ${tls_params} cf-api-tester
   ```
   {: pre}
 
@@ -276,20 +275,20 @@ And install the plugin again:
 
   ```
   env:
-  cap_test_delay: 300
-  cap_test_filter: binary_buildpack,staticfile_buildpack
+  cat_test_delay: 300
+  cat_test_filter: binary_buildpack,staticfile_buildpack
   ```
   {: screen}
 
 8. To change the values use following command:
 
   ```
-  helm update-config ${tls_params} camelot --set-value env.cap_test_delay="<fill in your value>",env.cap_test_filter="<fill in your value>"
+  helm update-config ${tls_params} cf-api-tester --set-value env.cat_test_delay="<fill in your value>",env.cat_test_filter="<fill in your value>"
   ```
   {: screen}
-  If you want to change `cap_test_filter` to a list of buildpacks use following format in the command above. As example:
+  If you want to change `cat_test_filter` to a list of buildpacks use following format in the command above. As example:
   ```
-  env.cap_test_filter="binary_buildpack\,staticfile_buildpack"
+  env.cat_test_filter="binary_buildpack\,staticfile_buildpack"
   ```
   {: screen}
 
@@ -337,14 +336,12 @@ There is a default set of Grafana dashboards included in the CFEE instance. Thos
    - _Worker Nodes Overview_
         - Shows the CPU and memory usage of the kubernetes infrastructure, along with its network traffic.
 
-#### Application Deployment Validation Dashboards
+#### Cloud Fondry API Tester Dashboards
 
-   - _AppDepVal - Runtimes_
+   - _CfApiTester - Runtimes_
         - Provides a general status about Cloud Foundry application provisioning tests. It allows to the get the duration and test result of `cf push <app>` commands related to the used buildpack and gives an overview about the command duration and the duration of the most important sub steps of the command.
-   - _AppDepVal - cf CLI - Commands and Rest Calls - Details_
-        - Shows the result, duration and details about events and rest calls of [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html) commands used by Application Deployment Validation
-   - _AppDepVal - Internal Metrics and Node Performance_
-        - Gives an overview about AppDepVal's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
+   - _CfApiTester - Internal Metrics_
+        - Gives an overview about CfApiTester's Container health including information about cpu/memory/disk usage, count of processes, threads, traces etc., mapper errors and thrown exception during the test execution. Mapper errors and thrown exception are only warnings and expected as both are dependent from the used [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/cf-help.html).
 
 ## CFEE Monitoring on IBM Virtual Cloud Private (VPC)
 {: #MonitoringVPC}
