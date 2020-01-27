@@ -24,7 +24,7 @@ Auditing and logging in CFEE are supported through integrations with LogDNA serv
 ## Auditing
 {: #auditing}
 
-**Activity Tracker with LogDNA** has replaced the original Activity Tracker service, which was fully deprecated on October 9, 2019. Configuring a new **Activity Tracker with LogDNA** instance requires CFEE version 5.0.0 or later. If you have an exisiting auditing configuration using the original Activity Tracker, you will need to disable it before enabling **Activity Tracker with LogDNA**.
+**Activity Tracker with LogDNA** has replaced the original Activity Tracker service, which was fully deprecated on October 9, 2019. Configuring a new Activity Tracker with LogDNA instance requires CFEE version 5.0.0 or later. If you have an exisiting auditing configuration using the original Activity Tracker, you will need to disable it before enabling Activity Tracker with LogDNA.
 {: important}
 
 Auditing allows CFEE administrators to track Cloud Foundry auditable activities which take place in a CFEE instance. Those activities include login, creation of organizations and spaces, user membership and role assignments, application deployments, service bindings, updates and scaling, and domain configuration. Auditing is supported through integration with the *Activity Tracker with LogDNA* service in the IBM Cloud. An instance of the Activity Tracker service selected by the CFEE administrator is configured automatically to receive events representing actions performed within Cloud Foundry and on the CFEE control plane.  The user can see and manage those events in the user interface of the Activity Tracker service instance.
@@ -55,52 +55,24 @@ CFEE supports logging persistence for two types of log streams: Cloud Foundry ap
 To enable platform and application logging for a CFEE instance:
 
 1. Make sure that you have an [IAM access policy](https://cloud.ibm.com/iam/#/users) that assigns you either administrator platform role, or viewer platform role with reader role in the LogDNA service instance into which you intend to persist the logs.
-2. Open a CFEE's user interface and to **Operations > Logging** entry in the left navigation pane to open the Logging page.
+2. Open a CFEE's user interface and navigate to **Operations > Application logging** or **Operations > Platform logging** entry in the left navigation pane to open the configuration page.
 3. Click **Enable logging** and select one of the **LogDNA instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
-4. Once logging persistence is enabled, configuration details are displayed in the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where they user can go to see and manage logs.
-5. Both IKS and CFEE should be configured to use a common LogDNA instance.
+4. Once logging persistence is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where they user can go to see and manage logs.
 
-You can disable Log persistence by clicking **Disable logging persistance**, which will remove the service instance previously added and configured. This action will not delete the LogDNA service instance.
+You can disable logging persistence by clicking **Disable logging**, which will remove the service instance previously configured. This action will not delete the LogDNA service instance.
 
-When enabling or disabling logging, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive, as only a single instance of each component is restarted at one time.
-{: important}
+**Note:** Both IKS and CFEE can be configured to use a common LogDNA instance. To configure your CFEE's cluster to report Kubernetes logging events to LogDNA, see <a href="/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube">the LogDNA documentation</a>.
 
 **Note:** When you disable log persistence, the Cloud Foundry logging events are still being generated, only they are not persisted outside the CFEE instance.
 
+### Healthcheck warnings
+When enabling logging configurations, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive to Cloud Foundry application runtime, as only a single instance of each component is restarted at one time. However, during the restart, you may experience intermittent issues with application deployment. All errors and issues should resolve after all Cloud Foundry components have finished restarting. The restart cycle is expected to take 5 minutes per management node and an additional 2 minutes per cell.
+
 ### Configuring platform logs in CFEE v5.2.0
-Platform logging persistance was added in CFEE version 5.2.0. *If a CFEE was configured to support logging persistance before updating to v5.2.0, an administrator will need to disable and renable logging in order to begin receiving both application and platform logs.*
-
-In CFEE v5.2.0, if you've manually disabled platform logging, or if you updated to version 5.2 with logging enabled, you will receive an error while disabling your logging configuration from the Operations > Logging page. In most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
-{: important}
-
-To stop the flow of platform AND application logs, click **Disable logging persistance**. 
-
-To stop the flow of ONLY platform logs, a manual configuration update is required: Using the guides below, remove the values for `FLUENTD_LOGDNA_INGESTER_DOMAIN` and `FLUENTD_LOGDNA_API_KEY` from the `env` object in the `cf` Helm release, and edit the `configmap` of the `cf-admin-agent` namespace to remove the `logdna_platform_config` value.
-
-Instructions for updating a Helm release to stop platform logging (Mac OS or Ubuntu)
-1. Choose a single directory to work in for the following commands.
-2. Ensure that [jq](https://stedolan.github.io/jq/) and [helm](https://helm.sh/docs/using_helm/#installing-helm) (**Version 2.10**) are installed.
-3. Login to the IBM Cloud CLI
-4. Run `ibmcloud cs cluster-config <name-of-your-cfee-cluster>` to establish a connection with your cluster
-5. Export the Kubernetes environment variable as directed in the CLI output.
-6. Run `helm init`
-7. Run the following commands to download certificates which secure your Helm connection:
-    - `kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.cert"' | base64 --decode > cert.pem`
-    - `kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."helm.key"' | base64 --decode > key.pem`
-    - `kubectl get secret helm-secret -n kube-system -o json | jq -r '.data."ca.cert"' | base64 --decode > ca.pem`
-8. Install the `helm-update-config` plugin using `helm plugin install https://github.com/bluebosh/helm-update-config`
-9. Run `helm list --tls-ca-cert=ca.pem --tls-cert=cert.pem --tls-key=key.pem --tls` to list Helm releases, and note the **CF release name** which looks like "cf.00000000.000000"
-10. _To end the flow of platform logs_, run `helm update-config "<cf-release-name>" --set-value env.FLUENTD_LOGDNA_INGESTER_DOMAIN="" --set-value env.FLUENTD_LOGDNA_API_KEY="this-is-a-faked-logdna-api-key" --tls-ca-cert=ca.pem --tls-cert=cert.pem --tls-key=key.pem --tls`, replacing the text within brackets <> based on previous instructions. Do not replace `this-is-a-faked-logdna-api-key` with another string, this is required to properly stop the flow of logs.
-    - You may receive a "broken pipe" error while running this command. However, if you still see the `Info: update successfully` message, your configuration has been updated without error.
-11. Please note that it takes up to 15 minutes for all CF components to restart and reflect the configured changes.
-
-Instructions for updating a Kubernetes configmap to stop platform logging
-1. Login to the IBM Cloud CLI
-2. Run `ibmcloud cs cluster-config <name-of-your-cfee-cluster>` to establish a connection with your cluster
-3. Export the Kubernetes environment variable as directed.
-4. Edit the configmap in the cf-admin-agent namespace using `kubectl -n cf-admin-agent edit configmap`
-5. To remove the configuration for platform logs, delete the key/value pair under `data` for the key `logdna_platform_config`
-6. Write the file and close the editor
+Limited support for platform logging persistance was added in CFEE version 5.2.0. CFEE administrators using platform logging **in versions 5.2.0 and 5.2.1** should be aware of the following caveats: 
+- Enabling or disabling application logging **also** enables or disables platform logging. Enabling or disabling platform logging **only** enables or disables platform logging. If you've enabled application logging in these versions and want to disable the accompanying platform logging configuration, simply disable platform logging from the Operations > Platform Logging page. These services will be decoupled in an upcoming CFEE release.
+- Platform logging configurations initialized with these versions do not report logs from UAA components. UAA component logs will be supported in an upcoming CFEE release.
+- If you've disabled platform logging, or if you updated to versions 5.2.0 or 5.2.1 with logging enabled, you will receive an error while disabling a configuration from the Operations > Application Logging page. In most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
 
 ### Exporting logs from IBM Log Analysis with LogDNA (optional)
 
