@@ -26,6 +26,16 @@ This document describes what's new in each released version of the {{site.data.k
 
 The {{site.data.keyword.cfee_full_notm}} service packages specific versions of Cloud Foundry and buildpacks, and it is tested for function using specific versions of the Cloud Foundry CLI.  Where these versions do not change between releases, we typically do not list them explicitly.  Users can assume that the most recently listed versions for a given release are still valid for subsequent {{site.data.keyword.cfee_full_notm}} releases unless otherwise specified.
 
+## Version 5.2.2
+{: #522}
+
+_Release Date:_ 2020-02-06
+
+### Issues Resolved
+
+The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v5.2.2:
+* Some mTLS configurations were broken due to a bug in the parsing of certificate subjects.  New client certificate configurations for custom domains are now validated using a certificate's SHA fingerprint.  Existing client certificate configurations are not affected.
+
 ## Version 5.2.1
 {: #v521}
 
