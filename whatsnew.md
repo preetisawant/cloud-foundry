@@ -34,7 +34,7 @@ _Release Date:_ 2020-02-06
 ### Issues Resolved
 
 The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v5.2.2:
-* mTLS configuration was broken due to a bug in the validation of certificates.  New client certificate configurations for custom domains are now validated using a certificate's SHA fingerprint.  Existing client certificate configurations are not affected.
+* Some mTLS configurations were broken due to a bug in the parsing of certificate subjects.  New client certificate configurations for custom domains are now validated using a certificate's SHA fingerprint.  Existing client certificate configurations are not affected.
 
 ## Version 5.2.1
 {: #v521}
