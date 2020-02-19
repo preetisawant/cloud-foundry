@@ -67,7 +67,6 @@ Cloud Foundry Enterprise Environment
     {: .topicgroup}
     Managing operations
         msp_enablement.md
-        stratos.md
         manage-capacity.md
         monitoring.md
         auditing-logging.md
@@ -76,6 +75,7 @@ Cloud Foundry Enterprise Environment
         autoscaling.md
         compliance.md
         raci_customer_provided_service.md
+        stratos.md
         management-offering-providers.md
     {: .navgroup-end}
 
