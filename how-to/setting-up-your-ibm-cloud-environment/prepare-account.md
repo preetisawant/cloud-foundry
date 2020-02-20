@@ -34,7 +34,7 @@ In the example below the same IBM Cloud account _MyCompany_ has been upgraded to
 To provision {{site.data.keyword.cfee_full_notm}} instances, you _must_ have certain settings enabled for your account.  Specifically, your account must be enabled for **VRF** and **Cloud Service Endpoints**.  The easiest way to check is to use the `ibmcloud` CLI.  Login via the CLI, target the intended account (if required), and run
 
 ```
-`ibmcloud account show`.
+$ ibmcloud account show
 ```
 {: codeblock}
 
