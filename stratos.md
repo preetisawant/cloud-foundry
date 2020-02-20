@@ -54,5 +54,5 @@ To uninstall the Stratos console:
 
 1. Login with the `cf` CLI.
 2. Target the org and space into which you deployed Stratos.
-3. You can verify that you have targeted the correct space by running `cf apps` - the Stratos console is deployed as an application named `console`.
-4. Remove Stratos by running `cf delete console` and responding to the prompts which follow.
+3. You can verify that you have targeted the correct space by running `cf apps` - the Stratos console is deployed as an application named `stratos-console`.
+4. Remove Stratos by running `cf delete stratos-console` and responding to the prompts which follow.
