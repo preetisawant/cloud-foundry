@@ -31,6 +31,12 @@ The {{site.data.keyword.cfee_full_notm}} service packages specific versions of C
 
 _Release Date:_ 2020-02-27
 
+### New Capabilities
+
+The following new capabilities were introduced in {{site.data.keyword.cfee_full_notm}} v6.0.0:
+* [Tooling](/docs/cloud-foundry?topic=cloud-foundry-monitoring) within the monitoring toolset has been renamed from "Application Deployment Validation" to "Cloud Foundry Api Tester". Metrics produced by this tooling have been renamed from `cmlt_` to `cfapitester_`. 
+* [Sample Sysdig Dashboards](https://github.com/cfibmers/CFEE-dashboards) are provided for the "Cloud Foundry Api Tester".
+
 ### Issues resolved
 
 The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v6.0.0:
@@ -40,6 +46,16 @@ The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v6.0.
 ### Packaged Software Versions and Corequisites
 
 * {{site.data.keyword.cfee_full_notm}} v6.0.0 updates Cloud Foundry to cf-deployment v12.17.0.  Please see the [Cloud Foundry Release Notes](https://github.com/cloudfoundry/cf-deployment/releases?after=v12.18.0) for information on changes in Cloud Foundry.  As CFEE vendors Cloud Foundry from SUSE SCF, see also the relevant [SCF Release Notes](https://github.com/SUSE/scf/releases?after=2.21.0)
+* {{site.data.keyword.cfee_full_notm}} v6.0.0 updates Monitoring tools as follow:
+  * Prometheus v2.13.1
+  * Grafana v6.5.0
+  * Alertmanager v0.18.0
+  * blackbox-exporter v0.16.0
+  * cf-exporter v0.10.0
+  * firehose-exporter v6.0.0
+  * k8s-sidecar v0.0.17
+  * postgres-exporter v0.5.1
+
 
 ## Version 5.2.2
 {: #522}
