@@ -29,12 +29,31 @@ In the example below user _Mary Smith_ is logged into the IBM Cloud account _MyC
 In the example below the same IBM Cloud account _MyCompany_ has been upgraded to a paid account.  As a result of the upgrade the account is now linked to the SoftLayer account _1684806_.  Both accounts are shown in the "Account" field.
 ![Account Checking](img/AccountExample_2.png  "Screen cap that shows an IBM Cloud account linked to  a SofLayer account")
 
+## IBM Cloud Account Requirements
+
+To provision {{site.data.keyword.cfee_full_notm}} instances, you _must_ have certain settings enabled for your account.  Specifically, your account must be enabled for **VRF** and **Cloud Service Endpoints**.  The easiest way to check is to use the `ibmcloud` CLI.  Login via the CLI, target the intended account (if required), and run
+
+```
+$ ibmcloud account show
+```
+{: codeblock}
+
+There will be one line in the output for each of the two required settings, and these should each show a value of `true`.  Here is the output for a correctly configured account:
+
+```
+VRF Enabled:                        true
+Service Endpoint Enabled:           true
+```
+{: codeblock}
+
+Please see [here](account?topic=account-vrf-service-endpoint) for information on configuring these settings correctly.
+
 ## Using a SoftLayer account instead of upgrading the IBM Cloud account
 {: #account-linkswitching}
 
-If you have Administrator role in an IBM Cloud account, you can use a SoftLayer account to create the CFEE instance without upgrading the IBM Cloud account. 
+If you have Administrator role in an IBM Cloud account, you can use a SoftLayer account to create the CFEE instance without upgrading the IBM Cloud account.
 
-**Warning:** We recommend that you upgrade the IBM Cloud account instead. If you use a SoftLayer account now and you update the IBM Cloud account in the future (to a Pay-As-You-Go or a Subscription account), the updated IBM Cloud may still use the Softlayer account (whose credentials you set now) when creating future infrastructure resources. Furthermore, if you use a different SofLayer account in the future for creating Cloud Foundry Enterprise Environments, users in the IBM Cloud account may not be able to access infrastructure resources created under the SoftLayer account whose credentials you set now. 
+**Warning:** We recommend that you upgrade the IBM Cloud account instead. If you use a SoftLayer account now and you update the IBM Cloud account in the future (to a Pay-As-You-Go or a Subscription account), the updated IBM Cloud may still use the Softlayer account (whose credentials you set now) when creating future infrastructure resources. Furthermore, if you use a different SofLayer account in the future for creating Cloud Foundry Enterprise Environments, users in the IBM Cloud account may not be able to access infrastructure resources created under the SoftLayer account whose credentials you set now.
 
 To use a SoftLayer account without upgrading the IBM Cloud account (see the screens below for illustration):
 1. In the screen shown when the IBM Cloud account is not upgraded, click **Use a SoftLayer account**.
@@ -45,4 +64,4 @@ To use a SoftLayer account without upgrading the IBM Cloud account (see the scre
 
 ![Account Checking](img/UpgradeAccountPage_2.png  "Screen cap that shows the parameters for using a SofLayer account to create an CFEE instance")
 
-**Note:** You must have sufficient permissions in the SoftLayer account to create a regular Kubernetes cluster from the IBM Container service. If you don't, ask the SoftLayer account administrator, or the user who gave you access to the SoftLayer account to grant you those additional permissions. 
+**Note:** You must have sufficient permissions in the SoftLayer account to create a regular Kubernetes cluster from the IBM Container service. If you don't, ask the SoftLayer account administrator, or the user who gave you access to the SoftLayer account to grant you those additional permissions.
