@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2015, 2019
+  years: 2015, 2019, 2020
 
-lastupdated: "2019-12-20"
+lastupdated: "2020-02-27"
 
 ---
 
@@ -25,6 +25,21 @@ lastupdated: "2019-12-20"
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} (CFEE) service.
 
 The {{site.data.keyword.cfee_full_notm}} service packages specific versions of Cloud Foundry and buildpacks, and it is tested for function using specific versions of the Cloud Foundry CLI.  Where these versions do not change between releases, we typically do not list them explicitly.  Users can assume that the most recently listed versions for a given release are still valid for subsequent {{site.data.keyword.cfee_full_notm}} releases unless otherwise specified.
+
+## Version 6.0.0
+{: #600}
+
+_Release Date:_ 2020-02-27
+
+### Issues resolved
+
+The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v6.0.0:
+* [CVE-2019-17596](https://www.cloudfoundry.org/blog/cve-2019-17596/)
+* [CVE-2019-3789](https://www.cloudfoundry.org/blog/cve-2019-3789/)
+
+### Packaged Software Versions and Corequisites
+
+* {{site.data.keyword.cfee_full_notm}} v6.0.0 updates Cloud Foundry to cf-deployment v12.17.0.  Please see the [Cloud Foundry Release Notes](https://github.com/cloudfoundry/cf-deployment/releases?after=v12.18.0) for information on changes in Cloud Foundry.  As CFEE vendors Cloud Foundry from SUSE SCF, see also the relevant [SCF Release Notes](https://github.com/SUSE/scf/releases?after=2.21.0)
 
 ## Version 5.2.2
 {: #522}
