@@ -61,6 +61,9 @@ To enable platform and application logging for a CFEE instance:
 
 You can disable logging persistence by clicking **Disable logging**, which will remove the service instance previously configured. This action will not delete the LogDNA service instance.
 
+Platform logging configurations created with CFEE versions matching 5.2.x will need to be recreated in version 6.0.0. Please [see below](#configuring-platform-logs-in-cfee-v5-2) for more information about platform logging in CFEE versions matching 5.2.x.
+{: note}
+
 **Note:** Both IKS and CFEE can be configured to use a common LogDNA instance. To configure your CFEE's cluster to report Kubernetes logging events to LogDNA, see <a href="/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube">the LogDNA documentation</a>.
 
 **Note:** When you disable logging persistence, Cloud Foundry logging events are still being generated, only they are not persisted outside the CFEE instance.
