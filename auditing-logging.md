@@ -72,6 +72,7 @@ Platform logging configurations created with CFEE versions matching 5.2.x will n
 When enabling logging configurations, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive to Cloud Foundry application runtime, as only a single instance of each component is restarted at one time. However, during the restart, you may experience intermittent issues with application deployment. All errors and issues should resolve after all Cloud Foundry components have finished restarting.
 
 ### Configuring platform logs in CFEE v5.2.x
+{: #configuring-platform-logs-in-cfee-v5-2}
 Limited support for platform logging persistance was added in CFEE version 5.2.0. CFEE administrators using platform logging _in any version matching 5.2.x_ should be aware of the following caveats: 
 - Enabling or disabling application logging **also** enables or disables platform logging. Enabling or disabling platform logging **only** enables or disables platform logging. If you've enabled application logging in these versions and want to disable the accompanying platform logging configuration, simply disable platform logging from the Operations > Platform Logging page. These services are decoupled in CFEE version 6.0.0.
 - Platform logging configurations created with a version matching 5.2.x do not report logs from UAA components. UAA component logs are supported in platform logging configurations created with CFEE version 6.0.0.
