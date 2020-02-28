@@ -56,6 +56,8 @@ The following issues were resolved in {{site.data.keyword.cfee_full_notm}} v6.0.
   * k8s-sidecar v0.0.17
   * postgres-exporter v0.5.1
 
+Pre-exisiting platform logging configurations will stop functioning after updating to {{site.data.keyword.cfee_full_notm}} v6.0.0. Please disable and re-enable platform logging after the update to continue receiving CF component logs.
+{: note}
 
 ## Version 5.2.2
 {: #522}
