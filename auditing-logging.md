@@ -57,23 +57,28 @@ To enable platform and application logging for a CFEE instance:
 1. Make sure that you have an [IAM access policy](https://cloud.ibm.com/iam/#/users) that assigns you either administrator platform role, or viewer platform role with reader role in the LogDNA service instance into which you intend to persist the logs.
 2. Open a CFEE's user interface and navigate to **Operations > Application logging** or **Operations > Platform logging** entry in the left navigation pane to open the configuration page.
 3. Click **Enable logging** and select one of the **LogDNA instances** available in the IBM Cloud account.  If no instances are available, the user will see an option to create an instance in the IBM Cloud catalog.
-4. Once logging persistence is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where they user can go to see and manage logs.
+4. Once logging persistence is enabled, configuration details are displayed on the page. Details include the status of the configuration, and a link to the LogDNA service instance itself, where the user see and manage logs.
 
 You can disable logging persistence by clicking **Disable logging**, which will remove the service instance previously configured. This action will not delete the LogDNA service instance.
 
+Platform logging configurations created with CFEE versions matching 5.2.x will need to be recreated in version 6.0.0. Please [see below](#configuring-platform-logs-in-cfee-v5-2) for more information about platform logging in CFEE versions matching 5.2.x.
+{: note}
+
 **Note:** Both IKS and CFEE can be configured to use a common LogDNA instance. To configure your CFEE's cluster to report Kubernetes logging events to LogDNA, see <a href="/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube">the LogDNA documentation</a>.
 
-**Note:** When you disable log persistence, the Cloud Foundry logging events are still being generated, only they are not persisted outside the CFEE instance.
+**Note:** When you disable logging persistence, Cloud Foundry logging events are still being generated, only they are not persisted outside the CFEE instance.
 
 ### Healthcheck warnings
 When enabling logging configurations, various Cloud Foundry components will be restarted, such that your CFEE's healthcheck will report several component errors. These errors are not disruptive to Cloud Foundry application runtime, as only a single instance of each component is restarted at one time. However, during the restart, you may experience intermittent issues with application deployment. All errors and issues should resolve after all Cloud Foundry components have finished restarting.
 
-### Configuring platform logs in CFEE v5.2
+### Configuring platform logs in CFEE v5.2.x
+{: #configuring-platform-logs-in-cfee-v5-2}
 Limited support for platform logging persistance was added in CFEE version 5.2.0. CFEE administrators using platform logging _in any version matching 5.2.x_ should be aware of the following caveats: 
-- Enabling or disabling application logging **also** enables or disables platform logging. Enabling or disabling platform logging **only** enables or disables platform logging. If you've enabled application logging in these versions and want to disable the accompanying platform logging configuration, simply disable platform logging from the Operations > Platform Logging page. These services will be decoupled in an upcoming CFEE release.
-- Platform logging configurations initialized with these versions do not report logs from UAA components. UAA component logs will be supported in an upcoming CFEE release.
-- If you've disabled platform logging, or if you updated to a version matching 5.2.x with logging enabled, you may receive an error while disabling a configuration from the Operations > Application Logging page. In most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
-- The Logging Persistance healthcheck indicator currently refers to application logging only. A healthcheck indicator for platform logging is forthcoming.
+- Enabling or disabling application logging **also** enables or disables platform logging. Enabling or disabling platform logging **only** enables or disables platform logging. If you've enabled application logging in these versions and want to disable the accompanying platform logging configuration, simply disable platform logging from the Operations > Platform Logging page. These services are decoupled in CFEE version 6.0.0.
+- Platform logging configurations created with a version matching 5.2.x do not report logs from UAA components. UAA component logs are supported in platform logging configurations created with CFEE version 6.0.0.
+- If you've manually disabled platform logging, or if you updated to a version matching 5.2.x with logging enabled, you may receive an error while disabling a configuration from the Operations > Application Logging page. In most cases your full configuration (application and platform logging) has been disabled properly. Refresh the page to confirm that disablement has worked correctly.
+- The platform logging healthcheck indicator may not work correctly in a version matching 5.2.x
+- Platform logging configurations created with a version matching 5.2.x will not function correctly after updating to version 6.0.0. If you have a pre-exisiting configuration, disable and re-enable platform logging after updating to CFEE version 6.0.0.
 
 ### Exporting logs from IBM Log Analysis with LogDNA (optional)
 
