@@ -43,7 +43,7 @@ After your instance is created, structure the environment by creating organizati
 
 1. In the CFEE user interface, click **Organizations** in the navigation pane.
 
-    To get to the CFEE user interface, go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry Environments dashboard](https://cloud.ibm.com/dashboard/cloudfoundry?filter=cf_environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
+    To get to the CFEE user interface, go to the [{{site.data.keyword.cfee_full_notm}}s dashboard](https://cloud.ibm.com/cloudfoundry/environments){: new_window} and open the {{site.data.keyword.cfee_full_notm}} instance where you want to create organizations.
     {: tip}
 
 3. Click **Create Organization**.
