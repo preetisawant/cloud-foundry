@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2019
-lastupdated: "2019-08-26"
+  years: 2016, 2020
+lastupdated: "2020-03-11"
 subcollection: "cloud-foundry"
 
 ---
@@ -18,9 +18,8 @@ subcollection: "cloud-foundry"
 ## Built-in IBM buildpacks
 {: #built-in_ibm_buildpacks}
 
-For [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-getting-started-liberty), [SDK for Node.js](/docs/cloud-foundry?topic=cloud-foundry-getting-started-node), and [ASP.NET Core](/docs/cloud-foundry?topic=cloud-foundry-getting-started-dotnet), IBM supports two versions (n & n - 1), for example, IBM Liberty Buildpack v3.12 & IBM Liberty Buildpack v3.11. Each buildpack provides and supports one or more major versions of its corresponding runtime as appropriate. Buildpacks are typically refreshed once a month with the latest minor version of the runtime that is available.
+For [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-getting-started-liberty), [SDK for Node.js](/docs/cloud-foundry?topic=cloud-foundry-getting-started-node), and [ASP.NET Core](/docs/cloud-foundry?topic=cloud-foundry-getting-started-dotnet), IBM supports two versions (n & n - 1), for example, IBM Liberty Buildpack v3.12 & IBM Liberty Buildpack v3.11. Each buildpack provides and supports one or more major versions of its corresponding runtime as appropriate. The liberty-for-java buildpack is refreshed once a month. The sdk-for-node.js and dotnet-core buildpacks are typically refreshed once a quarter with the latest minor version of the runtime that is available.
 
-For the [{{site.data.keyword.Bluemix_notm}} Runtime for Swift](/docs/cloud-foundry?topic=cloud-foundry-getting-started-swift), IBM provides support for the buildpack matching the latest version of Swift available at [Swift.org](http://swift.org). Updates to the buildpack are in sync with the latest available released version of Swift.
 
 Problems and issues can be reported against any version of the built-in IBM Buildpack that is currently supported on {{site.data.keyword.Bluemix_notm}}, but they will be verified against the latest version. If a defect is found, IBM will provide a fix in a future level of the runtime and corresponding buildpack. IBM will not provide fixes for earlier major and minor versions (N-1, n-1). IBM will not provide support for community runtimes even when using IBM buildpacks, for example, using Open JDK with the Liberty buildpack. These community runtimes follow the same support policy as the built-in community buildpacks, as described in the following section.
 
@@ -29,8 +28,7 @@ Problems and issues can be reported against any version of the built-in IBM Buil
 
 The following built-in Community Buildpacks are provided by the Cloud Foundry Community:
 
-* Java
-* Node.js
+* Tomcat
 * PHP
 * Ruby
 * Python
