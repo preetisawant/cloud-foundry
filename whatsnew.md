@@ -24,6 +24,55 @@ lastupdated: "2020-02-27"
 
 This document describes what's new in each released version of the {{site.data.keyword.cfee_full}} (CFEE) service.
 
+
+
+## Cloud Foundry Enterprise Deprecation
+{: #deprecation}
+
+The IBM Cloud Foundry Enterprise Environment single-tenant cloud product is being deprecated and withdrawn from the market.
+
+
+### Details
+
+IBM Cloud's strategic direction for isolated single-tenant PaaS is Red Hat OpenShift, a fully managed PaaS that leverages the enterprise scale and security of IBM Cloud, allowing users to focus on developing and managing their applications.
+
+IBM Cloud continues to fully support the mission of the Cloud Foundry Foundation and the delivery of Cloud Foundry applications. IBM Cloud Foundry Public remains a key compute application deployment capability in IBM Cloud and will continue to be available.
+
+### Key Dates
+* End-of-marketing - April 14th, 2020
+* Removal from the IBM catalog - May 15th, 2020
+* End-of-support - July 15th, 2020
+
+The last planned version will be 6.1.0. The product will have no additional regulatory compliance renewals between now and the end-of-life.
+
+
+### References & Product Information
+
+Some references and information about IBM PaaS products and application development with Kubernetes containers
+
+**Redhat OpenShift on IBM Cloud**
+* [OpenShift Getting Started on IBM Cloud](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial)
+* [Documentation & Getting Started](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial) on OpenShift on IBM Cloud 
+* [Guided Tour](https://developer.ibm.com/technologies/containers/videos/red-hat-openshift-on-ibm-cloud-video/) to Red Hat OpenShift on IBM Cloud
+* Red Hat OpenShift Cluster [deployment](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift)
+
+
+**Application creation in Kubernetes containers**
+* [Multicluster Kubernetes Strategies to Kubernet-ify Apps](https://www.youtube.com/watch?v=Zq1VNXQOdGI)
+* [Strategies to "Kubernetify" Legacy Applications](https://www.youtube.com/watch?v=mMk6hvgv-NI)
+* Migrating an app from Cloud Foundry to a Kubernetes Cluster [Tutorial Walk-through](https://cloud.ibm.com/docs/containers?topic=containers-cf_tutorial) => This walks through the differences between a CF app and a Kubernetes app – it has step-by-step instructions and sample applications. Several large IBM Cloud customers have used this reference recently to successfully learn how to deploy CF apps to Kubernetes containers
+
+
+**Questions about OpenShift on IBM Cloud**
+* If you have questions, engage our team via Slack. You can register here (https://cloud.ibm.com/kubernetes/slack) and join the discussion in the #cfee-to-ocp channel on (https://ibm-cloud-success.slack.com).
+
+
+---
+
+---
+
+
+
 The {{site.data.keyword.cfee_full_notm}} service packages specific versions of Cloud Foundry and buildpacks, and it is tested for function using specific versions of the Cloud Foundry CLI.  Where these versions do not change between releases, we typically do not list them explicitly.  Users can assume that the most recently listed versions for a given release are still valid for subsequent {{site.data.keyword.cfee_full_notm}} releases unless otherwise specified.
 
 ## Version 6.0.0
