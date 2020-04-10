@@ -36,7 +36,7 @@ The IBM Cloud Foundry Enterprise Environment single-tenant cloud product is bein
 
 IBM Cloud's strategic direction for isolated single-tenant PaaS is Red Hat OpenShift, a fully managed PaaS that leverages the enterprise scale and security of IBM Cloud, allowing users to focus on developing and managing their applications.
 
-IBM Cloud continues to fully support the mission of the Cloud Foundry Foundation and the delivery of Cloud Foundry applications. IBM Cloud Foundry Public remains a key compute application deployment capability in IBM Cloud and will continue to be available.
+IBM Cloud continues to fully support the mission of the Cloud Foundry Foundation and the delivery of Cloud Foundry applications. [IBM Cloud Foundry Public Applications](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started) remains a key compute application deployment capability in IBM Cloud and will continue to be available.
 
 ### Key Dates
 * End-of-marketing - April 14th, 2020
@@ -66,11 +66,13 @@ Some references and information about IBM PaaS products and application developm
 **Questions about OpenShift on IBM Cloud**
 * If you have questions, engage our team via Slack. You can register here (https://cloud.ibm.com/kubernetes/slack) and join the discussion in the #cfee-to-ocp channel on (https://ibm-cloud-success.slack.com).
 
+<br/>
 
 ---
 
 ---
 
+<br/>
 
 
 The {{site.data.keyword.cfee_full_notm}} service packages specific versions of Cloud Foundry and buildpacks, and it is tested for function using specific versions of the Cloud Foundry CLI.  Where these versions do not change between releases, we typically do not list them explicitly.  Users can assume that the most recently listed versions for a given release are still valid for subsequent {{site.data.keyword.cfee_full_notm}} releases unless otherwise specified.
