@@ -43,7 +43,6 @@ Cloud Foundry Enterprise Environment
     Working with apps and services
         deploy-apps.md
         add-serv-inst.md
-        deploy_eclipsetools.md
         deploy_vs.md
         install_cli.md
         Node-RED/start_nodered.md
