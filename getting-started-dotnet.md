@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-13"
-subcollection: "Dotnet"
+  years: 2017, 2020
+lastupdated: "2020-05-18"
+subcollection: cloud-foundry
 
 ---
 
@@ -22,16 +22,16 @@ subcollection: "Dotnet"
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
 {: hide-in-docs}
 
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix}} database service in your app.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate an {{site.data.keyword.Bluemix}} database service in your app. The ASP.NET core is complied into a .dll package. You can deploy the application with the code or with the precompiled file (.DLL) of your applicattion.
 
 ## Before you begin
-{: #prereqs}
+{: #prereqs-dotnet}
 
 You'll need the following:
 * [{{site.data.keyword.Bluemix_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud/download_cli.html)
+* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started)
 * [Git](https://git-scm.com/downloads){: external}
-* Install .NET Core SDK 2.2.401 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}.
+* Install .NET Core SDK 3.1 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}.
 
 ## Step 1: Clone the sample app
 {: #clone}
@@ -68,7 +68,7 @@ dotnet run
 1. View your app at: http://localhost:5000/.
 
 ## Step 3: Prepare the app for deployment
-{: #prepare}
+{: #prepare-dotnet}
 
 To deploy to {{site.data.keyword.Bluemix_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-dotnet` directory.
 
@@ -97,7 +97,7 @@ ibmcloud login
   ```
   {: codeblock}
 
-  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/cli/login_federated_id.html) to learn more.
+  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id) to learn more.
  ```
 ibmcloud login --sso
   ```
@@ -109,7 +109,7 @@ ibmcloud target --cf
   ```
   {: codeblock}
 
-  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account/orgs_spaces.html).
+  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
 
 1. **Be sure you are in the main directory, `get-started-aspnet-core`, for your application**  then push your application to {{site.data.keyword.Bluemix_notm}}:
@@ -190,5 +190,5 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 ## Next Steps
 
 * [Tutorials](/docs/tutorials/index.html)
-* [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Samples](https://ibm-cloud.github.io){: external}
+* [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures){: external}
