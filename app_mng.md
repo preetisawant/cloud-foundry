@@ -18,7 +18,7 @@ subcollection: cloud-foundry
 
 ## {{site.data.keyword.cloud_notm}} console and CLI
 
-### Managing application through IBM Cloud console
+### Managing application through {{site.data.keyword.cloud_notm}} console
 
 The {{site.data.keyword.cloud_notm}} console provides the ability to start, stop and restart application from the "Action" tab on your application from console.
 
@@ -48,7 +48,7 @@ It can also be accomplished from command line.
 
 Application can be managed and debugged through ssh-ing into them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and cf CLI.
 
-### IBM Cloud console
+### {{site.data.keyword.cloud_notm}} console
 
 User can ssh into the application through their application through {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your application and then click on SSH to manage.
 
