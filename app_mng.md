@@ -16,7 +16,7 @@ subcollection: cloud-foundry
 # Managing Liberty and Node.js apps
 {: #app_management}
 
-## IBM Cloud console and CLI
+## {{site.data.keyword.cloud_notm}} console and CLI
 
 ### Managing application through IBM Cloud console
 
