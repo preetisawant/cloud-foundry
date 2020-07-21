@@ -16,11 +16,11 @@ subcollection: cloud-foundry
 # Managing Liberty and Node.js apps
 {: #app_management}
 
-## IBM Cloud Console and CLI
+## {{site.data.keyword.cloud_notm}} console and CLI
 
-### Managing application through IBM Cloud Console
+### Managing application through {{site.data.keyword.cloud_notm}} console
 
-The IBM Cloud console provides the ability to start, stop and restart application from the Action tab on your application from console.
+The {{site.data.keyword.cloud_notm}} console provides the ability to start, stop and restart application from the "Action" tab on your application from console.
 
 ### Managing application through cf CLI
 
@@ -46,11 +46,11 @@ It can also be accomplished from command line.
   
 ## Application management through SSH shell session
 
-Application can be managed and debugged through ssh-ing into them. This can be accomplished through IBM Cloud console and cf CLI.
+Application can be managed and debugged through ssh-ing into them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and cf CLI.
 
-### IBM Cloud console
+### {{site.data.keyword.cloud_notm}} console
 
-User can ssh into the application through their application through IBM Cloud Console. Navigate to the Runtime tab on your application and then click on SSH to manage.
+User can ssh into the application through their application through {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your application and then click on SSH to manage.
 
 ### Command Line CLI
 
